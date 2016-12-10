@@ -1,7 +1,7 @@
 <?php
 
-	use system\Model;
+    use system\Model;
 
-	class User extends Model {
-
-	}
+    class User extends Model
+    {
+    }

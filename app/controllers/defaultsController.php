@@ -1,12 +1,13 @@
 <?php
 
-	namespace app\controllers;
+    namespace app\controllers;
 
-	use system\Controller;
-	use system\Utils;
+use system\Controller;
+    use system\Utils;
 
-	class defaultsController extends Controller {
-		function indexAction () {
-			
-		}
-	}
+    class defaultsController extends Controller
+    {
+        public function indexAction()
+        {
+        }
+    }
