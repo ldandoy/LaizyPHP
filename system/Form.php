@@ -20,9 +20,9 @@
 			}
 
 			echo '<div class="form-group">';
-    			$this->label($label, $id);
-    			echo '<input name="'.$name.'" type="text" class="form-control" id="'.$id.'" placeholder="Entrez votre '.$placeholder.'">';
-  			echo '</div>';
+				$this->label($label, $id);
+				echo '<input name="'.$name.'" type="text" class="form-control" id="'.$id.'" placeholder="Entrez votre '.$placeholder.'">';
+			echo '</div>';
 		}
 
 		function label ($label, $id=null) {
@@ -44,6 +44,13 @@
 			echo '<div class="form-group">';
 			$this->label($label, $id);
 			echo '<textarea name="" id="" placeholder="Entrez votre '.$placeholder.'" class="form-control" rows="3"></textarea>';
+			echo '</div>';
+		}
+
+		function submit($name, $value, $color='default', $align='left') {
+			echo '<div class="form-group">';
+				echo '<button type="submit" name="'.$name.'" class="btn btn-'.$color.' pull-'.$align.'">'.$value.'</button>';
+				echo '<div class="clearfix"></div>';
 			echo '</div>';
 		}
 	}

@@ -17,6 +17,11 @@
 		}
 
 		function editAction($id) {
+			/*if ($this->request->params) {
+				$this->loadModel("Article");
+				$this->Article->save($this->request->params);
+			}*/
+
 			$this->render('edit', array(
 				'id' 	=> $id
 			));
