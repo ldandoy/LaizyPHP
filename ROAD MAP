@@ -1,0 +1,11 @@
+ROAD MAP [09/12/2016]
+x Ajout autoload
+x Tout passer en anglais
+x Ajouter bower composent au chargement des CSS/JS
+- Pour le model de DB, ajouter un query builder
+- Pour le model de DB, Faire les liaisons entre les tables
+- Passer les requètes avec implode
+- Valider les routes
+x Route par défault
+x Ajout des messages flash
+- Faire un form builder
