@@ -5,14 +5,56 @@
 class Router
 {
     public static $routes;
+    private static $url;
 
     public function __construct()
     {
         # On chage la config des routes
-            $routeConf = parse_ini_file(CONFIG_DIR.DS."route.ini", true);
+        $routeConf = parse_ini_file(CONFIG_DIR.DS."route.ini", true);
+        $actions = array('index', 'new', 'create', 'show', 'edit', 'update', 'delete');
+        $methods = array(
+            'index'     => 'get',
+            'new'       => 'get',
+            'create'    => 'post',
+            'show'      => 'get',
+            'edit'      => 'get',
+            'update'    => 'post',
+            'delete'    => 'delete'
+        );
+        $variables = array(
+            'index'     => array(),
+            'new'       => array(),
+            'create'    => array('id'),
+            'show'      => array('id'),
+            'edit'      => array('id'),
+            'update'    => array('id'),
+            'delete'    => array('id')
+        );
+
+        # On charge le route par default
+        $routes['defaults_index']['url'] = '/'.str_replace('_', '/', Config::getValueG('controller')).'/'.Config::getValueG('action');
+        $routes['defaults_index']['controller'] = Config::getValueG('controller');
+        $routes['defaults_index']['action'] = Config::getValueG('action');
+        $routes['defaults_index']['method'] = 'get';
+        $routes['defaults_index']['params'] = array();
+        self::$url['defaults_index'] = $routes['defaults_index']['url'];
+
+        # On charge les routes du fichier ini
         foreach ($routeConf as $k => $v) {
             if ($v['type'] == 'crud') {
-                $routes[$k] = $v['url'];
+                # On découpe l'url pour voir ce qu'on peut en faire.
+                $url = array_slice(explode("/:", $v['url']), 1);
+                foreach ($actions as $v) {
+                    # A voir si çà sert un jour
+                    # $params = (!empty($variables[$v])) ? '/'.implode('/', $variables[$v]) : '';
+                    $routes[$k.'_'.$v]['url'] = '/'.str_replace('_', '/', $k).'/'.$v;
+                    $routes[$k.'_'.$v]['controller'] = $k;
+                    $routes[$k.'_'.$v]['action'] = $v;
+                    $routes[$k.'_'.$v]['method'] = $methods[$v];
+                    $routes[$k.'_'.$v]['params'] = $variables[$v];
+
+                    self::$url[$k.'_'.$v] = $routes[$k.'_'.$v]['url'];
+                }
             }
         }
         self::$routes = $routes;
@@ -20,31 +62,12 @@ class Router
 
     public static function parse($request)
     {
-        $params = explode("/", trim($request->url, "/"));
-        $start = 2;
-
-        # On vérifie si c'est une route qui vient de l'admin
-        # A revoir pour rendre çà plus générique regexp ?
-        if ($params[0] == "cokpit") {
-            $paramsTMP[] = $params[0].'/'.$params[1];
-            $paramsTMP[] = $params[2];
-            $paramsTMP = array_merge($paramsTMP, array_slice($params, 3));
-            $params = $paramsTMP;
-            $start = 3;
-            $request->prefix = "cokpit";
-        }
-
-        $request->controller = isset($params[0]) ? $params[0] : Config::getValueG('controller');
-        $request->action = isset($params[1]) ? $params[1] : Config::getValueG('action');
-        $request->params = array_slice($params, 2);
-
-        # On remplace les params par les bon id
-        $url_pattern = str_replace('/', '_', $request->controller);
-        $indexParams = array_slice(explode('/:', self::$routes[$url_pattern]), 3);
-        foreach ($indexParams as $k => $v) {
-            if (isset($request->params[$k])) {
-                $request->params[$v] = $request->params[$k];
-                unset($request->params[$k]);
+        foreach (self::$url as $k => $v) {
+            if (strpos($request->url, $v) === 0) {
+                $route = self::$routes[$k];
+                $request->controller = $route['controller'];
+                $request->action = $route['action'];
+                $request->params = $route['params'];
             }
         }
     }
@@ -52,10 +75,10 @@ class Router
     public static function url($string, $params = null)
     {
         # On génèer une url de base
-            $url = '/'.str_replace('_', '/', $string);
+        $url = '/'.str_replace('_', '/', $string);
 
-            # on ajoute les params s'il y en a
-            $url .= '/'.implode('/', $params);
+        # on ajoute les params s'il y en a
+        $url .= '/'.implode('/', $params);
         return $url;
     }
 }
