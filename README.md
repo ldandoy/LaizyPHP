@@ -1,3 +1,3 @@
-LaizyPHP is a PHP framework
+LazyPHP is a PHP framework
 
 Comming soon
