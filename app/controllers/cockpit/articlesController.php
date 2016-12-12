@@ -1,6 +1,6 @@
 <?php
 
-    namespace app\controllers\cokpit;
+    namespace app\controllers\cockpit;
 
     use system\Controller;
     use system\Utils;

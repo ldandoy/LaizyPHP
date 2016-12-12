@@ -70,6 +70,7 @@ class Router
                 $request->params = $route['params'];
             }
         }
+        // debug($request);
     }
 
     public static function url($string, $params = null)

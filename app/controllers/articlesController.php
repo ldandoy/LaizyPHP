@@ -3,7 +3,6 @@
 namespace app\controllers;
 
 use system\Controller;
-use system\Utils;
 
 class articlesController extends Controller
 {

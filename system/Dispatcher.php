@@ -12,7 +12,6 @@ class Dispatcher
     {
         $this->request = new Request();
         Router::parse($this->request);
-
         $controller = $this->loadController();
 
         if (!in_array($this->request->action."Action", get_class_methods($controller))) {
