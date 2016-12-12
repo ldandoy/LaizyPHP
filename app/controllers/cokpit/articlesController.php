@@ -2,7 +2,7 @@
 
     namespace app\controllers\cokpit;
 
-use system\Controller;
+    use system\Controller;
     use system\Utils;
 
     class articlesController extends Controller
@@ -31,12 +31,9 @@ use system\Controller;
 
         public function deleteAction($id)
         {
-
-
             // $this->loadModel("Article");
             // $this->Article->delete($id)
             $this->Session->setFlash('Le contenu a bien été supprimé');
-
             $this->redirect('cokpit_articles');
         }
     }

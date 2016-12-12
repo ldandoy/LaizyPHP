@@ -1,7 +1,9 @@
 <?php
 
-    use system\Model;
+namespace app\models;
 
-    class User extends Model
-    {
-    }
+use system\Model;
+
+class User extends Model
+{
+}

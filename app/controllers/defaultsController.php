@@ -1,13 +1,21 @@
 <?php
 
-    namespace app\controllers;
+namespace app\controllers;
 
 use system\Controller;
-    use system\Utils;
+use system\Query;
 
-    class defaultsController extends Controller
-    {
-        public function indexAction()
-        {
-        }
+class defaultsController extends Controller
+{
+    public function indexAction() {
+
+        $this->loadModel('Article');
+        $articles = $this->Article->findAll();
+
+        // debug($articles);
+
+        $this->render('index', array(
+            'articles'    => $articles
+        ));
     }
+}

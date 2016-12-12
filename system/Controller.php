@@ -1,6 +1,6 @@
 <?php
 
-    namespace system;
+namespace system;
 
 class Controller
 {
@@ -36,10 +36,9 @@ class Controller
 
     public function loadModel($name)
     {
-        $file = MODEL_DIR.DS.$name.".php";
-        require_once($file);
         if (!isset($this->$name)) {
-            $this->$name = new $name();
+            $classname = '\app\\models\\'.$name;
+            $this->$name = new $classname();
         }
     }
 
@@ -63,19 +62,19 @@ class Controller
     public function loadCss()
     {
         // CSS dans bower -> bower_components
-            foreach (Config::$config_css as $value) {
-                echo "<link rel=\"stylesheet\" href=\"/bower_components/".$value."\" />\n";
-            }
+        foreach (Config::$config_css as $value) {
+            echo "<link rel=\"stylesheet\" href=\"/bower_components/".$value."\" />\n";
+        }
 
-            // CSS qui sont dans les dossiers assets
-            if ($handle = opendir(CSS_DIR)) {
-                while (false !== ($entry = readdir($handle))) {
-                    if ($entry != "." && $entry != "..") {
-                        echo "<link rel=\"stylesheet\" href=\"/assets".DS."css".DS.$entry."\" />\n";
-                    }
+        // CSS qui sont dans les dossiers assets
+        if ($handle = opendir(CSS_DIR)) {
+            while (false !== ($entry = readdir($handle))) {
+                if ($entry != "." && $entry != "..") {
+                    echo "<link rel=\"stylesheet\" href=\"/assets".DS."css".DS.$entry."\" />\n";
                 }
-                closedir($handle);
             }
+            closedir($handle);
+        }
     }
 
     public function loadJs()

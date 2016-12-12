@@ -1,6 +1,6 @@
 <?php
 
-    namespace system;
+namespace system;
 
 class Router
 {
@@ -48,7 +48,7 @@ class Router
                     # A voir si çà sert un jour
                     # $params = (!empty($variables[$v])) ? '/'.implode('/', $variables[$v]) : '';
                     $routes[$k.'_'.$v]['url'] = '/'.str_replace('_', '/', $k).'/'.$v;
-                    $routes[$k.'_'.$v]['controller'] = $k;
+                    $routes[$k.'_'.$v]['controller'] = str_replace('_', '/', $k);
                     $routes[$k.'_'.$v]['action'] = $v;
                     $routes[$k.'_'.$v]['method'] = $methods[$v];
                     $routes[$k.'_'.$v]['params'] = $variables[$v];

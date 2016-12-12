@@ -1,7 +1,5 @@
 <?php
 
-    namespace system;
-
 function debug($message)
 {
     $backtrace = debug_backtrace();
@@ -9,7 +7,7 @@ function debug($message)
     echo '<p><a href=""><strong>'.$backtrace[0]["file"].'</strong> '.$backtrace[0]['line'].'</a></p>';
     echo '<ol>';
     foreach ($backtrace as $k => $v) {
-        if ($k > 1) {
+        if ($k > 2) {
             echo '<li><strong>'.$v['file'].'</strong> '.$v['line'].'</lip>';
         }
     }

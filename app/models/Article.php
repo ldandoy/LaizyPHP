@@ -1,10 +1,12 @@
 <?php
 
-    use system\Model;
+namespace app\models;
 
-    class Article extends Model
-    {
-        public $parent = array(
-            "user" => "User"
-        );
-    }
+use system\Model;
+
+class Article extends Model
+{
+    public $parent = array(
+        "users" => "user_id"
+    );
+}

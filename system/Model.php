@@ -1,112 +1,76 @@
 <?php
 
-    namespace system;
+namespace system;
 
 use \PDO;
-    use system\Config;
+use system\Config;
+use system\Query;
 
-    class Model
+class Model extends Query
+{
+    public static $db;
+    private $tableName;
+    private $sql = "";
+    private $pre;
+
+    public function __construct()
     {
-        public static $db;
-        private $tableName;
-        private $sql = "";
-        private $pre;
-        private $where;
-
-        public function __construct()
-        {
-            if (!isset(Model::$db)) {
-                try {
-                    Model::$db = new PDO('mysql:host='.Config::getValueDB('URL').';dbname='.Config::getValueDB('DB').';charset='.Config::getValueDB('CHARSET'), Config::getValueDB('USER'), Config::getValueDB('PASSWORD'));
-                } catch (Exception $e) {
-                    die('Erreur : ' . $e->getMessage());
-                }
-            }
-            $this->tableName = strtolower(get_class($this)."s");
-        }
-
-        public function getTableName()
-        {
-            return $this->tableName;
-        }
-
-        public function findAll()
-        {
-            $this->queryBuilder('*');
-
-            if (isset($this->parent) && empty($this->parent)) {
-                echo "Passer";
-            } else {
-                return $this->pre->fetchAll(PDO::FETCH_OBJ);
+        if (!isset(Model::$db)) {
+            try {
+                Model::$db = new PDO('mysql:host='.Config::getValueDB('URL').';dbname='.Config::getValueDB('DB').';charset='.Config::getValueDB('CHARSET'), Config::getValueDB('USER'), Config::getValueDB('PASSWORD'));
+            } catch (Exception $e) {
+                die('Erreur : ' . $e->getMessage());
             }
         }
 
-        public function findById($id)
-        {
-            $this->queryBuilder('*', array(
-                0 => array(
-                    'name'        => 'id',
-                    'value'    => (int)$id,
-                    'condition' => '='
-                )
-            ));
-
-            return $this->pre->fetch(PDO::FETCH_OBJ);
-        }
-
-        public function condition($execute = true)
-        {
-            if (isset($this->where) && is_array($this->where)) {
-                $this->sql .= " WHERE ";
-                $compteur = 0;
-                foreach ($this->where as $value) {
-                    if ($compteur != 0) {
-                        $this->sql .= " AND " . $value['name'] . " ".$value['condition']." :". $value['name'];
-                    } else {
-                        $this->sql .= " " . $value['name'] . " = :". $value['name'];
-                    }
-                    $compteur ++;
-                }
-            }
-            if ($execute === true) {
-                $this->execute();
-            }
-        }
-
-        public function select($champs = '*')
-        {
-            $this->sql .= "SELECT * FROM ";
-        }
-
-        public function queryBuilder($champs = '*', $where=null)
-        {
-            $this->select($champs);
-            $this->sql .= $this->tableName;
-            $this->where = $where;
-            $this->condition();
-        }
-
-        public function execute()
-        {
-            $this->pre = Model::$db->prepare($this->sql);
-            if (isset($this->where) && is_array($this->where)) {
-                foreach ($this->where as $value) {
-                    switch (gettype($value['value'])) {
-                        case 'integer':
-                            $type = PDO::PARAM_INT;
-                            break;
-                        case 'string':
-                            $type = PDO::PARAM_STR;
-                            break;
-                    }
-                    $this->pre->bindParam(':'.$value['name'], $value['value'], $type);
-                }
-            }
-            $this->pre->execute();
-        }
-
-        public function showLastRequest()
-        {
-            var_dump($this->sql);
-        }
+        $className = end(explode('\\', get_class($this)));
+        $this->tableName = strtolower($className."s");
     }
+
+    public function getTableName()
+    {
+        return $this->tableName;
+    }
+
+    public function findAll()
+    {
+        $this->select('*');
+        $this->from($this->tableName);
+        $this->createQuery();
+        $this->sql = $this->getQuery();
+        $this->execute();
+        $rows = $this->pre->fetchAll(PDO::FETCH_OBJ);
+
+        # On va récupérer les enfants
+        if (isset($this->parent) && !empty($this->parent)) {
+            foreach ($this->parent as $k_parent => $v_parent) {
+                foreach ($rows as $k => $v) {
+                    $user = new \app\models\User();
+                    $v->user = $user->findById($v->$v_parent);
+                }
+            }
+        }
+        return $rows;
+    }
+
+    public function findById($id)
+    {
+        $this->select('*');
+        $this->from($this->tableName);
+        $this->createQuery();
+        $this->sql = $this->getQuery();
+        $this->execute();
+        return $this->pre->fetch(PDO::FETCH_OBJ);
+    }
+
+    public function execute()
+    {
+        $this->pre = Model::$db->prepare($this->sql);
+        $this->pre->execute();
+    }
+
+    public function showLastRequest()
+    {
+        debug($this->sql);
+    }
+}
