@@ -20,18 +20,82 @@ class Controller
         }
         if (file_exists($tpl)) {
             ob_start();
-            require($tpl);
+            require_once $tpl;
             $yeslp = ob_get_clean();
         } else {
             $message = 'Le template "'.DS.$this->request->controller.DS.$view.'.php" n\'existe pas';
             $this->e404($message);
         }
-
         if (isset($this->request->prefix)) {
-            require VIEW_DIR.DS.$this->request->prefix.DS."layout.php";
+            ob_start();
+            require_once VIEW_DIR.DS.$this->request->prefix.DS."layout.php";
+            $html = ob_get_clean();
+            $html = $this->parse($html, $params);
+            echo $html;
         } else {
-            require VIEW_DIR.DS."layout.php";
+            require_once VIEW_DIR.DS."layout.php";
         }
+    }
+
+    public function parse($html, $params) {
+        # On remplace les varibles par leur valeur
+        $matchesVar = array();
+        preg_match_all("/{{ *([^}{]*) *}}/", $html, $matchesVar, PREG_SET_ORDER);
+        if (!empty($matchesVar)) {
+            foreach ($matchesVar as $v) {
+                $html = preg_replace('/'.$v[0].'/', $params[$v[1]], $html);
+            }
+        }
+
+        # Ici on gère les fonctions
+        $matchesFunctions = array();
+        preg_match_all("/{% *([^}{]*) *%}/", $html, $matchesFunctions, PREG_SET_ORDER);
+        if (!empty($matchesFunctions)) {
+            foreach ($matchesFunctions as $v) {
+                $get = explode(" ", $v[1]);
+                $helper = $this->helper($params[$get[1]]);
+                $html = preg_replace('/'.$v[0].'/', $helper, $html);   
+            }
+        }
+        return $html;
+    }
+
+    # Affiche les choses comme suivant le widget voulu
+    # Array (
+    #     'helper'  => 'table' | 'title',
+    #     'valeur'  => array | string,
+    #     'colonne' => array
+    #)
+    public function helper($conf) {
+        $html = '';
+        debug($conf);
+        switch ($conf['helper']) {
+            case 'table':
+                $html .= '<table class="table table-hover table-stripped">';
+                $html .= '<thead>';
+                $html .= '<tr>';
+                foreach($conf['colonne'] as $v_colonne) {
+                    $html .= '<th>'.$v_colonne.'</th>';
+                }
+                $html .= '</tr>';
+                $html .= '</thead>';
+                $html .= '<tbody>';
+                foreach($conf['valeur'] as $v) {
+                    $html .= '<tr>';
+                    foreach($conf['colonne'] as $v_colonne) {
+                        $html .= '<td>'.$v->$v_colonne.'</td>';
+                    }
+                    $html .= '</tr>';
+                }
+                $html .= '</tbody>';
+                $html .= '</table>';
+            break;
+            case 'title':
+                $html .= '<h1 class="page-header">'.$conf['valeur'].'</h1>';
+            break;
+        }
+
+        return $html;
     }
 
     public function loadModel($name)

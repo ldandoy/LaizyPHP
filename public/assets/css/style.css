@@ -17,3 +17,7 @@ body {
 	right: 0;
 	padding: 0 10px;
 }
+
+#cockpit .nav-menu-left {
+	margin-top: 40px;
+}

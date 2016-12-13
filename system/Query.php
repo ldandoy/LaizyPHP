@@ -13,18 +13,39 @@ class Query {
 
 	private $query;
 	private $select;
+	private $insert;
 	private $from;
 	private $where;
 	private $join;
+	private $type;
 
 	# Accecpte un tableau ou une chaine de caractère contant les champs.
 	# Et créé un tableau contenant tous les champs
 	public function select($champs = array('*')) {
+		$this->type = "select";
 		if (is_array($champs)) {
 			$this->select = $champs;
 		} else {
 			$this->select = explode(',', $champs);
 		}
+	}
+
+	# On créé la requete d'insert
+	public function insert ($table = '', $champs = array())
+	{
+		$this->type = "insert";
+		$this->insert .= 'INSERT INTO '.$table.' (';
+		$this->insert .= implode(', ', $champs);
+		$this->insert .= ') VALUES (';
+		foreach ($champs as $k => $v) {
+			$this->insert .= ':'.$champs[$k].'';
+			if (($k+1) < count($champs)) {
+				$this->insert .= ', ';
+			}
+		}
+		$this->insert .= ');';
+
+		debug($this->insert);
 	}
 
 	# Accepte une chaine de caractère contenant le nom de la table
@@ -54,15 +75,22 @@ class Query {
 
 	# Créé la requète
 	public function createQuery() {
-		$this->query .= 'SELECT ' . implode(', ', $this->select);
-		$this->query .= ' FROM '.$this->from;
-		if (!empty($this->join)) {
-			foreach ($this->join as $value) {
-				$this->query .=  ' ' . $value;
-			}
-		}
-		if (!empty($this->where)) {
-			$this->query .= ' WHERE '. implode(' AND ', $this->where);
+		switch ($this->type) {
+			case 'select':
+				$this->query .= 'SELECT ' . implode(', ', $this->select);
+				$this->query .= ' FROM '.$this->from;
+				if (!empty($this->join)) {
+					foreach ($this->join as $value) {
+						$this->query .=  ' ' . $value;
+					}
+				}
+				if (!empty($this->where)) {
+					$this->query .= ' WHERE '. implode(' AND ', $this->where);
+				}
+			break;
+			case 'insert':
+				$this->query = $this->insert;
+			break;
 		}
 	}
 

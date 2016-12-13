@@ -6,6 +6,6 @@ use system\Model;
 
 class Page extends Model
 {
-
+	public $attr = array('titre', 'contenu');
 
 }

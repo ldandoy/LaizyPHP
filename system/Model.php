@@ -18,6 +18,7 @@ class Model extends Query
         if (!isset(Model::$db)) {
             try {
                 Model::$db = new PDO('mysql:host='.Config::getValueDB('URL').';dbname='.Config::getValueDB('DB').';charset='.Config::getValueDB('CHARSET'), Config::getValueDB('USER'), Config::getValueDB('PASSWORD'));
+                Model::$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
             } catch (Exception $e) {
                 die('Erreur : ' . $e->getMessage());
             }
@@ -32,12 +33,22 @@ class Model extends Query
         return $this->tableName;
     }
 
+    public function create($values) {
+        $this->insert($this->getTableName(), $this->attr);
+        $this->createQuery();
+        $this->sql = $this->getQuery();
+        $this->prepare();
+        $this->bind($this->attr, $values);
+        $this->execute();
+    }
+
     public function findAll()
     {
         $this->select('*');
         $this->from($this->tableName);
         $this->createQuery();
         $this->sql = $this->getQuery();
+        $this->prepare();
         $this->execute();
         $rows = $this->pre->fetchAll(PDO::FETCH_OBJ);
 
@@ -59,14 +70,28 @@ class Model extends Query
         $this->from($this->tableName);
         $this->createQuery();
         $this->sql = $this->getQuery();
+        $this->prepare();
         $this->execute();
         return $this->pre->fetch(PDO::FETCH_OBJ);
     }
 
+    public function bind($attr = array(), $values = array()) {
+        foreach ($attr as $k => $v) {
+            $this->pre->bindParam(':'.$v, $values[$v]);
+        }
+    }
+
     public function execute()
     {
+        try {
+            $this->pre->execute();
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    public function prepare() {
         $this->pre = Model::$db->prepare($this->sql);
-        $this->pre->execute();
     }
 
     public function showLastRequest()

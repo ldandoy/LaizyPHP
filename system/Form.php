@@ -47,7 +47,7 @@ class Form
         }
         echo '<div class="form-group">';
         $this->label($label, $id);
-        echo '<textarea name="" id="" placeholder="Entrez votre '.$placeholder.'" class="form-control" rows="3"></textarea>';
+        echo '<textarea name="'.$name.'" id="" placeholder="Entrez votre '.$placeholder.'" class="form-control" rows="3"></textarea>';
         echo '</div>';
     }
 

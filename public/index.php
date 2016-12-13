@@ -27,4 +27,4 @@ use system\Dispatcher;
 
 new Dispatcher();
 
-echo '<div class="infos">Page généré en '.(round(microtime(true) - $debut, 5)*100). " en ms.</div>";
+

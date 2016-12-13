@@ -24,7 +24,7 @@ class Router
         $variables = array(
             'index'     => array(),
             'new'       => array(),
-            'create'    => array('id'),
+            'create'    => array(),
             'show'      => array('id'),
             'edit'      => array('id'),
             'update'    => array('id'),
@@ -48,7 +48,13 @@ class Router
                     # A voir si çà sert un jour
                     # $params = (!empty($variables[$v])) ? '/'.implode('/', $variables[$v]) : '';
                     $routes[$k.'_'.$v]['url'] = '/'.str_replace('_', '/', $k).'/'.$v;
-                    $routes[$k.'_'.$v]['controller'] = str_replace('_', '/', $k);
+                    $controller = explode('_', $k);
+                    if (count($controller) > 1) {
+                        $routes[$k.'_'.$v]['prefix'] = $controller[0];
+                        $routes[$k.'_'.$v]['controller'] = str_replace('_', '/', $k);
+                    } else {
+                        $routes[$k.'_'.$v]['controller'] = str_replace('_', '/', $k);
+                    }
                     $routes[$k.'_'.$v]['action'] = $v;
                     $routes[$k.'_'.$v]['method'] = $methods[$v];
                     $routes[$k.'_'.$v]['params'] = $variables[$v];
@@ -67,10 +73,20 @@ class Router
                 $route = self::$routes[$k];
                 $request->controller = $route['controller'];
                 $request->action = $route['action'];
-                $request->params = $route['params'];
+                if (!empty($route['params'])) {
+                    $request->params = array_merge($request->params, $route['params']);
+                } else {
+                    if (!empty($request->params)) {
+                        $request->params = $request->params;
+                    } else {
+                        $request->params = array();
+                    }
+                }
+                if (!empty($route['prefix'])) {
+                    $request->prefix = $route['prefix'];
+                }
             }
         }
-        // debug($request);
     }
 
     public static function url($string, $params = null)
@@ -79,7 +95,9 @@ class Router
         $url = '/'.str_replace('_', '/', $string);
 
         # on ajoute les params s'il y en a
-        $url .= '/'.implode('/', $params);
+        if (!empty($params)) {
+            $url .= '/'.implode('/', $params);
+        }
         return $url;
     }
 }

@@ -17,7 +17,7 @@
             ));
         }
 
-        public function editAction($id)
+        public function editAction()
         {
             /*if ($this->request->params) {
                 $this->loadModel("Article");

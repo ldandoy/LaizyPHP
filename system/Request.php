@@ -14,16 +14,19 @@ class Request
 
             # Ici on regarde si on a bien au moins un controller et une action
             if (count(array_filter(explode('/', $this->url), function($v) {return ($v == null) ? true : false; })) <= 2) {
-                $this->url = str_replace('//', '/', $this->url."/index");
+                if($this->url == '/cockpit/'){
+                    $this->url = str_replace('//', '/', $this->url."/pages/index");
+                } else {
+                    $this->url = str_replace('//', '/', $this->url."/index");
+                }
             }
         } else {
             $this->url = '/'.Config::getValueG('controller').'/'.Config::getValueG('action');
         }
 
         if (!empty($_POST)) {
-            $this->params = new \stdClass();
             foreach ($_POST as $k => $v) {
-                $this->params->$k = $v;
+                $this->params[$k] = $v;
             }
         }
     }
