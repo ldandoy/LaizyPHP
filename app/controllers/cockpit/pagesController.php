@@ -3,16 +3,15 @@
 namespace app\controllers\Cockpit;
 
 use system\Controller;
+use app\models\Page;
 
 class pagesController extends Controller
 {
 
 	function indexAction() {
 		# Récuperation des pages de la bdd
-		$this->loadModel("Page");
-		$pages = $this->Page->findAll();
+		$pages = Page::findAll();
 
-		debug($pages);die;
 		$this->render('index', array(
 			'titre' 	=> 'Listes des pages',
 			'tables'	=> $pages,
@@ -24,8 +23,7 @@ class pagesController extends Controller
 	}
 
 	function createAction() {
-		$this->loadModel("Page");
-		$this->Page->create($this->request->params);
-		$this->redirect('cockpit_pages_index');
+		Page::create($this->request->params);
+		// $this->redirect('cockpit_pages_index');
 	}
 }

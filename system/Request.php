@@ -13,8 +13,10 @@ class Request
             $this->url = $_SERVER['PATH_INFO'];
 
             # Ici on regarde si on a bien au moins un controller et une action
-            if (count(array_filter(explode('/', $this->url), function($v) {return ($v == null) ? true : false; })) <= 2) {
-                if($this->url == '/cockpit/'){
+            if (count(array_filter(explode('/', $this->url), function ($v) {
+                return ($v == null) ? true : false;
+            })) <= 2) {
+                if ($this->url == '/cockpit/') {
                     $this->url = str_replace('//', '/', $this->url."/pages/index");
                 } else {
                     $this->url = str_replace('//', '/', $this->url."/index");

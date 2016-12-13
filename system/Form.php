@@ -11,7 +11,7 @@ class Form
         $this->controller = $controller;
     }
 
-    public function input($name, $placeholder=null, $id=null)
+    public function input($name, $placeholder = null, $id = null)
     {
         $label = $name;
         if ($placeholder == null) {
@@ -27,7 +27,7 @@ class Form
         echo '</div>';
     }
 
-    public function label($label, $id=null)
+    public function label($label, $id = null)
     {
         if ($id !== null) {
             $id = 'input'.ucfirst($label);
@@ -36,7 +36,7 @@ class Form
         echo '<label for="'.$id.'">'.ucfirst($label).' :</label>';
     }
 
-    public function textarea($name, $placeholder=null, $id=null)
+    public function textarea($name, $placeholder = null, $id = null)
     {
         $label = $name;
         if ($placeholder == null) {
@@ -51,7 +51,7 @@ class Form
         echo '</div>';
     }
 
-    public function submit($name, $value, $color='default', $align='left')
+    public function submit($name, $value, $color = 'default', $align = 'left')
     {
         echo '<div class="form-group">';
         echo '<button type="submit" name="'.$name.'" class="btn btn-'.$color.' pull-'.$align.'">'.$value.'</button>';

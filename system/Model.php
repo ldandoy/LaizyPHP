@@ -6,96 +6,112 @@ use \PDO;
 use system\Config;
 use system\Query;
 
-class Model extends Query
+class Model
 {
     public static $db;
-    private $tableName;
-    private $sql = "";
-    private $pre;
 
-    public function __construct()
+    public function __construct($data = array())
     {
-        if (!isset(Model::$db)) {
-            try {
-                Model::$db = new PDO('mysql:host='.Config::getValueDB('URL').';dbname='.Config::getValueDB('DB').';charset='.Config::getValueDB('CHARSET'), Config::getValueDB('USER'), Config::getValueDB('PASSWORD'));
-                Model::$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
-            } catch (Exception $e) {
-                die('Erreur : ' . $e->getMessage());
-            }
+        if (!empty($data)) {
+            $this->setData($data);
         }
-
-        $className = end(explode('\\', get_class($this)));
-        $this->tableName = strtolower($className."s");
     }
 
-    public function getTableName()
+    public function setData($data)
     {
-        return $this->tableName;
+        $this->id = $data->id;
+        # On ajout les attr autorized
+        foreach ($this->attr as $k => $v) {
+            $this->$v = $data->$v;
+        }
+        $this->creer_le = $data->creer_le;
+        $this->modifie_le = $data->modifie_le;
     }
 
-    public function create($values) {
-        $this->insert($this->getTableName(), $this->attr);
-        $this->createQuery();
-        $this->sql = $this->getQuery();
+    public static function create($values)
+    {
+        $tableName = strtolower(end(explode('\\', get_called_class())))."s";
+
+        $query = new Query();
+        $query->insert($tableName, get_called_class());
+        $query->createQuery();
+        
+        debug($query->getQuery());
+
+        /*$this->sql = $this->getQuery();
         $this->prepare();
         $this->bind($this->attr, $values);
-        $this->execute();
+        $this->execute();*/
     }
 
-    public function findAll()
+    public static function findAll()
     {
-        $this->select('*');
-        $this->from($this->tableName);
-        $this->createQuery();
-        $this->sql = $this->getQuery();
-        $this->prepare();
-        $this->execute();
-        $rows = $this->pre->fetchAll(PDO::FETCH_OBJ);
+        $return = array();
+        $query = new Query();
+        $query->select('*');
+        $query->from(strtolower(end(explode('\\', get_called_class())))."s");
+        $query->createQuery();
+        self::prepare($query);
+        self::execute();
+        $rows = Model::$db->pre->fetchAll(PDO::FETCH_OBJ);
+
+        foreach ($rows as $row) {
+            $class = get_called_class();
+            $return[] = new $class($row);
+        }
 
         # On va récupérer les enfants
-        if (isset($this->parent) && !empty($this->parent)) {
+        /*if (isset($this->parent) && !empty($this->parent)) {
             foreach ($this->parent as $k_parent => $v_parent) {
                 foreach ($rows as $k => $v) {
                     $user = new \app\models\User();
                     $v->user = $user->findById($v->$v_parent);
                 }
             }
-        }
-        return $rows;
+        }*/
+        return $return;
     }
 
-    public function findById($id)
+    public static function findById($id)
     {
         $this->select('*');
         $this->from($this->tableName);
         $this->createQuery();
         $this->sql = $this->getQuery();
+
+
         $this->prepare();
         $this->execute();
-        return $this->pre->fetch(PDO::FETCH_OBJ);
+        return Model::$db->pre->fetch(PDO::FETCH_OBJ);
     }
 
-    public function bind($attr = array(), $values = array()) {
+    public function bind($attr = array(), $values = array())
+    {
         foreach ($attr as $k => $v) {
-            $this->pre->bindParam(':'.$v, $values[$v]);
+            Model::$db->pre->bindParam(':'.$v, $values[$v]);
         }
     }
 
     public function execute()
     {
         try {
-            $this->pre->execute();
+            Model::$db->pre->execute();
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
     }
 
-    public function prepare() {
-        $this->pre = Model::$db->prepare($this->sql);
-    }
-
-    public function showLastRequest()
+    public function prepare($sql)
     {
-        debug($this->sql);
+        if (!isset(Model::$db)) {
+            try {
+                Model::$db = new PDO('mysql:host='.Config::getValueDB('URL').';dbname='.Config::getValueDB('DB').';charset='.Config::getValueDB('CHARSET'), Config::getValueDB('USER'), Config::getValueDB('PASSWORD'));
+                Model::$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+            } catch (Exception $e) {
+                die('Erreur : ' . $e->getMessage());
+            }
+        }
+
+        Model::$db->pre = Model::$db->prepare($sql->getQuery());
     }
 }

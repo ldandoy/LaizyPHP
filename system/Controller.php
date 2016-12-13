@@ -11,7 +11,7 @@ class Controller
         $this->request = $request;
     }
 
-    public function render($view, $params=array())
+    public function render($view, $params = array())
     {
         if (strpos($view, "/") === 0) {
             $tpl = VIEW_DIR.$view.".php";
@@ -37,7 +37,8 @@ class Controller
         }
     }
 
-    public function parse($html, $params) {
+    public function parse($html, $params)
+    {
         # On remplace les varibles par leur valeur
         $matchesVar = array();
         preg_match_all("/{{ *([^}{]*) *}}/", $html, $matchesVar, PREG_SET_ORDER);
@@ -53,8 +54,13 @@ class Controller
         if (!empty($matchesFunctions)) {
             foreach ($matchesFunctions as $v) {
                 $get = explode(" ", $v[1]);
-                $helper = $this->helper($params[$get[1]]);
-                $html = preg_replace('/'.$v[0].'/', $helper, $html);   
+                $conf = array(
+                    'helper'    =>  $get[0],
+                    'valeur'    =>  $params[$get[1]],
+                    'colonne'   =>  array('titre', 'contenu')
+                );
+                $helper = $this->helper($conf);
+                $html = preg_replace('/'.$v[0].'/', $helper, $html);
             }
         }
         return $html;
@@ -66,33 +72,34 @@ class Controller
     #     'valeur'  => array | string,
     #     'colonne' => array
     #)
-    public function helper($conf) {
+    public function helper($conf)
+    {
         $html = '';
-        debug($conf);
+        // debug($conf);
         switch ($conf['helper']) {
             case 'table':
                 $html .= '<table class="table table-hover table-stripped">';
                 $html .= '<thead>';
                 $html .= '<tr>';
-                foreach($conf['colonne'] as $v_colonne) {
+                foreach ($conf['colonne'] as $v_colonne) {
                     $html .= '<th>'.$v_colonne.'</th>';
                 }
                 $html .= '</tr>';
                 $html .= '</thead>';
                 $html .= '<tbody>';
-                foreach($conf['valeur'] as $v) {
+                foreach ($conf['valeur'] as $v) {
                     $html .= '<tr>';
-                    foreach($conf['colonne'] as $v_colonne) {
+                    foreach ($conf['colonne'] as $v_colonne) {
                         $html .= '<td>'.$v->$v_colonne.'</td>';
                     }
                     $html .= '</tr>';
                 }
                 $html .= '</tbody>';
                 $html .= '</table>';
-            break;
+                break;
             case 'title':
                 $html .= '<h1 class="page-header">'.$conf['valeur'].'</h1>';
-            break;
+                break;
         }
 
         return $html;
@@ -115,7 +122,7 @@ class Controller
         die();
     }
 
-    public function redirect($url, $code=null)
+    public function redirect($url, $code = null)
     {
         if ($code == 301) {
             header("HTTP/1.1 301 Move Permanently");
