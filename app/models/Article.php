@@ -6,7 +6,9 @@ use system\Model;
 
 class Article extends Model
 {
+    public $attr = array('titre', 'contenu');
+    
     public $parent = array(
-        "users" => "user_id"
+        "User" => "user_id"
     );
 }

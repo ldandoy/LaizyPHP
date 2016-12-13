@@ -74,7 +74,11 @@ class Router
                 $request->controller = $route['controller'];
                 $request->action = $route['action'];
                 if (!empty($route['params'])) {
-                    $request->params = array_merge($request->params, $route['params']);
+                    if (empty($request->params)) {
+                        $request->params = $route['params'];
+                    } else {
+                        $request->params = array_merge($request->params, $route['params']);
+                    }
                 } else {
                     if (!empty($request->params)) {
                         $request->params = $request->params;
@@ -87,6 +91,8 @@ class Router
                 }
             }
         }
+
+        // debug($request);
     }
 
     public static function url($string, $params = null)

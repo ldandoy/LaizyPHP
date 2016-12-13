@@ -1,2 +1,2 @@
-<h1>Page introuvable</h1>
+<h1><?php echo $params['title']; ?></h1>
 <p><?php echo $params['message']; ?></p>

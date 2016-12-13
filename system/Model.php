@@ -2,14 +2,12 @@
 
 namespace system;
 
-use \PDO;
 use system\Config;
 use system\Query;
+use system\Db;
 
 class Model
 {
-    public static $db;
-
     public function __construct($data = array())
     {
         if (!empty($data)) {
@@ -21,8 +19,12 @@ class Model
     {
         $this->id = $data->id;
         # On ajout les attr autorized
-        foreach ($this->attr as $k => $v) {
-            $this->$v = $data->$v;
+        if (isset($this->attr) && !empty($this->attr)) {
+            foreach ($this->attr as $k => $v) {
+                $this->$v = $data->$v;
+            }
+        } else {
+            
         }
         $this->creer_le = $data->creer_le;
         $this->modifie_le = $data->modifie_le;
@@ -31,17 +33,20 @@ class Model
     public static function create($values)
     {
         $tableName = strtolower(end(explode('\\', get_called_class())))."s";
+        $class = get_called_class();
+        $obj = new $class();
 
         $query = new Query();
-        $query->insert($tableName, get_called_class());
+        $query->insert($tableName, $values, $obj->attr);
         $query->createQuery();
-        
-        debug($query->getQuery());
 
-        /*$this->sql = $this->getQuery();
-        $this->prepare();
-        $this->bind($this->attr, $values);
-        $this->execute();*/
+        Db::prepare($query);
+        Db::bind($obj->attr, $values);
+        if (Db::execute()) {
+            echo "passer";
+            return true;
+        }
+        return false;
     }
 
     public static function findAll()
@@ -51,10 +56,9 @@ class Model
         $query->select('*');
         $query->from(strtolower(end(explode('\\', get_called_class())))."s");
         $query->createQuery();
-        self::prepare($query);
-        self::execute();
-        $rows = Model::$db->pre->fetchAll(PDO::FETCH_OBJ);
-
+        Db::prepare($query);
+        Db::execute();
+        $rows = Db::fetchAll();
         foreach ($rows as $row) {
             $class = get_called_class();
             $return[] = new $class($row);
@@ -74,44 +78,27 @@ class Model
 
     public static function findById($id)
     {
-        $this->select('*');
-        $this->from($this->tableName);
-        $this->createQuery();
-        $this->sql = $this->getQuery();
+        $query = new Query();
+        $query->select('*');
+        $query->from(strtolower(end(explode('\\', get_called_class())))."s");
+        $query->createQuery();
 
+        Db::prepare($query);
+        Db::execute();
+        $row = Db::fetch();
+        $class = get_called_class();
+        $return = new $class($row);
 
-        $this->prepare();
-        $this->execute();
-        return Model::$db->pre->fetch(PDO::FETCH_OBJ);
-    }
-
-    public function bind($attr = array(), $values = array())
-    {
-        foreach ($attr as $k => $v) {
-            Model::$db->pre->bindParam(':'.$v, $values[$v]);
-        }
-    }
-
-    public function execute()
-    {
-        try {
-            Model::$db->pre->execute();
-        } catch (PDOException $e) {
-            echo $e->getMessage();
-        }
-    }
-
-    public function prepare($sql)
-    {
-        if (!isset(Model::$db)) {
-            try {
-                Model::$db = new PDO('mysql:host='.Config::getValueDB('URL').';dbname='.Config::getValueDB('DB').';charset='.Config::getValueDB('CHARSET'), Config::getValueDB('USER'), Config::getValueDB('PASSWORD'));
-                Model::$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-            } catch (Exception $e) {
-                die('Erreur : ' . $e->getMessage());
+        # On regarde s'il y a des enfants
+        if (isset($return->parent) && !empty($return->parent)) {
+            foreach ($return->parent as $k_parent => $v_parent) {
+                $class = 'app\\models\\'.$k_parent;
+                $user = $class::findById($v_parent);
+                $name = strtolower($k_parent);
+                $return->$name = $user;
             }
         }
 
-        Model::$db->pre = Model::$db->prepare($sql->getQuery());
+        return $return;
     }
 }

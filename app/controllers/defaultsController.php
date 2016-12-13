@@ -4,18 +4,17 @@ namespace app\controllers;
 
 use system\Controller;
 use system\Query;
+use app\models\Article;
 
 class defaultsController extends Controller
 {
-    public function indexAction() {
-
-        $this->loadModel('Article');
-        $articles = $this->Article->findAll();
-
-        // debug($articles);
+    public function indexAction()
+    {
+        $articles = Article::findAll();
 
         $this->render('index', array(
-            'articles'    => $articles
+            'articles'  => $articles,
+            'titre'     => 'articles'
         ));
     }
 }

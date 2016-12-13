@@ -33,21 +33,19 @@ class Query
     }
 
     # On créé la requete d'insert
-    public function insert($table = '', $champs = array())
+    public function insert($table = '', $champs = array(), $attr = array())
     {
         $this->type = "insert";
         $this->insert .= 'INSERT INTO '.$table.' (';
-        $this->insert .= implode(', ', $champs);
+        $this->insert .= implode(', ', $attr);
         $this->insert .= ') VALUES (';
-        foreach ($champs as $k => $v) {
-            $this->insert .= ':'.$champs[$k].'';
-            if (($k+1) < count($champs)) {
+        foreach ($attr as $k => $v) {
+            $this->insert .= ':'.$v.'';
+            if (($k+1) < count($attr)) {
                 $this->insert .= ', ';
             }
         }
         $this->insert .= ');';
-
-        debug($this->insert);
     }
 
     # Accepte une chaine de caractère contenant le nom de la table

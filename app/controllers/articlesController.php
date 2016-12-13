@@ -3,34 +3,34 @@
 namespace app\controllers;
 
 use system\Controller;
+use app\models\Article;
 
 class articlesController extends Controller
 {
     public function indexAction()
     {
-        $this->loadModel("Article");
-        $articles = $this->Article->findAll();
-        
-        $this->loadModel("User");
-        $users = $this->User->findAll();
+        $articles = Article::findAll();
 
-        $this->render('index', array(
-            'articles'    => $articles,
-            'users'    => $users
-        ));
+        $this->render(
+            'index',
+            array(
+                'articles'   => $articles,
+                'titre'      => 'Articles'
+            )
+        );
     }
 
     public function showAction($id)
     {
-        $this->loadModel("Article");
-        $article = $this->Article->findById($id);
+        $article = Article::findById($id);
 
         if (empty($article)) {
             $this->e404("Enregistrement non trouvé.");
         }
-
+        
         $this->render('show', array(
-            'article' => $article
+            'article'   => $article,
+            'titre'     => $article->titre
         ));
     }
 }

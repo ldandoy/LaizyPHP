@@ -1,6 +1,5 @@
-<h1>Article : <?php echo $params['article']->titre; ?></h1>
-<p>
-	<?php echo $params['article']->contenu; ?>
+{% title titre %}
 
-	<?php echo $params['article']->user->nom; ?>
-</p>
+<p><?php echo $params['article']->contenu; ?></p>
+
+<p>Par <?php echo $params['article']->user->prenom; ?> <?php echo $params['article']->user->nom; ?></p>
