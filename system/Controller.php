@@ -24,7 +24,7 @@ class Controller
             $yeslp = ob_get_clean();
         } else {
             $message = 'Le template "'.DS.$this->request->controller.DS.$view.'.php" n\'existe pas';
-            $this->e404($message);
+            $this->e404('Erreur de template', $message);
         }
         ob_start();
         if (isset($this->request->prefix)) {
