@@ -3,9 +3,9 @@ ROAD MAP [09/12/2016]
 x Ajout autoload
 x Tout passer en anglais
 x Ajouter bower composent au chargement des CSS/JS
-- Pour le model de DB, ajouter un query builder
-- Pour le model de DB, Faire les liaisons entre les tables
-- Passer les requètes avec implode
+x Pour le model de DB, ajouter un query builder
+x Pour le model de DB, Faire les liaisons entre les tables
+x Passer les requètes avec implode
 x Valider les routes
 
 ROAD MAP [10/12/2016]
@@ -25,4 +25,12 @@ ROAD MAP [12/12/2016]
 ---------------------
 - Gérer les menus du site
 - Gérér les médias
-- Changer cokpit -> cockpit
+x Changer cokpit -> cockpit
+
+ROAD MAP [15/12/2016]
+---------------------
+- Créé une classe de component
+- Créer les actions en bdd via la ligne de commande
+- Documenté les classes du namespace system
+- Attention dans la fonction findById, on ne vérifie pas s'il y a une row retourné.
+- Revoir le parseur d'url pour checker que le prfix correspond bien à celui de la config

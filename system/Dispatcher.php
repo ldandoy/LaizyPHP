@@ -1,9 +1,27 @@
 <?php
+/**
+ * File system\Dispatcher.php
+ *
+ * @category System
+ * @package  Netoverconsulting
+ * @author   Loïc Dandoy <ldandoy@overconsulting.net>
+ * @license  GNU 
+ * @link     http://overconsulting.net
+ */
 
 namespace system;
 
 use app\controllers\articlesController;
 
+/**
+ * Class qui appel le bon controller en fonction de la bonne url.
+ *
+ * @category System
+ * @package  Netoverconsulting
+ * @author   Loïc Dandoy <ldandoy@overconsulting.net>
+ * @license  GNU 
+ * @link     http://overconsulting.net
+ */
 class Dispatcher
 {
     public $request;
@@ -24,7 +42,7 @@ class Dispatcher
     {
         if (!isset($this->request->controller)) {
             $this->error("Erreur de crontroller", "Vous n'avez pas spécifié de controller, ou il n'est pas valide.");
-        }
+        } 
 
         if (!isset($this->request->action)) {
             $this->error("Erreur d'action", "Vous n'avez pas spécifié d'action ou elle n'est pas valide.");
@@ -40,10 +58,18 @@ class Dispatcher
 
     public function loadController()
     {
-        $name = '\app\\controllers\\'.str_replace('/', '\\', $this->request->controller)."Controller";
-        $controller = new $name($this->request);
-        $controller->Session = new Session();
-        $controller->Form = new Form($controller);
-        return $controller;
+        if (is_file(CONTROLLER_DIR.DS.$this->request->controller.'Controller.php')) {
+            $name = '\app\\controllers\\'.str_replace('/', '\\', $this->request->controller)."Controller";
+            if (class_exists($name)) {
+                $controller = new $name($this->request);
+                $controller->Session = new Session();
+                $controller->Form = new Form($controller);
+                return $controller;
+            } else {
+                $this->error("Erreur de crontroller", 'Le controller '.$name.' n\'existe pas.');
+            }
+        } else {
+            $this->error("Erreur de crontroller", 'Le fichier '.CONTROLLER_DIR.DS.$this->request->controller.'Controller.php n\'existe pas.');
+        }
     }
 }

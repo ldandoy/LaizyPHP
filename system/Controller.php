@@ -1,7 +1,25 @@
 <?php
+/**
+ * File system\Controller.php
+ *
+ * @category System
+ * @package  Netoverconsulting
+ * @author   Loïc Dandoy <ldandoy@overconsulting.net>
+ * @license  GNU 
+ * @link     http://overconsulting.net
+ */
 
 namespace system;
 
+/**
+ * Class gérant les Controllers du site
+ *
+ * @category System
+ * @package  Netoverconsulting
+ * @author   Loïc Dandoy <ldandoy@overconsulting.net>
+ * @license  GNU 
+ * @link     http://overconsulting.net
+ */
 class Controller
 {
     public $request;
@@ -39,7 +57,7 @@ class Controller
 
     public function parse($html, $params)
     {
-        # On remplace les varibles par leur valeur
+        /* Ici on gère les remplacement de variable */
         $matchesVar = array();
         preg_match_all("/{{ *([^}{]*) *}}/", $html, $matchesVar, PREG_SET_ORDER);
         if (!empty($matchesVar)) {
@@ -48,7 +66,7 @@ class Controller
             }
         }
 
-        # Ici on gère les fonctions
+        /* Ici on gère les remplacements de fonction */
         $matchesFunctions = array();
         preg_match_all("/{% *([^}{]*) *%}/", $html, $matchesFunctions, PREG_SET_ORDER);
         if (!empty($matchesFunctions)) {
@@ -112,59 +130,59 @@ class Controller
 
         $html = '';
         switch ($conf['helper']) {
-            case 'table':
-                $html .= '<table class="table table-hover table-stripped">';
-                $html .= '<thead>';
+        case 'table':
+            $html .= '<table class="table table-hover table-stripped">';
+            $html .= '<thead>';
+            $html .= '<tr>';
+            foreach ($conf['colonne'] as $v_colonne) {
+                $html .= '<th width="'.$v_colonne['width'].'">'.ucfirst($v_colonne['label']).'</th>';
+            }
+            if (!empty($conf['actions'])) {
+                $html .= '<th width="10%">Actions</th>';
+            }
+            $html .= '</tr>';
+            $html .= '</thead>';
+            $html .= '<tbody>';
+            foreach ($conf['valeur'] as $v) {
                 $html .= '<tr>';
                 foreach ($conf['colonne'] as $v_colonne) {
-                    $html .= '<th width="'.$v_colonne['width'].'">'.ucfirst($v_colonne['label']).'</th>';
+                    $html .= '<td>'.$v->$v_colonne['label'].'</td>';
                 }
                 if (!empty($conf['actions'])) {
-                    $html .= '<th width="10%">Actions</th>';
+                    $html .= '<td>';
+                    foreach ($conf['actions'] as $k_action => $v_action) {
+                        $html .= '<a href="'.str_replace(':id', $v->id, $v_action['url']).'" class="btn btn-'.$v_action['color'].' btn-xs"><i class="fa '.$v_action['icon'].'"></i></a>';
+                    }
+                    $html .= '</td>';
                 }
                 $html .= '</tr>';
-                $html .= '</thead>';
-                $html .= '<tbody>';
-                foreach ($conf['valeur'] as $v) {
-                    $html .= '<tr>';
-                    foreach ($conf['colonne'] as $v_colonne) {
-                        $html .= '<td>'.$v->$v_colonne['label'].'</td>';
-                    }
-                    if (!empty($conf['actions'])) {
-                        $html .= '<td>';
-                        foreach ($conf['actions'] as $k_action => $v_action) {
-                            $html .= '<a href="'.str_replace(':id', $v->id, $v_action['url']).'" class="btn btn-'.$v_action['color'].' btn-xs"><i class="fa '.$v_action['icon'].'"></i></a>';
-                        }
-                        $html .= '</td>';
-                    }
-                    $html .= '</tr>';
+            }
+            $html .= '</tbody>';
+            $html .= '</table>';
+            break;
+        case 'title':
+            $html .= '<h1 class="page-header">';
+            if (!empty($conf['valeur'])) {
+                $html .= $conf['valeur'];
+            }
+            $html .= '</h1>';
+            break;
+        case 'articles_list':
+            foreach ($conf['valeur'] as $k => $article) {
+                $html .= '<div class="row">';
+                $html .= '<div class="col-lg-3">';
+                $html .= '<h2>'.$article->titre.'</h2>';
+                $html .= '</div>';
+                $html .= '<div class="col-lg-9">';
+                $html .= '<p>'.$article->contenu.'</p>';
+                $html .= '<p align="right"><a href="/articles/show/'.$article->id.'">Lire plus &rarr;</a></p>';
+                $html .= '</div>';
+                $html .= '</div>';
+                if ($k+1 != count($conf['valeur'])) {
+                    $html .= '<hr />';
                 }
-                $html .= '</tbody>';
-                $html .= '</table>';
-                break;
-            case 'title':
-                $html .= '<h1 class="page-header">';
-                if (!empty($conf['valeur'])) {
-                    $html .= $conf['valeur'];
-                }
-                $html .= '</h1>';
-                break;
-            case 'articles_list':
-                foreach ($conf['valeur'] as $k => $article) {
-                    $html .= '<div class="row">';
-                    $html .= '<div class="col-lg-3">';
-                    $html .= '<h2>'.$article->titre.'</h2>';
-                    $html .= '</div>';
-                    $html .= '<div class="col-lg-9">';
-                    $html .= '<p>'.$article->contenu.'</p>';
-                    $html .= '<p align="right"><a href="/articles/show/'.$article->id.'">Lire plus &rarr;</a></p>';
-                    $html .= '</div>';
-                    $html .= '</div>';
-                    if ($k+1 != count($conf['valeur'])) {
-                        $html .= '<hr />';
-                    }
-                }
-                break;
+            }
+            break;
         }
 
         return $html;
@@ -173,10 +191,12 @@ class Controller
     public function e404($title, $message)
     {
         header("HTTP/1.0 404 Not Found");
-        $this->render('/errors/404', array(
+        $this->render('/errors/404',
+            array(
                 'title'     => $title,
                 'message'   => $message
-            ));
+            )
+        );
         die();
     }
 

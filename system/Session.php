@@ -1,9 +1,32 @@
 <?php
+/**
+ * File system\Session.php
+ *
+ * @category System
+ * @package  Netoverconsulting
+ * @author   Loïc Dandoy <ldandoy@overconsulting.net>
+ * @license  GNU 
+ * @link     http://overconsulting.net
+ */
 
 namespace system;
 
+/**
+ * Class gérant les sessions des utilisateurs
+ *
+ * @category System
+ * @package  Netoverconsulting
+ * @author   Loïc Dandoy <ldandoy@overconsulting.net>
+ * @license  GNU 
+ * @link     http://overconsulting.net
+ */
 class Session
 {
+    /**
+     * Constructeur
+     *
+     * @return void
+     */
     public function __construct()
     {
         if (!isset($_SESSION)) {
@@ -11,7 +34,15 @@ class Session
         }
     }
 
-    public function setFlash($message, $type = 'danger')
+    /**
+     * Ajout un message flash à la session
+     *
+     * @param string $message le text a afficher
+     * @param string $type    chaine de caractère pour le style de la fenètre (danger|success|info)
+     *
+     * @return void
+     */
+    public function setFlash($message = '', $type = 'danger')
     {
         $_SESSION['flash'] = array(
                 'message'    =>    $message,
@@ -19,6 +50,11 @@ class Session
             );
     }
 
+    /**
+     * Renvoie le message flash stocké en session
+     *
+     * @return string $html contient le code du flash message à afficher
+     */
     public function flash()
     {
         if (isset($_SESSION['flash']) && !empty($_SESSION['flash'])) {

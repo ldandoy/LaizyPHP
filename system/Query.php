@@ -1,17 +1,27 @@
 <?php
+/**
+ * File system\Query.php
+ *
+ * @category System
+ * @package  Netoverconsulting
+ * @author   Loïc Dandoy <ldandoy@overconsulting.net>
+ * @license  GNU 
+ * @link     http://overconsulting.net
+ */
 
 namespace system;
 
+/**
+ * Class gérant les Querys
+ *
+ * @category System
+ * @package  Netoverconsulting
+ * @author   Loïc Dandoy <ldandoy@overconsulting.net>
+ * @license  GNU 
+ * @link     http://overconsulting.net
+ */
 class Query
 {
-    # L'objet query va voir 3 parties
-    # 1) SELECT => ne contient que la liste des champs voulu
-    # 2) FROM => la table
-    # 3) JOIN => pour joindre toute les tables dont on a besoin
-    # 4) WHERE => Les conditions
-    # 5) ORDER
-    # 6) LIMIT
-
     private $query;
     private $select;
     private $insert;

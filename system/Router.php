@@ -1,15 +1,37 @@
 <?php
+/**
+ * File system\Router.php
+ *
+ * @category System
+ * @package  Netoverconsulting
+ * @author   Loïc Dandoy <ldandoy@overconsulting.net>
+ * @license  GNU 
+ * @link     http://overconsulting.net
+ */
 
 namespace system;
 
+/**
+ * Class gérant les requètes arrivant au serveur
+ *
+ * @category System
+ * @package  Netoverconsulting
+ * @author   Loïc Dandoy <ldandoy@overconsulting.net>
+ * @license  GNU 
+ * @link     http://overconsulting.net
+ */
 class Router
 {
     public static $routes;
-    private static $url;
+    private static $_url;
 
+    /**
+     * Constructeur, charger toutes les routes définis pour le site
+     *
+     * @return void
+     */
     public function __construct()
     {
-        # On chage la config des routes
         $routeConf = parse_ini_file(CONFIG_DIR.DS."route.ini", true);
         $actions = array('index', 'new', 'create', 'show', 'edit', 'update', 'delete');
         $methods = array(
@@ -31,22 +53,22 @@ class Router
             'delete'    => array('id')
         );
 
-        # On charge le route par default
+        /* On charge le route par default */
         $routes['defaults_index']['url'] = '/'.str_replace('_', '/', Config::getValueG('controller')).'/'.Config::getValueG('action');
         $routes['defaults_index']['controller'] = Config::getValueG('controller');
         $routes['defaults_index']['action'] = Config::getValueG('action');
         $routes['defaults_index']['method'] = 'get';
         $routes['defaults_index']['params'] = array();
-        self::$url['defaults_index'] = $routes['defaults_index']['url'];
+        self::$_url['defaults_index'] = $routes['defaults_index']['url'];
 
-        # On charge les routes du fichier ini
+        /* On charge les routes du fichier ini */
         foreach ($routeConf as $k => $v) {
             if ($v['type'] == 'crud') {
-                # On découpe l'url pour voir ce qu'on peut en faire.
+                /* On découpe l'url pour voir ce qu'on peut en faire. */
                 $url = array_slice(explode("/:", $v['url']), 1);
                 foreach ($actions as $v) {
-                    # A voir si çà sert un jour
-                    # $params = (!empty($variables[$v])) ? '/'.implode('/', $variables[$v]) : '';
+                    /* A voir si çà sert un jour
+                     $params = (!empty($variables[$v])) ? '/'.implode('/', $variables[$v]) : '';*/
                     $routes[$k.'_'.$v]['url'] = '/'.str_replace('_', '/', $k).'/'.$v;
                     $controller = explode('_', $k);
                     if (count($controller) > 1) {
@@ -59,16 +81,25 @@ class Router
                     $routes[$k.'_'.$v]['method'] = $methods[$v];
                     $routes[$k.'_'.$v]['params'] = $variables[$v];
 
-                    self::$url[$k.'_'.$v] = $routes[$k.'_'.$v]['url'];
+                    self::$_url[$k.'_'.$v] = $routes[$k.'_'.$v]['url'];
                 }
             }
         }
         self::$routes = $routes;
     }
 
+    /**
+     * Parse la requète
+     *
+     * On parse la requète et on ajoute les infos (prefix, controller, action, params) à la l'obj $request
+     *
+     * @param obj $request la chaine de caractère à transformé en url
+     *
+     * @return void
+     */
     public static function parse($request)
     {
-        foreach (self::$url as $k => $v) {
+        foreach (self::$_url as $k => $v) {
             if (strpos($request->url, $v) === 0) {
                 $route = self::$routes[$k];
                 $request->controller = $route['controller'];
@@ -95,12 +126,17 @@ class Router
         // debug($request);
     }
 
-    public static function url($string, $params = null)
+    /**
+     * Transforme une chaine de caractères en url
+     *
+     * @param string $string la chaine de caractère à transformé en url
+     * @param array  $params contient les paramètre à ajouter à l'url
+     *
+     * @return string $url contient l'url final
+     */
+    public static function url($string = null, $params = array())
     {
-        # On génèer une url de base
         $url = '/'.str_replace('_', '/', $string);
-
-        # on ajoute les params s'il y en a
         if (!empty($params)) {
             $url .= '/'.implode('/', $params);
         }
