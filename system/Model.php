@@ -5,7 +5,7 @@
  * @category System
  * @package  Netoverconsulting
  * @author   Loïc Dandoy <ldandoy@overconsulting.net>
- * @license  GNU 
+ * @license  GNU
  * @link     http://overconsulting.net
  */
 
@@ -21,7 +21,7 @@ use system\Db;
  * @category System
  * @package  Netoverconsulting
  * @author   Loïc Dandoy <ldandoy@overconsulting.net>
- * @license  GNU 
+ * @license  GNU
  * @link     http://overconsulting.net
  */
 class Model
@@ -46,7 +46,7 @@ class Model
     /**
      * Ajout les données dans l'objet
      *
-     * Cette fonction est appelé à l'instanciation de la classe pour 
+     * Cette fonction est appelé à l'instanciation de la classe pour
      * charger les données dans l'objet
      *
      * @param array $datas Contient les données à ajouter àl'objet
@@ -78,8 +78,9 @@ class Model
      */
     public static function create($datas = array())
     {
-        $tableName = strtolower(end(explode('\\', get_called_class())))."s";
         $class = get_called_class();
+        $tab = explode('\\', $class);
+        $tableName = strtolower($tab[count($tab)-1])."s";
         $obj = new $class();
 
         $query = new Query();
@@ -105,15 +106,16 @@ class Model
     public static function findAll()
     {
         $return = array();
+        $class = get_called_class();
+        $tab = explode('\\', $class);
         $query = new Query();
         $query->select('*');
-        $query->from(strtolower(end(explode('\\', get_called_class())))."s");
+        $query->from(strtolower($tab[count($tab)-1])."s");
         $query->createQuery();
         Db::prepare($query);
         Db::execute();
         $rows = Db::fetchAll();
         foreach ($rows as $row) {
-            $class = get_called_class();
             $return[] = new $class($row);
         }
         return $return;
@@ -131,15 +133,16 @@ class Model
      */
     public static function findById($id = 0)
     {
+        $class = get_called_class();
+        $tab = explode('\\', $class);
         $query = new Query();
         $query->select('*');
-        $query->from(strtolower(end(explode('\\', get_called_class())))."s");
+        $query->from(strtolower($tab[count($tab)-1])."s");
         $query->createQuery();
 
         Db::prepare($query);
         Db::execute();
         $row = Db::fetch();
-        $class = get_called_class();
         $return = new $class($row);
 
         if (isset($return->parent) && !empty($return->parent)) {

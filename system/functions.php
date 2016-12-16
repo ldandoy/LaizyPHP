@@ -1,12 +1,11 @@
 <?php
-
 /**
  * File system\functions.php
  *
  * @category System
  * @package  Netoverconsulting
  * @author   Loïc Dandoy <ldandoy@overconsulting.net>
- * @license  GNU 
+ * @license  GNU
  * @link     http://overconsulting.net
  */
 
