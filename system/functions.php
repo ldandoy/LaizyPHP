@@ -45,3 +45,15 @@ function fillarray($v)
 {
     return ($v == null) ? false : true;
 }
+
+/**
+ * Return the last element of a table
+ *
+ * @param array $tab
+ *
+ * @return array $lastElement
+ */
+function getLastElement($tab)
+{
+    return $tab[count($tab)-1];
+}

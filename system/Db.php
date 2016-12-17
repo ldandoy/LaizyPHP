@@ -25,15 +25,7 @@ use \PDO;
 class Db
 {
     static public $db;
-
-    /**
-    * Get the PDO instance
-    * @return \PDO
-    */
-    public static function getDb()
-    {
-        return self::$db;
-    }
+    const FETCH_OBJ = PDO::FETCH_OBJ;
 
     /**
     * Prepare a sql query on the server

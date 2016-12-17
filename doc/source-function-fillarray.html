@@ -83,6 +83,7 @@
 			<ul>
 				<li><a href="function-debug.html">debug</a></li>
 				<li><a href="function-fillarray.html">fillarray</a></li>
+				<li><a href="function-getLastElement.html">getLastElement</a></li>
 			</ul>
 		</div>
 	</div>
@@ -139,7 +140,19 @@
 </span><span id="45" class="l"><a href="#45">45 </a>{
 </span><span id="46" class="l"><a href="#46">46 </a>    <span class="php-keyword1">return</span> (<span class="php-var">$v</span> == <span class="php-keyword1">null</span>) ? <span class="php-keyword1">false</span> : <span class="php-keyword1">true</span>;
 </span><span id="47" class="l"><a href="#47">47 </a>}
-</span><span id="48" class="l"><a href="#48">48 </a></span></code></pre>
+</span><span id="48" class="l"><a href="#48">48 </a>
+</span><span id="49" class="l"><a href="#49">49 </a><span class="php-comment">/**
+</span></span><span id="50" class="l"><a href="#50">50 </a><span class="php-comment"> * Return the last element of a table
+</span></span><span id="51" class="l"><a href="#51">51 </a><span class="php-comment"> *
+</span></span><span id="52" class="l"><a href="#52">52 </a><span class="php-comment"> * @param array $tab
+</span></span><span id="53" class="l"><a href="#53">53 </a><span class="php-comment"> *
+</span></span><span id="54" class="l"><a href="#54">54 </a><span class="php-comment"> * @return array $lastElement
+</span></span><span id="55" class="l"><a href="#55">55 </a><span class="php-comment"> */</span>
+</span><span id="56" class="l"><a href="#56">56 </a><span class="php-keyword1">function</span> getLastElement(<span class="php-var">$tab</span>)
+</span><span id="57" class="l"><a href="#57">57 </a>{
+</span><span id="58" class="l"><a href="#58">58 </a>    <span class="php-keyword1">return</span> <span class="php-var">$tab</span>[<span class="php-keyword2">count</span>(<span class="php-var">$tab</span>)-<span class="php-num">1</span>];
+</span><span id="59" class="l"><a href="#59">59 </a>}
+</span><span id="60" class="l"><a href="#60">60 </a></span></code></pre>
 	</div>
 
 	<div id="footer">
@@ -147,6 +160,6 @@
 	</div>
 </div>
 <script src="resources/combined.js?533e23ef2f02bd4b20548834a028566b6eb403e0"></script>
-<script src="elementlist.js?51e45e742d83bbd6e1eba7dbd0ec8039c277bc00"></script>
+<script src="elementlist.js?d01d5e832bb81dffe48c69b4e0310b385e510ef1"></script>
 </body>
 </html>

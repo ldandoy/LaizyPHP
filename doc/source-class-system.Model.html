@@ -83,6 +83,7 @@
 			<ul>
 				<li><a href="function-debug.html">debug</a></li>
 				<li><a href="function-fillarray.html">fillarray</a></li>
+				<li><a href="function-getLastElement.html">getLastElement</a></li>
 			</ul>
 		</div>
 	</div>
@@ -201,57 +202,62 @@
 </span><span id="107" class="l"><a href="#107">107 </a>    {
 </span><span id="108" class="l"><a href="#108">108 </a>        <span class="php-var">$return</span> = <span class="php-keyword1">array</span>();
 </span><span id="109" class="l"><a href="#109">109 </a>        <span class="php-var">$class</span> = <span class="php-keyword2">get_called_class</span>();
-</span><span id="110" class="l"><a href="#110">110 </a>        <span class="php-var">$tab</span> = <span class="php-keyword2">explode</span>(<span class="php-quote">'\\'</span>, <span class="php-var">$class</span>);
+</span><span id="110" class="l"><a href="#110">110 </a>        
 </span><span id="111" class="l"><a href="#111">111 </a>        <span class="php-var">$query</span> = <span class="php-keyword1">new</span> Query();
 </span><span id="112" class="l"><a href="#112">112 </a>        <span class="php-var">$query</span>-&gt;select(<span class="php-quote">'*'</span>);
-</span><span id="113" class="l"><a href="#113">113 </a>        <span class="php-var">$query</span>-&gt;from(<span class="php-keyword2">strtolower</span>(<span class="php-var">$tab</span>[<span class="php-keyword2">count</span>(<span class="php-var">$tab</span>)-<span class="php-num">1</span>]).<span class="php-quote">&quot;s&quot;</span>);
-</span><span id="114" class="l"><a href="#114">114 </a>        <span class="php-var">$query</span>-&gt;createQuery();
-</span><span id="115" class="l"><a href="#115">115 </a>        Db::prepare(<span class="php-var">$query</span>);
-</span><span id="116" class="l"><a href="#116">116 </a>        Db::execute();
-</span><span id="117" class="l"><a href="#117">117 </a>        <span class="php-var">$rows</span> = Db::fetchAll();
-</span><span id="118" class="l"><a href="#118">118 </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$rows</span> <span class="php-keyword1">as</span> <span class="php-var">$row</span>) {
-</span><span id="119" class="l"><a href="#119">119 </a>            <span class="php-var">$return</span>[] = <span class="php-keyword1">new</span> <span class="php-var">$class</span>(<span class="php-var">$row</span>);
-</span><span id="120" class="l"><a href="#120">120 </a>        }
-</span><span id="121" class="l"><a href="#121">121 </a>        <span class="php-keyword1">return</span> <span class="php-var">$return</span>;
-</span><span id="122" class="l"><a href="#122">122 </a>    }
-</span><span id="123" class="l"><a href="#123">123 </a>
-</span><span id="124" class="l"><a href="#124">124 </a>    <span class="php-comment">/**
-</span></span><span id="125" class="l"><a href="#125">125 </a><span class="php-comment">     * Renvoie l'enregistrement s'il est trouvé
-</span></span><span id="126" class="l"><a href="#126">126 </a><span class="php-comment">     *
-</span></span><span id="127" class="l"><a href="#127">127 </a><span class="php-comment">     * Cette fonction permet de récupérer un enregistrement d'une table
-</span></span><span id="128" class="l"><a href="#128">128 </a><span class="php-comment">     * en le cherchant par son ID
+</span><span id="113" class="l"><a href="#113">113 </a>        <span class="php-var">$query</span>-&gt;from(self::getTableName());
+</span><span id="114" class="l"><a href="#114">114 </a>        <span class="php-var">$rows</span> = <span class="php-var">$query</span>-&gt;executeAndFetchAll();
+</span><span id="115" class="l"><a href="#115">115 </a>        
+</span><span id="116" class="l"><a href="#116">116 </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$rows</span> <span class="php-keyword1">as</span> <span class="php-var">$row</span>) {
+</span><span id="117" class="l"><a href="#117">117 </a>            <span class="php-var">$return</span>[] = <span class="php-keyword1">new</span> <span class="php-var">$class</span>(<span class="php-var">$row</span>);
+</span><span id="118" class="l"><a href="#118">118 </a>        }
+</span><span id="119" class="l"><a href="#119">119 </a>        <span class="php-keyword1">return</span> <span class="php-var">$return</span>;
+</span><span id="120" class="l"><a href="#120">120 </a>    }
+</span><span id="121" class="l"><a href="#121">121 </a>
+</span><span id="122" class="l"><a href="#122">122 </a>    <span class="php-comment">/**
+</span></span><span id="123" class="l"><a href="#123">123 </a><span class="php-comment">     * Renvoie l'enregistrement s'il est trouvé
+</span></span><span id="124" class="l"><a href="#124">124 </a><span class="php-comment">     *
+</span></span><span id="125" class="l"><a href="#125">125 </a><span class="php-comment">     * Cette fonction permet de récupérer un enregistrement d'une table
+</span></span><span id="126" class="l"><a href="#126">126 </a><span class="php-comment">     * en le cherchant par son ID
+</span></span><span id="127" class="l"><a href="#127">127 </a><span class="php-comment">     *
+</span></span><span id="128" class="l"><a href="#128">128 </a><span class="php-comment">     * @param integer $id contient l'id cherché dans la DB
 </span></span><span id="129" class="l"><a href="#129">129 </a><span class="php-comment">     *
-</span></span><span id="130" class="l"><a href="#130">130 </a><span class="php-comment">     * @param integer $id contient l'id cherché dans la DB
-</span></span><span id="131" class="l"><a href="#131">131 </a><span class="php-comment">     *
-</span></span><span id="132" class="l"><a href="#132">132 </a><span class="php-comment">     * @return obj $return contient l'objets trouvé en base
-</span></span><span id="133" class="l"><a href="#133">133 </a><span class="php-comment">     */</span>
-</span><span id="134" class="l"><a href="#134">134 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> findById(<span class="php-var">$id</span> = <span class="php-num">0</span>)
-</span><span id="135" class="l"><a href="#135">135 </a>    {
-</span><span id="136" class="l"><a href="#136">136 </a>        <span class="php-var">$class</span> = <span class="php-keyword2">get_called_class</span>();
-</span><span id="137" class="l"><a href="#137">137 </a>        <span class="php-var">$tab</span> = <span class="php-keyword2">explode</span>(<span class="php-quote">'\\'</span>, <span class="php-var">$class</span>);
-</span><span id="138" class="l"><a href="#138">138 </a>        <span class="php-var">$query</span> = <span class="php-keyword1">new</span> Query();
-</span><span id="139" class="l"><a href="#139">139 </a>        <span class="php-var">$query</span>-&gt;select(<span class="php-quote">'*'</span>);
-</span><span id="140" class="l"><a href="#140">140 </a>        <span class="php-var">$query</span>-&gt;from(<span class="php-keyword2">strtolower</span>(<span class="php-var">$tab</span>[<span class="php-keyword2">count</span>(<span class="php-var">$tab</span>)-<span class="php-num">1</span>]).<span class="php-quote">&quot;s&quot;</span>);
-</span><span id="141" class="l"><a href="#141">141 </a>        <span class="php-var">$query</span>-&gt;createQuery();
-</span><span id="142" class="l"><a href="#142">142 </a>
-</span><span id="143" class="l"><a href="#143">143 </a>        Db::prepare(<span class="php-var">$query</span>);
-</span><span id="144" class="l"><a href="#144">144 </a>        Db::execute();
-</span><span id="145" class="l"><a href="#145">145 </a>        <span class="php-var">$row</span> = Db::fetch();
-</span><span id="146" class="l"><a href="#146">146 </a>        <span class="php-var">$return</span> = <span class="php-keyword1">new</span> <span class="php-var">$class</span>(<span class="php-var">$row</span>);
-</span><span id="147" class="l"><a href="#147">147 </a>
-</span><span id="148" class="l"><a href="#148">148 </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$return</span>-&gt;parent) &amp;&amp; !<span class="php-keyword1">empty</span>(<span class="php-var">$return</span>-&gt;parent)) {
-</span><span id="149" class="l"><a href="#149">149 </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$return</span>-&gt;parent <span class="php-keyword1">as</span> <span class="php-var">$k_parent</span> =&gt; <span class="php-var">$v_parent</span>) {
-</span><span id="150" class="l"><a href="#150">150 </a>                <span class="php-var">$class</span> = <span class="php-quote">'app\\models\\'</span>.<span class="php-var">$k_parent</span>;
-</span><span id="151" class="l"><a href="#151">151 </a>                <span class="php-var">$user</span> = <span class="php-var">$class</span>::findById(<span class="php-var">$v_parent</span>);
-</span><span id="152" class="l"><a href="#152">152 </a>                <span class="php-var">$name</span> = <span class="php-keyword2">strtolower</span>(<span class="php-var">$k_parent</span>);
-</span><span id="153" class="l"><a href="#153">153 </a>                <span class="php-var">$return</span>-&gt;<span class="php-var">$name</span> = <span class="php-var">$user</span>;
-</span><span id="154" class="l"><a href="#154">154 </a>            }
-</span><span id="155" class="l"><a href="#155">155 </a>        }
-</span><span id="156" class="l"><a href="#156">156 </a>
-</span><span id="157" class="l"><a href="#157">157 </a>        <span class="php-keyword1">return</span> <span class="php-var">$return</span>;
-</span><span id="158" class="l"><a href="#158">158 </a>    }
-</span><span id="159" class="l"><a href="#159">159 </a>}
-</span><span id="160" class="l"><a href="#160">160 </a></span></code></pre>
+</span></span><span id="130" class="l"><a href="#130">130 </a><span class="php-comment">     * @return obj $return contient l'objets trouvé en base
+</span></span><span id="131" class="l"><a href="#131">131 </a><span class="php-comment">     */</span>
+</span><span id="132" class="l"><a href="#132">132 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> findById(<span class="php-var">$id</span> = <span class="php-num">0</span>)
+</span><span id="133" class="l"><a href="#133">133 </a>    {
+</span><span id="134" class="l"><a href="#134">134 </a>
+</span><span id="135" class="l"><a href="#135">135 </a>        <span class="php-var">$class</span> = <span class="php-keyword2">get_called_class</span>();
+</span><span id="136" class="l"><a href="#136">136 </a>        <span class="php-var">$query</span> = <span class="php-keyword1">new</span> Query();
+</span><span id="137" class="l"><a href="#137">137 </a>        <span class="php-var">$query</span>-&gt;select(<span class="php-quote">'*'</span>);
+</span><span id="138" class="l"><a href="#138">138 </a>        <span class="php-var">$query</span>-&gt;from(self::getTableName());
+</span><span id="139" class="l"><a href="#139">139 </a>        <span class="php-var">$row</span> = <span class="php-var">$query</span>-&gt;executeAndFetch();
+</span><span id="140" class="l"><a href="#140">140 </a>        <span class="php-var">$return</span> = <span class="php-keyword1">new</span> <span class="php-var">$class</span>(<span class="php-var">$row</span>);
+</span><span id="141" class="l"><a href="#141">141 </a>
+</span><span id="142" class="l"><a href="#142">142 </a>        <span class="php-keyword1">if</span> (<span class="php-keyword1">isset</span>(<span class="php-var">$return</span>-&gt;parent) &amp;&amp; !<span class="php-keyword1">empty</span>(<span class="php-var">$return</span>-&gt;parent)) {
+</span><span id="143" class="l"><a href="#143">143 </a>            <span class="php-keyword1">foreach</span> (<span class="php-var">$return</span>-&gt;parent <span class="php-keyword1">as</span> <span class="php-var">$k_parent</span> =&gt; <span class="php-var">$v_parent</span>) {
+</span><span id="144" class="l"><a href="#144">144 </a>                <span class="php-var">$class</span> = <span class="php-quote">'app\\models\\'</span>.<span class="php-var">$k_parent</span>;
+</span><span id="145" class="l"><a href="#145">145 </a>                <span class="php-var">$user</span> = <span class="php-var">$class</span>::findById(<span class="php-var">$v_parent</span>);
+</span><span id="146" class="l"><a href="#146">146 </a>                <span class="php-var">$name</span> = <span class="php-keyword2">strtolower</span>(<span class="php-var">$k_parent</span>);
+</span><span id="147" class="l"><a href="#147">147 </a>                <span class="php-var">$return</span>-&gt;<span class="php-var">$name</span> = <span class="php-var">$user</span>;
+</span><span id="148" class="l"><a href="#148">148 </a>            }
+</span><span id="149" class="l"><a href="#149">149 </a>        }
+</span><span id="150" class="l"><a href="#150">150 </a>
+</span><span id="151" class="l"><a href="#151">151 </a>        <span class="php-keyword1">return</span> <span class="php-var">$return</span>;
+</span><span id="152" class="l"><a href="#152">152 </a>    }
+</span><span id="153" class="l"><a href="#153">153 </a>
+</span><span id="154" class="l"><a href="#154">154 </a>    <span class="php-comment">/**
+</span></span><span id="155" class="l"><a href="#155">155 </a><span class="php-comment">     * Return the name of the table form the static class calling
+</span></span><span id="156" class="l"><a href="#156">156 </a><span class="php-comment">     *
+</span></span><span id="157" class="l"><a href="#157">157 </a><span class="php-comment">     * @return string $tableName is the name of the table to return
+</span></span><span id="158" class="l"><a href="#158">158 </a><span class="php-comment">     */</span>
+</span><span id="159" class="l"><a href="#159">159 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> getTableName()
+</span><span id="160" class="l"><a href="#160">160 </a>    {
+</span><span id="161" class="l"><a href="#161">161 </a>        <span class="php-var">$tableName</span> = <span class="php-keyword2">strtolower</span>(getLastElement(<span class="php-keyword2">explode</span>(<span class="php-quote">'\\'</span>, <span class="php-keyword2">get_called_class</span>()))).<span class="php-quote">&quot;s&quot;</span>;
+</span><span id="162" class="l"><a href="#162">162 </a>        <span class="php-keyword1">return</span> <span class="php-var">$tableName</span>;
+</span><span id="163" class="l"><a href="#163">163 </a>    }
+</span><span id="164" class="l"><a href="#164">164 </a>}
+</span><span id="165" class="l"><a href="#165">165 </a></span></code></pre>
 	</div>
 
 	<div id="footer">
@@ -259,6 +265,6 @@
 	</div>
 </div>
 <script src="resources/combined.js?533e23ef2f02bd4b20548834a028566b6eb403e0"></script>
-<script src="elementlist.js?51e45e742d83bbd6e1eba7dbd0ec8039c277bc00"></script>
+<script src="elementlist.js?d01d5e832bb81dffe48c69b4e0310b385e510ef1"></script>
 </body>
 </html>

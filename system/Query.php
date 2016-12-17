@@ -12,7 +12,7 @@
 namespace system;
 
 /**
- * Class for managing queries
+ * Class for managing queries text
  *
  * @category System
  * @package  Netoverconsulting
@@ -23,49 +23,57 @@ namespace system;
 class Query
 {
     /**
-    * The query type ('select' | 'insert' | 'update')
+    * The query type ('select' | 'insert' | 'update' | 'delete')
+    *
     * @var string
     */
     private $queryType;
 
     /**
     * The query's sql text
+    *
     * @var string
     */
     private $sql = '';
 
     /**
     * The select part of the query
+    *
     * @var string
     */
     private $select = '';
 
     /**
     * From part of the query
+    *
     * @var string
     */
     private $from = '';
 
     /**
     * Join part of the query
+    *
     * @var string[]
     */
     private $join = array();
 
     /**
     * The where part of the query
+    *
     * @var string[]
     */
     private $where = array();
 
     /**
     * The insert part of the query
+    *
     * @var string
     */
     private $insert = '';
 
     /**
     * The prepared query
+    *
     * @var \PDOStatement
     */
     private $preparedStatement = null;
@@ -87,7 +95,9 @@ class Query
 
     /**
     * Create the select part of the query
+    *
     * @param mixed $columns 'col1,col2,...' | array('col1', 'col2', ...)
+    *
     * @return \system\Query
     */
     public function select($columns = '*')
@@ -105,8 +115,10 @@ class Query
 
     /**
     * Create the from part of the query
+    *
     * @param string $table
     * @param string $alias
+    *
     * @return \system\Query
     */
     public function from($table, $alias = '')
@@ -117,6 +129,7 @@ class Query
 
     /**
     * Create the join part of the query
+    *
     * @param mixed $join
     *     array(
     *         'jointure' => 'LEFT JOIN' | 'RIGHT JOIN' | ...
@@ -124,6 +137,7 @@ class Query
     *         'fkey_table' => 'table2'
     *         'fkey_column' => 'col'
     *     )
+    *
     * @return \system\Query
     */
     public function join($join)
@@ -144,12 +158,14 @@ class Query
 
     /**
     * Create the where part of the query
+    *
     * @param mixed $join
     *     array(
     *         'column' => 'col'
     *         'operator' => '=' | '>' | ...
     *         'value' => 'val'
     *     )
+    *
     * @return \system\Query
     */
     public function where($where = '')
@@ -165,9 +181,11 @@ class Query
 
     /**
     * Create the insert part of the query
+    *
     * @param string $table
     * @param string[] $columns
     * @param string[] $permittedColunms
+    *
     * @return void
     */
     public function insert($table = '', $columns = array(), $permittedColunms = array())
@@ -192,9 +210,12 @@ class Query
 
     /**
     * Create the sql text with all part of the query
-    * @return string
+    *
+    * Create the sql text with all part of the query and put it in $this->sql
+    *
+    * @return void
     */
-    public function createQuery()
+    public function createSql()
     {
         switch ($this->queryType) {
             case 'select':
@@ -221,39 +242,55 @@ class Query
                 $this->sql = $this->insert;
                 break;
         }
-
-        return $this->sql;
     }
 
-    private function checkCreateQuery()
+    /**
+     * Check if the query text is not null
+     *
+     * If $this->sql is null call the createSql to create the sql text.
+     *
+     * @return void
+     */
+
+    private function checkCreateSql()
     {
         if ($this->sql == '') {
-            $this->createQuery();
+            $this->createSql();
         }
     }
 
     /**
+     * Return the sql text of the query
+     *
+     * @return mixed $this->sql the sql text of the query
     */
     public function getSql()
     {
-        $this->checkCreateQuery();
+        $this->checkCreateSql();
         return $this->sql;
     }
 
+    /**
+     * Print the the sql text of the query
+     *
+     * @return void
+     */
     public function showSql()
     {
-        $this->checkCreateQuery();
+        $this->checkCreateSql();
         debug($this->sql);
     }
 
     /**
     * Execute the query
+    *
     * @param mixed $params
+    *
     * @return bool
     */
     public function execute($params = array())
     {
-        $this->checkCreateQuery();
+        $this->checkCreateSql();
 
         $res = Db::prepare($this->sql);
         if ($res !== false) {
@@ -261,6 +298,7 @@ class Query
             foreach ($params as $k => $v) {
                 Db::bind($this->preparedStatement, $k, $v);
             }
+            $this->preparedStatement->execute();
             return true;
         } else {
             return false;
@@ -268,30 +306,10 @@ class Query
     }
 
     /**
-    * Fetch all rows
-    * @return mixed
-    */
-    public function fetchAll()
-    {
-        if ($this->preparedStatement !== null) {
-            return $this->preparedStatement->fetchAll(PDO::FETCH_OBJ);
-        } else {
-            return false;
-        }
-    }
-
-    /**
-    * Fetch one row
-    * @return mixed
-    */
-    public function fetch()
-    {
-        return $this->preparedStatement->fetch(PDO::FETCH_OBJ);
-    }
-
-    /**
     * Execute the query and fetch all rows
+    *
     * @param mixed $params
+    *
     * @return mixed
     */
     public function executeAndFetchAll($params = array())
@@ -301,5 +319,46 @@ class Query
         } else {
             return false;
         }
+    }
+
+    /**
+    * Fetch all rows
+    *
+    * @return mixed
+    *
+    */
+    public function fetchAll()
+    {
+        if ($this->preparedStatement !== null) {
+            return $this->preparedStatement->fetchAll(Db::FETCH_OBJ);
+        } else {
+            return false;
+        }
+    }
+
+    /**
+    * Execute the query and fetch all rows
+    *
+    * @param mixed $params
+    *
+    * @return mixed
+    */
+    public function executeAndFetch($params = array())
+    {
+        if ($this->execute($params)) {
+            return $this->fetch();
+        } else {
+            return false;
+        }
+    }
+
+    /**
+    * Fetch one row
+    *
+    * @return mixed
+    */
+    public function fetch()
+    {
+        return $this->preparedStatement->fetch(Db::FETCH_OBJ);
     }
 }

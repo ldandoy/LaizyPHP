@@ -5,7 +5,7 @@
  * @category System
  * @package  Netoverconsulting
  * @author   Loïc Dandoy <ldandoy@overconsulting.net>
- * @license  GNU 
+ * @license  GNU
  * @link     http://overconsulting.net
  */
 
@@ -17,7 +17,7 @@ namespace system;
  * @category System
  * @package  Netoverconsulting
  * @author   Loïc Dandoy <ldandoy@overconsulting.net>
- * @license  GNU 
+ * @license  GNU
  * @link     http://overconsulting.net
  */
 class Config
@@ -29,10 +29,9 @@ class Config
     public static $config_js;
 
     /**
-     * Constructeur
+     * Constructor
      *
-     * Cette fonction permet de lire le fichier de configuration et charge
-     * la gestion des erreurs.
+     * Read the config file and set debug and report properties
      *
      * @return void
      */
@@ -45,18 +44,19 @@ class Config
         self::$config_js = self::$config['JS'];
 
         if (!ini_get('display_errors')) {
+            ini_set('error_reporting', E_ALL);
             ini_set('display_errors', self::getValueG('debug'));
         }
     }
 
     /**
-     * Renvoie une valeur de la configuration DB
+     * Return an item of the DB configuration
      *
-     * Par exemple: Config::getValueDB('host')
+     * Example: Config::getValueDB('host')
      *
-     * @param string $value l'item de la configuration DB demandé
+     * @param string $value Item of the DB configuration
      *
-     * @return string contenant la valeur de configuration DB demandé
+     * @return string value of the item of the DB configuration
      */
     public static function getValueDB($value)
     {
@@ -64,13 +64,13 @@ class Config
     }
 
     /**
-     * Renvoie la valeur de configuration générale
+     * Return an item of the general configuration
      *
-     * Par exemple: Config::getValueG('debug')
+     * Example: Config::getValueG('debug')
      *
-     * @param string $value l'item de la configuration générale demandé
+     * @param string $value Item of the general configuration
      *
-     * @return string contenant la valeur de configuration générale demandé
+     * @return string value of the item of the general configuration
      */
     public static function getValueG($value)
     {

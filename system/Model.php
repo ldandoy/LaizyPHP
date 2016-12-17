@@ -107,14 +107,12 @@ class Model
     {
         $return = array();
         $class = get_called_class();
-        $tab = explode('\\', $class);
+        
         $query = new Query();
         $query->select('*');
-        $query->from(strtolower($tab[count($tab)-1])."s");
-        $query->createQuery();
-        Db::prepare($query);
-        Db::execute();
-        $rows = Db::fetchAll();
+        $query->from(self::getTableName());
+        $rows = $query->executeAndFetchAll();
+        
         foreach ($rows as $row) {
             $return[] = new $class($row);
         }
@@ -133,16 +131,12 @@ class Model
      */
     public static function findById($id = 0)
     {
+
         $class = get_called_class();
-        $tab = explode('\\', $class);
         $query = new Query();
         $query->select('*');
-        $query->from(strtolower($tab[count($tab)-1])."s");
-        $query->createQuery();
-
-        Db::prepare($query);
-        Db::execute();
-        $row = Db::fetch();
+        $query->from(self::getTableName());
+        $row = $query->executeAndFetch();
         $return = new $class($row);
 
         if (isset($return->parent) && !empty($return->parent)) {
@@ -155,5 +149,16 @@ class Model
         }
 
         return $return;
+    }
+
+    /**
+     * Return the name of the table form the static class calling
+     *
+     * @return string $tableName is the name of the table to return
+     */
+    public static function getTableName()
+    {
+        $tableName = strtolower(getLastElement(explode('\\', get_called_class())))."s";
+        return $tableName;
     }
 }
