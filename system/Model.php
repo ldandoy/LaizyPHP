@@ -133,12 +133,13 @@ class Model
     {
 
         $class = get_called_class();
+
         $query = new Query();
         $query->select('*');
         $query->from(self::getTableName());
         $row = $query->executeAndFetch();
+        
         $return = new $class($row);
-
         if (isset($return->parent) && !empty($return->parent)) {
             foreach ($return->parent as $k_parent => $v_parent) {
                 $class = 'app\\models\\'.$k_parent;
