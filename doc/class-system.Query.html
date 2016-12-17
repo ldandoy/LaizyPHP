@@ -92,7 +92,7 @@
 
 
 	<div class="description">
-	<p>Class gérant les Querys</p>
+	<p>Class for managing queries</p>
 	</div>
 
 
@@ -117,7 +117,7 @@
 				Loïc Dandoy <a href="&#x6d;&#x61;&#105;&#108;&#x74;&#x6f;&#58;&#108;d&#x61;&#x6e;&#100;&#111;&#x79;&#x40;&#111;&#118;e&#x72;&#x63;&#111;&#110;&#x73;&#x75;&#108;&#116;i&#x6e;&#x67;&#46;&#110;&#x65;&#x74;">&#108;d&#x61;&#x6e;&#100;&#111;&#x79;&#x40;&#111;&#118;e&#x72;&#x63;&#111;&#110;&#x73;&#x75;&#108;&#116;i&#x6e;&#x67;&#46;&#110;&#x65;&#x74;</a><br>
 				<b>Link:</b>
 				<a href="http://overconsulting.net">http://overconsulting.net</a><br>
-			<b>Located at</b> <a href="source-class-system.Query.html#14-120" title="Go to source code">Query.php</a>
+			<b>Located at</b> <a href="source-class-system.Query.html#14-305" title="Go to source code">Query.php</a>
 		<br>
 	</div>
 
@@ -130,24 +130,159 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				<code><a href="class-system.Query.html">system\Query</a></code>
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_select">#</a>
-			<code><a href="source-class-system.Query.html#35-43" title="Go to source code">select</a>( <span> <var>$champs</var> = <span class="php-keyword1">array</span>(<span class="php-quote">'*'</span>)</span> )</code>
+			<code><a href="source-class-system.Query.html#88-104" title="Go to source code">select</a>( <span>mixed <var>$columns</var> = <span class="php-quote">'*'</span></span> )</code>
 
 			<div class="description short">
-				
+				<p>Create the select part of the query</p>
 			</div>
 
 			<div class="description detailed hidden">
+				<p>Create the select part of the query</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$columns</var></dt>
+						<dd>'col1,col2,...' | array('col1', 'col2', ...)</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-system.Query.html">system\Query</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="from" id="_from">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-system.Query.html">system\Query</a></code>
 				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_from">#</a>
+			<code><a href="source-class-system.Query.html#106-116" title="Go to source code">from</a>( <span>string <var>$table</var></span>, <span>string <var>$alias</var> = <span class="php-quote">''</span></span> )</code>
+
+			<div class="description short">
+				<p>Create the from part of the query</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Create the from part of the query</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$table</var></dt>
+						<dd></dd>
+						<dt><var>$alias</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-system.Query.html">system\Query</a></code>
+					</div>
 
 
 
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="join" id="_join">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-system.Query.html">system\Query</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_join">#</a>
+			<code><a href="source-class-system.Query.html#118-143" title="Go to source code">join</a>( <span>mixed <var>$join</var></span> )</code>
+
+			<div class="description short">
+				<p>Create the join part of the query</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Create the join part of the query</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$join</var></dt>
+						<dd><p>array(
+        'jointure' => 'LEFT JOIN' | 'RIGHT JOIN' | ...
+        'table' => 'table1'
+        'fkey_table' => 'table2'
+        'fkey_column' => 'col'
+    )</p></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-system.Query.html">system\Query</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="where" id="_where">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-system.Query.html">system\Query</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_where">#</a>
+			<code><a href="source-class-system.Query.html#145-164" title="Go to source code">where</a>( <span>mixed <var>$where</var> = <span class="php-quote">''</span></span> )</code>
+
+			<div class="description short">
+				<p>Create the where part of the query</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Create the where part of the query</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$where</var></dt>
+						<dd><p>$join
+    array(
+        'column' => 'col'
+        'operator' => '=' | '>' | ...
+        'value' => 'val'
+    )</p></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-system.Query.html">system\Query</a></code>
+					</div>
 
 
 
@@ -166,103 +301,25 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_insert">#</a>
-			<code><a href="source-class-system.Query.html#46-59" title="Go to source code">insert</a>( <span> <var>$table</var> = <span class="php-quote">''</span></span>, <span> <var>$champs</var> = <span class="php-keyword1">array</span>()</span>, <span> <var>$attr</var> = <span class="php-keyword1">array</span>()</span> )</code>
+			<code><a href="source-class-system.Query.html#166-191" title="Go to source code">insert</a>( <span>string <var>$table</var> = <span class="php-quote">''</span></span>, <span>string[] <var>$columns</var> = <span class="php-keyword1">array</span>()</span>, <span>string[] <var>$permittedColunms</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 			<div class="description short">
-				
+				<p>Create the insert part of the query</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Create the insert part of the query</p>
 
 
-
-
-
-
-
-			</div>
-			</div></td>
-		</tr>
-		<tr data-order="from" id="_from">
-
-			<td class="attributes"><code>
-				 public 
-				
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#_from">#</a>
-			<code><a href="source-class-system.Query.html#62-65" title="Go to source code">from</a>( <span> <var>$table</var> = <span class="php-quote">''</span></span> )</code>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-
-
-
-
-
-
-			</div>
-			</div></td>
-		</tr>
-		<tr data-order="where" id="_where">
-
-			<td class="attributes"><code>
-				 public 
-				
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#_where">#</a>
-			<code><a href="source-class-system.Query.html#73-76" title="Go to source code">where</a>( <span> <var>$where</var> = <span class="php-keyword1">array</span>()</span> )</code>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-
-
-
-
-
-
-			</div>
-			</div></td>
-		</tr>
-		<tr data-order="join" id="_join">
-
-			<td class="attributes"><code>
-				 public 
-				
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#_join">#</a>
-			<code><a href="source-class-system.Query.html#84-87" title="Go to source code">join</a>( <span> <var>$join</var> = <span class="php-keyword1">array</span>()</span> )</code>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$table</var></dt>
+						<dd></dd>
+						<dt><var>$columns</var></dt>
+						<dd></dd>
+						<dt><var>$permittedColunms</var></dt>
+						<dd></dd>
+					</dl></div>
 
 
 
@@ -275,14 +332,47 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				string
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_createQuery">#</a>
-			<code><a href="source-class-system.Query.html#90-109" title="Go to source code">createQuery</a>( )</code>
+			<code><a href="source-class-system.Query.html#193-226" title="Go to source code">createQuery</a>( )</code>
+
+			<div class="description short">
+				<p>Create the sql text with all part of the query</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Create the sql text with all part of the query</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						string
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getSql" id="_getSql">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getSql">#</a>
+			<code><a href="source-class-system.Query.html#235-241" title="Go to source code">getSql</a>( )</code>
 
 			<div class="description short">
 				
@@ -300,7 +390,7 @@
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="getQuery" id="_getQuery">
+		<tr data-order="showSql" id="_showSql">
 
 			<td class="attributes"><code>
 				 public 
@@ -310,8 +400,8 @@
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_getQuery">#</a>
-			<code><a href="source-class-system.Query.html#111-114" title="Go to source code">getQuery</a>( )</code>
+			<a class="anchor" href="#_showSql">#</a>
+			<code><a href="source-class-system.Query.html#243-247" title="Go to source code">showSql</a>( )</code>
 
 			<div class="description short">
 				
@@ -329,28 +419,141 @@
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="showQuery" id="_showQuery">
+		<tr data-order="execute" id="_execute">
 
 			<td class="attributes"><code>
 				 public 
-				
+				boolean
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_showQuery">#</a>
-			<code><a href="source-class-system.Query.html#116-119" title="Go to source code">showQuery</a>( )</code>
+			<a class="anchor" href="#_execute">#</a>
+			<code><a href="source-class-system.Query.html#249-268" title="Go to source code">execute</a>( <span>mixed <var>$params</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 			<div class="description short">
-				
+				<p>Execute the query</p>
 			</div>
 
 			<div class="description detailed hidden">
+				<p>Execute the query</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$params</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="fetchAll" id="_fetchAll">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
 				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_fetchAll">#</a>
+			<code><a href="source-class-system.Query.html#270-281" title="Go to source code">fetchAll</a>( )</code>
+
+			<div class="description short">
+				<p>Fetch all rows</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Fetch all rows</p>
 
 
 
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="fetch" id="_fetch">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_fetch">#</a>
+			<code><a href="source-class-system.Query.html#283-290" title="Go to source code">fetch</a>( )</code>
+
+			<div class="description short">
+				<p>Fetch one row</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Fetch one row</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="executeAndFetchAll" id="_executeAndFetchAll">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_executeAndFetchAll">#</a>
+			<code><a href="source-class-system.Query.html#292-304" title="Go to source code">executeAndFetchAll</a>( <span>mixed <var>$params</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+			<div class="description short">
+				<p>Execute the query and fetch all rows</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Execute the query and fetch all rows</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$params</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
 
 
 
