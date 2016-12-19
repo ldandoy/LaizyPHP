@@ -2,10 +2,10 @@
 
 namespace app\controllers;
 
-use system\Controller;
+use app\controllers\ApplicationController;
 use app\models\Article;
 
-class ArticlesController extends Controller
+class ArticlesController extends ApplicationController
 {
     public function indexAction()
     {

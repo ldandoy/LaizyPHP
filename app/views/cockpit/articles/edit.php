@@ -2,14 +2,14 @@
 <form action="<?php echo $params['formAction']; ?>" method="post">
 <?php
 echo $this->Form->input(array(
-    'label' => 'titre',
-    'value' => $params['article']->titre
+    'label' => 'title',
+    'value' => $params['article']->title
 ));
 ?>
 <?php
 echo $this->Form->textarea(array(
-    'label' => 'contenu',
-    'value' => $params['article']->contenu
+    'label' => 'content',
+    'value' => $params['article']->content
 ));
 echo $this->Form->input(array(
     'label' => 'user_id',

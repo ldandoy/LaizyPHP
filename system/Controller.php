@@ -28,10 +28,12 @@ class Controller
     public function __construct($request)
     {
         $this->request = $request;
-        if (isset($this->request->prefix)) {
-            $this->controller = $this->request->prefix.DS.strtolower($this->request->controller);
-        } else {
-            $this->controller = strtolower($this->request->controller);
+        if (isset($this->request->controller)) {
+            if (isset($this->request->prefix)) {
+                $this->controller = $this->request->prefix.DS.strtolower($this->request->controller);
+            } else {
+                $this->controller = strtolower($this->request->controller);
+            }
         }
     }
 

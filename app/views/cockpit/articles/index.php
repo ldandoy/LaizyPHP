@@ -17,7 +17,7 @@
 foreach ($params['articles'] as $article) {
     echo '<tr>';
     echo '<td>'.$article->id.'</td>';
-    echo '<td>'.$article->titre.'</td>';
+    echo '<td>'.$article->title.'</td>';
     echo '<td>';
     echo '<a href="'. system\Router::url("cockpit_articles_edit", array('id' => $article->id)).'" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>';
     echo '<a href="'. system\Router::url("cockpit_articles_delete", array('id' => $article->id)).'" class="btn btn-xs btn-danger"><i class="fa fa-trash-o"></i></a>';

@@ -54,9 +54,17 @@ class Request
                     $this->url = rtrim($this->url, '/').'/'.Config::getValueG('action');
                 }
             }
+            
+            $elements = explode('.', $_SERVER['PATH_INFO']);
+            if (count($elements) >= 2) {
+                $this->format = getLastElement($elements);
+            } else {
+                $this->format = 'html';
+            }
         } else {
             /* If the url is just / */
             $this->url = '/'.Config::getValueG('controller').'/'.Config::getValueG('action');
+            $this->format = 'html';
         }
 
         /* We manage the request method */

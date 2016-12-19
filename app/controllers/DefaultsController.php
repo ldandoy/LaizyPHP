@@ -2,19 +2,13 @@
 
 namespace app\controllers;
 
-use system\Controller;
-use system\Query;
+use app\controllers\ApplicationController;
 use app\models\Article;
 
-class DefaultsController extends Controller
+class DefaultsController extends ApplicationController
 {
     public function indexAction()
     {
-        $articles = Article::findAll();
-
-        $this->render('index', array(
-            'articles'  => $articles,
-            'titre'     => 'articles'
-        ));
+        $this->render('index');
     }
 }

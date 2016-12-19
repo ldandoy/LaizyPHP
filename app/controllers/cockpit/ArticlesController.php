@@ -2,12 +2,12 @@
 
 namespace app\controllers\cockpit;
 
-use app\controllers\BaseController;
+use app\controllers\ApplicationController;
 use app\models\Article;
 
 use system\Router;
 
-class ArticlesController extends BaseController
+class ArticlesController extends ApplicationController
 {
     public function indexAction()
     {

@@ -2,9 +2,9 @@
 
 namespace app\controllers\cockpit;
 
-use system\Controller;
+use app\controllers\ApplicationController;
 
-class DefaultsController extends Controller
+class DefaultsController extends ApplicationController
 {
     public function indexAction()
     {

@@ -2,10 +2,10 @@
 
 namespace app\controllers\Cockpit;
 
-use system\Controller;
+use app\controllers\ApplicationController;
 use app\models\Page;
 
-class PagesController extends Controller
+class PagesController extends ApplicationController
 {
 
     public function indexAction()

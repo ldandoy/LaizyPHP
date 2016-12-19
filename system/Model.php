@@ -40,6 +40,10 @@ class Model
     {
         if (!empty($datas)) {
             $this->setData($datas);
+        } else {
+            foreach ($this->permittedColumns as $k => $v) {
+                $this->$v = '';
+            }
         }
     }
 
