@@ -64,9 +64,7 @@ class Request
 
         /* We manage the request params */
         if (!empty($_POST)) {
-            foreach ($_POST as $k => $v) {
-                $this->post[$k] = $v;
-            }
+            $this->post = $_POST;
         }
     }
 }

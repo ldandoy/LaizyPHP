@@ -29,7 +29,7 @@ class PagesController extends Controller
 
     public function createAction()
     {
-        if (Page::create($this->request->params)) {
+        if (Page::create($this->request->post)) {
             $this->redirect('cockpit_pages_index');
         }
     }
