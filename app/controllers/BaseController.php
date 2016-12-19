@@ -4,8 +4,7 @@ namespace app\controllers;
 
 use system\Controller;
 
-class Pages extends Controller
+class BaseController extends Controller
 {
-
 
 }

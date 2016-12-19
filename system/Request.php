@@ -5,19 +5,19 @@
  * @category System
  * @package  Netoverconsulting
  * @author   Loïc Dandoy <ldandoy@overconsulting.net>
- * @license  GNU 
+ * @license  GNU
  * @link     http://overconsulting.net
  */
 
 namespace system;
 
 /**
- * Class gérant les requètes arrivant au serveur
+ * Class manage request
  *
  * @category System
  * @package  Netoverconsulting
  * @author   Loïc Dandoy <ldandoy@overconsulting.net>
- * @license  GNU 
+ * @license  GNU
  * @link     http://overconsulting.net
  */
 class Request
@@ -26,33 +26,46 @@ class Request
     public $params;
 
     /**
-     * Constructeur
+     * Constructor
      *
-     * Dans cette fonction on récupére l'url et on en génère une url correction
-     * avec le prefix, le controller et l'action
+     * Getting the url to create an array with prefix, controller, action, params, method infos
      *
      * @return void
      */
     public function __construct()
     {
+        /* We manage the request info */
         if (isset($_SERVER['PATH_INFO'])) {
             $this->url = $_SERVER['PATH_INFO'];
+            $prefix = '/'.ltrim(Config::getValueG('admin_prefix'), '/');
+            $nbUrlElements = count(deleteEmptyItem(explode('/', $this->url)));
             
-            /* Ici on regarde si on a bien au moins un controller et une action */
-            if (count(array_filter(explode('/', $this->url), 'fillarray')) < 2) {
-                if ($this->url == '/cockpit/') {
-                    $this->url = str_replace('//', '/', $this->url."/pages/index");
-                } else {
-                    $this->url = str_replace('//', '/', $this->url."/index");
+            /* if the url begin this admin_prefix */
+            if (strpos($this->url, $prefix) === 0) {
+                if ($nbUrlElements <= 1) {
+                    $this->url = rtrim($this->url, '/').'/'.Config::getValueG('controller');
+                }
+
+                if ($nbUrlElements <= 2) {
+                    $this->url = rtrim($this->url, '/').'/'.Config::getValueG('action');
+                }
+            } else {
+                if ($nbUrlElements <= 1) {
+                    $this->url = rtrim($this->url, '/').'/'.Config::getValueG('action');
                 }
             }
         } else {
+            /* If the url is just / */
             $this->url = '/'.Config::getValueG('controller').'/'.Config::getValueG('action');
         }
 
+        /* We manage the request method */
+        $this->method = $_SERVER['REQUEST_METHOD'];
+
+        /* We manage the request params */
         if (!empty($_POST)) {
             foreach ($_POST as $k => $v) {
-                $this->params[$k] = $v;
+                $this->post[$k] = $v;
             }
         }
     }

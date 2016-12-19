@@ -56,8 +56,8 @@ class Model
     public function setData($datas = array())
     {
         $this->id = $datas->id;
-        if (isset($this->attr) && !empty($this->attr)) {
-            foreach ($this->attr as $k => $v) {
+        if (isset($this->permittedColunms) && !empty($this->permittedColunms)) {
+            foreach ($this->permittedColunms as $k => $v) {
                 $this->$v = $datas->$v;
             }
         } else {
@@ -65,6 +65,29 @@ class Model
         }
         $this->creer_le = $datas->creer_le;
         $this->modifie_le = $datas->modifie_le;
+    }
+
+    /**
+     * persit in the DB the object
+     *
+     * @param array $datas content datas to update
+     *
+     * @return void
+     */
+    public function update($post)
+    {
+        $query = new Query();
+        $query->update(array(
+            'table'             => $this->getTable(),
+            'datas'             => $post,
+            'permittedColunms'  => $this->permittedColunms
+        ));
+        $query->showSql();
+        // $rows = $query->executeAndFetchAll();
+
+        foreach ($this->permittedColunms as $value) {
+            $this->$value = $post[$value];
+        }
     }
 
     /**
@@ -84,11 +107,11 @@ class Model
         $obj = new $class();
 
         $query = new Query();
-        $query->insert($tableName, $datas, $obj->attr);
+        $query->insert($tableName, $datas, $obj->permittedColunms);
         $query->createQuery();
 
         Db::prepare($query);
-        Db::bind($obj->attr, $values);
+        Db::bind($obj->permittedColunms, $values);
         if (Db::execute()) {
             return true;
         }
@@ -155,11 +178,22 @@ class Model
     /**
      * Return the name of the table form the static class calling
      *
-     * @return string $tableName is the name of the table to return
+     * @return string $tableName The name of the table to return
      */
     public static function getTableName()
     {
         $tableName = strtolower(getLastElement(explode('\\', get_called_class())))."s";
+        return $tableName;
+    }
+
+    /**
+     * Return the name of the table fomr the class calling
+     *
+     * @return string $tableName The name of the table to return
+     */
+    public function getTable()
+    {
+        $tableName = strtolower(getLastElement(explode('\\', get_class($this))))."s";
         return $tableName;
     }
 }

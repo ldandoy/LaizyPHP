@@ -35,7 +35,7 @@ function debug($message)
 }
 
 /**
- * Fonction appelé pour filtrer les tableau
+ * Function caled to filter arrays
  *
  * @param string $v le text a valider
  *
@@ -56,4 +56,16 @@ function fillarray($v)
 function getLastElement($tab)
 {
     return $tab[count($tab)-1];
+}
+
+/**
+ * Function caled to filter arrays
+ *
+ * @param string $v le text a valider
+ *
+ * @return boolean
+ */
+function deleteEmptyItem($tab)
+{
+    return array_filter($tab, 'fillarray');
 }

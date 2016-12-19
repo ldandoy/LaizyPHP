@@ -5,7 +5,7 @@
  * @category System
  * @package  Netoverconsulting
  * @author   Loïc Dandoy <ldandoy@overconsulting.net>
- * @license  GNU 
+ * @license  GNU
  * @link     http://overconsulting.net
  */
 
@@ -17,7 +17,7 @@ namespace system;
  * @category System
  * @package  Netoverconsulting
  * @author   Loïc Dandoy <ldandoy@overconsulting.net>
- * @license  GNU 
+ * @license  GNU
  * @link     http://overconsulting.net
  */
 class Form
@@ -29,50 +29,104 @@ class Form
         $this->controller = $controller;
     }
 
-    public function input($name, $placeholder = null, $id = null)
+    public function input($config = array())
     {
-        $label = $name;
-        if ($placeholder == null) {
-            $placeholder = $name;
+        $label = $config['label'];
+        if (!isset($config['placeholder'])) {
+            $placeholder = $label;
+        } else {
+            $placeholder = $config['placeholder'];
         }
-        if ($id == null) {
-            $id = 'input'.ucfirst($name);
+        if (!isset($config['id'])) {
+            $id = 'input'.ucfirst($label);
+        } else {
+            $id = $config['id'];
         }
 
         echo '<div class="form-group">';
-        $this->label($label, $id);
-        echo '<input name="'.$name.'" type="text" class="form-control" id="'.$id.'" placeholder="Entrez votre '.$placeholder.'">';
+        $this->label(array(
+            'label' => $label,
+            'id'    => $id
+        ));
+        echo '<input name="'.$label.'" type="text" value="'.$config['value'].'" class="form-control" id="'.$id.'" placeholder="Entrez votre '.$placeholder.'">';
         echo '</div>';
     }
 
-    public function label($label, $id = null)
+    public function label($config = array())
     {
-        if ($id !== null) {
+        $label = $config['label'];
+        if (!isset($config['id'])) {
             $id = 'input'.ucfirst($label);
+        } else {
+            $id = $config['id'];
         }
 
         echo '<label for="'.$id.'">'.ucfirst($label).' :</label>';
     }
 
-    public function textarea($name, $placeholder = null, $id = null)
+    public function textarea($config = array())
     {
-        $label = $name;
-        if ($placeholder == null) {
-            $placeholder = $name;
+        $label = $config['label'];
+        if (!isset($config['placeholder'])) {
+            $placeholder = $label;
+        } else {
+            $placeholder = $config['placeholder'];
         }
-        if ($id == null) {
-            $id = 'input'.ucfirst($name);
+        if (!isset($config['id'])) {
+            $id = 'input'.ucfirst($label);
+        } else {
+            $id = $config['id'];
         }
+
         echo '<div class="form-group">';
-        $this->label($label, $id);
-        echo '<textarea name="'.$name.'" id="" placeholder="Entrez votre '.$placeholder.'" class="form-control" rows="3"></textarea>';
+        $this->label(array(
+            'label' => $label,
+            'id'    => $id
+        ));
+        echo '<textarea name="'.$label.'" id="'.$id.'" placeholder="Entrez votre '.$placeholder.'" class="form-control" rows="3">'.$config['value'].'</textarea>';
         echo '</div>';
     }
 
-    public function submit($name, $value, $color = 'default', $align = 'left')
+    /**
+     * array(
+     *  'type'
+     *  'label' =>
+     *  'value' =>
+     *  'color' =>
+     *  'align' =>
+     * )
+     */
+    public function btn($config = array())
     {
+        $label = $config['label'];
+        if (!isset($config['placeholder'])) {
+            $placeholder = $label;
+        } else {
+            $placeholder = $config['placeholder'];
+        }
+        if (!isset($config['id'])) {
+            $id = 'input'.ucfirst($label);
+        } else {
+            $id = $config['id'];
+        }
+        if (!isset($config['align'])) {
+            $align = 'left';
+        } else {
+            $align = $config['align'];
+        }
+        if (!isset($config['color'])) {
+            $color = 'default';
+        } else {
+            $color = $config['color'];
+        }
+        if (!isset($config['type'])) {
+            $type = 'submit';
+        } else {
+            $type = $config['type'];
+        }
+
         echo '<div class="form-group">';
-        echo '<button type="submit" name="'.$name.'" class="btn btn-'.$color.' pull-'.$align.'">'.$value.'</button>';
+        echo '<button type="'.$type.'" name="'.$label.'" class="btn btn-'.$color.' pull-'.$align.'">'.$config['value'].'</button>';
         echo '<div class="clearfix"></div>';
         echo '</div>';
     }

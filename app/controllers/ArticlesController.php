@@ -5,7 +5,7 @@ namespace app\controllers;
 use system\Controller;
 use app\models\Article;
 
-class articlesController extends Controller
+class ArticlesController extends Controller
 {
     public function indexAction()
     {

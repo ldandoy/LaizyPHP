@@ -5,7 +5,7 @@
  * @category System
  * @package  Netoverconsulting
  * @author   Loïc Dandoy <ldandoy@overconsulting.net>
- * @license  GNU 
+ * @license  GNU
  * @link     http://overconsulting.net
  */
 
@@ -17,16 +17,22 @@ namespace system;
  * @category System
  * @package  Netoverconsulting
  * @author   Loïc Dandoy <ldandoy@overconsulting.net>
- * @license  GNU 
+ * @license  GNU
  * @link     http://overconsulting.net
  */
 class Controller
 {
     public $request;
+    public $controller;
 
     public function __construct($request)
     {
         $this->request = $request;
+        if (isset($this->request->prefix)) {
+            $this->controller = $this->request->prefix.DS.strtolower($this->request->controller);
+        } else {
+            $this->controller = strtolower($this->request->controller);
+        }
     }
 
     public function render($view, $params = array())
@@ -34,21 +40,25 @@ class Controller
         if (strpos($view, "/") === 0) {
             $tpl = VIEW_DIR.$view.".php";
         } else {
-            $tpl = VIEW_DIR.DS.$this->request->controller.DS.$view.".php";
+            $tpl = VIEW_DIR.DS.$this->controller.DS.$view.".php";
         }
         if (file_exists($tpl)) {
             ob_start();
             require_once $tpl;
             $yeslp = ob_get_clean();
         } else {
-            $message = 'Le template "'.DS.$this->request->controller.DS.$view.'.php" n\'existe pas';
+            $message = 'Le template "'.DS.$this->controller.DS.$view.'.php" n\'existe pas';
             $this->e404('Erreur de template', $message);
         }
         ob_start();
-        if (isset($this->request->prefix)) {
-            require_once VIEW_DIR.DS.'layout'.DS.$this->request->prefix.DS.'base.php';
+        if (strpos($view, "/errors/") === 0) {
+            require_once VIEW_DIR.DS.'layout'.DS.'error.php';
         } else {
-            require_once VIEW_DIR.DS.'layout'.DS.'base.php';
+            if (isset($this->request->prefix)) {
+                require_once VIEW_DIR.DS.'layout'.DS.$this->request->prefix.DS.'base.php';
+            } else {
+                require_once VIEW_DIR.DS.'layout'.DS.'base.php';
+            }
         }
         $html = ob_get_clean();
         $html = $this->parse($html, $params);
@@ -130,59 +140,59 @@ class Controller
 
         $html = '';
         switch ($conf['helper']) {
-        case 'table':
-            $html .= '<table class="table table-hover table-stripped">';
-            $html .= '<thead>';
-            $html .= '<tr>';
-            foreach ($conf['colonne'] as $v_colonne) {
-                $html .= '<th width="'.$v_colonne['width'].'">'.ucfirst($v_colonne['label']).'</th>';
-            }
-            if (!empty($conf['actions'])) {
-                $html .= '<th width="10%">Actions</th>';
-            }
-            $html .= '</tr>';
-            $html .= '</thead>';
-            $html .= '<tbody>';
-            foreach ($conf['valeur'] as $v) {
+            case 'table':
+                $html .= '<table class="table table-hover table-stripped">';
+                $html .= '<thead>';
                 $html .= '<tr>';
                 foreach ($conf['colonne'] as $v_colonne) {
-                    $html .= '<td>'.$v->$v_colonne['label'].'</td>';
+                    $html .= '<th width="'.$v_colonne['width'].'">'.ucfirst($v_colonne['label']).'</th>';
                 }
                 if (!empty($conf['actions'])) {
-                    $html .= '<td>';
-                    foreach ($conf['actions'] as $k_action => $v_action) {
-                        $html .= '<a href="'.str_replace(':id', $v->id, $v_action['url']).'" class="btn btn-'.$v_action['color'].' btn-xs"><i class="fa '.$v_action['icon'].'"></i></a>';
-                    }
-                    $html .= '</td>';
+                    $html .= '<th width="10%">Actions</th>';
                 }
                 $html .= '</tr>';
-            }
-            $html .= '</tbody>';
-            $html .= '</table>';
-            break;
-        case 'title':
-            $html .= '<h1 class="page-header">';
-            if (!empty($conf['valeur'])) {
-                $html .= $conf['valeur'];
-            }
-            $html .= '</h1>';
-            break;
-        case 'articles_list':
-            foreach ($conf['valeur'] as $k => $article) {
-                $html .= '<div class="row">';
-                $html .= '<div class="col-lg-3">';
-                $html .= '<h2>'.$article->titre.'</h2>';
-                $html .= '</div>';
-                $html .= '<div class="col-lg-9">';
-                $html .= '<p>'.$article->contenu.'</p>';
-                $html .= '<p align="right"><a href="/articles/show/'.$article->id.'">Lire plus &rarr;</a></p>';
-                $html .= '</div>';
-                $html .= '</div>';
-                if ($k+1 != count($conf['valeur'])) {
-                    $html .= '<hr />';
+                $html .= '</thead>';
+                $html .= '<tbody>';
+                foreach ($conf['valeur'] as $v) {
+                    $html .= '<tr>';
+                    foreach ($conf['colonne'] as $v_colonne) {
+                        $html .= '<td>'.$v->$v_colonne['label'].'</td>';
+                    }
+                    if (!empty($conf['actions'])) {
+                        $html .= '<td>';
+                        foreach ($conf['actions'] as $k_action => $v_action) {
+                            $html .= '<a href="'.str_replace(':id', $v->id, $v_action['url']).'" class="btn btn-'.$v_action['color'].' btn-xs"><i class="fa '.$v_action['icon'].'"></i></a>';
+                        }
+                        $html .= '</td>';
+                    }
+                    $html .= '</tr>';
                 }
-            }
-            break;
+                $html .= '</tbody>';
+                $html .= '</table>';
+                break;
+            case 'title':
+                $html .= '<h1 class="page-header">';
+                if (!empty($conf['valeur'])) {
+                    $html .= $conf['valeur'];
+                }
+                $html .= '</h1>';
+                break;
+            case 'articles_list':
+                foreach ($conf['valeur'] as $k => $article) {
+                    $html .= '<div class="row">';
+                    $html .= '<div class="col-lg-3">';
+                    $html .= '<h2>'.$article->titre.'</h2>';
+                    $html .= '</div>';
+                    $html .= '<div class="col-lg-9">';
+                    $html .= '<p>'.$article->contenu.'</p>';
+                    $html .= '<p align="right"><a href="/articles/show/'.$article->id.'">Lire plus &rarr;</a></p>';
+                    $html .= '</div>';
+                    $html .= '</div>';
+                    if ($k+1 != count($conf['valeur'])) {
+                        $html .= '<hr />';
+                    }
+                }
+                break;
         }
 
         return $html;
@@ -191,7 +201,8 @@ class Controller
     public function e404($title, $message)
     {
         header("HTTP/1.0 404 Not Found");
-        $this->render('/errors/404',
+        $this->render(
+            '/errors/404',
             array(
                 'title'     => $title,
                 'message'   => $message

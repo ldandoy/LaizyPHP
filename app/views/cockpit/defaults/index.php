@@ -1,0 +1,1 @@
+<h1 class="page-header">Accueil admin</h1>

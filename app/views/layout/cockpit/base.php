@@ -28,6 +28,7 @@
 				<div class="col-lg-3">
 					<ul class="nav nav-pills nav-stacked nav-menu-left">
 						<li class="active"><a href="<?php echo system\Router::url('cockpit'); ?>">Accueil</a></li>
+						<li><a href="<?php echo system\Router::url('cockpit_articles_index'); ?>">Articles</a></li>
 						<li><a href="<?php echo system\Router::url('cockpit_pages_index'); ?>">Pages</a></li>
 						<li><a href="<?php echo system\Router::url('cockpit_medias_index'); ?>">Médias</a></li>
 					</ul>

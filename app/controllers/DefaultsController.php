@@ -6,7 +6,7 @@ use system\Controller;
 use system\Query;
 use app\models\Article;
 
-class defaultsController extends Controller
+class DefaultsController extends Controller
 {
     public function indexAction()
     {

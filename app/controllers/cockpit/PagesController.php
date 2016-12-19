@@ -5,7 +5,7 @@ namespace app\controllers\Cockpit;
 use system\Controller;
 use app\models\Page;
 
-class pagesController extends Controller
+class PagesController extends Controller
 {
 
     public function indexAction()

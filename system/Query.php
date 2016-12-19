@@ -72,6 +72,20 @@ class Query
     private $insert = '';
 
     /**
+    * The update part of the query
+    *
+    * @var string
+    */
+    private $update = '';
+
+    /**
+    * The delete part of the query
+    *
+    * @var string
+    */
+    private $delete = '';
+
+    /**
     * The prepared query
     *
     * @var \PDOStatement
@@ -90,6 +104,8 @@ class Query
         $this->join = array();
         $this->where = array();
         $this->insert = '';
+        $this->update = '';
+        $this->delete = '';
         $this->preparedStatement = null;
     }
 
@@ -209,6 +225,20 @@ class Query
     }
 
     /**
+     * Update data in the DB
+     *
+     * @param array $conf
+     *
+     * @return void
+     */
+    public function update($conf = array())
+    {
+        $this->setQueryType('update');
+
+        $this->update = 'UPDATE '.$conf['table'].' SET ';
+    }
+
+    /**
     * Create the sql text with all part of the query
     *
     * Create the sql text with all part of the query and put it in $this->sql
@@ -240,6 +270,10 @@ class Query
 
             case 'insert':
                 $this->sql = $this->insert;
+                break;
+
+            case 'update':
+                $this->sql = $this->update;
                 break;
         }
     }

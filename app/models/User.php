@@ -6,5 +6,5 @@ use system\Model;
 
 class User extends Model
 {
-    public $attr = array('nom', 'prenom', 'email');
+    public $permittedColunms = array('nom', 'prenom', 'email');
 }
