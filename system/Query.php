@@ -23,78 +23,80 @@ namespace system;
 class Query
 {
     /**
-    * The query type ('select' | 'insert' | 'update' | 'delete')
-    *
-    * @var string
-    */
+     * The query type ('select' | 'insert' | 'update' | 'delete')
+     *
+     * @var string
+     */
     private $queryType;
 
     /**
-    * The query's sql text
-    *
-    * @var string
-    */
+     * The query's sql text
+     *
+     * @var string
+     */
     private $sql = '';
 
     /**
-    * The select part of the query
-    *
-    * @var string
-    */
+     * The select part of the query
+     *
+     * @var string
+     */
     private $select = '';
 
     /**
-    * From part of the query
-    *
-    * @var string
-    */
+     * From part of the query
+     *
+     * @var string
+     */
     private $from = '';
 
     /**
-    * Join part of the query
-    *
-    * @var string[]
-    */
+     * Join part of the query
+     *
+     * @var string[]
+     */
     private $join = array();
 
     /**
-    * The where part of the query
-    *
-    * @var string[]
-    */
+     * The where part of the query
+     *
+     * @var string[]
+     */
     private $where = array();
 
     /**
-    * The insert part of the query
-    *
-    * @var string
-    */
+     * The insert part of the query
+     *
+     * @var string
+     */
     private $insert = '';
 
     /**
-    * The update part of the query
-    *
-    * @var string
-    */
+     * The update part of the query
+     *
+     * @var string
+     */
     private $update = '';
 
     /**
-    * The delete part of the query
-    *
-    * @var string
-    */
+     * The delete part of the query
+     *
+     * @var string
+     */
     private $delete = '';
 
     /**
-    * The prepared query
-    *
-    * @var \PDOStatement
-    */
+     * The prepared query
+     *
+     * @var \PDOStatement
+     */
     private $preparedStatement = null;
 
     /**
-    * Set the query type and reset parts of the query
-    */
+     * Set the query type and reset parts of the query
+     *
+     * @param string $queryType
+     */
     private function setQueryType($queryType)
     {
         $this->queryType = $queryType;
@@ -110,12 +112,12 @@ class Query
     }
 
     /**
-    * Create the select part of the query
-    *
-    * @param mixed $columns 'col1,col2,...' | array('col1', 'col2', ...)
-    *
-    * @return \system\Query
-    */
+     * Create the select part of the query
+     *
+     * @param mixed $columns 'col1,col2,...' | array('col1', 'col2', ...)
+     *
+     * @return \system\Query
+     */
     public function select($columns = '*')
     {
         $this->setQueryType('select');
@@ -130,13 +132,13 @@ class Query
     }
 
     /**
-    * Create the from part of the query
-    *
-    * @param string $table
-    * @param string $alias
-    *
-    * @return \system\Query
-    */
+     * Create the from part of the query
+     *
+     * @param string $table
+     * @param string $alias
+     *
+     * @return \system\Query
+     */
     public function from($table, $alias = '')
     {
         $this->from = 'FROM '.$table.rtrim(' '.$alias);
@@ -144,22 +146,23 @@ class Query
     }
 
     /**
-    * Create the join part of the query
-    *
-    * @param mixed $join
-    *     array(
-    *         'jointure' => 'LEFT JOIN' | 'RIGHT JOIN' | ...
-    *         'table' => 'table1'
-    *         'fkey_table' => 'table2'
-    *         'fkey_column' => 'col'
-    *     )
-    *
-    * @return \system\Query
-    */
+     * Create the join part of the query
+     *
+     * @param mixed $join
+     *     array(
+     *         'jointure' => 'LEFT JOIN' | 'RIGHT JOIN' | ...
+     *         'table' => 'table1'
+     *         'fkey_table' => 'table2'
+     *         'fkey_column' => 'col'
+     *     )
+     *
+     * @return \system\Query
+     */
     public function join($join)
     {
         if (is_array($join)) {
-            $sqlJoin = $join['jointure'].' '.
+            $sqlJoin =
+                $join['jointure'].' '.
                 $join['table'].' '.
                 'ON '.$join['table'].'.id = '.
                 $join['fkey_table'].'.'.$join['fkey_column'];
@@ -173,20 +176,20 @@ class Query
     }
 
     /**
-    * Create the where part of the query
-    *
-    * @param mixed $join
-    *     array(
-    *         'column' => 'col'
-    *         'operator' => '=' | '>' | ...
-    *         'value' => 'val'
-    *     )
-    *
-    * @return \system\Query
-    */
+     * Create the where part of the query
+     *
+     * @param mixed $join
+     *     array(
+     *         'column' => 'col'
+     *         'operator' => '=' | '>' | ...
+     *         'value' => 'val'
+     *     )
+     *
+     * @return \system\Query
+     */
     public function where($where = '')
     {
-        if (is_array()) {
+        if (is_array($where)) {
             $this->where[] = $where['column'].' '.$where['operator'].' '.$where['value'];
         } else {
             $this->where[] = $where;
@@ -196,55 +199,83 @@ class Query
     }
 
     /**
-    * Create the insert part of the query
-    *
-    * @param string $table
-    * @param string[] $columns
-    * @param string[] $permittedColunms
-    *
-    * @return void
-    */
-    public function insert($table = '', $columns = array(), $permittedColunms = array())
+     * Create the insert part of the query
+     *
+     * @param mixed $params
+     *     array(
+     *         'table' => 'table',
+     *         'columns' => array('col1', 'col2,...)
+     *     )
+     *
+     * @return \system\Query
+     */
+    public function insert($params = array())
     {
         $this->setQueryType('insert');
 
-        $sqlColumns = array();
-        $sqlParams = array();
-        foreach ($columns as $c) {
-            if (in_array($c, $permittedColunms)) {
-                $finalColumns[] = $c;
-                $sqlParams[] = ':'.$c;
-            }
+        $sqlParams = [];
+        foreach ($params['columns'] as $c) {
+            $sqlParams[] = ':'.$c;
         }
 
-        $this->insert = 'INSERT INTO '.$table.'('.
-            implode(',', $sqlColumns).
+        $this->insert =
+            'INSERT INTO '.$params['table'].'('.
+            implode(',', $params['columns']).
             ') VALUES ('.
             implode(',', $sqlParams).
             ')';
+
+        return $this;
     }
 
     /**
-     * Update data in the DB
+     * Create the update part of the query
      *
-     * @param array $conf
+     * @param mixed $params
+     *     array(
+     *         'table' => 'table',
+     *         'columns' => array('col1', 'col2,...)
+     *     )
      *
-     * @return void
+     * @return \system\Query
      */
-    public function update($conf = array())
+    public function update($params = array())
     {
         $this->setQueryType('update');
 
-        $this->update = 'UPDATE '.$conf['table'].' SET ';
+        $sqlColumnsParams = array();
+        foreach ($params['columns'] as $c) {
+            $sqlColumnsParams[] = $c.' = :'.$c;
+        }
+
+        $this->update =
+            'UPDATE '.$params['table'].' SET '.
+            implode(',', $sqlColumnsParams);
+
+        return $this;
     }
 
     /**
-    * Create the sql text with all part of the query
-    *
-    * Create the sql text with all part of the query and put it in $this->sql
-    *
-    * @return void
-    */
+     * Create the delete part of the query
+     *
+     * @param mixed $params
+     *
+     * @return void
+     */
+    public function delete($params = array())
+    {
+        $this->setQueryType('delete');
+
+        $this->delete = 'DELETE FROM '.$params['table'];
+    }
+
+    /**
+     * Create the sql text with all part of the query
+     *
+     * Create the sql text with all part of the query and put it in $this->sql
+     *
+     * @return void
+     */
     public function createSql()
     {
         switch ($this->queryType) {
@@ -256,12 +287,13 @@ class Query
                 }
 
                 if (count($this->where) > 0) {
-                    $where = 'WHERE '.implode($this->where);
+                    $where = 'WHERE '.implode(' AND ', $this->where);
                 } else {
                     $where = '';
                 }
 
-                $this->sql = $this->select.' '.
+                $this->sql =
+                    $this->select.' '.
                     $this->from.' '.
                     ltrim($join.' ').
                     $where;
@@ -273,8 +305,27 @@ class Query
                 break;
 
             case 'update':
-                $this->sql = $this->update;
+                if (count($this->where) > 0) {
+                    $where = 'WHERE '.implode(' AND ', $this->where);
+                } else {
+                    $where = 'WHERE id = 0';
+                }
+
+                $this->sql =
+                    $this->update.' '.
+                    $where;
                 break;
+
+            case 'delete':
+                if (count($this->where) > 0) {
+                    $where = 'WHERE '.implode(' AND ', $this->where);
+                } else {
+                    $where = 'WHERE id = 0';
+                }
+
+                $this->sql =
+                    $this->delete.' '.
+                    $where;
         }
     }
 
@@ -285,7 +336,6 @@ class Query
      *
      * @return void
      */
-
     private function checkCreateSql()
     {
         if ($this->sql == '') {
@@ -296,7 +346,7 @@ class Query
     /**
      * Return the sql text of the query
      *
-     * @return mixed $this->sql the sql text of the query
+     * @return string $this->sql the sql text of the query
     */
     public function getSql()
     {
@@ -316,20 +366,20 @@ class Query
     }
 
     /**
-    * Execute the query
-    *
-    * @param mixed $params
-    *
-    * @return bool
-    */
-    public function execute($params = array())
+     * Execute the query
+     *
+     * @param mixed $data
+     *
+     * @return bool
+     */
+    public function execute($data = array())
     {
         $this->checkCreateSql();
 
         $res = Db::prepare($this->sql);
         if ($res !== false) {
             $this->preparedStatement = $res;
-            foreach ($params as $k => $v) {
+            foreach ($data as $k => $v) {
                 Db::bind($this->preparedStatement, $k, $v);
             }
             $this->preparedStatement->execute();
@@ -340,12 +390,12 @@ class Query
     }
 
     /**
-    * Execute the query and fetch all rows
-    *
-    * @param mixed $params
-    *
-    * @return mixed
-    */
+     * Execute the query and fetch all rows
+     *
+     * @param mixed $params
+     *
+     * @return mixed
+     */
     public function executeAndFetchAll($params = array())
     {
         if ($this->execute($params)) {
@@ -356,11 +406,11 @@ class Query
     }
 
     /**
-    * Fetch all rows
-    *
-    * @return mixed
-    *
-    */
+     * Fetch all rows
+     *
+     * @return mixed|bool
+     *
+     */
     public function fetchAll()
     {
         if ($this->preparedStatement !== null) {
@@ -371,12 +421,12 @@ class Query
     }
 
     /**
-    * Execute the query and fetch all rows
-    *
-    * @param mixed $params
-    *
-    * @return mixed
-    */
+     * Execute the query and fetch all rows
+     *
+     * @param mixed $params
+     *
+     * @return mixed|bool
+     */
     public function executeAndFetch($params = array())
     {
         if ($this->execute($params)) {
@@ -387,10 +437,10 @@ class Query
     }
 
     /**
-    * Fetch one row
-    *
-    * @return mixed
-    */
+     * Fetch one row
+     *
+     * @return mixed
+     */
     public function fetch()
     {
         return $this->preparedStatement->fetch(Db::FETCH_OBJ);

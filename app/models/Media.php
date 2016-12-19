@@ -6,5 +6,5 @@ use system\Model;
 
 class Media extends Model
 {
-    public $permittedColunms = array('label', 'name', 'origin_name');
+    protected $permittedColumns = array('label', 'name', 'origin_name');
 }

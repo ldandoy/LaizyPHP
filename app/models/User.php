@@ -6,5 +6,5 @@ use system\Model;
 
 class User extends Model
 {
-    public $permittedColunms = array('nom', 'prenom', 'email');
+    protected $permittedColumns = array('nom', 'prenom', 'email');
 }

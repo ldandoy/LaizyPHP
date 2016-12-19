@@ -227,13 +227,15 @@ class Controller
         }
 
         // CSS qui sont dans les dossiers assets
-        if ($handle = opendir(CSS_DIR)) {
-            while (false !== ($entry = readdir($handle))) {
-                if ($entry != "." && $entry != "..") {
-                    echo "<link rel=\"stylesheet\" href=\"/assets".DS."css".DS.$entry."\" />\n";
+        if (file_exists(CSS_DIR)) {
+            if ($handle = opendir(CSS_DIR)) {
+                while (false !== ($entry = readdir($handle))) {
+                    if ($entry != "." && $entry != "..") {
+                        echo "<link rel=\"stylesheet\" href=\"/assets".DS."css".DS.$entry."\" />\n";
+                    }
                 }
+                closedir($handle);
             }
-            closedir($handle);
         }
     }
 
@@ -246,13 +248,15 @@ class Controller
         }
 
         // Script qui sont dans les dossiers assets
-        if ($handle = opendir(JS_DIR)) {
-            while (false !== ($entry = readdir($handle))) {
-                if ($entry != "." && $entry != "..") {
-                    echo '<script src="/assets'.DS.'js'.DS.$entry.'"></script>';
+        if (file_exists(JS_DIR)) {
+            if ($handle = opendir(JS_DIR)) {
+                while (false !== ($entry = readdir($handle))) {
+                    if ($entry != "." && $entry != "..") {
+                        echo '<script src="/assets'.DS.'js'.DS.$entry.'"></script>';
+                    }
                 }
+                closedir($handle);
             }
-            closedir($handle);
         }
     }
 }

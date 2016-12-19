@@ -56,66 +56,74 @@ class Model
     public function setData($datas = array())
     {
         $this->id = $datas->id;
-        if (isset($this->permittedColunms) && !empty($this->permittedColunms)) {
-            foreach ($this->permittedColunms as $k => $v) {
+        if (isset($this->permittedColumns) && !empty($this->permittedColumns)) {
+            foreach ($this->permittedColumns as $k => $v) {
                 $this->$v = $datas->$v;
             }
         } else {
             
         }
-        $this->creer_le = $datas->creer_le;
-        $this->modifie_le = $datas->modifie_le;
+        $this->created_at = $datas->created_at;
+        $this->updated_at = $datas->updated_at;
     }
 
     /**
-     * persit in the DB the object
+     * Create the object in database
      *
-     * @param array $datas content datas to update
+     * @param mixed $data 
      *
-     * @return void
+     * @return bool
      */
-    public function update($post)
+    public function create($data)
     {
+        $data['created_at'] = date('Y-m-d H:i:s');
+        $data['updated_at'] = $data['created_at'];
+
+        $permittedData = $this->getPermittedData($data);
+
+        $query = new Query();
+        $query->insert(array(
+            'table' => $this->getTable(),
+            'columns' => array_keys($permittedData)
+        ));
+
+        return $query->execute($permittedData);
+    }
+
+    /**
+     * Update the object in database
+     *
+     * @param mixed $data
+     *
+     * @return bool
+     */
+    public function update($data)
+    {
+        $data['updated_at'] = date('Y-m-d H:i:s');
+        $permittedData = $this->getPermittedData($data);
+
         $query = new Query();
         $query->update(array(
-            'table'             => $this->getTable(),
-            'datas'             => $post,
-            'permittedColunms'  => $this->permittedColunms
+            'table' => $this->getTable(),
+            'columns' => array_keys($permittedData)
         ));
-        $query->showSql();
-        // $rows = $query->executeAndFetchAll();
+        $query->where('id = '.$this->id);
 
-        foreach ($this->permittedColunms as $value) {
-            $this->$value = $post[$value];
-        }
+        return $query->execute($permittedData);
     }
 
     /**
-     * Créé l'objet en base
+     * Delete the object in database
      *
-     * Cette fonction créé la requète puis l'envoie à la base données
-     *
-     * @param array $datas Contient les données à ajouter àl'objet
-     *
-     * @return void
+     * @return bool
      */
-    public static function create($datas = array())
+    public function delete()
     {
-        $class = get_called_class();
-        $tab = explode('\\', $class);
-        $tableName = strtolower($tab[count($tab)-1])."s";
-        $obj = new $class();
-
         $query = new Query();
-        $query->insert($tableName, $datas, $obj->permittedColunms);
-        $query->createQuery();
-
-        Db::prepare($query);
-        Db::bind($obj->permittedColunms, $values);
-        if (Db::execute()) {
-            return true;
-        }
-        return false;
+        $query->delete(array('table' => $this->getTable()));
+        $query->where('id = :id');
+        $query->showSql();
+        return $query->execute(array('id' => $this->id));
     }
 
     /**
@@ -150,25 +158,25 @@ class Model
      *
      * @param integer $id contient l'id cherché dans la DB
      *
-     * @return obj $return contient l'objets trouvé en base
+     * @return \system\Model $return Contient l'objets trouvé en base
      */
     public static function findById($id = 0)
     {
-
         $class = get_called_class();
 
         $query = new Query();
         $query->select('*');
+        $query->where('id = :id');
         $query->from(self::getTableName());
-        $row = $query->executeAndFetch();
+
+        $row = $query->executeAndFetch(array('id' => $id));
         
         $return = new $class($row);
         if (isset($return->parent) && !empty($return->parent)) {
             foreach ($return->parent as $k_parent => $v_parent) {
-                $class = 'app\\models\\'.$k_parent;
-                $user = $class::findById($v_parent);
-                $name = strtolower($k_parent);
-                $return->$name = $user;
+                $parentClass = 'app\\models\\'.$k_parent;
+                $parent = $parentClass::findById($v_parent);
+                $return->$k_parent = $parent;
             }
         }
 
@@ -176,9 +184,9 @@ class Model
     }
 
     /**
-     * Return the name of the table form the static class calling
+     * Return the name of the table from the static class calling
      *
-     * @return string $tableName The name of the table to return
+     * @return string The name of the table to return
      */
     public static function getTableName()
     {
@@ -187,13 +195,44 @@ class Model
     }
 
     /**
-     * Return the name of the table fomr the class calling
+     * Return the name of the table from the class calling
      *
-     * @return string $tableName The name of the table to return
+     * @return string The name of the table to return
      */
     public function getTable()
     {
         $tableName = strtolower(getLastElement(explode('\\', get_class($this))))."s";
         return $tableName;
+    }
+
+    /**
+     * Get the permitted columns
+     *
+     * @return mixed
+     */
+    public function getPermittedColumns()
+    {
+        return array_merge(
+            $this->permittedColumns,
+            array('created_at', 'updated_at')
+        );
+    }
+
+    /**
+     * Get data with only the permitted columns
+     *
+     * @param mixed $data
+     *
+     * @return mixed
+     */
+    public function getPermittedData($data)
+    {
+        $permittedData = [];
+        foreach ($data as $k => $v) {
+            if (in_array($k, $this->getPermittedColumns())) {
+                $permittedData[$k] = $v;
+            }
+        }
+        return $permittedData;
     }
 }
