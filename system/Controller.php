@@ -94,8 +94,8 @@ class Controller
                     'helper'    =>  $helper,
                     'valeur'    =>  $valeur,
                     'colonne'   =>  array(
-                        array('label'   =>  'titre', 'width'    => '10%'),
-                        array('label'   => 'contenu', 'width'    => '80%')
+                        array('label'   =>  'title', 'width'    => '10%'),
+                        array('label'   => 'content', 'width'    => '80%')
                     ),
                     'actions'   =>  array(
                         array(
@@ -138,8 +138,7 @@ class Controller
     #)
     public function helper($conf)
     {
-        //debug($conf);
-
+        // debug($conf);
         $html = '';
         switch ($conf['helper']) {
             case 'table':

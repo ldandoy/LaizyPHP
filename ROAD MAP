@@ -18,7 +18,7 @@ x Faire un form builder
 ROAD MAP [11/12/2016]
 ---------------------
 x Correction routers et retour d'erreur comme il faut
-- Valider les arguments
+x Valider les arguments
 x Revoir le message de debug
 
 ROAD MAP [12/12/2016]
@@ -31,6 +31,10 @@ ROAD MAP [15/12/2016]
 ---------------------
 - Créé une classe de component
 - Créer les actions en bdd via la ligne de commande
-- Documenté les classes du namespace system
+x Documenté les classes du namespace system
 - Attention dans la fonction findById, on ne vérifie pas s'il y a une row retourné.
-- Revoir le parseur d'url pour checker que le prfix correspond bien à celui de la config
+x Revoir le parseur d'url pour checker que le prefix correspond bien à celui de la config
+
+ROAD MAP [20/12/2016]
+---------------------
+- Ajouter des callback au niveau des controllers et des models (before et after)

@@ -6,5 +6,5 @@ use system\Model;
 
 class Page extends Model
 {
-    protected $permittedColumns = array('titre', 'contenu');
+    protected $permittedColumns = array('title', 'content');
 }
