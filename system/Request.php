@@ -22,8 +22,27 @@ namespace system;
  */
 class Request
 {
+    /**
+     * @var string
+     */
     public $url;
+
     public $params;
+
+    /**
+     * @var mixed
+     */
+    public $post = null;
+
+    /**
+     * @var string get|post
+     */
+    public $method = 'get';
+
+    /**
+     * @var string html|json
+     */
+    public $format = 'html';
 
     /**
      * Constructor

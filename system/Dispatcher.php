@@ -11,8 +11,6 @@
 
 namespace system;
 
-use app\controllers\articlesController;
-
 /**
  * Class qui appel le bon controller en fonction de la bonne url.
  *
@@ -24,8 +22,9 @@ use app\controllers\articlesController;
  */
 class Dispatcher
 {
-    public $request;
-    public $controller;
+    public $request = null;
+    public $controller = null;
+    public $session = null;
 
     public function __construct()
     {
@@ -34,6 +33,7 @@ class Dispatcher
             $this->error("Erreur d'url", "L'url que vous avez demandé n'est pas reconnu.");
         }
         $this->checkUrl();
+        $this->session = new Session();
         if (isset($this->request->prefix)) {
             $this->controller = $this->request->prefix.DS.$this->request->controller;
         } else {
@@ -71,7 +71,6 @@ class Dispatcher
             $name = '\app\\controllers\\'.str_replace('/', '\\', $this->controller)."Controller";
             if (class_exists($name)) {
                 $controller = new $name($this->request);
-                $controller->Session = new Session();
                 $controller->Form = new Form($controller);
                 return $controller;
             } else {

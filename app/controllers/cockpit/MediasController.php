@@ -2,10 +2,10 @@
 
 namespace app\controllers\cockpit;
 
-use app\controllers\ApplicationController;
+use app\controllers\cockpit\CockpitController;
 use app\models\Media;
 
-class MediasController extends ApplicationController
+class MediasController extends CockpitController
 {
     public function indexAction()
     {

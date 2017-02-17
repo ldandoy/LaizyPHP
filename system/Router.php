@@ -71,7 +71,7 @@ class Router
 
         /* On charge les routes du fichier ini */
         foreach ($routeConf as $k => $v) {
-            if ($v['type'] == 'crud') {
+            if (isset($v['type']) && $v['type'] == 'crud') {
                 /* On découpe l'url pour voir ce qu'on peut en faire. */
                 $url = array_slice(explode("/:", $v['url']), 1);
                 foreach ($actions as $v) {
@@ -91,6 +91,10 @@ class Router
 
                     self::$_url[$k.'_'.$v] = $routes[$k.'_'.$v]['url'];
                 }
+            }
+            else
+            {
+                
             }
         }
         self::$routes = $routes;

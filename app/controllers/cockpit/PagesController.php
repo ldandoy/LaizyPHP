@@ -1,11 +1,11 @@
 <?php
 
-namespace app\controllers\Cockpit;
+namespace app\controllers\cockpit;
 
-use app\controllers\ApplicationController;
+use app\controllers\cockpit\CockpitController;
 use app\models\Page;
 
-class PagesController extends ApplicationController
+class PagesController extends CockpitController
 {
 
     public function indexAction()

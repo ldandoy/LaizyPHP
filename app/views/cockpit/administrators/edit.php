@@ -2,21 +2,18 @@
 <form action="<?php echo $params['formAction']; ?>" method="post">
 <?php
 echo $this->Form->input(array(
-    'label' => 'title',
-    'value' => $params['article']->title
-));
-?>
-<?php
-echo $this->Form->textarea(array(
-    'label' => 'content',
-    'value' => $params['article']->content
+    'label' => 'email',
+    'value' => $params['administrator']->email
 ));
 echo $this->Form->input(array(
-    'label' => 'user_id',
-    'value' => $params['article']->user_id
+    'label' => 'lastname',
+    'value' => $params['administrator']->lastname
 ));
-?>
-<?php echo $this->Form->btn(array(
+echo $this->Form->input(array(
+    'label' => 'firstname',
+    'value' => $params['administrator']->firstname
+));
+echo $this->Form->btn(array(
     'label' => 'send',
     'value' => 'Mettre à jour',
     'color' => 'primary',

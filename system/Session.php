@@ -37,16 +37,16 @@ class Session
     /**
      * Ajout un message flash à la session
      *
-     * @param string $message le text a afficher
-     * @param string $type    chaine de caractère pour le style de la fenètre (danger|success|info)
+     * @param string $message le texte à afficher
+     * @param string $type chaine de caractères pour le style de la fenètre (danger|success|info)
      *
      * @return void
      */
     public function setFlash($message = '', $type = 'danger')
     {
         $_SESSION['flash'] = array(
-                'message'    =>    $message,
-                'type'        =>    $type
+                'message'    => $message,
+                'type'       => $type
             );
     }
 

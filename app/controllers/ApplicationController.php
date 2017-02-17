@@ -6,5 +6,5 @@ use system\Controller;
 
 class ApplicationController extends Controller
 {
-
+	public $user = null;
 }
