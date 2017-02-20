@@ -69,4 +69,19 @@ class AdministratorsController extends CockpitController
         $this->Session->setFlash('Administrateur supprimé');
         $this->redirect('cockpit_administrators');
     }
+
+    public function login($goto = null)
+    {
+        if ($goto !== null) {
+            $this->redirect($goto);
+        }
+    }
+
+    public function logout()
+    {
+        if ($goto !== null) {
+            $this->redirect($goto);
+        }
+    }
+
 }

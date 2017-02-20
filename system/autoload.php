@@ -10,5 +10,5 @@ spl_autoload_register(function ($class) {
     require_once ROOT_DIR.DS.$class.'.php';
 });
 
-new Config();
-new Router();
+Config::init();
+Router::init();

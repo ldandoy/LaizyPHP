@@ -10,13 +10,13 @@
  */
 
 /**
- * Fonction affichant les debug
+ * Display debug info
  *
- * @param string $message le text a afficher
+ * @param mixed $data
  *
  * @return void
  */
-function debug($message)
+function debug($data)
 {
     $backtrace = debug_backtrace();
     echo '<div class="well">';
@@ -28,44 +28,44 @@ function debug($message)
         }
     }
     echo '</ol>';
-    echo "<pre>";
+    echo '<pre>';
     print_r($message);
-    echo "</pre>";
+    echo '</pre>';
     echo '</div>';
 }
 
 /**
- * Function caled to filter arrays
+ * Return the last element of an array
  *
- * @param string $v le text a valider
- *
- * @return boolean
- */
-function fillarray($v)
-{
-    return ($v == null) ? false : true;
-}
-
-/**
- * Return the last element of a table
- *
- * @param array $tab
+ * @param array $a
  *
  * @return array $lastElement
  */
-function getLastElement($tab)
+function getLastElement($a)
 {
-    return $tab[count($tab)-1];
+    return $a[count($a)-1];
 }
 
 /**
- * Function caled to filter arrays
+ * Function called to filter arrays
  *
- * @param string $v le text a valider
+ * @param mixed $v value to test
  *
  * @return boolean
  */
-function deleteEmptyItem($tab)
+function notEmpty($v)
 {
-    return array_filter($tab, 'fillarray');
+    return empty($v) ? false : true;
+}
+
+/**
+ * Function called to filter arrays
+ *
+ * @param mixed $a
+ *
+ * @return boolean
+ */
+function deleteEmptyItem($a)
+{
+    return array_filter($a, 'notEmpty');
 }

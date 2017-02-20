@@ -32,7 +32,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<?php echo $this->Session->flash(); ?>
+					<?php echo $this->session->flash(); ?>
 					<?php echo $yeslp; ?>
 				</div>
 			</div>

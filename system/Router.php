@@ -23,78 +23,83 @@ namespace system;
 class Router
 {
     public static $routes;
-    private static $_url;
 
     /**
-     * Constructeur, charger toutes les routes définis pour le site
+     * Init, load all routes defined for the site (in route.ini)
      *
      * @return void
      */
-    public function __construct()
+    public static function init()
     {
-        $routeConf = parse_ini_file(CONFIG_DIR.DS."route.ini", true);
-        $actions = array('index', 'new', 'create', 'show', 'edit', 'update', 'delete');
-        $methods = array(
-            'index'     => 'get',
-            'new'       => 'get',
-            'create'    => 'post',
-            'show'      => 'get',
-            'edit'      => 'get',
-            'update'    => 'post',
-            'delete'    => 'delete'
+        $routeConfs = parse_ini_file(CONFIG_DIR.DS.'route.ini', true);
+
+        $crudActions = array(
+            'index' => 'get',
+            'new' => 'get',
+            'create' => 'post',
+            'show' => 'get',
+            'edit' => 'get',
+            'update' => 'post',
+            'delete' => 'delete'
         );
-        $variables = array(
-            'index'     => array(),
-            'new'       => array(),
-            'create'    => array(),
-            'show'      => array('id'),
-            'edit'      => array('id'),
-            'update'    => array('id'),
-            'delete'    => array('id')
-        );
+
+        $defaultController = Config::getValueG('controller');
+        $defaultAction = Config::getValueG('action');
+        $adminPrefix = Config::getValueG('admin_prefix');
 
         /* The default root */
-        $routes['defaults_index']['url'] = '/'.Config::getValueG('controller').'/'.Config::getValueG('action');
-        $routes['defaults_index']['controller'] = Config::getValueG('controller');
-        $routes['defaults_index']['action'] = Config::getValueG('action');
+        $routes['defaults_index']['url'] = '/'.$defaultController.'/'.$defaultAction;
+        $routes['defaults_index']['controller'] = $defaultController;
+        $routes['defaults_index']['action'] = $defaultAction;
         $routes['defaults_index']['method'] = 'get';
         $routes['defaults_index']['params'] = array();
-        self::$_url['defaults_index'] = $routes['defaults_index']['url'];
 
         /* The default root admin */
-        $routes[Config::getValueG('admin_prefix').'_defaults_index']['url'] = '/'.Config::getValueG('admin_prefix').'/'.Config::getValueG('controller').'/'.Config::getValueG('action');
-        $routes[Config::getValueG('admin_prefix').'_defaults_index']['controller'] = Config::getValueG('controller');
-        $routes[Config::getValueG('admin_prefix').'_defaults_index']['action'] = Config::getValueG('action');
-        $routes[Config::getValueG('admin_prefix').'_defaults_index']['method'] = 'get';
-        $routes[Config::getValueG('admin_prefix').'_defaults_index']['params'] = array();
-        self::$_url[Config::getValueG('admin_prefix').'_defaults_index'] = $routes[Config::getValueG('admin_prefix').'_defaults_index']['url'];
+        $routes[$adminPrefix.'_defaults_index']['url'] = '/'.$adminPrefix.'/'.$defaultController.'/'.$defaultAction;
+        $routes[$adminPrefix.'_defaults_index']['controller'] = $defaultController;
+        $routes[$adminPrefix.'_defaults_index']['action'] = $defaultAction;
+        $routes[$adminPrefix.'_defaults_index']['method'] = 'get';
+        $routes[$adminPrefix.'_defaults_index']['params'] = array();
 
         /* On charge les routes du fichier ini */
-        foreach ($routeConf as $k => $v) {
-            if (isset($v['type']) && $v['type'] == 'crud') {
-                /* On découpe l'url pour voir ce qu'on peut en faire. */
-                $url = array_slice(explode("/:", $v['url']), 1);
-                foreach ($actions as $v) {
-                    /* A voir si çà sert un jour
-                     $params = (!empty($variables[$v])) ? '/'.implode('/', $variables[$v]) : '';*/
-                    $routes[$k.'_'.$v]['url'] = '/'.str_replace('_', '/', $k).'/'.$v;
-                    $controller = explode('_', $k);
-                    if (count($controller) > 1) {
-                        $routes[$k.'_'.$v]['prefix'] = $controller[0];
-                        $routes[$k.'_'.$v]['controller'] = str_replace('_', '/', $controller[1]);
-                    } else {
-                        $routes[$k.'_'.$v]['controller'] = str_replace('_', '/', $k);
-                    }
-                    $routes[$k.'_'.$v]['action'] = $v;
-                    $routes[$k.'_'.$v]['method'] = strtoupper($methods[$v]);
-                    $routes[$k.'_'.$v]['params'] = $variables[$v];
+        foreach ($routeConfs as $section => $params) {
+            $method = isset($params['method']) ? $params['method'] : 'get';
 
-                    self::$_url[$k.'_'.$v] = $routes[$k.'_'.$v]['url'];
-                }
-            }
-            else
-            {
-                
+            switch ($method) {
+                case 'crud':
+                    foreach ($crudActions as $actionName => $actionMethod) {
+                        $key = $section.'_'.$actionName;
+
+                        $routes[$key]['url'] = '/'.str_replace('_', '/', $key);
+
+                        $a = explode('_', $section, 2);
+                        if (count($a) > 1) {
+                            $routes[$key]['prefix'] = $a[0];
+                            $routes[$key]['controller'] = str_replace('_', '/', $a[1]);
+                        } else {
+                            $routes[$key]['controller'] = str_replace('_', '/', $section);
+                        }
+                        $routes[$key]['action'] = $actionName;
+                        $routes[$key]['method'] = $actionMethod;
+                    }
+                    break;
+
+                case 'post':
+                case 'get':
+                default:
+                    $a = explode('_', $section);
+                    $actionName = array_pop($a);
+                    $key = $section;
+                    $routes[$key]['url'] = $params['url'];
+                    if (count($a) > 1) {
+                        $routes[$key]['prefix'] = $a[0];
+                        $routes[$key]['controller'] = str_replace('_', '/', $a[1]);
+                    } else {
+                        $routes[$key]['controller'] = str_replace('_', '/', $section);
+                    }
+                    $routes[$key]['action'] = $actionName;
+                    $routes[$key]['method'] = $method;
+                    break;
             }
         }
         self::$routes = $routes;
@@ -105,24 +110,25 @@ class Router
      *
      * On parse la requète et on ajoute les infos (prefix, controller, action, params) à la l'obj $request
      *
-     * @param obj $request la chaine de caractère à transformé en url
+     * @param system\Request $request la requête
      *
-     * @return void
+     * @return bool
      */
     public static function parse($request)
     {
+        $adminPrefix = Config::getValueG('admin_prefix');
         /* We get an array form the url */
-        $tabUrl = deleteEmptyItem(explode("/", $request->url));
+        $tabUrl = deleteEmptyItem(explode('/', $request->url));
         /* We check if it's an admin url */
-        if (strpos($request->url, '/'.Config::getValueG('admin_prefix')) === 0) {
+        if (strpos($request->url, '/'.$adminPrefix) === 0) {
             /* We get the perfix and clean the url */
-            $request->prefix = Config::getValueG('admin_prefix');
+            $request->prefix = $adminPrefix;
             $urlparams = array_slice($tabUrl, 3);
         } else {
             $urlparams = array_slice($tabUrl, 2);
         }
         
-        foreach (self::$_url as $k => $v) {
+        foreach (self::$routes as $k => $v) {
             if (strpos($request->url, $v) === 0) {
                 $route = self::$routes[$k];
                 if (!empty($route['prefix'])) {

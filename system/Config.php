@@ -29,13 +29,13 @@ class Config
     public static $config_js;
 
     /**
-     * Constructor
+     * Init
      *
      * Read the config file and set debug and report properties
      *
      * @return void
      */
-    public function __construct()
+    public static function init()
     {
         self::$config =  parse_ini_file(CONFIG_DIR.DS."config.ini", true);
         self::$config_db = self::$config['DB'];

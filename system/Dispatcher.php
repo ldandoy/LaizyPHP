@@ -29,6 +29,7 @@ class Dispatcher
     public function __construct()
     {
         $this->request = new Request();
+
         if (!Router::parse($this->request)) {
             $this->error("Erreur d'url", "L'url que vous avez demandé n'est pas reconnu.");
         }

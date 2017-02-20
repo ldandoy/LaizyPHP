@@ -12,7 +12,7 @@
 namespace system;
 
 /**
- * Class manage request
+ * Class Request
  *
  * @category System
  * @package  Netoverconsulting
@@ -27,6 +27,9 @@ class Request
      */
     public $url;
 
+    /**
+     * @var mixed
+     */
     public $params;
 
     /**
@@ -53,28 +56,33 @@ class Request
      */
     public function __construct()
     {
+        $defaultController = Config::getValueG('controller');
+        $defaultAction = Config::getValueG('action');
+
         /* We manage the request info */
         if (isset($_SERVER['PATH_INFO'])) {
             $this->url = $_SERVER['PATH_INFO'];
-            $prefix = '/'.ltrim(Config::getValueG('admin_prefix'), '/');
+
+            $adminPrefix = '/'.Config::getValueG('admin_prefix');
+
             $nbUrlElements = count(deleteEmptyItem(explode('/', $this->url)));
             
             /* if the url begin this admin_prefix */
-            if (strpos($this->url, $prefix) === 0) {
+            if (strpos($this->url, $adminPrefix) === 0) {
                 if ($nbUrlElements <= 1) {
-                    $this->url = rtrim($this->url, '/').'/'.Config::getValueG('controller');
+                    $this->url = rtrim($this->url, '/').'/'.$defaultController;
                 }
 
                 if ($nbUrlElements <= 2) {
-                    $this->url = rtrim($this->url, '/').'/'.Config::getValueG('action');
+                    $this->url = rtrim($this->url, '/').'/'.$defaultAction;
                 }
             } else {
                 if ($nbUrlElements <= 1) {
-                    $this->url = rtrim($this->url, '/').'/'.Config::getValueG('action');
+                    $this->url = rtrim($this->url, '/').'/'.$defaultAction;
                 }
             }
             
-            $elements = explode('.', $_SERVER['PATH_INFO']);
+            $elements = explode('.', $this->url);
             if (count($elements) >= 2) {
                 $this->format = getLastElement($elements);
             } else {
@@ -82,7 +90,7 @@ class Request
             }
         } else {
             /* If the url is just / */
-            $this->url = '/'.Config::getValueG('controller').'/'.Config::getValueG('action');
+            $this->url = '/'.$defaultController.'/'.$defaultAction;
             $this->format = 'html';
         }
 
