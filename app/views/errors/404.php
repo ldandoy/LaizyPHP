@@ -1,5 +1,5 @@
 <header>
-	<h1><?php echo $params['title']; ?></h1>
+	<h1 class="page-title"><?php echo $params['title']; ?></h1>
 </header>
 
 <div class="container">

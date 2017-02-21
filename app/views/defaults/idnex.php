@@ -1,1 +1,0 @@
-La page d'accueil du site

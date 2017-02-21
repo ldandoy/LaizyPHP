@@ -11,6 +11,8 @@
 
 namespace system;
 
+use system\Session;
+
 /**
  * Class Request
  *
@@ -61,33 +63,29 @@ class Request
 
         /* We manage the request info */
         if (isset($_SERVER['PATH_INFO'])) {
-            $this->url = $_SERVER['PATH_INFO'];
+            $url = $_SERVER['PATH_INFO'];
 
-            $adminPrefix = '/'.Config::getValueG('admin_prefix');
+            $adminPrefix = Config::getValueG('admin_prefix');
 
-            $nbUrlElements = count(deleteEmptyItem(explode('/', $this->url)));
-            
-            /* if the url begin this admin_prefix */
-            if (strpos($this->url, $adminPrefix) === 0) {
-                if ($nbUrlElements <= 1) {
-                    $this->url = rtrim($this->url, '/').'/'.$defaultController;
-                }
-
-                if ($nbUrlElements <= 2) {
-                    $this->url = rtrim($this->url, '/').'/'.$defaultAction;
-                }
-            } else {
-                if ($nbUrlElements <= 1) {
-                    $this->url = rtrim($this->url, '/').'/'.$defaultAction;
-                }
+            $tabUrl = deleteEmptyItem(explode('/',  $url));
+            $controller = array_shift($tabUrl);
+            if ($controller == $adminPrefix) {
+                $prefix = $adminPrefix;
+                $controller = array_shift($tabUrl);
             }
-            
-            $elements = explode('.', $this->url);
-            if (count($elements) >= 2) {
-                $this->format = getLastElement($elements);
-            } else {
-                $this->format = 'html';
+            $action = array_shift($tabUrl);
+            $params = $tabUrl;
+
+            if ($controller === null) {
+                $controller = $defaultController;
             }
+
+            if ($action === null) {
+                $action = $defaultAction;
+            }
+
+            $this->url = '/'.(isset($prefix) ? $prefix.'/' : '').$controller.'/'.$action.(count($params) > 0 ? '/'.implode('/', $params) : '');
+            $this->format = 'html';
         } else {
             /* If the url is just / */
             $this->url = '/'.$defaultController.'/'.$defaultAction;
@@ -95,11 +93,14 @@ class Request
         }
 
         /* We manage the request method */
-        $this->method = $_SERVER['REQUEST_METHOD'];
+        $this->method = strtolower($_SERVER['REQUEST_METHOD']);
 
         /* We manage the request params */
-        if (!empty($_POST)) {
-            $this->post = $_POST;
+        $this->post = $_POST;
+        $sessionPost = Session::get('post');
+        if ($sessionPost !== null) {
+            $this->post = array_merge($this->post, $sessionPost);
+            Session::remove('post');
         }
     }
 }

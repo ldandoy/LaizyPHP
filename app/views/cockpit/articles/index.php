@@ -1,4 +1,4 @@
-<h1 class="page-header">Mes articles</h1>
+<h1 class="page-title">Mes articles</h1>
 <br />
 <div class="">
 	<a href="<?php echo system\Router::url('cockpit_articles_new'); ?>" class="btn btn-success"><i class="fa fa-plus"></i> Ajouter un article</a>

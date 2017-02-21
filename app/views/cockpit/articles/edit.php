@@ -1,4 +1,4 @@
-<h1 class="page-header"><?php echo $params['pageTitle']; ?></h1>
+<h1 class="page-title"><?php echo $params['pageTitle']; ?></h1>
 <form action="<?php echo $params['formAction']; ?>" method="post">
 <?php
 echo $this->Form->input(array(

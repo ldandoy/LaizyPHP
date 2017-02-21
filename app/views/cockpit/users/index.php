@@ -1,4 +1,4 @@
-<h1 class="page-header">Utilisateurs</h1>
+<h1 class="page-title">Utilisateurs</h1>
 <br />
 <div class="">
 	<a href="<?php echo system\Router::url('cockpit_users_new'); ?>" class="btn btn-success"><i class="fa fa-plus"></i> Ajouter un utilisateur</a>

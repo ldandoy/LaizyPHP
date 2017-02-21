@@ -70,14 +70,28 @@ class AdministratorsController extends CockpitController
         $this->redirect('cockpit_administrators');
     }
 
-    public function login($goto = null)
+    public function loginAction($goto = null)
     {
-        if ($goto !== null) {
-            $this->redirect($goto);
+        var_dump($this->request->post);
+        if (isset($this->request->post['email']) && isset($this->request->post['password'])) {
+            if ($this->request->post['email'] != '' && $this->request->post['password'] != '') {
+
+            } else {
+            }
+
+            if ($goto !== null) {
+                // $this->redirect($goto);
+            }            
         }
+
+        $this->render('login', array(
+            'email' => isset($this->request->post['email']) ? $this->request->post['email'] : '',
+            'pageTitle' => 'Connection au Cockpit',
+            'formAction' => Router::url('cockpit_administrators_login')
+        ));
     }
 
-    public function logout()
+    public function logoutAction()
     {
         if ($goto !== null) {
             $this->redirect($goto);

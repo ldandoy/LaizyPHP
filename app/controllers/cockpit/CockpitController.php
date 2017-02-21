@@ -2,7 +2,8 @@
 
 namespace app\controllers\cockpit;
 
-use system\Controller;
+use \system\Session;
+use \system\Controller;
 
 class CockpitController extends Controller
 {
@@ -12,23 +13,16 @@ class CockpitController extends Controller
     {
         parent::__construct($request);
 
-        //$this->administrator = isset($_SESSION['administrator']) $_SESSION['administrator'] ? : null;
+        $this->administrator = Session::get('administrator');
+        //$gotoLogin = \system\Session::get('gotoLogin');
 
-        if($this->administrator === null)
-        {
-            $this->redirect('cockpit_cockpit_login');
-        }
-    }
-
-    public function login($goto = null)
-    {
-        if(isset($_POST['login'])) {
-            var_dump($_POST);
-            //$this->redirect($goto);
+        if ($this->administrator === null/* && $gotoLogin === null*/) {
+            //system\Session::set('gotoLogin', true);
+            $this->redirect('cockpit_administrators_login');
         }
 
-        $this->render('login', array(
-            'formAction' => Router::url('cockpit_cockpit_login')
-        ));
+        /*if ($gotoLogin !== null) {
+           system\Session::remove('gotoLogin');
+        }*/
     }
 }

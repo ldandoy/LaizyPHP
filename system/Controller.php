@@ -11,6 +11,8 @@
 
 namespace system;
 
+use system\Session;
+
 /**
  * Class gérant les Controllers du site
  *
@@ -138,7 +140,6 @@ class Controller
     #)
     public function helper($conf)
     {
-        // debug($conf);
         $html = '';
         switch ($conf['helper']) {
             case 'table':
@@ -182,10 +183,10 @@ class Controller
                 foreach ($conf['valeur'] as $k => $article) {
                     $html .= '<div class="row">';
                     $html .= '<div class="col-lg-3">';
-                    $html .= '<h2>'.$article->titre.'</h2>';
+                    $html .= '<h2>'.$article->title.'</h2>';
                     $html .= '</div>';
                     $html .= '<div class="col-lg-9">';
-                    $html .= '<p>'.$article->contenu.'</p>';
+                    $html .= '<p>'.$article->content.'</p>';
                     $html .= '<p align="right"><a href="/articles/show/'.$article->id.'">Lire plus &rarr;</a></p>';
                     $html .= '</div>';
                     $html .= '</div>';
@@ -201,7 +202,7 @@ class Controller
 
     public function e404($title, $message)
     {
-        header("HTTP/1.0 404 Not Found");
+        header('HTTP/1.0 404 Not Found');
         $this->render(
             '/errors/404',
             array(
@@ -214,10 +215,17 @@ class Controller
 
     public function redirect($url, $code = null)
     {
-        if ($code == 301) {
-            header("HTTP/1.1 301 Move Permanently");
+        $redirect = Session::get('redirect');
+        Session::remove('redirect');
+        if ($redirect === null || $redirect != $url) {
+            if ($code == 301) {
+                header('HTTP/1.1 301 Move Permanently');
+            }
+            Session::set('redirect', $url);
+            Session::set('post', $this->request->post);
+            header('Location: '.Router::url($url));
+            exit;
         }
-        header("Location: ".Router::url($url));
     }
 
     public function loadCss()

@@ -21,3 +21,10 @@ body {
 #cockpit .nav-menu-left {
 	margin-top: 40px;
 }
+
+.page-title {
+	text-align: center;
+	color: #f00;
+}
+
+/* Form */

@@ -1,4 +1,4 @@
-<h1 class="page-header">Créer une page</h1>
+<h1 class="page-title">Créer une page</h1>
 
 <form action="<?php echo system\Router::url('cockpit_pages_create'); ?>" method="post">
 	<?php echo $this->Form->input('titre') ?>

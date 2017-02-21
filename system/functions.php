@@ -29,7 +29,7 @@ function debug($data)
     }
     echo '</ol>';
     echo '<pre>';
-    print_r($message);
+    print_r($data);
     echo '</pre>';
     echo '</div>';
 }

@@ -12,7 +12,7 @@
 namespace system;
 
 /**
- * Class gérant les sessions des utilisateurs
+ * Class to manage session
  *
  * @category System
  * @package  Netoverconsulting
@@ -23,46 +23,88 @@ namespace system;
 class Session
 {
     /**
-     * Constructeur
+     * Init
      *
      * @return void
      */
-    public function __construct()
+    public static function init()
     {
-        if (!isset($_SESSION)) {
-            session_start();
-        }
+        session_start();
     }
 
     /**
-     * Ajout un message flash à la session
+     * Add a flash message
      *
-     * @param string $message le texte à afficher
-     * @param string $type chaine de caractères pour le style de la fenètre (danger|success|info)
+     * @param string $text message to display
+     * @param string $type message type (danger|success|warning|info)
+     * @param bool $canClose
      *
      * @return void
      */
-    public function setFlash($message = '', $type = 'danger')
+    public static function addFlash($text = '', $type = 'danger', $canClose = true)
     {
-        $_SESSION['flash'] = array(
-                'message'    => $message,
-                'type'       => $type
-            );
+        $_SESSION['flash'][] = array(
+            'text' => $text,
+            'type' => $type,
+            'canClose' => $canClose
+        );
     }
 
     /**
-     * Renvoie le message flash stocké en session
+     * Get the html for flash messages
      *
-     * @return string $html contient le code du flash message à afficher
+     * @return string
      */
-    public function flash()
+    public static function flash()
     {
-        if (isset($_SESSION['flash']) && !empty($_SESSION['flash'])) {
-            $html = '<div class="alert alert-'.$_SESSION['flash']['type'].'">'
-            .$_SESSION['flash']['message']
-            .'</div>';
-            $_SESSION['flash'] = array();
-            return $html;
+        $html = '';
+
+        if (isset($_SESSION['flash'])) {
+            foreach ($_SESSION['flash'] as $m) {
+                $button = '';
+                if($canClose === true)
+                {
+                    $button = '<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>';
+                }
+                
+                $html .=
+                    '<div class="alert alert-'.$type.' alert-dismissible" role="alert">'.
+                        $button.
+                        $message.
+                    '</div>';
+            }
         }
+
+        return $html;
+    }
+
+    /**
+     * Add/Set a session variable
+     *
+     * @return void
+     */
+    public static function set($name, $value = null)
+    {
+        $_SESSION[$name] = $value;
+    }
+
+    /**
+     * Get a session variable 
+     *
+     * @return mixed
+     */
+    public static function get($name)
+    {        
+        return isset($_SESSION[$name]) ? $_SESSION[$name] : null;
+    }
+
+    /**
+     * Remove a session variable
+     *
+     * @return void
+     */
+    public static function remove($name)
+    {
+        unset($_SESSION[$name]);
     }
 }

@@ -52,14 +52,13 @@ class Router
         $routes['defaults_index']['controller'] = $defaultController;
         $routes['defaults_index']['action'] = $defaultAction;
         $routes['defaults_index']['method'] = 'get';
-        $routes['defaults_index']['params'] = array();
 
         /* The default root admin */
         $routes[$adminPrefix.'_defaults_index']['url'] = '/'.$adminPrefix.'/'.$defaultController.'/'.$defaultAction;
+        $routes[$adminPrefix.'_defaults_index']['prefix'] = $adminPrefix;
         $routes[$adminPrefix.'_defaults_index']['controller'] = $defaultController;
         $routes[$adminPrefix.'_defaults_index']['action'] = $defaultAction;
         $routes[$adminPrefix.'_defaults_index']['method'] = 'get';
-        $routes[$adminPrefix.'_defaults_index']['params'] = array();
 
         /* On charge les routes du fichier ini */
         foreach ($routeConfs as $section => $params) {
@@ -117,43 +116,29 @@ class Router
     public static function parse($request)
     {
         $adminPrefix = Config::getValueG('admin_prefix');
-        /* We get an array form the url */
+
+        $key = '';
         $tabUrl = deleteEmptyItem(explode('/', $request->url));
-        /* We check if it's an admin url */
-        if (strpos($request->url, '/'.$adminPrefix) === 0) {
-            /* We get the perfix and clean the url */
-            $request->prefix = $adminPrefix;
-            $urlparams = array_slice($tabUrl, 3);
-        } else {
-            $urlparams = array_slice($tabUrl, 2);
+        $controller = array_shift($tabUrl);
+        if ($controller == $adminPrefix) {
+            $prefix = $adminPrefix;
+            $key .= $prefix.'_';
+            $controller = array_shift($tabUrl);
         }
-        
+        $action = array_shift($tabUrl);
+        $params = $tabUrl;
+        $key .= $controller.'_'.$action;
+
         foreach (self::$routes as $k => $v) {
-            if (strpos($request->url, $v) === 0) {
-                $route = self::$routes[$k];
+            if ($key == $k) {
+                $route = $v;
                 if (!empty($route['prefix'])) {
                     $request->prefix = $route['prefix'];
                 }
                 $request->controller = ucfirst($route['controller']);
                 $request->action = $route['action'];
-                $request->params = array();
+                $request->params = $params;
                 
-                if (!empty($route['params'])) {
-                    $params = array();
-                    foreach ($route['params'] as $key => $value) {
-                        $params[$value] = $urlparams[$key];
-                    }
-                    $request->params = array_merge($request->params, $params);
-                }
-
-                if (!empty($params)) {
-                    if (!empty($request->post)) {
-                        $request->post = array_merge($request->post, $params);
-                    } else {
-                        $request->post = $params;
-                    }
-                }
-
                 return true;
             }
         }
@@ -161,12 +146,12 @@ class Router
     }
 
     /**
-     * Transforme une chaine de caractères en url
+     * Convert a string to an URL
      *
-     * @param string $string la chaine de caractère à transformé en url
-     * @param array  $params contient les paramètre à ajouter à l'url
+     * @param string $string The string
+     * @param mixed $params Parameters to add to the URL
      *
-     * @return string $url contient l'url final
+     * @return string
      */
     public static function url($string = null, $params = array())
     {

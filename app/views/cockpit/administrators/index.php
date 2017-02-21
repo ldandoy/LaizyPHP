@@ -1,4 +1,4 @@
-<h1 class="page-header">Administrateurs</h1>
+<h1 class="page-title">Administrateurs</h1>
 <br />
 <div class="">
 	<a href="<?php echo system\Router::url('cockpit_administrators_new'); ?>" class="btn btn-success"><i class="fa fa-plus"></i> Ajouter un administrateur</a>
