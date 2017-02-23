@@ -26,6 +26,8 @@ use system\Db;
  */
 class Model
 {
+    public $model = array();
+
     /**
      * Constructeur
      *

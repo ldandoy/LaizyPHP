@@ -32,6 +32,7 @@ class Dispatcher
         if (!Router::parse($this->request)) {
             $this->error('URL error', 'Requested URL was not found.');
         }
+
         $this->checkUrl();
         if (isset($this->request->prefix)) {
             $this->controller = $this->request->prefix.DS.$this->request->controller;
@@ -65,7 +66,6 @@ class Dispatcher
             $class = '\app\\controllers\\'.str_replace('/', '\\', $this->controller)."Controller";
             if (class_exists($class)) {
                 $controller = new $class($this->request);
-                $controller->Form = new Form($controller);
                 return $controller;
             } else {
                 $this->error('Controller error', 'Controller "'.$class.'" was not found.');

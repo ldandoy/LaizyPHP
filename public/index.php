@@ -10,6 +10,7 @@
 $debut = microtime(true);
 
 define('DS', DIRECTORY_SEPARATOR);
+define('CRLF', "\r\n");
 define('ROOT_DIR', dirname(dirname(__File__)));
 define('CONFIG_DIR', ROOT_DIR.DS."config");
 define('SYSTEM_DIR', ROOT_DIR.DS."system");

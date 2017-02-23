@@ -14,15 +14,9 @@ class CockpitController extends Controller
         parent::__construct($request);
 
         $this->administrator = Session::get('administrator');
-        //$gotoLogin = \system\Session::get('gotoLogin');
 
-        if ($this->administrator === null/* && $gotoLogin === null*/) {
-            //system\Session::set('gotoLogin', true);
+        if ($this->administrator === null) {
             $this->redirect('cockpit_administrators_login');
         }
-
-        /*if ($gotoLogin !== null) {
-           system\Session::remove('gotoLogin');
-        }*/
     }
 }

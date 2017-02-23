@@ -64,6 +64,7 @@ class Request
         /* We manage the request info */
         if (isset($_SERVER['PATH_INFO'])) {
             $url = $_SERVER['PATH_INFO'];
+            error_log('1 : '.$url);
 
             $adminPrefix = Config::getValueG('admin_prefix');
 
@@ -90,17 +91,17 @@ class Request
             /* If the url is just / */
             $this->url = '/'.$defaultController.'/'.$defaultAction;
             $this->format = 'html';
+            error_log('2 : '.$this->url);
         }
-
         /* We manage the request method */
         $this->method = strtolower($_SERVER['REQUEST_METHOD']);
 
         /* We manage the request params */
-        $this->post = $_POST;
         $sessionPost = Session::get('post');
         if ($sessionPost !== null) {
-            $this->post = array_merge($this->post, $sessionPost);
+            $_POST = array_merge($_POST, $sessionPost);
             Session::remove('post');
         }
+        $this->post = $_POST;
     }
 }
