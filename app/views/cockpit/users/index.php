@@ -23,8 +23,8 @@ foreach ($params['users'] as $user) {
     echo '<td>'.$user->email.'</td>';
     echo '<td>'.$user->address.'</td>';
     echo '<td>';
-    echo '<a href="'. system\Router::url("cockpit_users_edit", array('id' => $user->id)).'" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>';
-    echo '<a href="'. system\Router::url("cockpit_users_delete", array('id' => $user->id)).'" class="btn btn-xs btn-danger"><i class="fa fa-trash-o"></i></a>';
+    echo '<a href="'.system\Router::url('cockpit_users_edit', array('id' => $user->id)).'" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>';
+    echo '<a href="'.system\Router::url('cockpit_users_delete', array('id' => $user->id)).'" class="btn btn-xs btn-danger"><i class="fa fa-trash-o"></i></a>';
     echo '</td>';
     echo '</tr>';
 }

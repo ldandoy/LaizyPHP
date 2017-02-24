@@ -89,12 +89,13 @@ class Router
                     $a = explode('_', $section);
                     $actionName = array_pop($a);
                     $key = $section;
+
                     $routes[$key]['url'] = $params['url'];
                     if (count($a) > 1) {
                         $routes[$key]['prefix'] = $a[0];
                         $routes[$key]['controller'] = str_replace('_', '/', $a[1]);
                     } else {
-                        $routes[$key]['controller'] = str_replace('_', '/', $section);
+                        $routes[$key]['controller'] = $a[0];
                     }
                     $routes[$key]['action'] = $actionName;
                     $routes[$key]['method'] = $method;
@@ -116,7 +117,6 @@ class Router
     public static function parse($request)
     {
         $adminPrefix = Config::getValueG('admin_prefix');
-
         $key = '';
         $tabUrl = deleteEmptyItem(explode('/', $request->url));
         $controller = array_shift($tabUrl);

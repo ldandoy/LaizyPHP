@@ -54,13 +54,13 @@ class Config
      *
      * Example: Config::getValueDB('host')
      *
-     * @param string $value Item of the DB configuration
+     * @param string $name Item of the DB configuration
      *
      * @return string value of the item of the DB configuration
      */
-    public static function getValueDB($value)
+    public static function getValueDB($name)
     {
-        return self::$config_db[$value];
+        return self::$config_db[$name];
     }
 
     /**
@@ -68,12 +68,12 @@ class Config
      *
      * Example: Config::getValueG('debug')
      *
-     * @param string $value Item of the general configuration
+     * @param string $name Item of the general configuration
      *
      * @return string value of the item of the general configuration
      */
-    public static function getValueG($value)
+    public static function getValueG($name)
     {
-        return self::$config_general[$value];
+        return self::$config_general[$name];
     }
 }

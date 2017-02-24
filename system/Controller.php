@@ -67,6 +67,8 @@ class Controller
         $html = ob_get_clean();
         $html = $this->parse($html, $params);
         echo $html;
+
+        Session::remove('redirect');
     }
 
     public function parse($html, $params)
@@ -215,8 +217,7 @@ class Controller
 
     public function redirect($url, $code = null)
     {
-        $redirect = Session::get('redirect');
-        Session::remove('redirect');
+        $redirect = Session::getAndRemove('redirect');
         if ($redirect === null || $redirect != $url) {
             if ($code == 301) {
                 header('HTTP/1.1 301 Move Permanently');

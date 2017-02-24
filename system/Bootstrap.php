@@ -23,26 +23,26 @@ class Bootstrap
 	/**
 	 * Get bootstrap alert HTML
 	 * @param string $message
-	 * @param int $alertType (BOOTSTRAP_ALERT_*)
+	 * @param int $tpye (BOOTSTRAP_ALERT_*)
 	 * @param bool $canClose
 	 * @return string
 	 */
-	static function alert($message = '', $alertType = BOOTSTRAP_ALERT_SUCCESS, $canClose = true)
+	static function alert($message = '', $type = BOOTSTRAP_ALERT_SUCCESS, $canClose = true)
 	{		
-		switch($alertType)
+		switch($type)
 		{
 			case BOOTSTRAP_ALERT_INFO:
-				$type = 'info';
+				$class = 'info';
 				break;
 			case BOOTSTRAP_ALERT_WARNING:
-				$type = 'warning';
+				$class = 'warning';
 				break;
 			case BOOTSTRAP_ALERT_DANGER:
-				$type = 'danger';
+				$class = 'danger';
 				break;
 			case BOOTSTRAP_ALERT_SUCCESS:
 			default:
-				$type = 'success';				
+				$class = 'success';				
 		}
 		
 		$button = '';

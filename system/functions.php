@@ -20,7 +20,7 @@ function debug($data)
 {
     $backtrace = debug_backtrace();
     echo '<div class="well">';
-    echo '<p><a href=""><strong>'.$backtrace[0]["file"].'</strong> '.$backtrace[0]['line'].'</a></p>';
+    echo '<p><a href=""><strong>'.$backtrace[0]['file'].'</strong> '.$backtrace[0]['line'].'</a></p>';
     echo '<ol>';
     foreach ($backtrace as $k => $v) {
         if ($k > 2) {

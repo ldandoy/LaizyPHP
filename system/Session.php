@@ -11,6 +11,8 @@
 
 namespace system;
 
+use system\Bootstrap;
+
 /**
  * Class to manage session
  *
@@ -35,19 +37,26 @@ class Session
     /**
      * Add a flash message
      *
-     * @param string $text message to display
-     * @param string $type message type (danger|success|warning|info)
+     * @param string $message Message to display
+     * @param string $type Message type (danger|success|warning|info)
      * @param bool $canClose
      *
      * @return void
      */
-    public static function addFlash($text = '', $type = 'danger', $canClose = true)
+    public static function addFlash($message, $type, $canClose = true)
     {
-        $_SESSION['flash'][] = array(
-            'text' => $text,
+        $flash = self::get('flash');
+        if ($flash === null) {
+            $flash = array();
+        }
+
+        $flash[] = array(
+            'message' => $message,
             'type' => $type,
             'canClose' => $canClose
         );
+
+        self::set('flash', $flash);
     }
 
     /**
@@ -59,20 +68,12 @@ class Session
     {
         $html = '';
 
-        if (isset($_SESSION['flash'])) {
-            foreach ($_SESSION['flash'] as $m) {
-                $button = '';
-                if($canClose === true)
-                {
-                    $button = '<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>';
-                }
-                
-                $html .=
-                    '<div class="alert alert-'.$type.' alert-dismissible" role="alert">'.
-                        $button.
-                        $message.
-                    '</div>';
+        $flash = self::get('flash');
+        if ($flash !== null) {
+            foreach ($flash as $f) {
+                $html .= Bootstrap::alert($f['message'], $f['type'], $f['canClose']);
             }
+            self::remove('flash');
         }
 
         return $html;
@@ -106,5 +107,17 @@ class Session
     public static function remove($name)
     {
         unset($_SESSION[$name]);
+    }
+
+    /**
+     * Get and remove a session variable
+     *
+     * @return mixed
+     */
+    public static function getAndRemove($name)
+    {
+        $value = self::get($name);
+        self::remove($name);
+        return $value;
     }
 }

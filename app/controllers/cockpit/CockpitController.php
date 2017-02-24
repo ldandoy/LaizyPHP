@@ -2,20 +2,20 @@
 
 namespace app\controllers\cockpit;
 
-use \system\Session;
 use \system\Controller;
+use \system\Session;
 
 class CockpitController extends Controller
 {
-    public $administrator = null;
+    public $connectedAdministrator = null;
 
     public function __construct($request)
     {
         parent::__construct($request);
 
-        $this->administrator = Session::get('administrator');
+        $this->connectedAdministrator = Session::get('connectedAdministrator');
 
-        if ($this->administrator === null) {
+        if ($this->connectedAdministrator === null) {
             $this->redirect('cockpit_administrators_login');
         }
     }

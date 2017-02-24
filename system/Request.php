@@ -97,10 +97,9 @@ class Request
         $this->method = strtolower($_SERVER['REQUEST_METHOD']);
 
         /* We manage the request params */
-        $sessionPost = Session::get('post');
+        $sessionPost = Session::getAndRemove('post');
         if ($sessionPost !== null) {
             $_POST = array_merge($_POST, $sessionPost);
-            Session::remove('post');
         }
         $this->post = $_POST;
     }

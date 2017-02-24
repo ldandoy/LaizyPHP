@@ -1,28 +1,44 @@
 <h1 class="page-title"><?php echo $params['pageTitle']; ?></h1>
-<form action="<?php echo $params['formAction']; ?>" method="post">
+<form id="formUser" method="post" action="<?php echo $params['formAction']; ?>" class="form form-horizontal">
 <?php
-echo $this->Form->input(array(
-    'label' => 'email',
-    'value' => $params['user']->email
+$user = $params['user'];
+echo system\Form::text(array(
+    'name' => 'lastname',
+    'label' => 'Nom',
+    'value' => isset($user->lastname) ? $user->lastname : '',
+    'error' => isset($user->errors['lastname']) ? $user->errors['lastname'] : ''
 ));
-echo $this->Form->input(array(
-    'label' => 'lastname',
-    'value' => $params['user']->lastname
+echo system\Form::text(array(
+    'name' => 'firstname',
+    'label' => 'Prénom',
+    'value' => isset($user->firstname) ? $user->firstname : '',
+    'error' => isset($user->errors['firstname']) ? $user->errors['firstname'] : ''
 ));
-echo $this->Form->input(array(
-    'label' => 'firstname',
-    'value' => $params['user']->firstname
+echo system\Form::text(array(
+    'name' => 'email',
+    'label' => 'Email',
+    'value' => isset($user->email) ? $user->email : '',
+    'error' => isset($user->errors['email']) ? $user->errors['email'] : ''
 ));
-echo $this->Form->textarea(array(
-    'label' => 'address',
-    'value' => $params['user']->address
+echo system\Form::password(array(
+    'name' => 'newPassword',
+    'label' => 'Mot de passe',
+    'value' => '',
+    'error' => isset($user->errors['newPassword']) ? $user->errors['newPassword'] : ''
 ));
-echo $this->Form->btn(array(
-    'label' => 'send',
-    'value' => 'Mettre à jour',
-    'color' => 'primary',
-    'align' => 'right',
-    'type'  => 'submit'
-))
+echo system\Form::textarea(array(
+    'name' => 'address',
+    'label' => 'Adresse',
+    'rows' => 5,
+    'value' => isset($user->address) ? $user->address : '',
+    'error' => isset($user->errors['address']) ? $user->errors['address'] : ''
+));
+echo system\Form::submit(array(
+    'name' => 'submit',
+    'label' => 'Enregistrer',
+    'value' => 'save',
+    'formId' => 'formUser',
+    'class' => 'btn-primary'
+));
 ?>
 </form>

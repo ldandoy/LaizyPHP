@@ -20,7 +20,11 @@
 					</button>
 					<a class="navbar-brand" href="/">Titre du site</a>
 				</div>
-
+<?php if ($this->connectedUser !== null) : ?>
+				<a href="<?php echo system\Router::url('user_logout'); ?>" class="btn btn-danger pull-right" title="Se déconnecter"><i class="fa fa-remove"></i></a>
+<?php else: ?>
+				<a href="<?php echo system\Router::url('user_login'); ?>" class="btn btn-success pull-right" title="Se déconnecter"><i class="fa fa-login"></i> Se connecter</a>
+<?php endif; ?>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="<?php echo system\Router::url('articles_index'); ?>">Articles <span class="sr-only">(current)</span></a></li>
@@ -32,7 +36,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<?php system\Session::flash(); ?>
+					<?php echo system\Session::flash(); ?>
 					<?php echo $yeslp; ?>
 				</div>
 			</div>

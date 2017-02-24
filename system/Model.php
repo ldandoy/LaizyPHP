@@ -26,7 +26,7 @@ use system\Db;
  */
 class Model
 {
-    public $model = array();
+    public $errors = array();
 
     /**
      * Constructeur
@@ -34,14 +34,14 @@ class Model
      * Cette fonction appel la fonction setData au l'initialisation
      * de l'objet
      *
-     * @param array $datas Contient les données à ajouter à l'objet
+     * @param array $data Contient les données à ajouter à l'objet
      *
      * @return void
      */
-    public function __construct($datas = array())
+    public function __construct($data = array())
     {
-        if (!empty($datas)) {
-            $this->setData($datas);
+        if (!empty($data)) {
+            $this->setData($data);
         } else {
             foreach ($this->permittedColumns as $k => $v) {
                 $this->$v = '';
@@ -55,22 +55,35 @@ class Model
      * Cette fonction est appelé à l'instanciation de la classe pour
      * charger les données dans l'objet
      *
-     * @param array $datas Contient les données à ajouter àl'objet
+     * @param array $data Contient les données à ajouter àl'objet
      *
      * @return void
      */
-    public function setData($datas = array())
+    public function setData($data = array())
     {
-        $this->id = $datas->id;
+        if (!is_array($data)) {
+            $data = (array)$data;
+        }
+
+        if (isset($data['id'])) {
+            $this->id = $data['id'];
+        }
+
         if (isset($this->permittedColumns) && !empty($this->permittedColumns)) {
             foreach ($this->permittedColumns as $k => $v) {
-                $this->$v = $datas->$v;
+                if (isset($data[$v])) {
+                    $this->$v = $data[$v];
+                }
             }
-        } else {
-            
         }
-        $this->created_at = $datas->created_at;
-        $this->updated_at = $datas->updated_at;
+
+        if (isset($data['created_at'])) {
+           $this->created_at = $data['created_at'];
+        }
+
+        if (isset($data['updated_at'])) {
+            $this->updated_at = $data['updated_at'];
+        }
     }
 
     /**
@@ -80,7 +93,7 @@ class Model
      *
      * @return bool
      */
-    public function create($data)
+    public function create($data = array())
     {
         $data['created_at'] = date('Y-m-d H:i:s');
         $data['updated_at'] = $data['created_at'];
@@ -103,7 +116,7 @@ class Model
      *
      * @return bool
      */
-    public function update($data)
+    public function update($data = array())
     {
         $data['updated_at'] = date('Y-m-d H:i:s');
         $permittedData = $this->getPermittedData($data);
@@ -231,7 +244,7 @@ class Model
      *
      * @return mixed
      */
-    public function getPermittedData($data)
+    public function getPermittedData($data = array())
     {
         $permittedData = [];
         foreach ($data as $k => $v) {
@@ -240,5 +253,16 @@ class Model
             }
         }
         return $permittedData;
+    }
+
+    /**
+     * Valid the object and fill $this->errors with error messages. Should be overrided in child class
+     *
+     * @return bool
+     */
+    public function valid()
+    {
+        $this->errors = array();
+        return true;
     }
 }
