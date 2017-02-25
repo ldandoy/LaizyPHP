@@ -11,6 +11,11 @@ use system\Password;
 
 class UsersController extends CockpitController
 {
+    /*
+     * @var app\models\User
+     */
+    public $user = null;
+
     public function indexAction()
     {
         $users = User::findAll();
@@ -22,16 +27,13 @@ class UsersController extends CockpitController
 
     public function newAction()
     {
-        $user = Session::get('user');
-            var_dump(0);
-        if ($user === null) {
+        if ($this->user === null) {
             $user = new User();
-            var_dump(1);
         }
 
         $this->render('edit', array(
             'id' => 0,
-            'user' => $user,
+            'user' => $this->user,
             'pageTitle' => 'Nouvel utilisateur',
             'formAction' => Router::url('cockpit_users_create')
         ));
@@ -39,14 +41,13 @@ class UsersController extends CockpitController
 
     public function editAction($id)
     {
-        $user = Session::get('user');
-        if ($user === null) {
-            $user = User::findById($id);
+        if ($this->user === null) {
+            $this->user = User::findById($id);
         }
 
         $this->render('edit', array(
             'id' => $id,
-            'user' => $user,
+            'user' => $this->user,
             'pageTitle' => 'Modification utilisateur n°'.$id,
             'formAction' => Router::url('cockpit_users_update_'.$id)
         ));
@@ -54,64 +55,60 @@ class UsersController extends CockpitController
 
     public function createAction()
     {
-        $user = new User();
-        $user->setData($this->request->post);
+        $this->user = new User();
+        $this->user->setData($this->request->post);
 
-        if ($user->valid()) {
-            if ($user->create((array)$user)) {
+        if ($this->user->valid()) {
+            $password = Password::generatePassword();
+            $cryptedPassword = Password::crypt($password);
+            $this->user->password = $cryptedPassword;
+
+            $this->user->email_verification_code = Password::generateToken();
+            $this->user->email_verification_date = date('Y-m-d H:i:s');
+            $this->user->active = 0;
+
+            if ($this->user->create((array)$this->user)) {                
                 Session::addFlash('Utilisateur ajouté', 'success');
-                Session::remove('user');
                 $this->redirect('cockpit_users');
             } else {
                 Session::addFlash('Erreur insertion base de données', 'danger');
-                Session::set('user', $user);
-                $this->redirect('cockpit_users_new');
             };
         } else {
             Session::addFlash('Erreur(s) dans le formulaire', 'danger');
-            Session::set('user', $user);
-            $this->redirect('cockpit_users_new');
         }
 
-        $user = new User();
-        if ($user->create($this->request->post)) {
-            $this->Session->setFlash('Utilisateur ajouté');
-            $this->redirect('cockpit_users');
-        } else {
-            $this->Session->setFlash('Erreur...');
-            $this->redirect('cockpit_users_new');
-        };
+        $this->newAction();
     }
 
     public function updateAction($id)
     {
-        $user = User::findById($id);
-        $user->setData($this->request->post);
+        $this->user = User::findById($id);
+        $this->user->setData($this->request->post);
 
-        if ($user->valid()) {
-            $newPassword = $this->request->post['newPassword'];
-            if (Password::validPassword($newPassword)) {
-                $user->password = Password::crypt($newPassword);
+        if ($this->user->valid()) {
+            $newPassword = trim($this->request->post['newPassword']);
+
+            if ($newPassword != '') {
+                if (Password::validPassword($newPassword)) {
+                    $this->user->password = Password::crypt($newPassword);
+                } else {
+                    $this->user->errors['newPassword'] = 'Mot de passe invalide';
+                }
+            }
+
+            if (empty($this->user->errors)) {
+                if ($this->user->update((array)$this->user)) {
+                    Session::addFlash('Utilisateur modifié', 'success');
+                    $this->redirect('cockpit_users');
+                } else {
+                    Session::addFlash('Erreur mise à jour base de données', 'danger');
+                }
             } else {
-                $user->errors['newPassword'] = 'Mot de passe invalide';
+                Session::addFlash('Erreur(s) dans le formulaire', 'danger');
             }
         }
 
-        if (empty($user->errors)) {
-            if ($user->update((array)$user)) {
-                Session::addFlash('Utilisateur modifié', 'success');
-                Session::remove('user');
-                $this->redirect('cockpit_users');
-            } else {
-                Session::addFlash('Erreur mise à jour base de données', 'danger');
-                Session::set('user', $user);
-                $this->redirect('cockpit_users_edit_'.$id);
-            }
-        } else {
-            Session::addFlash('Erreur(s) dans le formulaire', 'danger');
-            Session::set('user', $user);
-            $this->redirect('cockpit_users_edit_'.$id);
-        }
+        $this->editAction($id);
     }
 
     public function deleteAction($id)

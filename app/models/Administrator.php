@@ -8,7 +8,15 @@ use system\Password;
 
 class Administrator extends Model
 {
-    protected $permittedColumns = array('lastname', 'firstname', 'email', 'password');
+    protected $permittedColumns = array(
+        'lastname',
+        'firstname',
+        'email',
+        'password',
+        'email_verification_code',
+        'email_verification_date',
+        'active'
+    );
 
     /**
      * Get an administrator by email

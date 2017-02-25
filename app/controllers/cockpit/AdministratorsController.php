@@ -11,6 +11,11 @@ use system\Password;
 
 class AdministratorsController extends CockpitController
 {
+    /*
+     * @var app\models\Administrator
+     */
+    public $administrator = null;
+
     public function indexAction()
     {
         $administrators = Administrator::findAll();
@@ -22,14 +27,13 @@ class AdministratorsController extends CockpitController
 
     public function newAction()
     {
-        $administrator = Session::get('administrator');
-        if ($administrator === null) {
-            $administrator = new Administrator();
+        if ($this->administrator === null) {
+            $this->administrator = new Administrator();
         }
 
         $this->render('edit', array(
             'id' => 0,
-            'administrator' => $administrator,
+            'administrator' => $this->administrator,
             'pageTitle' => 'Nouvel administrateur',
             'formAction' => Router::url('cockpit_administrators_create')
         ));
@@ -37,14 +41,13 @@ class AdministratorsController extends CockpitController
 
     public function editAction($id)
     {
-        $administrator = Session::get('administrator');
-        if ($administrator === null) {
-            $administrator = Administrator::findById($id);
+        if ($this->administrator === null) {
+            $this->administrator = Administrator::findById($id);
         }
 
         $this->render('edit', array(
             'id' => $id,
-            'administrator' => $administrator,
+            'administrator' => $this->administrator,
             'pageTitle' => 'Modification administrateur n°'.$id,
             'formAction' => Router::url('cockpit_administrators_update_'.$id)
         ));
@@ -52,55 +55,59 @@ class AdministratorsController extends CockpitController
 
     public function createAction()
     {
-        $administrator = new Administrator();
-        $administrator->setData($this->request->post);
+        $this->administrator = new Administrator();
+        $this->administrator->setData($this->request->post);
 
-        if ($administrator->valid()) {
-            if ($administrator->create((array)$administrator)) {
+        if ($this->administrator->valid()) {
+            $password = Password::generatePassword();
+            $cryptedPassword = Password::crypt($password);
+            $this->administrator->password = $cryptedPassword;
+
+            $this->administrator->email_verification_code = Password::generateToken();
+            $this->administrator->email_verification_date = date('Y-m-d H:i:s');
+            $this->administrator->active = 0;
+
+            if ($this->administrator->create((array)$this->administrator)) {
                 Session::addFlash('Administrateur ajouté', 'success');
-                Session::remove('administrator');
                 $this->redirect('cockpit_administrators');
             } else {
                 Session::addFlash('Erreur insertion base de données', 'danger');
-                Session::set('administrator', $administrator);
-                $this->redirect('cockpit_administrators_new');
             };
         } else {
             Session::addFlash('Erreur(s) dans le formulaire', 'danger');
-            Session::set('administrator', $administrator);
-            $this->redirect('cockpit_administrators_new');
         }
+
+        $this->newAction();
     }
 
     public function updateAction($id)
     {
-        $administrator = Administrator::findById($id);
-        $administrator->setData($this->request->post);
+        $this->administrator = Administrator::findById($id);
+        $this->administrator->setData($this->request->post);
 
-        if ($administrator->valid()) {
-            $newPassword = $this->request->post['newPassword'];
-            if (Password::validPassword($newPassword)) {
-                $administrator->password = Password::crypt($newPassword);
+        if ($this->administrator->valid()) {
+            $newPassword = trim($this->request->post['newPassword']);
+            if ($newPassword != '') {
+                if (Password::validPassword($newPassword)) {
+                    $this->administrator->password = Password::crypt($newPassword);
+                } else {
+                    $this->administrator->errors['newPassword'] = 'Mot de passe invalide';
+                }
+            }
+
+            if (empty($this->administrator->errors)) {
+                if ($this->administrator->update((array)$this->administrator)) {
+                    Session::addFlash('Administrateur modifié', 'success');
+                    $this->redirect('cockpit_administrators');
+                } else {
+                    Session::addFlash('Erreur mise à jour base de données', 'danger');
+                }
             } else {
-                $administrator->errors['newPassword'] = 'Mot de passe invalide';
+                Session::addFlash('Erreur(s) dans le formulaire', 'danger');
             }
         }
 
-        if (empty($administrator->errors)) {
-            if ($administrator->update((array)$administrator)) {
-                Session::addFlash('Administrateur modifié', 'success');
-                Session::remove('administrator');
-                $this->redirect('cockpit_administrators');
-            } else {
-                Session::addFlash('Erreur mise à jour base de données', 'danger');
-                Session::set('administrator', $administrator);
-                $this->redirect('cockpit_administrators_edit_'.$id);
-            }
-        } else {
-            Session::addFlash('Erreur(s) dans le formulaire', 'danger');
-            Session::set('administrator', $administrator);
-            $this->redirect('cockpit_administrators_edit_'.$id);
-        }
+        $this->editAction($id);
     }
 
     public function deleteAction($id)

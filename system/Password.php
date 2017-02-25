@@ -108,7 +108,7 @@ class Password
     *
     * @return bool
     */
-    public static function validPassword($password, $validTypes = array(VALID_PASSWORD_LENGTH, VALID_PASSWORD_LOWERCASE, VALID_PASSWORD_UPPERCASE, VALID_PASSWORD_DIGIT/*, VALID_PASSWORD_SPECIAL*/))
+    public static function validPassword($password, $validTypes = array(VALID_PASSWORD_LENGTH, VALID_PASSWORD_LOWERCASE/*, VALID_PASSWORD_UPPERCASE*/, VALID_PASSWORD_DIGIT/*, VALID_PASSWORD_SPECIAL*/))
     {
         $minuscules = 'abcdefghijklmopqrstuvwxyz';
         $majuscules = 'ABCDEFGHIJKLMOPQRSTUVWXYZ';

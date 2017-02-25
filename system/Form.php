@@ -43,6 +43,8 @@ class Form
 
         $p['value'] = isset($params['value']) ? $params['value'] : '';
 
+        $p['autocomplete'] = isset($params['autocomplete']) ? ' autocomplete="'.$params['autocomplete'].'"' : '';
+
         $p['placeholder'] = isset($params['placeholder']) ? $params['placeholder'] : '';
 
         $readOnly = isset($params['readOnly']) ? (bool)$params['readOnly'] : false;
@@ -79,7 +81,7 @@ class Form
             '<div class="form-group form-group-sm'.$params['errorClass'].'">'.
                 '<label for="'.$params['id'].'" class="col-sm-2 control-label">'.$params['label'].'</label>'.
                 '<div class="col-sm-10">'.
-                    '<input type="text" id="'.$params['id'].'" name="'.$params['name'].'" value="'.$params['value'].'"'.$params['readOnly'].' class="form-control'.$params['class'].'" placeholder="'.$params['placeholder'].'" />'.
+                    '<input type="text" id="'.$params['id'].'" name="'.$params['name'].'" value="'.$params['value'].'" class="form-control'.$params['class'].'" placeholder="'.$params['placeholder'].'"'.$params['readOnly'].$params['autocomplete'].' />'.
                     $params['errorHtml'].
                 '</div>'.
             '</div>';
@@ -102,7 +104,7 @@ class Form
             '<div class="form-group form-group-sm'.$params['errorClass'].'">'.
                 '<label for="'.$params['id'].'" class="col-sm-2 control-label">'.$params['label'].'</label>'.
                 '<div class="col-sm-10">'.
-                    '<input type="password" id="'.$params['id'].'" name="'.$params['name'].'" value="'.$params['value'].'"'.$params['readOnly'].' class="form-control'.$params['class'].'" placeholder="'.$params['placeholder'].'" />'.
+                    '<input type="password" id="'.$params['id'].'" name="'.$params['name'].'" value="'.$params['value'].'" class="form-control'.$params['class'].'" placeholder="'.$params['placeholder'].'"'.$params['readOnly'].$params['autocomplete'].' />'.
                     $params['errorHtml'].
                 '</div>'.
             '</div>';
@@ -128,7 +130,7 @@ class Form
             '<div class="form-group form-group-sm'.$params['errorClass'].'">'.
                 '<label for="'.$params['id'].'" class="col-sm-2 control-label">'.$params['label'].'</label>'.
                 '<div class="col-sm-10">'.
-                    '<textarea id="'.$params['id'].'" name="'.$params['name'].'"'.$params['readOnly'].' cols="'.$cols.'" rows="'.$rows.'" class="form-control'.$params['class'].'" placeholder="'.$params['placeholder'].'">'.$params['value'].'</textarea>'.
+                    '<textarea id="'.$params['id'].'" name="'.$params['name'].'" cols="'.$cols.'" rows="'.$rows.'" class="form-control'.$params['class'].'" placeholder="'.$params['placeholder'].'"'.$params['readOnly'].'>'.$params['value'].'</textarea>'.
                     $params['errorHtml'].
                 '</div>'.
             '</div>';

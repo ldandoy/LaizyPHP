@@ -21,7 +21,11 @@
 					<a class="navbar-brand" href="/cockpit/">Cockpit</a>
 				</div>
 <?php if ($this->connectedAdministrator !== null) : ?>
-				<a href="<?php echo system\Router::url('cockpit_administrators_logout'); ?>" class="btn btn-danger pull-right" title="Se déconnecter"><i class="fa fa-remove"></i></a>
+				<div class="pull-right connected-administrator">
+					<span><?php echo $this->connectedAdministrator->lastname.' '.$this->connectedAdministrator->firstname; ?></span>
+					<a href="<?php echo system\Router::url('cockpit_administrators_logout'); ?>" class="btn btn-danger" title="Se déconnecter"><i class="fa fa-remove"></i></a>
+				</div>
+				<div class="clearfix"></div>
 <?php endif; ?>
 			</div>
 		</nav>

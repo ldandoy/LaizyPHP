@@ -8,7 +8,16 @@ use system\Password;
 
 class User extends Model
 {
-    protected $permittedColumns = array('lastname', 'firstname', 'email', 'address');
+    protected $permittedColumns = array(
+        'lastname',
+        'firstname',
+        'email',
+        'password',
+        'address',
+        'email_verification_code',
+        'email_verification_date',
+        'active'
+    );
 
     /**
      * Get an user by email
@@ -62,5 +71,7 @@ class User extends Model
         if ($this->address == '') {
             $this->errors['address'] = 'Adresse obligatoire';
         }
+
+        return empty($this->errors);
     }
 }

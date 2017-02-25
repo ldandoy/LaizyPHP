@@ -1,37 +1,39 @@
 <h1 class="page-title"><?php echo $params['pageTitle']; ?></h1>
 <form id="formUser" method="post" action="<?php echo $params['formAction']; ?>" class="form form-horizontal">
 <?php
-$user = $params['user'];
 echo system\Form::text(array(
     'name' => 'lastname',
     'label' => 'Nom',
-    'value' => isset($user->lastname) ? $user->lastname : '',
-    'error' => isset($user->errors['lastname']) ? $user->errors['lastname'] : ''
+    'value' => isset($this->user->lastname) ? $this->user->lastname : '',
+    'error' => isset($this->user->errors['lastname']) ? $this->user->errors['lastname'] : ''
 ));
 echo system\Form::text(array(
     'name' => 'firstname',
     'label' => 'Prénom',
-    'value' => isset($user->firstname) ? $user->firstname : '',
-    'error' => isset($user->errors['firstname']) ? $user->errors['firstname'] : ''
+    'value' => isset($this->user->firstname) ? $this->user->firstname : '',
+    'error' => isset($this->user->errors['firstname']) ? $this->user->errors['firstname'] : ''
 ));
 echo system\Form::text(array(
     'name' => 'email',
     'label' => 'Email',
-    'value' => isset($user->email) ? $user->email : '',
-    'error' => isset($user->errors['email']) ? $user->errors['email'] : ''
+    'value' => isset($this->user->email) ? $this->user->email : '',
+    'error' => isset($this->user->errors['email']) ? $this->user->errors['email'] : ''
 ));
-echo system\Form::password(array(
-    'name' => 'newPassword',
-    'label' => 'Mot de passe',
-    'value' => '',
-    'error' => isset($user->errors['newPassword']) ? $user->errors['newPassword'] : ''
-));
+if (isset($this->user->id)) {
+    echo system\Form::password(array(
+        'name' => 'newPassword',
+        'label' => 'Mot de passe',
+        'value' => '',
+        'autocomplete' => 'off',
+        'error' => isset($this->user->errors['newPassword']) ? $this->user->errors['newPassword'] : ''
+    ));
+}
 echo system\Form::textarea(array(
     'name' => 'address',
     'label' => 'Adresse',
     'rows' => 5,
-    'value' => isset($user->address) ? $user->address : '',
-    'error' => isset($user->errors['address']) ? $user->errors['address'] : ''
+    'value' => isset($this->user->address) ? $this->user->address : '',
+    'error' => isset($this->user->errors['address']) ? $this->user->errors['address'] : ''
 ));
 echo system\Form::submit(array(
     'name' => 'submit',

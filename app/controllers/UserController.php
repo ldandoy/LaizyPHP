@@ -7,6 +7,7 @@ use app\models\User;
 
 use system\Router;
 use system\Session;
+use system\Password;
 
 class UserController extends ApplicationController
 {

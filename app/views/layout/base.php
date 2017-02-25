@@ -21,9 +21,13 @@
 					<a class="navbar-brand" href="/">Titre du site</a>
 				</div>
 <?php if ($this->connectedUser !== null) : ?>
-				<a href="<?php echo system\Router::url('user_logout'); ?>" class="btn btn-danger pull-right" title="Se déconnecter"><i class="fa fa-remove"></i></a>
+				<div class="pull-right connected-user">
+					<span><?php echo $this->connectedUser->lastname.' '.$this->connectedUser->firstname; ?></span>
+					<a href="<?php echo system\Router::url('user_logout'); ?>" class="btn btn-danger" title="Se déconnecter"><i class="fa fa-remove"></i></a>
+				</div>
 <?php else: ?>
 				<a href="<?php echo system\Router::url('user_login'); ?>" class="btn btn-success pull-right" title="Se déconnecter"><i class="fa fa-login"></i> Se connecter</a>
+				<!-- <div class="clearfix"></div> -->
 <?php endif; ?>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">

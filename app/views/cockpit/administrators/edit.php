@@ -1,31 +1,33 @@
 <h1 class="page-title"><?php echo $params['pageTitle']; ?></h1>
 <form id="formAdministrator" method="post" action="<?php echo $params['formAction']; ?>" class="form form-horizontal">
 <?php
-$administrator = $params['administrator'];
 echo system\Form::text(array(
     'name' => 'lastname',
     'label' => 'Nom',
-    'value' => isset($administrator->lastname) ? $administrator->lastname : '',
-    'error' => isset($administrator->errors['lastname']) ? $administrator->errors['lastname'] : ''
+    'value' => isset($this->administrator->lastname) ? $this->administrator->lastname : '',
+    'error' => isset($this->administrator->errors['lastname']) ? $this->administrator->errors['lastname'] : ''
 ));
 echo system\Form::text(array(
     'name' => 'firstname',
     'label' => 'Prénom',
-    'value' => isset($administrator->firstname) ? $administrator->firstname : '',
-    'error' => isset($administrator->errors['firstname']) ? $administrator->errors['firstname'] : ''
+    'value' => isset($this->administrator->firstname) ? $this->administrator->firstname : '',
+    'error' => isset($this->administrator->errors['firstname']) ? $this->administrator->errors['firstname'] : ''
 ));
 echo system\Form::text(array(
     'name' => 'email',
     'label' => 'Email',
-    'value' => isset($administrator->email) ? $administrator->email : '',
-    'error' => isset($administrator->errors['email']) ? $administrator->errors['email'] : ''
+    'value' => isset($this->administrator->email) ? $this->administrator->email : '',
+    'error' => isset($this->administrator->errors['email']) ? $this->administrator->errors['email'] : ''
 ));
-echo system\Form::password(array(
-    'name' => 'newPassword',
-    'label' => 'Mot de passe',
-    'value' => '',
-    'error' => isset($administrator->errors['newPassword']) ? $administrator->errors['newPassword'] : ''
-));
+if (isset($this->administrator->id)) {
+    echo system\Form::password(array(
+        'name' => 'newPassword',
+        'label' => 'Nouveau mot de passe',
+        'value' => '',
+        'autocomplete' => 'off',
+        'error' => isset($this->administrator->errors['newPassword']) ? $this->administrator->errors['newPassword'] : ''
+    ));
+}
 echo system\Form::submit(array(
     'name' => 'submit',
     'label' => 'Enregistrer',
