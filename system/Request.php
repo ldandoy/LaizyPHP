@@ -64,7 +64,6 @@ class Request
         /* We manage the request info */
         if (isset($_SERVER['PATH_INFO'])) {
             $url = $_SERVER['PATH_INFO'];
-            error_log('1 : '.$url);
 
             $adminPrefix = Config::getValueG('admin_prefix');
 
@@ -91,7 +90,6 @@ class Request
             /* If the url is just / */
             $this->url = '/'.$defaultController.'/'.$defaultAction;
             $this->format = 'html';
-            error_log('2 : '.$this->url);
         }
         /* We manage the request method */
         $this->method = strtolower($_SERVER['REQUEST_METHOD']);

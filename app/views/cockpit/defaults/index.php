@@ -1,1 +1,1 @@
-<h1 class="page-title">Accueil admin</h1>
+<h1 class="page-title">Accueil cockpit</h1>

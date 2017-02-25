@@ -24,3 +24,7 @@ echo system\Form::submit(array(
 ));
 ?>
 </form>
+
+<p>
+	Pas encore de compte? <a href="<?php echo system\Router::url('user_signup'); ?>">S'inscrire</a>
+</p>

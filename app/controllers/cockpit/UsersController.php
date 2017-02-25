@@ -87,7 +87,6 @@ class UsersController extends CockpitController
 
         if ($this->user->valid()) {
             $newPassword = trim($this->request->post['newPassword']);
-
             if ($newPassword != '') {
                 if (Password::validPassword($newPassword)) {
                     $this->user->password = Password::crypt($newPassword);
