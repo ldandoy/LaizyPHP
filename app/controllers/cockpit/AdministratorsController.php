@@ -15,6 +15,7 @@ class AdministratorsController extends CockpitController
      * @var app\models\Administrator
      */
     public $administrator = null;
+    public $layout = null;
 
     public function indexAction()
     {
@@ -122,12 +123,24 @@ class AdministratorsController extends CockpitController
     {
         $errors = array();
         $post = $this->request->post;
+        $this->layout = $this->request->prefix.DS."login";
 
-        if (!empty($post) && isset($post['email']) && isset($post['password']) ) {
+        if (!empty($post) && isset($post['email']) && isset($post['password'])) {
+            /*
+            $administrator = Administrator::check($post);
+            if ($administrator) {
+                Session::set('connectedAdministrator', $administrator);
+                $this->redirect('cockpit');
+            } else {
+                // On devrait aussi inverser les arguments de cette fonction.
+                Session::addFlash($administrator->getErrorMessage(), 'danger');
+            }
+            */
+
+
             if (trim($post['email']) == '') {
                 $errors['email'] = 'Champs obligatoire';
-            }
-            else if (!filter_var($post['email'], FILTER_VALIDATE_EMAIL)) {
+            } else if (!filter_var($post['email'], FILTER_VALIDATE_EMAIL)) {
                 $errors['email'] = 'Email invlaide';
             }
 
@@ -135,7 +148,7 @@ class AdministratorsController extends CockpitController
                 $errors['password'] = 'Champs obligatoire';
             }
 
-            if(empty($errors)) {
+            if (empty($errors)) {
                 $administrator = Administrator::findByEmail($post['email']);
                 if ($administrator && Password::check($post['password'], $administrator->password)) {
                     Session::set('connectedAdministrator', $administrator);

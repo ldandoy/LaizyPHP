@@ -56,12 +56,23 @@ class Controller
         }
         ob_start();
         if (strpos($view, "/errors/") === 0) {
-            require_once VIEW_DIR.DS.'layout'.DS.'error.php';
+            $layout = VIEW_DIR.DS.'layout'.DS.'error.php';
         } else {
-            if (isset($this->request->prefix)) {
-                require_once VIEW_DIR.DS.'layout'.DS.$this->request->prefix.DS.'base.php';
+            if ($this->layout != null) {
+                $layout = VIEW_DIR.DS.'layout'.DS.$this->layout.'.php';
             } else {
-                require_once VIEW_DIR.DS.'layout'.DS.'base.php';
+                if (isset($this->request->prefix)) {
+                    $layout = VIEW_DIR.DS.'layout'.DS.$this->request->prefix.DS.'base.php';
+                } else {
+                    $layout = VIEW_DIR.DS.'layout'.DS.'base.php';
+                }
+            }
+            
+            if (file_exists($layout)) {
+                require_once $layout;
+            } else {
+                $message = 'Le layout "'.$layout.'" n\'existe pas';
+                $this->e404('Erreur de layout', $message);
             }
         }
         $html = ob_get_clean();

@@ -1,7 +1,6 @@
+<form id="formLogin" method="post" action="<?php echo $params['formAction']; ?>" class="form form-horizontal">
 <h1 class="page-title"><?php echo $params['pageTitle']; ?></h1>
 <?php /*$params['form']->render();*/ ?>
-
-<form id="formLogin" method="post" action="<?php echo $params['formAction']; ?>" class="form form-horizontal">
 <?php
 echo system\Form::text(array(
 	'name' => 'email',
