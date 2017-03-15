@@ -2,21 +2,24 @@
 
 namespace app\controllers\cockpit;
 
-use \system\Controller;
+use \system\AuthController;
 use \system\Session;
+use \system\Email;
 
-class CockpitController extends Controller
+class CockpitController extends AuthController
 {
-    public $connectedAdministrator = null;
-
     public function __construct($request)
     {
         parent::__construct($request);
 
-        $this->connectedAdministrator = Session::get('connectedAdministrator');
+        $this->usersTable = 'administrators';
+        $this->loginPage = 'cockpit_administrators_login';
+        $this->loginLayout = 'cockpit'.DS.'login';
+        $this->loginPageTitle = 'Connexion au Cockpit';
+        $this->afterLoginPage = 'cockpit';
 
-        if ($this->connectedAdministrator === null) {
-            $this->redirect('cockpit_administrators_login');
+        if (!$this->isConnected()) {
+            $this->redirect($this->loginPage);
         }
     }
 }

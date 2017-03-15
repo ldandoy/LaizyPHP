@@ -15,7 +15,6 @@ class AdministratorsController extends CockpitController
      * @var app\models\Administrator
      */
     public $administrator = null;
-    public $layout = null;
 
     public function indexAction()
     {
@@ -117,59 +116,5 @@ class AdministratorsController extends CockpitController
         $administrator->delete();
         Session::addFlash('Administrateur supprimé', 'success');
         $this->redirect('cockpit_administrators');
-    }
-
-    public function loginAction($goto = null)
-    {
-        $errors = array();
-        $post = $this->request->post;
-        $this->layout = $this->request->prefix.DS."login";
-
-        if (!empty($post) && isset($post['email']) && isset($post['password'])) {
-            /*
-            $administrator = Administrator::check($post);
-            if ($administrator) {
-                Session::set('connectedAdministrator', $administrator);
-                $this->redirect('cockpit');
-            } else {
-                // On devrait aussi inverser les arguments de cette fonction.
-                Session::addFlash($administrator->getErrorMessage(), 'danger');
-            }
-            */
-
-
-            if (trim($post['email']) == '') {
-                $errors['email'] = 'Champs obligatoire';
-            } else if (!filter_var($post['email'], FILTER_VALIDATE_EMAIL)) {
-                $errors['email'] = 'Email invlaide';
-            }
-
-            if (trim($post['password']) == '') {
-                $errors['password'] = 'Champs obligatoire';
-            }
-
-            if (empty($errors)) {
-                $administrator = Administrator::findByEmail($post['email']);
-                if ($administrator && Password::check($post['password'], $administrator->password)) {
-                    Session::set('connectedAdministrator', $administrator);
-                    $this->redirect('cockpit');
-                } else {
-                    Session::addFlash('Identifiant ou mot de passe incorrect', 'danger');
-                }
-            }
-        }
-
-        $this->render('login', array(
-            'pageTitle' => 'Connection au Cockpit',
-            'formAction' => Router::url('cockpit_administrators_login'),
-            'errors' => $errors
-        ));
-    }
-
-    public function logoutAction()
-    {
-        Session::remove('connectedAdministrator');
-        $this->connectedAdministrator = null;
-        $this->redirect('cockpit_administrators_login');
     }
 }

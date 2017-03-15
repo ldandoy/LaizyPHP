@@ -2,10 +2,10 @@
 
 namespace app\controllers;
 
-use \system\Controller;
+use \system\AuthController;
 use \system\Session;
 
-class ApplicationController extends Controller
+class ApplicationController extends AuthController
 {
     public $user = null;
 
@@ -13,6 +13,9 @@ class ApplicationController extends Controller
     {
         parent::__construct($request);
 
-        $this->connectedUser = Session::get('connectedUser');
+        $this->usersTable = 'users';
+        $this->loginPage = 'user_login';
+        $this->loginPageTitle = 'Connexion à votre compte';
+        $this->afterLoginPage = '';
     }
 }

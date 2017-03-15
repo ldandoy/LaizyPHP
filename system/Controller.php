@@ -26,6 +26,7 @@ class Controller
 {
     public $request;
     public $controller;
+    public $layout = null;
 
     public function __construct($request)
     {
@@ -58,7 +59,7 @@ class Controller
         if (strpos($view, "/errors/") === 0) {
             $layout = VIEW_DIR.DS.'layout'.DS.'error.php';
         } else {
-            if ($this->layout != null) {
+            if (isset($this->layout) && $this->layout != null) {
                 $layout = VIEW_DIR.DS.'layout'.DS.$this->layout.'.php';
             } else {
                 if (isset($this->request->prefix)) {

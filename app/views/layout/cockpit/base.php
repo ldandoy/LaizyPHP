@@ -20,9 +20,9 @@
 					</button>
 					<a class="navbar-brand" href="/cockpit/">Cockpit</a>
 				</div>
-<?php if ($this->connectedAdministrator !== null) : ?>
+<?php if ($this->connectedUser !== null) : ?>
 				<div class="pull-right connected-administrator">
-					<span><?php echo $this->connectedAdministrator->lastname.' '.$this->connectedAdministrator->firstname; ?></span>
+					<span><?php echo $this->connectedUser->lastname.' '.$this->connectedUser->firstname; ?></span>
 					<a href="<?php echo system\Router::url('cockpit_administrators_logout'); ?>" class="btn btn-danger" title="Se déconnecter"><i class="fa fa-remove"></i></a>
 				</div>
 				<div class="clearfix"></div>
