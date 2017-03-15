@@ -1,6 +1,6 @@
 <?php
 
-namespace system;
+namespace system\helpers;
 
 require SYSTEM_DIR.DS.'libs/phpmailer/class.phpmailer.php';
 require SYSTEM_DIR.DS.'libs/phpmailer/class.smtp.php';

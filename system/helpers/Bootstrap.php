@@ -1,6 +1,6 @@
 <?php
 
-namespace system;
+namespace system\helpers;
 
 define('BOOTSTRAP_ALERT_SUCCESS', 0);
 define('BOOTSTRAP_ALERT_INFO', 1);

@@ -9,7 +9,7 @@
  * @link     http://overconsulting.net
  */
 
-namespace system;
+namespace system\helpers;
 
 /**
  * Class gérant les Forms du site
@@ -32,16 +32,23 @@ class Form
     private static function parseParams($params = array())
     {
         $p = array();
-
-        $p['name'] = isset($params['name']) ? $params['name'] : '';
-        $p['id'] = $p['name'];
+        
+        $name = isset($params['name']) ? $params['name'] : '';
+        $p['name'] = $name;
+        $p['id'] = $name;
 
         $p['label'] = isset($params['label']) ? $params['label'] : '';
 
         $class = isset($params['class']) ? $params['class'] : '';
         $p['class'] = rtrim(' '.$class);
 
-        $p['value'] = isset($params['value']) ? $params['value'] : '';
+        if (isset($params['value'])) {
+            $p['value'] = $params['value'];
+        } else if (isset($params['model']['value'])) {
+            $p['value'] = $params['model']['value'];
+        } else {
+            $p['value'] = '';
+        }
 
         $p['autocomplete'] = isset($params['autocomplete']) ? ' autocomplete="'.$params['autocomplete'].'"' : '';
 
@@ -54,7 +61,13 @@ class Form
             $p['readOnly'] = '';
         }        
 
-        $error = isset($params['error']) ? $params['error'] : '';
+        if (isset($params['error'])) {
+            $error = $params['error'];
+        } else if (isset($params['model']['error'])) {
+            $error = $params['model']['error'];
+        } else {
+            $error = '';
+        }
         if ($error != '') {
             $p['errorClass'] = ' has-error';
             $p['errorHtml'] = '<div class="help-block error-block">'.$error.'</div>';
