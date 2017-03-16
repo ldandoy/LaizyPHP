@@ -2,6 +2,7 @@
 
 namespace system\helpers;
 
+use system\helpers\Html;
 use system\helpers\Form;
 
 class Templator
@@ -57,23 +58,54 @@ class Templator
 
                 $attributes = $data['attributes'];
 
-                $model = $this->getModelValueForInput($attributes, $params);
-                if ($model !== null) {
-                    $attributes['model'] = $model;
-                } else {
-                    unset($attributes['model']);
+                if (strpos($data['tag'], 'input_') === 0) {
+                    $model = $this->getModelValueForInput($attributes, $params);
+                    if ($model !== null) {
+                        $attributes['model'] = $model;
+                    } else {
+                        unset($attributes['model']);
+                    }
                 }
 
                 switch ($data['tag']) {
+                    case 'link':
+                        $replace = Html::link($attributes);
+                        break;
+
+                    case 'image':
+                        $replace = Html::image($attributes);
+                        break;
+
+                    case 'table':
+                        $dataKey = isset($attributes['data']) ? $attributes['data'] : '';
+                        if ($dataKey != '' && isset($params[$dataKey])) {
+                            $attributes['data'] = $params[$dataKey];
+                        } else {
+                            unset($attributes['data']);
+                        }
+
+                        $columnsKey = isset($attributes['columns']) ? $attributes['columns'] : '';
+                        if ($columnsKey != '' && isset($params[$columnsKey])) {
+                            $attributes['columns'] = $params[$columnsKey];
+                        } else {
+                            unset($attributes['columns']);
+                        }
+
+                        $replace = Html::table($attributes);
+                        break;
+
                     case 'input_text':
                         $replace = Form::text($attributes);
                         break;
+
                     case 'input_password':
                         $replace = Form::password($attributes);
                         break;
+
                     case 'input_textarea':
                         $replace = Form::textarea($attributes);
                         break;
+
                     case 'input_submit':
                         $replace = Form::submit($attributes);
                         break;

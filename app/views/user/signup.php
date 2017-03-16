@@ -1,3 +1,5 @@
+<p>{% image src="stormtrooper.jpg" %}</p>
+{% table data="data" columns="columns" %}
 <h1 class="page-title">{{ pageTitle }}</h1>
 <form id="formUser" method="post" action="<?php echo $params['formAction']; ?>" class="form form-horizontal">
     {% input_text name="lastname" model="user.lastname" label="Nom" %}

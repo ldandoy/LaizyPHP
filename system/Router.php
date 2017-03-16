@@ -155,7 +155,7 @@ class Router
      */
     public static function url($string = null, $params = array())
     {
-        $url = '/'.str_replace('_', '/', $string);
+        $url = '/'.ltrim(str_replace('_', '/', $string), '/');
         if (!empty($params)) {
             $url .= '/'.implode('/', $params);
         }

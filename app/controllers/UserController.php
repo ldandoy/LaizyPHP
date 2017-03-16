@@ -43,11 +43,49 @@ class UserController extends ApplicationController
             }
         }
 
+        $columns = array(
+            array(
+                'name' => 'a',
+                'title' => 'A',
+                'type' => 'string'
+            ),
+            array(
+                'name' => 'b',
+                'title' => 'B',
+                'type' => 'string'
+            ),
+            array(
+                'name' => 'c',
+                'title' => 'C',
+                'type' => 'string'
+            )
+        );
+
+        $data = array(
+            array(
+                'a' => 'aaa',
+                'b' => 'bbb',
+                'c' => 'ccc',
+            ),
+            array(
+                'a' => 'ddd',
+                'b' => 'eee',
+                'c' => 'fff',
+            ),
+            array(
+                'a' => 'ggg',
+                'b' => 'hhh',
+                'c' => 'iii',
+            )
+        );
+
         $this->render('signup', array(
             'id' => 0,
             'user' => $this->user,
             'pageTitle' => 'Création de compte',
-            'formAction' => Router::url('user_signup')
+            'formAction' => Router::url('user_signup'),
+            'data' => $data,
+            'columns' => $columns
         ));
     }
 }
