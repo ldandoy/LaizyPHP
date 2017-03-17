@@ -2,9 +2,9 @@
 
 namespace app\models;
 
-use system\Model;
-use system\Query;
-use system\Password;
+use System\Model;
+use System\Query;
+use System\Password;
 
 class User extends Model
 {

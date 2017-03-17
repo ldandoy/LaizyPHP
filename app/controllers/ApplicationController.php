@@ -2,8 +2,8 @@
 
 namespace app\controllers;
 
-use \system\AuthController;
-use \system\Session;
+use Auth\AuthController;
+use System\Session;
 
 class ApplicationController extends AuthController
 {

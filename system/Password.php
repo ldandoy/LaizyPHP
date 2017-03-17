@@ -5,13 +5,13 @@
  * @category System
  * @package  Netoverconsulting
  * @author   Loïc Dandoy <ldandoy@overconsulting.net>
- * @license  GNU 
+ * @license  GNU
  * @link     http://overconsulting.net
  */
 
-namespace system;
+namespace System;
 
-use system\Config;
+use System\Config;
 
 define('VALID_PASSWORD_LENGTH', 0);
 define('VALID_PASSWORD_LOWERCASE', 1);

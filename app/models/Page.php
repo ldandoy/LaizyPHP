@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use system\Model;
+use System\Model;
 
 class Page extends Model
 {

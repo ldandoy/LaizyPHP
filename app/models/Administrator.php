@@ -2,9 +2,9 @@
 
 namespace app\models;
 
-use system\Model;
-use system\Query;
-use system\Password;
+use System\Model;
+use System\Query;
+use System\Password;
 
 class Administrator extends Model
 {
@@ -59,7 +59,7 @@ class Administrator extends Model
             $this->errors['email'] = 'Email obligatoire';
         } else if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
             $this->errors['email'] = 'Email invalide';
-        }        
+        }
 
         /*$this->password = trim($this->password);
         if ($this->password == '') {

@@ -29,7 +29,7 @@ x Changer cokpit -> cockpit
 
 ROAD MAP [15/12/2016]
 ---------------------
-- Créé une classe de component
+x Créé une classe de component
 - Créer les actions en bdd via la ligne de commande
 x Documenté les classes du namespace system
 - Attention dans la fonction findById, on ne vérifie pas s'il y a une row retourné.
@@ -38,3 +38,7 @@ x Revoir le parseur d'url pour checker que le prefix correspond bien à celui de
 ROAD MAP [20/12/2016]
 ---------------------
 - Ajouter des callback au niveau des controllers et des models (before et after)
+
+ROAD MAP [17/03/2017]
+---------------------
+- Passer le fichier de function ailleurs
