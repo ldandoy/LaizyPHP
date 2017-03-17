@@ -91,11 +91,17 @@ class Html
         $class = isset($params['class']) ? $params['class'] : '';
         $class = ' class="'.$class.' table table-hover table-stripped"';
 
-        $data = isset($params['data']) ? $params['data'] : array();
+        $dataset = isset($params['dataset']) ?
+            $params['dataset'] :
+            array(
+                'columns' => array(),
+                'data' => array()
+            );
 
-        $columns = isset($params['columns']) ? $params['columns'] : array();
+        $columns = $dataset['columns'];
+        $data = $dataset['data'];
 
-        $html = 
+        $html =
             '<table '.$id.$class.'>';
 
         $html .=
@@ -108,7 +114,7 @@ class Html
                     '</tr>'.
                 '</thead>';
 
-        $html .= 
+        $html .=
                 '<tbody>';
         foreach ($data as $row) {
             $html .=
@@ -116,12 +122,12 @@ class Html
             foreach ($columns as $column) {
                 if (!isset($column['visible']) || $column['visible']) {
                     switch ($column['type']) {
-                        case 'date':
+                        case 'datetime':
                             $value = $row[$column['name']];
                             if (isset($column['format'])) {
-                                $value = DateTime::format($value, $column['format']);
+                                $value = Datetime::format($value, $column['format']);
                             } else {
-                                $value = DateTime::format($value, FORMAT_DATETIME);
+                                $value = Datetime::format($value, FORMAT_DATETIME);
                             }
                             break;
                         case 'int':
@@ -132,7 +138,7 @@ class Html
                             break;
                     }
 
-                    $html .= 
+                    $html .=
                         '<td>'.$value.'</td>';
                 }
             }

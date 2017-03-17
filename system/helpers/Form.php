@@ -59,7 +59,7 @@ class Form
             $p['readOnly'] = ' readonly="readonly"';
         } else {
             $p['readOnly'] = '';
-        }        
+        }
 
         if (isset($params['error'])) {
             $error = $params['error'];
@@ -90,7 +90,7 @@ class Form
     {
         $params = self::parseParams($params);
 
-        $html = 
+        $html =
             '<div class="form-group form-group-sm'.$params['errorClass'].'">'.
                 '<label for="'.$params['id'].'" class="col-sm-2 control-label">'.$params['label'].'</label>'.
                 '<div class="col-sm-10">'.
@@ -113,7 +113,7 @@ class Form
     {
         $params = self::parseParams($params);
 
-        $html = 
+        $html =
             '<div class="form-group form-group-sm'.$params['errorClass'].'">'.
                 '<label for="'.$params['id'].'" class="col-sm-2 control-label">'.$params['label'].'</label>'.
                 '<div class="col-sm-10">'.
@@ -139,11 +139,145 @@ class Form
         $cols = isset($params['cols']) ? $params['cols'] : '';
         $rows = isset($params['rows']) ? $params['rows'] : '5';
 
-        $html = 
+        $html =
             '<div class="form-group form-group-sm'.$params['errorClass'].'">'.
                 '<label for="'.$params['id'].'" class="col-sm-2 control-label">'.$params['label'].'</label>'.
                 '<div class="col-sm-10">'.
                     '<textarea id="'.$params['id'].'" name="'.$params['name'].'" cols="'.$cols.'" rows="'.$rows.'" class="form-control'.$params['class'].'" placeholder="'.$params['placeholder'].'"'.$params['readOnly'].'>'.$params['value'].'</textarea>'.
+                    $params['errorHtml'].
+                '</div>'.
+            '</div>';
+
+        return $html;
+    }
+
+    /**
+     * Generate select
+     *
+     * @param mixed $params
+     *
+     * @return string
+     */
+    public static function select($params = array())
+    {
+        $params = self::parseParams($params);
+
+        $options = isset($params['options']) ? $params['options'] : array();
+
+        $multiple = isset($params['multiple']) && $params['multiple'] == '1' ? ' multiple="multiple"' : '';
+
+        $html =
+            '<div class="form-group form-group-sm'.$params['errorClass'].'">'.
+                '<label for="'.$params['id'].'" class="col-sm-2 control-label">'.$params['label'].'</label>'.
+                '<div class="col-sm-10">'.
+                    '<select id="'.$params['id'].'" name="'.$params['name'].'"'.$multiple.' class="form-control'.$params['class'].'">';
+        foreach ($options as $option) {
+            if ((is_array($params['value']) && in_array($option['value'], $params['value'])) || $option['value'] == $params['value']) {
+                $selected = ' selected="selected"';
+            } else {
+                $selected = '';
+            }
+            $html .= '<option value="'.$option['value'].'"'.$selected.'>'.$option['label'].'</option>';
+        }
+        $html .=
+                    '</select>'.
+                '</div>'.
+                $params['errorHtml'].
+            '</div>';
+
+        return $html;
+    }
+
+    /**
+     * Generate input checkbox
+     *
+     * @param mixed $params
+     *
+     * @return string
+     */
+    public static function checkbox($params = array())
+    {
+        $params = self::parseParams($params);
+
+        $checked = $params['value'] == '1' ? ' checked="checked"' : '';
+
+        $html =
+            '<div class="form-group form-group-sm'.$params['errorClass'].'">'.
+                '<label for="'.$params['id'].'" class="col-sm-2 control-label">'.$params['label'].'</label>'.
+                '<div class="col-sm-1">';
+        if ($params['readOnly'] != '') {
+            $html .=
+                    '<input value="1"'.$checked.' disabled="disabled" type="checkbox" class="form-control'.$params['class'].'" />'.
+                    '<input id="'.$params['id'].'" name="'.$params['name'].'" type="hidden" value="'.$params['value'].'" />';
+        } else {
+            $html .=
+                    '<input id="'.$params['id'].'" name="'.$params['name'].'" value="1"'.$checked.' type="checkbox" class="form-control'.$params['class'].'" />';
+        }
+        $html .=
+                '</div>'.
+                '<div class="col-sm-10">'.
+                    '<input type="text" id="'.$params['id'].'" name="'.$params['name'].'" value="'.$params['value'].'" class="form-control'.$params['class'].'" placeholder="'.$params['placeholder'].'"'.$params['readOnly'].$params['autocomplete'].' />'.
+                    $params['errorHtml'].
+                '</div>'.
+            '</div>';
+
+        return $html;
+    }
+        $class = rtrim(' '.$this->class);
+        
+        $errorClass = '';
+        if($this->hasError())
+        {
+            $errorClass = ' has-error';
+        }
+        
+        if($this->value == '1')
+        {
+            $checked = ' checked="checked"';
+        }
+        else
+        {
+            $checked = '';
+        }
+        
+        $html =
+            '<div class="form-group form-group-sm'.$errorClass.'">'.
+                '<label for="'.$this->id.'" class="col-sm-2 control-label">'.$this->label.'</label>'.
+                '<div class="col-sm-1">';
+        if($this->readOnly || $this->form->readOnly)
+        {
+            $html .=
+                    '<input value="1"'.$checked.' disabled="disabled" type="checkbox" class="form-control'.$class.'" />'.
+                    '<input id="'.$this->id.'" name="'.$this->id.'" type="hidden" value="'.$this->value.'" />';
+        }
+        else
+        {
+            $html .=
+                    '<input id="'.$this->id.'" name="'.$this->id.'" value="1"'.$checked.' type="checkbox" class="form-control'.$class.'" />';
+        }
+        $html .=
+                '</div>'.
+                $this->getErrorHtml().
+            '</div>';
+        
+
+
+    /**
+     * Generate input file
+     *
+     * @param mixed $params
+     *
+     * @return string
+     */
+    public static function file($params = array())
+    {
+        $params = self::parseParams($params);
+
+        $html =
+            '<div class="form-group form-group-sm'.$params['errorClass'].'">'.
+                '<label for="'.$params['id'].'" class="col-sm-2 control-label">'.$params['label'].'</label>'.
+                '<div class="col-sm-10">'.
+                    '<input type="file" id="'.$params['id'].'" name="'.$params['name'].'" class="form-control'.$params['class'].'"'.$params['readOnly'].' />'.
                     $params['errorHtml'].
                 '</div>'.
             '</div>';
@@ -162,18 +296,15 @@ class Form
     {
         $params = self::parseParams($params);
 
-        if($params['readOnly'] != '')
-        {
+        if ($params['readOnly'] != '') {
             $disabled = ' disabled="disabled"';
-        }
-        else
-        {
+        } else {
             $disabled = '';
         }
         
         $formId = isset($params['formId']) ? $params['formId'] : '';
         
-        $html = 
+        $html =
             '<div class="form-group form-group-sm pull-right">'.
                 '<button id="'.$params['id'].'" name="'.$params['name'].'"'.$disabled.' type="submit" value="'.$params['value'].'" form="'.$formId.'" class="btn'.$params['class'].'">'.$params['label'].'</button>'.
             '</div>'.

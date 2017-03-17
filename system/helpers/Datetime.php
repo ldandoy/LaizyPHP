@@ -1,14 +1,8 @@
 <?php
 
-define('FORMAT_DATE', '%d/%m/%Y');
-define('FORMAT_TIME', '%H:%M:%S');
-define('FORMAT_DATETIME', '%d/%m/%Y %H:%M:%S');
-define('FORMAT_DATE_LONG', '%e %b %Y');
-define('FORMAT_DATE_LONGLONG', '%A %e %b %Y');
+namespace system\helpers;
 
-namespace Lcxlib\Utils;
-
-class DateTime
+class Datetime
 {
     const ONE_MINUTE = 60;
 
@@ -18,12 +12,18 @@ class DateTime
 
     const DATETIME_FORMAT = 'Y-m-d H:i:s';
 
+    const FORMAT_DATE = '%d/%m/%Y';
+    const FORMAT_TIME = '%H:%M:%S';
+    const FORMAT_DATETIME = '%d/%m/%Y %H:%M:%S';
+    const FORMAT_DATE_LONG = '%e %b %Y';
+    const FORMAT_DATE_LONGLONG = '%A %e %b %Y';
+
     /**
      * Convert a DateTime Object to an Unix timestamp
      * @param DateTime $dateTime
      * @return int (Unix timestamp)
      */
-    static function DateTimeToTimestamp($dateTime)
+    public static function dateTimeToTimestamp($dateTime)
     {
         return $dateTime->getTimestamp();
     }
@@ -33,7 +33,7 @@ class DateTime
      * @param int $timestamp (Unix timestamp)
      * @return DateTime
      */
-    static function TimestampToDateTime($timestamp)
+    public static function timestampToDateTime($timestamp)
     {
         $dt = new \DateTime();
         return $dt->setTimestamp($timestamp);
@@ -45,7 +45,7 @@ class DateTime
      * @param string $format
      * @return int (Unix timestamp)
      */
-    public static function StringToTimestamp($dateTime, $format = DateTime::DATETIME_FORMAT)
+    public static function stringToTimestamp($dateTime, $format = DateTime::DATETIME_FORMAT)
     {
         $dt = \DateTime::createFromFormat($format, $dateTime);
         return $dt->getTimestamp();
@@ -57,7 +57,7 @@ class DateTime
      * @param string $format
      * @return string
      */
-    public static function TimestampToString($timestamp, $format = DateTime::DATETIME_FORMAT)
+    public static function timestampToString($timestamp, $format = DateTime::DATETIME_FORMAT)
     {
         return date($format, $timestamp);
     }
@@ -70,11 +70,12 @@ class DateTime
      */
     public static function format($dateTime, $format = FORMAT_DATETIME)
     {
-        if (is_string($datetime)) {
-            $ts = DateTime::StringToTimestamp($datetime);
+        if (is_string($dateTime)) {
+            $ts = Datetime::stringToTimestamp($dateTime);
         } else {
-            $ts = DateTime::DateTimeToTimestamp($datetime);
+            $ts = Datetime::datetimeToTimestamp($dateTime);
         }
+        setlocale(LC_TIME, 'fr_FR', 'fr_FR.utf8', 'fra');
         return strftime($format, $ts);
     }
 }

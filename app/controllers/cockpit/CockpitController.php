@@ -19,7 +19,7 @@ class CockpitController extends AuthController
         $this->afterLoginPage = 'cockpit';
 
         if (!$this->isConnected()) {
-            $this->redirect($this->loginPage);
+            //$this->redirect($this->loginPage);
         }
     }
 }

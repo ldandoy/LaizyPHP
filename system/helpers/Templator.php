@@ -8,13 +8,13 @@ use system\helpers\Form;
 class Templator
 {
     /**
-     * @param mixed $model
+     * @param mixed $attributes
      * @param mixed $params
      */
     private function getModelValueForInput($attributes, $params)
     {
         if (isset($attributes['model'])) {
-            $model = $attributes['model'];            
+            $model = $attributes['model'];
             if (strpos($model, '.') !== false) {
                 $a = explode('.', $model, 2);
                 if (isset($params[$a[0]])) {
@@ -40,6 +40,24 @@ class Templator
     }
 
     /**
+     * @param mixed $attributes
+     * @param mixed $params
+     */
+    private function getOptionsForInput($attributes, $params)
+    {
+        if (isset($attributes['options'])) {
+            $options = $attributes['options'];
+            if (isset($params[$options])) {
+                return $params[$options];
+            } else {
+                return null;
+            }
+        } else {
+            return null;
+        }
+    }
+
+    /**
      * @param string $html
      * @param mixed $params
      */
@@ -56,9 +74,10 @@ class Templator
 
                 //echo '<pre>'.print_r($data,true).'</pre>';
 
+                $tag = $data['tag'];
                 $attributes = $data['attributes'];
 
-                if (strpos($data['tag'], 'input_') === 0) {
+                if (strpos($tag, 'input_') === 0) {
                     $model = $this->getModelValueForInput($attributes, $params);
                     if ($model !== null) {
                         $attributes['model'] = $model;
@@ -67,9 +86,22 @@ class Templator
                     }
                 }
 
-                switch ($data['tag']) {
+                if ($tag == 'input_select' || $tag == 'input_radiogroup' || $tag == 'input_checkboxgroup') {
+                    $options = $this->getOptionsForInput($attributes, $params);
+                    if ($options !== null) {
+                        $attributes['options'] = $options;
+                    } else {
+                        unset($attributes['options']);
+                    }
+                }
+
+                switch ($tag) {
                     case 'link':
                         $replace = Html::link($attributes);
+                        break;
+
+                    case 'button':
+                        $replace = Bootstrap::button($attributes);
                         break;
 
                     case 'image':
@@ -77,18 +109,11 @@ class Templator
                         break;
 
                     case 'table':
-                        $dataKey = isset($attributes['data']) ? $attributes['data'] : '';
-                        if ($dataKey != '' && isset($params[$dataKey])) {
-                            $attributes['data'] = $params[$dataKey];
+                        $datasetKey = isset($attributes['dataset']) ? $attributes['dataset'] : '';
+                        if ($datasetKey != '' && isset($params[$datasetKey])) {
+                            $attributes['dataset'] = $params[$datasetKey];
                         } else {
-                            unset($attributes['data']);
-                        }
-
-                        $columnsKey = isset($attributes['columns']) ? $attributes['columns'] : '';
-                        if ($columnsKey != '' && isset($params[$columnsKey])) {
-                            $attributes['columns'] = $params[$columnsKey];
-                        } else {
-                            unset($attributes['columns']);
+                            unset($attributes['dataset']);
                         }
 
                         $replace = Html::table($attributes);
@@ -104,6 +129,27 @@ class Templator
 
                     case 'input_textarea':
                         $replace = Form::textarea($attributes);
+                        break;
+
+                    case 'input_select':
+
+                        $replace = Form::select($attributes);
+                        break;
+
+                    case 'input_checkbox':
+                        $replace = Form::checkbox($attributes);
+                        break;
+
+                    case 'input_checkboxgroup':
+                        $replace = Form::checkboxgroup($attributes);
+                        break;
+
+                    case 'input_radiogroup':
+                        $replace = Form::radiogroup($attributes);
+                        break;
+
+                    case 'input_file':
+                        $replace = Form::file($attributes);
                         break;
 
                     case 'input_submit':
@@ -284,8 +330,7 @@ class TemplatorParser
 
     private function skipWhiteSpace()
     {
-        while($this->offset < $this->length && $this->isWhiteSpace($this->html[$this->offset]) === true)
-        {
+        while ($this->offset < $this->length && $this->isWhiteSpace($this->html[$this->offset]) === true) {
             $this->offset++;
         }
     }
@@ -294,11 +339,9 @@ class TemplatorParser
     {
         $this->skipWhiteSpace();
         $a = $this->offset;
-        while($this->offset < $this->length)
-        {
+        while ($this->offset < $this->length) {
             $c = $this->html[$this->offset];
-            if($this->isWhiteSpace($c) === true || $c === '/' || $c === '>')
-            {
+            if ($this->isWhiteSpace($c) === true || $c === '/' || $c === '>') {
                 break;
             }
             $this->offset++;
@@ -318,23 +361,17 @@ class TemplatorParser
         $inQuote = '';
         $attrName = '';
         $attrValue = '';
-        while($this->offset < $this->length)
-        {
+        while ($this->offset < $this->length) {
             $c = $this->html[$this->offset];
-            if(($c === '/' || $c === '>') && $inQuote === '')
-            {
-                if($inAttrName === true && $attrName !== '')
-                {
+            if (($c === '/' || $c === '>') && $inQuote === '') {
+                if ($inAttrName === true && $attrName !== '') {
                     $attributes[$attrName] = '';
-                }
-                else if($inAttrValue === true && $inQuote === '')
-                {
+                } else if ($inAttrValue === true && $inQuote === '') {
                     $attributes[$attrName] = $attrValue;
                 }
                 break;
             }
-            if($this->isWhiteSpace($c) && $inAttrValue === true && $inQuote === '')
-            {
+            if ($this->isWhiteSpace($c) && $inAttrValue === true && $inQuote === '') {
                 $attributes[$attrName] = $attrValue;
                 $inAttrName = true;
                 $inAttrValue = false;
@@ -342,45 +379,28 @@ class TemplatorParser
                 $attrName = '';
                 $attrValue = '';
                 $this->skipWhiteSpace();
-            }
-            else if($this->isWhiteSpace($c) && $inAttrName === true)
-            {
+            } else if ($this->isWhiteSpace($c) && $inAttrName === true) {
                 $this->skipWhiteSpace();
-            }
-            else if($c === '=' && $inAttrName === true)
-            {
+            } else if ($c === '=' && $inAttrName === true) {
                 $inAttrName = false;
                 $inAttrValue = true;
                 $this->offset++;
                 $this->skipWhiteSpace();
-            }
-            else if($c === '"' || $c === '\'')
-            {
-                if($inAttrValue === true && $inQuote === '')
-                {
+            } else if ($c === '"' || $c === '\'') {
+                if ($inAttrValue === true && $inQuote === '') {
                     $inQuote = $c;
-                }
-                else if($inQuote !== '')
-                {
-                    if($inQuote === $c)
-                    {
+                } else if ($inQuote !== '') {
+                    if ($inQuote === $c) {
                         $inQuote = '';
-                    }
-                    else if($inAttrValue === true)
-                    {
+                    } else if ($inAttrValue === true) {
                         $attrValue .= $c;
                     }
                 }
                 $this->offset++;
-            }
-            else
-            {
-                if($inAttrName === true)
-                {
+            } else {
+                if ($inAttrName === true) {
                     $attrName.=$c;
-                }
-                else if($inAttrValue === true)
-                {
+                } else if ($inAttrValue === true) {
                     $attrValue.=$c;
                 }
                 $this->offset++;
