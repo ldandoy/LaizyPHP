@@ -2,7 +2,7 @@
 
 namespace app\controllers\cockpit;
 
-use Auth\AuthController;
+use Auth\controllers\AuthController;
 use System\Session;
 use System\Email;
 

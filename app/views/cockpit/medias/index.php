@@ -15,15 +15,15 @@
 	<tbody>
 <?php
 foreach ($params['administrators'] as $administrator) {
-    echo '<tr>';
-    echo '<td>'.$administrator->id.'</td>';
-    echo '<td>'.trim(implode(' ', array($administrator->lastname, $administrator->firstname))).'</td>';
-    echo '<td>'.$administrator->email.'</td>';
-    echo '<td>';
-    echo '<a href="'.system\Router::url('cockpit_administrators_edit', array('id' => $administrator->id)).'" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>';
-    echo '<a href="'.system\Router::url('cockpit_administrators_delete', array('id' => $administrator->id)).'" class="btn btn-xs btn-danger"><i class="fa fa-trash-o"></i></a>';
-    echo '</td>';
-    echo '</tr>';
+	echo '<tr>';
+	echo '<td>'.$administrator->id.'</td>';
+	echo '<td>'.trim(implode(' ', array($administrator->lastname, $administrator->firstname))).'</td>';
+	echo '<td>'.$administrator->email.'</td>';
+	echo '<td>';
+	echo '<a href="'.system\Router::url('cockpit_administrators_edit', array('id' => $administrator->id)).'" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>';
+	echo '<a href="'.system\Router::url('cockpit_administrators_delete', array('id' => $administrator->id)).'" class="btn btn-xs btn-danger"><i class="fa fa-trash-o"></i></a>';
+	echo '</td>';
+	echo '</tr>';
 }
 ?>
 	</tbody>

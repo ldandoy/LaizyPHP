@@ -10,7 +10,7 @@ use Helper\Datetime;
 class TestController extends ApplicationController
 {
     public function indexAction()
-    {var_dump($this->request->post);
+    {
         $params = array(
             'pageTitle' => 'Test Helpers',
             'tableTest' => array(

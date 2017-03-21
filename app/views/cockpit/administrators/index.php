@@ -1,19 +1,19 @@
 <h1 class="page-title">Administrateurs</h1>
 <br />
 <div class="">
-	<a href="<?php echo system\Router::url('cockpit_administrators_new'); ?>" class="btn btn-success"><i class="fa fa-plus"></i> Ajouter un administrateur</a>
+    <a href="<?php echo system\Router::url('cockpit_administrators_new'); ?>" class="btn btn-success"><i class="fa fa-plus"></i> Ajouter un administrateur</a>
 </div>
 <br />
 <table class="table table-hover">
-	<thead>
-		<tr>
-			<th width="1%">ID</th>
-			<th>Nom</th>
-			<th>Email</th>
-			<th width="10%">Action</th>
-		</tr>
-	</thead>
-	<tbody>
+    <thead>
+        <tr>
+            <th width="1%">ID</th>
+            <th>Nom</th>
+            <th>Email</th>
+            <th width="10%">Action</th>
+        </tr>
+    </thead>
+    <tbody>
 <?php
 foreach ($params['administrators'] as $administrator) {
     echo '<tr>';
@@ -27,5 +27,5 @@ foreach ($params['administrators'] as $administrator) {
     echo '</tr>';
 }
 ?>
-	</tbody>
+    </tbody>
 </table>
