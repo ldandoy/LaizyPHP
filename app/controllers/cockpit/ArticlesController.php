@@ -5,7 +5,7 @@ namespace app\controllers\cockpit;
 use app\controllers\cockpit\CockpitController;
 use app\models\Article;
 
-use system\Router;
+use System\Router;
 
 class ArticlesController extends CockpitController
 {

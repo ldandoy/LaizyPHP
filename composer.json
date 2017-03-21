@@ -14,6 +14,7 @@
         "monolog/monolog": "1.0.*",
         "lazyphp/lazyphp-core": "dev-master",
         "lazyphp/lazyphp-helper": "dev-master",
-        "lazyphp/lazyphp-auth": "dev-master"
+        "lazyphp/lazyphp-auth": "dev-master",
+        "lazyphp/lazyphp-catalog": "dev-master"
     }
 }

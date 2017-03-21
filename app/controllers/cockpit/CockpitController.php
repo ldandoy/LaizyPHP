@@ -2,9 +2,9 @@
 
 namespace app\controllers\cockpit;
 
-use \system\AuthController;
-use \system\Session;
-use \system\Email;
+use Auth\AuthController;
+use System\Session;
+use System\Email;
 
 class CockpitController extends AuthController
 {

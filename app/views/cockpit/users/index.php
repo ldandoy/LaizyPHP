@@ -1,7 +1,7 @@
 <h1 class="page-title">Utilisateurs</h1>
 <br />
 <div class="">
-	<a href="<?php echo system\Router::url('cockpit_users_new'); ?>" class="btn btn-success"><i class="fa fa-plus"></i> Ajouter un utilisateur</a>
+	<a href="<?php echo System\Router::url('cockpit_users_new'); ?>" class="btn btn-success"><i class="fa fa-plus"></i> Ajouter un utilisateur</a>
 </div>
 <br />
 <table class="table table-hover">
@@ -23,8 +23,8 @@ foreach ($params['users'] as $user) {
     echo '<td>'.$user->email.'</td>';
     echo '<td>'.$user->address.'</td>';
     echo '<td>';
-    echo '<a href="'.system\Router::url('cockpit_users_edit', array('id' => $user->id)).'" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>';
-    echo '<a href="'.system\Router::url('cockpit_users_delete', array('id' => $user->id)).'" class="btn btn-xs btn-danger"><i class="fa fa-trash-o"></i></a>';
+    echo '<a href="'.System\Router::url('cockpit_users_edit', array('id' => $user->id)).'" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>';
+    echo '<a href="'.System\Router::url('cockpit_users_delete', array('id' => $user->id)).'" class="btn btn-xs btn-danger"><i class="fa fa-trash-o"></i></a>';
     echo '</td>';
     echo '</tr>';
 }

@@ -5,9 +5,9 @@ namespace app\controllers;
 use app\controllers\ApplicationController;
 use app\models\User;
 
-use system\Router;
-use system\Session;
-use system\Password;
+use System\Router;
+use System\Session;
+use System\Password;
 
 class UserController extends ApplicationController
 {
@@ -32,7 +32,7 @@ class UserController extends ApplicationController
                 $this->user->email_verification_date = date('Y-m-d H:i:s');
                 $this->user->active = 0;
 
-                if ($this->user->create((array)$this->user)) {                
+                if ($this->user->create((array)$this->user)) {
                     Session::addFlash('Compte créé', 'success');
                     $this->redirect('user_login');
                 } else {

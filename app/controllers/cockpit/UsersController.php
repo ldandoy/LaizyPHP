@@ -5,9 +5,9 @@ namespace app\controllers\cockpit;
 use app\controllers\cockpit\CockpitController;
 use app\models\User;
 
-use system\Router;
-use system\Session;
-use system\Password;
+use System\Router;
+use System\Session;
+use System\Password;
 
 class UsersController extends CockpitController
 {
