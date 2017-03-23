@@ -25,7 +25,7 @@
 						<li class="active"><a href="<?php echo system\Router::url('articles_index'); ?>">Articles <span class="sr-only">(current)</span></a></li>
 					</ul>
 				
-					<?php if ($this->connectedUser !== null) { ?>
+					<?php if (isset($this->connectedUser) && $this->connectedUser !== null) { ?>
 						
 						<div class="pull-right connected-user">
 							<span><?php echo $this->connectedUser->lastname.' '.$this->connectedUser->firstname; ?></span>
