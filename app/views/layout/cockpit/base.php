@@ -20,7 +20,7 @@
 					</button>
 					<a class="navbar-brand" href="/cockpit/">Cockpit</a>
 				</div>
-<?php if ($this->connectedUser !== null) : ?>
+<?php if (isset($this->connectedUser) && $this->connectedUser !== null) : ?>
 				<div class="pull-right connected-administrator">
 					<span><?php echo $this->connectedUser->lastname.' '.$this->connectedUser->firstname; ?></span>
 					<a href="<?php echo system\Router::url('cockpit_administrators_logout'); ?>" class="btn btn-danger" title="Se déconnecter"><i class="fa fa-remove"></i></a>
@@ -33,13 +33,20 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-3">
-					<ul class="nav nav-pills nav-stacked nav-menu-left">
-						<li><a href="<?php echo system\Router::url('cockpit'); ?>">Accueil</a></li>
-						<li><a href="<?php echo system\Router::url('cockpit_administrators_index'); ?>">Administrateurs</a></li>
-						<li><a href="<?php echo system\Router::url('cockpit_users_index'); ?>">Utilisateurs</a></li>
-						<li><a href="<?php echo system\Router::url('cockpit_articles_index'); ?>">Articles</a></li>
-						<li><a href="<?php echo system\Router::url('cockpit_pages_index'); ?>">Pages</a></li>
-						<li><a href="<?php echo system\Router::url('cockpit_medias_index'); ?>">Médias</a></li>
+					<ul class="nav nav-pills nav-stacked" id="nav-menu-left">
+						<li>{% link url="cockpit" content="Accueil" %}</li>
+						<li>{% link url="cockpit_administrators" content="Administrateurs" %}</li>
+						<li>{% link url="cockpit_users" content="Utilisateurs" %}</li>
+						<li>{% link url="cockpit_articles" content="Articles" %}</li>
+						<li>{% link url="cockpit_pages" content="Pages" %}</li>
+						<li>{% link url="cockpit_medias" content="Medias" %}</li>
+						<li>
+							{% link url="cockpit_catalog_products" content="Catalogue" %}
+							<ul class="nav nav-pills nav-stacked nav-menu-left">
+								<li>{% link url="cockpit_catalog_products" content="Produits" %}</li>
+								<li>{% link url="cockpit_catalog_categories" content="Catégories" %}</li>
+							</ul>
+						</li>
 					</ul>
 				</div>
 				<div class="col-lg-9">
