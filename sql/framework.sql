@@ -60,8 +60,10 @@ CREATE TABLE `categories` (
   `name` varchar(255) NOT NULL,
   `description` text,
   `active` int(11) NOT NULL DEFAULT '1',
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,6 +72,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (3,NULL,'zzz','bbbbbbbbbbbb',1,'2017-03-24 10:00:21','2017-03-24 10:18:22'),(4,NULL,'aaa','vbfd gfjthreg',1,'2017-03-24 10:22:17','2017-03-24 10:22:17');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -99,7 +102,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,NULL,'a','',0.0000,1,'2017-03-24 06:08:14','2017-03-24 06:08:14'),(3,NULL,'b','',0.0000,1,'2017-03-24 06:22:25','2017-03-24 06:22:25');
+INSERT INTO `products` VALUES (1,NULL,'a','',0.0000,1,'2017-03-24 06:08:14','2017-03-24 10:26:32'),(3,NULL,'b','',0.0000,1,'2017-03-24 06:22:25','2017-03-24 10:26:24');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -112,4 +115,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-03-24  7:01:33
+-- Dump completed on 2017-03-24 12:22:38
