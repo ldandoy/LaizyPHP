@@ -2,12 +2,18 @@
 
 $debut = microtime(true);
 
+if (is_dir("../install")) {
+    include("../install/index.php");
+    die();
+}
+
 define('DS', DIRECTORY_SEPARATOR);
 define('CRLF', "\r\n");
 define('ROOT_DIR', dirname(dirname(__File__)));
 define('CONFIG_DIR', ROOT_DIR.DS."config");
 define('SYSTEM_DIR', ROOT_DIR.DS."system");
 define('VENDOR_DIR', ROOT_DIR.DS."vendor");
+define('INSTALL_DIR', ROOT_DIR.DS."install");
 define('APP_DIR', ROOT_DIR.DS."app");
 define('MODEL_DIR', APP_DIR.DS."models");
 define('CONTROLLER_DIR', APP_DIR.DS."controllers");
