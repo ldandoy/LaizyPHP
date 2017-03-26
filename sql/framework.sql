@@ -59,11 +59,12 @@ CREATE TABLE `categories` (
   `parent` int(11) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
   `description` text,
+  `position` int(11) NOT NULL DEFAULT '0',
   `active` int(11) NOT NULL DEFAULT '1',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,8 +73,34 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (3,NULL,'zzz','bbbbbbbbbbbb',1,'2017-03-24 10:00:21','2017-03-24 10:18:22'),(4,NULL,'aaa','vbfd gfjthreg',1,'2017-03-24 10:22:17','2017-03-24 10:22:17');
+INSERT INTO `categories` VALUES (3,NULL,'aaa','aaa',0,1,'2017-03-24 10:00:21','2017-03-24 15:58:26'),(4,3,'bbb','bbb',0,1,'2017-03-24 10:22:17','2017-03-24 15:58:35'),(5,3,'ccc','ccc',1,1,'2017-03-24 16:00:39','2017-03-24 16:00:39'),(6,NULL,'ddd','ddd',0,1,'2017-03-24 16:00:49','2017-03-24 16:00:49'),(7,6,'eee','eee',0,1,'2017-03-24 16:00:58','2017-03-24 16:00:58'),(9,5,'fff','fff',0,1,'2017-03-25 17:45:26','2017-03-25 17:45:26');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `medias`
+--
+
+DROP TABLE IF EXISTS `medias`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `medias` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` enum('image','video','music') NOT NULL DEFAULT 'image',
+  `name` varchar(255) NOT NULL,
+  `description` text,
+  `url` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `medias`
+--
+
+LOCK TABLES `medias` WRITE;
+/*!40000 ALTER TABLE `medias` DISABLE KEYS */;
+/*!40000 ALTER TABLE `medias` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -102,7 +129,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,NULL,'a','',0.0000,1,'2017-03-24 06:08:14','2017-03-24 10:26:32'),(3,NULL,'b','',0.0000,1,'2017-03-24 06:22:25','2017-03-24 10:26:24');
+INSERT INTO `products` VALUES (1,NULL,'a','',0.0000,1,'2017-03-24 06:08:14','2017-03-24 10:26:32'),(3,3,'b','',0.0000,1,'2017-03-24 06:22:25','2017-03-25 17:38:37'),(4,4,'aadazdfazfaf','ezfezfezfez',0.0000,1,'2017-03-25 17:38:30','2017-03-25 17:38:30');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -115,4 +142,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-03-24 12:22:38
+-- Dump completed on 2017-03-26  3:46:17
