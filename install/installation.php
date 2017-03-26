@@ -44,6 +44,7 @@
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
             echo "<p>Tables `administrators`</p>";
+
             $sql = "DROP TABLE IF EXISTS `categories`;CREATE TABLE `categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `parent` int(11) DEFAULT NULL,
@@ -57,6 +58,19 @@
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
             echo "<p>Tables `categories`</p>";
+
+            $sql = "DROP TABLE IF EXISTS `medias`;CREATE TABLE `medias` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` enum('image','video','music') NOT NULL DEFAULT 'image',
+  `name` varchar(255) NOT NULL,
+  `description` text,
+  `url` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+            echo "<p>Tables `medias`</p>";
+
             $sql = "DROP TABLE IF EXISTS `products`;CREATE TABLE `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category_id` int(11) DEFAULT NULL,
@@ -77,6 +91,23 @@
         }
         ?>
         <p>OK</p>
+
+        <h2>Insertion données de tests</h2>
+        <?php
+        $sql = "INSERT INTO `administrators` VALUES (1,'Laurent','Comex','laurent.comex@gmail.com','$6$199337193b7024b3$me5IvytK5M95oMd2e7TtBuBCowDVYqx20ahJeHNraOXGIBxvpZXrSMtaJc.gxbIQOrpdHxg.1aHP0N7y2/N0p.','8XQAVGOQRFVF2KYQPYE25WVMZLBVAE','2017-03-14 18:48:03',0,'2017-03-14 18:48:03','2017-03-15 09:46:22');";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+
+        $sql = "INSERT INTO `categories` VALUES (3,NULL,'aaa','aaa',0,1,'2017-03-24 10:00:21','2017-03-24 15:58:26'),(4,3,'bbb','bbb',0,1,'2017-03-24 10:22:17','2017-03-24 15:58:35'),(5,3,'ccc','ccc',1,1,'2017-03-24 16:00:39','2017-03-24 16:00:39'),(6,NULL,'ddd','ddd',0,1,'2017-03-24 16:00:49','2017-03-24 16:00:49'),(7,6,'eee','eee',0,1,'2017-03-24 16:00:58','2017-03-24 16:00:58'),(9,5,'fff','fff',0,1,'2017-03-25 17:45:26','2017-03-25 17:45:26');";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+
+        $sql = "INSERT INTO `products` VALUES (1,NULL,'a','',0.0000,1,'2017-03-24 06:08:14','2017-03-24 10:26:32'),(3,3,'b','',0.0000,1,'2017-03-24 06:22:25','2017-03-25 17:38:37'),(4,4,'aadazdfazfaf','ezfezfezfez',0.0000,1,'2017-03-25 17:38:30','2017-03-25 17:38:30');";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        ?>
+        <p>OK</p>
+        
         <h2>Supression répertoire d'install</h2>
         <?php
         rmdir('../install');
