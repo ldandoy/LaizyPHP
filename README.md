@@ -1,7 +1,7 @@
 LazyPHP is a new PHP framework
 
 Pour vous lancer:<br />
-$ git clone https://github.com/ldandoy/LazyPHP.git
+$ git clone https://github.com/overconsulting/LazyPHP.git
 
 Il vous suffit de lancer composer (https://getcomposer.org/):<br />
 $ php composer.phar install
