@@ -1,20 +1,11 @@
 {
     "name": "LazyPHP",
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/overconsulting/LazyPHP-core.git"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/overconsulting/LazyPHP-helper.git"
-        }
-    ],
     "require": {
         "monolog/monolog": "1.0.*",
         "overconsulting/lazyphp-core": "dev-master",
         "overconsulting/lazyphp-helper": "dev-master",
         "overconsulting/lazyphp-auth": "dev-master",
         "overconsulting/lazyphp-catalog": "dev-master"
+        "overconsulting/lazyphp-media": "dev-master"
     }
 }
