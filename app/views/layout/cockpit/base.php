@@ -39,7 +39,7 @@
 						<li>{% link url="cockpit_users" content="Utilisateurs" %}</li>
 						<li>{% link url="cockpit_articles" content="Articles" %}</li>
 						<li>{% link url="cockpit_pages" content="Pages" %}</li>
-						<li>{% link url="cockpit_medias" content="Medias" %}</li>
+						<li>{% link url="cockpit_media_medias" content="Medias" %}</li>
 						<li>
 							{% link url="cockpit_catalog_products" content="Catalogue" %}
 							<ul class="nav nav-pills nav-stacked nav-menu-left">

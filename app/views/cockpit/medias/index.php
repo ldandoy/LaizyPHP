@@ -9,7 +9,7 @@
 			<th width="1%">ID</th>
 			<th>Nom</th>
 			<th>Email</th>
-			<th width="10%">Action</th>
+			<th width="10%">Actions</th>
 		</tr>
 	</thead>
 	<tbody>
