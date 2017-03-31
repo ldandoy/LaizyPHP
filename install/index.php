@@ -8,7 +8,7 @@
     </head>
     <body>
         <h1>Installation de LazyPHP v1</h1>
-        <form action="Installation.php" method="post">
+        <form action="installation.php" method="post">
           <input type="submit" value="Lancer l'installation" name="install" />
         </form>
     </body>
