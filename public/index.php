@@ -19,6 +19,7 @@ define('MODEL_DIR', APP_DIR.DS."models");
 define('CONTROLLER_DIR', APP_DIR.DS."controllers");
 define('VIEW_DIR', APP_DIR.DS."views");
 define('PUBLIC_DIR', ROOT_DIR.DS."public");
+define('ASSETS_DIR', ROOT_DIR.DS."public".DS."assets");
 define('CSS_DIR', PUBLIC_DIR.DS."assets".DS."css");
 define('JS_DIR', PUBLIC_DIR.DS."assets".DS."js");
 
