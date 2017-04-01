@@ -25,9 +25,9 @@
 						<li class="active"><a href="<?php echo system\Router::url('articles_index'); ?>">Articles <span class="sr-only">(current)</span></a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<?php if (isset($this->connectedUser) && $this->connectedUser !== null) { ?>
+						<?php if ($this->current_user !== null) { ?>
 							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->connectedUser->firstname.' '.$this->connectedUser->lastname; ?> <span class="caret"></span></a>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->current_user->firstname.' '.$this->current_user->lastname; ?> <span class="caret"></span></a>
 								<ul class="dropdown-menu">
 									<li><a href="">Mon compte</a></li>
 									<li role="separator" class="divider"></li>

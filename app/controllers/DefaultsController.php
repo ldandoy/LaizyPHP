@@ -2,21 +2,10 @@
 
 namespace app\controllers;
 
-use app\controllers\ApplicationController;
-use Auth\controllers\AuthController;
-use System\Session;
+use app\controllers\FrontController;
 
-class DefaultsController extends ApplicationController
+class DefaultsController extends FrontController
 {
-    public function before()
-    {
-        /*if (!AuthController::isConnected('user')) {
-            $this->redirect('/auth/auth/login');
-        } else {
-            $this->ConnectedUser = Session::get('connectedUser');
-        }*/
-    }
-
     public function indexAction()
     {
         $this->render('index');

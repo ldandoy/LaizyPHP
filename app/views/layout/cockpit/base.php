@@ -20,13 +20,21 @@
 					</button>
 					<a class="navbar-brand" href="/cockpit/">Cockpit</a>
 				</div>
-<?php if (isset($this->connectedUser) && $this->connectedUser !== null) : ?>
-				<div class="pull-right connected-administrator">
-					<span><?php echo $this->connectedUser->lastname.' '.$this->connectedUser->firstname; ?></span>
-					<a href="<?php echo system\Router::url('cockpit_administrators_logout'); ?>" class="btn btn-danger" title="Se déconnecter"><i class="fa fa-remove"></i></a>
-				</div>
-				<div class="clearfix"></div>
-<?php endif; ?>
+				
+				<?php if ($this->current_administrator !== null) { ?>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->current_administrator->firstname.' '.$this->current_administrator->lastname; ?> <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="">Mon compte</a></li>
+								<li role="separator" class="divider"></li>
+								<li>
+									<a href="<?php echo system\Router::url('cockpit_administratorsauth_logout'); ?>" title="Se déconnecter">Se déconnecter</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				<?php } ?>
 			</div>
 		</nav>
 

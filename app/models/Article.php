@@ -11,4 +11,20 @@ class Article extends Model
     public $parent = array(
         "User" => "user_id"
     );
+
+    /**
+     * Get list of associed table(s)
+     *
+     * @return mixed
+     */
+    public function getAssociations()
+    {
+        return array(
+            'category' => array(
+                'type' => '1',
+                'model' => 'app\\models\\User',
+                'key' => 'user_id'
+            )
+        );
+    }
 }

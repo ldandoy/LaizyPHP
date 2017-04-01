@@ -2,10 +2,10 @@
 
 namespace app\controllers;
 
-use app\controllers\ApplicationController;
+use app\controllers\FrontController;
 use app\models\Article;
 
-class ArticlesController extends ApplicationController
+class ArticlesController extends FrontController
 {
     public function indexAction()
     {
@@ -23,10 +23,10 @@ class ArticlesController extends ApplicationController
     public function showAction($id)
     {
         $article = Article::findById($id);
-
+        
         $this->render('show', array(
             'article'   => $article,
-            'titre'     => $article->titre
+            'title'     => $article->title
         ));
     }
 }
