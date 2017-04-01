@@ -24,17 +24,22 @@
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="<?php echo system\Router::url('articles_index'); ?>">Articles <span class="sr-only">(current)</span></a></li>
 					</ul>
-				
-					<?php if (isset($this->connectedUser) && $this->connectedUser !== null) { ?>
-						
-						<div class="pull-right connected-user">
-							<span><?php echo $this->connectedUser->lastname.' '.$this->connectedUser->firstname; ?></span>
-							<a href="<?php echo system\Router::url('user_logout'); ?>" class="btn btn-danger" title="Se déconnecter"><i class="fa fa-remove"></i></a>
-						</div>
-
-					<?php } else { ?>
-						<a href="<?php echo system\Router::url('user_login'); ?>" class="btn btn-success pull-right navbar-btn" title="Se déconnecter"><i class="fa fa-login"></i> Se connecter</a>
-					<?php } ?>
+					<ul class="nav navbar-nav navbar-right">
+						<?php if (isset($this->connectedUser) && $this->connectedUser !== null) { ?>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->connectedUser->firstname.' '.$this->connectedUser->lastname; ?> <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="">Mon compte</a></li>
+									<li role="separator" class="divider"></li>
+									<li>
+										<a href="<?php echo system\Router::url('auth_auth_logout'); ?>" title="Se déconnecter">Se déconnecter</a>
+									</li>
+								</ul>
+							</li>
+						<?php } else { ?>
+							<li><a href="<?php echo system\Router::url('auth_auth_login'); ?>" class="" title="Se déconnecter"><i class="fa fa-login"></i> Se connecter</a></li>
+						<?php } ?>
+					</ul>
 				</div>
 			</div>
 		</nav>
