@@ -54,3 +54,8 @@ ROAD MAP [01/04/2017]
 - Déplacer Templator dans Core, les helpter je pense que c'est juste des modules, mais le coeur du templator serait mieux dans core
 - La partie validation, est-ce qu'il faudrait pas voir pour faire un validator externe dans system ?
 - Dans signup est-ce qu'il y a des risques de pas être dans app ?
+
+ROAD MAP [02/04/2017]
+---------------------
+- Gestion de la config via l'administration
+- Page de gestion des comptes avec la photo (avatar)

@@ -46,26 +46,34 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-2" id="nav-menu-left">
-					<div class="title">
+					<div class="user-panel">
+						<div class="pull-left image">
+							<img src="/assets/images/cockpit/user2-160x160.jpg" class="img-circle" alt="User Image" />
+						</div>
 						<?php if ($this->current_administrator !== null) { ?>
-							<a href="#" class=""><?php echo $this->current_administrator->firstname.' '.$this->current_administrator->lastname; ?></a>
+							<div class="pull-left info">
+								<a href="#" class=""><?php echo $this->current_administrator->firstname.' '.$this->current_administrator->lastname; ?></a>
+								<br />
+								<?php echo $this->current_administrator->email ?>
+							</div>
 						<?php } ?>
 					</div>
-					<ul class="nav nav-pills nav-stacked">
-						<li>{% link url="cockpit" content="Accueil" %}</li>
-						<li>{% link url="cockpit_administrators" content="Administrateurs" %}</li>
-						<li>{% link url="cockpit_users" content="Utilisateurs" %}</li>
-						<li>{% link url="cockpit_articles" content="Articles" %}</li>
-						<li>{% link url="cockpit_pages" content="Pages" %}</li>
-						<li>{% link url="cockpit_media_medias" content="Medias" %}</li>
-						<li>
-							{% link url="cockpit_catalog_products" content="Catalogue" %}
-							<ul class="nav nav-pills nav-stacked under-menu-1">
-								<li>{% link url="cockpit_catalog_products" content="Produits" %}</li>
-								<li>{% link url="cockpit_catalog_categories" content="Catégories" %}</li>
-							</ul>
-						</li>
-					</ul>
+
+					<div class="clearfix"></div>
+
+					<div class="nav-menu">
+						{% link url="cockpit" content="<i class='fa fa-home'></i>&nbsp; Accueil" %}
+						{% link url="cockpit_administrators" content="<i class='fa fa-user-secret'></i>&nbsp; Administrateurs" %}
+						{% link url="cockpit_users" content="<i class='fa fa-users'></i>&nbsp; Utilisateurs" %}
+						{% link url="cockpit_articles" content="<i class='fa fa-columns'></i>&nbsp; Articles" %}
+						{% link url="cockpit_pages" content="<i class='fa fa-file-text'></i>&nbsp; Pages" %}
+						{% link url="cockpit_media_medias" content="<i class='fa fa-picture-o'></i>&nbsp; Medias" %}
+						{% link url="cockpit_catalog_products" content="<i class='fa fa-table'></i>&nbsp; Catalogue" %}
+						<div class="nav-menu-1">
+							{% link url="cockpit_catalog_products" content="<i class='fa fa-product-hunt'></i>&nbsp; Produits <span class="pull-right">12</span>" %}
+							{% link url="cockpit_catalog_categories" content="<i class='fa fa-object-group'></i>&nbsp; Catégories" %}
+						</div>
+					</div>
 				</div>
 				<div class="col-lg-10" id="content">
 					<?php echo system\Session::flash(); ?>
