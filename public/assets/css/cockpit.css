@@ -1,5 +1,75 @@
-#nav-menu-left  ul {
-	padding-left: 20px;
+html, #cockpit {
+    height: 100%;
+    min-height: 100%;
+}
+
+html, #cockpit, #cockpit .container-fluid, #cockpit .row, #cockpit #nav-menu-left
+{
+    height: 100%;
+}
+
+#cockpit {
+	background: #ecf0f5;
+	padding-top: 50px;
+}
+
+#cockpit .navbar {
+    background-color: #3c8dbc;
+    margin-bottom: 0;
+}
+
+#cockpit .navbar a.dropdown-toggle {
+	color: #FFF;
+}
+
+#cockpit .navbar a.dropdown-toggle:hover, #cockpit .navbar a.dropdown-toggle:active, #cockpit .navbar a.dropdown-toggle:focus {
+	background: #367fa9;
+}
+
+#cockpit .navbar .col-lg-2 {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+#cockpit .navbar .navbar-header {
+	text-align: center;
+	background-color: #367fa9;
+	float: none;
+}
+
+#cockpit .navbar .navbar-header .navbar-brand {
+	color: #FFF;
+	width: 100%;
+	display: block;
+	margin: 0;
+}
+
+#cockpit #nav-menu-left {
+	background: #222d32;
+	padding: 0;
+}
+
+#cockpit .title {
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+
+#cockpit .title a, #cockpit .title a:hover, #cockpit .title a:focus, #cockpit .title a:active {
+	color: #FFF;
+	text-decoration: none;
+}
+
+#cockpit #nav-menu-left .nav li a {
+	color: #FFF;
+}
+
+#cockpit #nav-menu-left .nav li a:hover {
+	background: #000;
+}
+
+#cockpit #nav-menu-left .under-menu-1 {
+	/*padding-left: 20px;*/
 }
 
 .form input[type="file"].form-control {
