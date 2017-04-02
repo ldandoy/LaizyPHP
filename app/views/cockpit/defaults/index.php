@@ -1,4 +1,4 @@
-<h1 class="page-title">Accueil cockpit</h1>
+<h1 class="page-title"><i class="fa fa-home"></i> Cockpit de votre site</h1>
 
 <div class="row">
 	<div class="col-lg-3">

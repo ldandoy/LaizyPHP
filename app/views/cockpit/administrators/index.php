@@ -1,4 +1,4 @@
-<h1 class="page-title">Administrateurs <small>test</small></h1>
+<h1 class="page-title"><i class="fa fa-user-secret"></i> Administrateurs <small>test</small></h1>
 
 <div class="box box-warning">
     <div class="box-header">
