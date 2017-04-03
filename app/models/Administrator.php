@@ -18,31 +18,13 @@ class Administrator extends Model
         'active'
     );
 
-    /**
-     * Get an administrator by email
-     *
-     * @param string $email
-     *
-     * @return app\model\Administrator | bool
-     */
-    public static function findByEmail($email)
+    public function getValidations()
     {
-        $query = new Query();
-        $query->select('*');
-        $query->where('email = :email');
-        $query->from(self::getTableName());
+        $validations = parent::getValidations();
 
-        return $query->executeAndFetch(array('email' => $email));
-    }
-
-    /**
-     * Validate the object and fill $this->errors with error messages
-     *
-     * @return bool
-     */
-    public function valid()
-    {
-        $this->errors = array();
+        $validations[] = array(
+            
+        )
 
         $this->lastname = trim($this->lastname);
         if ($this->lastname == '') {
@@ -60,14 +42,32 @@ class Administrator extends Model
         } else if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
             $this->errors['email'] = 'Email invalide';
         }
+    }
 
-        /*$this->password = trim($this->password);
-        if ($this->password == '') {
-            $this->errors['password'] = 'Mot de passe obligatoire';
-        } else if (!Password::valid($this->password)) {
-            $this->errors['password'] = 'Mot de passe invalide';
-        }*/
+    /**
+     * Set default properties values
+     */
+    public function setDefaultProperties()
+    {
+        parent::setDefaultProperties();
 
-        return empty($this->errors);
+        $this->active = 1;
+    }
+
+    /**
+     * Get an administrator by email
+     *
+     * @param string $email
+     *
+     * @return app\model\Administrator | bool
+     */
+    public static function findByEmail($email)
+    {
+        $query = new Query();
+        $query->select('*');
+        $query->where('email = :email');
+        $query->from(self::getTableName());
+
+        return $query->executeAndFetch(array('email' => $email));
     }
 }

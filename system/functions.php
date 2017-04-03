@@ -9,6 +9,8 @@
  * @link     http://overconsulting.net
  */
 
+use System\Router;
+
 /**
  * Display debug info
  *
@@ -68,4 +70,40 @@ function notEmpty($v)
 function deleteEmptyItem($a)
 {
     return array_filter($a, 'notEmpty');
+}
+
+/**
+ * Shorcut for Router::url
+ *
+ * @param string $string
+ * @param mixed $params
+ *
+ * @return string
+ */
+function url($string, $params = array())
+{
+    return Router::url($string, $params);
+}
+
+/**
+ * Generate options array for select
+ *
+ * @param mixed $data
+ * @param string $fieldValue
+ * @param string $fieldLabel
+ *
+ * @return string
+ */
+function options($data, $fieldValue, $fieldLabel)
+{
+    $options = array();
+
+    foreach ((array)$data as $d) {
+        $options[$d[$fieldValue]] = array(
+            'value' => $d[$fieldValue],
+            'label' => $d[$fieldLabel]
+        );
+    }
+
+    return $options;
 }

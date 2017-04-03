@@ -8,10 +8,6 @@ class Article extends Model
 {
     protected $permittedColumns = array('title', 'content', 'user_id');
     
-    public $parent = array(
-        "User" => "user_id"
-    );
-
     /**
      * Get list of associed table(s)
      *
@@ -20,7 +16,7 @@ class Article extends Model
     public function getAssociations()
     {
         return array(
-            'category' => array(
+            'user' => array(
                 'type' => '1',
                 'model' => 'app\\models\\User',
                 'key' => 'user_id'

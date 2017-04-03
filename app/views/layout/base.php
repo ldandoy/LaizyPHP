@@ -22,7 +22,7 @@
 				</div>
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="<?php echo system\Router::url('articles_index'); ?>">Articles <span class="sr-only">(current)</span></a></li>
+						<li class="active"><a href="<?php echo url('articles_index'); ?>">Articles <span class="sr-only">(current)</span></a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<?php if ($this->current_user !== null) { ?>
@@ -32,12 +32,12 @@
 									<li><a href="">Mon compte</a></li>
 									<li role="separator" class="divider"></li>
 									<li>
-										<a href="<?php echo system\Router::url('auth_auth_logout'); ?>" title="Se déconnecter">Se déconnecter</a>
+										<a href="<?php echo url('auth_auth_logout'); ?>" title="Se déconnecter">Se déconnecter</a>
 									</li>
 								</ul>
 							</li>
 						<?php } else { ?>
-							<li><a href="<?php echo system\Router::url('auth_auth_login'); ?>" class="" title="Se déconnecter"><i class="fa fa-login"></i> Se connecter</a></li>
+							<li><a href="<?php echo url('auth_auth_login'); ?>" class="" title="Se déconnecter"><i class="fa fa-login"></i> Se connecter</a></li>
 						<?php } ?>
 					</ul>
 				</div>

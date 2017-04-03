@@ -18,17 +18,18 @@ class UsersController extends CockpitController
 
     public function indexAction()
     {
-        $users = User::findAll();
+        $this->users = User::findAll();
 
         $this->render('index', array(
-            'users' => $users
+            'pageTitle' => '<i class="fa fa-users"></i> Utilisateurs',
+            'users' => $this->users
         ));
     }
 
     public function newAction()
     {
         if ($this->user === null) {
-            $user = new User();
+            $this->user = new User();
         }
 
         $this->render('edit', array(
@@ -67,7 +68,7 @@ class UsersController extends CockpitController
             $this->user->email_verification_date = date('Y-m-d H:i:s');
             $this->user->active = 0;
 
-            if ($this->user->create((array)$this->user)) {                
+            if ($this->user->create((array)$this->user)) {
                 Session::addFlash('Utilisateur ajouté', 'success');
                 $this->redirect('cockpit_users');
             } else {
