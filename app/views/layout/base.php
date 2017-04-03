@@ -18,7 +18,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="/">Titre du site</a>
+					<a class="navbar-brand" href="/"><?php echo isset($params['title']) ? $params['title'] : system\Config::$config['GENERAL']['title'] ?></a>
 				</div>
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
