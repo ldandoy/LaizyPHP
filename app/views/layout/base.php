@@ -27,7 +27,7 @@ foreach ($this->menu as $menu) {
 ?>
 	<?php if ($menu->children) { ?>
 		<li class="dropdown <?php if ($this->request->url == $menu->link) { ?>active<?php } ?>">
-			<a href="<?php echo system\Router::url($menu->link); ?>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $menu->label ?> <span class="caret"></span></a>
+			<a href="<?php echo url($menu->link); ?>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $menu->label ?> <span class="caret"></span></a>
 			<ul class="dropdown-menu">
 <?php
 foreach ($menu->children as $child) {
@@ -39,7 +39,7 @@ foreach ($menu->children as $child) {
 			</ul>
 		</li>
 	<?php } else { ?>
-		<li <?php if ($this->request->url == $menu->link) { ?>class="active"<?php } ?>><a href="<?php echo system\Router::url($menu->link); ?>"><?php echo $menu->label ?></a></li>
+		<li <?php if ($this->request->url == $menu->link) { ?>class="active"<?php } ?>><a href="<?php echo url($menu->link); ?>"><?php echo $menu->label ?></a></li>
 	<?php } ?>
 <?php
 }
@@ -54,12 +54,12 @@ foreach ($menu->children as $child) {
 									<li><a href="">Mon compte</a></li>
 									<li role="separator" class="divider"></li>
 									<li>
-										<a href="<?php echo system\Router::url('auth_auth_logout'); ?>" title="Se déconnecter">Se déconnecter</a>
+										<a href="<?php echo url('auth_auth_logout'); ?>" title="Se déconnecter">Se déconnecter</a>
 									</li>
 								</ul>
 							</li>
 						<?php } else { ?>
-							<li><a href="<?php echo system\Router::url('auth_auth_login'); ?>" class="" title="Se déconnecter"><i class="fa fa-login"></i> Se connecter</a></li>
+							<li><a href="<?php echo url('auth_auth_login'); ?>" class="" title="Se déconnecter"><i class="fa fa-login"></i> Se connecter</a></li>
 						<?php } ?>
 					</ul>
 				</div>

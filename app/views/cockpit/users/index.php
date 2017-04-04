@@ -1,11 +1,9 @@
-<h1 class="page-title"><i class="fa fa-users"></i> Utilisateurs</h1>
-
+<h1 class="page-title">{{ pageTitle }}</h1>
 <div class="box box-success">
     <div class="box-header">
-        <h3 class="box-title">Liste des Utilisateurs</h3>
-
+        <h3 class="box-title">Liste des utilisateurs</h3>
         <div class="box-tools pull-right">
-            <a href="<?php echo System\Router::url('cockpit_users_new'); ?>" class="btn btn-success btn-xs"><i class="fa fa-plus"></i></a>
+            {% button url="cockpit_users_new" type="success" size="xs" icon="plus" %}
         </div>
     </div>
     <div class="box-body">
@@ -16,22 +14,33 @@
 					<th>Nom</th>
 					<th>Email</th>
 					<th>Adresse</th>
+                    <th>Actif</th>
 					<th width="10%">Actions</th>
 				</tr>
 			</thead>
 			<tbody>
 <?php
 foreach ($params['users'] as $user) {
-    echo '<tr>';
-    echo '<td>'.$user->id.'</td>';
-    echo '<td>'.trim(implode(' ', array($user->lastname, $user->firstname))).'</td>';
-    echo '<td>'.$user->email.'</td>';
-    echo '<td>'.$user->address.'</td>';
-    echo '<td>';
-    echo '<a href="'.System\Router::url('cockpit_users_edit', array('id' => $user->id)).'" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a> ';
-    echo '<a href="'.System\Router::url('cockpit_users_delete', array('id' => $user->id)).'" class="btn btn-xs btn-danger"><i class="fa fa-trash-o"></i></a>';
-    echo '</td>';
-    echo '</tr>';
+    if ($user->active == 1) {
+        $active = '<i class="fa fa-check"></i>';
+    } else {
+        $active = '<i class="fa fa-times"></i>';
+    }
+
+    echo
+        '<tr>'.
+            '<td>'.$user->id.'</td>'.
+            '<td>'.$user->getFullname().'</td>'.
+            '<td>'.$user->email.'</td>'.
+            '<td>'.$user->address.'</td>'.
+            '<td>'.$user->active.'</td>'.
+            '<td>';?>
+    {% button url="cockpit_users_edit_<?php echo $user->id; ?>" type="info" size="xs" icon="pencil" %}
+    {% button url="cockpit_users_delete<?php echo $user->id; ?>" type="danger" size="xs" icon="trash-o" confirmation="Vous confirmer vouloir supprimer cet utilisateur?" %}
+<?php
+    echo
+            '</td>'.
+        '</tr>';
 }
 ?>
 			</tbody>

@@ -1,39 +1,14 @@
-<h1 class="page-title"><?php echo $params['pageTitle']; ?></h1>
-<form id="formAdministrator" method="post" action="<?php echo $params['formAction']; ?>" class="form form-horizontal">
-<?php
-echo System\Form::text(array(
-    'name' => 'lastname',
-    'label' => 'Nom',
-    'value' => isset($this->administrator->lastname) ? $this->administrator->lastname : '',
-    'error' => isset($this->administrator->errors['lastname']) ? $this->administrator->errors['lastname'] : ''
-));
-echo System\Form::text(array(
-    'name' => 'firstname',
-    'label' => 'Prénom',
-    'value' => isset($this->administrator->firstname) ? $this->administrator->firstname : '',
-    'error' => isset($this->administrator->errors['firstname']) ? $this->administrator->errors['firstname'] : ''
-));
-echo System\Form::text(array(
-    'name' => 'email',
-    'label' => 'Email',
-    'value' => isset($this->administrator->email) ? $this->administrator->email : '',
-    'error' => isset($this->administrator->errors['email']) ? $this->administrator->errors['email'] : ''
-));
-if (isset($this->administrator->id)) {
-    echo System\Form::password(array(
-        'name' => 'newPassword',
-        'label' => 'Nouveau mot de passe',
-        'value' => '',
-        'autocomplete' => 'off',
-        'error' => isset($this->administrator->errors['newPassword']) ? $this->administrator->errors['newPassword'] : ''
-    ));
-}
-echo System\Form::submit(array(
-    'name' => 'submit',
-    'label' => 'Enregistrer',
-    'value' => 'save',
-    'formId' => 'formAdministrator',
-    'class' => 'btn-primary'
-));
-?>
-</form>
+<h1 class="page-title">{{ pageTitle }}</h1>
+<div class="actions">
+    {% button url="cockpit_administrators" type="default" icon="arrow-left" content="Retour" %}
+</div>
+{% form_open id="formAdministrator" action="formAction" class="form-horizontal" %}
+    {% input_text name="lastname" model="administrator.lastname" label="Nom" %}
+    {% input_text name="firstname" model="administrator.firstname" label="Prénom" %}
+    {% input_text name="email" model="administrator.email" label="Email" %}
+<?php if (isset($this->administrator->id)): ?>
+    {% input_password name="newPassword" model="administrator.newPassword" label="Nouveau mot de passe" autocomplete="off" %}
+<?php endif; ?>
+    {% input_checkbox name="active" model="administrator.active" label="Actif" %}
+    {% input_submit name="submit" value="save" formId="formAdministrator" class="btn-primary" icon="save" label="Enregistrer" %}
+{% form_close %}

@@ -18,6 +18,40 @@ class Administrator extends Model
         'active'
     );
 
+    public function getValidations()
+    {
+        $validations = parent::getValidations();
+
+        $validations = array_merge($validations, array(
+            'lastname' => array(
+                'type' => 'required',
+                'error' => 'Nom obligatoire'
+            ),
+            'firstname' => array(
+                'type' => 'required',
+                'error' => 'Prénom obligatoire'
+            ),
+            'email' => array(
+                'type' => 'required',
+                'error' => 'Email obligatoire'
+            ),
+            'email' => array(
+                'type' => 'email',
+                'error' => 'Email invalide'
+            )
+        ));
+    }
+
+    /**
+     * Set default properties values
+     */
+    public function setDefaultProperties()
+    {
+        parent::setDefaultProperties();
+
+        $this->active = 1;
+    }
+
     /**
      * Get an administrator by email
      *
@@ -33,41 +67,5 @@ class Administrator extends Model
         $query->from(self::getTableName());
 
         return $query->executeAndFetch(array('email' => $email));
-    }
-
-    /**
-     * Validate the object and fill $this->errors with error messages
-     *
-     * @return bool
-     */
-    public function valid()
-    {
-        $this->errors = array();
-
-        $this->lastname = trim($this->lastname);
-        if ($this->lastname == '') {
-            $this->errors['lastname'] = 'Nom obligatoire';
-        }
-
-        $this->firstname = trim($this->firstname);
-        if ($this->firstname == '') {
-            $this->errors['firstname'] = 'Prénom obligatoire';
-        }
-
-        $this->email = trim($this->email);
-        if ($this->email == '') {
-            $this->errors['email'] = 'Email obligatoire';
-        } else if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
-            $this->errors['email'] = 'Email invalide';
-        }
-
-        /*$this->password = trim($this->password);
-        if ($this->password == '') {
-            $this->errors['password'] = 'Mot de passe obligatoire';
-        } else if (!Password::valid($this->password)) {
-            $this->errors['password'] = 'Mot de passe invalide';
-        }*/
-
-        return empty($this->errors);
     }
 }

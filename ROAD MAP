@@ -51,7 +51,7 @@ ROAD MAP [01/04/2017]
 - Trouver une solution pour $this->connectedUser, si on change la table user, on est mort => En config on va mettre le nom du Model et on se servira de çà pour faire le nom du connectedUser
 - Voir pour les models si on peut les loader avec juste un id et çà retourne l'objet ?
 - Mode debbug avec des log qui s'affiche qu'en debug
-- Déplacer Templator dans Core, les helpter je pense que c'est juste des modules, mais le coeur du templator serait mieux dans core
+x Déplacer Templator dans Core, les helpter je pense que c'est juste des modules, mais le coeur du templator serait mieux dans core
 - La partie validation, est-ce qu'il faudrait pas voir pour faire un validator externe dans system ?
 - Dans signup est-ce qu'il y a des risques de pas être dans app ?
 

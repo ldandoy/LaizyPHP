@@ -1,11 +1,9 @@
-<h1 class="page-title"><i class="fa fa-columns"></i> Mes articles</h1>
-
+<h1 class="page-title">{{ pageTitle }}</h1>
 <div class="box box-danger">
     <div class="box-header">
-        <h3 class="box-title">Liste des Utilisateurs</h3>
-
+        <h3 class="box-title">Liste des articles</h3>
         <div class="box-tools pull-right">
-            <a href="<?php echo system\Router::url('cockpit_articles_new'); ?>" class="btn btn-success btn-xs"><i class="fa fa-plus"></i></a>
+            {% button url="cockpit_articles_new" type="success" size="xs" icon="plus" %}
         </div>
     </div>
     <div class="box-body">
@@ -13,21 +11,28 @@
 			<thead>
 				<tr>
 					<th width="1%">ID</th>
-					<th>Titre</th>
+                    <th>Auteur</th>
+                    <th>Titre</th>
+                    <th>Contenu</th>
 					<th width="10%">Actions</th>
 				</tr>
 			</thead>
 			<tbody>
 <?php
 foreach ($params['articles'] as $article) {
-    echo '<tr>';
-    echo '<td>'.$article->id.'</td>';
-    echo '<td>'.$article->title.'</td>';
-    echo '<td>';
-    echo '<a href="'. system\Router::url("cockpit_articles_edit", array('id' => $article->id)).'" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a> ';
-    echo '<a href="'. system\Router::url("cockpit_articles_delete", array('id' => $article->id)).'" class="btn btn-xs btn-danger"><i class="fa fa-trash-o"></i></a>';
-    echo '</td>';
-    echo '</tr>';
+    echo
+        '<tr>'.
+            '<td>'.$article->id.'</td>'.
+            '<td>'.$article->user->getFullName().'</td>'.
+            '<td>'.$article->title.'</td>'.
+            '<td>'.$article->content.'</td>'.
+            '<td>';?>
+    {% button url="cockpit_articles_edit_<?php echo $article->id; ?>" type="info" size="xs" icon="pencil" %}
+    {% button url="cockpit_articles_delete_<?php echo $article->id; ?>" type="danger" size="xs" icon="trash-o" confirmation="Vous confirmer vouloir supprimer cet article?" %}
+<?php
+    echo
+            '</td>'.
+        '</tr>';
 }
 ?>
 			</tbody>

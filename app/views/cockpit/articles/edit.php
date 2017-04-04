@@ -1,27 +1,10 @@
-<h1 class="page-title"><?php echo $params['pageTitle']; ?></h1>
-<form action="<?php echo $params['formAction']; ?>" method="post">
-<?php
-echo $this->Form->input(array(
-    'label' => 'title',
-    'value' => $params['article']->title
-));
-?>
-<?php
-echo $this->Form->textarea(array(
-    'label' => 'content',
-    'value' => $params['article']->content
-));
-echo $this->Form->input(array(
-    'label' => 'user_id',
-    'value' => $params['article']->user_id
-));
-?>
-<?php echo $this->Form->btn(array(
-    'label' => 'send',
-    'value' => 'Mettre à jour',
-    'color' => 'primary',
-    'align' => 'right',
-    'type'  => 'submit'
-))
-?>
-</form>
+<h1 class="page-title">{{ pageTitle }}</h1>
+<div class="actions">
+    {% button url="cockpit_articles" type="default" icon="arrow-left" content="Retour" %}
+</div>
+{% form_open id="formArticle" action="formAction" class="form-horizontal" %}
+    {% input_select name="user_id" model="article.user_id" options="authorOptions" label="Auteur" %}
+    {% input_text name="title" model="article.title" label="Titre" %}
+    {% input_textarea name="content" model="article.content" label="Contenu" rows="10" %}
+    {% input_submit name="submit" value="save" formId="formArticle" class="btn-primary" icon="save" label="Enregistrer" %}
+{% form_close %}

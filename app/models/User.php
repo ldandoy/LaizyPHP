@@ -20,6 +20,16 @@ class User extends Model
     );
 
     /**
+     * Set default properties values
+     */
+    public function setDefaultProperties()
+    {
+        parent::setDefaultProperties();
+
+        $this->active = 1;
+    }
+
+    /**
      * Get an user by email
      *
      * @param string $email
@@ -60,18 +70,40 @@ class User extends Model
             $this->errors['email'] = 'Email invalide';
         }
 
-        /*$this->password = trim($this->password);
-        if ($this->password == '') {
-            $this->errors['password'] = 'Mot de passe obligatoire';
-        } else if (!Password::valid($this->password)) {
-            $this->errors['password'] = 'Mot de passe invalide';
-        }*/
-
         $this->address = trim($this->address);
         if ($this->address == '') {
-            $this->errors['address'] = 'Adresse obligatoire';
+            // $this->errors['address'] = 'Adresse obligatoire';
         }
 
         return empty($this->errors);
+    }
+
+    /**
+     * Get fullname : <lastname>[ <firstname>]
+     *
+     * @return string
+     */
+    public function getFullName()
+    {
+        return $this->lastname.ltrim(' '.$this->firstname);
+    }
+
+    /**
+     * Get user list for options in a select input
+     */
+    public static function getOptions()
+    {
+        $options = array();
+
+        $users = self::findAll();
+
+        foreach ($users as $user) {
+            $options[$user->id] = array(
+                'value' => $user->id,
+                'label' => $user->getFullName()
+            );
+        }
+
+        return $options;
     }
 }
