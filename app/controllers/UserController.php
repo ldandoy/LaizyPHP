@@ -3,11 +3,7 @@
 namespace app\controllers;
 
 use app\controllers\ApplicationController;
-use app\models\User;
-
-use System\Router;
-use System\Session;
-use System\Password;
+use Auth\models\User;
 
 class UserController extends ApplicationController
 {

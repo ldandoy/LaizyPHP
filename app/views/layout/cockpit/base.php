@@ -32,7 +32,7 @@
 										<li><a href="">Mon compte</a></li>
 										<li role="separator" class="divider"></li>
 										<li>
-											<a href="<?php echo system\Router::url('cockpit_administratorsauth_logout'); ?>" title="Se déconnecter">Se déconnecter</a>
+											<a href="<?php echo url('cockpit_administratorsauth_logout'); ?>" title="Se déconnecter">Se déconnecter</a>
 										</li>
 									</ul>
 								</li>
@@ -63,11 +63,11 @@
 
 					<div class="nav-menu">
 						{% link url="cockpit" content="<i class='fa fa-home'></i>&nbsp; Accueil" %}
-						{% link url="cockpit_menus" content="<i class='fa fa-bars'></i>&nbsp; Menu" %}
+						{% link url="cockpit_cms_menus" content="<i class='fa fa-bars'></i>&nbsp; Menu" %}
 						{% link url="cockpit_administrators" content="<i class='fa fa-user-secret'></i>&nbsp; Administrateurs" %}
 						{% link url="cockpit_users" content="<i class='fa fa-users'></i>&nbsp; Utilisateurs" %}
-						{% link url="cockpit_articles" content="<i class='fa fa-columns'></i>&nbsp; Articles" %}
-						{% link url="cockpit_pages" content="<i class='fa fa-file-text'></i>&nbsp; Pages" %}
+						{% link url="cockpit_cms_articles" content="<i class='fa fa-columns'></i>&nbsp; Articles" %}
+						{% link url="cockpit_cms_pages" content="<i class='fa fa-file-text'></i>&nbsp; Pages" %}
 						{% link url="cockpit_media_medias" content="<i class='fa fa-picture-o'></i>&nbsp; Medias" %}
 						{% link url="cockpit_catalog_products" content="<i class='fa fa-table'></i>&nbsp; Catalogue" %}
 						<div class="nav-menu-1">
