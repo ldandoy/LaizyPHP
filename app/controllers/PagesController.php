@@ -2,9 +2,9 @@
 
 namespace app\controllers;
 
-use app\controllers\ApplicationController;
+use app\controllers\FrontController;
 
-class PagesController extends ApplicationController
+class PagesController extends FrontController
 {
 
 

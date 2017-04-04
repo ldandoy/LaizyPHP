@@ -22,8 +22,30 @@
 				</div>
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="<?php echo system\Router::url('articles_index'); ?>">Articles <span class="sr-only">(current)</span></a></li>
+<?php
+foreach ($this->menu as $menu) {
+?>
+	<?php if ($menu->children) { ?>
+		<li class="dropdown <?php if ($this->request->url == $menu->link) { ?>active<?php } ?>">
+			<a href="<?php echo system\Router::url($menu->link); ?>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $menu->label ?> <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+<?php
+foreach ($menu->children as $child) {
+?>
+				<li><a href=""><?php echo $child->label ?></a></li>
+<?php
+}
+?>
+			</ul>
+		</li>
+	<?php } else { ?>
+		<li <?php if ($this->request->url == $menu->link) { ?>class="active"<?php } ?>><a href="<?php echo system\Router::url($menu->link); ?>"><?php echo $menu->label ?></a></li>
+	<?php } ?>
+<?php
+}
+?>
 					</ul>
+					
 					<ul class="nav navbar-nav navbar-right">
 						<?php if ($this->current_user !== null) { ?>
 							<li class="dropdown">

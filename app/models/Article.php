@@ -20,7 +20,7 @@ class Article extends Model
     public function getAssociations()
     {
         return array(
-            'category' => array(
+            'user' => array(
                 'type' => '1',
                 'model' => 'app\\models\\User',
                 'key' => 'user_id'
