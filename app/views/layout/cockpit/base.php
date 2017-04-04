@@ -32,7 +32,7 @@
 										<li><a href="">Mon compte</a></li>
 										<li role="separator" class="divider"></li>
 										<li>
-											<a href="<?php echo system\Router::url('cockpit_administratorsauth_logout'); ?>" title="Se déconnecter">Se déconnecter</a>
+											<a href="<?php echo url('cockpit_administratorsauth_logout'); ?>" title="Se déconnecter">Se déconnecter</a>
 										</li>
 									</ul>
 								</li>

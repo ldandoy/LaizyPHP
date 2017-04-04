@@ -24,7 +24,7 @@ x Revoir le message de debug
 ROAD MAP [12/12/2016]
 ---------------------
 x Gérer les menus du site
-- Gérér les médias
+x Gérér les médias
 x Changer cokpit -> cockpit
 
 ROAD MAP [15/12/2016]
@@ -32,7 +32,7 @@ ROAD MAP [15/12/2016]
 x Créé une classe de component
 - Créer les actions en bdd via la ligne de commande
 x Documenté les classes du namespace system
-- Attention dans la fonction findById, on ne vérifie pas s'il y a une row retourné.
+x Attention dans la fonction findById, on ne vérifie pas s'il y a une row retourné.
 x Revoir le parseur d'url pour checker que le prefix correspond bien à celui de la config
 
 ROAD MAP [20/12/2016]
@@ -46,10 +46,10 @@ ROAD MAP [17/03/2017]
 ROAD MAP [01/04/2017]
 ---------------------
 x Commenter tous les codes qui sont inutiliser (passer tout çà dans les fonctions créé) exemple: helper title et articles listing
-- Dans les templates, utiliser les functions et non les variables static, c'est moche, et çà alourdi le code
+x Dans les templates, utiliser les functions et non les variables static, c'est moche, et çà alourdi le code
 - Changer le routeur car auth_auth_login, c'est pas terrible
-- Trouver une solution pour $this->connectedUser, si on change la table user, on est mort => En config on va mettre le nom du Model et on se servira de çà pour faire le nom du connectedUser
-- Voir pour les models si on peut les loader avec juste un id et çà retourne l'objet ?
+x Trouver une solution pour $this->connectedUser, si on change la table user, on est mort => En config on va mettre le nom du Model et on se servira de çà pour faire le nom du connectedUser
+x Voir pour les models si on peut les loader avec juste un id et çà retourne l'objet ?
 x Mode debbug avec des log qui s'affiche qu'en debug
 x Déplacer Templator dans Core, les helpter je pense que c'est juste des modules, mais le coeur du templator serait mieux dans core
 x Dans signup est-ce qu'il y a des risques de pas être dans app ?
