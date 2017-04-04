@@ -6,6 +6,7 @@
         "overconsulting/lazyphp-helper": "dev-master",
         "overconsulting/lazyphp-auth": "dev-master",
         "overconsulting/lazyphp-catalog": "dev-master",
-        "overconsulting/lazyphp-media": "dev-master"
+        "overconsulting/lazyphp-media": "dev-master",
+        "overconsulting/LazyPHP-cms": "dev-master"
     }
 }
