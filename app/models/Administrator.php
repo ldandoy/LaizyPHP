@@ -22,26 +22,24 @@ class Administrator extends Model
     {
         $validations = parent::getValidations();
 
-        $validations[] = array(
-            
-        )
-
-        $this->lastname = trim($this->lastname);
-        if ($this->lastname == '') {
-            $this->errors['lastname'] = 'Nom obligatoire';
-        }
-
-        $this->firstname = trim($this->firstname);
-        if ($this->firstname == '') {
-            $this->errors['firstname'] = 'Prénom obligatoire';
-        }
-
-        $this->email = trim($this->email);
-        if ($this->email == '') {
-            $this->errors['email'] = 'Email obligatoire';
-        } else if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
-            $this->errors['email'] = 'Email invalide';
-        }
+        $validations = array_merge($validations, array(
+            'lastname' => array(
+                'type' => 'required',
+                'error' => 'Nom obligatoire'
+            ),
+            'firstname' => array(
+                'type' => 'required',
+                'error' => 'Prénom obligatoire'
+            ),
+            'email' => array(
+                'type' => 'required',
+                'error' => 'Email obligatoire'
+            ),
+            'email' => array(
+                'type' => 'email',
+                'error' => 'Email invalide'
+            )
+        ));
     }
 
     /**
