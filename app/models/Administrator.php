@@ -40,6 +40,8 @@ class Administrator extends Model
                 'error' => 'Email invalide'
             )
         ));
+
+        return $validations;
     }
 
     /**

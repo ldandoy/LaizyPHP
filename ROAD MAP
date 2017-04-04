@@ -46,7 +46,7 @@ ROAD MAP [17/03/2017]
 ROAD MAP [01/04/2017]
 ---------------------
 x Commenter tous les codes qui sont inutiliser (passer tout çà dans les fonctions créé) exemple: helper title et articles listing
-- Dans les templates, utiliser les functions et non les variables static, c'est moche, et çà alourdi le code
+x Dans les templates, utiliser les functions et non les variables static, c'est moche, et çà alourdi le code
 - Changer le routeur car auth_auth_login, c'est pas terrible
 - Trouver une solution pour $this->connectedUser, si on change la table user, on est mort => En config on va mettre le nom du Model et on se servira de çà pour faire le nom du connectedUser
 - Voir pour les models si on peut les loader avec juste un id et çà retourne l'objet ?
