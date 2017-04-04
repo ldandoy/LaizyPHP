@@ -20,16 +20,6 @@ class User extends Model
     );
 
     /**
-     * Set default properties values
-     */
-    public function setDefaultProperties()
-    {
-        parent::setDefaultProperties();
-
-        $this->active = 1;
-    }
-
-    /**
      * Get an user by email
      *
      * @param string $email
@@ -46,36 +36,34 @@ class User extends Model
         return $query->executeAndFetch(array('email' => $email));
     }
 
-    /**
-     * Validate the object and fill $this->errors with error messages
-     *
-     * @return bool
-     */
-    public function valid()
+    public function getValidations()
     {
-        $this->lastname = trim($this->lastname);
-        if ($this->lastname == '') {
-            $this->errors['lastname'] = 'Nom obligatoire';
-        }
+        $validations = parent::getValidations();
 
-        $this->firstname = trim($this->firstname);
-        if ($this->firstname == '') {
-            $this->errors['firstname'] = 'Prénom obligatoire';
-        }
+        $validations = array_merge($validations, array(
+            'lastname' => array(
+                'type' => 'required',
+                'filter' => 'trim',
+                'error' => 'Nom obligatoire'
+            ),
+            'firstname' => array(
+                'type' => 'required',
+                'filter' => 'trim',
+                'error' => 'Prénom obligatoire'
+            ),
+            'email' => array(
+                'type' => 'required'
+                'filter' => 'trim',
+                'error' => 'Email obligatoire'
+            )
+            'email' => array(
+                'type' => 'email'
+                'filter' => 'trim',
+                'error' => 'Email invalide'
+            )
+        ));
 
-        $this->email = trim($this->email);
-        if ($this->email == '') {
-            $this->errors['email'] = 'Email obligatoire';
-        } else if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
-            $this->errors['email'] = 'Email invalide';
-        }
-
-        $this->address = trim($this->address);
-        if ($this->address == '') {
-            // $this->errors['address'] = 'Adresse obligatoire';
-        }
-
-        return empty($this->errors);
+        return $validations;
     }
 
     /**
