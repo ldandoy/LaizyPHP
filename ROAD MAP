@@ -23,7 +23,7 @@ x Revoir le message de debug
 
 ROAD MAP [12/12/2016]
 ---------------------
-- Gérer les menus du site
+x Gérer les menus du site
 - Gérér les médias
 x Changer cokpit -> cockpit
 
@@ -45,15 +45,14 @@ ROAD MAP [17/03/2017]
 
 ROAD MAP [01/04/2017]
 ---------------------
-- Commenter tous les codes qui sont inutiliser (passer tout çà dans les fonctions créé) exemple: helper title et articles listing
+x Commenter tous les codes qui sont inutiliser (passer tout çà dans les fonctions créé) exemple: helper title et articles listing
 - Dans les templates, utiliser les functions et non les variables static, c'est moche, et çà alourdi le code
 - Changer le routeur car auth_auth_login, c'est pas terrible
 - Trouver une solution pour $this->connectedUser, si on change la table user, on est mort => En config on va mettre le nom du Model et on se servira de çà pour faire le nom du connectedUser
 - Voir pour les models si on peut les loader avec juste un id et çà retourne l'objet ?
-- Mode debbug avec des log qui s'affiche qu'en debug
+x Mode debbug avec des log qui s'affiche qu'en debug
 x Déplacer Templator dans Core, les helpter je pense que c'est juste des modules, mais le coeur du templator serait mieux dans core
-- La partie validation, est-ce qu'il faudrait pas voir pour faire un validator externe dans system ?
-- Dans signup est-ce qu'il y a des risques de pas être dans app ?
+x Dans signup est-ce qu'il y a des risques de pas être dans app ?
 
 ROAD MAP [02/04/2017]
 ---------------------
