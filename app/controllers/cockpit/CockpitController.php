@@ -4,20 +4,22 @@ namespace app\controllers\cockpit;
 
 use app\controllers\ApplicationController;
 use System\Session;
-use System\Email;
 
 class CockpitController extends ApplicationController
 {
+    /**
+     * Auth\models\Administrator
+     */
+    public $current_administrator = null;
+
     public function __construct($request)
     {
         parent::__construct($request);
 
-        // checked if the current_administrator is set
-        $this->current_administrator = null;
-        if (!Session::isConnected('current_administrator')) {
+        // Check if an administrator is connected
+        $this->current_administrator = Session::get('current_administrator');
+        if ($this->current_administrator === null) {
             $this->redirect('cockpit_administratorsauth_login');
-        } else {
-            $this->current_administrator = Session::get('current_administrator');
         }
     }
 }

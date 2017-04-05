@@ -64,8 +64,8 @@
 					<div class="nav-menu">
 						{% link url="cockpit" content="<i class='fa fa-home'></i>&nbsp; Accueil" %}
 						{% link url="cockpit_cms_menus" content="<i class='fa fa-bars'></i>&nbsp; Menu" %}
-						{% link url="cockpit_administrators" content="<i class='fa fa-user-secret'></i>&nbsp; Administrateurs" %}
-						{% link url="cockpit_users" content="<i class='fa fa-users'></i>&nbsp; Utilisateurs" %}
+						{% link url="cockpit_auth_administrators" content="<i class='fa fa-user-secret'></i>&nbsp; Administrateurs" %}
+						{% link url="cockpit_auth_users" content="<i class='fa fa-users'></i>&nbsp; Utilisateurs" %}
 						{% link url="cockpit_cms_articles" content="<i class='fa fa-columns'></i>&nbsp; Articles" %}
 						{% link url="cockpit_cms_pages" content="<i class='fa fa-file-text'></i>&nbsp; Pages" %}
 						{% link url="cockpit_media_medias" content="<i class='fa fa-picture-o'></i>&nbsp; Medias" %}

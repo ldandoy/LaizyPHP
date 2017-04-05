@@ -59,7 +59,7 @@ foreach ($menu->children as $child) {
 								</ul>
 							</li>
 						<?php } else { ?>
-							<li><a href="<?php echo url('auth_auth_login'); ?>" class="" title="Se déconnecter"><i class="fa fa-login"></i> Se connecter</a></li>
+							<li><a href="<?php echo url('auth_auth_login'); ?>" class="" title="Se connecter"><i class="fa fa-login"></i> Se connecter</a></li>
 						<?php } ?>
 					</ul>
 				</div>
