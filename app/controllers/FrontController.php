@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use app\controllers\ApplicationController;
 use System\Session;
-use app\models\Menu;
+use Cms\models\Menu;
 
 class FrontController extends ApplicationController
 {
