@@ -320,3 +320,7 @@ html, #cockpit, #cockpit .container-fluid, #cockpit .row, #cockpit #nav-menu-lef
     color: #999;
     font-size: 12px;
 }
+
+a i, .btn i {
+    margin-right: 1em;
+}
