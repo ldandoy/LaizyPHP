@@ -62,17 +62,22 @@
 					<div class="clearfix"></div>
 
 					<div class="nav-menu">
-						{% link url="cockpit" content="<i class='fa fa-home'></i>&nbsp; Accueil" %}
-						{% link url="cockpit_cms_menus" content="<i class='fa fa-bars'></i>&nbsp; Menu" %}
-						{% link url="cockpit_administrators" content="<i class='fa fa-user-secret'></i>&nbsp; Administrateurs" %}
-						{% link url="cockpit_users" content="<i class='fa fa-users'></i>&nbsp; Utilisateurs" %}
-						{% link url="cockpit_cms_articles" content="<i class='fa fa-columns'></i>&nbsp; Articles" %}
-						{% link url="cockpit_cms_pages" content="<i class='fa fa-file-text'></i>&nbsp; Pages" %}
-						{% link url="cockpit_media_medias" content="<i class='fa fa-picture-o'></i>&nbsp; Medias" %}
-						{% link url="cockpit_catalog_products" content="<i class='fa fa-table'></i>&nbsp; Catalogue" %}
+						{% link url="cockpit" content="Accueil" icon="home" %}
+						{% link url="cockpit_cms_menus" content="Menu" icon="bars" %}
+						{% link url="cockpit_auth_administrators" content="Administrateurs" icon="user-secret" %}
+						{% link url="cockpit_auth_users" content="Utilisateurs" icon="users" %}
+						{% link url="cockpit_cms_articles" content="Articles" icon="columns" %}
+						{% link url="cockpit_cms_pages" content="Pages" icon="file-text" %}
+						{% link url="cockpit_media_medias" content="Medias" icon="picture-o" %}
+						{% link url="cockpit_widget_galleries" content="Widgets" icon="table" %}
 						<div class="nav-menu-1">
-							{% link url="cockpit_catalog_products" content="<i class='fa fa-product-hunt'></i>&nbsp; Produits <span class="pull-right">12</span>" %}
-							{% link url="cockpit_catalog_categories" content="<i class='fa fa-object-group'></i>&nbsp; Catégories" %}
+							{% link url="cockpit_widget_galleries" content="Galleries" icon="object-group" %}
+							{% link url="cockpit_catalog_categories" content="Sliders" icon="object-group" %}
+						</div>
+						{% link url="cockpit_catalog_products" content="Catalogue" icon="table" %}
+						<div class="nav-menu-1">
+							{% link url="cockpit_catalog_products" content="Produits <span class='pull-right'>12</span>" icon="product-hunt" %}
+							{% link url="cockpit_catalog_categories" content="Catégories" icon="object-group" %}
 						</div>
 					</div>
 				</div>

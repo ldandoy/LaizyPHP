@@ -369,3 +369,7 @@ html, #cockpit, #cockpit .container-fluid, #cockpit .row, #cockpit #nav-menu-lef
 #htmlElement, .boxConfig, .boxConfig .sectionPanel, .boxConfig .lignePanel, .boxConfig .colPanel {
     display: none;
 }
+
+a i, .btn i {
+    margin-right: 1em;
+}
