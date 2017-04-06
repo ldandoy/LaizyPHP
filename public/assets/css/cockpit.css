@@ -320,3 +320,52 @@ html, #cockpit, #cockpit .container-fluid, #cockpit .row, #cockpit #nav-menu-lef
     color: #999;
     font-size: 12px;
 }
+
+.rendrecontent {
+    border: 1px solid #000;
+    padding: 10px;
+    width: 100%;
+}
+
+.rendrecontent .section {
+    border: 1px dashed #C0C0C0;
+    padding: 10px;
+    margin: 25px 0 0;
+    position: relative;
+}
+
+.rendrecontent .section .label {
+    position: absolute;
+    top: -15px;
+    left: 0px;
+}
+
+.rendrecontent .section .addLigne.label {
+    left: 60px;
+}
+
+.rendrecontent .row {
+    border: 1px dashed #C0C0C0;
+    padding: 20px;
+    margin: 10px 0;
+    position: relative;
+}
+
+.rendrecontent .row .addCol.label {
+    left: 50px;
+}
+
+.rendrecontent .col {
+    border: 1px dashed #C0C0C0;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.rendreaction {
+    margin-top: 20px;
+}
+
+#htmlElement, .boxConfig, .boxConfig .sectionPanel, .boxConfig .lignePanel, .boxConfig .colPanel {
+    display: none;
+}
