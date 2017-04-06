@@ -2,10 +2,10 @@
 
 $debut = microtime(true);
 
-if (is_dir("../install")) {
+/*if (is_dir("../install")) {
     include("../install/index.php");
     die();
-}
+}*/
 
 define('DS', DIRECTORY_SEPARATOR);
 define('CRLF', "\r\n");
