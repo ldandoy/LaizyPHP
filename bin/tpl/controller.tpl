@@ -1,10 +1,10 @@
 <?php
 
-namespace app\controllers;
+namespace {{namespace}};
 
-use System\Controller;
+use {{usedParentControllerClass}};
 
-class {{controllerName}}Controller extends Controller
+class {{controllerName}}Controller extends {{parentControllerClass}}
 {
     public function indexAction()
     {
