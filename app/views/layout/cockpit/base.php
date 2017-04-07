@@ -72,7 +72,7 @@
 						{% link url="cockpit_widget_galleries" content="Widgets" icon="table" %}
 						<div class="nav-menu-1">
 							{% link url="cockpit_widget_galleries" content="Galleries" icon="object-group" %}
-							{% link url="cockpit_catalog_categories" content="Sliders" icon="object-group" %}
+							{% link url="cockpit_widget_sliders" content="Sliders" icon="object-group" %}
 						</div>
 						{% link url="cockpit_catalog_products" content="Catalogue" icon="table" %}
 						<div class="nav-menu-1">
