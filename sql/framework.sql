@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.6.30, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.6.35, for Linux (x86_64)
 --
 -- Host: localhost    Database: framework
 -- ------------------------------------------------------
--- Server version	5.6.30
+-- Server version	5.6.35
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -118,7 +118,7 @@ CREATE TABLE `galleries` (
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -127,17 +127,18 @@ CREATE TABLE `galleries` (
 
 LOCK TABLES `galleries` WRITE;
 /*!40000 ALTER TABLE `galleries` DISABLE KEYS */;
+INSERT INTO `galleries` VALUES (3,'aaa','aaa','2017-04-07 14:49:41','2017-04-07 14:49:41');
 /*!40000 ALTER TABLE `galleries` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `galleriesmedias`
+-- Table structure for table `galleries_medias`
 --
 
-DROP TABLE IF EXISTS `galleriesmedias`;
+DROP TABLE IF EXISTS `galleries_medias`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `galleriesmedias` (
+CREATE TABLE `galleries_medias` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `gallery_id` int(11) NOT NULL,
   `media_id` int(11) NOT NULL,
@@ -145,21 +146,23 @@ CREATE TABLE `galleriesmedias` (
   `title` text,
   `position` int(11) NOT NULL DEFAULT '0',
   `active` int(11) NOT NULL DEFAULT '1',
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_galleriesmedias_gallery_idx` (`gallery_id`),
-  KEY `fk_galleriesmedias_media_idx` (`media_id`),
-  CONSTRAINT `fk_galleriesmedias_gallery` FOREIGN KEY (`gallery_id`) REFERENCES `galleries` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  CONSTRAINT `fk_galleriesmedias_media` FOREIGN KEY (`media_id`) REFERENCES `medias` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
+  KEY `fk_galleries_medias_gallery_idx` (`gallery_id`),
+  KEY `fk_galleries_medias_media_idx` (`media_id`),
+  CONSTRAINT `fk_galleries_medias_gallery` FOREIGN KEY (`gallery_id`) REFERENCES `galleries` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `fk_galleries_medias_media` FOREIGN KEY (`media_id`) REFERENCES `medias` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `galleriesmedias`
+-- Dumping data for table `galleries_medias`
 --
 
-LOCK TABLES `galleriesmedias` WRITE;
-/*!40000 ALTER TABLE `galleriesmedias` DISABLE KEYS */;
-/*!40000 ALTER TABLE `galleriesmedias` ENABLE KEYS */;
+LOCK TABLES `galleries_medias` WRITE;
+/*!40000 ALTER TABLE `galleries_medias` DISABLE KEYS */;
+/*!40000 ALTER TABLE `galleries_medias` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -189,6 +192,28 @@ LOCK TABLES `medias` WRITE;
 /*!40000 ALTER TABLE `medias` DISABLE KEYS */;
 INSERT INTO `medias` VALUES (2,'image','img1','Video 1','','2017-03-29 16:39:38','2017-04-05 10:17:59');
 /*!40000 ALTER TABLE `medias` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `migrations`
+--
+
+DROP TABLE IF EXISTS `migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `migrations` (
+  `id` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `migrations`
+--
+
+LOCK TABLES `migrations` WRITE;
+/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
+/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -234,6 +259,8 @@ CREATE TABLE `sliders` (
   `description` text,
   `delay` int(11) NOT NULL DEFAULT '3000',
   `duration` int(11) NOT NULL DEFAULT '500',
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -248,13 +275,13 @@ LOCK TABLES `sliders` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `slidersmedias`
+-- Table structure for table `sliders_medias`
 --
 
-DROP TABLE IF EXISTS `slidersmedias`;
+DROP TABLE IF EXISTS `sliders_medias`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `slidersmedias` (
+CREATE TABLE `sliders_medias` (
   `id` int(11) NOT NULL,
   `slider_id` int(11) NOT NULL,
   `media_id` int(11) NOT NULL,
@@ -263,20 +290,20 @@ CREATE TABLE `slidersmedias` (
   `position` int(11) NOT NULL DEFAULT '0',
   `active` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
-  KEY `fk_slidersmedias_slider_idx` (`slider_id`),
-  KEY `fk_slidersmedias_media_idx` (`media_id`),
-  CONSTRAINT `fk_slidersmedias_media` FOREIGN KEY (`media_id`) REFERENCES `medias` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_slidersmedias_slider` FOREIGN KEY (`slider_id`) REFERENCES `sliders` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `fk_sliders_medias_slider_idx` (`slider_id`),
+  KEY `fk_sliders_medias_media_idx` (`media_id`),
+  CONSTRAINT `fk_sliders_medias_media` FOREIGN KEY (`media_id`) REFERENCES `medias` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `fk_sliders_medias_slider` FOREIGN KEY (`slider_id`) REFERENCES `sliders` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `slidersmedias`
+-- Dumping data for table `sliders_medias`
 --
 
-LOCK TABLES `slidersmedias` WRITE;
-/*!40000 ALTER TABLE `slidersmedias` DISABLE KEYS */;
-/*!40000 ALTER TABLE `slidersmedias` ENABLE KEYS */;
+LOCK TABLES `sliders_medias` WRITE;
+/*!40000 ALTER TABLE `sliders_medias` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sliders_medias` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -320,4 +347,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-06 11:43:45
+-- Dump completed on 2017-04-07 16:55:42
