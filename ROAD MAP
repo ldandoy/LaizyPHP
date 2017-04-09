@@ -30,7 +30,7 @@ x Changer cokpit -> cockpit
 ROAD MAP [15/12/2016]
 ---------------------
 x Créé une classe de component
-- Créer les actions en bdd via la ligne de commande
+x Créer les actions en bdd via la ligne de commande
 x Documenté les classes du namespace system
 x Attention dans la fonction findById, on ne vérifie pas s'il y a une row retourné.
 x Revoir le parseur d'url pour checker que le prefix correspond bien à celui de la config
@@ -41,7 +41,7 @@ x Ajouter des callback au niveau des controllers et des models (before et after)
 
 ROAD MAP [17/03/2017]
 ---------------------
-- Passer le fichier de function ailleurs
+- Passer le fichier de function ailleurs => Dans System\Controller ? Il me semble que tout dérive de là
 
 ROAD MAP [01/04/2017]
 ---------------------
@@ -58,3 +58,9 @@ ROAD MAP [02/04/2017]
 ---------------------
 - Gestion de la config via l'administration
 - Page de gestion des comptes avec la photo (avatar)
+
+ROAD MAP [02/04/2017]
+---------------------
+- Est ce qu'on modfidier les champs après ? via migration
+- System de widget à mettre en place
+- Les modules besoin d'une config par module
