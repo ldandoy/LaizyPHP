@@ -66,13 +66,6 @@ foreach ($menu->children as $child) {
 			</div>
 		</nav>
 
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<?php echo system\Session::flash(); ?>
-					<?php echo $yeslp; ?>
-				</div>
-			</div>
-		</div>
+		<?php echo $yeslp; ?>
 	</body>
 </html>
