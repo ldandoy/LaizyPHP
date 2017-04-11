@@ -15,25 +15,32 @@ use System\Router;
  * Display debug info
  *
  * @param mixed $data
+ * @param bool $displayBacktrace
  *
  * @return void
  */
-function debug($data)
+function debug($data, $displayBacktrace = true)
 {
-    $backtrace = debug_backtrace();
-    echo '<div class="well">';
-    echo '<p><a href=""><strong>'.$backtrace[0]['file'].'</strong> '.$backtrace[0]['line'].'</a></p>';
-    echo '<ol>';
-    foreach ($backtrace as $k => $v) {
-        if ($k > 2) {
-            echo '<li><strong>'.$v['file'].'</strong> '.$v['line'].'</lip>';
+    $html =
+        '<div class="well">';
+
+    if ($displayBacktrace) {
+        $html .=
+            '<ol>';
+        $backtraces = debug_backtrace();
+        foreach ($backtraces as $backtrace) {
+            $html .=
+                '<li><strong>'.$backtrace['file'].'</strong> '.$backtrace['line'].'</li>';
         }
+        $html .=
+            '</ol>';
     }
-    echo '</ol>';
-    echo '<pre>';
-    print_r($data);
-    echo '</pre>';
-    echo '</div>';
+
+    $html .=
+            '<pre>'.print_r($data, true).'<pre>'.
+        '</div>';
+
+    echo $html;
 }
 
 /**
