@@ -13,7 +13,7 @@ ROAD MAP [10/12/2016]
 x Route par défault
 x Ajout des messages flash
 x Faire un form builder
-- Validation au niveau du model
+x Validation au niveau du model
 
 ROAD MAP [11/12/2016]
 ---------------------
@@ -41,7 +41,7 @@ x Ajouter des callback au niveau des controllers et des models (before et after)
 
 ROAD MAP [17/03/2017]
 ---------------------
-- Passer le fichier de function ailleurs => Dans System\Controller ? Il me semble que tout dérive de là
+x Passer le fichier de function ailleurs => Dans System\Controller ? Il me semble que tout dérive de là
 
 ROAD MAP [01/04/2017]
 ---------------------
@@ -63,4 +63,8 @@ ROAD MAP [02/04/2017]
 ---------------------
 - Est ce qu'on modfidier les champs après ? via migration
 - System de widget à mettre en place
-- Les modules besoin d'une config par module
+x Les modules besoin d'une config par module
+
+ROAD MAP [11/04/2017]
+---------------------
+- Function filter sur les champs de type firstname lastname
