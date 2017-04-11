@@ -177,6 +177,9 @@ CREATE TABLE `medias` (
   `type` enum('image','video','audio') NOT NULL DEFAULT 'image',
   `name` varchar(255) NOT NULL,
   `description` text,
+  `image` varchar(255) DEFAULT NULL,
+  `video` varchar(255) DEFAULT NULL,
+  `audio` varchar(255) DEFAULT NULL,
   `url` varchar(255) DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
@@ -190,8 +193,38 @@ CREATE TABLE `medias` (
 
 LOCK TABLES `medias` WRITE;
 /*!40000 ALTER TABLE `medias` DISABLE KEYS */;
-INSERT INTO `medias` VALUES (2,'image','img1','Video 1','','2017-03-29 16:39:38','2017-04-05 10:17:59');
+INSERT INTO `medias` VALUES (2,'image','Img2','Video 1',NULL,NULL,NULL,'','2017-03-29 16:39:38','2017-04-11 09:08:39');
 /*!40000 ALTER TABLE `medias` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `menus`
+--
+
+DROP TABLE IF EXISTS `menus`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `menus` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `parent` int(11) DEFAULT NULL,
+  `label` varchar(255) NOT NULL,
+  `position` int(11) NOT NULL,
+  `active` int(11) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  `link` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `menus`
+--
+
+LOCK TABLES `menus` WRITE;
+/*!40000 ALTER TABLE `menus` DISABLE KEYS */;
+INSERT INTO `menus` VALUES (1,NULL,'Projets',0,1,'2017-04-03 16:59:51','2017-04-03 18:32:35','/projets/index'),(3,1,'Item 1',0,1,'2017-04-03 18:04:50','2017-04-03 18:04:50',''),(4,NULL,'Test2',0,1,'2017-04-04 00:00:00','2017-04-04 00:00:00',''),(5,4,'Item 2',1,1,'2017-04-04 00:00:00','2017-04-04 00:00:00',''),(6,NULL,'test',0,1,'2017-04-04 00:00:00','2017-04-04 00:00:00','');
+/*!40000 ALTER TABLE `menus` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -214,6 +247,33 @@ CREATE TABLE `migrations` (
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pages`
+--
+
+DROP TABLE IF EXISTS `pages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pages`
+--
+
+LOCK TABLES `pages` WRITE;
+/*!40000 ALTER TABLE `pages` DISABLE KEYS */;
+INSERT INTO `pages` VALUES (1,'Test','{\"section_1\":{\"name\":\"section_1\",\"class\":\"container-fluid\",\"lignes\":{\"section_1_ligne_1\":{\"name\":\"section_1_ligne_1\",\"class\":\"\",\"styles\":{\"background\":\"\",\"margin-right\":\"\",\"border-width\":\"\",\"border-style\":\"solid\",\"border-color\":\"\"},\"cols\":{\"section_1_ligne_1_col_1\":{\"name\":\"section_1_ligne_1_col_1\",\"class\":\"\",\"styles\":{\"color\":\"green\",\"text-align\":\"center\",\"font-size\":\"40px\",\"line-height\":\"300px\"},\"widgets\":{\"widget_text_content\":\"Titre\"}}}}},\"styles\":{\"background\":\"#eaf2ff\",\"color\":\"white\",\"height\":\"300px\",\"border-color\":\"\",\"border-style\":\"none\",\"border-width\":\"\",\"margin-top\":\"0\",\"margin-right\":\"0\",\"margin-bottom\":\"0\",\"margin-left\":\"0\"}},\"section_2\":{\"name\":\"section_2\",\"class\":\"container\",\"lignes\":{\"section_2_ligne_1\":{\"name\":\"section_2_ligne_1\",\"class\":\"\",\"styles\":{},\"cols\":{\"section_2_ligne_1_col_1\":{\"name\":\"section_2_ligne_1_col_1\",\"class\":\"\",\"styles\":{},\"widgets\":{\"widget_text_content\":\"On dirait que çà marche ???\"}}}}},\"styles\":{}},\"section_3\":{\"name\":\"section_3\",\"class\":\"\",\"lignes\":{\"section_3_ligne_1\":{\"name\":\"section_3_ligne_1\",\"class\":\"\",\"styles\":{},\"cols\":{\"section_3_ligne_1_col_1\":{\"name\":\"section_3_ligne_1_col_1\",\"class\":\"\",\"styles\":{\"text-align\":\"center\",\"color\":\"\",\"background\":\"\",\"line-height\":\"200px\"},\"widgets\":{\"widget_text_content\":\"Troisième section !\"}}}}},\"styles\":{\"background\":\"#eaf2ff\",\"height\":\"200px\"}}}','2017-04-06 15:50:15','2017-04-08 15:11:09');
+/*!40000 ALTER TABLE `pages` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -347,4 +407,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-07 16:55:42
+-- Dump completed on 2017-04-11  9:10:50
