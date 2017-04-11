@@ -44,7 +44,7 @@
 		</nav>
 
 		<div class="container-fluid">
-			<div class="row">
+			<div class="row" style="height: 100%; min-height: 100%;">
 				<div class="col-lg-2" id="nav-menu-left">
 					<div class="user-panel">
 						<div class="pull-left image">
