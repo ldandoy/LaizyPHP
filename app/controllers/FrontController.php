@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\controllers\ApplicationController;
 use System\Session;
 use Cms\models\Menu;
+use Cms\models\MenuItem;
 
 class FrontController extends ApplicationController
 {
@@ -22,5 +23,6 @@ class FrontController extends ApplicationController
 
         // Set menu
         $this->menu = Menu::findById(1);
+        $this->menuitems = MenuItem::getFlat(null, "menu_id = 1");
     }
 }

@@ -22,10 +22,19 @@
 				</div>
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
-<?php
-foreach ($this->menu->menuitems as $menu) {
-?>
-	<li <?php if ($this->request->url == $menu->link) { ?>class="active"<?php } ?>><a href="<?php echo url($menu->link); ?>"><?php echo $menu->label ?></a></li>
+<?php foreach ($this->menuitems as $menuitem) { ?>
+	<?php if (!empty($menuitem->children)) { ?>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $menuitem->label ?> <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<?php foreach ($menuitem->children as $child) { ?>
+					<li <?php if ($this->request->url == $child->link) { ?>class="active"<?php } ?>><a href="<?php echo url($menu->link); ?>"><?php echo $child->label ?></a></li>
+				<?php } ?>
+			</ul>
+		</li>
+	<?php } else { ?>
+		<li <?php if ($this->request->url == $menuitem->link) { ?>class="active"<?php } ?>><a href="<?php echo url($menu->link); ?>"><?php echo $menuitem->label ?></a></li>
+	<?php } ?>
 <?php
 }
 ?>
