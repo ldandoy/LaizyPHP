@@ -23,24 +23,9 @@
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
 <?php
-foreach ($this->menu as $menu) {
+foreach ($this->menu->menuitems as $menu) {
 ?>
-	<?php if ($menu->children) { ?>
-		<li class="dropdown <?php if ($this->request->url == $menu->link) { ?>active<?php } ?>">
-			<a href="<?php echo url($menu->link); ?>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $menu->label ?> <span class="caret"></span></a>
-			<ul class="dropdown-menu">
-<?php
-foreach ($menu->children as $child) {
-?>
-				<li><a href=""><?php echo $child->label ?></a></li>
-<?php
-}
-?>
-			</ul>
-		</li>
-	<?php } else { ?>
-		<li <?php if ($this->request->url == $menu->link) { ?>class="active"<?php } ?>><a href="<?php echo url($menu->link); ?>"><?php echo $menu->label ?></a></li>
-	<?php } ?>
+	<li <?php if ($this->request->url == $menu->link) { ?>class="active"<?php } ?>><a href="<?php echo url($menu->link); ?>"><?php echo $menu->label ?></a></li>
 <?php
 }
 ?>

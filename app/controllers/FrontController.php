@@ -21,6 +21,6 @@ class FrontController extends ApplicationController
         $this->current_user = Session::get('current_user');
 
         // Set menu
-        $this->menu = Menu::findAllWithChildren();
+        $this->menu = Menu::findById(1);
     }
 }
