@@ -184,7 +184,7 @@ CREATE TABLE `medias` (
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -193,7 +193,7 @@ CREATE TABLE `medias` (
 
 LOCK TABLES `medias` WRITE;
 /*!40000 ALTER TABLE `medias` DISABLE KEYS */;
-INSERT INTO `medias` VALUES (2,'image','Img2','Video 1',NULL,NULL,NULL,'','2017-03-29 16:39:38','2017-04-11 09:08:39');
+INSERT INTO `medias` VALUES (2,'image','Img2','Video 1','/uploads/media/2/2_image.jpg',NULL,NULL,'','2017-03-29 16:39:38','2017-04-11 13:34:42'),(3,'image','Img3','Video 1','/uploads/media/3/3_image.png',NULL,NULL,'','2017-04-11 11:44:47','2017-04-11 13:48:38'),(4,'image','Img4','Video 1','/uploads/media/4/4_image.png',NULL,NULL,'','2017-04-11 11:47:38','2017-04-11 13:49:48'),(5,'image','Img5','Video 1',NULL,NULL,NULL,'','2017-04-11 11:48:50','2017-04-11 11:50:25'),(6,'image','Img6','Video 1',NULL,NULL,NULL,'','2017-04-11 11:48:56','2017-04-11 11:50:31');
 /*!40000 ALTER TABLE `medias` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -407,4 +407,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-11  9:10:50
+-- Dump completed on 2017-04-12  8:42:53
