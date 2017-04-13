@@ -23,6 +23,6 @@ class FrontController extends ApplicationController
 
         // Set menu
         $this->menu = Menu::findById(1);
-        $this->menuitems = MenuItem::getFlat(null, "menu_id = 1");
+        $this->menuitems = MenuItem::getFlat(null, "menu_id = 1", false);
     }
 }

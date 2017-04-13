@@ -69,5 +69,12 @@ ROAD MAP [11/04/2017]
 ---------------------
 - Function filter sur les champs de type firstname lastname
 - PB avec les bouton up et down dans les tableaux
-- Modifier le getOptions car il ne faut afficher l'objet qu'on est entrain de modifier dans la liste
-  il faut aussi virer les enfants ou un truc comme çà sinon on va avoir aussi des boucle infini
+x Modifier le getOptions car il ne faut afficher l'objet qu'on est entrain de modifier dans la liste
+x  il faut aussi virer les enfants ou un truc comme çà sinon on va avoir aussi des boucle infini
+
+ROAD MAP [11/04/2017]
+---------------------
+- Pour les méida ajouter des médias externe
+- rajouter les bouton supression dans show et edit
+- Vérification des droits en écriture
+- Afficher les média en vignette
