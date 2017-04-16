@@ -37,7 +37,7 @@ function debug($data, $displayBacktrace = true)
     }
 
     $html .=
-            '<pre>'.print_r($data, true).'<pre>'.
+            '<pre>'.print_r($data, true).'</pre>'.
         '</div>';
 
     echo $html;
