@@ -112,6 +112,11 @@ html, #cockpit, #cockpit .container-fluid, #cockpit #nav-menu-left
 	box-shadow: none;
 }
 
+#cockpit .form-site {
+    width: 90%;
+    margin: 7px auto 0px;
+}
+
 #cockpit h1.page-title {
     margin: 0;
     font-size: 24px;

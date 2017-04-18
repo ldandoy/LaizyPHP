@@ -40,7 +40,7 @@ class AdministratorsauthController extends AuthController
     {
         $this->loginPage        = 'cockpit_administratorsauth_login';
         $this->signupURL        = 'cockpit_administratorsauth_signup';
-        $this->model            = 'Administrator';
+        $this->model            = 'Auth\\models\\Administrator';
         $this->afterSignupPage  = 'cockpit';
         $this->pageTitle        = 'Création d\'un compte administrator';
 
