@@ -80,9 +80,9 @@
 					<div class="nav-menu">
 						{% link url="cockpit" content=" Accueil" icon="home" %}
 						{% link url="cockpit_cms_menus" content=" Menu" icon="bars" %}
-						{% link url="cockpit_cms_articles" content=" Articles" icon="columns" %}
-						{% link url="cockpit_cms_pages" content=" Pages" icon="file-text" %}
-						{% link url="cockpit_media_medias" content=" Medias" icon="picture-o" %}
+						{% link url="cockpit_cms_articles" content=" Articles <span class='pull-right'><?php echo Cms\models\Article::count(); ?></span>" icon="columns" %}
+						{% link url="cockpit_cms_pages" content=" Pages <span class='pull-right'><?php echo Cms\models\Page::count(); ?></span>" icon="file-text" %}
+						{% link url="cockpit_media_medias" content=" Medias <span class='pull-right'><?php echo Media\models\Media::count(); ?></span>" icon="picture-o" %}
 						{% link url="cockpit_widget_galleries" content=" Widgets" icon="table" %}
 						<div class="nav-menu-1">
 							{% link url="cockpit_widget_galleries" content=" Galleries" icon="object-group" %}
@@ -90,8 +90,8 @@
 						</div>
 						{% link url="cockpit_catalog_products" content=" Catalogue" icon="table" %}
 						<div class="nav-menu-1">
-							{% link url="cockpit_catalog_categories" content=" Catégories" icon="object-group" %}
-							{% link url="cockpit_catalog_products" content=" Produits <span class='pull-right'>12</span>" icon="product-hunt" %}
+							{% link url="cockpit_catalog_categories" content=" Catégories <span class='pull-right'><?php echo Catalog\models\Category::count(); ?></span>" icon="object-group" %}
+							{% link url="cockpit_catalog_products" content=" Produits <span class='pull-right'><?php echo Catalog\models\Product::count(); ?></span>" icon="product-hunt" %}
 						</div>
 					</div>
 				</div>
