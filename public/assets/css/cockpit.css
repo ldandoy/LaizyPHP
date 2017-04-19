@@ -112,6 +112,10 @@ html, #cockpit, #cockpit .container-fluid, #cockpit #nav-menu-left
 	box-shadow: none;
 }
 
+.form-submit {
+    float: right;
+}
+
 #cockpit .form-site {
     width: 90%;
     margin: 7px auto 0px;
