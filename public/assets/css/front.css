@@ -22,3 +22,7 @@
 #front .connected-user {
 	color: #fff;
 }
+
+#front .navbar-nav .user-avatar {
+	height: 30px;
+}

@@ -333,6 +333,10 @@ html, #cockpit, #cockpit .container-fluid, #cockpit #nav-menu-left
     font-size: 12px;
 }
 
+#cockpit table .user-avatar {
+    height: 30px;
+}
+
 .rendrecontent {
     border: 1px solid #000;
     width: 100%;

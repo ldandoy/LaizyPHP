@@ -29,7 +29,8 @@ class AdministratorsauthController extends AuthController
         $this->loginPage        = 'cockpit_administratorsauth_login';
         $this->signupURL        = 'cockpit_administratorsauth_signup';
         $this->tableName        = 'administrators';
-        $this->connected        = 'current_administrator';
+        $this->sessionKey       = 'current_administrator';
+        $this->model            = 'Auth\\models\\Administrator';
         $this->pageTitle        = '';
         $this->afterLoginPage   = 'cockpit';
 
@@ -49,7 +50,7 @@ class AdministratorsauthController extends AuthController
 
     public function logoutAction()
     {
-        $this->connected         = 'current_administrator';
+        $this->sessionKey        = 'current_administrator';
         $this->afterLogoutPage   = 'cockpit';
 
         parent::logoutAction();

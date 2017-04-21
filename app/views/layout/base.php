@@ -43,17 +43,24 @@
 					<ul class="nav navbar-nav navbar-right">
 						<?php if ($this->current_user !== null) { ?>
 							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->current_user->firstname.' '.$this->current_user->lastname; ?> <span class="caret"></span></a>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									<?php if ($this->current_user->media_id !== null): ?>
+										<img class="user-avatar" src="<?php echo $this->current_user->media->getUrl(); ?>" />&nbsp;
+									<?php endif; ?>
+									<?php echo $this->current_user->firstname.' '.$this->current_user->lastname; ?>&nbsp;<span class="caret"></span>
+								</a>
 								<ul class="dropdown-menu">
-									<li><a href="">Mon compte</a></li>
+									<li>
+										{% link url="users_edit_"<?php echo $this->current_user->id; ?> content="Mon compte" icon="user" %}
+									</li>
 									<li role="separator" class="divider"></li>
 									<li>
-										<a href="<?php echo url('auth_auth_logout'); ?>" title="Se déconnecter">Se déconnecter</a>
+										{% link url="auth_logout" content="Se déconnecter" icon="user-times" %}
 									</li>
 								</ul>
 							</li>
 						<?php } else { ?>
-							<li><a href="<?php echo url('auth_auth_login'); ?>" class="" title="Se connecter"><i class="fa fa-login"></i> Se connecter</a></li>
+							<li>{% link url="auth_login" content="Se connecter" icon="user" %}</li>
 						<?php } ?>
 					</ul>
 				</div>
