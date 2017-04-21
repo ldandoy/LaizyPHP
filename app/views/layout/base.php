@@ -51,16 +51,18 @@
 								</a>
 								<ul class="dropdown-menu">
 									<li>
-										{% link url="users_edit_"<?php echo $this->current_user->id; ?> content="Mon compte" icon="user" %}
+										{% link url="user_edit" content="Modifier données personnelles" icon="pencil" %}
 									</li>
 									<li role="separator" class="divider"></li>
 									<li>
-										{% link url="auth_logout" content="Se déconnecter" icon="user-times" %}
+										{% link url="auth_logout" content="Se déconnecter" icon="sign-out" %}
 									</li>
 								</ul>
 							</li>
 						<?php } else { ?>
-							<li>{% link url="auth_login" content="Se connecter" icon="user" %}</li>
+							<li>
+								{% link url="auth_login" content="Se connecter" icon="sign-in" %}
+							</li>
 						<?php } ?>
 					</ul>
 				</div>
