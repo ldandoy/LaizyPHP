@@ -33,7 +33,7 @@
 			</ul>
 		</li>
 	<?php } else { ?>
-		<li <?php if ($this->request->url == $menuitem->link) { ?>class="active"<?php } ?>><a href="<?php echo url($menu->link); ?>"><?php echo $menuitem->label ?></a></li>
+		<li <?php if ($this->request->url == $menuitem->link) { ?>class="active"<?php } ?>><a href="<?php echo url($menuitem->link); ?>"><?php echo $menuitem->label ?></a></li>
 	<?php } ?>
 <?php
 }
