@@ -47,7 +47,7 @@ ROAD MAP [01/04/2017]
 ---------------------
 x Commenter tous les codes qui sont inutiliser (passer tout çà dans les fonctions créé) exemple: helper title et articles listing
 x Dans les templates, utiliser les functions et non les variables static, c'est moche, et çà alourdi le code
-- Changer le routeur car auth_auth_login, c'est pas terrible
+x Changer le routeur car auth_auth_login, c'est pas terrible
 x Trouver une solution pour $this->connectedUser, si on change la table user, on est mort => En config on va mettre le nom du Model et on se servira de çà pour faire le nom du connectedUser
 x Voir pour les models si on peut les loader avec juste un id et çà retourne l'objet ?
 x Mode debbug avec des log qui s'affiche qu'en debug
@@ -72,9 +72,21 @@ ROAD MAP [11/04/2017]
 x Modifier le getOptions car il ne faut afficher l'objet qu'on est entrain de modifier dans la liste
 x  il faut aussi virer les enfants ou un truc comme çà sinon on va avoir aussi des boucle infini
 
-ROAD MAP [11/04/2017]
+ROAD MAP [12/04/2017]
 ---------------------
 - Pour les méida ajouter des médias externe
 - rajouter les bouton supression dans show et edit
 - Vérification des droits en écriture
 - Afficher les média en vignette
+
+ROAD MAP [22/04/2017]
+---------------------
+- Changer le nom de la table: galleries_medias => galleriesmedias
+- Changer title par label
+- Ajouter une root_path
+- Modifier les noms des variables pageTitle => titlePage
+- Faire la même chose pour session que pour url. En gros trouver un moyen d'appeler les objects sans mettre le chemin complet ni faire les use
+- Modifier les $params['articles'] par $artciles directement
+- Pour les associations, il faudrait setAss et Get pour créer l'association
+- Quand il y a une erreur dans les requetes, renvoyer la requete assossié
+- Modifier le champs de selection des médias pour voir l'image s'il y en a une ajouté

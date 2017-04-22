@@ -40,9 +40,9 @@
 						<?php if ($this->current_administrator !== null) { ?>
 							<ul class="nav navbar-nav navbar-right">
 								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->current_administrator->firstname.' '.$this->current_administrator->lastname; ?> <span class="caret"></span></a>
+									<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->current_administrator->firstname.' '.$this->current_administrator->lastname; ?> <span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="">Mon compte</a></li>
+										<li><a href="<?php echo url("cockpit_auth_administrators_show_" . $this->current_administrator->id); ?>"><i class="fa fa-user"></i> Mon compte</a></li>
 										<li role="separator" class="divider"></li>
 										<li>{% link url="cockpit_multisite_sites_index" content="Sites" icon="snowflake-o" %}</li>
 										<li>{% link url="cockpit_auth_administrators" content="Administrateurs" icon="user-secret" %}</li>
@@ -69,7 +69,7 @@
 						</div>
 						<?php if ($this->current_administrator !== null) { ?>
 							<div class="pull-left info">
-								<a href="#" class=""><?php echo $this->current_administrator->firstname.' '.$this->current_administrator->lastname; ?></a>
+								<a href="<?php echo url("cockpit_auth_administrators_show_" . $this->current_administrator->id); ?>" class=""><?php echo $this->current_administrator->firstname.' '.$this->current_administrator->lastname; ?></a>
 								<br />
 								<?php echo $this->current_administrator->email ?>
 							</div>
@@ -79,24 +79,24 @@
 					<div class="clearfix"></div>
 
 					<div class="nav-menu">
-						{% link url="cockpit" content=" Accueil" icon="home" %}
-						{% link url="cockpit_cms_menus" content=" Menu" icon="bars" %}
-						{% link url="cockpit_cms_articles" content=" Articles <span class='pull-right'><?php echo Cms\models\Article::count(); ?></span>" icon="columns" %}
-						{% link url="cockpit_cms_pages" content=" Pages <span class='pull-right'><?php echo Cms\models\Page::count(); ?></span>" icon="file-text" %}
-						{% link url="cockpit_media_medias" content=" Medias <span class='pull-right'><?php echo Media\models\Media::count(); ?></span>" icon="picture-o" %}
+						{% link url="cockpit" content=" Accueil" icon="home fa-blue" class="" %}
+						{% link url="cockpit_cms_menus" content=" Menu <span class='pull-right'><?php echo Cms\models\Menu::count("site_id = ".System\Session::get('site_id')); ?></span>" icon="bars fa-green" %}
+						{% link url="cockpit_cms_articles" content=" Articles <span class='pull-right'><?php echo Cms\models\Article::count("site_id = ".System\Session::get('site_id')); ?></span>" icon="columns fa-red" %}
+						{% link url="cockpit_cms_pages" content=" Pages <span class='pull-right'><?php echo Cms\models\Page::count("site_id = ".System\Session::get('site_id')); ?></span>" icon="file-text fa-purple" %}
+						{% link url="cockpit_media_medias" content=" Medias <span class='pull-right'><span class="caret"></span></span>" icon="picture-o fa-brown" %}
 						<div class="nav-menu-1">
-							{% link url="cockpit_media_medias" content=" Medias" icon="object-group" %}
-							{% link url="cockpit_media_mediacategories" content=" Catégories de media" icon="object-group" %}
+							{% link url="cockpit_media_mediacategories" content=" Catégories de media <span class='pull-right'><?php echo Media\models\MediaCategory::count(); ?></span>" icon="object-group fa-brown" %}
+							{% link url="cockpit_media_medias" content=" Medias <span class='pull-right'><?php echo Media\models\Media::count(); ?></span>" icon="picture-o fa-brown" %}
 						</div>
-						{% link url="cockpit_widget_galleries" content=" Widgets" icon="table" %}
+						{% link url="cockpit_widget_galleries" content=" Widgets <span class='pull-right'><span class="caret"></span></span>" icon="table fa-ciel" %}
 						<div class="nav-menu-1">
-							{% link url="cockpit_widget_galleries" content=" Galleries" icon="object-group" %}
-							{% link url="cockpit_widget_sliders" content=" Sliders" icon="object-group" %}
+							{% link url="cockpit_widget_galleries" content=" Galleries" icon="object-group fa-ciel" %}
+							{% link url="cockpit_widget_sliders" content=" Sliders" icon="object-group fa-ciel" %}
 						</div>
-						{% link url="cockpit_catalog_products" content=" Catalogue" icon="table" %}
+						{% link url="cockpit_catalog_products" content=" Catalogue <span class='pull-right'><span class="caret"></span></span>" icon="table fa-orange" %}
 						<div class="nav-menu-1">
-							{% link url="cockpit_catalog_categories" content=" Catégories <span class='pull-right'><?php echo Catalog\models\Category::count(); ?></span>" icon="object-group" %}
-							{% link url="cockpit_catalog_products" content=" Produits <span class='pull-right'><?php echo Catalog\models\Product::count(); ?></span>" icon="product-hunt" %}
+							{% link url="cockpit_catalog_categories" content=" Catégories de produit <span class='pull-right'><?php echo Catalog\models\Category::count(); ?></span>" icon="object-group fa-orange" %}
+							{% link url="cockpit_catalog_products" content=" Produits <span class='pull-right'><?php echo Catalog\models\Product::count(); ?></span>" icon="product-hunt fa-orange" %}
 						</div>
 					</div>
 				</div>
