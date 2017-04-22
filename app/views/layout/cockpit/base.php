@@ -26,9 +26,10 @@
 					<div class="col-lg-10">
 						<?php if (system\Config::getValueG('multisite')) { ?>
 							<form action="/cockpit/multisite/changehost" method="post" class="navbar-form navbar-left form-site">
+								<input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
 								<div class="form-group">
 									<select name="site_id" class="form-control hosts">
-										<?php foreach (MultiSite\models\Site::findAll() as $key => $value) { ?>
+										<?php foreach (MultiSite\models\Site::findAll("active = 1") as $key => $value) { ?>
 											<option <?php if (System\Session::get('site_id') == $value->id) { ?>selected="selected"<?php } ?> value="<?php echo $value->id; ?>"><?php echo $value->label; ?></option>
 										<?php } ?>
 									</select>
@@ -78,24 +79,24 @@
 					<div class="clearfix"></div>
 
 					<div class="nav-menu">
-						{% link url="cockpit" content="Accueil" icon="home" %}
-						{% link url="cockpit_cms_menus" content="Menu" icon="bars" %}
-						{% link url="cockpit_cms_articles" content="Articles <span class='pull-right'><?php echo Cms\models\Article::count(); ?></span>" icon="columns" %}
-						{% link url="cockpit_cms_pages" content="Pages <span class='pull-right'><?php echo Cms\models\Page::count(); ?></span>" icon="file-text" %}
-						{% link url="cockpit_media_medias" content="Medias <span class='pull-right'><?php echo Media\models\Media::count(); ?></span>" icon="picture-o" %}
+						{% link url="cockpit" content=" Accueil" icon="home" %}
+						{% link url="cockpit_cms_menus" content=" Menu" icon="bars" %}
+						{% link url="cockpit_cms_articles" content=" Articles <span class='pull-right'><?php echo Cms\models\Article::count(); ?></span>" icon="columns" %}
+						{% link url="cockpit_cms_pages" content=" Pages <span class='pull-right'><?php echo Cms\models\Page::count(); ?></span>" icon="file-text" %}
+						{% link url="cockpit_media_medias" content=" Medias <span class='pull-right'><?php echo Media\models\Media::count(); ?></span>" icon="picture-o" %}
 						<div class="nav-menu-1">
-							{% link url="cockpit_media_medias" content="Medias" icon="object-group" %}
-							{% link url="cockpit_media_mediacategories" content="Catégories de media" icon="object-group" %}
+							{% link url="cockpit_media_medias" content=" Medias" icon="object-group" %}
+							{% link url="cockpit_media_mediacategories" content=" Catégories de media" icon="object-group" %}
 						</div>
-						{% link url="cockpit_widget_galleries" content="Widgets" icon="table" %}
+						{% link url="cockpit_widget_galleries" content=" Widgets" icon="table" %}
 						<div class="nav-menu-1">
-							{% link url="cockpit_widget_galleries" content="Galleries" icon="object-group" %}
-							{% link url="cockpit_widget_sliders" content="Sliders" icon="object-group" %}
+							{% link url="cockpit_widget_galleries" content=" Galleries" icon="object-group" %}
+							{% link url="cockpit_widget_sliders" content=" Sliders" icon="object-group" %}
 						</div>
-						{% link url="cockpit_catalog_products" content="Catalogue" icon="table" %}
+						{% link url="cockpit_catalog_products" content=" Catalogue" icon="table" %}
 						<div class="nav-menu-1">
-							{% link url="cockpit_catalog_categories" content="Catégories <span class='pull-right'><?php echo Catalog\models\Category::count(); ?></span>" icon="object-group" %}
-							{% link url="cockpit_catalog_products" content="Produits <span class='pull-right'><?php echo Catalog\models\Product::count(); ?></span>" icon="product-hunt" %}
+							{% link url="cockpit_catalog_categories" content=" Catégories <span class='pull-right'><?php echo Catalog\models\Category::count(); ?></span>" icon="object-group" %}
+							{% link url="cockpit_catalog_products" content=" Produits <span class='pull-right'><?php echo Catalog\models\Product::count(); ?></span>" icon="product-hunt" %}
 						</div>
 					</div>
 				</div>
@@ -107,11 +108,9 @@
 		</div>
 
 		<script type="text/javascript">
-			
 			$('.hosts').bind('change',function() {
         		$(this).parent().parent().submit();
     		});
-
 		</script>
 	</body>
 </html>

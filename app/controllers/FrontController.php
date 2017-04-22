@@ -22,7 +22,7 @@ class FrontController extends ApplicationController
         $this->current_user = Session::get('current_user');
 
         // Set menu
-        $this->menu = Menu::findById(1);
-        $this->menuitems = MenuItem::getFlat(null, "menu_id = 1", false);
+        $this->menu = Menu::findAll("principal = 1 AND site_id = ".Session::get('site_id'))[0];
+        $this->menuitems = MenuItem::getChildren(null, true, 0, false, "menu_id = ".$this->menu->id);
     }
 }
