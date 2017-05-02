@@ -48,7 +48,7 @@
 										<li>{% link url="cockpit_auth_administrators" content="Administrateurs" icon="user-secret" %}</li>
 										<li>{% link url="cockpit_auth_users" content="Utilisateurs" icon="users" %}</li>
 										<li role="separator" class="divider"></li>
-										<li>{% link url="cockpit_config_index" content="Configuration" icon="cogs" %}</li>
+										<li>{% link url="cockpit_system_config_index" content="Configuration" icon="cogs" %}</li>
 										<li role="separator" class="divider"></li>
 										<li>
 											<a href="<?php echo url('cockpit_administratorsauth_logout'); ?>" title="Se déconnecter">Se déconnecter</a>
