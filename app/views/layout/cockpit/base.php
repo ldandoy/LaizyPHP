@@ -48,6 +48,8 @@
 										<li>{% link url="cockpit_auth_administrators" content="Administrateurs" icon="user-secret" %}</li>
 										<li>{% link url="cockpit_auth_users" content="Utilisateurs" icon="users" %}</li>
 										<li role="separator" class="divider"></li>
+										<li>{% link url="cockpit_config_index" content="Configuration" icon="cogs" %}</li>
+										<li role="separator" class="divider"></li>
 										<li>
 											<a href="<?php echo url('cockpit_administratorsauth_logout'); ?>" title="Se déconnecter">Se déconnecter</a>
 										</li>
@@ -83,20 +85,28 @@
 						{% link url="cockpit_cms_menus" content=" Menu <span class='pull-right'><?php echo Cms\models\Menu::count("site_id = ".System\Session::get('site_id')); ?></span>" icon="bars fa-green" %}
 						{% link url="cockpit_cms_articles" content=" Articles <span class='pull-right'><?php echo Cms\models\Article::count("site_id = ".System\Session::get('site_id')); ?></span>" icon="columns fa-red" %}
 						{% link url="cockpit_cms_pages" content=" Pages <span class='pull-right'><?php echo Cms\models\Page::count("site_id = ".System\Session::get('site_id')); ?></span>" icon="file-text fa-purple" %}
-						{% link url="cockpit_media_medias" content=" Medias <span class='pull-right'><span class="caret"></span></span>" icon="picture-o fa-brown" %}
-						<div class="nav-menu-1">
-							{% link url="cockpit_media_mediacategories" content=" Catégories de media <span class='pull-right'><?php echo Media\models\MediaCategory::count(); ?></span>" icon="object-group fa-brown" %}
-							{% link url="cockpit_media_medias" content=" Medias <span class='pull-right'><?php echo Media\models\Media::count(); ?></span>" icon="picture-o fa-brown" %}
+						<div>
+							{% link url="cockpit_media_medias" content=" Medias <span class='pull-right'><span class="caret"></span></span>" icon="picture-o fa-brown" class="ss-menu" %}
+							<div class="nav-ss-menu">
+								{% link url="cockpit_media_mediacategories" content=" Catégories de media <span class='pull-right'><?php echo Media\models\MediaCategory::count(); ?></span>" icon="object-group fa-brown" %}
+								{% link url="cockpit_media_medias" content=" Medias <span class='pull-right'><?php echo Media\models\Media::count(); ?></span>" icon="picture-o fa-brown" %}
+							</div>
 						</div>
-						{% link url="cockpit_widget_galleries" content=" Widgets <span class='pull-right'><span class="caret"></span></span>" icon="table fa-ciel" %}
-						<div class="nav-menu-1">
-							{% link url="cockpit_widget_galleries" content=" Galleries" icon="object-group fa-ciel" %}
-							{% link url="cockpit_widget_sliders" content=" Sliders" icon="object-group fa-ciel" %}
+						<div>
+							<a href="<?php echo url('cockpit_widget_galleries') ?>" class="ss-menu"><i class="fa fa-table fa-ciel"></i> &nbsp;Widgets <span class='pull-right'><span class="caret"></span></span></a>
+							<div class="nav-ss-menu">
+								<a href="<?php echo url('cockpit_widget_galleries') ?>">
+									<i class="fa fa-object-group fa-ciel"></i>  Galleries
+								</a>
+								{% link url="cockpit_widget_sliders" content=" Sliders" icon="object-group fa-ciel" %}
+							</div>
 						</div>
-						{% link url="cockpit_catalog_products" content=" Catalogue <span class='pull-right'><span class="caret"></span></span>" icon="table fa-orange" %}
-						<div class="nav-menu-1">
-							{% link url="cockpit_catalog_categories" content=" Catégories de produit <span class='pull-right'><?php echo Catalog\models\Category::count(); ?></span>" icon="object-group fa-orange" %}
-							{% link url="cockpit_catalog_products" content=" Produits <span class='pull-right'><?php echo Catalog\models\Product::count(); ?></span>" icon="product-hunt fa-orange" %}
+						<div>
+							{% link url="cockpit_catalog_products" content=" Catalogue <span class='pull-right'><span class="caret"></span></span>" icon="table fa-orange" class="ss-menu" %}
+							<div class="nav-ss-menu">
+								{% link url="cockpit_catalog_categories" content=" Catégories de produit <span class='pull-right'><?php echo Catalog\models\Category::count(); ?></span>" icon="object-group fa-orange" %}
+								{% link url="cockpit_catalog_products" content=" Produits <span class='pull-right'><?php echo Catalog\models\Product::count(); ?></span>" icon="product-hunt fa-orange" %}
+							</div>
 						</div>
 					</div>
 				</div>
@@ -111,6 +121,15 @@
 			$('.hosts').bind('change',function() {
         		$(this).parent().parent().submit();
     		});
+
+			$(document).on('click', '.ss-menu', function(event) {
+				event.preventDefault();
+				if ($(this).next('div').css('display') == "none") {
+					$(this).next('div').show();
+				} else {
+					$(this).next('div').hide();
+				}
+			});
 		</script>
 	</body>
 </html>

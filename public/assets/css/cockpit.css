@@ -14,6 +14,11 @@ html, #cockpit, #cockpit .container-fluid, #cockpit #nav-menu-left
 	padding-top: 50px;
 }
 
+#cockpit .alert {
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
 #cockpit .fa.fa-blue {
     color: #3c8dbc;
 }
@@ -128,8 +133,12 @@ html, #cockpit, #cockpit .container-fluid, #cockpit #nav-menu-left
 	text-decoration: none;
 }
 
-#cockpit #nav-menu-left .nav-menu-1 a {
+#cockpit #nav-menu-left .nav-ss-menu a {
 	padding-left: 40px;
+}
+
+#cockpit #nav-menu-left .nav-ss-menu {
+    display: none;
 }
 
 .form input[type="file"].form-control {
@@ -389,11 +398,12 @@ html, #cockpit, #cockpit .container-fluid, #cockpit #nav-menu-left
 .rendrecontent .section {
     border: 1px dashed #C0C0C0;
     position: relative;
+    padding: 0;
 }
 
 .rendrecontent .section .label {
     position: absolute;
-    top: -15px;
+    top: 0px;
     left: 0px;
 }
 
@@ -404,6 +414,7 @@ html, #cockpit, #cockpit .container-fluid, #cockpit #nav-menu-left
 .rendrecontent .row {
     border: 1px dashed #C0C0C0;
     position: relative;
+    margin: 20px;
 }
 
 .rendrecontent .row .addCol.label {
@@ -414,6 +425,12 @@ html, #cockpit, #cockpit .container-fluid, #cockpit #nav-menu-left
     border: 1px dashed #C0C0C0;
     /*text-align: center;*/
     position: relative;
+    margin: 2% 0;
+    /*width: 96%;*/
+}
+
+.rendrecontent .content_widget {
+    padding: 20px;
 }
 
 .rendreaction {

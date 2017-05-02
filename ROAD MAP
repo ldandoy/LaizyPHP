@@ -90,3 +90,7 @@ ROAD MAP [22/04/2017]
 - Pour les associations, il faudrait setAss et Get pour créer l'association
 - Quand il y a une erreur dans les requetes, renvoyer la requete assossié
 - Modifier le champs de selection des médias pour voir l'image s'il y en a une ajouté
+
+ROAD MAP [24/04/2017]
+---------------------
+- Slug pour les articles et les produits et les pages
