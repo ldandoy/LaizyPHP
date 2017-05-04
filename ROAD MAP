@@ -83,10 +83,10 @@ ROAD MAP [22/04/2017]
 ---------------------
 - Changer le nom de la table: galleries_medias => galleriesmedias
 - Changer title par label
-- Ajouter une root_path
+x Ajouter une root_path
 - Modifier les noms des variables pageTitle => titlePage
 - Faire la même chose pour session que pour url. En gros trouver un moyen d'appeler les objects sans mettre le chemin complet ni faire les use
-- Modifier les $params['articles'] par $artciles directement
+x Modifier les $params['articles'] par $artciles directement
 - Pour les associations, il faudrait setAss et Get pour créer l'association
 - Quand il y a une erreur dans les requetes, renvoyer la requete assossié
 - Modifier le champs de selection des médias pour voir l'image s'il y en a une ajouté
@@ -94,3 +94,7 @@ ROAD MAP [22/04/2017]
 ROAD MAP [24/04/2017]
 ---------------------
 - Slug pour les articles et les produits et les pages
+
+ROAD MAP [07/05/2017]
+---------------------
+- Rendre dynamique le choix du logo dans la config

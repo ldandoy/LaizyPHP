@@ -1,6 +1,6 @@
-#front {
+body#front {
 	background: #FEFEFE;
-	margin-top: 50px;
+	margin-top: 160px;
 }
 
 #front .infos {
@@ -21,6 +21,12 @@
 
 #front .connected-user {
 	color: #fff;
+}
+
+#front .navbar {
+    min-height: 140px;
+    background: #fff;
+    border: none;
 }
 
 #front .navbar-nav .user-avatar {

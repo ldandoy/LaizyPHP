@@ -3,14 +3,13 @@
 	<head>
 		<meta charset=utf-8>
 		<link rel="icon" href="" type="image/png" />
-		<title><?php echo isset($params['title']) ? $params['title'] : system\Config::$config['GENERAL']['title'] ?></title>
+		<title><?php echo isset($params['title']) ? $params['title'] : System\Config::$config['GENERAL']['title'] ?></title>
 		<?php $this->loadCss(); ?>
 		<?php $this->loadJs(); ?>
 	</head>
 	<body id="front">
-
-		<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
-			<div class="container-fluid">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 						<span class="sr-only">Toggle navigation</span>
@@ -18,7 +17,9 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="/"><?php echo isset($params['title']) ? $params['title'] : system\Config::$config['GENERAL']['title'] ?></a>
+					<a class="navbar-brand" href="/">
+						<img alt="Brand" src="/assets/images/<?php echo System\Config::getSite(System\Session::get('site_id'))["logo"]; ?>">
+					</a>
 				</div>
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
@@ -33,7 +34,14 @@
 			</ul>
 		</li>
 	<?php } else { ?>
-		<li <?php if ($this->request->url == $menuitem->link) { ?>class="active"<?php } ?>><a href="<?php echo url($menuitem->link); ?>"><?php echo $menuitem->label ?></a></li>
+		<li <?php if ($this->request->url == $menuitem->link) { ?>class="active"<?php } ?>>
+			<a href="<?php echo url($menuitem->link); ?>">
+			<?php if ($menuitem->media->image != null) { ?>
+				<?php echo '<img src="'.$menuitem->media->image->url.'" />'; ?>
+			<?php } else { ?>
+				<?php echo $menuitem->label ?>
+			<?php } ?>
+		</a></li>
 	<?php } ?>
 <?php
 }
