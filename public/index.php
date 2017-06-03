@@ -26,10 +26,10 @@ define('JS_DIR', PUBLIC_DIR.DS."assets".DS."js");
 include PUBLIC_DIR.DS.'functions.php';
 include VENDOR_DIR.DS.'autoload.php';
 
-use System\Config;
-use System\Session;
-use System\Router;
-use System\Dispatcher;
+use Core\Config;
+use Core\Session;
+use Core\Router;
+use Core\Dispatcher;
 
 Config::init();
 Session::init();

@@ -3,7 +3,7 @@
 namespace app\controllers;
 
 use app\controllers\ApplicationController;
-use System\Session;
+use Core\Session;
 use Cms\models\Menu;
 use Cms\models\MenuItem;
 

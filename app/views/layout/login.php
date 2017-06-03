@@ -3,7 +3,7 @@
 	<head>
 		<meta charset=utf-8>
 		<link rel="icon" href="" type="image/png" />
-		<title><?php echo isset($params['title']) ? $params['title'] : system\Config::$config['GENERAL']['title'] ?></title>
+		<title><?php echo isset($params['title']) ? $params['title'] : core\Config::$config['GENERAL']['title'] ?></title>
 		<?php $this->loadCss(); ?>
 		<?php $this->loadJs(); ?>
 	</head>
@@ -11,7 +11,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<?php echo system\Session::flash(); ?>
+					<?php echo core\Session::flash(); ?>
 					<?php echo $yeslp; ?>
 				</div>
 			</div>

@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-use System\Controller;
+use Core\Controller;
 
 class ApplicationController extends Controller
 {

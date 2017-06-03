@@ -1,15 +1,15 @@
 <?php
 /**
- * File system\functions.php
+ * File Core\functions.php
  *
- * @category System
+ * @category Core
  * @package  Netoverconsulting
  * @author   Loïc Dandoy <ldandoy@overconsulting.net>
  * @license  GNU
  * @link     http://overconsulting.net
  */
 
-use System\Router;
+use Core\Router;
 
 /**
  * Display debug info

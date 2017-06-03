@@ -62,7 +62,7 @@ ROAD MAP [02/04/2017]
 ROAD MAP [02/04/2017]
 ---------------------
 - Est ce qu'on modfidier les champs après ? via migration
-- System de widget à mettre en place
+x System de widget à mettre en place
 x Les modules besoin d'une config par module
 
 ROAD MAP [11/04/2017]
@@ -74,18 +74,18 @@ x  il faut aussi virer les enfants ou un truc comme çà sinon on va avoir aussi
 
 ROAD MAP [12/04/2017]
 ---------------------
-- Pour les méida ajouter des médias externe
-- rajouter les bouton supression dans show et edit
-- Vérification des droits en écriture
+- Pour les média ajouter des médias externe
+- Rajouter les boutons supression dans show et edit
+- Vérification des droits en écriture (Dans le cockpit)
 - Afficher les média en vignette
 
 ROAD MAP [22/04/2017]
 ---------------------
 - Changer le nom de la table: galleries_medias => galleriesmedias
-- Changer title par label
+- Changer name par label
 x Ajouter une root_path
-- Modifier les noms des variables pageTitle => titlePage
-- Faire la même chose pour session que pour url. En gros trouver un moyen d'appeler les objects sans mettre le chemin complet ni faire les use
+- Modifier les noms des variables titlePage => pageTitle (On part de l'objet)
+x Faire des raccourcit pour session et config que pour url. En gros trouver un moyen d'appeler les objects sans mettre le chemin complet ni faire les use
 x Modifier les $params['articles'] par $artciles directement
 - Pour les associations, il faudrait setAss et Get pour créer l'association
 - Quand il y a une erreur dans les requetes, renvoyer la requete assossié
@@ -98,3 +98,30 @@ ROAD MAP [24/04/2017]
 ROAD MAP [07/05/2017]
 ---------------------
 - Rendre dynamique le choix du logo dans la config
+
+ROAD MAP [26/05/2017]
+---------------------
+- Mettre en place le système de role
+- Rendre un peu plus modulaire le framework
+- Revoir le système d'erreur
+- Différencier la partie membre et cockpit
+x Ajouter un bouton d'enregistrement au niveau de la box de modif des pages
+- Ajouter le système de modification du content au articles
+x Pages "/Routes" qui renvoye la liste de toutes les routes sur le layout d'erreur
+x Faire le système de fallback des Models / Controllers
+- Ajouter les formtages du text avec les boutons
+- Mettre un voile rouge pour supprimer les blocks
+- Supprimer les images et les afficher à coté du champs input file
+- Ajouter les boucles foreach dans les helpers
+- Ajouter l'affichage du help de la ligne de commande pour connaitre toutes les commandes possibles
+- Il faut mettre ailleurs les containers ou ajouter un champs à la section
+- Générer les images au bon format
+
+ROAD MAP [02/06/2017]
+---------------------
+- Rester connecté
+
+ROAD MAP [03/06/2017]
+---------------------
+- Ajouter un mod debug
+- Set flash à mettre ailleurs que dans session trop dépendant de Bootstrap

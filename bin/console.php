@@ -42,6 +42,11 @@ try {
                     generateModel($name, $params);
                     generateView($name, $params);
                     break;
+
+                case 'link':
+                case 'l':
+                    generateSymlink();
+                    break;
                 
                 default:
                     throw new Exception('Unknown object "'.$object.'" : php bin/console.php generate <object> <name>[ <options>]]');
@@ -407,5 +412,27 @@ function dbMigrate()
         }
     } catch (PDOException $e) {
         throw $e;
+    }
+}
+
+function generateSymlink()
+{
+    if (!is_link("public/assets/auth")) {
+        symlink("vendor/overconsulting/lazyphp-auth/Auth/assets", "public/assets/auth");
+    }
+    if (!is_link("public/assets/catalog")) {
+        symlink("vendor/overconsulting/lazyphp-catalog/Catalog/assets", "public/assets/catalog");
+    }
+    if (!is_link("public/assets/cms")) {
+        symlink("../../vendor/overconsulting/lazyphp-cms/Cms/assets", "public/assets/cms");
+    }
+    if (!is_link("public/assets/helper")) {
+        symlink("vendor/overconsulting/lazyphp-helper/Helper/assets", "public/assets/helper");
+    }
+    if (!is_link("public/assets/media")) {
+        symlink("vendor/overconsulting/lazyphp-media/Media/assets", "public/assets/media");
+    }
+    if (!is_link("public/assets/widget")) {
+        symlink("vendor/overconsulting/lazyphp-widget/Widget/assets", "public/assets/widget");
     }
 }

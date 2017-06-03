@@ -1,34 +1,12 @@
 body#front {
 	background: #FEFEFE;
-	margin-top: 160px;
+	margin-top: 60px;
 }
 
-#front .infos {
-	position: fixed;
-	bottom: 0;
-	background: #900;
-	color: #FFF;
-	line-height: 30px;
-	height: 30px;
-	right: 0;
-	padding: 0 10px;
+#front .navbar-brand {
+	padding: 0;
 }
 
-#front .page-title {
-	text-align: center;
-	color: #f00;
-}
-
-#front .connected-user {
-	color: #fff;
-}
-
-#front .navbar {
-    min-height: 140px;
-    background: #fff;
-    border: none;
-}
-
-#front .navbar-nav .user-avatar {
-	height: 30px;
+#front .navbar-brand > img {
+	height: 50px;
 }
