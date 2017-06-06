@@ -3,7 +3,7 @@
 	<head>
 		<meta charset=utf-8>
 		<link rel="icon" href="" type="image/png" />
-		<title><?php echo isset($params['title']) ? $params['title'] : system\Config::$config['GENERAL']['title'] ?></title>
+		<title><?php echo isset($params['title']) ? $params['title'] : Core\Config::$config['GENERAL']['title'] ?></title>
 		<?php $this->loadCss(); ?>
 		<?php $this->loadJs(); ?>
 	</head>
@@ -24,13 +24,13 @@
 					</div>
 				
 					<div class="col-lg-10">
-						<?php if (system\Config::getValueG('multisite')) { ?>
+						<?php if (Core\Config::getValueG('multisite')) { ?>
 							<form action="/cockpit/multisite/changehost" method="post" class="navbar-form navbar-left form-site">
 								<input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
 								<div class="form-group">
 									<select name="site_id" class="form-control hosts">
 										<?php foreach (MultiSite\models\Site::findAll("active = 1") as $key => $value) { ?>
-											<option <?php if (System\Session::get('site_id') == $value->id) { ?>selected="selected"<?php } ?> value="<?php echo $value->id; ?>"><?php echo $value->label; ?></option>
+											<option <?php if (Core\Session::get('site_id') == $value->id) { ?>selected="selected"<?php } ?> value="<?php echo $value->id; ?>"><?php echo $value->label; ?></option>
 										<?php } ?>
 									</select>
 								</div>
@@ -82,9 +82,9 @@
 
 					<div class="nav-menu">
 						{% link url="cockpit" content=" Accueil" icon="home fa-blue" class="" %}
-						{% link url="cockpit_cms_menus" content=" Menu <span class='pull-right'><?php echo Cms\models\Menu::count("site_id = ".System\Session::get('site_id')); ?></span>" icon="bars fa-green" %}
-						{% link url="cockpit_cms_articles" content=" Articles <span class='pull-right'><?php echo Cms\models\Article::count("site_id = ".System\Session::get('site_id')); ?></span>" icon="columns fa-red" %}
-						{% link url="cockpit_cms_pages" content=" Pages <span class='pull-right'><?php echo Cms\models\Page::count("site_id = ".System\Session::get('site_id')); ?></span>" icon="file-text fa-purple" %}
+						{% link url="cockpit_cms_menus" content=" Menu <span class='pull-right'><?php echo Cms\models\Menu::count("site_id = ".Core\Session::get('site_id')); ?></span>" icon="bars fa-green" %}
+						{% link url="cockpit_cms_articles" content=" Articles <span class='pull-right'><?php echo Cms\models\Article::count("site_id = ".Core\Session::get('site_id')); ?></span>" icon="columns fa-red" %}
+						{% link url="cockpit_cms_pages" content=" Pages <span class='pull-right'><?php echo Cms\models\Page::count("site_id = ".Core\Session::get('site_id')); ?></span>" icon="file-text fa-purple" %}
 						<div>
 							{% link url="cockpit_media_medias" content=" Medias <span class='pull-right'><span class="caret"></span></span>" icon="picture-o fa-brown" class="ss-menu" %}
 							<div class="nav-ss-menu">
@@ -111,7 +111,7 @@
 					</div>
 				</div>
 				<div class="col-lg-10" id="content">
-					<?php echo system\Session::flash(); ?>
+					<?php echo Core\Session::flash(); ?>
 					<?php echo $yeslp; ?>
 				</div>
 			</div>

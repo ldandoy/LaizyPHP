@@ -41,7 +41,7 @@ x Ajouter des callback au niveau des controllers et des models (before et after)
 
 ROAD MAP [17/03/2017]
 ---------------------
-x Passer le fichier de function ailleurs => Dans System\Controller ? Il me semble que tout dérive de là
+x Passer le fichier de function ailleurs => Dans Core\Controller ? Il me semble que tout dérive de là
 
 ROAD MAP [01/04/2017]
 ---------------------

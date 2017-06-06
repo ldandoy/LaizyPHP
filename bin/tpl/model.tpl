@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use System\Model;
+use Core\Model;
 
 class {{modelName}} extends Model
 {
