@@ -125,3 +125,7 @@ ROAD MAP [03/06/2017]
 ---------------------
 - Ajouter un mod debug
 - Set flash à mettre ailleurs que dans session trop dépendant de Bootstrap
+
+ROAD MAP [04/06/2017]
+---------------------
+- Renvoyer les mot de passe et login aux utilisateurs par un bouton
