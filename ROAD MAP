@@ -114,7 +114,7 @@ x Faire le système de fallback des Models / Controllers
 - Supprimer les images et les afficher à coté du champs input file
 - Ajouter les boucles foreach dans les helpers
 - Ajouter l'affichage du help de la ligne de commande pour connaitre toutes les commandes possibles
-- Il faut mettre ailleurs les containers ou ajouter un champs à la section
+x Il faut mettre ailleurs les containers ou ajouter un champs à la section
 - Générer les images au bon format
 
 ROAD MAP [02/06/2017]

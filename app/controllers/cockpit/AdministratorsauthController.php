@@ -35,6 +35,7 @@ class AdministratorsauthController extends AuthController
         $this->afterLoginPage   = 'cockpit';
 
         parent::loginAction();
+        $this->render('auth::login', $this->params);
     }
 
     public function signupAction()
