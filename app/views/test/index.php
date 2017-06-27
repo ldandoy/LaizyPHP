@@ -1,11 +1,23 @@
 <h1 class="page-title">{{ pageTitle }}</h1>
 <div class="panel panel-default">
 	<div class="panel-heading">
+		<h2>Medias</h2>
+	</div>
+	<div class="panel-body">
+		<h3>Images</h3>
+		{% input_media options="[aaa:xxx;bbb:yyy]" %}
+		{% media id="50" format="large" %}
+		<img src="<?php echo $media->getUrl(); ?>" />
+		<img src="<?php echo $media->getUrl('large'); ?>" />
+		<img src="<?php echo $media->getUrl('medium'); ?>" />
+		<img src="<?php echo $media->getUrl('small'); ?>" />
+	</div>
+	<div class="panel-heading">
 		<h2>Widget</h2>
 	</div>
 	<div class="panel-body">
 		<h3>Gallery</h3>
-		{% widget type="gallery" id="3" %}
+		{% widget type="gallery" id="1" %}
 	</div>
 	<div class="panel-heading">
 		<h2>Form helpers</h2>

@@ -89,6 +89,7 @@
 							{% link url="cockpit_media_medias" content=" Medias <span class='pull-right'><span class="caret"></span></span>" icon="picture-o fa-brown" class="ss-menu" %}
 							<div class="nav-ss-menu">
 								{% link url="cockpit_media_mediacategories" content=" Catégories de media <span class='pull-right'><?php echo Media\models\MediaCategory::count(); ?></span>" icon="object-group fa-brown" %}
+								{% link url="cockpit_media_mediaformats" content=" Formats de media <span class='pull-right'><?php echo Media\models\MediaFormat::count(); ?></span>" icon="object-group fa-brown" %}
 								{% link url="cockpit_media_medias" content=" Medias <span class='pull-right'><?php echo Media\models\Media::count(); ?></span>" icon="picture-o fa-brown" %}
 							</div>
 						</div>

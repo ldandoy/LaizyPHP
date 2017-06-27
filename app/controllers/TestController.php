@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\controllers\ApplicationController;
 use Helper\Datetime;
+use Media\models\Media;
 
 //require SYSTEM_DIR.'/helpers/Datetime.php';
 
@@ -85,8 +86,12 @@ class TestController extends ApplicationController
 
         $params = array_merge($params, $this->request->post);
 
+        $medias = Media::findAll();
+        $media = $medias[count($medias)-1];
+        $params['media'] = $media;
+
         $this->render(
-            'index',
+            'test::index',
             $params
         );
     }

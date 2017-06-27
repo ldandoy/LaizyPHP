@@ -115,7 +115,8 @@ x Faire le système de fallback des Models / Controllers
 - Ajouter les boucles foreach dans les helpers
 - Ajouter l'affichage du help de la ligne de commande pour connaitre toutes les commandes possibles
 x Il faut mettre ailleurs les containers ou ajouter un champs à la section
-!!!!- Générer les images au bon format
+x Générer les images au bon format
+- Multi delete
 
 ROAD MAP [02/06/2017]
 ---------------------

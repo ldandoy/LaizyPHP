@@ -23,33 +23,33 @@
 				</div>
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
-<?php foreach ($this->menuitems as $menuitem) { ?>
-	<?php if (!empty($menuitem->children)) { ?>
-		<li class="dropdown">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $menuitem->label ?> <span class="caret"></span></a>
-			<ul class="dropdown-menu">
-				<?php foreach ($menuitem->children as $child) { ?>
-					<li <?php if ($this->request->url == $child->link) { ?>class="active"<?php } ?>><a href="<?php echo url($menu->link); ?>"><?php echo $child->label ?></a></li>
+<?php if (isset($this->menuitems)) { ?>
+	<?php foreach ($this->menuitems as $menuitem) { ?>
+		<?php if (!empty($menuitem->children)) { ?>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $menuitem->label ?> <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<?php foreach ($menuitem->children as $child) { ?>
+						<li <?php if ($this->request->url == $child->link) { ?>class="active"<?php } ?>><a href="<?php echo url($menu->link); ?>"><?php echo $child->label ?></a></li>
+					<?php } ?>
+				</ul>
+			</li>
+		<?php } else { ?>
+			<li <?php if ($this->request->url == $menuitem->link) { ?>class="active"<?php } ?>>
+				<a href="<?php echo url($menuitem->link); ?>">
+				<?php if ($menuitem->media != null) { ?>
+					<?php echo '<img src="'.$menuitem->media->image->url.'" />'; ?>
+				<?php } else { ?>
+					<?php echo $menuitem->label ?>
 				<?php } ?>
-			</ul>
-		</li>
-	<?php } else { ?>
-		<li <?php if ($this->request->url == $menuitem->link) { ?>class="active"<?php } ?>>
-			<a href="<?php echo url($menuitem->link); ?>">
-			<?php if ($menuitem->media != null) { ?>
-				<?php echo '<img src="'.$menuitem->media->image->url.'" />'; ?>
-			<?php } else { ?>
-				<?php echo $menuitem->label ?>
-			<?php } ?>
-		</a></li>
+			</a></li>
+		<?php } ?>
 	<?php } ?>
-<?php
-}
-?>
+<?php } ?>
 					</ul>
 					
 					<ul class="nav navbar-nav navbar-right">
-						<?php if ($this->current_user !== null) { ?>
+						<?php if (isset($this->current_user) &&  $this->current_user !== null) { ?>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 									<?php if ($this->current_user->media_id !== null): ?>
