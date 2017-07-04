@@ -46,7 +46,9 @@
 										<li role="separator" class="divider"></li>
 										<li>{% link url="cockpit_multisite_sites_index" content="Sites" icon="snowflake-o" %}</li>
 										<li>{% link url="cockpit_auth_administrators" content="Administrateurs" icon="user-secret" %}</li>
-										<li>{% link url="cockpit_auth_users" content="Utilisateurs" icon="users" %}</li>
+										<li>{% link url="cockpit_auth_users" content="Utilisateurs" icon="user" %}</li>
+										<li>{% link url="cockpit_auth_groups" content="Groupes" icon="users" %}</li>
+										<li>{% link url="cockpit_auth_roles" content="Rôles" icon="tasks" %}</li>
 										<li role="separator" class="divider"></li>
 										<li>{% link url="cockpit_system_config_index" content="Configuration" icon="cogs" %}</li>
 										<li role="separator" class="divider"></li>

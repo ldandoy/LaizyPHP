@@ -461,3 +461,7 @@ html, #cockpit, #cockpit .container-fluid, #cockpit #nav-menu-left
     margin-left: 0;
     margin-right: 0;
 }
+
+input[type=checkbox], input[type=radio] {
+    margin-top: 0px;
+}
