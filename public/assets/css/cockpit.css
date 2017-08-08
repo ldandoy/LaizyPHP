@@ -23,34 +23,6 @@ html, #cockpit, #cockpit .container-fluid, #cockpit #nav-menu-left
     margin-top: 10px;
 }
 
-#cockpit .fa.fa-blue {
-    color: #3c8dbc;
-}
-
-#cockpit .fa.fa-green {
-    color: #00a65a;
-}
-
-#cockpit .fa.fa-red {
-    color: #8A0000;
-}
-
-#cockpit .fa.fa-purple {
-    color: #915BFF;
-}
-
-#cockpit .fa.fa-brown {
-    color: #9FCC06;
-}
-
-#cockpit .fa.fa-orange {
-    color: #CC3D11;
-}
-
-#cockpit .fa.fa-ciel {
-    color: #04D7FF;
-}
-
 #cockpit .navbar {
     background-color: #3c8dbc;
     margin-bottom: 0;
@@ -185,20 +157,69 @@ html, #cockpit, #cockpit .container-fluid, #cockpit #nav-menu-left
     margin-bottom: 15px;
 }
 
+
+#cockpit .text-blue {
+    color: #3c8dbc;
+}
+
+#cockpit .bg-blue {
+    background: #3c8dbc !important;
+}
+
+#cockpit .text-green {
+    color: #00a65a;
+}
+
+#cockpit .bg-green {
+    background: #00a65a !important;
+}
+
+#cockpit .text-red {
+    color: #8a0000;
+}
+
+#cockpit .bg-red {
+    background: #8a0000 !important;
+}
+
+#cockpit .text-purple {
+    color: #915bff;
+}
+
+#cockpit .bg-purple {
+    background: #915bff !important;
+}
+
+#cockpit .text-brown {
+    color: #9fcc06;
+}
+
+#cockpit .bg-brown {
+    background: #9fcc06 !important;
+}
+
+#cockpit .text-orange {
+    color: #cc3d11;
+}
+
+#cockpit .bg-orange {
+    background: #cc3d11 !important;
+}
+
+#cockpit .text-ciel {
+    color: #04D7FF;
+}
+
 #cockpit .bg-aqua {
     background-color: #00c0ef !important;
 }
 
-#cockpit .bg-red {
-    background-color: #dd4b39 !important;
-}
-
-#cockpit .bg-green {
-    background-color: #00a65a !important;
-}
-
 #cockpit .bg-yellow {
     background-color: #f39c12 !important;
+}
+
+#cockpit .bg-brown {
+    background: #9fcc06 !important;
 }
 
 #cockpit .info-box-icon {

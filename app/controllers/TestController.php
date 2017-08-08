@@ -6,8 +6,6 @@ use app\controllers\ApplicationController;
 use Helper\Datetime;
 use Media\models\Media;
 
-//require SYSTEM_DIR.'/helpers/Datetime.php';
-
 class TestController extends ApplicationController
 {
     public function indexAction()
