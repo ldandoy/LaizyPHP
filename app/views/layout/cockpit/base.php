@@ -25,12 +25,12 @@
 				
 					<div class="col-lg-10">
 						<?php if (Core\Config::getValueG('multisite')) { ?>
-							<form action="/cockpit/multisite/changehost" method="post" class="navbar-form navbar-left form-site">
+							<form action="/cockpit/sites/changehost" method="post" class="navbar-form navbar-left form-site">
 								<input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
 								<div class="form-group">
 									<select name="site_id" class="form-control hosts">
-										<?php foreach (MultiSite\models\Site::findAll("active = 1") as $key => $value) { ?>
-											<option <?php if (Core\Session::get('site_id') == $value->id) { ?>selected="selected"<?php } ?> value="<?php echo $value->id; ?>"><?php echo $value->label; ?></option>
+										<?php foreach (Core\models\Site::findAll('active = 1') as $key => $value) { ?>
+											<option<?php if ($this->site->id == $value->id) { echo ' selected="selected"'; } ?> value="<?php echo $value->id; ?>"><?php echo $value->label; ?></option>
 										<?php } ?>
 									</select>
 								</div>
@@ -38,24 +38,22 @@
 						<?php } ?>
 
 						<?php if ($this->current_administrator !== null) { ?>
-							<ul class="nav navbar-nav navbar-right">
-								<li class="dropdown">
+							<ul class="nav navbar-nav navbar-right ml-auto">
+								<li class="nav-item dropdown">
 									<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->current_administrator->firstname.' '.$this->current_administrator->lastname; ?> <span class="caret"></span></a>
-									<ul class="dropdown-menu">
-										<li><a href="<?php echo url("cockpit_auth_administrators_show_" . $this->current_administrator->id); ?>"><i class="fa fa-user"></i> Mon compte</a></li>
+									<div class="dropdown-menu">
+										{% link url="cockpit_auth_administrators_show_<?php echo $this->current_administrator->id; ?>" content="Mon compte" icon="user" class="dropdown-item" %}
 										<li role="separator" class="divider"></li>
-										<li>{% link url="cockpit_multisite_sites_index" content="Sites" icon="snowflake-o" %}</li>
-										<li>{% link url="cockpit_auth_administrators" content="Administrateurs" icon="user-secret" %}</li>
-										<li>{% link url="cockpit_auth_users" content="Utilisateurs" icon="user" %}</li>
-										<li>{% link url="cockpit_auth_groups" content="Groupes" icon="users" %}</li>
-										<li>{% link url="cockpit_auth_roles" content="Rôles" icon="tasks" %}</li>
+										{% link url="cockpit_core_sites_index" content="Sites" icon="snowflake-o" class="dropdown-item" %}
+										{% link url="cockpit_auth_administrators" content="Administrateurs" icon="user-secret" class="dropdown-item" %}
+										{% link url="cockpit_auth_users" content="Utilisateurs" icon="user" class="dropdown-item" %}
+										{% link url="cockpit_auth_groups" content="Groupes" icon="users" class="dropdown-item" %}
+										{% link url="cockpit_auth_roles" content="Rôles" icon="tasks" class="dropdown-item" %}
+										<li role="separator" class="divider">
+										{% link url="cockpit_system_config_index" content="Configuration" icon="cogs" class="dropdown-item" %}
 										<li role="separator" class="divider"></li>
-										<li>{% link url="cockpit_system_config_index" content="Configuration" icon="cogs" %}</li>
-										<li role="separator" class="divider"></li>
-										<li>
-											<a href="<?php echo url('cockpit_administratorsauth_logout'); ?>" title="Se déconnecter">Se déconnecter</a>
-										</li>
-									</ul>
+										{% link url="cockpit_administratorsauth_logout" content="Se déconnecter" hint="Se déconnecter" class="dropdown-item" %}
+									</div>
 								</li>
 							</ul>
 						<?php } ?>
@@ -73,7 +71,7 @@
 						</div>
 						<?php if ($this->current_administrator !== null) { ?>
 							<div class="pull-left info">
-								<a href="<?php echo url("cockpit_auth_administrators_show_" . $this->current_administrator->id); ?>" class=""><?php echo $this->current_administrator->firstname.' '.$this->current_administrator->lastname; ?></a>
+								{% link url="cockpit_auth_administrators_show_<?php echo $this->current_administrator->id; ?>" content="<?php echo $this->current_administrator->getFullName(); ?>" icon="user" %}
 								<br />
 								<?php echo $this->current_administrator->email ?>
 							</div>
@@ -84,9 +82,9 @@
 
 					<div class="nav-menu">
 						{% link url="cockpit" content=" Accueil" icon="home text-blue" %}
-						{% link url="cockpit_cms_menus" content=" Menu <span class='pull-right'><?php echo Cms\models\Menu::count("site_id = ".Core\Session::get('site_id')); ?></span>" icon="bars text-green" %}
-						{% link url="cockpit_cms_articles" content=" Articles <span class='pull-right'><?php echo Cms\models\Article::count("site_id = ".Core\Session::get('site_id')); ?></span>" icon="columns text-red" %}
-						{% link url="cockpit_cms_pages" content=" Pages <span class='pull-right'><?php echo Cms\models\Page::count("site_id = ".Core\Session::get('site_id')); ?></span>" icon="file-text text-purple" %}
+						{% link url="cockpit_cms_menus" content=" Menu <span class='pull-right'><?php echo Cms\models\Menu::count('site_id = '.$this->site->id); ?></span>" icon="bars text-green" %}
+						{% link url="cockpit_cms_articles" content=" Articles <span class='pull-right'><?php echo Cms\models\Article::count('site_id = '.$this->site->id); ?></span>" icon="columns text-red" %}
+						{% link url="cockpit_cms_pages" content=" Pages <span class='pull-right'><?php echo Cms\models\Page::count('site_id = '.$this->site->id); ?></span>" icon="file-text text-purple" %}
 						<div>
 							{% link url="cockpit_media_medias" content=" Medias <span class='pull-right'><span class="caret"></span></span>" icon="picture-o text-brown" class="ss-menu" %}
 							<div class="nav-ss-menu">
@@ -96,16 +94,14 @@
 							</div>
 						</div>
 						<div>
-							<a href="<?php echo url('cockpit_widget_galleries') ?>" class="ss-menu"><i class="fa fa-table text-ciel"></i> &nbsp;Widgets <span class='pull-right'><span class="caret"></span></span></a>
+							{% link url="cockpit_widget_galleries" content="Widgets <span class='pull-right'><span class='caret'></span></span>" icon="table text-ciel" class="ss-menu" %}
 							<div class="nav-ss-menu">
-								<a href="<?php echo url('cockpit_widget_galleries') ?>">
-									<i class="fa fa-object-group text-ciel"></i>  Galleries
-								</a>
+								{% linl url="cockpit_widget_galleries" content=" Galleries" icon="object-group text-ciel" %}
 								{% link url="cockpit_widget_sliders" content=" Sliders" icon="object-group text-ciel" %}
 							</div>
 						</div>
 						<div>
-							{% link url="cockpit_catalog_products" content=" Catalogue <span class='pull-right'><span class="caret"></span></span>" icon="table text-orange" class="ss-menu" %}
+							{% link url="cockpit_catalog_products" content=" Catalogue <span class='pull-right'><span class='caret'></span></span>" icon="table text-orange" class="ss-menu" %}
 							<div class="nav-ss-menu">
 								{% link url="cockpit_catalog_categories" content=" Catégories de produit <span class='pull-right'><?php echo Catalog\models\Category::count(); ?></span>" icon="object-group text-orange" %}
 								{% link url="cockpit_catalog_products" content=" Produits <span class='pull-right'><?php echo Catalog\models\Product::count(); ?></span>" icon="product-hunt text-orange" %}
@@ -114,7 +110,7 @@
 					</div>
 				</div>
 				<div class="col-lg-10" id="content">
-					<?php echo Core\Session::flash(); ?>
+					<?php echo $this->getFlash(); ?>
 					<?php echo $yeslp; ?>
 				</div>
 			</div>

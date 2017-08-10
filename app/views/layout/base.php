@@ -18,7 +18,7 @@
 						<span class="icon-bar"></span>
 					</button>
 					<a class="navbar-brand" href="/">
-						<img alt="Brand" src="<?php echo Core\Config::getSite(Core\Session::get('site_id'))["logo"]; ?>">
+						<img alt="Brand" src="<?php echo $this->site->brand_logo; ?>">
 					</a>
 				</div>
 				<div class="collapse navbar-collapse">
@@ -30,7 +30,7 @@
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $menuitem->label ?> <span class="caret"></span></a>
 				<ul class="dropdown-menu">
 					<?php foreach ($menuitem->children as $child) { ?>
-						<li <?php if ($this->request->url == $child->link) { ?>class="active"<?php } ?>><a href="<?php echo url($menu->link); ?>"><?php echo $child->label ?></a></li>
+						<li<?php if ($this->request->url == $child->link) { echo ' class="active"'; } ?>>{% link url="<?php echo $menu->link; ?>" content="<?php echo $child->label; ?>" %}</li>
 					<?php } ?>
 				</ul>
 			</li>
@@ -77,6 +77,7 @@
 			</div>
 		</nav>
 
+		<?php echo $this->getFlash(); ?>
 		<?php echo $yeslp; ?>
 	</body>
 </html>

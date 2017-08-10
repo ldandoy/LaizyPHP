@@ -11,7 +11,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<?php echo core\Session::flash(); ?>
+					<?php echo $this->getFlash(); ?>
 					<?php echo $yeslp; ?>
 				</div>
 			</div>
