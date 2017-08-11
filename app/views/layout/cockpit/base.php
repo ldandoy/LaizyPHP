@@ -38,10 +38,9 @@
                             <a href="" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $this->current_administrator->firstname.' '.$this->current_administrator->lastname; ?> <span class="caret"></span></a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <?php if ($this->current_administrator !== null && $this->current_administrator->site_id === null) { ?>
-                                    {% link url="cockpit_multisite_sites_index" content="Sites" class="dropdown-item" icon="snowflake-o" %}
+                                    {% link url="cockpit_core_sites_index" content="Sites" class="dropdown-item" icon="snowflake-o" %}
                                 <?php } else { ?>
-                                    <a class="dropdown-item" href="/cockpit/multisite/sites/show/<?php echo $this->current_administrator->site_id; ?>">
-                                    <i class="fa fa-snowflake-o"></i> Sites</a>
+                                    {% link url="cockpit_core_sites_show_<?php echo $this->current_administrator->site_id; ?>" content="Site" class="dropdown-item" icon="snowflake-o" %}
                                 <?php } ?>
                                 <?php if ($this->current_administrator !== null && $this->current_administrator->site_id === null) { ?>
                                     {% link url="cockpit_auth_administrators" content="Administrateurs" class="dropdown-item" icon="user-secret" %}
