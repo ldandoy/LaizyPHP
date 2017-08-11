@@ -19,7 +19,7 @@ class FrontController extends ApplicationController
         parent::__construct($request);
 
         // Get the current connected user
-        $this->current_user = Session::get('current_user');
+        $this->current_user = $this->session->get('current_user');
 
         if ($this->site !== null) {
             $this->menu = Menu::findAll('principal = 1 AND site_id = '.$this->site->id)[0];
