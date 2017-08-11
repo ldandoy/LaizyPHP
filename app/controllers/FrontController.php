@@ -21,12 +21,14 @@ class FrontController extends ApplicationController
         // Get the current connected user
         $this->current_user = $this->session->get('current_user');
 
+        $this->mainMenu = null;
+        $this->mainMenuitems = null;
         if ($this->site !== null) {
-            $this->menu = Menu::findAll('principal = 1 AND site_id = '.$this->site->id)[0];
-            $this->menuitems = MenuItem::getChildren(null, true, 0, false, 'menu_id = '.$this->menu->id);
-        } else {
-            $this->menu = null;
-            $this->menuitems = null;
+        	$menus = Menu::findAll('position = \'main\' AND site_id = '.$this->site->id);
+        	if (!empty($menus)) {
+            	$this->mainMenu = $menus[0];
+            	$this->mainMenuitems = MenuItem::getChildren(null, true, 0, false, 'menu_id = '.$this->menu->id);
+            }
         }
     }
 }

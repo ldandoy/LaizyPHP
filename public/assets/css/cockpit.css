@@ -1,17 +1,15 @@
 html, #cockpit {
-    height: 100%;
     min-height: 100%;
 }
 
-html, #cockpit, #cockpit .container-fluid, #cockpit #nav-menu-left
+html, #cockpit, #cockpit .site-content
 {
-    height: 100%;
     min-height: 100%;
 }
 
 #cockpit {
 	background: #ecf0f5;
-	padding-top: 50px;
+	padding-top: 48px;
 }
 
 #cockpit .container {
@@ -20,16 +18,82 @@ html, #cockpit, #cockpit .container-fluid, #cockpit #nav-menu-left
 
 #cockpit .alert {
     margin-bottom: 0px;
-    margin-top: 10px;
+    margin-top: 1rem;
+}
+
+#cockpit .fa.fa-blue {
+    color: #3c8dbc;
+}
+
+#cockpit .fa.fa-green {
+    color: #00a65a;
+}
+
+#cockpit .fa.fa-red {
+    color: #8A0000;
+}
+
+#cockpit .fa.fa-purple {
+    color: #915BFF;
+}
+
+#cockpit .fa.fa-brown {
+    color: #9FCC06;
+}
+
+#cockpit .fa.fa-orange {
+    color: #CC3D11;
+}
+
+#cockpit .fa.fa-ciel {
+    color: #04D7FF;
+}
+
+#cockpit .fa.fa-partner {
+    color: #077D03;
+}
+
+#cockpit .fa.fa-messagerie {
+    color: #7f83b7;
+}
+
+#cockpit .fa.fa-faq {
+    color: #c8ae00;
+}
+
+#cockpit .fa.fa-event {
+    color: #347e39;
+}
+
+#cockpit .fa.fa-newsletter {
+    color: #0b6bba;
 }
 
 #cockpit .navbar {
     background-color: #3c8dbc;
-    margin-bottom: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#cockpit .navbar-brand {
+    color: #FFF;
+    text-align: center;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    background: #367fa9;
+}
+
+#cockpit .preview-site {
+  color: #FFF;
 }
 
 #cockpit .navbar a.dropdown-toggle {
 	color: #FFF;
+    line-height: 48px;
+    height: 48px;
+    margin: 0;
+    padding: 0 10px;
 }
 
 #cockpit .navbar a.dropdown-toggle:hover, #cockpit .navbar a.dropdown-toggle:active, #cockpit .navbar a.dropdown-toggle:focus {
@@ -52,6 +116,11 @@ html, #cockpit, #cockpit .container-fluid, #cockpit #nav-menu-left
 	width: 100%;
 	display: block;
 	margin: 0;
+}
+
+#cockpit .navbar .dropdown-menu {
+    left: auto;
+    right: 1px;
 }
 
 #cockpit #nav-menu-left {
@@ -130,7 +199,7 @@ html, #cockpit, #cockpit .container-fluid, #cockpit #nav-menu-left
 }
 
 #cockpit .form-site {
-    width: 90%;
+    /* width: 90%; */
     margin: 7px auto 0px;
 }
 
@@ -157,69 +226,20 @@ html, #cockpit, #cockpit .container-fluid, #cockpit #nav-menu-left
     margin-bottom: 15px;
 }
 
-
-#cockpit .text-blue {
-    color: #3c8dbc;
-}
-
-#cockpit .bg-blue {
-    background: #3c8dbc !important;
-}
-
-#cockpit .text-green {
-    color: #00a65a;
-}
-
-#cockpit .bg-green {
-    background: #00a65a !important;
-}
-
-#cockpit .text-red {
-    color: #8a0000;
-}
-
-#cockpit .bg-red {
-    background: #8a0000 !important;
-}
-
-#cockpit .text-purple {
-    color: #915bff;
-}
-
-#cockpit .bg-purple {
-    background: #915bff !important;
-}
-
-#cockpit .text-brown {
-    color: #9fcc06;
-}
-
-#cockpit .bg-brown {
-    background: #9fcc06 !important;
-}
-
-#cockpit .text-orange {
-    color: #cc3d11;
-}
-
-#cockpit .bg-orange {
-    background: #cc3d11 !important;
-}
-
-#cockpit .text-ciel {
-    color: #04D7FF;
-}
-
 #cockpit .bg-aqua {
     background-color: #00c0ef !important;
 }
 
-#cockpit .bg-yellow {
-    background-color: #f39c12 !important;
+#cockpit .bg-red {
+    background-color: #dd4b39 !important;
 }
 
-#cockpit .bg-brown {
-    background: #9fcc06 !important;
+#cockpit .bg-green {
+    background-color: #00a65a !important;
+}
+
+#cockpit .bg-yellow {
+    background-color: #f39c12 !important;
 }
 
 #cockpit .info-box-icon {
@@ -298,6 +318,25 @@ html, #cockpit, #cockpit .container-fluid, #cockpit #nav-menu-left
     border-top-color: #04D7FF;
 }
 
+#cockpit .box.box-partner {
+    border-top-color: #077D03;
+}
+
+#cockpit .box.box-messagerie {
+    border-top-color: #7f83b7;
+}
+
+#cockpit .box.box-faq {
+    border-top-color: #c8ae00;
+}
+
+#cockpit .box.box-event {
+    border-top-color: #347e39;
+}
+
+#cockpit .box.box-newsletter {
+    border-top-color: #0b6bba;
+}
 
 #cockpit .box {
     position: relative;
@@ -471,11 +510,11 @@ html, #cockpit, #cockpit .container-fluid, #cockpit #nav-menu-left
 }
 
 .rendrecontent .delLigne {
-    left: 115px !important;
+    left: 58px !important;
 }
 
 .rendrecontent .delCol {
-    left: 40px !important;
+    left: 100px !important;
 }
 
 .boxConfig .form-group {
@@ -483,6 +522,210 @@ html, #cockpit, #cockpit .container-fluid, #cockpit #nav-menu-left
     margin-right: 0;
 }
 
-input[type=checkbox], input[type=radio] {
+#cockpit input[type=checkbox], input[type=radio] {
     margin-top: 0px;
+}
+
+/* Modif' Auriane Panel */
+
+#cockpit .bg-deep-blue {
+    background-color: #5157FF !important;
+}
+
+#cockpit .bg-purple {
+    background-color: #7D2CCC !important;
+}
+
+/* Messages */
+#cockpit .conversation-show .conversation {
+    padding: 15px;
+}
+
+#cockpit .conversation a {
+    text-decoration: none;
+}
+
+#cockpit .conversation-header {
+    color: #000;
+    background: #eee;
+    border: solid 1px #ccc;
+    padding: 0.5em 1em 0.5em 1em;
+    cursor: pointer;
+    margin-bottom: 15px;
+    text-decoration: none !important;
+}
+
+#cockpit .conversation-header:hover {
+    background: #ccc;
+}
+
+#cockpit .conversation-icon, #cockpit .message-icon {
+    margin: 0 1em 0 0;
+}
+
+#cockpit .conversation-unread-count {
+    display: inline-block;
+    vertical-align: middle;
+    background: #000;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.9em;
+    padding: 0.2em 0 0 0.4em;
+    width: 1.5em;
+    height: 1.5em;
+    margin-left: 0.5em;
+}
+
+#cockpit .message {
+    margin-bottom: 15px;
+}
+
+#cockpit .message.me {
+    padding-left: 40px;
+}
+
+#cockpit .message-datetime {
+    margin-right: 50px;
+}
+
+#cockpit .message-content {
+    padding: 5px;
+    margin-top: 5px;
+    white-space: pre-wrap;
+}
+
+#cockpit .message-remove {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.3rem;
+}
+
+#cockpit .message.unread .message-sender {
+    font-weight: bold;
+}
+
+#cockpit .conversation-sender {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#cockpit .conversation-subject {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#cockpit .conversation-response {
+    border-top: solid 1px #000000;
+    padding: 15px;
+}
+
+.position-navbar {
+    width : 75%;
+}
+
+.preview-site, .preview-site:hover, .preview-site:active, .preview-site:focus{
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.preview-site i {
+    margin-left: 0.4em;
+    display: inline-block;
+}
+
+.preview-site p {
+    display: inline-block;
+}
+
+
+/* Messagerie */
+
+
+/* Messages */
+#cockpit .conversation-show .conversation {
+    padding: 0 15px;
+}
+
+#cockpit .conversation a {
+    text-decoration: none;
+}
+
+#cockpit .conversation-header {
+    color: #000;
+    border-bottom: solid 1px #41b5ce;
+    padding: 0.5em 1em 0.5em 1em;
+    cursor: pointer;
+    margin-bottom: 15px;
+    text-decoration: none !important;
+}
+
+#cockpit  .conversation-header:hover {
+    background: #ececec;
+}
+
+#cockpit .conversation-icon, #front .message-icon {
+	margin: 0 1em 0 0;
+	color: #41b5ce;
+}
+
+#cockpit  .conversation-unread-count {
+    display: inline-block;
+    vertical-align: middle;
+    color: #000;
+    font-size: 1.2em;
+    padding: 0.2em 0 0 0.4em;
+    width: 1.5em;
+    height: 1.5em;
+    margin-left: 0.5em;
+}
+
+#cockpit  .message {
+    margin-bottom: 15px;
+	margin-top: 15px;
+	padding: 10px;
+}
+
+#cockpit .message.me {
+    /*padding-left: 40px;*/
+	background: #5bc0de;
+	border-radius: 5px;
+	color: #fff;
+}
+
+#cockpit  .message.other {
+	background: #ffae38;
+	border-radius: 5px;
+	color: #000;
+}
+
+#cockpit  .message-datetime {
+    margin-right: 10px;
+}
+
+#cockpit  .message-content {
+    margin-top: 5px;
+    white-space: pre-wrap;
+}
+
+#cockpit .message-remove {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.3rem;
+}
+
+#cockpit  .message-sender {
+	font-size: 0.8rem;
+	font-weight: bold;
+}
+
+#cockpit  .message.unread .message-sender {
+    font-weight: bold;
+}
+
+#cockpit  .conversation-sender {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#cockpit  .conversation-subject {
+    font-size: 1.2em;
+    font-weight: bold;
 }
