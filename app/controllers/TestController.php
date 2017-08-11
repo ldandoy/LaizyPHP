@@ -85,8 +85,10 @@ class TestController extends ApplicationController
         $params = array_merge($params, $this->request->post);
 
         $medias = Media::findAll();
-        $media = $medias[count($medias)-1];
-        $params['media'] = $media;
+        if (!empty($medias)) {
+            $media = $medias[count($medias)-1];
+            $params['media'] = $media;
+        }
 
         $this->render(
             'test::index',

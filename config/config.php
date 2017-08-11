@@ -1,6 +1,11 @@
 <?php
 
+// Debug mode : true | false
+define('DEBUG', true);
+
+// CRLF, LF
 define('CRLF', "\r\n");
+define('LF', "\n");
 
 // Directories
 define('CONFIG_DIR', ROOT_DIR.DS.'config');
@@ -18,3 +23,6 @@ define('DB_PASSWORD', 'framework');
 define('DB_NAME', 'framework');
 define('DB_CHARSET', 'utf8mb4');
 define('DB_PREFIX', '');
+
+// Salt for password, crypting...
+// define('SALT', '$6$199337193b7024b3e7dfcc83df8248f4$');

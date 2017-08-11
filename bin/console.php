@@ -98,7 +98,7 @@ _log();
 
 function _log($str = '')
 {
-    echo $str."\n";
+    echo $str.LF;
 }
 
 function parseParams($params)
@@ -206,13 +206,13 @@ function generateModel($name, $params)
                 $c[1] = 'string';
             }
 
-            $permittedColumns .= str_repeat('    ', 2).'\''.$c[0].'\','."\n";
+            $permittedColumns .= str_repeat('    ', 2).'\''.$c[0].'\','.LF;
 
             $validations .=
-                str_repeat('    ', 4).'\''.$c[0].'\' => array('."\n".
-                    str_repeat('    ', 5).'\'type\' => \'required\','."\n".
-                    str_repeat('    ', 5).'\'error\' => \''.$c[0].' obligatoire\''."\n".
-                str_repeat('    ', 4).'),'."\n";
+                str_repeat('    ', 4).'\''.$c[0].'\' => array('.LF.
+                    str_repeat('    ', 5).'\'type\' => \'required\','.LF.
+                    str_repeat('    ', 5).'\'error\' => \''.$c[0].' obligatoire\''.LF.
+                str_repeat('    ', 4).'),'.LF;
         }
 
         $permittedColumns = trim($permittedColumns);
@@ -290,8 +290,8 @@ function generateView($name, $params)
 function generateCreateTable($table, $columns)
 {
     $sql =
-        'CREATE TABLE `'.$table.'` ('."\n".
-        '    `id` int(11) NOT NULL AUTO_INCREMENT,'."\n";
+        'CREATE TABLE `'.$table.'` ('.LF.
+        '    `id` int(11) NOT NULL AUTO_INCREMENT,'.LF;
 
     foreach ($columns as $column) {
         $c = explode(':', $column);
@@ -352,14 +352,14 @@ function generateCreateTable($table, $columns)
         }
 
         $sql .=
-            '    `'.$name.'` '.$dateType.$notNull.$default.','."\n";
+            '    `'.$name.'` '.$dateType.$notNull.$default.','.LF;
     }
 
     $sql .=
-        '    `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,'."\n".
-        '    `updated_at` datetime,'."\n".
-        '    PRIMARY KEY (`id`)'."\n".
-        ') ENGINE=InnoDB;'."\n";
+        '    `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,'.LF.
+        '    `updated_at` datetime,'.LF.
+        '    PRIMARY KEY (`id`)'.LF.
+        ') ENGINE=InnoDB;'.LF;
 
     return $sql;
 }
