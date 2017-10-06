@@ -30,6 +30,7 @@
             <div class="card">
                 <div class="card-header">
                     <h2>Form helpers</h2>
+                    {% input_datetime name="datetime" type="datetime" label="Date / Time" %}
                 </div>
                 <div class="card-block">
                     <form id="form_test" action="{{ formAction }}" class="form form-horizontal" enctype="multipart/form-data" method="post">
