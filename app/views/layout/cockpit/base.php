@@ -8,7 +8,7 @@
         <?php $this->loadJs(); ?>
     </head>
     <body id="cockpit">
-        <?php if ($this->current_administrator !== null) { ?>
+        <?php if ($this->current_user !== null) { ?>
             <nav class="navbar navbar-toggleable-md fixed-top navbar-light bg-faded">
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -17,7 +17,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                        <?php if ($this->current_administrator->group_id == 1) { ?>
+                        <?php if ($this->current_user->group_id == 1) { ?>
                             <form action="/cockpit/sites/changehost" method="post" class="form-inline form-site my-lg-0">
                                 <input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
                                 <select name="site_id" id="changeHost" class="form-control hosts">
@@ -35,22 +35,22 @@
 
                     <ul class="nav navbar-nav navbar-right ml-auto">
                         <li class="nav-item dropdown">
-                            <a href="" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $this->current_administrator->firstname.' '.$this->current_administrator->lastname; ?> <span class="caret"></span></a>
+                            <a href="" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $this->current_user->firstname.' '.$this->current_user->lastname; ?> <span class="caret"></span></a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <?php if ($this->current_administrator !== null && $this->current_administrator->site_id === null) { ?>
+                                <?php if ($this->current_user !== null && $this->current_user->site_id === null) { ?>
                                     {% link url="cockpit_core_sites_index" content="Sites" class="dropdown-item" icon="snowflake-o" %}
                                 <?php } else { ?>
-                                    {% link url="cockpit_core_sites_show_<?php echo $this->current_administrator->site_id; ?>" content="Site" class="dropdown-item" icon="snowflake-o" %}
+                                    {% link url="cockpit_core_sites_show_<?php echo $this->current_user->site_id; ?>" content="Site" class="dropdown-item" icon="snowflake-o" %}
                                 <?php } ?>
-                                <?php if ($this->current_administrator !== null && $this->current_administrator->site_id === null) { ?>
+                                <?php if ($this->current_user !== null && $this->current_user->site_id === null) { ?>
                                     {% link url="cockpit_auth_administrators" content="Administrateurs" class="dropdown-item" icon="user-secret" %}
                                 <?php } ?>
                                 {% link url="cockpit_auth_users" content="Utilisateurs" class="dropdown-item" icon="user" %}
-                                <?php if ($this->current_administrator !== null && $this->current_administrator->group->code == 'administrators'): ?>
+                                <?php if ($this->current_user !== null && $this->current_user->group->code == 'administrators'): ?>
                                     {% link url="cockpit_auth_groups" content="Groupes" class="dropdown-item" icon="users" %}
                                     {% link url="cockpit_auth_roles" content="Rôles" class="dropdown-item" icon="tasks" %}
                                 <?php endif; ?>
-                                <?php if ($this->current_administrator !== null && $this->current_administrator->site_id === null) { ?>
+                                <?php if ($this->current_user !== null && $this->current_user->site_id === null) { ?>
                                     {% link url="cockpit_system_config_index" content="Configuration" class="dropdown-item" icon="cogs" %}
                                 <?php } ?>
                                 {% link url="cockpit_administratorsauth_logout" content="Se déconnecter" class="dropdown-item" icon="power-off fa-orange" %}
@@ -66,15 +66,15 @@
                 <div class="col-lg-2" id="nav-menu-left">
                     <div class="user-panel">
                         <div class="pull-left image">
-<?php if ($this->current_administrator->media !== null): ?>
-                            <img src="<?php echo $this->current_administrator->media->getUrl(); ?>" class="img-circle" alt="User Image" />
+<?php if ($this->current_user->media !== null): ?>
+                            <img src="<?php echo $this->current_user->media->getUrl(); ?>" class="img-circle" alt="User Image" />
 <?php endif; ?>
                         </div>
-                        <?php if ($this->current_administrator !== null) { ?>
+                        <?php if ($this->current_user !== null) { ?>
                             <div class="pull-left info">
-                                {% link url="cockpit_auth_administrators_show_"<?php echo $this->current_administrator->id; ?> content="<?php echo $this->current_administrator->firstname.' '.$this->current_administrator->lastname; ?>" %}
+                                {% link url="cockpit_auth_administrators_show_"<?php echo $this->current_user->id; ?> content="<?php echo $this->current_user->firstname.' '.$this->current_user->lastname; ?>" %}
                                 <br />
-                                <?php echo $this->current_administrator->email ?>
+                                <?php echo $this->current_user->email ?>
                             </div>
                         <?php } ?>
                     </div>
