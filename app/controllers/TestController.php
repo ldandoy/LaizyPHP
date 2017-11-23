@@ -6,7 +6,7 @@ use app\controllers\ApplicationController;
 use Helper\Datetime;
 use Media\models\Media;
 
-class TestController extends ApplicationController
+class TestController extends FrontController
 {
     public function indexAction()
     {

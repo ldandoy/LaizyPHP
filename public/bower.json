@@ -1,0 +1,23 @@
+{
+  "name": "public",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-beta",
+    "components-font-awesome": "^4.7.0",
+    "datatables.net-dt": "^3.2.2",
+    "datatables.net": "^1.10.16",
+    "moment": "^2.18.1",
+    "tinymce": "^4.6.4",
+    "popper.js": "^1.12.9"
+  }
+}
