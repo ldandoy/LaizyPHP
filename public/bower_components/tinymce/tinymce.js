@@ -1,4 +1,4 @@
-// 4.7.0 (2017-10-03)
+// 4.7.2 (2017-11-07)
 (function () {
 
 var defs = {}; // id -> {dependencies, definition, instance (possibly undefined)}
@@ -82,7 +82,7 @@ var defineGlobal = function (id, ref) {
   define(id, [], function () { return ref; });
 };
 /*jsc
-["tinymce.core.api.Main","ephox.katamari.api.Fun","global!window","tinymce.core.api.Tinymce","global!Array","global!Error","tinymce.core.AddOnManager","tinymce.core.api.Formatter","tinymce.core.api.NotificationManager","tinymce.core.api.WindowManager","tinymce.core.dom.BookmarkManager","tinymce.core.dom.ControlSelection","tinymce.core.dom.DomQuery","tinymce.core.dom.DOMUtils","tinymce.core.dom.EventUtils","tinymce.core.dom.RangeUtils","tinymce.core.dom.ScriptLoader","tinymce.core.dom.Selection","tinymce.core.dom.Serializer","tinymce.core.dom.Sizzle","tinymce.core.dom.TreeWalker","tinymce.core.Editor","tinymce.core.EditorCommands","tinymce.core.EditorManager","tinymce.core.EditorObservable","tinymce.core.Env","tinymce.core.FocusManager","tinymce.core.geom.Rect","tinymce.core.html.DomParser","tinymce.core.html.Entities","tinymce.core.html.Node","tinymce.core.html.SaxParser","tinymce.core.html.Schema","tinymce.core.html.Serializer","tinymce.core.html.Styles","tinymce.core.html.Writer","tinymce.core.Shortcuts","tinymce.core.ui.Factory","tinymce.core.UndoManager","tinymce.core.util.Class","tinymce.core.util.Color","tinymce.core.util.Delay","tinymce.core.util.EventDispatcher","tinymce.core.util.I18n","tinymce.core.util.JSON","tinymce.core.util.JSONP","tinymce.core.util.JSONRequest","tinymce.core.util.LocalStorage","tinymce.core.util.Observable","tinymce.core.util.Promise","tinymce.core.util.Tools","tinymce.core.util.URI","tinymce.core.util.VK","tinymce.core.util.XHR","ephox.katamari.api.Arr","global!document","ephox.sand.api.URL","global!matchMedia","global!navigator","global!clearInterval","global!clearTimeout","global!setInterval","global!setTimeout","tinymce.core.util.Arr","tinymce.core.dom.StyleSheetLoader","ephox.sugar.api.node.Element","ephox.katamari.api.Cell","tinymce.core.fmt.ApplyFormat","tinymce.core.fmt.FormatChanged","tinymce.core.fmt.FormatRegistry","tinymce.core.fmt.MatchFormat","tinymce.core.fmt.Preview","tinymce.core.fmt.RemoveFormat","tinymce.core.fmt.ToggleFormat","tinymce.core.keyboard.FormatShortcuts","ephox.katamari.api.Option","tinymce.core.EditorView","tinymce.core.ui.NotificationManagerImpl","tinymce.core.selection.SelectionBookmark","tinymce.core.ui.WindowManagerImpl","tinymce.core.caret.CaretBookmark","tinymce.core.caret.CaretContainer","tinymce.core.caret.CaretPosition","tinymce.core.dom.NodeType","tinymce.core.text.Zwsp","ephox.sugar.api.search.Selectors","tinymce.core.dom.RangePoint","ephox.sugar.api.dom.Compare","tinymce.core.EditorFocus","tinymce.core.dom.ScrollIntoView","tinymce.core.selection.EventProcessRanges","tinymce.core.selection.GetSelectionContent","tinymce.core.selection.MultiRange","tinymce.core.selection.SetSelectionContent","tinymce.core.InsertContent","tinymce.core.delete.DeleteCommands","tinymce.core.EditorSettings","tinymce.core.init.Render","tinymce.core.Mode","tinymce.core.ui.Sidebar","tinymce.core.util.Uuid","ephox.katamari.api.Type","tinymce.core.ErrorReporter","tinymce.core.LegacyInput","tinymce.core.undo.Levels","ephox.sand.api.XMLHttpRequest","global!Object","global!String","ephox.sand.util.Global","ephox.katamari.api.Future","ephox.katamari.api.Futures","ephox.katamari.api.Result","global!console","tinymce.core.util.Fun","tinymce.core.caret.CaretCandidate","tinymce.core.geom.ClientRect","tinymce.core.text.ExtendingChar","tinymce.core.dom.RangeNormalizer","tinymce.core.fmt.CaretFormat","tinymce.core.fmt.ExpandRange","tinymce.core.fmt.FormatUtils","tinymce.core.fmt.Hooks","tinymce.core.fmt.MergeFormats","tinymce.core.fmt.DefaultFormats","ephox.sand.api.Node","ephox.sand.api.PlatformDetection","ephox.sugar.api.node.NodeTypes","ephox.sugar.api.properties.Css","ephox.sugar.api.search.Traverse","ephox.sugar.api.node.Node","ephox.sugar.api.node.Text","ephox.sugar.api.selection.Selection","ephox.sugar.api.selection.WindowSelection","tinymce.core.caret.CaretFinder","ephox.sugar.api.dom.Focus","tinymce.core.dom.ElementType","tinymce.core.selection.FragmentReader","tinymce.core.caret.CaretWalker","tinymce.core.dom.ElementUtils","tinymce.core.dom.PaddingBr","tinymce.core.InsertList","tinymce.core.delete.BlockBoundaryDelete","tinymce.core.delete.BlockRangeDelete","tinymce.core.delete.CefDelete","tinymce.core.delete.DeleteUtils","tinymce.core.delete.InlineBoundaryDelete","tinymce.core.delete.TableDelete","ephox.katamari.api.Obj","ephox.katamari.api.Strings","ephox.katamari.api.Struct","tinymce.core.init.Init","tinymce.core.PluginManager","tinymce.core.ThemeManager","tinymce.core.undo.Fragments","ephox.katamari.api.Resolve","ephox.katamari.api.LazyValue","ephox.katamari.async.Bounce","ephox.katamari.async.AsyncValues","tinymce.core.caret.CaretUtils","ephox.sugar.api.dom.Insert","ephox.sugar.api.dom.Remove","ephox.sugar.impl.NodeValue","ephox.sugar.api.search.SelectorFilter","ephox.katamari.data.Immutable","ephox.katamari.data.MixedBag","ephox.sugar.alien.Recurse","ephox.katamari.api.Thunk","ephox.sand.core.PlatformDetection","ephox.sugar.api.properties.Attr","ephox.sugar.api.node.Body","ephox.sugar.impl.Style","ephox.katamari.str.StrAppend","ephox.katamari.str.StringParts","ephox.katamari.api.Adt","ephox.sugar.api.dom.DocumentPosition","ephox.sugar.api.node.Fragment","ephox.sugar.api.selection.Situ","ephox.sugar.selection.core.NativeRange","ephox.sugar.selection.core.SelectionDirection","ephox.sugar.selection.query.CaretRange","ephox.sugar.selection.query.Within","ephox.sugar.selection.quirks.Prefilter","ephox.sugar.api.search.PredicateExists","ephox.sugar.api.dom.Replication","ephox.sugar.api.search.SelectorFind","tinymce.core.dom.Parents","tinymce.core.selection.SelectionUtils","tinymce.core.selection.SimpleTableModel","tinymce.core.selection.TableCellSelection","tinymce.core.delete.BlockBoundary","tinymce.core.delete.MergeBlocks","ephox.katamari.api.Options","ephox.sugar.api.search.PredicateFind","tinymce.core.delete.CefDeleteAction","tinymce.core.delete.DeleteElement","tinymce.core.keyboard.BoundaryCaret","tinymce.core.keyboard.BoundaryLocation","tinymce.core.keyboard.BoundarySelection","tinymce.core.keyboard.InlineUtils","tinymce.core.delete.TableDeleteAction","tinymce.core.init.InitContentBody","tinymce.core.undo.Diff","ephox.katamari.api.Global","ephox.katamari.util.BagUtils","ephox.sand.core.Browser","ephox.sand.core.OperatingSystem","ephox.sand.detect.DeviceType","ephox.sand.detect.UaString","ephox.sand.info.PlatformInfo","ephox.sugar.api.dom.InsertAll","ephox.sugar.api.search.PredicateFilter","ephox.sugar.selection.query.ContainerPoint","ephox.sugar.selection.query.EdgePoint","global!Math","ephox.sugar.impl.ClosestOrAncestor","tinymce.core.dom.Empty","tinymce.core.caret.CaretContainerInline","tinymce.core.caret.CaretContainerRemove","tinymce.core.text.Bidi","tinymce.core.util.LazyEvaluator","tinymce.core.caret.CaretContainerInput","tinymce.core.EditorUpload","tinymce.core.ForceBlocks","tinymce.core.keyboard.KeyboardOverrides","tinymce.core.NodeChange","tinymce.core.SelectionOverrides","tinymce.core.util.Quirks","ephox.sand.detect.Version","ephox.sugar.selection.alien.Geometry","ephox.sugar.selection.query.TextPoint","ephox.sugar.api.selection.CursorPosition","ephox.sugar.api.search.SelectorExists","tinymce.core.file.Uploader","tinymce.core.file.ImageScanner","tinymce.core.file.BlobCache","tinymce.core.file.UploadStatus","tinymce.core.keyboard.ArrowKeys","tinymce.core.keyboard.DeleteBackspaceKeys","tinymce.core.keyboard.EnterKey","tinymce.core.keyboard.SpaceKey","tinymce.core.DragDropOverrides","tinymce.core.caret.FakeCaret","tinymce.core.caret.LineUtils","tinymce.core.keyboard.CefUtils","tinymce.core.dom.NodePath","global!Number","ephox.sugar.api.selection.Awareness","tinymce.core.file.Conversions","tinymce.core.keyboard.CefNavigation","tinymce.core.keyboard.MatchKeys","tinymce.core.keyboard.InsertNewLine","tinymce.core.keyboard.InsertSpace","tinymce.core.dom.MousePosition","tinymce.core.dom.Dimensions","ephox.sand.api.Blob","ephox.sand.api.FileReader","ephox.sand.api.Uint8Array","ephox.sand.api.Window","tinymce.core.caret.LineWalker","ephox.katamari.api.Merger"]
+["tinymce.core.api.Main","ephox.katamari.api.Fun","global!window","tinymce.core.api.Tinymce","global!Array","global!Error","tinymce.core.AddOnManager","tinymce.core.Editor","tinymce.core.EditorCommands","tinymce.core.EditorManager","tinymce.core.EditorObservable","tinymce.core.Env","tinymce.core.Shortcuts","tinymce.core.UndoManager","tinymce.core.api.FocusManager","tinymce.core.api.Formatter","tinymce.core.api.NotificationManager","tinymce.core.api.WindowManager","tinymce.core.api.dom.RangeUtils","tinymce.core.dom.BookmarkManager","tinymce.core.dom.ControlSelection","tinymce.core.dom.DOMUtils","tinymce.core.dom.DomQuery","tinymce.core.dom.EventUtils","tinymce.core.dom.ScriptLoader","tinymce.core.dom.Selection","tinymce.core.dom.Serializer","tinymce.core.dom.Sizzle","tinymce.core.dom.TreeWalker","tinymce.core.geom.Rect","tinymce.core.html.DomParser","tinymce.core.html.Entities","tinymce.core.html.Node","tinymce.core.html.SaxParser","tinymce.core.html.Schema","tinymce.core.html.Serializer","tinymce.core.html.Styles","tinymce.core.html.Writer","tinymce.core.ui.Factory","tinymce.core.util.Class","tinymce.core.util.Color","tinymce.core.util.Delay","tinymce.core.util.EventDispatcher","tinymce.core.util.I18n","tinymce.core.util.JSON","tinymce.core.util.JSONP","tinymce.core.util.JSONRequest","tinymce.core.util.LocalStorage","tinymce.core.util.Observable","tinymce.core.util.Promise","tinymce.core.util.Tools","tinymce.core.util.URI","tinymce.core.util.VK","tinymce.core.util.XHR","ephox.katamari.api.Arr","global!document","ephox.sand.api.URL","global!matchMedia","global!navigator","global!clearInterval","global!clearTimeout","global!setInterval","global!setTimeout","tinymce.core.util.Arr","tinymce.core.dom.Position","tinymce.core.dom.StyleSheetLoader","tinymce.core.dom.TrimNode","ephox.sugar.api.node.Element","tinymce.core.InsertContent","tinymce.core.delete.DeleteCommands","tinymce.core.dom.NodeType","tinymce.core.keyboard.InsertBr","tinymce.core.selection.SelectionBookmark","tinymce.core.EditorSettings","tinymce.core.Mode","tinymce.core.focus.EditorFocus","tinymce.core.init.Render","tinymce.core.ui.Sidebar","tinymce.core.util.Uuid","ephox.katamari.api.Type","tinymce.core.ErrorReporter","tinymce.core.LegacyInput","tinymce.core.focus.FocusController","tinymce.core.undo.Levels","ephox.katamari.api.Cell","tinymce.core.fmt.ApplyFormat","tinymce.core.fmt.CaretFormat","tinymce.core.fmt.FormatChanged","tinymce.core.fmt.FormatRegistry","tinymce.core.fmt.MatchFormat","tinymce.core.fmt.Preview","tinymce.core.fmt.RemoveFormat","tinymce.core.fmt.ToggleFormat","tinymce.core.keyboard.FormatShortcuts","ephox.katamari.api.Option","tinymce.core.EditorView","tinymce.core.ui.NotificationManagerImpl","tinymce.core.ui.WindowManagerImpl","tinymce.core.selection.CaretRangeFromPoint","tinymce.core.selection.NormalizeRange","tinymce.core.selection.RangeCompare","tinymce.core.selection.RangeNodes","tinymce.core.selection.RangeWalk","tinymce.core.selection.SplitRange","tinymce.core.caret.CaretBookmark","tinymce.core.caret.CaretContainer","tinymce.core.caret.CaretPosition","tinymce.core.text.Zwsp","ephox.sugar.api.search.Selectors","tinymce.core.dom.RangePoint","ephox.sugar.api.dom.Compare","tinymce.core.dom.ScrollIntoView","tinymce.core.selection.EventProcessRanges","tinymce.core.selection.GetSelectionContent","tinymce.core.selection.MultiRange","tinymce.core.selection.SetSelectionContent","ephox.sand.api.XMLHttpRequest","global!Object","global!String","ephox.sand.util.Global","ephox.sand.api.PlatformDetection","global!console","ephox.sugar.api.node.Node","ephox.sugar.api.properties.Css","ephox.sugar.api.search.Traverse","ephox.katamari.api.Future","ephox.katamari.api.Futures","ephox.katamari.api.Result","tinymce.core.dom.ElementType","tinymce.core.InsertList","tinymce.core.caret.CaretCandidate","tinymce.core.geom.ClientRect","tinymce.core.text.ExtendingChar","tinymce.core.util.Fun","tinymce.core.caret.CaretWalker","tinymce.core.dom.ElementUtils","tinymce.core.dom.PaddingBr","tinymce.core.selection.RangeNormalizer","tinymce.core.delete.BlockBoundaryDelete","tinymce.core.delete.BlockRangeDelete","tinymce.core.delete.CefDelete","tinymce.core.delete.DeleteUtils","tinymce.core.delete.InlineBoundaryDelete","tinymce.core.delete.TableDelete","ephox.sugar.api.dom.Insert","tinymce.core.caret.CaretFinder","tinymce.core.keyboard.BoundaryLocation","tinymce.core.keyboard.InlineUtils","ephox.katamari.api.Struct","ephox.sugar.api.dom.Remove","ephox.sugar.api.properties.Attr","ephox.sugar.api.search.SelectorFind","tinymce.core.fmt.ExpandRange","tinymce.core.fmt.FormatUtils","ephox.sand.api.Node","ephox.sugar.api.node.NodeTypes","ephox.sugar.api.node.Text","ephox.sugar.api.selection.Selection","ephox.katamari.api.Obj","ephox.katamari.api.Strings","ephox.sugar.api.dom.Focus","tinymce.core.init.Init","tinymce.core.PluginManager","tinymce.core.ThemeManager","tinymce.core.selection.SelectionRestore","tinymce.core.undo.Fragments","tinymce.core.fmt.Hooks","tinymce.core.fmt.MergeFormats","tinymce.core.fmt.DefaultFormats","tinymce.core.selection.FragmentReader","ephox.katamari.api.Resolve","ephox.katamari.api.Thunk","ephox.sand.core.PlatformDetection","ephox.sugar.api.node.Body","ephox.sugar.impl.Style","ephox.katamari.str.StrAppend","ephox.katamari.str.StringParts","ephox.katamari.data.Immutable","ephox.katamari.data.MixedBag","ephox.sugar.alien.Recurse","ephox.katamari.api.LazyValue","ephox.katamari.async.Bounce","ephox.katamari.async.AsyncValues","tinymce.core.caret.CaretUtils","ephox.sugar.api.dom.InsertAll","ephox.sugar.impl.NodeValue","ephox.sugar.api.search.SelectorFilter","tinymce.core.delete.BlockBoundary","tinymce.core.delete.MergeBlocks","ephox.katamari.api.Options","ephox.sugar.api.search.PredicateFind","tinymce.core.text.Bidi","tinymce.core.delete.CefDeleteAction","tinymce.core.delete.DeleteElement","tinymce.core.keyboard.BoundaryCaret","ephox.katamari.api.Adt","ephox.sugar.impl.ClosestOrAncestor","tinymce.core.util.LazyEvaluator","tinymce.core.keyboard.BoundarySelection","tinymce.core.delete.TableDeleteAction","tinymce.core.dom.Empty","tinymce.core.dom.Parents","tinymce.core.selection.TableCellSelection","ephox.sugar.api.selection.Situ","ephox.sugar.api.search.PredicateExists","tinymce.core.init.InitContentBody","tinymce.core.init.InitIframe","ephox.katamari.api.Throttler","tinymce.core.undo.Diff","ephox.sugar.api.dom.Replication","ephox.sugar.api.node.Fragment","tinymce.core.selection.SelectionUtils","tinymce.core.selection.SimpleTableModel","ephox.katamari.api.Global","ephox.sand.core.Browser","ephox.sand.core.OperatingSystem","ephox.sand.detect.DeviceType","ephox.sand.detect.UaString","ephox.sand.info.PlatformInfo","ephox.katamari.util.BagUtils","ephox.sugar.api.search.PredicateFilter","ephox.sugar.api.search.SelectorExists","tinymce.core.caret.CaretContainerInline","tinymce.core.caret.CaretContainerRemove","tinymce.core.selection.WordSelection","tinymce.core.caret.CaretContainerInput","tinymce.core.EditorUpload","tinymce.core.ForceBlocks","tinymce.core.keyboard.KeyboardOverrides","tinymce.core.NodeChange","tinymce.core.SelectionOverrides","tinymce.core.util.Quirks","tinymce.core.api.Settings","ephox.sand.detect.Version","tinymce.core.file.Uploader","tinymce.core.file.ImageScanner","tinymce.core.file.BlobCache","tinymce.core.file.UploadStatus","tinymce.core.keyboard.ArrowKeys","tinymce.core.keyboard.DeleteBackspaceKeys","tinymce.core.keyboard.EnterKey","tinymce.core.keyboard.SpaceKey","tinymce.core.DragDropOverrides","tinymce.core.caret.FakeCaret","tinymce.core.caret.LineUtils","tinymce.core.focus.CefFocus","tinymce.core.keyboard.CefUtils","global!Number","tinymce.core.file.Conversions","tinymce.core.keyboard.CefNavigation","tinymce.core.keyboard.MatchKeys","tinymce.core.delete.InlineFormatDelete","tinymce.core.keyboard.InsertNewLine","tinymce.core.keyboard.InsertSpace","tinymce.core.dom.MousePosition","tinymce.core.dom.Dimensions","ephox.sand.api.Blob","ephox.sand.api.FileReader","ephox.sand.api.Uint8Array","ephox.sand.api.Window","tinymce.core.caret.LineWalker","ephox.katamari.api.Merger"]
 jsc*/
 defineGlobal("global!Array", Array);
 defineGlobal("global!Error", Error);
@@ -830,9 +830,9 @@ define(
     var nav = navigator, userAgent = nav.userAgent;
     var opera, webkit, ie, ie11, ie12, gecko, mac, iDevice, android, fileApi, phone, tablet, windowsPhone;
 
-    function matchMediaQuery(query) {
+    var matchMediaQuery = function (query) {
       return "matchMedia" in window ? matchMedia(query).matches : false;
-    }
+    };
 
     opera = window.opera && window.opera.buildNumber;
     android = /Android/.test(userAgent);
@@ -1229,12 +1229,12 @@ define(
   function (clearInterval, clearTimeout, document, setInterval, setTimeout, window, Promise) {
     var requestAnimationFramePromise;
 
-    function requestAnimationFrame(callback, element) {
+    var requestAnimationFrame = function (callback, element) {
       var i, requestAnimationFrameFunc = window.requestAnimationFrame, vendors = ['ms', 'moz', 'webkit'];
 
-      function featurefill(callback) {
+      var featurefill = function (callback) {
         window.setTimeout(callback, 0);
-      }
+      };
 
       for (i = 0; i < vendors.length && !requestAnimationFrameFunc; i++) {
         requestAnimationFrameFunc = window[vendors[i] + 'RequestAnimationFrame'];
@@ -1245,33 +1245,33 @@ define(
       }
 
       requestAnimationFrameFunc(callback, element);
-    }
+    };
 
-    function wrappedSetTimeout(callback, time) {
+    var wrappedSetTimeout = function (callback, time) {
       if (typeof time != 'number') {
         time = 0;
       }
 
       return setTimeout(callback, time);
-    }
+    };
 
-    function wrappedSetInterval(callback, time) {
+    var wrappedSetInterval = function (callback, time) {
       if (typeof time != 'number') {
         time = 1; // IE 8 needs it to be > 0
       }
 
       return setInterval(callback, time);
-    }
+    };
 
-    function wrappedClearTimeout(id) {
+    var wrappedClearTimeout = function (id) {
       return clearTimeout(id);
-    }
+    };
 
-    function wrappedClearInterval(id) {
+    var wrappedClearInterval = function (id) {
       return clearInterval(id);
-    }
+    };
 
-    function debounce(callback, time) {
+    var debounce = function (callback, time) {
       var timer, func;
 
       func = function () {
@@ -1289,7 +1289,7 @@ define(
       };
 
       return func;
-    }
+    };
 
     return {
       /**
@@ -1461,29 +1461,29 @@ define(
     /**
      * Binds a native event to a callback on the speified target.
      */
-    function addEvent(target, name, callback, capture) {
+    var addEvent = function (target, name, callback, capture) {
       if (target.addEventListener) {
         target.addEventListener(name, callback, capture || false);
       } else if (target.attachEvent) {
         target.attachEvent('on' + name, callback);
       }
-    }
+    };
 
     /**
      * Unbinds a native event callback on the specified target.
      */
-    function removeEvent(target, name, callback, capture) {
+    var removeEvent = function (target, name, callback, capture) {
       if (target.removeEventListener) {
         target.removeEventListener(name, callback, capture || false);
       } else if (target.detachEvent) {
         target.detachEvent('on' + name, callback);
       }
-    }
+    };
 
     /**
      * Gets the event target based on shadow dom properties like path and deepPath.
      */
-    function getTargetFromShadowDom(event, defaultTarget) {
+    var getTargetFromShadowDom = function (event, defaultTarget) {
       var path, target = defaultTarget;
 
       // When target element is inside Shadow DOM we need to take first element from path
@@ -1504,12 +1504,12 @@ define(
       }
 
       return target;
-    }
+    };
 
     /**
      * Normalizes a native event object or just adds the event specific methods on a custom event.
      */
-    function fix(originalEvent, data) {
+    var fix = function (originalEvent, data) {
       var name, event = data || {}, undef;
 
       // Copy all properties from the original event
@@ -1590,13 +1590,13 @@ define(
       }
 
       return event;
-    }
+    };
 
     /**
      * Bind a DOMContentLoaded event across browsers and executes the callback once the page DOM is initialized.
      * It will also set/check the domLoaded state of the event_utils instance so ready isn't called multiple times.
      */
-    function bindOnReady(win, callback, eventUtils) {
+    var bindOnReady = function (win, callback, eventUtils) {
       var doc = win.document, event = { type: 'ready' };
 
       if (eventUtils.domLoaded) {
@@ -1604,28 +1604,28 @@ define(
         return;
       }
 
-      function isDocReady() {
+      var isDocReady = function () {
         // Check complete or interactive state if there is a body
         // element on some iframes IE 8 will produce a null body
         return doc.readyState === "complete" || (doc.readyState === "interactive" && doc.body);
-      }
+      };
 
       // Gets called when the DOM is ready
-      function readyHandler() {
+      var readyHandler = function () {
         if (!eventUtils.domLoaded) {
           eventUtils.domLoaded = true;
           callback(event);
         }
-      }
+      };
 
-      function waitForDomLoaded() {
+      var waitForDomLoaded = function () {
         if (isDocReady()) {
           removeEvent(doc, "readystatechange", waitForDomLoaded);
           readyHandler();
         }
-      }
+      };
 
-      function tryScroll() {
+      var tryScroll = function () {
         try {
           // If IE is used, use the trick by Diego Perini licensed under MIT by request to the author.
           // http://javascript.nwbox.com/IEContentLoaded/
@@ -1636,7 +1636,7 @@ define(
         }
 
         readyHandler();
-      }
+      };
 
       // Use W3C method (exclude IE 9,10 - readyState "interactive" became valid only in IE 11)
       if (doc.addEventListener && !(Env.ie && Env.ie < 11)) {
@@ -1657,12 +1657,12 @@ define(
 
       // Fallback if any of the above methods should fail for some odd reason
       addEvent(win, 'load', readyHandler);
-    }
+    };
 
     /**
      * This class enables you to bind/unbind native events to elements and normalize it's behavior across browsers.
      */
-    function EventUtils() {
+    var EventUtils = function () {
       var self = this, events = {}, count, expando, hasFocusIn, hasMouseEnterLeave, mouseEnterLeave;
 
       expando = eventExpandoPrefix + (+new Date()).toString(32);
@@ -1682,7 +1682,7 @@ define(
        * @param {Event} evt Event object.
        * @param {String} id Expando id value to look for.
        */
-      function executeHandlers(evt, id) {
+      var executeHandlers = function (evt, id) {
         var callbackList, i, l, callback, container = events[id];
 
         callbackList = container && container[evt.type];
@@ -1701,7 +1701,7 @@ define(
             }
           }
         }
-      }
+      };
 
       /**
        * Binds a callback to an event on the specified target.
@@ -1717,9 +1717,9 @@ define(
         var id, callbackList, i, name, fakeName, nativeHandler, capture, win = window;
 
         // Native event handler function patches the event and executes the callbacks for the expando
-        function defaultNativeHandler(evt) {
+        var defaultNativeHandler = function (evt) {
           executeHandlers(fix(evt || win.event), id);
-        }
+        };
 
         // Don't bind to text nodes or comments
         if (!target || target.nodeType === 3 || target.nodeType === 8) {
@@ -2019,7 +2019,7 @@ define(
 
         return false;
       };
-    }
+    };
 
     EventUtils.Event = new EventUtils();
     EventUtils.Event.bind(window, 'ready', function () { });
@@ -4106,7 +4106,7 @@ define(
       return Object.prototype.toString.call(obj) === "[object Array]";
     };
 
-    function toArray(obj) {
+    var toArray = function (obj) {
       var array = obj, i, l;
 
       if (!isArray(obj)) {
@@ -4117,9 +4117,9 @@ define(
       }
 
       return array;
-    }
+    };
 
-    function each(o, cb, s) {
+    var each = function (o, cb, s) {
       var n, l;
 
       if (!o) {
@@ -4147,9 +4147,9 @@ define(
       }
 
       return 1;
-    }
+    };
 
-    function map(array, callback) {
+    var map = function (array, callback) {
       var out = [];
 
       each(array, function (item, index) {
@@ -4157,9 +4157,9 @@ define(
       });
 
       return out;
-    }
+    };
 
-    function filter(a, f) {
+    var filter = function (a, f) {
       var o = [];
 
       each(a, function (v, index) {
@@ -4169,9 +4169,9 @@ define(
       });
 
       return o;
-    }
+    };
 
-    function indexOf(a, v) {
+    var indexOf = function (a, v) {
       var i, l;
 
       if (a) {
@@ -4183,9 +4183,9 @@ define(
       }
 
       return -1;
-    }
+    };
 
-    function reduce(collection, iteratee, accumulator, thisArg) {
+    var reduce = function (collection, iteratee, accumulator, thisArg) {
       var i = 0;
 
       if (arguments.length < 3) {
@@ -4197,9 +4197,9 @@ define(
       }
 
       return accumulator;
-    }
+    };
 
-    function findIndex(array, predicate, thisArg) {
+    var findIndex = function (array, predicate, thisArg) {
       var i, l;
 
       for (i = 0, l = array.length; i < l; i++) {
@@ -4209,9 +4209,9 @@ define(
       }
 
       return -1;
-    }
+    };
 
-    function find(array, predicate, thisArg) {
+    var find = function (array, predicate, thisArg) {
       var idx = findIndex(array, predicate, thisArg);
 
       if (idx !== -1) {
@@ -4219,11 +4219,11 @@ define(
       }
 
       return undefined;
-    }
+    };
 
-    function last(collection) {
+    var last = function (collection) {
       return collection[collection.length - 1];
-    }
+    };
 
     return {
       isArray: isArray,
@@ -4272,9 +4272,9 @@ define(
      */
     var whiteSpaceRegExp = /^\s*|\s*$/g;
 
-    function trim(str) {
+    var trim = function (str) {
       return (str === null || str === undefined) ? '' : ("" + str).replace(whiteSpaceRegExp, '');
-    }
+    };
 
     /**
      * Checks if a object is of a specific type for example an array.
@@ -4284,7 +4284,7 @@ define(
      * @param {string} type Optional type to check for.
      * @return {Boolean} true/false if the object is of the specified type.
      */
-    function is(obj, type) {
+    var is = function (obj, type) {
       if (!type) {
         return obj !== undefined;
       }
@@ -4294,7 +4294,7 @@ define(
       }
 
       return typeof obj == type;
-    }
+    };
 
     /**
      * Makes a name/object map out of an array with names.
@@ -4305,7 +4305,7 @@ define(
      * @param {Object} map Optional map to add items to.
      * @return {Object} Name/value map of items.
      */
-    function makeMap(items, delim, map) {
+    var makeMap = function (items, delim, map) {
       var i;
 
       items = items || [];
@@ -4323,7 +4323,7 @@ define(
       }
 
       return map;
-    }
+    };
 
     /**
      * JavaScript does not protect hasOwnProperty method, so it is possible to overwrite it. This is
@@ -4333,9 +4333,9 @@ define(
      * @param {String} prop
      * @returns {Boolean}
      */
-    function hasOwnProperty(obj, prop) {
+    var hasOwnProperty = function (obj, prop) {
       return Object.prototype.hasOwnProperty.call(obj, prop);
-    }
+    };
 
     /**
      * Creates a class, subclass or static singleton.
@@ -4383,7 +4383,7 @@ define(
      *     }
      * });
      */
-    function create(s, p, root) {
+    var create = function (s, p, root) {
       var self = this, sp, ns, cn, scn, c, de = 0;
 
       // Parse : <prefix> <class>:<super class>
@@ -4467,9 +4467,9 @@ define(
       self.each(p['static'], function (f, n) {
         ns[cn][n] = f;
       });
-    }
+    };
 
-    function extend(obj, ext) {
+    var extend = function (obj, ext) {
       var i, l, name, args = arguments, value;
 
       for (i = 1, l = args.length; i < l; i++) {
@@ -4486,7 +4486,7 @@ define(
       }
 
       return obj;
-    }
+    };
 
     /**
      * Executed the specified function for each item in a object tree.
@@ -4497,7 +4497,7 @@ define(
      * @param {String} n Optional name of collection inside the objects to walk for example childNodes.
      * @param {String} s Optional scope to execute the function in.
      */
-    function walk(o, f, n, s) {
+    var walk = function (o, f, n, s) {
       s = s || this;
 
       if (o) {
@@ -4513,7 +4513,7 @@ define(
           walk(o, f, n, s);
         });
       }
-    }
+    };
 
     /**
      * Creates a namespace on a specific object.
@@ -4533,7 +4533,7 @@ define(
      *     }
      * };
      */
-    function createNS(n, o) {
+    var createNS = function (n, o) {
       var i, v;
 
       o = o || window;
@@ -4550,7 +4550,7 @@ define(
       }
 
       return o;
-    }
+    };
 
     /**
      * Resolves a string and returns the object from a specific structure.
@@ -4563,7 +4563,7 @@ define(
      * // Resolve a path into an object reference
      * var obj = tinymce.resolve('a.b.c.d');
      */
-    function resolve(n, o) {
+    var resolve = function (n, o) {
       var i, l;
 
       o = o || window;
@@ -4578,7 +4578,7 @@ define(
       }
 
       return o;
-    }
+    };
 
     /**
      * Splits a string but removes the whitespace before and after each value.
@@ -4590,15 +4590,15 @@ define(
      * // Split a string into an array with a,b,c
      * var arr = tinymce.explode('a, b,   c');
      */
-    function explode(s, d) {
+    var explode = function (s, d) {
       if (!s || is(s, 'array')) {
         return s;
       }
 
       return Arr.map(s.split(d || ','), trim);
-    }
+    };
 
-    function _addCacheSuffix(url) {
+    var _addCacheSuffix = function (url) {
       var cacheSuffix = Env.cacheSuffix;
 
       if (cacheSuffix) {
@@ -4606,7 +4606,7 @@ define(
       }
 
       return url;
-    }
+    };
 
     return {
       trim: trim,
@@ -4747,19 +4747,19 @@ define(
     var Event = EventUtils.Event, undef;
     var skipUniques = Tools.makeMap('children,contents,next,prev');
 
-    function isDefined(obj) {
+    var isDefined = function (obj) {
       return typeof obj !== 'undefined';
-    }
+    };
 
-    function isString(obj) {
+    var isString = function (obj) {
       return typeof obj === 'string';
-    }
+    };
 
-    function isWindow(obj) {
+    var isWindow = function (obj) {
       return obj && obj == obj.window;
-    }
+    };
 
-    function createFragment(html, fragDoc) {
+    var createFragment = function (html, fragDoc) {
       var frag, node, container;
 
       fragDoc = fragDoc || doc;
@@ -4772,9 +4772,9 @@ define(
       }
 
       return frag;
-    }
+    };
 
-    function domManipulate(targetNodes, sourceItem, callback, reverse) {
+    var domManipulate = function (targetNodes, sourceItem, callback, reverse) {
       var i;
 
       if (isString(sourceItem)) {
@@ -4803,13 +4803,13 @@ define(
       }
 
       return targetNodes;
-    }
+    };
 
-    function hasClass(node, className) {
+    var hasClass = function (node, className) {
       return node && className && (' ' + node.className + ' ').indexOf(' ' + className + ' ') !== -1;
-    }
+    };
 
-    function wrap(elements, wrapper, all) {
+    var wrap = function (elements, wrapper, all) {
       var lastParent, newWrapper;
 
       wrapper = DomQuery(wrapper)[0];
@@ -4828,7 +4828,7 @@ define(
       });
 
       return elements;
-    }
+    };
 
     var numericCssMap = Tools.makeMap('fillOpacity fontWeight lineHeight opacity orphans widows zIndex zoom', ' ');
     var booleanMap = Tools.makeMap('checked compact declare defer disabled ismap multiple nohref noshade nowrap readonly selected', ' ');
@@ -4843,12 +4843,12 @@ define(
 
     var attrHooks = {}, cssHooks = {};
 
-    function DomQuery(selector, context) {
+    var DomQuery = function (selector, context) {
       /*eslint new-cap:0 */
       return new DomQuery.fn.init(selector, context);
-    }
+    };
 
-    function inArray(item, array) {
+    var inArray = function (item, array) {
       var i;
 
       if (array.indexOf) {
@@ -4863,15 +4863,15 @@ define(
       }
 
       return -1;
-    }
+    };
 
     var whiteSpaceRegExp = /^\s*|\s*$/g;
 
-    function trim(str) {
+    var trim = function (str) {
       return (str === null || str === undef) ? '' : ("" + str).replace(whiteSpaceRegExp, '');
-    }
+    };
 
-    function each(obj, callback) {
+    var each = function (obj, callback) {
       var length, key, i, undef, value;
 
       if (obj) {
@@ -4899,9 +4899,9 @@ define(
       }
 
       return obj;
-    }
+    };
 
-    function grep(array, callback) {
+    var grep = function (array, callback) {
       var out = [];
 
       each(array, function (i, item) {
@@ -4911,9 +4911,9 @@ define(
       });
 
       return out;
-    }
+    };
 
-    function getElementDocument(element) {
+    var getElementDocument = function (element) {
       if (!element) {
         return doc;
       }
@@ -4923,7 +4923,7 @@ define(
       }
 
       return element.ownerDocument;
-    }
+    };
 
     DomQuery.fn = DomQuery.prototype = {
       constructor: DomQuery,
@@ -5176,17 +5176,17 @@ define(
       css: function (name, value) {
         var self = this, elm, hook;
 
-        function camel(name) {
+        var camel = function (name) {
           return name.replace(/-(\D)/g, function (a, b) {
             return b.toUpperCase();
           });
-        }
+        };
 
-        function dashed(name) {
+        var dashed = function (name) {
           return name.replace(/[A-Z]/g, function (a) {
             return '-' + a;
           });
-        }
+        };
 
         if (typeof name === "object") {
           each(name, function (name, value) {
@@ -5926,7 +5926,7 @@ define(
       }
     });
 
-    function dir(el, prop, until) {
+    var dir = function (el, prop, until) {
       var matched = [], cur = el[prop];
 
       if (typeof until != 'string' && until instanceof DomQuery) {
@@ -5952,9 +5952,9 @@ define(
       }
 
       return matched;
-    }
+    };
 
-    function sibling(node, siblingName, nodeType, until) {
+    var sibling = function (node, siblingName, nodeType, until) {
       var result = [];
 
       if (until instanceof DomQuery) {
@@ -5980,9 +5980,9 @@ define(
       }
 
       return result;
-    }
+    };
 
-    function firstSibling(node, siblingName, nodeType) {
+    var firstSibling = function (node, siblingName, nodeType) {
       for (node = node[siblingName]; node; node = node[siblingName]) {
         if (node.nodeType == nodeType) {
           return node;
@@ -5990,7 +5990,7 @@ define(
       }
 
       return null;
-    }
+    };
 
     each({
       /**
@@ -6185,7 +6185,7 @@ define(
     DomQuery.overrideDefaults = function (callback) {
       var defaults;
 
-      function sub(selector, context) {
+      var sub = function (selector, context) {
         defaults = defaults || callback();
 
         if (arguments.length === 0) {
@@ -6197,19 +6197,19 @@ define(
         }
 
         return new sub.fn.init(selector, context);
-      }
+      };
 
       DomQuery.extend(sub, this);
 
       return sub;
     };
 
-    function appendHooks(targetHooks, prop, hooks) {
+    var appendHooks = function (targetHooks, prop, hooks) {
       each(hooks, function (name, func) {
         targetHooks[name] = targetHooks[name] || {};
         targetHooks[name][prop] = func;
       });
-    }
+    };
 
     if (Env.ie && Env.ie < 8) {
       appendHooks(attrHooks, 'get', {
@@ -6285,6 +6285,1880 @@ define(
   }
 );
 
+define(
+  'ephox.katamari.api.Thunk',
+
+  [
+  ],
+
+  function () {
+
+    var cached = function (f) {
+      var called = false;
+      var r;
+      return function() {
+        if (!called) {
+          called = true;
+          r = f.apply(null, arguments);
+        }
+        return r;
+      };
+    };
+
+    return {
+      cached: cached
+    };
+  }
+);
+
+defineGlobal("global!Number", Number);
+define(
+  'ephox.sand.detect.Version',
+
+  [
+    'ephox.katamari.api.Arr',
+    'global!Number',
+    'global!String'
+  ],
+
+  function (Arr, Number, String) {
+    var firstMatch = function (regexes, s) {
+      for (var i = 0; i < regexes.length; i++) {
+        var x = regexes[i];
+        if (x.test(s)) return x;
+      }
+      return undefined;
+    };
+
+    var find = function (regexes, agent) {
+      var r = firstMatch(regexes, agent);
+      if (!r) return { major : 0, minor : 0 };
+      var group = function(i) {
+        return Number(agent.replace(r, '$' + i));
+      };
+      return nu(group(1), group(2));
+    };
+
+    var detect = function (versionRegexes, agent) {
+      var cleanedAgent = String(agent).toLowerCase();
+
+      if (versionRegexes.length === 0) return unknown();
+      return find(versionRegexes, cleanedAgent);
+    };
+
+    var unknown = function () {
+      return nu(0, 0);
+    };
+
+    var nu = function (major, minor) {
+      return { major: major, minor: minor };
+    };
+
+    return {
+      nu: nu,
+      detect: detect,
+      unknown: unknown
+    };
+  }
+);
+define(
+  'ephox.sand.core.Browser',
+
+  [
+    'ephox.katamari.api.Fun',
+    'ephox.sand.detect.Version'
+  ],
+
+  function (Fun, Version) {
+    var edge = 'Edge';
+    var chrome = 'Chrome';
+    var ie = 'IE';
+    var opera = 'Opera';
+    var firefox = 'Firefox';
+    var safari = 'Safari';
+
+    var isBrowser = function (name, current) {
+      return function () {
+        return current === name;
+      };
+    };
+
+    var unknown = function () {
+      return nu({
+        current: undefined,
+        version: Version.unknown()
+      });
+    };
+
+    var nu = function (info) {
+      var current = info.current;
+      var version = info.version;
+
+      return {
+        current: current,
+        version: version,
+
+        // INVESTIGATE: Rename to Edge ?
+        isEdge: isBrowser(edge, current),
+        isChrome: isBrowser(chrome, current),
+        // NOTE: isIe just looks too weird
+        isIE: isBrowser(ie, current),
+        isOpera: isBrowser(opera, current),
+        isFirefox: isBrowser(firefox, current),
+        isSafari: isBrowser(safari, current)
+      };
+    };
+
+    return {
+      unknown: unknown,
+      nu: nu,
+      edge: Fun.constant(edge),
+      chrome: Fun.constant(chrome),
+      ie: Fun.constant(ie),
+      opera: Fun.constant(opera),
+      firefox: Fun.constant(firefox),
+      safari: Fun.constant(safari)
+    };
+  }
+);
+define(
+  'ephox.sand.core.OperatingSystem',
+
+  [
+    'ephox.katamari.api.Fun',
+    'ephox.sand.detect.Version'
+  ],
+
+  function (Fun, Version) {
+    var windows = 'Windows';
+    var ios = 'iOS';
+    var android = 'Android';
+    var linux = 'Linux';
+    var osx = 'OSX';
+    var solaris = 'Solaris';
+    var freebsd = 'FreeBSD';
+
+    // Though there is a bit of dupe with this and Browser, trying to 
+    // reuse code makes it much harder to follow and change.
+    var isOS = function (name, current) {
+      return function () {
+        return current === name;
+      };
+    };
+
+    var unknown = function () {
+      return nu({
+        current: undefined,
+        version: Version.unknown()
+      });
+    };
+
+    var nu = function (info) {
+      var current = info.current;
+      var version = info.version;
+
+      return {
+        current: current,
+        version: version,
+
+        isWindows: isOS(windows, current),
+        // TODO: Fix capitalisation
+        isiOS: isOS(ios, current),
+        isAndroid: isOS(android, current),
+        isOSX: isOS(osx, current),
+        isLinux: isOS(linux, current),
+        isSolaris: isOS(solaris, current),
+        isFreeBSD: isOS(freebsd, current)
+      };
+    };
+
+    return {
+      unknown: unknown,
+      nu: nu,
+
+      windows: Fun.constant(windows),
+      ios: Fun.constant(ios),
+      android: Fun.constant(android),
+      linux: Fun.constant(linux),
+      osx: Fun.constant(osx),
+      solaris: Fun.constant(solaris),
+      freebsd: Fun.constant(freebsd)
+    };
+  }
+);
+define(
+  'ephox.sand.detect.DeviceType',
+
+  [
+    'ephox.katamari.api.Fun'
+  ],
+
+  function (Fun) {
+    return function (os, browser, userAgent) {
+      var isiPad = os.isiOS() && /ipad/i.test(userAgent) === true;
+      var isiPhone = os.isiOS() && !isiPad;
+      var isAndroid3 = os.isAndroid() && os.version.major === 3;
+      var isAndroid4 = os.isAndroid() && os.version.major === 4;
+      var isTablet = isiPad || isAndroid3 || ( isAndroid4 && /mobile/i.test(userAgent) === true );
+      var isTouch = os.isiOS() || os.isAndroid();
+      var isPhone = isTouch && !isTablet;
+
+      var iOSwebview = browser.isSafari() && os.isiOS() && /safari/i.test(userAgent) === false;
+
+      return {
+        isiPad : Fun.constant(isiPad),
+        isiPhone: Fun.constant(isiPhone),
+        isTablet: Fun.constant(isTablet),
+        isPhone: Fun.constant(isPhone),
+        isTouch: Fun.constant(isTouch),
+        isAndroid: os.isAndroid,
+        isiOS: os.isiOS,
+        isWebView: Fun.constant(iOSwebview)
+      };
+    };
+  }
+);
+define(
+  'ephox.sand.detect.UaString',
+
+  [
+    'ephox.katamari.api.Arr',
+    'ephox.sand.detect.Version',
+    'global!String'
+  ],
+
+  function (Arr, Version, String) {
+    var detect = function (candidates, userAgent) {
+      var agent = String(userAgent).toLowerCase();
+      return Arr.find(candidates, function (candidate) {
+        return candidate.search(agent);
+      });
+    };
+
+    // They (browser and os) are the same at the moment, but they might
+    // not stay that way.
+    var detectBrowser = function (browsers, userAgent) {
+      return detect(browsers, userAgent).map(function (browser) {
+        var version = Version.detect(browser.versionRegexes, userAgent);
+        return {
+          current: browser.name,
+          version: version
+        };
+      });
+    };
+
+    var detectOs = function (oses, userAgent) {
+      return detect(oses, userAgent).map(function (os) {
+        var version = Version.detect(os.versionRegexes, userAgent);
+        return {
+          current: os.name,
+          version: version
+        };
+      });
+    };
+
+    return {
+      detectBrowser: detectBrowser,
+      detectOs: detectOs
+    };
+  }
+);
+define(
+  'ephox.katamari.str.StrAppend',
+
+  [
+
+  ],
+
+  function () {
+    var addToStart = function (str, prefix) {
+      return prefix + str;
+    };
+
+    var addToEnd = function (str, suffix) {
+      return str + suffix;
+    };
+
+    var removeFromStart = function (str, numChars) {
+      return str.substring(numChars);
+    };
+
+    var removeFromEnd = function (str, numChars) {
+      return str.substring(0, str.length - numChars);
+    };
+ 
+    return {
+      addToStart: addToStart,
+      addToEnd: addToEnd,
+      removeFromStart: removeFromStart,
+      removeFromEnd: removeFromEnd
+    };
+  }
+);
+define(
+  'ephox.katamari.str.StringParts',
+
+  [
+    'ephox.katamari.api.Option',
+    'global!Error'
+  ],
+
+  function (Option, Error) {
+    /** Return the first 'count' letters from 'str'.
+-     *  e.g. first("abcde", 2) === "ab"
+-     */
+    var first = function(str, count) {
+     return str.substr(0, count);
+    };
+
+    /** Return the last 'count' letters from 'str'.
+    *  e.g. last("abcde", 2) === "de"
+    */
+    var last = function(str, count) {
+     return str.substr(str.length - count, str.length);
+    };
+
+    var head = function(str) {
+      return str === '' ? Option.none() : Option.some(str.substr(0, 1));
+    };
+
+    var tail = function(str) {
+      return str === '' ? Option.none() : Option.some(str.substring(1));
+    };
+
+    return {
+      first: first,
+      last: last,
+      head: head,
+      tail: tail
+    };
+  }
+);
+define(
+  'ephox.katamari.api.Strings',
+
+  [
+    'ephox.katamari.str.StrAppend',
+    'ephox.katamari.str.StringParts',
+    'global!Error'
+  ],
+
+  function (StrAppend, StringParts, Error) {
+    var checkRange = function(str, substr, start) {
+      if (substr === '') return true;
+      if (str.length < substr.length) return false;
+      var x = str.substr(start, start + substr.length);
+      return x === substr;
+    };
+
+    /** Given a string and object, perform template-replacements on the string, as specified by the object.
+     * Any template fields of the form ${name} are replaced by the string or number specified as obj["name"]
+     * Based on Douglas Crockford's 'supplant' method for template-replace of strings. Uses different template format.
+     */
+    var supplant = function(str, obj) {
+      var isStringOrNumber = function(a) {
+        var t = typeof a;
+        return t === 'string' || t === 'number';
+      };
+
+      return str.replace(/\${([^{}]*)}/g,
+        function (a, b) {
+          var value = obj[b];
+          return isStringOrNumber(value) ? value : a;
+        }
+      );
+    };
+
+    var removeLeading = function (str, prefix) {
+      return startsWith(str, prefix) ? StrAppend.removeFromStart(str, prefix.length) : str;
+    };
+
+    var removeTrailing = function (str, prefix) {
+      return endsWith(str, prefix) ? StrAppend.removeFromEnd(str, prefix.length) : str;
+    };
+
+    var ensureLeading = function (str, prefix) {
+      return startsWith(str, prefix) ? str : StrAppend.addToStart(str, prefix);
+    };
+
+    var ensureTrailing = function (str, prefix) {
+      return endsWith(str, prefix) ? str : StrAppend.addToEnd(str, prefix);
+    };
+ 
+    var contains = function(str, substr) {
+      return str.indexOf(substr) !== -1;
+    };
+
+    var capitalize = function(str) {
+      return StringParts.head(str).bind(function (head) {
+        return StringParts.tail(str).map(function (tail) {
+          return head.toUpperCase() + tail;
+        });
+      }).getOr(str);
+    };
+
+    /** Does 'str' start with 'prefix'?
+     *  Note: all strings start with the empty string.
+     *        More formally, for all strings x, startsWith(x, "").
+     *        This is so that for all strings x and y, startsWith(y + x, y)
+     */
+    var startsWith = function(str, prefix) {
+      return checkRange(str, prefix, 0);
+    };
+
+    /** Does 'str' end with 'suffix'?
+     *  Note: all strings end with the empty string.
+     *        More formally, for all strings x, endsWith(x, "").
+     *        This is so that for all strings x and y, endsWith(x + y, y)
+     */
+    var endsWith = function(str, suffix) {
+      return checkRange(str, suffix, str.length - suffix.length);
+    };
+
+   
+    /** removes all leading and trailing spaces */
+    var trim = function(str) {
+      return str.replace(/^\s+|\s+$/g, '');
+    };
+
+    var lTrim = function(str) {
+      return str.replace(/^\s+/g, '');
+    };
+
+    var rTrim = function(str) {
+      return str.replace(/\s+$/g, '');
+    };
+
+    return {
+      supplant: supplant,
+      startsWith: startsWith,
+      removeLeading: removeLeading,
+      removeTrailing: removeTrailing,
+      ensureLeading: ensureLeading,
+      ensureTrailing: ensureTrailing,
+      endsWith: endsWith,
+      contains: contains,
+      trim: trim,
+      lTrim: lTrim,
+      rTrim: rTrim,
+      capitalize: capitalize
+    };
+  }
+);
+
+define(
+  'ephox.sand.info.PlatformInfo',
+
+  [
+    'ephox.katamari.api.Fun',
+    'ephox.katamari.api.Strings'
+  ],
+
+  function (Fun, Strings) {
+    var normalVersionRegex = /.*?version\/\ ?([0-9]+)\.([0-9]+).*/;
+
+    var checkContains = function (target) {
+      return function (uastring) {
+        return Strings.contains(uastring, target);
+      };
+    };
+
+    var browsers = [
+      {
+        name : 'Edge',
+        versionRegexes: [/.*?edge\/ ?([0-9]+)\.([0-9]+)$/],
+        search: function (uastring) {
+          var monstrosity = Strings.contains(uastring, 'edge/') && Strings.contains(uastring, 'chrome') && Strings.contains(uastring, 'safari') && Strings.contains(uastring, 'applewebkit');
+          return monstrosity;
+        }
+      },
+      {
+        name : 'Chrome',
+        versionRegexes: [/.*?chrome\/([0-9]+)\.([0-9]+).*/, normalVersionRegex],
+        search : function (uastring) {
+          return Strings.contains(uastring, 'chrome') && !Strings.contains(uastring, 'chromeframe');
+        }
+      },
+      {
+        name : 'IE',
+        versionRegexes: [/.*?msie\ ?([0-9]+)\.([0-9]+).*/, /.*?rv:([0-9]+)\.([0-9]+).*/],
+        search: function (uastring) {
+          return Strings.contains(uastring, 'msie') || Strings.contains(uastring, 'trident');
+        }
+      },
+      // INVESTIGATE: Is this still the Opera user agent?
+      {
+        name : 'Opera',
+        versionRegexes: [normalVersionRegex, /.*?opera\/([0-9]+)\.([0-9]+).*/],
+        search : checkContains('opera')
+      },
+      {
+        name : 'Firefox',
+        versionRegexes: [/.*?firefox\/\ ?([0-9]+)\.([0-9]+).*/],
+        search : checkContains('firefox')
+      },
+      {
+        name : 'Safari',
+        versionRegexes: [normalVersionRegex, /.*?cpu os ([0-9]+)_([0-9]+).*/],
+        search : function (uastring) {
+          return (Strings.contains(uastring, 'safari') || Strings.contains(uastring, 'mobile/')) && Strings.contains(uastring, 'applewebkit');
+        }
+      }
+    ];
+
+    var oses = [
+      {
+        name : 'Windows',
+        search : checkContains('win'),
+        versionRegexes: [/.*?windows\ nt\ ?([0-9]+)\.([0-9]+).*/]
+      },
+      {
+        name : 'iOS',
+        search : function (uastring) {
+          return Strings.contains(uastring, 'iphone') || Strings.contains(uastring, 'ipad');
+        },
+        versionRegexes: [/.*?version\/\ ?([0-9]+)\.([0-9]+).*/, /.*cpu os ([0-9]+)_([0-9]+).*/, /.*cpu iphone os ([0-9]+)_([0-9]+).*/]
+      },
+      {
+        name : 'Android',
+        search : checkContains('android'),
+        versionRegexes: [/.*?android\ ?([0-9]+)\.([0-9]+).*/]
+      },
+      {
+        name : 'OSX',
+        search : checkContains('os x'),
+        versionRegexes: [/.*?os\ x\ ?([0-9]+)_([0-9]+).*/]
+      },
+      {
+        name : 'Linux',
+        search : checkContains('linux'),
+        versionRegexes: [ ]
+      },
+      { name : 'Solaris',
+        search : checkContains('sunos'),
+        versionRegexes: [ ]
+      },
+      {
+       name : 'FreeBSD',
+       search : checkContains('freebsd'),
+       versionRegexes: [ ]
+      }
+    ];
+
+    return {
+      browsers: Fun.constant(browsers),
+      oses: Fun.constant(oses)
+    };
+  }
+);
+define(
+  'ephox.sand.core.PlatformDetection',
+
+  [
+    'ephox.sand.core.Browser',
+    'ephox.sand.core.OperatingSystem',
+    'ephox.sand.detect.DeviceType',
+    'ephox.sand.detect.UaString',
+    'ephox.sand.info.PlatformInfo'
+  ],
+
+  function (Browser, OperatingSystem, DeviceType, UaString, PlatformInfo) {
+    var detect = function (userAgent) {
+      var browsers = PlatformInfo.browsers();
+      var oses = PlatformInfo.oses();
+
+      var browser = UaString.detectBrowser(browsers, userAgent).fold(
+        Browser.unknown,
+        Browser.nu
+      );
+      var os = UaString.detectOs(oses, userAgent).fold(
+        OperatingSystem.unknown,
+        OperatingSystem.nu
+      );
+      var deviceType = DeviceType(os, browser, userAgent);
+
+      return {
+        browser: browser,
+        os: os,
+        deviceType: deviceType
+      };
+    };
+
+    return {
+      detect: detect
+    };
+  }
+);
+define(
+  'ephox.sand.api.PlatformDetection',
+
+  [
+    'ephox.katamari.api.Thunk',
+    'ephox.sand.core.PlatformDetection',
+    'global!navigator'
+  ],
+
+  function (Thunk, PlatformDetection, navigator) {
+    var detect = Thunk.cached(function () {
+      var userAgent = navigator.userAgent;
+      return PlatformDetection.detect(userAgent);
+    });
+
+    return {
+      detect: detect
+    };
+  }
+);
+define("global!console", [], function () { if (typeof console === "undefined") console = { log: function () {} }; return console; });
+define(
+  'ephox.sugar.api.node.Element',
+
+  [
+    'ephox.katamari.api.Fun',
+    'global!Error',
+    'global!console',
+    'global!document'
+  ],
+
+  function (Fun, Error, console, document) {
+    var fromHtml = function (html, scope) {
+      var doc = scope || document;
+      var div = doc.createElement('div');
+      div.innerHTML = html;
+      if (!div.hasChildNodes() || div.childNodes.length > 1) {
+        console.error('HTML does not have a single root node', html);
+        throw 'HTML must have a single root node';
+      }
+      return fromDom(div.childNodes[0]);
+    };
+
+    var fromTag = function (tag, scope) {
+      var doc = scope || document;
+      var node = doc.createElement(tag);
+      return fromDom(node);
+    };
+
+    var fromText = function (text, scope) {
+      var doc = scope || document;
+      var node = doc.createTextNode(text);
+      return fromDom(node);
+    };
+
+    var fromDom = function (node) {
+      if (node === null || node === undefined) throw new Error('Node cannot be null or undefined');
+      return {
+        dom: Fun.constant(node)
+      };
+    };
+
+    return {
+      fromHtml: fromHtml,
+      fromTag: fromTag,
+      fromText: fromText,
+      fromDom: fromDom
+    };
+  }
+);
+
+define(
+  'ephox.sugar.api.node.NodeTypes',
+
+  [
+
+  ],
+
+  function () {
+    return {
+      ATTRIBUTE:              2,
+      CDATA_SECTION:          4,
+      COMMENT:                8,
+      DOCUMENT:               9,
+      DOCUMENT_TYPE:          10,
+      DOCUMENT_FRAGMENT:      11,
+      ELEMENT:                1,
+      TEXT:                   3,
+      PROCESSING_INSTRUCTION: 7,
+      ENTITY_REFERENCE:       5,
+      ENTITY:                 6,
+      NOTATION:               12
+    };
+  }
+);
+define(
+  'ephox.sugar.api.node.Node',
+
+  [
+    'ephox.sugar.api.node.NodeTypes'
+  ],
+
+  function (NodeTypes) {
+    var name = function (element) {
+      var r = element.dom().nodeName;
+      return r.toLowerCase();
+    };
+
+    var type = function (element) {
+      return element.dom().nodeType;
+    };
+
+    var value = function (element) {
+      return element.dom().nodeValue;
+    };
+
+    var isType = function (t) {
+      return function (element) {
+        return type(element) === t;
+      };
+    };
+
+    var isComment = function (element) {
+      return type(element) === NodeTypes.COMMENT || name(element) === '#comment';
+    };
+
+    var isElement = isType(NodeTypes.ELEMENT);
+    var isText = isType(NodeTypes.TEXT);
+    var isDocument = isType(NodeTypes.DOCUMENT);
+
+    return {
+      name: name,
+      type: type,
+      value: value,
+      isElement: isElement,
+      isText: isText,
+      isDocument: isDocument,
+      isComment: isComment
+    };
+  }
+);
+
+define(
+  'ephox.katamari.api.Type',
+
+  [
+    'global!Array',
+    'global!String'
+  ],
+
+  function (Array, String) {
+    var typeOf = function(x) {
+      if (x === null) return 'null';
+      var t = typeof x;
+      if (t === 'object' && Array.prototype.isPrototypeOf(x)) return 'array';
+      if (t === 'object' && String.prototype.isPrototypeOf(x)) return 'string';
+      return t;
+    };
+
+    var isType = function (type) {
+      return function (value) {
+        return typeOf(value) === type;
+      };
+    };
+
+    return {
+      isString: isType('string'),
+      isObject: isType('object'),
+      isArray: isType('array'),
+      isNull: isType('null'),
+      isBoolean: isType('boolean'),
+      isUndefined: isType('undefined'),
+      isFunction: isType('function'),
+      isNumber: isType('number')
+    };
+  }
+);
+
+
+define(
+  'ephox.katamari.api.Obj',
+
+  [
+    'ephox.katamari.api.Option',
+    'global!Object'
+  ],
+
+  function (Option, Object) {
+    // There are many variations of Object iteration that are faster than the 'for-in' style:
+    // http://jsperf.com/object-keys-iteration/107
+    //
+    // Use the native keys if it is available (IE9+), otherwise fall back to manually filtering
+    var keys = (function () {
+      var fastKeys = Object.keys;
+
+      // This technically means that 'each' and 'find' on IE8 iterate through the object twice.
+      // This code doesn't run on IE8 much, so it's an acceptable tradeoff.
+      // If it becomes a problem we can always duplicate the feature detection inside each and find as well.
+      var slowKeys = function (o) {
+        var r = [];
+        for (var i in o) {
+          if (o.hasOwnProperty(i)) {
+            r.push(i);
+          }
+        }
+        return r;
+      };
+
+      return fastKeys === undefined ? slowKeys : fastKeys;
+    })();
+
+
+    var each = function (obj, f) {
+      var props = keys(obj);
+      for (var k = 0, len = props.length; k < len; k++) {
+        var i = props[k];
+        var x = obj[i];
+        f(x, i, obj);
+      }
+    };
+
+    /** objectMap :: (JsObj(k, v), (v, k, JsObj(k, v) -> x)) -> JsObj(k, x) */
+    var objectMap = function (obj, f) {
+      return tupleMap(obj, function (x, i, obj) {
+        return {
+          k: i,
+          v: f(x, i, obj)
+        };
+      });
+    };
+
+    /** tupleMap :: (JsObj(k, v), (v, k, JsObj(k, v) -> { k: x, v: y })) -> JsObj(x, y) */
+    var tupleMap = function (obj, f) {
+      var r = {};
+      each(obj, function (x, i) {
+        var tuple = f(x, i, obj);
+        r[tuple.k] = tuple.v;
+      });
+      return r;
+    };
+
+    /** bifilter :: (JsObj(k, v), (v, k -> Bool)) -> { t: JsObj(k, v), f: JsObj(k, v) } */
+    var bifilter = function (obj, pred) {
+      var t = {};
+      var f = {};
+      each(obj, function(x, i) {
+        var branch = pred(x, i) ? t : f;
+        branch[i] = x;
+      });
+      return {
+        t: t,
+        f: f
+      };
+    };
+
+    /** mapToArray :: (JsObj(k, v), (v, k -> a)) -> [a] */
+    var mapToArray = function (obj, f) {
+      var r = [];
+      each(obj, function(value, name) {
+        r.push(f(value, name));
+      });
+      return r;
+    };
+
+    /** find :: (JsObj(k, v), (v, k, JsObj(k, v) -> Bool)) -> Option v */
+    var find = function (obj, pred) {
+      var props = keys(obj);
+      for (var k = 0, len = props.length; k < len; k++) {
+        var i = props[k];
+        var x = obj[i];
+        if (pred(x, i, obj)) {
+          return Option.some(x);
+        }
+      }
+      return Option.none();
+    };
+
+    /** values :: JsObj(k, v) -> [v] */
+    var values = function (obj) {
+      return mapToArray(obj, function (v) {
+        return v;
+      });
+    };
+
+    var size = function (obj) {
+      return values(obj).length;
+    };
+
+    return {
+      bifilter: bifilter,
+      each: each,
+      map: objectMap,
+      mapToArray: mapToArray,
+      tupleMap: tupleMap,
+      find: find,
+      keys: keys,
+      values: values,
+      size: size
+    };
+  }
+);
+define(
+  'ephox.sugar.api.properties.Attr',
+
+  [
+    'ephox.katamari.api.Type',
+    'ephox.katamari.api.Arr',
+    'ephox.katamari.api.Obj',
+    'ephox.sugar.api.node.Node',
+    'global!Error',
+    'global!console'
+  ],
+
+  /*
+   * Direct attribute manipulation has been around since IE8, but
+   * was apparently unstable until IE10.
+   */
+  function (Type, Arr, Obj, Node, Error, console) {
+    var rawSet = function (dom, key, value) {
+      /*
+       * JQuery coerced everything to a string, and silently did nothing on text node/null/undefined.
+       *
+       * We fail on those invalid cases, only allowing numbers and booleans.
+       */
+      if (Type.isString(value) || Type.isBoolean(value) || Type.isNumber(value)) {
+        dom.setAttribute(key, value + '');
+      } else {
+        console.error('Invalid call to Attr.set. Key ', key, ':: Value ', value, ':: Element ', dom);
+        throw new Error('Attribute value was not simple');
+      }
+    };
+
+    var set = function (element, key, value) {
+      rawSet(element.dom(), key, value);
+    };
+
+    var setAll = function (element, attrs) {
+      var dom = element.dom();
+      Obj.each(attrs, function (v, k) {
+        rawSet(dom, k, v);
+      });
+    };
+
+    var get = function (element, key) {
+      var v = element.dom().getAttribute(key);
+
+      // undefined is the more appropriate value for JS, and this matches JQuery
+      return v === null ? undefined : v;
+    };
+
+    var has = function (element, key) {
+      var dom = element.dom();
+
+      // return false for non-element nodes, no point in throwing an error
+      return dom && dom.hasAttribute ? dom.hasAttribute(key) : false;
+    };
+
+    var remove = function (element, key) {
+      element.dom().removeAttribute(key);
+    };
+
+    var hasNone = function (element) {
+      var attrs = element.dom().attributes;
+      return attrs === undefined || attrs === null || attrs.length === 0;
+    };
+
+    var clone = function (element) {
+      return Arr.foldl(element.dom().attributes, function (acc, attr) {
+        acc[attr.name] = attr.value;
+        return acc;
+      }, {});
+    };
+
+    var transferOne = function (source, destination, attr) {
+      // NOTE: We don't want to clobber any existing attributes
+      if (has(source, attr) && !has(destination, attr)) set(destination, attr, get(source, attr));        
+    };
+
+    // Transfer attributes(attrs) from source to destination, unless they are already present
+    var transfer = function (source, destination, attrs) {
+      if (!Node.isElement(source) || !Node.isElement(destination)) return;
+      Arr.each(attrs, function (attr) {
+        transferOne(source, destination, attr);
+      });
+    };
+
+    return {
+      clone: clone,
+      set: set,
+      setAll: setAll,
+      get: get,
+      has: has,
+      remove: remove,
+      hasNone: hasNone,
+      transfer: transfer
+    };
+  }
+);
+
+define(
+  'ephox.sugar.api.node.Body',
+
+  [
+    'ephox.katamari.api.Thunk',
+    'ephox.sugar.api.node.Element',
+    'ephox.sugar.api.node.Node',
+    'global!document'
+  ],
+
+  function (Thunk, Element, Node, document) {
+
+    // Node.contains() is very, very, very good performance
+    // http://jsperf.com/closest-vs-contains/5
+    var inBody = function (element) {
+      // Technically this is only required on IE, where contains() returns false for text nodes.
+      // But it's cheap enough to run everywhere and Sugar doesn't have platform detection (yet).
+      var dom = Node.isText(element) ? element.dom().parentNode : element.dom();
+
+      // use ownerDocument.body to ensure this works inside iframes.
+      // Normally contains is bad because an element "contains" itself, but here we want that.
+      return dom !== undefined && dom !== null && dom.ownerDocument.body.contains(dom);
+    };
+
+    var body = Thunk.cached(function() {
+      return getBody(Element.fromDom(document));
+    });
+
+    var getBody = function (doc) {
+      var body = doc.dom().body;
+      if (body === null || body === undefined) throw 'Body is not available yet';
+      return Element.fromDom(body);
+    };
+
+    return {
+      body: body,
+      getBody: getBody,
+      inBody: inBody
+    };
+  }
+);
+
+define(
+  'ephox.sugar.impl.Style',
+
+  [
+
+  ],
+
+  function () {
+    // some elements, such as mathml, don't have style attributes
+    var isSupported = function (dom) {
+      return dom.style !== undefined;
+    };
+
+    return {
+      isSupported: isSupported
+    };
+  }
+);
+define(
+  'ephox.sugar.api.properties.Css',
+
+  [
+    'ephox.katamari.api.Type',
+    'ephox.katamari.api.Arr',
+    'ephox.katamari.api.Obj',
+    'ephox.katamari.api.Option',
+    'ephox.sugar.api.properties.Attr',
+    'ephox.sugar.api.node.Body',
+    'ephox.sugar.api.node.Element',
+    'ephox.sugar.api.node.Node',
+    'ephox.sugar.impl.Style',
+    'ephox.katamari.api.Strings',
+    'global!Error',
+    'global!console',
+    'global!window'
+  ],
+
+  function (Type, Arr, Obj, Option, Attr, Body, Element, Node, Style, Strings, Error, console, window) {
+    var internalSet = function (dom, property, value) {
+      // This is going to hurt. Apologies.
+      // JQuery coerces numbers to pixels for certain property names, and other times lets numbers through.
+      // we're going to be explicit; strings only.
+      if (!Type.isString(value)) {
+        console.error('Invalid call to CSS.set. Property ', property, ':: Value ', value, ':: Element ', dom);
+        throw new Error('CSS value must be a string: ' + value);
+      }
+
+      // removed: support for dom().style[property] where prop is camel case instead of normal property name
+      if (Style.isSupported(dom)) dom.style.setProperty(property, value);
+    };
+
+    var internalRemove = function (dom, property) {
+      /*
+       * IE9 and above - MDN doesn't have details, but here's a couple of random internet claims
+       *
+       * http://help.dottoro.com/ljopsjck.php
+       * http://stackoverflow.com/a/7901886/7546
+       */
+      if (Style.isSupported(dom)) dom.style.removeProperty(property);
+    };
+
+    var set = function (element, property, value) {
+      var dom = element.dom();
+      internalSet(dom, property, value);
+    };
+
+    var setAll = function (element, css) {
+      var dom = element.dom();
+
+      Obj.each(css, function (v, k) {
+        internalSet(dom, k, v);
+      });
+    };
+
+    var setOptions = function(element, css) {
+      var dom = element.dom();
+
+      Obj.each(css, function (v, k) {
+        v.fold(function () {
+          internalRemove(dom, k);
+        }, function (value) {
+          internalSet(dom, k, value);
+        });
+      });
+    };
+
+    /*
+     * NOTE: For certain properties, this returns the "used value" which is subtly different to the "computed value" (despite calling getComputedStyle).
+     * Blame CSS 2.0.
+     *
+     * https://developer.mozilla.org/en-US/docs/Web/CSS/used_value
+     */
+    var get = function (element, property) {
+      var dom = element.dom();
+      /*
+       * IE9 and above per
+       * https://developer.mozilla.org/en/docs/Web/API/window.getComputedStyle
+       *
+       * Not in numerosity, because it doesn't memoize and looking this up dynamically in performance critical code would be horrendous.
+       *
+       * JQuery has some magic here for IE popups, but we don't really need that.
+       * It also uses element.ownerDocument.defaultView to handle iframes but that hasn't been required since FF 3.6.
+       */
+      var styles = window.getComputedStyle(dom);
+      var r = styles.getPropertyValue(property);
+
+      // jquery-ism: If r is an empty string, check that the element is not in a document. If it isn't, return the raw value.
+      // Turns out we do this a lot.
+      var v = (r === '' && !Body.inBody(element)) ? getUnsafeProperty(dom, property) : r;
+
+      // undefined is the more appropriate value for JS. JQuery coerces to an empty string, but screw that!
+      return v === null ? undefined : v;
+    };
+
+    var getUnsafeProperty = function (dom, property) {
+      // removed: support for dom().style[property] where prop is camel case instead of normal property name
+      // empty string is what the browsers (IE11 and Chrome) return when the propertyValue doesn't exists.
+      return Style.isSupported(dom) ? dom.style.getPropertyValue(property) : '';
+    };
+
+    /*
+     * Gets the raw value from the style attribute. Useful for retrieving "used values" from the DOM:
+     * https://developer.mozilla.org/en-US/docs/Web/CSS/used_value
+     *
+     * Returns NONE if the property isn't set, or the value is an empty string.
+     */
+    var getRaw = function (element, property) {
+      var dom = element.dom();
+      var raw = getUnsafeProperty(dom, property);
+
+      return Option.from(raw).filter(function (r) { return r.length > 0; });
+    };
+
+    var getAllRaw = function (element) {
+      var css = {};
+      var dom = element.dom();
+
+      if (Style.isSupported(dom)) {
+        for (var i = 0; i < dom.style.length; i++) {
+          var ruleName = dom.style.item(i);
+          css[ruleName] = dom.style[ruleName];
+        }
+      }
+      return css;
+    };
+
+    var isValidValue = function (tag, property, value) {
+      var element = Element.fromTag(tag);
+      set(element, property, value);
+      var style = getRaw(element, property);
+      return style.isSome();
+    };
+
+    var remove = function (element, property) {
+      var dom = element.dom();
+
+      internalRemove(dom, property);
+
+      if (Attr.has(element, 'style') && Strings.trim(Attr.get(element, 'style')) === '') {
+        // No more styles left, remove the style attribute as well
+        Attr.remove(element, 'style');
+      }
+    };
+
+    var preserve = function (element, f) {
+      var oldStyles = Attr.get(element, 'style');
+      var result = f(element);
+      var restore = oldStyles === undefined ? Attr.remove : Attr.set;
+      restore(element, 'style', oldStyles);
+      return result;
+    };
+
+    var copy = function (source, target) {
+      var sourceDom = source.dom();
+      var targetDom = target.dom();
+      if (Style.isSupported(sourceDom) && Style.isSupported(targetDom)) {
+        targetDom.style.cssText = sourceDom.style.cssText;
+      }
+    };
+
+    var reflow = function (e) {
+      /* NOTE:
+       * do not rely on this return value.
+       * It's here so the closure compiler doesn't optimise the property access away.
+       */
+      return e.dom().offsetWidth;
+    };
+
+    var transferOne = function (source, destination, style) {
+      getRaw(source, style).each(function (value) {
+        // NOTE: We don't want to clobber any existing inline styles.
+        if (getRaw(destination, style).isNone()) set(destination, style, value);
+      });
+    };
+
+    var transfer = function (source, destination, styles) {
+      if (!Node.isElement(source) || !Node.isElement(destination)) return;
+      Arr.each(styles, function (style) {
+        transferOne(source, destination, style);
+      });
+    };
+
+    return {
+      copy: copy,
+      set: set,
+      preserve: preserve,
+      setAll: setAll,
+      setOptions: setOptions,
+      remove: remove,
+      get: get,
+      getRaw: getRaw,
+      getAllRaw: getAllRaw,
+      isValidValue: isValidValue,
+      reflow: reflow,
+      transfer: transfer
+    };
+  }
+);
+
+define(
+  'ephox.katamari.data.Immutable',
+
+  [
+    'ephox.katamari.api.Arr',
+    'ephox.katamari.api.Fun',
+    'global!Array',
+    'global!Error'
+  ],
+
+  function (Arr, Fun, Array, Error) {
+    return function () {
+      var fields = arguments;
+      return function(/* values */) {
+        //  Don't use array slice(arguments), makes the whole function unoptimisable on Chrome
+        var values = new Array(arguments.length);
+        for (var i = 0; i < values.length; i++) values[i] = arguments[i];
+
+        if (fields.length !== values.length)
+          throw new Error('Wrong number of arguments to struct. Expected "[' + fields.length + ']", got ' + values.length + ' arguments');
+
+        var struct = {};
+        Arr.each(fields, function (name, i) {
+          struct[name] = Fun.constant(values[i]);
+        });
+        return struct;
+      };
+    };
+  }
+);
+
+define(
+  'ephox.katamari.util.BagUtils',
+
+  [
+    'ephox.katamari.api.Arr',
+    'ephox.katamari.api.Type',
+    'global!Error'
+  ],
+
+  function (Arr, Type, Error) {
+    var sort = function (arr) {
+      return arr.slice(0).sort();
+    };
+
+    var reqMessage = function (required, keys) {
+      throw new Error('All required keys (' + sort(required).join(', ') + ') were not specified. Specified keys were: ' + sort(keys).join(', ') + '.');
+    };
+
+    var unsuppMessage = function (unsupported) {
+      throw new Error('Unsupported keys for object: ' + sort(unsupported).join(', '));
+    };
+
+    var validateStrArr = function (label, array) {
+      if (!Type.isArray(array)) throw new Error('The ' + label + ' fields must be an array. Was: ' + array + '.');
+      Arr.each(array, function (a) {
+        if (!Type.isString(a)) throw new Error('The value ' + a + ' in the ' + label + ' fields was not a string.');
+      });
+    };
+
+    var invalidTypeMessage = function (incorrect, type) {
+      throw new Error('All values need to be of type: ' + type + '. Keys (' + sort(incorrect).join(', ') + ') were not.');
+    };
+
+    var checkDupes = function (everything) {
+      var sorted = sort(everything);
+      var dupe = Arr.find(sorted, function (s, i) {
+        return i < sorted.length -1 && s === sorted[i + 1];
+      });
+
+      dupe.each(function (d) {
+        throw new Error('The field: ' + d + ' occurs more than once in the combined fields: [' + sorted.join(', ') + '].');
+      });
+    };
+
+    return {
+      sort: sort,
+      reqMessage: reqMessage,
+      unsuppMessage: unsuppMessage,
+      validateStrArr: validateStrArr,
+      invalidTypeMessage: invalidTypeMessage,
+      checkDupes: checkDupes
+    };
+  }
+);
+define(
+  'ephox.katamari.data.MixedBag',
+
+  [
+    'ephox.katamari.api.Arr',
+    'ephox.katamari.api.Fun',
+    'ephox.katamari.api.Obj',
+    'ephox.katamari.api.Option',
+    'ephox.katamari.util.BagUtils',
+    'global!Error',
+    'global!Object'
+  ],
+
+  function (Arr, Fun, Obj, Option, BagUtils, Error, Object) {
+    
+    return function (required, optional) {
+      var everything = required.concat(optional);
+      if (everything.length === 0) throw new Error('You must specify at least one required or optional field.');
+
+      BagUtils.validateStrArr('required', required);
+      BagUtils.validateStrArr('optional', optional);
+
+      BagUtils.checkDupes(everything);
+
+      return function (obj) {
+        var keys = Obj.keys(obj);
+
+        // Ensure all required keys are present.
+        var allReqd = Arr.forall(required, function (req) {
+          return Arr.contains(keys, req);
+        });
+
+        if (! allReqd) BagUtils.reqMessage(required, keys);
+
+        var unsupported = Arr.filter(keys, function (key) {
+          return !Arr.contains(everything, key);
+        });
+
+        if (unsupported.length > 0) BagUtils.unsuppMessage(unsupported);
+
+        var r = {};
+        Arr.each(required, function (req) {
+          r[req] = Fun.constant(obj[req]);
+        });
+
+        Arr.each(optional, function (opt) {
+          r[opt] = Fun.constant(Object.prototype.hasOwnProperty.call(obj, opt) ? Option.some(obj[opt]): Option.none());
+        });
+
+        return r;
+      };
+    };
+  }
+);
+define(
+  'ephox.katamari.api.Struct',
+
+  [
+    'ephox.katamari.data.Immutable',
+    'ephox.katamari.data.MixedBag'
+  ],
+
+  function (Immutable, MixedBag) {
+    return {
+      immutable: Immutable,
+      immutableBag: MixedBag
+    };
+  }
+);
+
+define(
+  'ephox.sugar.alien.Recurse',
+
+  [
+
+  ],
+
+  function () {
+    /**
+     * Applies f repeatedly until it completes (by returning Option.none()).
+     *
+     * Normally would just use recursion, but JavaScript lacks tail call optimisation.
+     *
+     * This is what recursion looks like when manually unravelled :)
+     */
+    var toArray = function (target, f) {
+      var r = [];
+
+      var recurse = function (e) {
+        r.push(e);
+        return f(e);
+      };
+
+      var cur = f(target);
+      do {
+        cur = cur.bind(recurse);
+      } while (cur.isSome());
+
+      return r;
+    };
+
+    return {
+      toArray: toArray
+    };
+  }
+);
+define(
+  'ephox.sand.api.Node',
+
+  [
+    'ephox.sand.util.Global'
+  ],
+
+  function (Global) {
+    /*
+     * MDN says (yes) for IE, but it's undefined on IE8
+     */
+    var node = function () {
+      var f = Global.getOrDie('Node');
+      return f;
+    };
+
+    /*
+     * Most of numerosity doesn't alter the methods on the object.
+     * We're making an exception for Node, because bitwise and is so easy to get wrong.
+     *
+     * Might be nice to ADT this at some point instead of having individual methods.
+     */
+
+    var compareDocumentPosition = function (a, b, match) {
+      // Returns: 0 if e1 and e2 are the same node, or a bitmask comparing the positions
+      // of nodes e1 and e2 in their documents. See the URL below for bitmask interpretation
+      // https://developer.mozilla.org/en-US/docs/Web/API/Node/compareDocumentPosition
+      return (a.compareDocumentPosition(b) & match) !== 0;
+    };
+
+    var documentPositionPreceding = function (a, b) {
+      return compareDocumentPosition(a, b, node().DOCUMENT_POSITION_PRECEDING);
+    };
+
+    var documentPositionContainedBy = function (a, b) {
+      return compareDocumentPosition(a, b, node().DOCUMENT_POSITION_CONTAINED_BY);
+    };
+
+    return {
+      documentPositionPreceding: documentPositionPreceding,
+      documentPositionContainedBy: documentPositionContainedBy
+    };
+  }
+);
+define(
+  'ephox.sugar.api.search.Selectors',
+
+  [
+    'ephox.katamari.api.Arr',
+    'ephox.katamari.api.Option',
+    'ephox.sugar.api.node.Element',
+    'ephox.sugar.api.node.NodeTypes',
+    'global!Error',
+    'global!document'
+  ],
+
+  function (Arr, Option, Element, NodeTypes, Error, document) {
+    /*
+     * There's a lot of code here; the aim is to allow the browser to optimise constant comparisons,
+     * instead of doing object lookup feature detection on every call
+     */
+    var STANDARD = 0;
+    var MSSTANDARD = 1;
+    var WEBKITSTANDARD = 2;
+    var FIREFOXSTANDARD = 3;
+
+    var selectorType = (function () {
+      var test = document.createElement('span');
+      // As of Chrome 34 / Safari 7.1 / FireFox 34, everyone except IE has the unprefixed function.
+      // Still check for the others, but do it last.
+      return test.matches !== undefined ? STANDARD :
+             test.msMatchesSelector !== undefined ? MSSTANDARD :
+             test.webkitMatchesSelector !== undefined ? WEBKITSTANDARD :
+             test.mozMatchesSelector !== undefined ? FIREFOXSTANDARD :
+             -1;
+    })();
+
+
+    var ELEMENT = NodeTypes.ELEMENT;
+    var DOCUMENT = NodeTypes.DOCUMENT;
+
+    var is = function (element, selector) {
+      var elem = element.dom();
+      if (elem.nodeType !== ELEMENT) return false; // documents have querySelector but not matches
+
+      // As of Chrome 34 / Safari 7.1 / FireFox 34, everyone except IE has the unprefixed function.
+      // Still check for the others, but do it last.
+      else if (selectorType === STANDARD) return elem.matches(selector);
+      else if (selectorType === MSSTANDARD) return elem.msMatchesSelector(selector);
+      else if (selectorType === WEBKITSTANDARD) return elem.webkitMatchesSelector(selector);
+      else if (selectorType === FIREFOXSTANDARD) return elem.mozMatchesSelector(selector);
+      else throw new Error('Browser lacks native selectors'); // unfortunately we can't throw this on startup :(
+    };
+
+    var bypassSelector = function (dom) {
+      // Only elements and documents support querySelector
+      return dom.nodeType !== ELEMENT && dom.nodeType !== DOCUMENT ||
+              // IE fix for complex queries on empty nodes: http://jsfiddle.net/spyder/fv9ptr5L/
+              dom.childElementCount === 0;
+    };
+
+    var all = function (selector, scope) {
+      var base = scope === undefined ? document : scope.dom();
+      return bypassSelector(base) ? [] : Arr.map(base.querySelectorAll(selector), Element.fromDom);
+    };
+
+    var one = function (selector, scope) {
+      var base = scope === undefined ? document : scope.dom();
+      return bypassSelector(base) ? Option.none() : Option.from(base.querySelector(selector)).map(Element.fromDom);
+    };
+
+    return {
+      all: all,
+      is: is,
+      one: one
+    };
+  }
+);
+
+define(
+  'ephox.sugar.api.dom.Compare',
+
+  [
+    'ephox.katamari.api.Arr',
+    'ephox.katamari.api.Fun',
+    'ephox.sand.api.Node',
+    'ephox.sand.api.PlatformDetection',
+    'ephox.sugar.api.search.Selectors'
+  ],
+
+  function (Arr, Fun, Node, PlatformDetection, Selectors) {
+
+    var eq = function (e1, e2) {
+      return e1.dom() === e2.dom();
+    };
+
+    var isEqualNode = function (e1, e2) {
+      return e1.dom().isEqualNode(e2.dom());
+    };
+
+    var member = function (element, elements) {
+      return Arr.exists(elements, Fun.curry(eq, element));
+    };
+
+    // DOM contains() method returns true if e1===e2, we define our contains() to return false (a node does not contain itself).
+    var regularContains = function (e1, e2) {
+      var d1 = e1.dom(), d2 = e2.dom();
+      return d1 === d2 ? false : d1.contains(d2);
+    };
+
+    var ieContains = function (e1, e2) {
+      // IE only implements the contains() method for Element nodes.
+      // It fails for Text nodes, so implement it using compareDocumentPosition()
+      // https://connect.microsoft.com/IE/feedback/details/780874/node-contains-is-incorrect
+      // Note that compareDocumentPosition returns CONTAINED_BY if 'e2 *is_contained_by* e1':
+      // Also, compareDocumentPosition defines a node containing itself as false.
+      return Node.documentPositionContainedBy(e1.dom(), e2.dom());
+    };
+
+    var browser = PlatformDetection.detect().browser;
+
+    // Returns: true if node e1 contains e2, otherwise false.
+    // (returns false if e1===e2: A node does not contain itself).
+    var contains = browser.isIE() ? ieContains : regularContains;
+
+    return {
+      eq: eq,
+      isEqualNode: isEqualNode,
+      member: member,
+      contains: contains,
+
+      // Only used by DomUniverse. Remove (or should Selectors.is move here?)
+      is: Selectors.is
+    };
+  }
+);
+
+define(
+  'ephox.sugar.api.search.Traverse',
+
+  [
+    'ephox.katamari.api.Type',
+    'ephox.katamari.api.Arr',
+    'ephox.katamari.api.Fun',
+    'ephox.katamari.api.Option',
+    'ephox.katamari.api.Struct',
+    'ephox.sugar.alien.Recurse',
+    'ephox.sugar.api.dom.Compare',
+    'ephox.sugar.api.node.Element'
+  ],
+
+  function (Type, Arr, Fun, Option, Struct, Recurse, Compare, Element) {
+    // The document associated with the current element
+    var owner = function (element) {
+      return Element.fromDom(element.dom().ownerDocument);
+    };
+
+    var documentElement = function (element) {
+      // TODO: Avoid unnecessary wrap/unwrap here
+      var doc = owner(element);
+      return Element.fromDom(doc.dom().documentElement);
+    };
+
+    // The window element associated with the element
+    var defaultView = function (element) {
+      var el = element.dom();
+      var defaultView = el.ownerDocument.defaultView;
+      return Element.fromDom(defaultView);
+    };
+
+    var parent = function (element) {
+      var dom = element.dom();
+      return Option.from(dom.parentNode).map(Element.fromDom);
+    };
+
+    var findIndex = function (element) {
+      return parent(element).bind(function (p) {
+        // TODO: Refactor out children so we can avoid the constant unwrapping
+        var kin = children(p);
+        return Arr.findIndex(kin, function (elem) {
+          return Compare.eq(element, elem);
+        });
+      });
+    };
+
+    var parents = function (element, isRoot) {
+      var stop = Type.isFunction(isRoot) ? isRoot : Fun.constant(false);
+
+      // This is used a *lot* so it needs to be performant, not recursive
+      var dom = element.dom();
+      var ret = [];
+
+      while (dom.parentNode !== null && dom.parentNode !== undefined) {
+        var rawParent = dom.parentNode;
+        var parent = Element.fromDom(rawParent);
+        ret.push(parent);
+
+        if (stop(parent) === true) break;
+        else dom = rawParent;
+      }
+      return ret;
+    };
+
+    var siblings = function (element) {
+      // TODO: Refactor out children so we can just not add self instead of filtering afterwards
+      var filterSelf = function (elements) {
+        return Arr.filter(elements, function (x) {
+          return !Compare.eq(element, x);
+        });
+      };
+
+      return parent(element).map(children).map(filterSelf).getOr([]);
+    };
+
+    var offsetParent = function (element) {
+      var dom = element.dom();
+      return Option.from(dom.offsetParent).map(Element.fromDom);
+    };
+
+    var prevSibling = function (element) {
+      var dom = element.dom();
+      return Option.from(dom.previousSibling).map(Element.fromDom);
+    };
+
+    var nextSibling = function (element) {
+      var dom = element.dom();
+      return Option.from(dom.nextSibling).map(Element.fromDom);
+    };
+
+    var prevSiblings = function (element) {
+      // This one needs to be reversed, so they're still in DOM order
+      return Arr.reverse(Recurse.toArray(element, prevSibling));
+    };
+
+    var nextSiblings = function (element) {
+      return Recurse.toArray(element, nextSibling);
+    };
+
+    var children = function (element) {
+      var dom = element.dom();
+      return Arr.map(dom.childNodes, Element.fromDom);
+    };
+
+    var child = function (element, index) {
+      var children = element.dom().childNodes;
+      return Option.from(children[index]).map(Element.fromDom);
+    };
+
+    var firstChild = function (element) {
+      return child(element, 0);
+    };
+
+    var lastChild = function (element) {
+      return child(element, element.dom().childNodes.length - 1);
+    };
+
+    var childNodesCount = function (element, index) {
+      return element.dom().childNodes.length;
+    };
+
+    var spot = Struct.immutable('element', 'offset');
+    var leaf = function (element, offset) {
+      var cs = children(element);
+      return cs.length > 0 && offset < cs.length ? spot(cs[offset], 0) : spot(element, offset);
+    };
+
+    return {
+      owner: owner,
+      defaultView: defaultView,
+      documentElement: documentElement,
+      parent: parent,
+      findIndex: findIndex,
+      parents: parents,
+      siblings: siblings,
+      prevSibling: prevSibling,
+      offsetParent: offsetParent,
+      prevSiblings: prevSiblings,
+      nextSibling: nextSibling,
+      nextSiblings: nextSiblings,
+      children: children,
+      child: child,
+      firstChild: firstChild,
+      lastChild: lastChild,
+      childNodesCount: childNodesCount,
+      leaf: leaf
+    };
+  }
+);
+
+/**
+ * Position.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.dom.Position',
+  [
+    'ephox.katamari.api.Arr',
+    'ephox.sand.api.PlatformDetection',
+    'ephox.sugar.api.node.Element',
+    'ephox.sugar.api.node.Node',
+    'ephox.sugar.api.properties.Css',
+    'ephox.sugar.api.search.Traverse'
+  ],
+  function (Arr, PlatformDetection, Element, Node, Css, Traverse) {
+    var browser = PlatformDetection.detect().browser;
+
+    var firstElement = function (nodes) {
+      return Arr.find(nodes, Node.isElement);
+    };
+
+    // Firefox has a bug where caption height is not included correctly in offset calculations of tables
+    // this tries to compensate for that by detecting if that offsets are incorrect and then remove the height
+    var getTableCaptionDeltaY = function (elm) {
+      if (browser.isFirefox() && Node.name(elm) === 'table') {
+        return firstElement(Traverse.children(elm)).filter(function (elm) {
+          return Node.name(elm) === 'caption';
+        }).bind(function (caption) {
+          return firstElement(Traverse.nextSiblings(caption)).map(function (body) {
+            var bodyTop = body.dom().offsetTop;
+            var captionTop = caption.dom().offsetTop;
+            var captionHeight = caption.dom().offsetHeight;
+            return bodyTop <= captionTop ? -captionHeight : 0;
+          });
+        }).getOr(0);
+      } else {
+        return 0;
+      }
+    };
+
+    var getPos = function (body, elm, rootElm) {
+      var x = 0, y = 0, offsetParent, doc = body.ownerDocument, pos;
+
+      rootElm = rootElm ? rootElm : body;
+
+      if (elm) {
+        // Use getBoundingClientRect if it exists since it's faster than looping offset nodes
+        // Fallback to offsetParent calculations if the body isn't static better since it stops at the body root
+        if (rootElm === body && elm.getBoundingClientRect && Css.get(Element.fromDom(body), 'position') === 'static') {
+          pos = elm.getBoundingClientRect();
+
+          // Add scroll offsets from documentElement or body since IE with the wrong box model will use d.body and so do WebKit
+          // Also remove the body/documentelement clientTop/clientLeft on IE 6, 7 since they offset the position
+          x = pos.left + (doc.documentElement.scrollLeft || body.scrollLeft) - doc.documentElement.clientLeft;
+          y = pos.top + (doc.documentElement.scrollTop || body.scrollTop) - doc.documentElement.clientTop;
+
+          return { x: x, y: y };
+        }
+
+        offsetParent = elm;
+        while (offsetParent && offsetParent !== rootElm && offsetParent.nodeType) {
+          x += offsetParent.offsetLeft || 0;
+          y += offsetParent.offsetTop || 0;
+          offsetParent = offsetParent.offsetParent;
+        }
+
+        offsetParent = elm.parentNode;
+        while (offsetParent && offsetParent !== rootElm && offsetParent.nodeType) {
+          x -= offsetParent.scrollLeft || 0;
+          y -= offsetParent.scrollTop || 0;
+          offsetParent = offsetParent.parentNode;
+        }
+
+        y += getTableCaptionDeltaY(Element.fromDom(elm));
+      }
+
+      return { x: x, y: y };
+    };
+
+    return {
+      getPos: getPos
+    };
+  }
+);
 define(
   'ephox.katamari.api.LazyValue',
 
@@ -6722,9 +8596,9 @@ define(
       settings = settings || {};
       maxLoadTime = settings.maxLoadTime || 5000;
 
-      function appendToHead(node) {
+      var appendToHead = function (node) {
         document.getElementsByTagName('head')[0].appendChild(node);
-      }
+      };
 
       /**
        * Loads the specified css style sheet file and call the loadedCallback once it's finished loading.
@@ -6734,10 +8608,10 @@ define(
        * @param {Function} loadedCallback Callback to be executed when loaded.
        * @param {Function} errorCallback Callback to be executed when failed loading.
        */
-      function load(url, loadedCallback, errorCallback) {
+      var load = function (url, loadedCallback, errorCallback) {
         var link, style, startTime, state;
 
-        function passed() {
+        var passed = function () {
           var callbacks = state.passed, i = callbacks.length;
 
           while (i--) {
@@ -6747,9 +8621,9 @@ define(
           state.status = 2;
           state.passed = [];
           state.failed = [];
-        }
+        };
 
-        function failed() {
+        var failed = function () {
           var callbacks = state.failed, i = callbacks.length;
 
           while (i--) {
@@ -6759,16 +8633,16 @@ define(
           state.status = 3;
           state.passed = [];
           state.failed = [];
-        }
+        };
 
         // Sniffs for older WebKit versions that have the link.onload but a broken one
-        function isOldWebKit() {
+        var isOldWebKit = function () {
           var webKitChunks = navigator.userAgent.match(/WebKit\/(\d*)/);
           return !!(webKitChunks && webKitChunks[1] < 536);
-        }
+        };
 
         // Calls the waitCallback until the test returns true or the timeout occurs
-        function wait(testCallback, waitCallback) {
+        var wait = function (testCallback, waitCallback) {
           if (!testCallback()) {
             // Wait for timeout
             if ((new Date().getTime()) - startTime < maxLoadTime) {
@@ -6777,11 +8651,11 @@ define(
               failed();
             }
           }
-        }
+        };
 
         // Workaround for WebKit that doesn't properly support the onload event for link elements
         // Or WebKit that fires the onload event before the StyleSheet is added to the document
-        function waitForWebKitLinkLoaded() {
+        var waitForWebKitLinkLoaded = function () {
           wait(function () {
             var styleSheets = document.styleSheets, styleSheet, i = styleSheets.length, owner;
 
@@ -6794,10 +8668,10 @@ define(
               }
             }
           }, waitForWebKitLinkLoaded);
-        }
+        };
 
         // Workaround for older Geckos that doesn't have any onload event for StyleSheets
-        function waitForGeckoLinkLoaded() {
+        var waitForGeckoLinkLoaded = function () {
           wait(function () {
             try {
               // Accessing the cssRules will throw an exception until the CSS file is loaded
@@ -6808,7 +8682,7 @@ define(
               // Ignore
             }
           }, waitForGeckoLinkLoaded);
-        }
+        };
 
         url = Tools._addCacheSuffix(url);
 
@@ -6879,7 +8753,7 @@ define(
 
         appendToHead(link);
         link.href = url;
-      }
+      };
 
       var loadF = function (url) {
         return Future.nu(function (resolve) {
@@ -6954,7 +8828,7 @@ define(
     return function (startNode, rootNode) {
       var node = startNode;
 
-      function findSibling(node, startName, siblingName, shallow) {
+      var findSibling = function (node, startName, siblingName, shallow) {
         var sibling, parent;
 
         if (node) {
@@ -6979,9 +8853,9 @@ define(
             }
           }
         }
-      }
+      };
 
-      function findPreviousNode(node, startName, siblingName, shallow) {
+      var findPreviousNode = function (node, startName, siblingName, shallow) {
         var sibling, parent, child;
 
         if (node) {
@@ -7008,7 +8882,7 @@ define(
             return parent;
           }
         }
-      }
+      };
 
       /**
        * Returns the current node.
@@ -7050,53 +8924,283 @@ define(
   }
 );
 
-define("global!console", [], function () { if (typeof console === "undefined") console = { log: function () {} }; return console; });
+/**
+ * ElementType.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
 define(
-  'ephox.sugar.api.node.Element',
-
+  'tinymce.core.dom.ElementType',
   [
+    'ephox.katamari.api.Arr',
     'ephox.katamari.api.Fun',
-    'global!Error',
-    'global!console',
-    'global!document'
+    'ephox.sugar.api.node.Node'
   ],
+  function (Arr, Fun, Node) {
+    var blocks = [
+      'article', 'aside', 'details', 'div', 'dt', 'figcaption', 'footer',
+      'form', 'fieldset', 'header', 'hgroup', 'html', 'main', 'nav',
+      'section', 'summary', 'body', 'p', 'dl', 'multicol', 'dd', 'figure',
+      'address', 'center', 'blockquote', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+      'listing', 'xmp', 'pre', 'plaintext', 'menu', 'dir', 'ul', 'ol', 'li', 'hr',
+      'table', 'tbody', 'thead', 'tfoot', 'th', 'tr', 'td', 'caption'
+    ];
 
-  function (Fun, Error, console, document) {
-    var fromHtml = function (html, scope) {
-      var doc = scope || document;
-      var div = doc.createElement('div');
-      div.innerHTML = html;
-      if (!div.hasChildNodes() || div.childNodes.length > 1) {
-        console.error('HTML does not have a single root node', html);
-        throw 'HTML must have a single root node';
-      }
-      return fromDom(div.childNodes[0]);
+    var voids = [
+      'area', 'base', 'basefont', 'br', 'col', 'frame', 'hr', 'img', 'input',
+      'isindex', 'link', 'meta', 'param', 'embed', 'source', 'wbr', 'track'
+    ];
+
+    var tableCells = ['td', 'th'];
+    var tableSections = ['thead', 'tbody', 'tfoot'];
+
+    var textBlocks = [
+      'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'div', 'address', 'pre', 'form',
+      'blockquote', 'center', 'dir', 'fieldset', 'header', 'footer', 'article',
+      'section', 'hgroup', 'aside', 'nav', 'figure'
+    ];
+
+    var headings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+    var listItems = ['li', 'dd', 'dt'];
+    var lists = ['ul', 'ol', 'dl'];
+
+    var lazyLookup = function (items) {
+      var lookup;
+      return function (node) {
+        lookup = lookup ? lookup : Arr.mapToObject(items, Fun.constant(true));
+        return lookup.hasOwnProperty(Node.name(node));
+      };
     };
 
-    var fromTag = function (tag, scope) {
-      var doc = scope || document;
-      var node = doc.createElement(tag);
-      return fromDom(node);
+    var isHeading = lazyLookup(headings);
+
+    var isBlock = lazyLookup(blocks);
+
+    var isInline = function (node) {
+      return Node.isElement(node) && !isBlock(node);
     };
 
-    var fromText = function (text, scope) {
-      var doc = scope || document;
-      var node = doc.createTextNode(text);
-      return fromDom(node);
+    var isBr = function (node) {
+      return Node.isElement(node) && Node.name(node) === 'br';
     };
 
-    var fromDom = function (node) {
-      if (node === null || node === undefined) throw new Error('Node cannot be null or undefined');
-      return {
-        dom: Fun.constant(node)
+    return {
+      isBlock: isBlock,
+      isInline: isInline,
+      isHeading: isHeading,
+      isTextBlock: lazyLookup(textBlocks),
+      isList: lazyLookup(lists),
+      isListItem: lazyLookup(listItems),
+      isVoid: lazyLookup(voids),
+      isTableSection: lazyLookup(tableSections),
+      isTableCell: lazyLookup(tableCells),
+      isBr: isBr
+    };
+  }
+);
+
+/**
+ * NodeType.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+/**
+ * Contains various node validation functions.
+ *
+ * @private
+ * @class tinymce.dom.NodeType
+ */
+define(
+  'tinymce.core.dom.NodeType',
+  [
+  ],
+  function () {
+    var isNodeType = function (type) {
+      return function (node) {
+        return !!node && node.nodeType == type;
+      };
+    };
+
+    var isElement = isNodeType(1);
+
+    var matchNodeNames = function (names) {
+      names = names.toLowerCase().split(' ');
+
+      return function (node) {
+        var i, name;
+
+        if (node && node.nodeType) {
+          name = node.nodeName.toLowerCase();
+
+          for (i = 0; i < names.length; i++) {
+            if (name === names[i]) {
+              return true;
+            }
+          }
+        }
+
+        return false;
+      };
+    };
+
+    var matchStyleValues = function (name, values) {
+      values = values.toLowerCase().split(' ');
+
+      return function (node) {
+        var i, cssValue;
+
+        if (isElement(node)) {
+          for (i = 0; i < values.length; i++) {
+            cssValue = node.ownerDocument.defaultView.getComputedStyle(node, null).getPropertyValue(name);
+            if (cssValue === values[i]) {
+              return true;
+            }
+          }
+        }
+
+        return false;
+      };
+    };
+
+    var hasPropValue = function (propName, propValue) {
+      return function (node) {
+        return isElement(node) && node[propName] === propValue;
+      };
+    };
+
+    var hasAttribute = function (attrName, attrValue) {
+      return function (node) {
+        return isElement(node) && node.hasAttribute(attrName);
+      };
+    };
+
+    var hasAttributeValue = function (attrName, attrValue) {
+      return function (node) {
+        return isElement(node) && node.getAttribute(attrName) === attrValue;
+      };
+    };
+
+    var isBogus = function (node) {
+      return isElement(node) && node.hasAttribute('data-mce-bogus');
+    };
+
+    var hasContentEditableState = function (value) {
+      return function (node) {
+        if (isElement(node)) {
+          if (node.contentEditable === value) {
+            return true;
+          }
+
+          if (node.getAttribute('data-mce-contenteditable') === value) {
+            return true;
+          }
+        }
+
+        return false;
       };
     };
 
     return {
-      fromHtml: fromHtml,
-      fromTag: fromTag,
-      fromText: fromText,
-      fromDom: fromDom
+      isText: isNodeType(3),
+      isElement: isElement,
+      isComment: isNodeType(8),
+      isDocument: isNodeType(9),
+      isBr: matchNodeNames('br'),
+      isContentEditableTrue: hasContentEditableState('true'),
+      isContentEditableFalse: hasContentEditableState('false'),
+      matchNodeNames: matchNodeNames,
+      hasPropValue: hasPropValue,
+      hasAttribute: hasAttribute,
+      hasAttributeValue: hasAttributeValue,
+      matchStyleValues: matchStyleValues,
+      isBogus: isBogus
+    };
+  }
+);
+define(
+  'tinymce.core.dom.TrimNode',
+
+  [
+    'ephox.sugar.api.node.Element',
+    'tinymce.core.dom.ElementType',
+    'tinymce.core.dom.NodeType',
+    'tinymce.core.util.Tools'
+  ],
+
+  function (Element, ElementType, NodeType, Tools) {
+    var surroundedBySpans = function (node) {
+      var previousIsSpan = node.previousSibling && node.previousSibling.nodeName === 'SPAN';
+      var nextIsSpan = node.nextSibling && node.nextSibling.nodeName === 'SPAN';
+      return previousIsSpan && nextIsSpan;
+    };
+
+    var isBookmarkNode = function (node) {
+      return node && node.tagName === 'SPAN' && node.getAttribute('data-mce-type') === 'bookmark';
+    };
+
+    // W3C valid browsers tend to leave empty nodes to the left/right side of the contents - this makes sense
+    // but we don't want that in our code since it serves no purpose for the end user
+    // For example splitting this html at the bold element:
+    //   <p>text 1<span><b>CHOP</b></span>text 2</p>
+    // would produce:
+    //   <p>text 1<span></span></p><b>CHOP</b><p><span></span>text 2</p>
+    // this function will then trim off empty edges and produce:
+    //   <p>text 1</p><b>CHOP</b><p>text 2</p>
+    var trimNode = function (dom, node) {
+      var i, children = node.childNodes;
+
+      if (NodeType.isElement(node) && isBookmarkNode(node)) {
+        return;
+      }
+
+      for (i = children.length - 1; i >= 0; i--) {
+        trimNode(dom, children[i]);
+      }
+
+      if (NodeType.isDocument(node) === false) {
+        // Keep non whitespace text nodes
+        if (NodeType.isText(node) && node.nodeValue.length > 0) {
+          // Keep if parent element is a block or if there is some useful content
+          var trimmedLength = Tools.trim(node.nodeValue).length;
+          if (dom.isBlock(node.parentNode) || trimmedLength > 0) {
+            return;
+          }
+          // Also keep text nodes with only spaces if surrounded by spans.
+          // eg. "<p><span>a</span> <span>b</span></p>" should keep space between a and b
+          if (trimmedLength === 0 && surroundedBySpans(node)) {
+            return;
+          }
+        } else if (NodeType.isElement(node)) {
+          // If the only child is a bookmark then move it up
+          children = node.childNodes;
+
+          if (children.length === 1 && isBookmarkNode(children[0])) {
+            node.parentNode.insertBefore(children[0], node);
+          }
+
+          // Keep non empty elements and void elements
+          if (children.length || ElementType.isVoid(Element.fromDom(node))) {
+            return;
+          }
+        }
+
+        dom.remove(node);
+      }
+      return node;
+    };
+
+    return {
+      trimNode: trimNode
     };
   }
 );
@@ -7163,17 +9267,17 @@ define(
     };
 
     // Decodes text by using the browser
-    function nativeDecode(text) {
+    var nativeDecode = function (text) {
       var elm;
 
       elm = Element.fromTag("div").dom();
       elm.innerHTML = text;
 
       return elm.textContent || elm.innerText || text;
-    }
+    };
 
     // Build a two way lookup table for the entities
-    function buildEntitiesLookup(items, radix) {
+    var buildEntitiesLookup = function (items, radix) {
       var i, chr, entity, lookup = {};
 
       if (items) {
@@ -7194,7 +9298,7 @@ define(
 
         return lookup;
       }
-    }
+    };
 
     // Unpack entities lookup where the numbers are in radix 32 to reduce the size
     namedEntities = buildEntitiesLookup(
@@ -7303,7 +9407,7 @@ define(
       getEncodeFunc: function (name, entities) {
         entities = buildEntitiesLookup(entities) || namedEntities;
 
-        function encodeNamedAndNumeric(text, attr) {
+        var encodeNamedAndNumeric = function (text, attr) {
           return text.replace(attr ? attrsCharsRegExp : textCharsRegExp, function (chr) {
             if (baseEntities[chr] !== undefined) {
               return baseEntities[chr];
@@ -7320,11 +9424,11 @@ define(
 
             return '&#' + chr.charCodeAt(0) + ';';
           });
-        }
+        };
 
-        function encodeCustomNamed(text, attr) {
+        var encodeCustomNamed = function (text, attr) {
           return Entities.encodeNamed(text, attr, entities);
-        }
+        };
 
         // Replace + with , to be compatible with previous TinyMCE versions
         name = makeMap(name.replace(/\+/g, ','));
@@ -7421,10 +9525,10 @@ define(
     var mapCache = {}, dummyObj = {};
     var makeMap = Tools.makeMap, each = Tools.each, extend = Tools.extend, explode = Tools.explode, inArray = Tools.inArray;
 
-    function split(items, delim) {
+    var split = function (items, delim) {
       items = Tools.trim(items);
       return items ? items.split(delim || ' ') : [];
-    }
+    };
 
     /**
      * Builds a schema lookup table
@@ -7433,14 +9537,14 @@ define(
      * @param {String} type html4, html5 or html5-strict schema type.
      * @return {Object} Schema lookup table.
      */
-    function compileSchema(type) {
+    var compileSchema = function (type) {
       var schema = {}, globalAttributes, blockContent;
       var phrasingContent, flowContent, html4BlockContent, html4PhrasingContent;
 
-      function add(name, attributes, children) {
+      var add = function (name, attributes, children) {
         var ni, attributesOrder, element;
 
-        function arrayToMap(array, obj) {
+        var arrayToMap = function (array, obj) {
           var map = {}, i, l;
 
           for (i = 0, l = array.length; i < l; i++) {
@@ -7448,7 +9552,7 @@ define(
           }
 
           return map;
-        }
+        };
 
         children = children || [];
         attributes = attributes || "";
@@ -7470,9 +9574,9 @@ define(
 
           schema[name[ni]] = element;
         }
-      }
+      };
 
-      function addAttrs(name, attributes) {
+      var addAttrs = function (name, attributes) {
         var ni, schemaItem, i, l;
 
         name = split(name);
@@ -7485,7 +9589,7 @@ define(
             schemaItem.attributesOrder.push(attributes[i]);
           }
         }
-      }
+      };
 
       // Use cached schema
       if (mapCache[type]) {
@@ -7704,9 +9808,9 @@ define(
       mapCache[type] = schema;
 
       return schema;
-    }
+    };
 
-    function compileElementMap(value, mode) {
+    var compileElementMap = function (value, mode) {
       var styles;
 
       if (value) {
@@ -7725,7 +9829,7 @@ define(
       }
 
       return styles;
-    }
+    };
 
     /**
      * Constructs a new Schema instance.
@@ -7741,7 +9845,7 @@ define(
       var customElementsMap = {}, specialElements = {};
 
       // Creates an lookup table map object for the specified option or the default value
-      function createLookupTable(option, defaultValue, extendWith) {
+      var createLookupTable = function (option, defaultValue, extendWith) {
         var value = settings[option];
 
         if (!value) {
@@ -7760,7 +9864,7 @@ define(
         }
 
         return value;
-      }
+      };
 
       settings = settings || {};
       schemaItems = compileSchema(settings.schema);
@@ -7800,17 +9904,17 @@ define(
       });
 
       // Converts a wildcard expression string to a regexp for example *a will become /.*a/.
-      function patternToRegExp(str) {
+      var patternToRegExp = function (str) {
         return new RegExp('^' + str.replace(/([?+*])/g, '.$1') + '$');
-      }
+      };
 
       // Parses the specified valid_elements string and adds to the current rules
       // This function is a bit hard to read since it's heavily optimized for speed
-      function addValidElements(validElements) {
+      var addValidElements = function (validElements) {
         var ei, el, ai, al, matches, element, attr, attrData, elementName, attrName, attrType, attributes, attributesOrder,
           prefix, outputName, globalAttributes, globalAttributesOrder, key, value,
           elementRuleRegExp = /^([#+\-])?([^\[!\/]+)(?:\/([^\[!]+))?(?:(!?)\[([^\]]+)\])?$/,
-          attrRuleRegExp = /^([!\-])?(\w+::\w+|[^=:<]+)?(?:([=:<])(.*))?$/,
+          attrRuleRegExp = /^([!\-])?(\w+[\\:]:\w+|[^=:<]+)?(?:([=:<])(.*))?$/,
           hasPatternsRegExp = /[*?+]/;
 
         if (validElements) {
@@ -7874,7 +9978,7 @@ define(
                   if (matches) {
                     attr = {};
                     attrType = matches[1];
-                    attrName = matches[2].replace(/::/g, ':');
+                    attrName = matches[2].replace(/[\\:]:/g, ':');
                     prefix = matches[3];
                     value = matches[4];
 
@@ -7953,9 +10057,9 @@ define(
             }
           }
         }
-      }
+      };
 
-      function setValidElements(validElements) {
+      var setValidElements = function (validElements) {
         elements = {};
         patternElements = [];
 
@@ -7964,10 +10068,10 @@ define(
         each(schemaItems, function (element, name) {
           children[name] = element.children;
         });
-      }
+      };
 
       // Adds custom non HTML elements to the schema
-      function addCustomElements(customElements) {
+      var addCustomElements = function (customElements) {
         var customElementRegExp = /^(~)?(.+)$/;
 
         if (customElements) {
@@ -8009,10 +10113,10 @@ define(
             });
           });
         }
-      }
+      };
 
       // Adds valid children to the schema object
-      function addValidChildren(validChildren) {
+      var addValidChildren = function (validChildren) {
         var childRuleRegExp = /^([+\-]?)(\w+)\[([^\]]+)\]$/;
 
         // Invalidate the schema cache if the schema is mutated
@@ -8044,9 +10148,9 @@ define(
             }
           });
         }
-      }
+      };
 
-      function getElementRule(name) {
+      var getElementRule = function (name) {
         var element = elements[name], i;
 
         // Exact match found
@@ -8063,7 +10167,7 @@ define(
             return element;
           }
         }
-      }
+      };
 
       if (!settings.valid_elements) {
         // No valid elements defined then clone the elements from the schema spec
@@ -8095,7 +10199,7 @@ define(
         });
 
         // Padd these by default
-        each(split('p h1 h2 h3 h4 h5 h6 th td pre div address caption'), function (name) {
+        each(split('p h1 h2 h3 h4 h5 h6 th td pre div address caption li'), function (name) {
           elements[name].paddEmpty = true;
         });
 
@@ -8473,15 +10577,15 @@ define(
         encodingLookup[invisibleChar + i] = encodingItems[i];
       }
 
-      function toHex(match, r, g, b) {
-        function hex(val) {
+      var toHex = function (match, r, g, b) {
+        var hex = function (val) {
           val = parseInt(val, 10).toString(16);
 
           return val.length > 1 ? val : '0' + val; // 0 -> 00
-        }
+        };
 
         return '#' + hex(r) + hex(g) + hex(b);
-      }
+      };
 
       return {
         /**
@@ -8508,7 +10612,7 @@ define(
           var styles = {}, matches, name, value, isEncoded, urlConverter = settings.url_converter;
           var urlConverterScope = settings.url_converter_scope || this;
 
-          function compress(prefix, suffix, noJoin) {
+          var compress = function (prefix, suffix, noJoin) {
             var top, right, bottom, left;
 
             top = styles[prefix + '-top' + suffix];
@@ -8548,12 +10652,12 @@ define(
             delete styles[prefix + '-right' + suffix];
             delete styles[prefix + '-bottom' + suffix];
             delete styles[prefix + '-left' + suffix];
-          }
+          };
 
           /**
            * Checks if the specific style can be compressed in other words if all border-width are equal.
            */
-          function canCompress(key) {
+          var canCompress = function (key) {
             var value = styles[key], i;
 
             if (!value) {
@@ -8571,12 +10675,12 @@ define(
             styles[key] = value[0];
 
             return true;
-          }
+          };
 
           /**
            * Compresses multiple styles into one style.
            */
-          function compress2(target, a, b, c) {
+          var compress2 = function (target, a, b, c) {
             if (!canCompress(a)) {
               return;
             }
@@ -8594,18 +10698,18 @@ define(
             delete styles[a];
             delete styles[b];
             delete styles[c];
-          }
+          };
 
           // Encodes the specified string by replacing all \" \' ; : with _<num>
-          function encode(str) {
+          var encode = function (str) {
             isEncoded = true;
 
             return encodingLookup[str];
-          }
+          };
 
           // Decodes the specified string by replacing all _<num> with it's original value \" \' etc
           // It will also decode the \" \' if keepSlashes is set to fale or omitted
-          function decode(str, keepSlashes) {
+          var decode = function (str, keepSlashes) {
             if (isEncoded) {
               str = str.replace(/\uFEFF[0-9]/g, function (str) {
                 return encodingLookup[str];
@@ -8617,17 +10721,17 @@ define(
             }
 
             return str;
-          }
+          };
 
-          function decodeSingleHexSequence(escSeq) {
+          var decodeSingleHexSequence = function (escSeq) {
             return String.fromCharCode(parseInt(escSeq.slice(1), 16));
-          }
+          };
 
-          function decodeHexSequences(value) {
+          var decodeHexSequences = function (value) {
             return value.replace(/\\[0-9a-f]+/gi, decodeSingleHexSequence);
-          }
+          };
 
-          function processUrl(match, url, url2, url3, str, str2) {
+          var processUrl = function (match, url, url2, url3, str, str2) {
             str = str || str2;
 
             if (str) {
@@ -8658,7 +10762,7 @@ define(
 
             // Output new URL format
             return "url('" + url.replace(/\'/g, "\\'") + "')";
-          }
+          };
 
           if (css) {
             css = css.replace(/[\u0000-\u001F]/g, '');
@@ -8741,7 +10845,7 @@ define(
         serialize: function (styles, elementName) {
           var css = '', name, value;
 
-          function serializeStyles(name) {
+          var serializeStyles = function (name) {
             var styleList, i, l, value;
 
             styleList = validStyles[name];
@@ -8755,9 +10859,9 @@ define(
                 }
               }
             }
-          }
+          };
 
-          function isValid(name, elementName) {
+          var isValid = function (name, elementName) {
             var styleMap;
 
             styleMap = invalidStyles['*'];
@@ -8771,7 +10875,7 @@ define(
             }
 
             return true;
-          }
+          };
 
           // Serialize styles according to schema
           if (elementName && validStyles) {
@@ -8822,25 +10926,27 @@ define(
   [
     'global!document',
     'global!window',
+    'tinymce.core.Env',
     'tinymce.core.dom.DomQuery',
     'tinymce.core.dom.EventUtils',
+    'tinymce.core.dom.Position',
     'tinymce.core.dom.Sizzle',
     'tinymce.core.dom.StyleSheetLoader',
     'tinymce.core.dom.TreeWalker',
-    'tinymce.core.Env',
+    'tinymce.core.dom.TrimNode',
     'tinymce.core.html.Entities',
     'tinymce.core.html.Schema',
     'tinymce.core.html.Styles',
     'tinymce.core.util.Tools'
   ],
-  function (document, window, DomQuery, EventUtils, Sizzle, StyleSheetLoader, TreeWalker, Env, Entities, Schema, Styles, Tools) {
+  function (document, window, Env, DomQuery, EventUtils, Position, Sizzle, StyleSheetLoader, TreeWalker, TrimNode, Entities, Schema, Styles, Tools) {
     // Shorten names
-    var each = Tools.each, is = Tools.is, grep = Tools.grep, trim = Tools.trim;
+    var each = Tools.each, is = Tools.is, grep = Tools.grep;
     var isIE = Env.ie;
     var simpleSelectorRe = /^([a-z0-9],?)+$/i;
     var whiteSpaceRegExp = /^[ \t\r\n]*$/;
 
-    function setupAttrHooks(domUtils, settings) {
+    var setupAttrHooks = function (domUtils, settings) {
       var attrHooks = {}, keepValues = settings.keep_values, keepUrlHook;
 
       keepUrlHook = {
@@ -8887,9 +10993,9 @@ define(
       }
 
       return attrHooks;
-    }
+    };
 
-    function updateInternalStyleAttr(domUtils, $elm) {
+    var updateInternalStyleAttr = function (domUtils, $elm) {
       var value = $elm.attr('style');
 
       value = domUtils.serializeStyle(domUtils.parseStyle(value), $elm[0].nodeName);
@@ -8899,9 +11005,9 @@ define(
       }
 
       $elm.attr('data-mce-style', value);
-    }
+    };
 
-    function nodeIndex(node, normalized) {
+    var nodeIndex = function (node, normalized) {
       var idx = 0, lastNodeType, nodeType;
 
       if (node) {
@@ -8920,7 +11026,7 @@ define(
       }
 
       return idx;
-    }
+    };
 
     /**
      * Constructs a new DOMUtils instance. Consult the Wiki for more details on settings etc for this class.
@@ -8930,7 +11036,7 @@ define(
      * @param {Document} doc Document reference to bind the utility class to.
      * @param {settings} settings Optional settings collection.
      */
-    function DOMUtils(doc, settings) {
+    var DOMUtils = function (doc, settings) {
       var self = this, blockElementsMap;
 
       self.doc = doc;
@@ -8951,7 +11057,7 @@ define(
       self.fixDoc(doc);
       self.events = settings.ownEvents ? new EventUtils(settings.proxy) : EventUtils.Event;
       self.attrHooks = setupAttrHooks(self, settings);
-      blockElementsMap = settings.schema ? settings.schema.getBlockElements() : {};
+      blockElementsMap = self.schema.getBlockElements();
       self.$ = DomQuery.overrideDefaults(function () {
         return {
           context: doc,
@@ -8982,7 +11088,7 @@ define(
 
         return !!blockElementsMap[node];
       };
-    }
+    };
 
     DOMUtils.prototype = {
       $$: function (elm) {
@@ -9657,42 +11763,7 @@ define(
        * @return {object} Absolute position of the specified element object with x, y fields.
        */
       getPos: function (elm, rootElm) {
-        var self = this, x = 0, y = 0, offsetParent, doc = self.doc, body = doc.body, pos;
-
-        elm = self.get(elm);
-        rootElm = rootElm || body;
-
-        if (elm) {
-          // Use getBoundingClientRect if it exists since it's faster than looping offset nodes
-          // Fallback to offsetParent calculations if the body isn't static better since it stops at the body root
-          if (rootElm === body && elm.getBoundingClientRect && DomQuery(body).css('position') === 'static') {
-            pos = elm.getBoundingClientRect();
-            rootElm = self.boxModel ? doc.documentElement : body;
-
-            // Add scroll offsets from documentElement or body since IE with the wrong box model will use d.body and so do WebKit
-            // Also remove the body/documentelement clientTop/clientLeft on IE 6, 7 since they offset the position
-            x = pos.left + (doc.documentElement.scrollLeft || body.scrollLeft) - rootElm.clientLeft;
-            y = pos.top + (doc.documentElement.scrollTop || body.scrollTop) - rootElm.clientTop;
-
-            return { x: x, y: y };
-          }
-
-          offsetParent = elm;
-          while (offsetParent && offsetParent != rootElm && offsetParent.nodeType) {
-            x += offsetParent.offsetLeft || 0;
-            y += offsetParent.offsetTop || 0;
-            offsetParent = offsetParent.offsetParent;
-          }
-
-          offsetParent = elm.parentNode;
-          while (offsetParent && offsetParent != rootElm && offsetParent.nodeType) {
-            x -= offsetParent.scrollLeft || 0;
-            y -= offsetParent.scrollTop || 0;
-            offsetParent = offsetParent.parentNode;
-          }
-        }
-
-        return { x: x, y: y };
+        return Position.getPos(this.doc.body, this.get(elm), rootElm);
       },
 
       /**
@@ -10369,63 +12440,6 @@ define(
       split: function (parentElm, splitElm, replacementElm) {
         var self = this, r = self.createRng(), bef, aft, pa;
 
-        // W3C valid browsers tend to leave empty nodes to the left/right side of the contents - this makes sense
-        // but we don't want that in our code since it serves no purpose for the end user
-        // For example splitting this html at the bold element:
-        //   <p>text 1<span><b>CHOP</b></span>text 2</p>
-        // would produce:
-        //   <p>text 1<span></span></p><b>CHOP</b><p><span></span>text 2</p>
-        // this function will then trim off empty edges and produce:
-        //   <p>text 1</p><b>CHOP</b><p>text 2</p>
-        function trimNode(node) {
-          var i, children = node.childNodes, type = node.nodeType;
-
-          function surroundedBySpans(node) {
-            var previousIsSpan = node.previousSibling && node.previousSibling.nodeName == 'SPAN';
-            var nextIsSpan = node.nextSibling && node.nextSibling.nodeName == 'SPAN';
-            return previousIsSpan && nextIsSpan;
-          }
-
-          if (type == 1 && node.getAttribute('data-mce-type') == 'bookmark') {
-            return;
-          }
-
-          for (i = children.length - 1; i >= 0; i--) {
-            trimNode(children[i]);
-          }
-
-          if (type != 9) {
-            // Keep non whitespace text nodes
-            if (type == 3 && node.nodeValue.length > 0) {
-              // If parent element isn't a block or there isn't any useful contents for example "<p>   </p>"
-              // Also keep text nodes with only spaces if surrounded by spans.
-              // eg. "<p><span>a</span> <span>b</span></p>" should keep space between a and b
-              var trimmedLength = trim(node.nodeValue).length;
-              if (!self.isBlock(node.parentNode) || trimmedLength > 0 || trimmedLength === 0 && surroundedBySpans(node)) {
-                return;
-              }
-            } else if (type == 1) {
-              // If the only child is a bookmark then move it up
-              children = node.childNodes;
-
-              // TODO fix this complex if
-              if (children.length == 1 && children[0] && children[0].nodeType == 1 &&
-                children[0].getAttribute('data-mce-type') == 'bookmark') {
-                node.parentNode.insertBefore(children[0], node);
-              }
-
-              // Keep non empty elements or img, hr etc
-              if (children.length || /^(br|hr|input|img)$/i.test(node.nodeName)) {
-                return;
-              }
-            }
-
-            self.remove(node);
-          }
-
-          return node;
-        }
-
         if (parentElm && splitElm) {
           // Get before chunk
           r.setStart(parentElm.parentNode, self.nodeIndex(parentElm));
@@ -10440,7 +12454,7 @@ define(
 
           // Insert before chunk
           pa = parentElm.parentNode;
-          pa.insertBefore(trimNode(bef), parentElm);
+          pa.insertBefore(TrimNode.trimNode(self, bef), parentElm);
 
           // Insert middle chunk
           if (replacementElm) {
@@ -10451,7 +12465,7 @@ define(
           }
 
           // Insert after chunk
-          pa.insertBefore(trimNode(aft), parentElm);
+          pa.insertBefore(TrimNode.trimNode(self, aft), parentElm);
           self.remove(parentElm);
 
           return replacementElm || splitElm;
@@ -10721,7 +12735,7 @@ define(
       return typeof f === 'function';
     };
 
-    function ScriptLoader() {
+    var ScriptLoader = function () {
       var QUEUED = 0,
         LOADING = 1,
         LOADED = 2,
@@ -10741,11 +12755,11 @@ define(
        * @param {function} callback Optional success callback function when the script loaded successfully.
        * @param {function} callback Optional failure callback function when the script failed to load.
        */
-      function loadScript(url, success, failure) {
+      var loadScript = function (url, success, failure) {
         var dom = DOM, elm, id;
 
         // Execute callback when script is loaded
-        function done() {
+        var done = function () {
           dom.remove(id);
 
           if (elm) {
@@ -10753,9 +12767,9 @@ define(
           }
 
           success();
-        }
+        };
 
-        function error() {
+        var error = function () {
           /*eslint no-console:0 */
 
           // We can't mark it as done if there is a load error since
@@ -10771,7 +12785,7 @@ define(
               console.log("Failed to load script: " + url);
             }
           }
-        }
+        };
 
         id = dom.uniqueId();
 
@@ -10797,7 +12811,7 @@ define(
 
         // Add script to document
         (document.getElementsByTagName('head')[0] || document.body).appendChild(elm);
-      }
+      };
 
       /**
        * Returns true/false if a script has been loaded or not.
@@ -10883,7 +12897,7 @@ define(
       this.loadScripts = function (scripts, success, scope, failure) {
         var loadScripts, failures = [];
 
-        function execCallbacks(name, url) {
+        var execCallbacks = function (name, url) {
           // Execute URL callback functions
           each(scriptLoadedCallbacks[url], function (callback) {
             if (isFunction(callback[name])) {
@@ -10892,7 +12906,7 @@ define(
           });
 
           scriptLoadedCallbacks[url] = undef;
-        }
+        };
 
         queueLoadedCallbacks.push({
           success: success,
@@ -10967,7 +12981,7 @@ define(
 
         loadScripts();
       };
-    }
+    };
 
     ScriptLoader.ScriptLoader = new ScriptLoader();
 
@@ -11000,14 +13014,14 @@ define(
   function (Arr, ScriptLoader, Tools) {
     var each = Tools.each;
 
-    function AddOnManager() {
+    var AddOnManager = function () {
       var self = this;
 
       self.items = [];
       self.urls = {};
       self.lookup = {};
       self._listeners = [];
-    }
+    };
 
     AddOnManager.prototype = {
       /**
@@ -11155,7 +13169,7 @@ define(
       load: function (name, addOnUrl, success, scope, failure) {
         var self = this, url = addOnUrl;
 
-        function loadDependencies() {
+        var loadDependencies = function () {
           var dependencies = self.dependencies(name);
 
           each(dependencies, function (dep) {
@@ -11171,7 +13185,7 @@ define(
               success.call(ScriptLoader);
             }
           }
-        }
+        };
 
         if (self.urls[name]) {
           return;
@@ -11270,257 +13284,6 @@ define(
  * });
  */
 
-define(
-  'ephox.katamari.api.Cell',
-
-  [
-  ],
-
-  function () {
-    var Cell = function (initial) {
-      var value = initial;
-
-      var get = function () {
-        return value;
-      };
-
-      var set = function (v) {
-        value = v;
-      };
-
-      var clone = function () {
-        return Cell(get());
-      };
-
-      return {
-        get: get,
-        set: set,
-        clone: clone
-      };
-    };
-
-    return Cell;
-  }
-);
-
-/**
- * NodeType.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-/**
- * Contains various node validation functions.
- *
- * @private
- * @class tinymce.dom.NodeType
- */
-define(
-  'tinymce.core.dom.NodeType',
-  [
-  ],
-  function () {
-    function isNodeType(type) {
-      return function (node) {
-        return !!node && node.nodeType == type;
-      };
-    }
-
-    var isElement = isNodeType(1);
-
-    function matchNodeNames(names) {
-      names = names.toLowerCase().split(' ');
-
-      return function (node) {
-        var i, name;
-
-        if (node && node.nodeType) {
-          name = node.nodeName.toLowerCase();
-
-          for (i = 0; i < names.length; i++) {
-            if (name === names[i]) {
-              return true;
-            }
-          }
-        }
-
-        return false;
-      };
-    }
-
-    function matchStyleValues(name, values) {
-      values = values.toLowerCase().split(' ');
-
-      return function (node) {
-        var i, cssValue;
-
-        if (isElement(node)) {
-          for (i = 0; i < values.length; i++) {
-            cssValue = node.ownerDocument.defaultView.getComputedStyle(node, null).getPropertyValue(name);
-            if (cssValue === values[i]) {
-              return true;
-            }
-          }
-        }
-
-        return false;
-      };
-    }
-
-    function hasPropValue(propName, propValue) {
-      return function (node) {
-        return isElement(node) && node[propName] === propValue;
-      };
-    }
-
-    function hasAttribute(attrName, attrValue) {
-      return function (node) {
-        return isElement(node) && node.hasAttribute(attrName);
-      };
-    }
-
-    function hasAttributeValue(attrName, attrValue) {
-      return function (node) {
-        return isElement(node) && node.getAttribute(attrName) === attrValue;
-      };
-    }
-
-    function isBogus(node) {
-      return isElement(node) && node.hasAttribute('data-mce-bogus');
-    }
-
-    function hasContentEditableState(value) {
-      return function (node) {
-        if (isElement(node)) {
-          if (node.contentEditable === value) {
-            return true;
-          }
-
-          if (node.getAttribute('data-mce-contenteditable') === value) {
-            return true;
-          }
-        }
-
-        return false;
-      };
-    }
-
-    return {
-      isText: isNodeType(3),
-      isElement: isElement,
-      isComment: isNodeType(8),
-      isBr: matchNodeNames('br'),
-      isContentEditableTrue: hasContentEditableState('true'),
-      isContentEditableFalse: hasContentEditableState('false'),
-      matchNodeNames: matchNodeNames,
-      hasPropValue: hasPropValue,
-      hasAttribute: hasAttribute,
-      hasAttributeValue: hasAttributeValue,
-      matchStyleValues: matchStyleValues,
-      isBogus: isBogus
-    };
-  }
-);
-/**
- * Fun.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-/**
- * Functional utility class.
- *
- * @private
- * @class tinymce.util.Fun
- */
-define(
-  'tinymce.core.util.Fun',
-  [
-  ],
-  function () {
-    var slice = [].slice;
-
-    function constant(value) {
-      return function () {
-        return value;
-      };
-    }
-
-    function negate(predicate) {
-      return function (x) {
-        return !predicate(x);
-      };
-    }
-
-    function compose(f, g) {
-      return function (x) {
-        return f(g(x));
-      };
-    }
-
-    function or() {
-      var args = slice.call(arguments);
-
-      return function (x) {
-        for (var i = 0; i < args.length; i++) {
-          if (args[i](x)) {
-            return true;
-          }
-        }
-
-        return false;
-      };
-    }
-
-    function and() {
-      var args = slice.call(arguments);
-
-      return function (x) {
-        for (var i = 0; i < args.length; i++) {
-          if (!args[i](x)) {
-            return false;
-          }
-        }
-
-        return true;
-      };
-    }
-
-    function curry(fn) {
-      var args = slice.call(arguments);
-
-      if (args.length - 1 >= fn.length) {
-        return fn.apply(this, args.slice(1));
-      }
-
-      return function () {
-        var tempArgs = args.concat([].slice.call(arguments));
-        return curry.apply(this, tempArgs);
-      };
-    }
-
-    function noop() {
-    }
-
-    return {
-      constant: constant,
-      negate: negate,
-      and: and,
-      or: or,
-      curry: curry,
-      compose: compose,
-      noop: noop
-    };
-  }
-);
 /**
  * Zwsp.js
  *
@@ -11592,27 +13355,27 @@ define(
     var isElement = NodeType.isElement,
       isText = NodeType.isText;
 
-    function isCaretContainerBlock(node) {
+    var isCaretContainerBlock = function (node) {
       if (isText(node)) {
         node = node.parentNode;
       }
 
       return isElement(node) && node.hasAttribute('data-mce-caret');
-    }
+    };
 
-    function isCaretContainerInline(node) {
+    var isCaretContainerInline = function (node) {
       return isText(node) && Zwsp.isZwsp(node.data);
-    }
+    };
 
-    function isCaretContainer(node) {
+    var isCaretContainer = function (node) {
       return isCaretContainerBlock(node) || isCaretContainerInline(node);
-    }
+    };
 
     var hasContent = function (node) {
       return node.firstChild !== node.lastChild || !NodeType.isBr(node.firstChild);
     };
 
-    function insertInline(node, before) {
+    var insertInline = function (node, before) {
       var doc, sibling, textNode, parentNode;
 
       doc = node.ownerDocument;
@@ -11653,7 +13416,7 @@ define(
       }
 
       return textNode;
-    }
+    };
 
     var prependInline = function (node) {
       if (NodeType.isText(node)) {
@@ -11687,13 +13450,13 @@ define(
       return pos && NodeType.isText(pos.container()) && pos.container().data.charAt(pos.offset() - 1) === Zwsp.ZWSP;
     };
 
-    function createBogusBr() {
+    var createBogusBr = function () {
       var br = document.createElement('br');
       br.setAttribute('data-mce-bogus', '1');
       return br;
-    }
+    };
 
-    function insertBlock(blockName, node, before) {
+    var insertBlock = function (blockName, node, before) {
       var doc, blockNode, parentNode;
 
       doc = node.ownerDocument;
@@ -11714,25 +13477,25 @@ define(
       }
 
       return blockNode;
-    }
+    };
 
-    function startsWithCaretContainer(node) {
+    var startsWithCaretContainer = function (node) {
       return isText(node) && node.data[0] == Zwsp.ZWSP;
-    }
+    };
 
-    function endsWithCaretContainer(node) {
+    var endsWithCaretContainer = function (node) {
       return isText(node) && node.data[node.data.length - 1] == Zwsp.ZWSP;
-    }
+    };
 
-    function trimBogusBr(elm) {
+    var trimBogusBr = function (elm) {
       var brs = elm.getElementsByTagName('br');
       var lastBr = brs[brs.length - 1];
       if (NodeType.isBogus(lastBr)) {
         lastBr.parentNode.removeChild(lastBr);
       }
-    }
+    };
 
-    function showCaretContainerBlock(caretContainer) {
+    var showCaretContainerBlock = function (caretContainer) {
       if (caretContainer && caretContainer.hasAttribute('data-mce-caret')) {
         trimBogusBr(caretContainer);
         caretContainer.removeAttribute('data-mce-caret');
@@ -11743,7 +13506,7 @@ define(
       }
 
       return null;
-    }
+    };
 
     return {
       isCaretContainer: isCaretContainer,
@@ -11762,673 +13525,6 @@ define(
     };
   }
 );
-/**
- * RangeUtils.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-/**
- * This class contains a few utility methods for ranges.
- *
- * @class tinymce.dom.RangeUtils
- */
-define(
-  'tinymce.core.dom.RangeUtils',
-  [
-    'tinymce.core.util.Tools',
-    'tinymce.core.dom.TreeWalker',
-    'tinymce.core.dom.NodeType',
-    'tinymce.core.caret.CaretContainer'
-  ],
-  function (Tools, TreeWalker, NodeType, CaretContainer) {
-    var each = Tools.each,
-      isContentEditableTrue = NodeType.isContentEditableTrue,
-      isContentEditableFalse = NodeType.isContentEditableFalse,
-      isCaretContainer = CaretContainer.isCaretContainer;
-
-    function hasCeProperty(node) {
-      return isContentEditableTrue(node) || isContentEditableFalse(node);
-    }
-
-    function getEndChild(container, index) {
-      var childNodes = container.childNodes;
-
-      index--;
-
-      if (index > childNodes.length - 1) {
-        index = childNodes.length - 1;
-      } else if (index < 0) {
-        index = 0;
-      }
-
-      return childNodes[index] || container;
-    }
-
-    function findParent(node, rootNode, predicate) {
-      while (node && node !== rootNode) {
-        if (predicate(node)) {
-          return node;
-        }
-
-        node = node.parentNode;
-      }
-
-      return null;
-    }
-
-    function hasParent(node, rootNode, predicate) {
-      return findParent(node, rootNode, predicate) !== null;
-    }
-
-    function hasParentWithName(node, rootNode, name) {
-      return hasParent(node, rootNode, function (node) {
-        return node.nodeName === name;
-      });
-    }
-
-    function isFormatterCaret(node) {
-      return node.id === '_mce_caret';
-    }
-
-    function isCeFalseCaretContainer(node, rootNode) {
-      return isCaretContainer(node) && hasParent(node, rootNode, isFormatterCaret) === false;
-    }
-
-    function RangeUtils(dom) {
-      /**
-       * Walks the specified range like object and executes the callback for each sibling collection it finds.
-       *
-       * @private
-       * @method walk
-       * @param {Object} rng Range like object.
-       * @param {function} callback Callback function to execute for each sibling collection.
-       */
-      this.walk = function (rng, callback) {
-        var startContainer = rng.startContainer,
-          startOffset = rng.startOffset,
-          endContainer = rng.endContainer,
-          endOffset = rng.endOffset,
-          ancestor, startPoint,
-          endPoint, node, parent, siblings, nodes;
-
-        // Handle table cell selection the table plugin enables
-        // you to fake select table cells and perform formatting actions on them
-        nodes = dom.select('td[data-mce-selected],th[data-mce-selected]');
-        if (nodes.length > 0) {
-          each(nodes, function (node) {
-            callback([node]);
-          });
-
-          return;
-        }
-
-        /**
-         * Excludes start/end text node if they are out side the range
-         *
-         * @private
-         * @param {Array} nodes Nodes to exclude items from.
-         * @return {Array} Array with nodes excluding the start/end container if needed.
-         */
-        function exclude(nodes) {
-          var node;
-
-          // First node is excluded
-          node = nodes[0];
-          if (node.nodeType === 3 && node === startContainer && startOffset >= node.nodeValue.length) {
-            nodes.splice(0, 1);
-          }
-
-          // Last node is excluded
-          node = nodes[nodes.length - 1];
-          if (endOffset === 0 && nodes.length > 0 && node === endContainer && node.nodeType === 3) {
-            nodes.splice(nodes.length - 1, 1);
-          }
-
-          return nodes;
-        }
-
-        /**
-         * Collects siblings
-         *
-         * @private
-         * @param {Node} node Node to collect siblings from.
-         * @param {String} name Name of the sibling to check for.
-         * @param {Node} endNode
-         * @return {Array} Array of collected siblings.
-         */
-        function collectSiblings(node, name, endNode) {
-          var siblings = [];
-
-          for (; node && node != endNode; node = node[name]) {
-            siblings.push(node);
-          }
-
-          return siblings;
-        }
-
-        /**
-         * Find an end point this is the node just before the common ancestor root.
-         *
-         * @private
-         * @param {Node} node Node to start at.
-         * @param {Node} root Root/ancestor element to stop just before.
-         * @return {Node} Node just before the root element.
-         */
-        function findEndPoint(node, root) {
-          do {
-            if (node.parentNode == root) {
-              return node;
-            }
-
-            node = node.parentNode;
-          } while (node);
-        }
-
-        function walkBoundary(startNode, endNode, next) {
-          var siblingName = next ? 'nextSibling' : 'previousSibling';
-
-          for (node = startNode, parent = node.parentNode; node && node != endNode; node = parent) {
-            parent = node.parentNode;
-            siblings = collectSiblings(node == startNode ? node : node[siblingName], siblingName);
-
-            if (siblings.length) {
-              if (!next) {
-                siblings.reverse();
-              }
-
-              callback(exclude(siblings));
-            }
-          }
-        }
-
-        // If index based start position then resolve it
-        if (startContainer.nodeType == 1 && startContainer.hasChildNodes()) {
-          startContainer = startContainer.childNodes[startOffset];
-        }
-
-        // If index based end position then resolve it
-        if (endContainer.nodeType == 1 && endContainer.hasChildNodes()) {
-          endContainer = getEndChild(endContainer, endOffset);
-        }
-
-        // Same container
-        if (startContainer == endContainer) {
-          return callback(exclude([startContainer]));
-        }
-
-        // Find common ancestor and end points
-        ancestor = dom.findCommonAncestor(startContainer, endContainer);
-
-        // Process left side
-        for (node = startContainer; node; node = node.parentNode) {
-          if (node === endContainer) {
-            return walkBoundary(startContainer, ancestor, true);
-          }
-
-          if (node === ancestor) {
-            break;
-          }
-        }
-
-        // Process right side
-        for (node = endContainer; node; node = node.parentNode) {
-          if (node === startContainer) {
-            return walkBoundary(endContainer, ancestor);
-          }
-
-          if (node === ancestor) {
-            break;
-          }
-        }
-
-        // Find start/end point
-        startPoint = findEndPoint(startContainer, ancestor) || startContainer;
-        endPoint = findEndPoint(endContainer, ancestor) || endContainer;
-
-        // Walk left leaf
-        walkBoundary(startContainer, startPoint, true);
-
-        // Walk the middle from start to end point
-        siblings = collectSiblings(
-          startPoint == startContainer ? startPoint : startPoint.nextSibling,
-          'nextSibling',
-          endPoint == endContainer ? endPoint.nextSibling : endPoint
-        );
-
-        if (siblings.length) {
-          callback(exclude(siblings));
-        }
-
-        // Walk right leaf
-        walkBoundary(endContainer, endPoint);
-      };
-
-      /**
-       * Splits the specified range at it's start/end points.
-       *
-       * @private
-       * @param {Range/RangeObject} rng Range to split.
-       * @return {Object} Range position object.
-       */
-      this.split = function (rng) {
-        var startContainer = rng.startContainer,
-          startOffset = rng.startOffset,
-          endContainer = rng.endContainer,
-          endOffset = rng.endOffset;
-
-        function splitText(node, offset) {
-          return node.splitText(offset);
-        }
-
-        // Handle single text node
-        if (startContainer == endContainer && startContainer.nodeType == 3) {
-          if (startOffset > 0 && startOffset < startContainer.nodeValue.length) {
-            endContainer = splitText(startContainer, startOffset);
-            startContainer = endContainer.previousSibling;
-
-            if (endOffset > startOffset) {
-              endOffset = endOffset - startOffset;
-              startContainer = endContainer = splitText(endContainer, endOffset).previousSibling;
-              endOffset = endContainer.nodeValue.length;
-              startOffset = 0;
-            } else {
-              endOffset = 0;
-            }
-          }
-        } else {
-          // Split startContainer text node if needed
-          if (startContainer.nodeType == 3 && startOffset > 0 && startOffset < startContainer.nodeValue.length) {
-            startContainer = splitText(startContainer, startOffset);
-            startOffset = 0;
-          }
-
-          // Split endContainer text node if needed
-          if (endContainer.nodeType == 3 && endOffset > 0 && endOffset < endContainer.nodeValue.length) {
-            endContainer = splitText(endContainer, endOffset).previousSibling;
-            endOffset = endContainer.nodeValue.length;
-          }
-        }
-
-        return {
-          startContainer: startContainer,
-          startOffset: startOffset,
-          endContainer: endContainer,
-          endOffset: endOffset
-        };
-      };
-
-      /**
-       * Normalizes the specified range by finding the closest best suitable caret location.
-       *
-       * @private
-       * @param {Range} rng Range to normalize.
-       * @return {Boolean} True/false if the specified range was normalized or not.
-       */
-      this.normalize = function (rng) {
-        var normalized = false, collapsed;
-
-        function normalizeEndPoint(start) {
-          var container, offset, walker, body = dom.getRoot(), node, nonEmptyElementsMap;
-          var directionLeft, isAfterNode;
-
-          function isTableCell(node) {
-            return node && /^(TD|TH|CAPTION)$/.test(node.nodeName);
-          }
-
-          function hasBrBeforeAfter(node, left) {
-            var walker = new TreeWalker(node, dom.getParent(node.parentNode, dom.isBlock) || body);
-
-            while ((node = walker[left ? 'prev' : 'next']())) {
-              if (node.nodeName === "BR") {
-                return true;
-              }
-            }
-          }
-
-          function hasContentEditableFalseParent(node) {
-            while (node && node != body) {
-              if (isContentEditableFalse(node)) {
-                return true;
-              }
-
-              node = node.parentNode;
-            }
-
-            return false;
-          }
-
-          function isPrevNode(node, name) {
-            return node.previousSibling && node.previousSibling.nodeName == name;
-          }
-
-          // Walks the dom left/right to find a suitable text node to move the endpoint into
-          // It will only walk within the current parent block or body and will stop if it hits a block or a BR/IMG
-          function findTextNodeRelative(left, startNode) {
-            var walker, lastInlineElement, parentBlockContainer;
-
-            startNode = startNode || container;
-            parentBlockContainer = dom.getParent(startNode.parentNode, dom.isBlock) || body;
-
-            // Lean left before the BR element if it's the only BR within a block element. Gecko bug: #6680
-            // This: <p><br>|</p> becomes <p>|<br></p>
-            if (left && startNode.nodeName == 'BR' && isAfterNode && dom.isEmpty(parentBlockContainer)) {
-              container = startNode.parentNode;
-              offset = dom.nodeIndex(startNode);
-              normalized = true;
-              return;
-            }
-
-            // Walk left until we hit a text node we can move to or a block/br/img
-            walker = new TreeWalker(startNode, parentBlockContainer);
-            while ((node = walker[left ? 'prev' : 'next']())) {
-              // Break if we hit a non content editable node
-              if (dom.getContentEditableParent(node) === "false" || isCeFalseCaretContainer(node, dom.getRoot())) {
-                return;
-              }
-
-              // Found text node that has a length
-              if (node.nodeType === 3 && node.nodeValue.length > 0) {
-                if (hasParentWithName(node, body, 'A') === false) {
-                  container = node;
-                  offset = left ? node.nodeValue.length : 0;
-                  normalized = true;
-                }
-
-                return;
-              }
-
-              // Break if we find a block or a BR/IMG/INPUT etc
-              if (dom.isBlock(node) || nonEmptyElementsMap[node.nodeName.toLowerCase()]) {
-                return;
-              }
-
-              lastInlineElement = node;
-            }
-
-            // Only fetch the last inline element when in caret mode for now
-            if (collapsed && lastInlineElement) {
-              container = lastInlineElement;
-              normalized = true;
-              offset = 0;
-            }
-          }
-
-          container = rng[(start ? 'start' : 'end') + 'Container'];
-          offset = rng[(start ? 'start' : 'end') + 'Offset'];
-          isAfterNode = container.nodeType == 1 && offset === container.childNodes.length;
-          nonEmptyElementsMap = dom.schema.getNonEmptyElements();
-          directionLeft = start;
-
-          if (isCaretContainer(container)) {
-            return;
-          }
-
-          if (container.nodeType == 1 && offset > container.childNodes.length - 1) {
-            directionLeft = false;
-          }
-
-          // If the container is a document move it to the body element
-          if (container.nodeType === 9) {
-            container = dom.getRoot();
-            offset = 0;
-          }
-
-          // If the container is body try move it into the closest text node or position
-          if (container === body) {
-            // If start is before/after a image, table etc
-            if (directionLeft) {
-              node = container.childNodes[offset > 0 ? offset - 1 : 0];
-              if (node) {
-                if (isCaretContainer(node)) {
-                  return;
-                }
-
-                if (nonEmptyElementsMap[node.nodeName] || node.nodeName == "TABLE") {
-                  return;
-                }
-              }
-            }
-
-            // Resolve the index
-            if (container.hasChildNodes()) {
-              offset = Math.min(!directionLeft && offset > 0 ? offset - 1 : offset, container.childNodes.length - 1);
-              container = container.childNodes[offset];
-              offset = 0;
-
-              // Don't normalize non collapsed selections like <p>[a</p><table></table>]
-              if (!collapsed && container === body.lastChild && container.nodeName === 'TABLE') {
-                return;
-              }
-
-              if (hasContentEditableFalseParent(container) || isCaretContainer(container)) {
-                return;
-              }
-
-              // Don't walk into elements that doesn't have any child nodes like a IMG
-              if (container.hasChildNodes() && !/TABLE/.test(container.nodeName)) {
-                // Walk the DOM to find a text node to place the caret at or a BR
-                node = container;
-                walker = new TreeWalker(container, body);
-
-                do {
-                  if (isContentEditableFalse(node) || isCaretContainer(node)) {
-                    normalized = false;
-                    break;
-                  }
-
-                  // Found a text node use that position
-                  if (node.nodeType === 3 && node.nodeValue.length > 0) {
-                    offset = directionLeft ? 0 : node.nodeValue.length;
-                    container = node;
-                    normalized = true;
-                    break;
-                  }
-
-                  // Found a BR/IMG/PRE element that we can place the caret before
-                  if (nonEmptyElementsMap[node.nodeName.toLowerCase()] && !isTableCell(node)) {
-                    offset = dom.nodeIndex(node);
-                    container = node.parentNode;
-
-                    // Put caret after image and pre tag when moving the end point
-                    if ((node.nodeName === "IMG" || node.nodeName === "PRE") && !directionLeft) {
-                      offset++;
-                    }
-
-                    normalized = true;
-                    break;
-                  }
-                } while ((node = (directionLeft ? walker.next() : walker.prev())));
-              }
-            }
-          }
-
-          // Lean the caret to the left if possible
-          if (collapsed) {
-            // So this: <b>x</b><i>|x</i>
-            // Becomes: <b>x|</b><i>x</i>
-            // Seems that only gecko has issues with this
-            if (container.nodeType === 3 && offset === 0) {
-              findTextNodeRelative(true);
-            }
-
-            // Lean left into empty inline elements when the caret is before a BR
-            // So this: <i><b></b><i>|<br></i>
-            // Becomes: <i><b>|</b><i><br></i>
-            // Seems that only gecko has issues with this.
-            // Special edge case for <p><a>x</a>|<br></p> since we don't want <p><a>x|</a><br></p>
-            if (container.nodeType === 1) {
-              node = container.childNodes[offset];
-
-              // Offset is after the containers last child
-              // then use the previous child for normalization
-              if (!node) {
-                node = container.childNodes[offset - 1];
-              }
-
-              if (node && node.nodeName === 'BR' && !isPrevNode(node, 'A') &&
-                !hasBrBeforeAfter(node) && !hasBrBeforeAfter(node, true)) {
-                findTextNodeRelative(true, node);
-              }
-            }
-          }
-
-          // Lean the start of the selection right if possible
-          // So this: x[<b>x]</b>
-          // Becomes: x<b>[x]</b>
-          if (directionLeft && !collapsed && container.nodeType === 3 && offset === container.nodeValue.length) {
-            findTextNodeRelative(false);
-          }
-
-          // Set endpoint if it was normalized
-          if (normalized) {
-            rng['set' + (start ? 'Start' : 'End')](container, offset);
-          }
-        }
-
-        collapsed = rng.collapsed;
-
-        normalizeEndPoint(true);
-
-        if (!collapsed) {
-          normalizeEndPoint();
-        }
-
-        // If it was collapsed then make sure it still is
-        if (normalized && collapsed) {
-          rng.collapse(true);
-        }
-
-        return normalized;
-      };
-    }
-
-    /**
-     * Compares two ranges and checks if they are equal.
-     *
-     * @static
-     * @method compareRanges
-     * @param {DOMRange} rng1 First range to compare.
-     * @param {DOMRange} rng2 First range to compare.
-     * @return {Boolean} true/false if the ranges are equal.
-     */
-    RangeUtils.compareRanges = function (rng1, rng2) {
-      return rng1 && rng2 &&
-        (rng1.startContainer === rng2.startContainer && rng1.startOffset === rng2.startOffset) &&
-        (rng1.endContainer === rng2.endContainer && rng1.endOffset === rng2.endOffset);
-    };
-
-    /**
-     * Finds the closest selection rect tries to get the range from that.
-     */
-    function findClosestIeRange(clientX, clientY, doc) {
-      var element, rng, rects;
-
-      element = doc.elementFromPoint(clientX, clientY);
-      rng = doc.body.createTextRange();
-
-      if (!element || element.tagName == 'HTML') {
-        element = doc.body;
-      }
-
-      rng.moveToElementText(element);
-      rects = Tools.toArray(rng.getClientRects());
-
-      rects = rects.sort(function (a, b) {
-        a = Math.abs(Math.max(a.top - clientY, a.bottom - clientY));
-        b = Math.abs(Math.max(b.top - clientY, b.bottom - clientY));
-
-        return a - b;
-      });
-
-      if (rects.length > 0) {
-        clientY = (rects[0].bottom + rects[0].top) / 2;
-
-        try {
-          rng.moveToPoint(clientX, clientY);
-          rng.collapse(true);
-
-          return rng;
-        } catch (ex) {
-          // At least we tried
-        }
-      }
-
-      return null;
-    }
-
-    function moveOutOfContentEditableFalse(rng, rootNode) {
-      var parentElement = rng && rng.parentElement ? rng.parentElement() : null;
-      return isContentEditableFalse(findParent(parentElement, rootNode, hasCeProperty)) ? null : rng;
-    }
-
-    /**
-     * Gets the caret range for the given x/y location.
-     *
-     * @static
-     * @method getCaretRangeFromPoint
-     * @param {Number} clientX X coordinate for range
-     * @param {Number} clientY Y coordinate for range
-     * @param {Document} doc Document that x/y are relative to
-     * @returns {Range} caret range
-     */
-    RangeUtils.getCaretRangeFromPoint = function (clientX, clientY, doc) {
-      var rng, point;
-
-      if (doc.caretPositionFromPoint) {
-        point = doc.caretPositionFromPoint(clientX, clientY);
-        rng = doc.createRange();
-        rng.setStart(point.offsetNode, point.offset);
-        rng.collapse(true);
-      } else if (doc.caretRangeFromPoint) {
-        rng = doc.caretRangeFromPoint(clientX, clientY);
-      } else if (doc.body.createTextRange) {
-        rng = doc.body.createTextRange();
-
-        try {
-          rng.moveToPoint(clientX, clientY);
-          rng.collapse(true);
-        } catch (ex) {
-          rng = findClosestIeRange(clientX, clientY, doc);
-        }
-
-        return moveOutOfContentEditableFalse(rng, doc.body);
-      }
-
-      return rng;
-    };
-
-    RangeUtils.getSelectedNode = function (range) {
-      var startContainer = range.startContainer,
-        startOffset = range.startOffset;
-
-      if (startContainer.hasChildNodes() && range.endOffset == startOffset + 1) {
-        return startContainer.childNodes[startOffset];
-      }
-
-      return null;
-    };
-
-    RangeUtils.getNode = function (container, offset) {
-      if (container.nodeType === 1 && container.hasChildNodes()) {
-        if (offset >= container.childNodes.length) {
-          offset = container.childNodes.length - 1;
-        }
-
-        container = container.childNodes[offset];
-      }
-
-      return container;
-    };
-
-    return RangeUtils;
-  }
-);
-
 /**
  * CaretCandidate.js
  *
@@ -12463,7 +13559,7 @@ define(
       isTable = NodeType.matchNodeNames('table'),
       isCaretContainer = CaretContainer.isCaretContainer;
 
-    function isCaretCandidate(node) {
+    var isCaretCandidate = function (node) {
       if (isCaretContainer(node)) {
         return false;
       }
@@ -12477,9 +13573,9 @@ define(
       }
 
       return isAtomicInline(node) || isBr(node) || isTable(node) || isContentEditableFalse(node);
-    }
+    };
 
-    function isInEditable(node, rootNode) {
+    var isInEditable = function (node, rootNode) {
       for (node = node.parentNode; node && node != rootNode; node = node.parentNode) {
         if (isContentEditableFalse(node)) {
           return false;
@@ -12491,9 +13587,9 @@ define(
       }
 
       return true;
-    }
+    };
 
-    function isAtomicContentEditableFalse(node) {
+    var isAtomicContentEditableFalse = function (node) {
       if (!isContentEditableFalse(node)) {
         return false;
       }
@@ -12501,15 +13597,15 @@ define(
       return Arr.reduce(node.getElementsByTagName('*'), function (result, elm) {
         return result || isContentEditableTrue(elm);
       }, false) !== true;
-    }
+    };
 
-    function isAtomic(node) {
+    var isAtomic = function (node) {
       return isAtomicInline(node) || isAtomicContentEditableFalse(node);
-    }
+    };
 
-    function isEditableCaretCandidate(node, rootNode) {
+    var isEditableCaretCandidate = function (node, rootNode) {
       return isCaretCandidate(node) && isInEditable(node, rootNode);
-    }
+    };
 
     return {
       isCaretCandidate: isCaretCandidate,
@@ -12542,7 +13638,7 @@ define(
   function () {
     var round = Math.round;
 
-    function clone(rect) {
+    var clone = function (rect) {
       if (!rect) {
         return { left: 0, top: 0, bottom: 0, right: 0, width: 0, height: 0 };
       }
@@ -12555,9 +13651,9 @@ define(
         width: round(rect.width),
         height: round(rect.height)
       };
-    }
+    };
 
-    function collapse(clientRect, toStart) {
+    var collapse = function (clientRect, toStart) {
       clientRect = clone(clientRect);
 
       if (toStart) {
@@ -12570,23 +13666,23 @@ define(
       clientRect.width = 0;
 
       return clientRect;
-    }
+    };
 
-    function isEqual(rect1, rect2) {
+    var isEqual = function (rect1, rect2) {
       return (
         rect1.left === rect2.left &&
         rect1.top === rect2.top &&
         rect1.bottom === rect2.bottom &&
         rect1.right === rect2.right
       );
-    }
+    };
 
-    function isValidOverflow(overflowY, clientRect1, clientRect2) {
+    var isValidOverflow = function (overflowY, clientRect1, clientRect2) {
       return overflowY >= 0 && overflowY <= Math.min(clientRect1.height, clientRect2.height) / 2;
 
-    }
+    };
 
-    function isAbove(clientRect1, clientRect2) {
+    var isAbove = function (clientRect1, clientRect2) {
       if ((clientRect1.bottom - clientRect1.height / 2) < clientRect2.top) {
         return true;
       }
@@ -12596,9 +13692,9 @@ define(
       }
 
       return isValidOverflow(clientRect2.top - clientRect1.bottom, clientRect1, clientRect2);
-    }
+    };
 
-    function isBelow(clientRect1, clientRect2) {
+    var isBelow = function (clientRect1, clientRect2) {
       if (clientRect1.top > clientRect2.bottom) {
         return true;
       }
@@ -12608,17 +13704,17 @@ define(
       }
 
       return isValidOverflow(clientRect2.bottom - clientRect1.top, clientRect1, clientRect2);
-    }
+    };
 
-    function isLeft(clientRect1, clientRect2) {
+    var isLeft = function (clientRect1, clientRect2) {
       return clientRect1.left < clientRect2.left;
-    }
+    };
 
-    function isRight(clientRect1, clientRect2) {
+    var isRight = function (clientRect1, clientRect2) {
       return clientRect1.right > clientRect2.right;
-    }
+    };
 
-    function compare(clientRect1, clientRect2) {
+    var compare = function (clientRect1, clientRect2) {
       if (isAbove(clientRect1, clientRect2)) {
         return -1;
       }
@@ -12636,16 +13732,16 @@ define(
       }
 
       return 0;
-    }
+    };
 
-    function containsXY(clientRect, clientX, clientY) {
+    var containsXY = function (clientRect, clientX, clientY) {
       return (
         clientX >= clientRect.left &&
         clientX <= clientRect.right &&
         clientY >= clientRect.top &&
         clientY <= clientRect.bottom
       );
-    }
+    };
 
     return {
       clone: clone,
@@ -12657,6 +13753,51 @@ define(
       isRight: isRight,
       compare: compare,
       containsXY: containsXY
+    };
+  }
+);
+
+/**
+ * RangeNodes.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.selection.RangeNodes',
+  [
+  ],
+  function () {
+    var getSelectedNode = function (range) {
+      var startContainer = range.startContainer,
+        startOffset = range.startOffset;
+
+      if (startContainer.hasChildNodes() && range.endOffset == startOffset + 1) {
+        return startContainer.childNodes[startOffset];
+      }
+
+      return null;
+    };
+
+    var getNode = function (container, offset) {
+      if (container.nodeType === 1 && container.hasChildNodes()) {
+        if (offset >= container.childNodes.length) {
+          offset = container.childNodes.length - 1;
+        }
+
+        container = container.childNodes[offset];
+      }
+
+      return container;
+    };
+
+    return {
+      getSelectedNode: getSelectedNode,
+      getNode: getNode
     };
   }
 );
@@ -12710,12 +13851,108 @@ define(
       "\uAAEC-\uAAED\uAAF6\uABE5\uABE8\uABED\uFB1E\uFE00-\uFE0F\uFE20-\uFE2F\uFF9E-\uFF9F]"
     );
 
-    function isExtendingChar(ch) {
+    var isExtendingChar = function (ch) {
       return typeof ch == "string" && ch.charCodeAt(0) >= 768 && extendingChars.test(ch);
-    }
+    };
 
     return {
       isExtendingChar: isExtendingChar
+    };
+  }
+);
+/**
+ * Fun.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+/**
+ * Functional utility class.
+ *
+ * @private
+ * @class tinymce.util.Fun
+ */
+define(
+  'tinymce.core.util.Fun',
+  [
+  ],
+  function () {
+    var slice = [].slice;
+
+    var constant = function (value) {
+      return function () {
+        return value;
+      };
+    };
+
+    var negate = function (predicate) {
+      return function (x) {
+        return !predicate(x);
+      };
+    };
+
+    var compose = function (f, g) {
+      return function (x) {
+        return f(g(x));
+      };
+    };
+
+    var or = function () {
+      var args = slice.call(arguments);
+
+      return function (x) {
+        for (var i = 0; i < args.length; i++) {
+          if (args[i](x)) {
+            return true;
+          }
+        }
+
+        return false;
+      };
+    };
+
+    var and = function () {
+      var args = slice.call(arguments);
+
+      return function (x) {
+        for (var i = 0; i < args.length; i++) {
+          if (!args[i](x)) {
+            return false;
+          }
+        }
+
+        return true;
+      };
+    };
+
+    var curry = function (fn) {
+      var args = slice.call(arguments);
+
+      if (args.length - 1 >= fn.length) {
+        return fn.apply(this, args.slice(1));
+      }
+
+      return function () {
+        var tempArgs = args.concat([].slice.call(arguments));
+        return curry.apply(this, tempArgs);
+      };
+    };
+
+    var noop = function () {
+    };
+
+    return {
+      constant: constant,
+      negate: negate,
+      and: and,
+      or: or,
+      curry: curry,
+      compose: compose,
+      noop: noop
     };
   }
 );
@@ -12743,15 +13980,15 @@ define(
 define(
   'tinymce.core.caret.CaretPosition',
   [
-    "tinymce.core.util.Fun",
-    "tinymce.core.dom.NodeType",
-    "tinymce.core.dom.DOMUtils",
-    "tinymce.core.dom.RangeUtils",
-    "tinymce.core.caret.CaretCandidate",
-    "tinymce.core.geom.ClientRect",
-    "tinymce.core.text.ExtendingChar"
+    'tinymce.core.caret.CaretCandidate',
+    'tinymce.core.dom.DOMUtils',
+    'tinymce.core.dom.NodeType',
+    'tinymce.core.geom.ClientRect',
+    'tinymce.core.selection.RangeNodes',
+    'tinymce.core.text.ExtendingChar',
+    'tinymce.core.util.Fun'
   ],
-  function (Fun, NodeType, DOMUtils, RangeUtils, CaretCandidate, ClientRect, ExtendingChar) {
+  function (CaretCandidate, DOMUtils, NodeType, ClientRect, RangeNodes, ExtendingChar, Fun) {
     var isElement = NodeType.isElement,
       isCaretCandidate = CaretCandidate.isCaretCandidate,
       isBlock = NodeType.matchStyleValues('display', 'block table'),
@@ -12761,17 +13998,17 @@ define(
       isText = NodeType.isText,
       isBr = NodeType.isBr,
       nodeIndex = DOMUtils.nodeIndex,
-      resolveIndex = RangeUtils.getNode;
+      resolveIndex = RangeNodes.getNode;
 
-    function createRange(doc) {
+    var createRange = function (doc) {
       return "createRange" in doc ? doc.createRange() : DOMUtils.DOM.createRng();
-    }
+    };
 
-    function isWhiteSpace(chr) {
+    var isWhiteSpace = function (chr) {
       return chr && /[\r\n\t ]/.test(chr);
-    }
+    };
 
-    function isHiddenWhiteSpaceRange(range) {
+    var isHiddenWhiteSpaceRange = function (range) {
       var container = range.startContainer,
         offset = range.startOffset,
         text;
@@ -12785,14 +14022,14 @@ define(
       }
 
       return false;
-    }
+    };
 
-    function getCaretPositionClientRects(caretPosition) {
+    var getCaretPositionClientRects = function (caretPosition) {
       var clientRects = [], beforeNode, node;
 
       // Hack for older WebKit versions that doesn't
       // support getBoundingClientRect on BR elements
-      function getBrClientRect(brNode) {
+      var getBrClientRect = function (brNode) {
         var doc = brNode.ownerDocument,
           rng = createRange(doc),
           nbsp = doc.createTextNode('\u00a0'),
@@ -12806,9 +14043,9 @@ define(
         parentNode.removeChild(nbsp);
 
         return clientRect;
-      }
+      };
 
-      function getBoundingClientRect(item) {
+      var getBoundingClientRect = function (item) {
         var clientRect, clientRects;
 
         clientRects = item.getClientRects();
@@ -12823,17 +14060,17 @@ define(
         }
 
         return clientRect;
-      }
+      };
 
-      function collapseAndInflateWidth(clientRect, toStart) {
+      var collapseAndInflateWidth = function (clientRect, toStart) {
         clientRect = ClientRect.collapse(clientRect, toStart);
         clientRect.width = 1;
         clientRect.right = clientRect.left + 1;
 
         return clientRect;
-      }
+      };
 
-      function addUniqueAndValidRect(clientRect) {
+      var addUniqueAndValidRect = function (clientRect) {
         if (clientRect.height === 0) {
           return;
         }
@@ -12845,9 +14082,9 @@ define(
         }
 
         clientRects.push(clientRect);
-      }
+      };
 
-      function addCharacterOffset(container, offset) {
+      var addCharacterOffset = function (container, offset) {
         var range = createRange(container.ownerDocument);
 
         if (offset < container.data.length) {
@@ -12885,7 +14122,7 @@ define(
             addUniqueAndValidRect(collapseAndInflateWidth(getBoundingClientRect(range), true));
           }
         }
-      }
+      };
 
       if (isText(caretPosition.container())) {
         addCharacterOffset(caretPosition.container(), caretPosition.offset());
@@ -12927,7 +14164,7 @@ define(
       }
 
       return clientRects;
-    }
+    };
 
     /**
      * Represents a location within the document by a container and an offset.
@@ -12937,24 +14174,24 @@ define(
      * @param {Number} offset Offset within that container node.
      * @param {Array} clientRects Optional client rects array for the position.
      */
-    function CaretPosition(container, offset, clientRects) {
-      function isAtStart() {
+    var CaretPosition = function (container, offset, clientRects) {
+      var isAtStart = function () {
         if (isText(container)) {
           return offset === 0;
         }
 
         return offset === 0;
-      }
+      };
 
-      function isAtEnd() {
+      var isAtEnd = function () {
         if (isText(container)) {
           return offset >= container.data.length;
         }
 
         return offset >= container.childNodes.length;
-      }
+      };
 
-      function toRange() {
+      var toRange = function () {
         var range;
 
         range = createRange(container.ownerDocument);
@@ -12962,27 +14199,27 @@ define(
         range.setEnd(container, offset);
 
         return range;
-      }
+      };
 
-      function getClientRects() {
+      var getClientRects = function () {
         if (!clientRects) {
           clientRects = getCaretPositionClientRects(new CaretPosition(container, offset));
         }
 
         return clientRects;
-      }
+      };
 
-      function isVisible() {
+      var isVisible = function () {
         return getClientRects().length > 0;
-      }
+      };
 
-      function isEqual(caretPosition) {
+      var isEqual = function (caretPosition) {
         return caretPosition && container === caretPosition.container() && offset === caretPosition.offset();
-      }
+      };
 
-      function getNode(before) {
+      var getNode = function (before) {
         return resolveIndex(container, before ? offset - 1 : offset);
-      }
+      };
 
       return {
         /**
@@ -13061,7 +14298,7 @@ define(
          */
         getNode: getNode
       };
-    }
+    };
 
     /**
      * Creates a caret position from the start of a range.
@@ -13123,711 +14360,6 @@ define(
   }
 );
 /**
- * CaretBookmark.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-/**
- * This module creates or resolves xpath like string representation of a CaretPositions.
- *
- * The format is a / separated list of chunks with:
- * <element|text()>[index|after|before]
- *
- * For example:
- *  p[0]/b[0]/text()[0],1 = <p><b>a|c</b></p>
- *  p[0]/img[0],before = <p>|<img></p>
- *  p[0]/img[0],after = <p><img>|</p>
- *
- * @private
- * @static
- * @class tinymce.caret.CaretBookmark
- * @example
- * var bookmark = CaretBookmark.create(rootElm, CaretPosition.before(rootElm.firstChild));
- * var caretPosition = CaretBookmark.resolve(bookmark);
- */
-define(
-  'tinymce.core.caret.CaretBookmark',
-  [
-    'tinymce.core.dom.NodeType',
-    'tinymce.core.dom.DOMUtils',
-    'tinymce.core.util.Fun',
-    'tinymce.core.util.Arr',
-    'tinymce.core.caret.CaretPosition'
-  ],
-  function (NodeType, DomUtils, Fun, Arr, CaretPosition) {
-    var isText = NodeType.isText,
-      isBogus = NodeType.isBogus,
-      nodeIndex = DomUtils.nodeIndex;
-
-    function normalizedParent(node) {
-      var parentNode = node.parentNode;
-
-      if (isBogus(parentNode)) {
-        return normalizedParent(parentNode);
-      }
-
-      return parentNode;
-    }
-
-    function getChildNodes(node) {
-      if (!node) {
-        return [];
-      }
-
-      return Arr.reduce(node.childNodes, function (result, node) {
-        if (isBogus(node) && node.nodeName != 'BR') {
-          result = result.concat(getChildNodes(node));
-        } else {
-          result.push(node);
-        }
-
-        return result;
-      }, []);
-    }
-
-    function normalizedTextOffset(textNode, offset) {
-      while ((textNode = textNode.previousSibling)) {
-        if (!isText(textNode)) {
-          break;
-        }
-
-        offset += textNode.data.length;
-      }
-
-      return offset;
-    }
-
-    function equal(targetValue) {
-      return function (value) {
-        return targetValue === value;
-      };
-    }
-
-    function normalizedNodeIndex(node) {
-      var nodes, index, numTextFragments;
-
-      nodes = getChildNodes(normalizedParent(node));
-      index = Arr.findIndex(nodes, equal(node), node);
-      nodes = nodes.slice(0, index + 1);
-      numTextFragments = Arr.reduce(nodes, function (result, node, i) {
-        if (isText(node) && isText(nodes[i - 1])) {
-          result++;
-        }
-
-        return result;
-      }, 0);
-
-      nodes = Arr.filter(nodes, NodeType.matchNodeNames(node.nodeName));
-      index = Arr.findIndex(nodes, equal(node), node);
-
-      return index - numTextFragments;
-    }
-
-    function createPathItem(node) {
-      var name;
-
-      if (isText(node)) {
-        name = 'text()';
-      } else {
-        name = node.nodeName.toLowerCase();
-      }
-
-      return name + '[' + normalizedNodeIndex(node) + ']';
-    }
-
-    function parentsUntil(rootNode, node, predicate) {
-      var parents = [];
-
-      for (node = node.parentNode; node != rootNode; node = node.parentNode) {
-        if (predicate && predicate(node)) {
-          break;
-        }
-
-        parents.push(node);
-      }
-
-      return parents;
-    }
-
-    function create(rootNode, caretPosition) {
-      var container, offset, path = [],
-        outputOffset, childNodes, parents;
-
-      container = caretPosition.container();
-      offset = caretPosition.offset();
-
-      if (isText(container)) {
-        outputOffset = normalizedTextOffset(container, offset);
-      } else {
-        childNodes = container.childNodes;
-        if (offset >= childNodes.length) {
-          outputOffset = 'after';
-          offset = childNodes.length - 1;
-        } else {
-          outputOffset = 'before';
-        }
-
-        container = childNodes[offset];
-      }
-
-      path.push(createPathItem(container));
-      parents = parentsUntil(rootNode, container);
-      parents = Arr.filter(parents, Fun.negate(NodeType.isBogus));
-      path = path.concat(Arr.map(parents, function (node) {
-        return createPathItem(node);
-      }));
-
-      return path.reverse().join('/') + ',' + outputOffset;
-    }
-
-    function resolvePathItem(node, name, index) {
-      var nodes = getChildNodes(node);
-
-      nodes = Arr.filter(nodes, function (node, index) {
-        return !isText(node) || !isText(nodes[index - 1]);
-      });
-
-      nodes = Arr.filter(nodes, NodeType.matchNodeNames(name));
-      return nodes[index];
-    }
-
-    function findTextPosition(container, offset) {
-      var node = container, targetOffset = 0, dataLen;
-
-      while (isText(node)) {
-        dataLen = node.data.length;
-
-        if (offset >= targetOffset && offset <= targetOffset + dataLen) {
-          container = node;
-          offset = offset - targetOffset;
-          break;
-        }
-
-        if (!isText(node.nextSibling)) {
-          container = node;
-          offset = dataLen;
-          break;
-        }
-
-        targetOffset += dataLen;
-        node = node.nextSibling;
-      }
-
-      if (offset > container.data.length) {
-        offset = container.data.length;
-      }
-
-      return new CaretPosition(container, offset);
-    }
-
-    function resolve(rootNode, path) {
-      var parts, container, offset;
-
-      if (!path) {
-        return null;
-      }
-
-      parts = path.split(',');
-      path = parts[0].split('/');
-      offset = parts.length > 1 ? parts[1] : 'before';
-
-      container = Arr.reduce(path, function (result, value) {
-        value = /([\w\-\(\)]+)\[([0-9]+)\]/.exec(value);
-        if (!value) {
-          return null;
-        }
-
-        if (value[1] === 'text()') {
-          value[1] = '#text';
-        }
-
-        return resolvePathItem(result, value[1], parseInt(value[2], 10));
-      }, rootNode);
-
-      if (!container) {
-        return null;
-      }
-
-      if (!isText(container)) {
-        if (offset === 'after') {
-          offset = nodeIndex(container) + 1;
-        } else {
-          offset = nodeIndex(container);
-        }
-
-        return new CaretPosition(container.parentNode, offset);
-      }
-
-      return findTextPosition(container, parseInt(offset, 10));
-    }
-
-    return {
-      /**
-       * Create a xpath bookmark location for the specified caret position.
-       *
-       * @method create
-       * @param {Node} rootNode Root node to create bookmark within.
-       * @param {tinymce.caret.CaretPosition} caretPosition Caret position within the root node.
-       * @return {String} String xpath like location of caret position.
-       */
-      create: create,
-
-      /**
-       * Resolves a xpath like bookmark location to the a caret position.
-       *
-       * @method resolve
-       * @param {Node} rootNode Root node to resolve xpath bookmark within.
-       * @param {String} bookmark Bookmark string to resolve.
-       * @return {tinymce.caret.CaretPosition} Caret position resolved from xpath like bookmark.
-       */
-      resolve: resolve
-    };
-  }
-);
-/**
- * BookmarkManager.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-/**
- * This class handles selection bookmarks.
- *
- * @class tinymce.dom.BookmarkManager
- */
-define(
-  'tinymce.core.dom.BookmarkManager',
-  [
-    'tinymce.core.caret.CaretBookmark',
-    'tinymce.core.caret.CaretContainer',
-    'tinymce.core.caret.CaretPosition',
-    'tinymce.core.dom.NodeType',
-    'tinymce.core.dom.RangeUtils',
-    'tinymce.core.Env',
-    'tinymce.core.text.Zwsp',
-    'tinymce.core.util.Tools'
-  ],
-  function (CaretBookmark, CaretContainer, CaretPosition, NodeType, RangeUtils, Env, Zwsp, Tools) {
-    var isContentEditableFalse = NodeType.isContentEditableFalse;
-
-    var getNormalizedTextOffset = function (container, offset) {
-      var node, trimmedOffset;
-
-      trimmedOffset = Zwsp.trim(container.data.slice(0, offset)).length;
-      for (node = container.previousSibling; node && node.nodeType === 3; node = node.previousSibling) {
-        trimmedOffset += Zwsp.trim(node.data).length;
-      }
-
-      return trimmedOffset;
-    };
-
-    var trimEmptyTextNode = function (node) {
-      if (NodeType.isText(node) && node.data.length === 0) {
-        node.parentNode.removeChild(node);
-      }
-    };
-
-    /**
-     * Constructs a new BookmarkManager instance for a specific selection instance.
-     *
-     * @constructor
-     * @method BookmarkManager
-     * @param {tinymce.dom.Selection} selection Selection instance to handle bookmarks for.
-     */
-    function BookmarkManager(selection) {
-      var dom = selection.dom;
-
-      /**
-       * Returns a bookmark location for the current selection. This bookmark object
-       * can then be used to restore the selection after some content modification to the document.
-       *
-       * @method getBookmark
-       * @param {Number} type Optional state if the bookmark should be simple or not. Default is complex.
-       * @param {Boolean} normalized Optional state that enables you to get a position that it would be after normalization.
-       * @return {Object} Bookmark object, use moveToBookmark with this object to restore the selection.
-       * @example
-       * // Stores a bookmark of the current selection
-       * var bm = tinymce.activeEditor.selection.getBookmark();
-       *
-       * tinymce.activeEditor.setContent(tinymce.activeEditor.getContent() + 'Some new content');
-       *
-       * // Restore the selection bookmark
-       * tinymce.activeEditor.selection.moveToBookmark(bm);
-       */
-      this.getBookmark = function (type, normalized) {
-        var rng, rng2, id, collapsed, name, element, chr = '&#xFEFF;', styles;
-
-        function findIndex(name, element) {
-          var count = 0;
-
-          Tools.each(dom.select(name), function (node) {
-            if (node.getAttribute('data-mce-bogus') === 'all') {
-              return;
-            }
-
-            if (node == element) {
-              return false;
-            }
-
-            count++;
-          });
-
-          return count;
-        }
-
-        function normalizeTableCellSelection(rng) {
-          function moveEndPoint(start) {
-            var container, offset, childNodes, prefix = start ? 'start' : 'end';
-
-            container = rng[prefix + 'Container'];
-            offset = rng[prefix + 'Offset'];
-
-            if (container.nodeType == 1 && container.nodeName == "TR") {
-              childNodes = container.childNodes;
-              container = childNodes[Math.min(start ? offset : offset - 1, childNodes.length - 1)];
-              if (container) {
-                offset = start ? 0 : container.childNodes.length;
-                rng['set' + (start ? 'Start' : 'End')](container, offset);
-              }
-            }
-          }
-
-          moveEndPoint(true);
-          moveEndPoint();
-
-          return rng;
-        }
-
-        function getLocation(rng) {
-          var root = dom.getRoot(), bookmark = {};
-
-          function getPoint(rng, start) {
-            var container = rng[start ? 'startContainer' : 'endContainer'],
-              offset = rng[start ? 'startOffset' : 'endOffset'], point = [], childNodes, after = 0;
-
-            if (container.nodeType === 3) {
-              point.push(normalized ? getNormalizedTextOffset(container, offset) : offset);
-            } else {
-              childNodes = container.childNodes;
-
-              if (offset >= childNodes.length && childNodes.length) {
-                after = 1;
-                offset = Math.max(0, childNodes.length - 1);
-              }
-
-              point.push(dom.nodeIndex(childNodes[offset], normalized) + after);
-            }
-
-            for (; container && container != root; container = container.parentNode) {
-              point.push(dom.nodeIndex(container, normalized));
-            }
-
-            return point;
-          }
-
-          bookmark.start = getPoint(rng, true);
-
-          if (!selection.isCollapsed()) {
-            bookmark.end = getPoint(rng);
-          }
-
-          return bookmark;
-        }
-
-        function findAdjacentContentEditableFalseElm(rng) {
-          function findSibling(node, offset) {
-            var sibling;
-
-            if (NodeType.isElement(node)) {
-              node = RangeUtils.getNode(node, offset);
-              if (isContentEditableFalse(node)) {
-                return node;
-              }
-            }
-
-            if (CaretContainer.isCaretContainer(node)) {
-              if (NodeType.isText(node) && CaretContainer.isCaretContainerBlock(node)) {
-                node = node.parentNode;
-              }
-
-              sibling = node.previousSibling;
-              if (isContentEditableFalse(sibling)) {
-                return sibling;
-              }
-
-              sibling = node.nextSibling;
-              if (isContentEditableFalse(sibling)) {
-                return sibling;
-              }
-            }
-          }
-
-          return findSibling(rng.startContainer, rng.startOffset) || findSibling(rng.endContainer, rng.endOffset);
-        }
-
-        if (type == 2) {
-          element = selection.getNode();
-          name = element ? element.nodeName : null;
-          rng = selection.getRng();
-
-          if (isContentEditableFalse(element) || name == 'IMG') {
-            return { name: name, index: findIndex(name, element) };
-          }
-
-          element = findAdjacentContentEditableFalseElm(rng);
-          if (element) {
-            name = element.tagName;
-            return { name: name, index: findIndex(name, element) };
-          }
-
-          return getLocation(rng);
-        }
-
-        if (type == 3) {
-          rng = selection.getRng();
-
-          return {
-            start: CaretBookmark.create(dom.getRoot(), CaretPosition.fromRangeStart(rng)),
-            end: CaretBookmark.create(dom.getRoot(), CaretPosition.fromRangeEnd(rng))
-          };
-        }
-
-        // Handle simple range
-        if (type) {
-          return { rng: selection.getRng() };
-        }
-
-        rng = selection.getRng();
-        id = dom.uniqueId();
-        collapsed = selection.isCollapsed();
-        styles = 'overflow:hidden;line-height:0px';
-        element = selection.getNode();
-        name = element.nodeName;
-        if (name == 'IMG') {
-          return { name: name, index: findIndex(name, element) };
-        }
-
-        // W3C method
-        rng2 = normalizeTableCellSelection(rng.cloneRange());
-
-        // Insert end marker
-        if (!collapsed) {
-          rng2.collapse(false);
-          var endBookmarkNode = dom.create('span', { 'data-mce-type': "bookmark", id: id + '_end', style: styles }, chr);
-          rng2.insertNode(endBookmarkNode);
-          trimEmptyTextNode(endBookmarkNode.nextSibling);
-        }
-
-        rng = normalizeTableCellSelection(rng);
-        rng.collapse(true);
-        var startBookmarkNode = dom.create('span', { 'data-mce-type': "bookmark", id: id + '_start', style: styles }, chr);
-        rng.insertNode(startBookmarkNode);
-        trimEmptyTextNode(startBookmarkNode.previousSibling);
-
-        selection.moveToBookmark({ id: id, keep: 1 });
-
-        return { id: id };
-      };
-
-      /**
-       * Restores the selection to the specified bookmark.
-       *
-       * @method moveToBookmark
-       * @param {Object} bookmark Bookmark to restore selection from.
-       * @return {Boolean} true/false if it was successful or not.
-       * @example
-       * // Stores a bookmark of the current selection
-       * var bm = tinymce.activeEditor.selection.getBookmark();
-       *
-       * tinymce.activeEditor.setContent(tinymce.activeEditor.getContent() + 'Some new content');
-       *
-       * // Restore the selection bookmark
-       * tinymce.activeEditor.selection.moveToBookmark(bm);
-       */
-      this.moveToBookmark = function (bookmark) {
-        var rng, root, startContainer, endContainer, startOffset, endOffset;
-
-        function setEndPoint(start) {
-          var point = bookmark[start ? 'start' : 'end'], i, node, offset, children;
-
-          if (point) {
-            offset = point[0];
-
-            // Find container node
-            for (node = root, i = point.length - 1; i >= 1; i--) {
-              children = node.childNodes;
-
-              if (point[i] > children.length - 1) {
-                return;
-              }
-
-              node = children[point[i]];
-            }
-
-            // Move text offset to best suitable location
-            if (node.nodeType === 3) {
-              offset = Math.min(point[0], node.nodeValue.length);
-            }
-
-            // Move element offset to best suitable location
-            if (node.nodeType === 1) {
-              offset = Math.min(point[0], node.childNodes.length);
-            }
-
-            // Set offset within container node
-            if (start) {
-              rng.setStart(node, offset);
-            } else {
-              rng.setEnd(node, offset);
-            }
-          }
-
-          return true;
-        }
-
-        function restoreEndPoint(suffix) {
-          var marker = dom.get(bookmark.id + '_' + suffix), node, idx, next, prev, keep = bookmark.keep;
-
-          if (marker) {
-            node = marker.parentNode;
-
-            if (suffix == 'start') {
-              if (!keep) {
-                idx = dom.nodeIndex(marker);
-              } else {
-                node = marker.firstChild;
-                idx = 1;
-              }
-
-              startContainer = endContainer = node;
-              startOffset = endOffset = idx;
-            } else {
-              if (!keep) {
-                idx = dom.nodeIndex(marker);
-              } else {
-                node = marker.firstChild;
-                idx = 1;
-              }
-
-              endContainer = node;
-              endOffset = idx;
-            }
-
-            if (!keep) {
-              prev = marker.previousSibling;
-              next = marker.nextSibling;
-
-              // Remove all marker text nodes
-              Tools.each(Tools.grep(marker.childNodes), function (node) {
-                if (node.nodeType == 3) {
-                  node.nodeValue = node.nodeValue.replace(/\uFEFF/g, '');
-                }
-              });
-
-              // Remove marker but keep children if for example contents where inserted into the marker
-              // Also remove duplicated instances of the marker for example by a
-              // split operation or by WebKit auto split on paste feature
-              while ((marker = dom.get(bookmark.id + '_' + suffix))) {
-                dom.remove(marker, 1);
-              }
-
-              // If siblings are text nodes then merge them unless it's Opera since it some how removes the node
-              // and we are sniffing since adding a lot of detection code for a browser with 3% of the market
-              // isn't worth the effort. Sorry, Opera but it's just a fact
-              if (prev && next && prev.nodeType == next.nodeType && prev.nodeType == 3 && !Env.opera) {
-                idx = prev.nodeValue.length;
-                prev.appendData(next.nodeValue);
-                dom.remove(next);
-
-                if (suffix == 'start') {
-                  startContainer = endContainer = prev;
-                  startOffset = endOffset = idx;
-                } else {
-                  endContainer = prev;
-                  endOffset = idx;
-                }
-              }
-            }
-          }
-        }
-
-        function addBogus(node) {
-          // Adds a bogus BR element for empty block elements
-          if (dom.isBlock(node) && !node.innerHTML && !Env.ie) {
-            node.innerHTML = '<br data-mce-bogus="1" />';
-          }
-
-          return node;
-        }
-
-        function resolveCaretPositionBookmark() {
-          var rng, pos;
-
-          rng = dom.createRng();
-          pos = CaretBookmark.resolve(dom.getRoot(), bookmark.start);
-          rng.setStart(pos.container(), pos.offset());
-
-          pos = CaretBookmark.resolve(dom.getRoot(), bookmark.end);
-          rng.setEnd(pos.container(), pos.offset());
-
-          return rng;
-        }
-
-        if (bookmark) {
-          if (Tools.isArray(bookmark.start)) {
-            rng = dom.createRng();
-            root = dom.getRoot();
-
-            if (setEndPoint(true) && setEndPoint()) {
-              selection.setRng(rng);
-            }
-          } else if (typeof bookmark.start == 'string') {
-            selection.setRng(resolveCaretPositionBookmark(bookmark));
-          } else if (bookmark.id) {
-            // Restore start/end points
-            restoreEndPoint('start');
-            restoreEndPoint('end');
-
-            if (startContainer) {
-              rng = dom.createRng();
-              rng.setStart(addBogus(startContainer), startOffset);
-              rng.setEnd(addBogus(endContainer), endOffset);
-              selection.setRng(rng);
-            }
-          } else if (bookmark.name) {
-            selection.select(dom.select(bookmark.name)[bookmark.index]);
-          } else if (bookmark.rng) {
-            selection.setRng(bookmark.rng);
-          }
-        }
-      };
-    }
-
-    /**
-     * Returns true/false if the specified node is a bookmark node or not.
-     *
-     * @static
-     * @method isBookmarkNode
-     * @param {DOMNode} node DOM Node to check if it's a bookmark node or not.
-     * @return {Boolean} true/false if the node is a bookmark node or not.
-     */
-    BookmarkManager.isBookmarkNode = function (node) {
-      return node && node.tagName === 'SPAN' && node.getAttribute('data-mce-type') === 'bookmark';
-    };
-
-    return BookmarkManager;
-  }
-);
-/**
  * CaretUtils.js
  *
  * Released under LGPL License.
@@ -13863,15 +14395,15 @@ define(
       isElement = NodeType.isElement,
       isCaretCandidate = CaretCandidate.isCaretCandidate;
 
-    function isForwards(direction) {
+    var isForwards = function (direction) {
       return direction > 0;
-    }
+    };
 
-    function isBackwards(direction) {
+    var isBackwards = function (direction) {
       return direction < 0;
-    }
+    };
 
-    function skipCaretContainers(walk, shallow) {
+    var skipCaretContainers = function (walk, shallow) {
       var node;
 
       while ((node = walk(shallow))) {
@@ -13881,9 +14413,9 @@ define(
       }
 
       return null;
-    }
+    };
 
-    function findNode(node, direction, predicateFn, rootNode, shallow) {
+    var findNode = function (node, direction, predicateFn, rootNode, shallow) {
       var walker = new TreeWalker(node, rootNode);
 
       if (isBackwards(direction)) {
@@ -13917,9 +14449,9 @@ define(
       }
 
       return null;
-    }
+    };
 
-    function getEditingHost(node, rootNode) {
+    var getEditingHost = function (node, rootNode) {
       for (node = node.parentNode; node && node != rootNode; node = node.parentNode) {
         if (isContentEditableTrue(node)) {
           return node;
@@ -13927,9 +14459,9 @@ define(
       }
 
       return rootNode;
-    }
+    };
 
-    function getParentBlock(node, rootNode) {
+    var getParentBlock = function (node, rootNode) {
       while (node && node != rootNode) {
         if (isBlockLike(node)) {
           return node;
@@ -13939,17 +14471,17 @@ define(
       }
 
       return null;
-    }
+    };
 
-    function isInSameBlock(caretPosition1, caretPosition2, rootNode) {
+    var isInSameBlock = function (caretPosition1, caretPosition2, rootNode) {
       return getParentBlock(caretPosition1.container(), rootNode) == getParentBlock(caretPosition2.container(), rootNode);
-    }
+    };
 
-    function isInSameEditingHost(caretPosition1, caretPosition2, rootNode) {
+    var isInSameEditingHost = function (caretPosition1, caretPosition2, rootNode) {
       return getEditingHost(caretPosition1.container(), rootNode) == getEditingHost(caretPosition2.container(), rootNode);
-    }
+    };
 
-    function getChildNodeAtRelativeOffset(relativeOffset, caretPosition) {
+    var getChildNodeAtRelativeOffset = function (relativeOffset, caretPosition) {
       var container, offset;
 
       if (!caretPosition) {
@@ -13964,9 +14496,9 @@ define(
       }
 
       return container.childNodes[offset + relativeOffset];
-    }
+    };
 
-    function beforeAfter(before, node) {
+    var beforeAfter = function (before, node) {
       var range = node.ownerDocument.createRange();
 
       if (before) {
@@ -13978,13 +14510,13 @@ define(
       }
 
       return range;
-    }
+    };
 
-    function isNodesInSameBlock(rootNode, node1, node2) {
+    var isNodesInSameBlock = function (rootNode, node1, node2) {
       return getParentBlock(node1, rootNode) == getParentBlock(node2, rootNode);
-    }
+    };
 
-    function lean(left, rootNode, node) {
+    var lean = function (left, rootNode, node) {
       var sibling, siblingName;
 
       if (left) {
@@ -14016,12 +14548,12 @@ define(
       }
 
       return null;
-    }
+    };
 
     var before = curry(beforeAfter, true);
     var after = curry(beforeAfter, false);
 
-    function normalizeRange(direction, rootNode, range) {
+    var normalizeRange = function (direction, rootNode, range) {
       var node, container, offset, location;
       var leanLeft = curry(lean, true, rootNode);
       var leanRight = curry(lean, false, rootNode);
@@ -14126,11 +14658,11 @@ define(
       }
 
       return range;
-    }
+    };
 
-    function isNextToContentEditableFalse(relativeOffset, caretPosition) {
+    var isNextToContentEditableFalse = function (relativeOffset, caretPosition) {
       return isContentEditableFalse(getChildNodeAtRelativeOffset(relativeOffset, caretPosition));
-    }
+    };
 
     return {
       isForwards: isForwards,
@@ -14192,7 +14724,7 @@ define(
       isAtomic = CaretCandidate.isAtomic,
       isEditableCaretCandidate = CaretCandidate.isEditableCaretCandidate;
 
-    function getParents(node, rootNode) {
+    var getParents = function (node, rootNode) {
       var parents = [];
 
       while (node && node != rootNode) {
@@ -14201,17 +14733,17 @@ define(
       }
 
       return parents;
-    }
+    };
 
-    function nodeAtIndex(container, offset) {
+    var nodeAtIndex = function (container, offset) {
       if (container.hasChildNodes() && offset < container.childNodes.length) {
         return container.childNodes[offset];
       }
 
       return null;
-    }
+    };
 
-    function getCaretCandidatePosition(direction, node) {
+    var getCaretCandidatePosition = function (direction, node) {
       if (isForwards(direction)) {
         if (isCaretCandidate(node.previousSibling) && !isText(node.previousSibling)) {
           return CaretPosition.before(node);
@@ -14241,10 +14773,10 @@ define(
       }
 
       return CaretPosition.before(node);
-    }
+    };
 
     // Jumps over BR elements <p>|<br></p><p>a</p> -> <p><br></p><p>|a</p>
-    function isBrBeforeBlock(node, rootNode) {
+    var isBrBeforeBlock = function (node, rootNode) {
       var next;
 
       if (!NodeType.isBr(node)) {
@@ -14257,9 +14789,9 @@ define(
       }
 
       return !CaretUtils.isInSameBlock(CaretPosition.before(node), CaretPosition.before(next), rootNode);
-    }
+    };
 
-    function findCaretPosition(direction, startCaretPosition, rootNode) {
+    var findCaretPosition = function (direction, startCaretPosition, rootNode) {
       var container, offset, node, nextNode, innerNode,
         rootContentEditableFalseElm, caretPosition;
 
@@ -14366,7 +14898,7 @@ define(
       }
 
       return null;
-    }
+    };
 
     return function (rootNode) {
       return {
@@ -14400,7 +14932,7 @@ define(
   }
 );
 /**
- * CaretFinder.js
+ * InsertList.js
  *
  * Released under LGPL License.
  * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
@@ -14408,106 +14940,213 @@ define(
  * License: http://www.tinymce.com/license
  * Contributing: http://www.tinymce.com/contributing
  */
-
-define(
-  'tinymce.core.caret.CaretFinder',
-  [
-    'ephox.katamari.api.Fun',
-    'ephox.katamari.api.Option',
-    'tinymce.core.caret.CaretCandidate',
-    'tinymce.core.caret.CaretPosition',
-    'tinymce.core.caret.CaretUtils',
-    'tinymce.core.caret.CaretWalker',
-    'tinymce.core.dom.NodeType'
-  ],
-  function (Fun, Option, CaretCandidate, CaretPosition, CaretUtils, CaretWalker, NodeType) {
-    var walkToPositionIn = function (forward, rootNode, startNode) {
-      var position = forward ? CaretPosition.before(startNode) : CaretPosition.after(startNode);
-      return fromPosition(forward, rootNode, position);
-    };
-
-    var afterElement = function (node) {
-      return NodeType.isBr(node) ? CaretPosition.before(node) : CaretPosition.after(node);
-    };
-
-    var isBeforeOrStart = function (position) {
-      if (CaretPosition.isTextPosition(position)) {
-        return position.offset() === 0;
-      } else {
-        return CaretCandidate.isCaretCandidate(position.getNode());
-      }
-    };
-
-    var isAfterOrEnd = function (position) {
-      if (CaretPosition.isTextPosition(position)) {
-        return position.offset() === position.container().data.length;
-      } else {
-        return CaretCandidate.isCaretCandidate(position.getNode(true));
-      }
-    };
-
-    var isBeforeAfterSameElement = function (from, to) {
-      return !CaretPosition.isTextPosition(from) && !CaretPosition.isTextPosition(to) && from.getNode() === to.getNode(true);
-    };
-
-    var isAtBr = function (position) {
-      return !CaretPosition.isTextPosition(position) && NodeType.isBr(position.getNode());
-    };
-
-    var shouldSkipPosition = function (forward, from, to) {
-      if (forward) {
-        return !isBeforeAfterSameElement(from, to) && !isAtBr(from) && isAfterOrEnd(from) && isBeforeOrStart(to);
-      } else {
-        return !isBeforeAfterSameElement(to, from) && isBeforeOrStart(from) && isAfterOrEnd(to);
-      }
-    };
-
-    // Finds: <p>a|<b>b</b></p> -> <p>a<b>|b</b></p>
-    var fromPosition = function (forward, rootNode, position) {
-      var walker = new CaretWalker(rootNode);
-      return Option.from(forward ? walker.next(position) : walker.prev(position));
-    };
-
-    // Finds: <p>a|<b>b</b></p> -> <p>a<b>b|</b></p>
-    var navigate = function (forward, rootNode, from) {
-      return fromPosition(forward, rootNode, from).bind(function (to) {
-        if (CaretUtils.isInSameBlock(from, to, rootNode) && shouldSkipPosition(forward, from, to)) {
-          return fromPosition(forward, rootNode, to);
-        } else {
-          return Option.some(to);
-        }
-      });
-    };
-
-    var positionIn = function (forward, element) {
-      var startNode = forward ? element.firstChild : element.lastChild;
-      if (NodeType.isText(startNode)) {
-        return Option.some(new CaretPosition(startNode, forward ? 0 : startNode.data.length));
-      } else if (startNode) {
-        if (CaretCandidate.isCaretCandidate(startNode)) {
-          return Option.some(forward ? CaretPosition.before(startNode) : afterElement(startNode));
-        } else {
-          return walkToPositionIn(forward, element, startNode);
-        }
-      } else {
-        return Option.none();
-      }
-    };
-
-    return {
-      fromPosition: fromPosition,
-      nextPosition: Fun.curry(fromPosition, true),
-      prevPosition: Fun.curry(fromPosition, false),
-      navigate: navigate,
-      positionIn: positionIn,
-      firstPositionIn: Fun.curry(positionIn, true),
-      lastPositionIn: Fun.curry(positionIn, false)
-    };
-  }
-);
 
 /**
- * RangeNormalizer.js
+ * Handles inserts of lists into the editor instance.
+ *
+ * @class tinymce.InsertList
+ * @private
+ */
+define(
+  'tinymce.core.InsertList',
+  [
+    'tinymce.core.caret.CaretPosition',
+    'tinymce.core.caret.CaretWalker',
+    'tinymce.core.dom.NodeType',
+    'tinymce.core.util.Tools'
+  ],
+  function (CaretPosition, CaretWalker, NodeType, Tools) {
+    var hasOnlyOneChild = function (node) {
+      return node.firstChild && node.firstChild === node.lastChild;
+    };
+
+    var isPaddingNode = function (node) {
+      return node.name === 'br' || node.value === '\u00a0';
+    };
+
+    var isPaddedEmptyBlock = function (schema, node) {
+      var blockElements = schema.getBlockElements();
+      return blockElements[node.name] && hasOnlyOneChild(node) && isPaddingNode(node.firstChild);
+    };
+
+    var isEmptyFragmentElement = function (schema, node) {
+      var nonEmptyElements = schema.getNonEmptyElements();
+      return node && (node.isEmpty(nonEmptyElements) || isPaddedEmptyBlock(schema, node));
+    };
+
+    var isListFragment = function (schema, fragment) {
+      var firstChild = fragment.firstChild;
+      var lastChild = fragment.lastChild;
+
+      // Skip meta since it's likely <meta><ul>..</ul>
+      if (firstChild && firstChild.name === 'meta') {
+        firstChild = firstChild.next;
+      }
+
+      // Skip mce_marker since it's likely <ul>..</ul><span id="mce_marker"></span>
+      if (lastChild && lastChild.attr('id') === 'mce_marker') {
+        lastChild = lastChild.prev;
+      }
+
+      // Skip last child if it's an empty block
+      if (isEmptyFragmentElement(schema, lastChild)) {
+        lastChild = lastChild.prev;
+      }
+
+      if (!firstChild || firstChild !== lastChild) {
+        return false;
+      }
+
+      return firstChild.name === 'ul' || firstChild.name === 'ol';
+    };
+
+    var cleanupDomFragment = function (domFragment) {
+      var firstChild = domFragment.firstChild;
+      var lastChild = domFragment.lastChild;
+
+      // TODO: remove the meta tag from paste logic
+      if (firstChild && firstChild.nodeName === 'META') {
+        firstChild.parentNode.removeChild(firstChild);
+      }
+
+      if (lastChild && lastChild.id === 'mce_marker') {
+        lastChild.parentNode.removeChild(lastChild);
+      }
+
+      return domFragment;
+    };
+
+    var toDomFragment = function (dom, serializer, fragment) {
+      var html = serializer.serialize(fragment);
+      var domFragment = dom.createFragment(html);
+
+      return cleanupDomFragment(domFragment);
+    };
+
+    var listItems = function (elm) {
+      return Tools.grep(elm.childNodes, function (child) {
+        return child.nodeName === 'LI';
+      });
+    };
+
+    var isPadding = function (node) {
+      return node.data === '\u00a0' || NodeType.isBr(node);
+    };
+
+    var isListItemPadded = function (node) {
+      return node && node.firstChild && node.firstChild === node.lastChild && isPadding(node.firstChild);
+    };
+
+    var isEmptyOrPadded = function (elm) {
+      return !elm.firstChild || isListItemPadded(elm);
+    };
+
+    var trimListItems = function (elms) {
+      return elms.length > 0 && isEmptyOrPadded(elms[elms.length - 1]) ? elms.slice(0, -1) : elms;
+    };
+
+    var getParentLi = function (dom, node) {
+      var parentBlock = dom.getParent(node, dom.isBlock);
+      return parentBlock && parentBlock.nodeName === 'LI' ? parentBlock : null;
+    };
+
+    var isParentBlockLi = function (dom, node) {
+      return !!getParentLi(dom, node);
+    };
+
+    var getSplit = function (parentNode, rng) {
+      var beforeRng = rng.cloneRange();
+      var afterRng = rng.cloneRange();
+
+      beforeRng.setStartBefore(parentNode);
+      afterRng.setEndAfter(parentNode);
+
+      return [
+        beforeRng.cloneContents(),
+        afterRng.cloneContents()
+      ];
+    };
+
+    var findFirstIn = function (node, rootNode) {
+      var caretPos = CaretPosition.before(node);
+      var caretWalker = new CaretWalker(rootNode);
+      var newCaretPos = caretWalker.next(caretPos);
+
+      return newCaretPos ? newCaretPos.toRange() : null;
+    };
+
+    var findLastOf = function (node, rootNode) {
+      var caretPos = CaretPosition.after(node);
+      var caretWalker = new CaretWalker(rootNode);
+      var newCaretPos = caretWalker.prev(caretPos);
+
+      return newCaretPos ? newCaretPos.toRange() : null;
+    };
+
+    var insertMiddle = function (target, elms, rootNode, rng) {
+      var parts = getSplit(target, rng);
+      var parentElm = target.parentNode;
+
+      parentElm.insertBefore(parts[0], target);
+      Tools.each(elms, function (li) {
+        parentElm.insertBefore(li, target);
+      });
+      parentElm.insertBefore(parts[1], target);
+      parentElm.removeChild(target);
+
+      return findLastOf(elms[elms.length - 1], rootNode);
+    };
+
+    var insertBefore = function (target, elms, rootNode) {
+      var parentElm = target.parentNode;
+
+      Tools.each(elms, function (elm) {
+        parentElm.insertBefore(elm, target);
+      });
+
+      return findFirstIn(target, rootNode);
+    };
+
+    var insertAfter = function (target, elms, rootNode, dom) {
+      dom.insertAfter(elms.reverse(), target);
+      return findLastOf(elms[0], rootNode);
+    };
+
+    var insertAtCaret = function (serializer, dom, rng, fragment) {
+      var domFragment = toDomFragment(dom, serializer, fragment);
+      var liTarget = getParentLi(dom, rng.startContainer);
+      var liElms = trimListItems(listItems(domFragment.firstChild));
+      var BEGINNING = 1, END = 2;
+      var rootNode = dom.getRoot();
+
+      var isAt = function (location) {
+        var caretPos = CaretPosition.fromRangeStart(rng);
+        var caretWalker = new CaretWalker(dom.getRoot());
+        var newPos = location === BEGINNING ? caretWalker.prev(caretPos) : caretWalker.next(caretPos);
+
+        return newPos ? getParentLi(dom, newPos.getNode()) !== liTarget : true;
+      };
+
+      if (isAt(BEGINNING)) {
+        return insertBefore(liTarget, liElms, rootNode);
+      } else if (isAt(END)) {
+        return insertAfter(liTarget, liElms, rootNode, dom);
+      }
+
+      return insertMiddle(liTarget, liElms, rootNode, rng);
+    };
+
+    return {
+      isListFragment: isListFragment,
+      insertAtCaret: insertAtCaret,
+      isParentBlockLi: isParentBlockLi,
+      trimListItems: trimListItems,
+      listItems: listItems
+    };
+  }
+);
+/**
+ * CaretBookmark.js
  *
  * Released under LGPL License.
  * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
@@ -14516,1381 +15155,821 @@ define(
  * Contributing: http://www.tinymce.com/contributing
  */
 
+/**
+ * This module creates or resolves xpath like string representation of a CaretPositions.
+ *
+ * The format is a / separated list of chunks with:
+ * <element|text()>[index|after|before]
+ *
+ * For example:
+ *  p[0]/b[0]/text()[0],1 = <p><b>a|c</b></p>
+ *  p[0]/img[0],before = <p>|<img></p>
+ *  p[0]/img[0],after = <p><img>|</p>
+ *
+ * @private
+ * @static
+ * @class tinymce.caret.CaretBookmark
+ * @example
+ * var bookmark = CaretBookmark.create(rootElm, CaretPosition.before(rootElm.firstChild));
+ * var caretPosition = CaretBookmark.resolve(bookmark);
+ */
 define(
-  'tinymce.core.dom.RangeNormalizer',
+  'tinymce.core.caret.CaretBookmark',
   [
-    'global!document',
-    'tinymce.core.caret.CaretFinder',
-    'tinymce.core.caret.CaretPosition',
-    'tinymce.core.caret.CaretUtils'
+    'tinymce.core.dom.NodeType',
+    'tinymce.core.dom.DOMUtils',
+    'tinymce.core.util.Fun',
+    'tinymce.core.util.Arr',
+    'tinymce.core.caret.CaretPosition'
   ],
-  function (document, CaretFinder, CaretPosition, CaretUtils) {
-    var createRange = function (sc, so, ec, eo) {
-      var rng = document.createRange();
-      rng.setStart(sc, so);
-      rng.setEnd(ec, eo);
-      return rng;
+  function (NodeType, DomUtils, Fun, Arr, CaretPosition) {
+    var isText = NodeType.isText,
+      isBogus = NodeType.isBogus,
+      nodeIndex = DomUtils.nodeIndex;
+
+    var normalizedParent = function (node) {
+      var parentNode = node.parentNode;
+
+      if (isBogus(parentNode)) {
+        return normalizedParent(parentNode);
+      }
+
+      return parentNode;
     };
 
-    // If you triple click a paragraph in this case:
-    //   <blockquote><p>a</p></blockquote><p>b</p>
-    // It would become this range in webkit:
-    //   <blockquote><p>[a</p></blockquote><p>]b</p>
-    // We would want it to be:
-    //   <blockquote><p>[a]</p></blockquote><p>b</p>
-    // Since it would otherwise produces spans out of thin air on insertContent for example.
-    var normalizeBlockSelectionRange = function (rng) {
-      var startPos = CaretPosition.fromRangeStart(rng);
-      var endPos = CaretPosition.fromRangeEnd(rng);
-      var rootNode = rng.commonAncestorContainer;
+    var getChildNodes = function (node) {
+      if (!node) {
+        return [];
+      }
 
-      return CaretFinder.fromPosition(false, rootNode, endPos)
-        .map(function (newEndPos) {
-          if (!CaretUtils.isInSameBlock(startPos, endPos, rootNode) && CaretUtils.isInSameBlock(startPos, newEndPos, rootNode)) {
-            return createRange(startPos.container(), startPos.offset(), newEndPos.container(), newEndPos.offset());
-          } else {
-            return rng;
-          }
-        }).getOr(rng);
+      return Arr.reduce(node.childNodes, function (result, node) {
+        if (isBogus(node) && node.nodeName != 'BR') {
+          result = result.concat(getChildNodes(node));
+        } else {
+          result.push(node);
+        }
+
+        return result;
+      }, []);
     };
 
-    var normalizeBlockSelection = function (rng) {
-      return rng.collapsed ? rng : normalizeBlockSelectionRange(rng);
+    var normalizedTextOffset = function (textNode, offset) {
+      while ((textNode = textNode.previousSibling)) {
+        if (!isText(textNode)) {
+          break;
+        }
+
+        offset += textNode.data.length;
+      }
+
+      return offset;
     };
 
-    var normalize = function (rng) {
-      return normalizeBlockSelection(rng);
-    };
-
-    return {
-      normalize: normalize
-    };
-  }
-);
-define(
-  'ephox.katamari.api.Type',
-
-  [
-    'global!Array',
-    'global!String'
-  ],
-
-  function (Array, String) {
-    var typeOf = function(x) {
-      if (x === null) return 'null';
-      var t = typeof x;
-      if (t === 'object' && Array.prototype.isPrototypeOf(x)) return 'array';
-      if (t === 'object' && String.prototype.isPrototypeOf(x)) return 'string';
-      return t;
-    };
-
-    var isType = function (type) {
+    var equal = function (targetValue) {
       return function (value) {
-        return typeOf(value) === type;
+        return targetValue === value;
       };
+    };
+
+    var normalizedNodeIndex = function (node) {
+      var nodes, index, numTextFragments;
+
+      nodes = getChildNodes(normalizedParent(node));
+      index = Arr.findIndex(nodes, equal(node), node);
+      nodes = nodes.slice(0, index + 1);
+      numTextFragments = Arr.reduce(nodes, function (result, node, i) {
+        if (isText(node) && isText(nodes[i - 1])) {
+          result++;
+        }
+
+        return result;
+      }, 0);
+
+      nodes = Arr.filter(nodes, NodeType.matchNodeNames(node.nodeName));
+      index = Arr.findIndex(nodes, equal(node), node);
+
+      return index - numTextFragments;
+    };
+
+    var createPathItem = function (node) {
+      var name;
+
+      if (isText(node)) {
+        name = 'text()';
+      } else {
+        name = node.nodeName.toLowerCase();
+      }
+
+      return name + '[' + normalizedNodeIndex(node) + ']';
+    };
+
+    var parentsUntil = function (rootNode, node, predicate) {
+      var parents = [];
+
+      for (node = node.parentNode; node != rootNode; node = node.parentNode) {
+        if (predicate && predicate(node)) {
+          break;
+        }
+
+        parents.push(node);
+      }
+
+      return parents;
+    };
+
+    var create = function (rootNode, caretPosition) {
+      var container, offset, path = [],
+        outputOffset, childNodes, parents;
+
+      container = caretPosition.container();
+      offset = caretPosition.offset();
+
+      if (isText(container)) {
+        outputOffset = normalizedTextOffset(container, offset);
+      } else {
+        childNodes = container.childNodes;
+        if (offset >= childNodes.length) {
+          outputOffset = 'after';
+          offset = childNodes.length - 1;
+        } else {
+          outputOffset = 'before';
+        }
+
+        container = childNodes[offset];
+      }
+
+      path.push(createPathItem(container));
+      parents = parentsUntil(rootNode, container);
+      parents = Arr.filter(parents, Fun.negate(NodeType.isBogus));
+      path = path.concat(Arr.map(parents, function (node) {
+        return createPathItem(node);
+      }));
+
+      return path.reverse().join('/') + ',' + outputOffset;
+    };
+
+    var resolvePathItem = function (node, name, index) {
+      var nodes = getChildNodes(node);
+
+      nodes = Arr.filter(nodes, function (node, index) {
+        return !isText(node) || !isText(nodes[index - 1]);
+      });
+
+      nodes = Arr.filter(nodes, NodeType.matchNodeNames(name));
+      return nodes[index];
+    };
+
+    var findTextPosition = function (container, offset) {
+      var node = container, targetOffset = 0, dataLen;
+
+      while (isText(node)) {
+        dataLen = node.data.length;
+
+        if (offset >= targetOffset && offset <= targetOffset + dataLen) {
+          container = node;
+          offset = offset - targetOffset;
+          break;
+        }
+
+        if (!isText(node.nextSibling)) {
+          container = node;
+          offset = dataLen;
+          break;
+        }
+
+        targetOffset += dataLen;
+        node = node.nextSibling;
+      }
+
+      if (offset > container.data.length) {
+        offset = container.data.length;
+      }
+
+      return new CaretPosition(container, offset);
+    };
+
+    var resolve = function (rootNode, path) {
+      var parts, container, offset;
+
+      if (!path) {
+        return null;
+      }
+
+      parts = path.split(',');
+      path = parts[0].split('/');
+      offset = parts.length > 1 ? parts[1] : 'before';
+
+      container = Arr.reduce(path, function (result, value) {
+        value = /([\w\-\(\)]+)\[([0-9]+)\]/.exec(value);
+        if (!value) {
+          return null;
+        }
+
+        if (value[1] === 'text()') {
+          value[1] = '#text';
+        }
+
+        return resolvePathItem(result, value[1], parseInt(value[2], 10));
+      }, rootNode);
+
+      if (!container) {
+        return null;
+      }
+
+      if (!isText(container)) {
+        if (offset === 'after') {
+          offset = nodeIndex(container) + 1;
+        } else {
+          offset = nodeIndex(container);
+        }
+
+        return new CaretPosition(container.parentNode, offset);
+      }
+
+      return findTextPosition(container, parseInt(offset, 10));
     };
 
     return {
-      isString: isType('string'),
-      isObject: isType('object'),
-      isArray: isType('array'),
-      isNull: isType('null'),
-      isBoolean: isType('boolean'),
-      isUndefined: isType('undefined'),
-      isFunction: isType('function'),
-      isNumber: isType('number')
+      /**
+       * Create a xpath bookmark location for the specified caret position.
+       *
+       * @method create
+       * @param {Node} rootNode Root node to create bookmark within.
+       * @param {tinymce.caret.CaretPosition} caretPosition Caret position within the root node.
+       * @return {String} String xpath like location of caret position.
+       */
+      create: create,
+
+      /**
+       * Resolves a xpath like bookmark location to the a caret position.
+       *
+       * @method resolve
+       * @param {Node} rootNode Root node to resolve xpath bookmark within.
+       * @param {String} bookmark Bookmark string to resolve.
+       * @return {tinymce.caret.CaretPosition} Caret position resolved from xpath like bookmark.
+       */
+      resolve: resolve
     };
   }
 );
+/**
+ * BookmarkManager.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
 
-
+/**
+ * This class handles selection bookmarks.
+ *
+ * @class tinymce.dom.BookmarkManager
+ */
 define(
-  'ephox.katamari.data.Immutable',
-
+  'tinymce.core.dom.BookmarkManager',
   [
-    'ephox.katamari.api.Arr',
-    'ephox.katamari.api.Fun',
-    'global!Array',
-    'global!Error'
+    'tinymce.core.Env',
+    'tinymce.core.caret.CaretBookmark',
+    'tinymce.core.caret.CaretContainer',
+    'tinymce.core.caret.CaretPosition',
+    'tinymce.core.dom.NodeType',
+    'tinymce.core.selection.RangeNodes',
+    'tinymce.core.text.Zwsp',
+    'tinymce.core.util.Tools'
   ],
+  function (Env, CaretBookmark, CaretContainer, CaretPosition, NodeType, RangeNodes, Zwsp, Tools) {
+    var isContentEditableFalse = NodeType.isContentEditableFalse;
 
-  function (Arr, Fun, Array, Error) {
-    return function () {
-      var fields = arguments;
-      return function(/* values */) {
-        //  Don't use array slice(arguments), makes the whole function unoptimisable on Chrome
-        var values = new Array(arguments.length);
-        for (var i = 0; i < values.length; i++) values[i] = arguments[i];
+    var getNormalizedTextOffset = function (container, offset) {
+      var node, trimmedOffset;
 
-        if (fields.length !== values.length)
-          throw new Error('Wrong number of arguments to struct. Expected "[' + fields.length + ']", got ' + values.length + ' arguments');
+      trimmedOffset = Zwsp.trim(container.data.slice(0, offset)).length;
+      for (node = container.previousSibling; node && node.nodeType === 3; node = node.previousSibling) {
+        trimmedOffset += Zwsp.trim(node.data).length;
+      }
 
-        var struct = {};
-        Arr.each(fields, function (name, i) {
-          struct[name] = Fun.constant(values[i]);
-        });
-        return struct;
+      return trimmedOffset;
+    };
+
+    var trimEmptyTextNode = function (node) {
+      if (NodeType.isText(node) && node.data.length === 0) {
+        node.parentNode.removeChild(node);
+      }
+    };
+
+    /**
+     * Constructs a new BookmarkManager instance for a specific selection instance.
+     *
+     * @constructor
+     * @method BookmarkManager
+     * @param {tinymce.dom.Selection} selection Selection instance to handle bookmarks for.
+     */
+    var BookmarkManager = function (selection) {
+      var dom = selection.dom;
+
+      /**
+       * Returns a bookmark location for the current selection. This bookmark object
+       * can then be used to restore the selection after some content modification to the document.
+       *
+       * @method getBookmark
+       * @param {Number} type Optional state if the bookmark should be simple or not. Default is complex.
+       * @param {Boolean} normalized Optional state that enables you to get a position that it would be after normalization.
+       * @return {Object} Bookmark object, use moveToBookmark with this object to restore the selection.
+       * @example
+       * // Stores a bookmark of the current selection
+       * var bm = tinymce.activeEditor.selection.getBookmark();
+       *
+       * tinymce.activeEditor.setContent(tinymce.activeEditor.getContent() + 'Some new content');
+       *
+       * // Restore the selection bookmark
+       * tinymce.activeEditor.selection.moveToBookmark(bm);
+       */
+      this.getBookmark = function (type, normalized) {
+        var rng, rng2, id, collapsed, name, element, chr = '&#xFEFF;', styles;
+
+        var findIndex = function (name, element) {
+          var count = 0;
+
+          Tools.each(dom.select(name), function (node) {
+            if (node.getAttribute('data-mce-bogus') === 'all') {
+              return;
+            }
+
+            if (node == element) {
+              return false;
+            }
+
+            count++;
+          });
+
+          return count;
+        };
+
+        var normalizeTableCellSelection = function (rng) {
+          var moveEndPoint = function (start) {
+            var container, offset, childNodes, prefix = start ? 'start' : 'end';
+
+            container = rng[prefix + 'Container'];
+            offset = rng[prefix + 'Offset'];
+
+            if (container.nodeType == 1 && container.nodeName == "TR") {
+              childNodes = container.childNodes;
+              container = childNodes[Math.min(start ? offset : offset - 1, childNodes.length - 1)];
+              if (container) {
+                offset = start ? 0 : container.childNodes.length;
+                rng['set' + (start ? 'Start' : 'End')](container, offset);
+              }
+            }
+          };
+
+          moveEndPoint(true);
+          moveEndPoint();
+
+          return rng;
+        };
+
+        var getLocation = function (rng) {
+          var root = dom.getRoot(), bookmark = {};
+
+          var getPoint = function (rng, start) {
+            var container = rng[start ? 'startContainer' : 'endContainer'],
+              offset = rng[start ? 'startOffset' : 'endOffset'], point = [], childNodes, after = 0;
+
+            if (container.nodeType === 3) {
+              point.push(normalized ? getNormalizedTextOffset(container, offset) : offset);
+            } else {
+              childNodes = container.childNodes;
+
+              if (offset >= childNodes.length && childNodes.length) {
+                after = 1;
+                offset = Math.max(0, childNodes.length - 1);
+              }
+
+              point.push(dom.nodeIndex(childNodes[offset], normalized) + after);
+            }
+
+            for (; container && container != root; container = container.parentNode) {
+              point.push(dom.nodeIndex(container, normalized));
+            }
+
+            return point;
+          };
+
+          bookmark.start = getPoint(rng, true);
+
+          if (!selection.isCollapsed()) {
+            bookmark.end = getPoint(rng);
+          }
+
+          return bookmark;
+        };
+
+        var findAdjacentContentEditableFalseElm = function (rng) {
+          var findSibling = function (node, offset) {
+            var sibling;
+
+            if (NodeType.isElement(node)) {
+              node = RangeNodes.getNode(node, offset);
+              if (isContentEditableFalse(node)) {
+                return node;
+              }
+            }
+
+            if (CaretContainer.isCaretContainer(node)) {
+              if (NodeType.isText(node) && CaretContainer.isCaretContainerBlock(node)) {
+                node = node.parentNode;
+              }
+
+              sibling = node.previousSibling;
+              if (isContentEditableFalse(sibling)) {
+                return sibling;
+              }
+
+              sibling = node.nextSibling;
+              if (isContentEditableFalse(sibling)) {
+                return sibling;
+              }
+            }
+          };
+
+          return findSibling(rng.startContainer, rng.startOffset) || findSibling(rng.endContainer, rng.endOffset);
+        };
+
+        if (type == 2) {
+          element = selection.getNode();
+          name = element ? element.nodeName : null;
+          rng = selection.getRng();
+
+          if (isContentEditableFalse(element) || name == 'IMG') {
+            return { name: name, index: findIndex(name, element) };
+          }
+
+          element = findAdjacentContentEditableFalseElm(rng);
+          if (element) {
+            name = element.tagName;
+            return { name: name, index: findIndex(name, element) };
+          }
+
+          return getLocation(rng);
+        }
+
+        if (type == 3) {
+          rng = selection.getRng();
+
+          return {
+            start: CaretBookmark.create(dom.getRoot(), CaretPosition.fromRangeStart(rng)),
+            end: CaretBookmark.create(dom.getRoot(), CaretPosition.fromRangeEnd(rng))
+          };
+        }
+
+        // Handle simple range
+        if (type) {
+          return { rng: selection.getRng() };
+        }
+
+        rng = selection.getRng();
+        id = dom.uniqueId();
+        collapsed = selection.isCollapsed();
+        styles = 'overflow:hidden;line-height:0px';
+        element = selection.getNode();
+        name = element.nodeName;
+        if (name == 'IMG') {
+          return { name: name, index: findIndex(name, element) };
+        }
+
+        // W3C method
+        rng2 = normalizeTableCellSelection(rng.cloneRange());
+
+        // Insert end marker
+        if (!collapsed) {
+          rng2.collapse(false);
+          var endBookmarkNode = dom.create('span', { 'data-mce-type': "bookmark", id: id + '_end', style: styles }, chr);
+          rng2.insertNode(endBookmarkNode);
+          trimEmptyTextNode(endBookmarkNode.nextSibling);
+        }
+
+        rng = normalizeTableCellSelection(rng);
+        rng.collapse(true);
+        var startBookmarkNode = dom.create('span', { 'data-mce-type': "bookmark", id: id + '_start', style: styles }, chr);
+        rng.insertNode(startBookmarkNode);
+        trimEmptyTextNode(startBookmarkNode.previousSibling);
+
+        selection.moveToBookmark({ id: id, keep: 1 });
+
+        return { id: id };
       };
-    };
-  }
-);
 
-define(
-  'ephox.katamari.api.Obj',
+      /**
+       * Restores the selection to the specified bookmark.
+       *
+       * @method moveToBookmark
+       * @param {Object} bookmark Bookmark to restore selection from.
+       * @return {Boolean} true/false if it was successful or not.
+       * @example
+       * // Stores a bookmark of the current selection
+       * var bm = tinymce.activeEditor.selection.getBookmark();
+       *
+       * tinymce.activeEditor.setContent(tinymce.activeEditor.getContent() + 'Some new content');
+       *
+       * // Restore the selection bookmark
+       * tinymce.activeEditor.selection.moveToBookmark(bm);
+       */
+      this.moveToBookmark = function (bookmark) {
+        var rng, root, startContainer, endContainer, startOffset, endOffset;
 
-  [
-    'ephox.katamari.api.Option',
-    'global!Object'
-  ],
+        var setEndPoint = function (start) {
+          var point = bookmark[start ? 'start' : 'end'], i, node, offset, children;
 
-  function (Option, Object) {
-    // There are many variations of Object iteration that are faster than the 'for-in' style:
-    // http://jsperf.com/object-keys-iteration/107
-    //
-    // Use the native keys if it is available (IE9+), otherwise fall back to manually filtering
-    var keys = (function () {
-      var fastKeys = Object.keys;
+          if (point) {
+            offset = point[0];
 
-      // This technically means that 'each' and 'find' on IE8 iterate through the object twice.
-      // This code doesn't run on IE8 much, so it's an acceptable tradeoff.
-      // If it becomes a problem we can always duplicate the feature detection inside each and find as well.
-      var slowKeys = function (o) {
-        var r = [];
-        for (var i in o) {
-          if (o.hasOwnProperty(i)) {
-            r.push(i);
+            // Find container node
+            for (node = root, i = point.length - 1; i >= 1; i--) {
+              children = node.childNodes;
+
+              if (point[i] > children.length - 1) {
+                return;
+              }
+
+              node = children[point[i]];
+            }
+
+            // Move text offset to best suitable location
+            if (node.nodeType === 3) {
+              offset = Math.min(point[0], node.nodeValue.length);
+            }
+
+            // Move element offset to best suitable location
+            if (node.nodeType === 1) {
+              offset = Math.min(point[0], node.childNodes.length);
+            }
+
+            // Set offset within container node
+            if (start) {
+              rng.setStart(node, offset);
+            } else {
+              rng.setEnd(node, offset);
+            }
+          }
+
+          return true;
+        };
+
+        var restoreEndPoint = function (suffix) {
+          var marker = dom.get(bookmark.id + '_' + suffix), node, idx, next, prev, keep = bookmark.keep;
+
+          if (marker) {
+            node = marker.parentNode;
+
+            if (suffix == 'start') {
+              if (!keep) {
+                idx = dom.nodeIndex(marker);
+              } else {
+                node = marker.firstChild;
+                idx = 1;
+              }
+
+              startContainer = endContainer = node;
+              startOffset = endOffset = idx;
+            } else {
+              if (!keep) {
+                idx = dom.nodeIndex(marker);
+              } else {
+                node = marker.firstChild;
+                idx = 1;
+              }
+
+              endContainer = node;
+              endOffset = idx;
+            }
+
+            if (!keep) {
+              prev = marker.previousSibling;
+              next = marker.nextSibling;
+
+              // Remove all marker text nodes
+              Tools.each(Tools.grep(marker.childNodes), function (node) {
+                if (node.nodeType == 3) {
+                  node.nodeValue = node.nodeValue.replace(/\uFEFF/g, '');
+                }
+              });
+
+              // Remove marker but keep children if for example contents where inserted into the marker
+              // Also remove duplicated instances of the marker for example by a
+              // split operation or by WebKit auto split on paste feature
+              while ((marker = dom.get(bookmark.id + '_' + suffix))) {
+                dom.remove(marker, 1);
+              }
+
+              // If siblings are text nodes then merge them unless it's Opera since it some how removes the node
+              // and we are sniffing since adding a lot of detection code for a browser with 3% of the market
+              // isn't worth the effort. Sorry, Opera but it's just a fact
+              if (prev && next && prev.nodeType == next.nodeType && prev.nodeType == 3 && !Env.opera) {
+                idx = prev.nodeValue.length;
+                prev.appendData(next.nodeValue);
+                dom.remove(next);
+
+                if (suffix == 'start') {
+                  startContainer = endContainer = prev;
+                  startOffset = endOffset = idx;
+                } else {
+                  endContainer = prev;
+                  endOffset = idx;
+                }
+              }
+            }
+          }
+        };
+
+        var addBogus = function (node) {
+          // Adds a bogus BR element for empty block elements
+          if (dom.isBlock(node) && !node.innerHTML && !Env.ie) {
+            node.innerHTML = '<br data-mce-bogus="1" />';
+          }
+
+          return node;
+        };
+
+        var resolveCaretPositionBookmark = function () {
+          var rng, pos;
+
+          rng = dom.createRng();
+          pos = CaretBookmark.resolve(dom.getRoot(), bookmark.start);
+          rng.setStart(pos.container(), pos.offset());
+
+          pos = CaretBookmark.resolve(dom.getRoot(), bookmark.end);
+          rng.setEnd(pos.container(), pos.offset());
+
+          return rng;
+        };
+
+        if (bookmark) {
+          if (Tools.isArray(bookmark.start)) {
+            rng = dom.createRng();
+            root = dom.getRoot();
+
+            if (setEndPoint(true) && setEndPoint()) {
+              selection.setRng(rng);
+            }
+          } else if (typeof bookmark.start == 'string') {
+            selection.setRng(resolveCaretPositionBookmark(bookmark));
+          } else if (bookmark.id) {
+            // Restore start/end points
+            restoreEndPoint('start');
+            restoreEndPoint('end');
+
+            if (startContainer) {
+              rng = dom.createRng();
+              rng.setStart(addBogus(startContainer), startOffset);
+              rng.setEnd(addBogus(endContainer), endOffset);
+              selection.setRng(rng);
+            }
+          } else if (bookmark.name) {
+            selection.select(dom.select(bookmark.name)[bookmark.index]);
+          } else if (bookmark.rng) {
+            selection.setRng(bookmark.rng);
           }
         }
-        return r;
-      };
-
-      return fastKeys === undefined ? slowKeys : fastKeys;
-    })();
-
-
-    var each = function (obj, f) {
-      var props = keys(obj);
-      for (var k = 0, len = props.length; k < len; k++) {
-        var i = props[k];
-        var x = obj[i];
-        f(x, i, obj);
-      }
-    };
-
-    /** objectMap :: (JsObj(k, v), (v, k, JsObj(k, v) -> x)) -> JsObj(k, x) */
-    var objectMap = function (obj, f) {
-      return tupleMap(obj, function (x, i, obj) {
-        return {
-          k: i,
-          v: f(x, i, obj)
-        };
-      });
-    };
-
-    /** tupleMap :: (JsObj(k, v), (v, k, JsObj(k, v) -> { k: x, v: y })) -> JsObj(x, y) */
-    var tupleMap = function (obj, f) {
-      var r = {};
-      each(obj, function (x, i) {
-        var tuple = f(x, i, obj);
-        r[tuple.k] = tuple.v;
-      });
-      return r;
-    };
-
-    /** bifilter :: (JsObj(k, v), (v, k -> Bool)) -> { t: JsObj(k, v), f: JsObj(k, v) } */
-    var bifilter = function (obj, pred) {
-      var t = {};
-      var f = {};
-      each(obj, function(x, i) {
-        var branch = pred(x, i) ? t : f;
-        branch[i] = x;
-      });
-      return {
-        t: t,
-        f: f
       };
     };
 
-    /** mapToArray :: (JsObj(k, v), (v, k -> a)) -> [a] */
-    var mapToArray = function (obj, f) {
-      var r = [];
-      each(obj, function(value, name) {
-        r.push(f(value, name));
-      });
-      return r;
-    };
-
-    /** find :: (JsObj(k, v), (v, k, JsObj(k, v) -> Bool)) -> Option v */
-    var find = function (obj, pred) {
-      var props = keys(obj);
-      for (var k = 0, len = props.length; k < len; k++) {
-        var i = props[k];
-        var x = obj[i];
-        if (pred(x, i, obj)) {
-          return Option.some(x);
-        }
-      }
-      return Option.none();
-    };
-
-    /** values :: JsObj(k, v) -> [v] */
-    var values = function (obj) {
-      return mapToArray(obj, function (v) {
-        return v;
-      });
-    };
-
-    var size = function (obj) {
-      return values(obj).length;
-    };
-
-    return {
-      bifilter: bifilter,
-      each: each,
-      map: objectMap,
-      mapToArray: mapToArray,
-      tupleMap: tupleMap,
-      find: find,
-      keys: keys,
-      values: values,
-      size: size
-    };
-  }
-);
-define(
-  'ephox.katamari.util.BagUtils',
-
-  [
-    'ephox.katamari.api.Arr',
-    'ephox.katamari.api.Type',
-    'global!Error'
-  ],
-
-  function (Arr, Type, Error) {
-    var sort = function (arr) {
-      return arr.slice(0).sort();
-    };
-
-    var reqMessage = function (required, keys) {
-      throw new Error('All required keys (' + sort(required).join(', ') + ') were not specified. Specified keys were: ' + sort(keys).join(', ') + '.');
-    };
-
-    var unsuppMessage = function (unsupported) {
-      throw new Error('Unsupported keys for object: ' + sort(unsupported).join(', '));
-    };
-
-    var validateStrArr = function (label, array) {
-      if (!Type.isArray(array)) throw new Error('The ' + label + ' fields must be an array. Was: ' + array + '.');
-      Arr.each(array, function (a) {
-        if (!Type.isString(a)) throw new Error('The value ' + a + ' in the ' + label + ' fields was not a string.');
-      });
-    };
-
-    var invalidTypeMessage = function (incorrect, type) {
-      throw new Error('All values need to be of type: ' + type + '. Keys (' + sort(incorrect).join(', ') + ') were not.');
-    };
-
-    var checkDupes = function (everything) {
-      var sorted = sort(everything);
-      var dupe = Arr.find(sorted, function (s, i) {
-        return i < sorted.length -1 && s === sorted[i + 1];
-      });
-
-      dupe.each(function (d) {
-        throw new Error('The field: ' + d + ' occurs more than once in the combined fields: [' + sorted.join(', ') + '].');
-      });
-    };
-
-    return {
-      sort: sort,
-      reqMessage: reqMessage,
-      unsuppMessage: unsuppMessage,
-      validateStrArr: validateStrArr,
-      invalidTypeMessage: invalidTypeMessage,
-      checkDupes: checkDupes
-    };
-  }
-);
-define(
-  'ephox.katamari.data.MixedBag',
-
-  [
-    'ephox.katamari.api.Arr',
-    'ephox.katamari.api.Fun',
-    'ephox.katamari.api.Obj',
-    'ephox.katamari.api.Option',
-    'ephox.katamari.util.BagUtils',
-    'global!Error',
-    'global!Object'
-  ],
-
-  function (Arr, Fun, Obj, Option, BagUtils, Error, Object) {
-    
-    return function (required, optional) {
-      var everything = required.concat(optional);
-      if (everything.length === 0) throw new Error('You must specify at least one required or optional field.');
-
-      BagUtils.validateStrArr('required', required);
-      BagUtils.validateStrArr('optional', optional);
-
-      BagUtils.checkDupes(everything);
-
-      return function (obj) {
-        var keys = Obj.keys(obj);
-
-        // Ensure all required keys are present.
-        var allReqd = Arr.forall(required, function (req) {
-          return Arr.contains(keys, req);
-        });
-
-        if (! allReqd) BagUtils.reqMessage(required, keys);
-
-        var unsupported = Arr.filter(keys, function (key) {
-          return !Arr.contains(everything, key);
-        });
-
-        if (unsupported.length > 0) BagUtils.unsuppMessage(unsupported);
-
-        var r = {};
-        Arr.each(required, function (req) {
-          r[req] = Fun.constant(obj[req]);
-        });
-
-        Arr.each(optional, function (opt) {
-          r[opt] = Fun.constant(Object.prototype.hasOwnProperty.call(obj, opt) ? Option.some(obj[opt]): Option.none());
-        });
-
-        return r;
-      };
-    };
-  }
-);
-define(
-  'ephox.katamari.api.Struct',
-
-  [
-    'ephox.katamari.data.Immutable',
-    'ephox.katamari.data.MixedBag'
-  ],
-
-  function (Immutable, MixedBag) {
-    return {
-      immutable: Immutable,
-      immutableBag: MixedBag
-    };
-  }
-);
-
-define(
-  'ephox.sugar.alien.Recurse',
-
-  [
-
-  ],
-
-  function () {
     /**
-     * Applies f repeatedly until it completes (by returning Option.none()).
+     * Returns true/false if the specified node is a bookmark node or not.
      *
-     * Normally would just use recursion, but JavaScript lacks tail call optimisation.
-     *
-     * This is what recursion looks like when manually unravelled :)
+     * @static
+     * @method isBookmarkNode
+     * @param {DOMNode} node DOM Node to check if it's a bookmark node or not.
+     * @return {Boolean} true/false if the node is a bookmark node or not.
      */
-    var toArray = function (target, f) {
-      var r = [];
-
-      var recurse = function (e) {
-        r.push(e);
-        return f(e);
-      };
-
-      var cur = f(target);
-      do {
-        cur = cur.bind(recurse);
-      } while (cur.isSome());
-
-      return r;
+    BookmarkManager.isBookmarkNode = function (node) {
+      return node && node.tagName === 'SPAN' && node.getAttribute('data-mce-type') === 'bookmark';
     };
 
-    return {
-      toArray: toArray
-    };
+    return BookmarkManager;
   }
 );
+/**
+ * ElementUtils.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+/**
+ * Utility class for various element specific functions.
+ *
+ * @private
+ * @class tinymce.dom.ElementUtils
+ */
 define(
-  'ephox.sand.api.Node',
-
+  'tinymce.core.dom.ElementUtils',
   [
-    'ephox.sand.util.Global'
+    "tinymce.core.dom.BookmarkManager",
+    "tinymce.core.util.Tools"
   ],
+  function (BookmarkManager, Tools) {
+    var each = Tools.each;
 
-  function (Global) {
-    /*
-     * MDN says (yes) for IE, but it's undefined on IE8
-     */
-    var node = function () {
-      var f = Global.getOrDie('Node');
-      return f;
-    };
-
-    /*
-     * Most of numerosity doesn't alter the methods on the object.
-     * We're making an exception for Node, because bitwise and is so easy to get wrong.
-     *
-     * Might be nice to ADT this at some point instead of having individual methods.
-     */
-
-    var compareDocumentPosition = function (a, b, match) {
-      // Returns: 0 if e1 and e2 are the same node, or a bitmask comparing the positions
-      // of nodes e1 and e2 in their documents. See the URL below for bitmask interpretation
-      // https://developer.mozilla.org/en-US/docs/Web/API/Node/compareDocumentPosition
-      return (a.compareDocumentPosition(b) & match) !== 0;
-    };
-
-    var documentPositionPreceding = function (a, b) {
-      return compareDocumentPosition(a, b, node().DOCUMENT_POSITION_PRECEDING);
-    };
-
-    var documentPositionContainedBy = function (a, b) {
-      return compareDocumentPosition(a, b, node().DOCUMENT_POSITION_CONTAINED_BY);
-    };
-
-    return {
-      documentPositionPreceding: documentPositionPreceding,
-      documentPositionContainedBy: documentPositionContainedBy
-    };
-  }
-);
-define(
-  'ephox.katamari.api.Thunk',
-
-  [
-  ],
-
-  function () {
-
-    var cached = function (f) {
-      var called = false;
-      var r;
-      return function() {
-        if (!called) {
-          called = true;
-          r = f.apply(null, arguments);
+    var ElementUtils = function (dom) {
+      /**
+       * Compares two nodes and checks if it's attributes and styles matches.
+       * This doesn't compare classes as items since their order is significant.
+       *
+       * @method compare
+       * @param {Node} node1 First node to compare with.
+       * @param {Node} node2 Second node to compare with.
+       * @return {boolean} True/false if the nodes are the same or not.
+       */
+      this.compare = function (node1, node2) {
+        // Not the same name
+        if (node1.nodeName != node2.nodeName) {
+          return false;
         }
-        return r;
-      };
-    };
 
-    return {
-      cached: cached
-    };
-  }
-);
+        /**
+         * Returns all the nodes attributes excluding internal ones, styles and classes.
+         *
+         * @private
+         * @param {Node} node Node to get attributes from.
+         * @return {Object} Name/value object with attributes and attribute values.
+         */
+        var getAttribs = function (node) {
+          var attribs = {};
 
-defineGlobal("global!Number", Number);
-define(
-  'ephox.sand.detect.Version',
+          each(dom.getAttribs(node), function (attr) {
+            var name = attr.nodeName.toLowerCase();
 
-  [
-    'ephox.katamari.api.Arr',
-    'global!Number',
-    'global!String'
-  ],
+            // Don't compare internal attributes or style
+            if (name.indexOf('_') !== 0 && name !== 'style' && name.indexOf('data-') !== 0) {
+              attribs[name] = dom.getAttrib(node, name);
+            }
+          });
 
-  function (Arr, Number, String) {
-    var firstMatch = function (regexes, s) {
-      for (var i = 0; i < regexes.length; i++) {
-        var x = regexes[i];
-        if (x.test(s)) return x;
-      }
-      return undefined;
-    };
-
-    var find = function (regexes, agent) {
-      var r = firstMatch(regexes, agent);
-      if (!r) return { major : 0, minor : 0 };
-      var group = function(i) {
-        return Number(agent.replace(r, '$' + i));
-      };
-      return nu(group(1), group(2));
-    };
-
-    var detect = function (versionRegexes, agent) {
-      var cleanedAgent = String(agent).toLowerCase();
-
-      if (versionRegexes.length === 0) return unknown();
-      return find(versionRegexes, cleanedAgent);
-    };
-
-    var unknown = function () {
-      return nu(0, 0);
-    };
-
-    var nu = function (major, minor) {
-      return { major: major, minor: minor };
-    };
-
-    return {
-      nu: nu,
-      detect: detect,
-      unknown: unknown
-    };
-  }
-);
-define(
-  'ephox.sand.core.Browser',
-
-  [
-    'ephox.katamari.api.Fun',
-    'ephox.sand.detect.Version'
-  ],
-
-  function (Fun, Version) {
-    var edge = 'Edge';
-    var chrome = 'Chrome';
-    var ie = 'IE';
-    var opera = 'Opera';
-    var firefox = 'Firefox';
-    var safari = 'Safari';
-
-    var isBrowser = function (name, current) {
-      return function () {
-        return current === name;
-      };
-    };
-
-    var unknown = function () {
-      return nu({
-        current: undefined,
-        version: Version.unknown()
-      });
-    };
-
-    var nu = function (info) {
-      var current = info.current;
-      var version = info.version;
-
-      return {
-        current: current,
-        version: version,
-
-        // INVESTIGATE: Rename to Edge ?
-        isEdge: isBrowser(edge, current),
-        isChrome: isBrowser(chrome, current),
-        // NOTE: isIe just looks too weird
-        isIE: isBrowser(ie, current),
-        isOpera: isBrowser(opera, current),
-        isFirefox: isBrowser(firefox, current),
-        isSafari: isBrowser(safari, current)
-      };
-    };
-
-    return {
-      unknown: unknown,
-      nu: nu,
-      edge: Fun.constant(edge),
-      chrome: Fun.constant(chrome),
-      ie: Fun.constant(ie),
-      opera: Fun.constant(opera),
-      firefox: Fun.constant(firefox),
-      safari: Fun.constant(safari)
-    };
-  }
-);
-define(
-  'ephox.sand.core.OperatingSystem',
-
-  [
-    'ephox.katamari.api.Fun',
-    'ephox.sand.detect.Version'
-  ],
-
-  function (Fun, Version) {
-    var windows = 'Windows';
-    var ios = 'iOS';
-    var android = 'Android';
-    var linux = 'Linux';
-    var osx = 'OSX';
-    var solaris = 'Solaris';
-    var freebsd = 'FreeBSD';
-
-    // Though there is a bit of dupe with this and Browser, trying to 
-    // reuse code makes it much harder to follow and change.
-    var isOS = function (name, current) {
-      return function () {
-        return current === name;
-      };
-    };
-
-    var unknown = function () {
-      return nu({
-        current: undefined,
-        version: Version.unknown()
-      });
-    };
-
-    var nu = function (info) {
-      var current = info.current;
-      var version = info.version;
-
-      return {
-        current: current,
-        version: version,
-
-        isWindows: isOS(windows, current),
-        // TODO: Fix capitalisation
-        isiOS: isOS(ios, current),
-        isAndroid: isOS(android, current),
-        isOSX: isOS(osx, current),
-        isLinux: isOS(linux, current),
-        isSolaris: isOS(solaris, current),
-        isFreeBSD: isOS(freebsd, current)
-      };
-    };
-
-    return {
-      unknown: unknown,
-      nu: nu,
-
-      windows: Fun.constant(windows),
-      ios: Fun.constant(ios),
-      android: Fun.constant(android),
-      linux: Fun.constant(linux),
-      osx: Fun.constant(osx),
-      solaris: Fun.constant(solaris),
-      freebsd: Fun.constant(freebsd)
-    };
-  }
-);
-define(
-  'ephox.sand.detect.DeviceType',
-
-  [
-    'ephox.katamari.api.Fun'
-  ],
-
-  function (Fun) {
-    return function (os, browser, userAgent) {
-      var isiPad = os.isiOS() && /ipad/i.test(userAgent) === true;
-      var isiPhone = os.isiOS() && !isiPad;
-      var isAndroid3 = os.isAndroid() && os.version.major === 3;
-      var isAndroid4 = os.isAndroid() && os.version.major === 4;
-      var isTablet = isiPad || isAndroid3 || ( isAndroid4 && /mobile/i.test(userAgent) === true );
-      var isTouch = os.isiOS() || os.isAndroid();
-      var isPhone = isTouch && !isTablet;
-
-      var iOSwebview = browser.isSafari() && os.isiOS() && /safari/i.test(userAgent) === false;
-
-      return {
-        isiPad : Fun.constant(isiPad),
-        isiPhone: Fun.constant(isiPhone),
-        isTablet: Fun.constant(isTablet),
-        isPhone: Fun.constant(isPhone),
-        isTouch: Fun.constant(isTouch),
-        isAndroid: os.isAndroid,
-        isiOS: os.isiOS,
-        isWebView: Fun.constant(iOSwebview)
-      };
-    };
-  }
-);
-define(
-  'ephox.sand.detect.UaString',
-
-  [
-    'ephox.katamari.api.Arr',
-    'ephox.sand.detect.Version',
-    'global!String'
-  ],
-
-  function (Arr, Version, String) {
-    var detect = function (candidates, userAgent) {
-      var agent = String(userAgent).toLowerCase();
-      return Arr.find(candidates, function (candidate) {
-        return candidate.search(agent);
-      });
-    };
-
-    // They (browser and os) are the same at the moment, but they might
-    // not stay that way.
-    var detectBrowser = function (browsers, userAgent) {
-      return detect(browsers, userAgent).map(function (browser) {
-        var version = Version.detect(browser.versionRegexes, userAgent);
-        return {
-          current: browser.name,
-          version: version
+          return attribs;
         };
-      });
-    };
 
-    var detectOs = function (oses, userAgent) {
-      return detect(oses, userAgent).map(function (os) {
-        var version = Version.detect(os.versionRegexes, userAgent);
-        return {
-          current: os.name,
-          version: version
+        /**
+         * Compares two objects checks if it's key + value exists in the other one.
+         *
+         * @private
+         * @param {Object} obj1 First object to compare.
+         * @param {Object} obj2 Second object to compare.
+         * @return {boolean} True/false if the objects matches or not.
+         */
+        var compareObjects = function (obj1, obj2) {
+          var value, name;
+
+          for (name in obj1) {
+            // Obj1 has item obj2 doesn't have
+            if (obj1.hasOwnProperty(name)) {
+              value = obj2[name];
+
+              // Obj2 doesn't have obj1 item
+              if (typeof value == "undefined") {
+                return false;
+              }
+
+              // Obj2 item has a different value
+              if (obj1[name] != value) {
+                return false;
+              }
+
+              // Delete similar value
+              delete obj2[name];
+            }
+          }
+
+          // Check if obj 2 has something obj 1 doesn't have
+          for (name in obj2) {
+            // Obj2 has item obj1 doesn't have
+            if (obj2.hasOwnProperty(name)) {
+              return false;
+            }
+          }
+
+          return true;
         };
-      });
-    };
 
-    return {
-      detectBrowser: detectBrowser,
-      detectOs: detectOs
-    };
-  }
-);
-define(
-  'ephox.katamari.str.StrAppend',
-
-  [
-
-  ],
-
-  function () {
-    var addToStart = function (str, prefix) {
-      return prefix + str;
-    };
-
-    var addToEnd = function (str, suffix) {
-      return str + suffix;
-    };
-
-    var removeFromStart = function (str, numChars) {
-      return str.substring(numChars);
-    };
-
-    var removeFromEnd = function (str, numChars) {
-      return str.substring(0, str.length - numChars);
-    };
- 
-    return {
-      addToStart: addToStart,
-      addToEnd: addToEnd,
-      removeFromStart: removeFromStart,
-      removeFromEnd: removeFromEnd
-    };
-  }
-);
-define(
-  'ephox.katamari.str.StringParts',
-
-  [
-    'ephox.katamari.api.Option',
-    'global!Error'
-  ],
-
-  function (Option, Error) {
-    /** Return the first 'count' letters from 'str'.
--     *  e.g. first("abcde", 2) === "ab"
--     */
-    var first = function(str, count) {
-     return str.substr(0, count);
-    };
-
-    /** Return the last 'count' letters from 'str'.
-    *  e.g. last("abcde", 2) === "de"
-    */
-    var last = function(str, count) {
-     return str.substr(str.length - count, str.length);
-    };
-
-    var head = function(str) {
-      return str === '' ? Option.none() : Option.some(str.substr(0, 1));
-    };
-
-    var tail = function(str) {
-      return str === '' ? Option.none() : Option.some(str.substring(1));
-    };
-
-    return {
-      first: first,
-      last: last,
-      head: head,
-      tail: tail
-    };
-  }
-);
-define(
-  'ephox.katamari.api.Strings',
-
-  [
-    'ephox.katamari.str.StrAppend',
-    'ephox.katamari.str.StringParts',
-    'global!Error'
-  ],
-
-  function (StrAppend, StringParts, Error) {
-    var checkRange = function(str, substr, start) {
-      if (substr === '') return true;
-      if (str.length < substr.length) return false;
-      var x = str.substr(start, start + substr.length);
-      return x === substr;
-    };
-
-    /** Given a string and object, perform template-replacements on the string, as specified by the object.
-     * Any template fields of the form ${name} are replaced by the string or number specified as obj["name"]
-     * Based on Douglas Crockford's 'supplant' method for template-replace of strings. Uses different template format.
-     */
-    var supplant = function(str, obj) {
-      var isStringOrNumber = function(a) {
-        var t = typeof a;
-        return t === 'string' || t === 'number';
-      };
-
-      return str.replace(/\${([^{}]*)}/g,
-        function (a, b) {
-          var value = obj[b];
-          return isStringOrNumber(value) ? value : a;
+        // Attribs are not the same
+        if (!compareObjects(getAttribs(node1), getAttribs(node2))) {
+          return false;
         }
-      );
-    };
 
-    var removeLeading = function (str, prefix) {
-      return startsWith(str, prefix) ? StrAppend.removeFromStart(str, prefix.length) : str;
-    };
+        // Styles are not the same
+        if (!compareObjects(dom.parseStyle(dom.getAttrib(node1, 'style')), dom.parseStyle(dom.getAttrib(node2, 'style')))) {
+          return false;
+        }
 
-    var removeTrailing = function (str, prefix) {
-      return endsWith(str, prefix) ? StrAppend.removeFromEnd(str, prefix.length) : str;
-    };
-
-    var ensureLeading = function (str, prefix) {
-      return startsWith(str, prefix) ? str : StrAppend.addToStart(str, prefix);
-    };
-
-    var ensureTrailing = function (str, prefix) {
-      return endsWith(str, prefix) ? str : StrAppend.addToEnd(str, prefix);
-    };
- 
-    var contains = function(str, substr) {
-      return str.indexOf(substr) !== -1;
-    };
-
-    var capitalize = function(str) {
-      return StringParts.head(str).bind(function (head) {
-        return StringParts.tail(str).map(function (tail) {
-          return head.toUpperCase() + tail;
-        });
-      }).getOr(str);
-    };
-
-    /** Does 'str' start with 'prefix'?
-     *  Note: all strings start with the empty string.
-     *        More formally, for all strings x, startsWith(x, "").
-     *        This is so that for all strings x and y, startsWith(y + x, y)
-     */
-    var startsWith = function(str, prefix) {
-      return checkRange(str, prefix, 0);
-    };
-
-    /** Does 'str' end with 'suffix'?
-     *  Note: all strings end with the empty string.
-     *        More formally, for all strings x, endsWith(x, "").
-     *        This is so that for all strings x and y, endsWith(x + y, y)
-     */
-    var endsWith = function(str, suffix) {
-      return checkRange(str, suffix, str.length - suffix.length);
-    };
-
-   
-    /** removes all leading and trailing spaces */
-    var trim = function(str) {
-      return str.replace(/^\s+|\s+$/g, '');
-    };
-
-    var lTrim = function(str) {
-      return str.replace(/^\s+/g, '');
-    };
-
-    var rTrim = function(str) {
-      return str.replace(/\s+$/g, '');
-    };
-
-    return {
-      supplant: supplant,
-      startsWith: startsWith,
-      removeLeading: removeLeading,
-      removeTrailing: removeTrailing,
-      ensureLeading: ensureLeading,
-      ensureTrailing: ensureTrailing,
-      endsWith: endsWith,
-      contains: contains,
-      trim: trim,
-      lTrim: lTrim,
-      rTrim: rTrim,
-      capitalize: capitalize
-    };
-  }
-);
-
-define(
-  'ephox.sand.info.PlatformInfo',
-
-  [
-    'ephox.katamari.api.Fun',
-    'ephox.katamari.api.Strings'
-  ],
-
-  function (Fun, Strings) {
-    var normalVersionRegex = /.*?version\/\ ?([0-9]+)\.([0-9]+).*/;
-
-    var checkContains = function (target) {
-      return function (uastring) {
-        return Strings.contains(uastring, target);
+        return !BookmarkManager.isBookmarkNode(node1) && !BookmarkManager.isBookmarkNode(node2);
       };
     };
 
-    var browsers = [
-      {
-        name : 'Edge',
-        versionRegexes: [/.*?edge\/ ?([0-9]+)\.([0-9]+)$/],
-        search: function (uastring) {
-          var monstrosity = Strings.contains(uastring, 'edge/') && Strings.contains(uastring, 'chrome') && Strings.contains(uastring, 'safari') && Strings.contains(uastring, 'applewebkit');
-          return monstrosity;
-        }
-      },
-      {
-        name : 'Chrome',
-        versionRegexes: [/.*?chrome\/([0-9]+)\.([0-9]+).*/, normalVersionRegex],
-        search : function (uastring) {
-          return Strings.contains(uastring, 'chrome') && !Strings.contains(uastring, 'chromeframe');
-        }
-      },
-      {
-        name : 'IE',
-        versionRegexes: [/.*?msie\ ?([0-9]+)\.([0-9]+).*/, /.*?rv:([0-9]+)\.([0-9]+).*/],
-        search: function (uastring) {
-          return Strings.contains(uastring, 'msie') || Strings.contains(uastring, 'trident');
-        }
-      },
-      // INVESTIGATE: Is this still the Opera user agent?
-      {
-        name : 'Opera',
-        versionRegexes: [normalVersionRegex, /.*?opera\/([0-9]+)\.([0-9]+).*/],
-        search : checkContains('opera')
-      },
-      {
-        name : 'Firefox',
-        versionRegexes: [/.*?firefox\/\ ?([0-9]+)\.([0-9]+).*/],
-        search : checkContains('firefox')
-      },
-      {
-        name : 'Safari',
-        versionRegexes: [normalVersionRegex, /.*?cpu os ([0-9]+)_([0-9]+).*/],
-        search : function (uastring) {
-          return (Strings.contains(uastring, 'safari') || Strings.contains(uastring, 'mobile/')) && Strings.contains(uastring, 'applewebkit');
-        }
-      }
-    ];
-
-    var oses = [
-      {
-        name : 'Windows',
-        search : checkContains('win'),
-        versionRegexes: [/.*?windows\ nt\ ?([0-9]+)\.([0-9]+).*/]
-      },
-      {
-        name : 'iOS',
-        search : function (uastring) {
-          return Strings.contains(uastring, 'iphone') || Strings.contains(uastring, 'ipad');
-        },
-        versionRegexes: [/.*?version\/\ ?([0-9]+)\.([0-9]+).*/, /.*cpu os ([0-9]+)_([0-9]+).*/, /.*cpu iphone os ([0-9]+)_([0-9]+).*/]
-      },
-      {
-        name : 'Android',
-        search : checkContains('android'),
-        versionRegexes: [/.*?android\ ?([0-9]+)\.([0-9]+).*/]
-      },
-      {
-        name : 'OSX',
-        search : checkContains('os x'),
-        versionRegexes: [/.*?os\ x\ ?([0-9]+)_([0-9]+).*/]
-      },
-      {
-        name : 'Linux',
-        search : checkContains('linux'),
-        versionRegexes: [ ]
-      },
-      { name : 'Solaris',
-        search : checkContains('sunos'),
-        versionRegexes: [ ]
-      },
-      {
-       name : 'FreeBSD',
-       search : checkContains('freebsd'),
-       versionRegexes: [ ]
-      }
-    ];
-
-    return {
-      browsers: Fun.constant(browsers),
-      oses: Fun.constant(oses)
-    };
-  }
-);
-define(
-  'ephox.sand.core.PlatformDetection',
-
-  [
-    'ephox.sand.core.Browser',
-    'ephox.sand.core.OperatingSystem',
-    'ephox.sand.detect.DeviceType',
-    'ephox.sand.detect.UaString',
-    'ephox.sand.info.PlatformInfo'
-  ],
-
-  function (Browser, OperatingSystem, DeviceType, UaString, PlatformInfo) {
-    var detect = function (userAgent) {
-      var browsers = PlatformInfo.browsers();
-      var oses = PlatformInfo.oses();
-
-      var browser = UaString.detectBrowser(browsers, userAgent).fold(
-        Browser.unknown,
-        Browser.nu
-      );
-      var os = UaString.detectOs(oses, userAgent).fold(
-        OperatingSystem.unknown,
-        OperatingSystem.nu
-      );
-      var deviceType = DeviceType(os, browser, userAgent);
-
-      return {
-        browser: browser,
-        os: os,
-        deviceType: deviceType
-      };
-    };
-
-    return {
-      detect: detect
-    };
-  }
-);
-define(
-  'ephox.sand.api.PlatformDetection',
-
-  [
-    'ephox.katamari.api.Thunk',
-    'ephox.sand.core.PlatformDetection',
-    'global!navigator'
-  ],
-
-  function (Thunk, PlatformDetection, navigator) {
-    var detect = Thunk.cached(function () {
-      var userAgent = navigator.userAgent;
-      return PlatformDetection.detect(userAgent);
-    });
-
-    return {
-      detect: detect
-    };
-  }
-);
-define(
-  'ephox.sugar.api.node.NodeTypes',
-
-  [
-
-  ],
-
-  function () {
-    return {
-      ATTRIBUTE:              2,
-      CDATA_SECTION:          4,
-      COMMENT:                8,
-      DOCUMENT:               9,
-      DOCUMENT_TYPE:          10,
-      DOCUMENT_FRAGMENT:      11,
-      ELEMENT:                1,
-      TEXT:                   3,
-      PROCESSING_INSTRUCTION: 7,
-      ENTITY_REFERENCE:       5,
-      ENTITY:                 6,
-      NOTATION:               12
-    };
-  }
-);
-define(
-  'ephox.sugar.api.search.Selectors',
-
-  [
-    'ephox.katamari.api.Arr',
-    'ephox.katamari.api.Option',
-    'ephox.sugar.api.node.Element',
-    'ephox.sugar.api.node.NodeTypes',
-    'global!Error',
-    'global!document'
-  ],
-
-  function (Arr, Option, Element, NodeTypes, Error, document) {
-    /*
-     * There's a lot of code here; the aim is to allow the browser to optimise constant comparisons,
-     * instead of doing object lookup feature detection on every call
-     */
-    var STANDARD = 0;
-    var MSSTANDARD = 1;
-    var WEBKITSTANDARD = 2;
-    var FIREFOXSTANDARD = 3;
-
-    var selectorType = (function () {
-      var test = document.createElement('span');
-      // As of Chrome 34 / Safari 7.1 / FireFox 34, everyone except IE has the unprefixed function.
-      // Still check for the others, but do it last.
-      return test.matches !== undefined ? STANDARD :
-             test.msMatchesSelector !== undefined ? MSSTANDARD :
-             test.webkitMatchesSelector !== undefined ? WEBKITSTANDARD :
-             test.mozMatchesSelector !== undefined ? FIREFOXSTANDARD :
-             -1;
-    })();
-
-
-    var ELEMENT = NodeTypes.ELEMENT;
-    var DOCUMENT = NodeTypes.DOCUMENT;
-
-    var is = function (element, selector) {
-      var elem = element.dom();
-      if (elem.nodeType !== ELEMENT) return false; // documents have querySelector but not matches
-
-      // As of Chrome 34 / Safari 7.1 / FireFox 34, everyone except IE has the unprefixed function.
-      // Still check for the others, but do it last.
-      else if (selectorType === STANDARD) return elem.matches(selector);
-      else if (selectorType === MSSTANDARD) return elem.msMatchesSelector(selector);
-      else if (selectorType === WEBKITSTANDARD) return elem.webkitMatchesSelector(selector);
-      else if (selectorType === FIREFOXSTANDARD) return elem.mozMatchesSelector(selector);
-      else throw new Error('Browser lacks native selectors'); // unfortunately we can't throw this on startup :(
-    };
-
-    var bypassSelector = function (dom) {
-      // Only elements and documents support querySelector
-      return dom.nodeType !== ELEMENT && dom.nodeType !== DOCUMENT ||
-              // IE fix for complex queries on empty nodes: http://jsfiddle.net/spyder/fv9ptr5L/
-              dom.childElementCount === 0;
-    };
-
-    var all = function (selector, scope) {
-      var base = scope === undefined ? document : scope.dom();
-      return bypassSelector(base) ? [] : Arr.map(base.querySelectorAll(selector), Element.fromDom);
-    };
-
-    var one = function (selector, scope) {
-      var base = scope === undefined ? document : scope.dom();
-      return bypassSelector(base) ? Option.none() : Option.from(base.querySelector(selector)).map(Element.fromDom);
-    };
-
-    return {
-      all: all,
-      is: is,
-      one: one
-    };
-  }
-);
-
-define(
-  'ephox.sugar.api.dom.Compare',
-
-  [
-    'ephox.katamari.api.Arr',
-    'ephox.katamari.api.Fun',
-    'ephox.sand.api.Node',
-    'ephox.sand.api.PlatformDetection',
-    'ephox.sugar.api.search.Selectors'
-  ],
-
-  function (Arr, Fun, Node, PlatformDetection, Selectors) {
-
-    var eq = function (e1, e2) {
-      return e1.dom() === e2.dom();
-    };
-
-    var isEqualNode = function (e1, e2) {
-      return e1.dom().isEqualNode(e2.dom());
-    };
-
-    var member = function (element, elements) {
-      return Arr.exists(elements, Fun.curry(eq, element));
-    };
-
-    // DOM contains() method returns true if e1===e2, we define our contains() to return false (a node does not contain itself).
-    var regularContains = function (e1, e2) {
-      var d1 = e1.dom(), d2 = e2.dom();
-      return d1 === d2 ? false : d1.contains(d2);
-    };
-
-    var ieContains = function (e1, e2) {
-      // IE only implements the contains() method for Element nodes.
-      // It fails for Text nodes, so implement it using compareDocumentPosition()
-      // https://connect.microsoft.com/IE/feedback/details/780874/node-contains-is-incorrect
-      // Note that compareDocumentPosition returns CONTAINED_BY if 'e2 *is_contained_by* e1':
-      // Also, compareDocumentPosition defines a node containing itself as false.
-      return Node.documentPositionContainedBy(e1.dom(), e2.dom());
-    };
-
-    var browser = PlatformDetection.detect().browser;
-
-    // Returns: true if node e1 contains e2, otherwise false.
-    // (returns false if e1===e2: A node does not contain itself).
-    var contains = browser.isIE() ? ieContains : regularContains;
-
-    return {
-      eq: eq,
-      isEqualNode: isEqualNode,
-      member: member,
-      contains: contains,
-
-      // Only used by DomUniverse. Remove (or should Selectors.is move here?)
-      is: Selectors.is
-    };
-  }
-);
-
-define(
-  'ephox.sugar.api.search.Traverse',
-
-  [
-    'ephox.katamari.api.Type',
-    'ephox.katamari.api.Arr',
-    'ephox.katamari.api.Fun',
-    'ephox.katamari.api.Option',
-    'ephox.katamari.api.Struct',
-    'ephox.sugar.alien.Recurse',
-    'ephox.sugar.api.dom.Compare',
-    'ephox.sugar.api.node.Element'
-  ],
-
-  function (Type, Arr, Fun, Option, Struct, Recurse, Compare, Element) {
-    // The document associated with the current element
-    var owner = function (element) {
-      return Element.fromDom(element.dom().ownerDocument);
-    };
-
-    var documentElement = function (element) {
-      // TODO: Avoid unnecessary wrap/unwrap here
-      var doc = owner(element);
-      return Element.fromDom(doc.dom().documentElement);
-    };
-
-    // The window element associated with the element
-    var defaultView = function (element) {
-      var el = element.dom();
-      var defaultView = el.ownerDocument.defaultView;
-      return Element.fromDom(defaultView);
-    };
-
-    var parent = function (element) {
-      var dom = element.dom();
-      return Option.from(dom.parentNode).map(Element.fromDom);
-    };
-
-    var findIndex = function (element) {
-      return parent(element).bind(function (p) {
-        // TODO: Refactor out children so we can avoid the constant unwrapping
-        var kin = children(p);
-        return Arr.findIndex(kin, function (elem) {
-          return Compare.eq(element, elem);
-        });
-      });
-    };
-
-    var parents = function (element, isRoot) {
-      var stop = Type.isFunction(isRoot) ? isRoot : Fun.constant(false);
-
-      // This is used a *lot* so it needs to be performant, not recursive
-      var dom = element.dom();
-      var ret = [];
-
-      while (dom.parentNode !== null && dom.parentNode !== undefined) {
-        var rawParent = dom.parentNode;
-        var parent = Element.fromDom(rawParent);
-        ret.push(parent);
-
-        if (stop(parent) === true) break;
-        else dom = rawParent;
-      }
-      return ret;
-    };
-
-    var siblings = function (element) {
-      // TODO: Refactor out children so we can just not add self instead of filtering afterwards
-      var filterSelf = function (elements) {
-        return Arr.filter(elements, function (x) {
-          return !Compare.eq(element, x);
-        });
-      };
-
-      return parent(element).map(children).map(filterSelf).getOr([]);
-    };
-
-    var offsetParent = function (element) {
-      var dom = element.dom();
-      return Option.from(dom.offsetParent).map(Element.fromDom);
-    };
-
-    var prevSibling = function (element) {
-      var dom = element.dom();
-      return Option.from(dom.previousSibling).map(Element.fromDom);
-    };
-
-    var nextSibling = function (element) {
-      var dom = element.dom();
-      return Option.from(dom.nextSibling).map(Element.fromDom);
-    };
-
-    var prevSiblings = function (element) {
-      // This one needs to be reversed, so they're still in DOM order
-      return Arr.reverse(Recurse.toArray(element, prevSibling));
-    };
-
-    var nextSiblings = function (element) {
-      return Recurse.toArray(element, nextSibling);
-    };
-
-    var children = function (element) {
-      var dom = element.dom();
-      return Arr.map(dom.childNodes, Element.fromDom);
-    };
-
-    var child = function (element, index) {
-      var children = element.dom().childNodes;
-      return Option.from(children[index]).map(Element.fromDom);
-    };
-
-    var firstChild = function (element) {
-      return child(element, 0);
-    };
-
-    var lastChild = function (element) {
-      return child(element, element.dom().childNodes.length - 1);
-    };
-
-    var childNodesCount = function (element, index) {
-      return element.dom().childNodes.length;
-    };
-
-    var spot = Struct.immutable('element', 'offset');
-    var leaf = function (element, offset) {
-      var cs = children(element);
-      return cs.length > 0 && offset < cs.length ? spot(cs[offset], 0) : spot(element, offset);
-    };
-
-    return {
-      owner: owner,
-      defaultView: defaultView,
-      documentElement: documentElement,
-      parent: parent,
-      findIndex: findIndex,
-      parents: parents,
-      siblings: siblings,
-      prevSibling: prevSibling,
-      offsetParent: offsetParent,
-      prevSiblings: prevSiblings,
-      nextSibling: nextSibling,
-      nextSiblings: nextSiblings,
-      children: children,
-      child: child,
-      firstChild: firstChild,
-      lastChild: lastChild,
-      childNodesCount: childNodesCount,
-      leaf: leaf
-    };
+    return ElementUtils;
   }
 );
 
@@ -16046,53 +16125,6 @@ define(
 );
 
 define(
-  'ephox.sugar.api.node.Node',
-
-  [
-    'ephox.sugar.api.node.NodeTypes'
-  ],
-
-  function (NodeTypes) {
-    var name = function (element) {
-      var r = element.dom().nodeName;
-      return r.toLowerCase();
-    };
-
-    var type = function (element) {
-      return element.dom().nodeType;
-    };
-
-    var value = function (element) {
-      return element.dom().nodeValue;
-    };
-
-    var isType = function (t) {
-      return function (element) {
-        return type(element) === t;
-      };
-    };
-
-    var isComment = function (element) {
-      return type(element) === NodeTypes.COMMENT || name(element) === '#comment';
-    };
-
-    var isElement = isType(NodeTypes.ELEMENT);
-    var isText = isType(NodeTypes.TEXT);
-    var isDocument = isType(NodeTypes.DOCUMENT);
-
-    return {
-      name: name,
-      type: type,
-      value: value,
-      isElement: isElement,
-      isText: isText,
-      isDocument: isDocument,
-      isComment: isComment
-    };
-  }
-);
-
-define(
   'ephox.sugar.impl.NodeValue',
 
   [
@@ -16164,48 +16196,6 @@ define(
       get: get,
       getOption: getOption,
       set: set
-    };
-  }
-);
-
-define(
-  'ephox.sugar.api.node.Body',
-
-  [
-    'ephox.katamari.api.Thunk',
-    'ephox.sugar.api.node.Element',
-    'ephox.sugar.api.node.Node',
-    'global!document'
-  ],
-
-  function (Thunk, Element, Node, document) {
-
-    // Node.contains() is very, very, very good performance
-    // http://jsperf.com/closest-vs-contains/5
-    var inBody = function (element) {
-      // Technically this is only required on IE, where contains() returns false for text nodes.
-      // But it's cheap enough to run everywhere and Sugar doesn't have platform detection (yet).
-      var dom = Node.isText(element) ? element.dom().parentNode : element.dom();
-
-      // use ownerDocument.body to ensure this works inside iframes.
-      // Normally contains is bad because an element "contains" itself, but here we want that.
-      return dom !== undefined && dom !== null && dom.ownerDocument.body.contains(dom);
-    };
-
-    var body = Thunk.cached(function() {
-      return getBody(Element.fromDom(document));
-    });
-
-    var getBody = function (doc) {
-      var body = doc.dom().body;
-      if (body === null || body === undefined) throw 'Body is not available yet';
-      return Element.fromDom(body);
-    };
-
-    return {
-      body: body,
-      getBody: getBody,
-      inBody: inBody
     };
   }
 );
@@ -16319,86 +16309,6 @@ define(
 );
 
 /**
- * ElementType.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.dom.ElementType',
-  [
-    'ephox.katamari.api.Arr',
-    'ephox.katamari.api.Fun',
-    'ephox.sugar.api.node.Node'
-  ],
-  function (Arr, Fun, Node) {
-    var blocks = [
-      'article', 'aside', 'details', 'div', 'dt', 'figcaption', 'footer',
-      'form', 'fieldset', 'header', 'hgroup', 'html', 'main', 'nav',
-      'section', 'summary', 'body', 'p', 'dl', 'multicol', 'dd', 'figure',
-      'address', 'center', 'blockquote', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-      'listing', 'xmp', 'pre', 'plaintext', 'menu', 'dir', 'ul', 'ol', 'li', 'hr',
-      'table', 'tbody', 'thead', 'tfoot', 'th', 'tr', 'td', 'caption'
-    ];
-
-    var voids = [
-      'area', 'base', 'basefont', 'br', 'col', 'frame', 'hr', 'img', 'input',
-      'isindex', 'link', 'meta', 'param', 'embed', 'source', 'wbr', 'track'
-    ];
-
-    var tableCells = ['td', 'th'];
-    var tableSections = ['thead', 'tbody', 'tfoot'];
-
-    var textBlocks = [
-      'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'div', 'address', 'pre', 'form',
-      'blockquote', 'center', 'dir', 'fieldset', 'header', 'footer', 'article',
-      'section', 'hgroup', 'aside', 'nav', 'figure'
-    ];
-
-    var headings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
-    var listItems = ['li', 'dd', 'dt'];
-    var lists = ['ul', 'ol', 'dl'];
-
-    var lazyLookup = function (items) {
-      var lookup;
-      return function (node) {
-        lookup = lookup ? lookup : Arr.mapToObject(items, Fun.constant(true));
-        return lookup.hasOwnProperty(Node.name(node));
-      };
-    };
-
-    var isHeading = lazyLookup(headings);
-
-    var isBlock = lazyLookup(blocks);
-
-    var isInline = function (node) {
-      return Node.isElement(node) && !isBlock(node);
-    };
-
-    var isBr = function (node) {
-      return Node.isElement(node) && Node.name(node) === 'br';
-    };
-
-    return {
-      isBlock: isBlock,
-      isInline: isInline,
-      isHeading: isHeading,
-      isTextBlock: lazyLookup(textBlocks),
-      isList: lazyLookup(lists),
-      isListItem: lazyLookup(listItems),
-      isVoid: lazyLookup(voids),
-      isTableSection: lazyLookup(tableSections),
-      isTableCell: lazyLookup(tableCells),
-      isBr: isBr
-    };
-  }
-);
-
-/**
  * PaddingBr.js
  *
  * Released under LGPL License.
@@ -16469,6 +16379,2862 @@ define(
       fillWithPaddingBr: fillWithPaddingBr,
       isPaddedElement: isPaddedElement,
       trimBlockTrailingBr: trimBlockTrailingBr
+    };
+  }
+);
+/**
+ * Writer.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+/**
+ * This class is used to write HTML tags out it can be used with the Serializer or the SaxParser.
+ *
+ * @class tinymce.html.Writer
+ * @example
+ * var writer = new tinymce.html.Writer({indent: true});
+ * var parser = new tinymce.html.SaxParser(writer).parse('<p><br></p>');
+ * console.log(writer.getContent());
+ *
+ * @class tinymce.html.Writer
+ * @version 3.4
+ */
+define(
+  'tinymce.core.html.Writer',
+  [
+    "tinymce.core.html.Entities",
+    "tinymce.core.util.Tools"
+  ],
+  function (Entities, Tools) {
+    var makeMap = Tools.makeMap;
+
+    /**
+     * Constructs a new Writer instance.
+     *
+     * @constructor
+     * @method Writer
+     * @param {Object} settings Name/value settings object.
+     */
+    return function (settings) {
+      var html = [], indent, indentBefore, indentAfter, encode, htmlOutput;
+
+      settings = settings || {};
+      indent = settings.indent;
+      indentBefore = makeMap(settings.indent_before || '');
+      indentAfter = makeMap(settings.indent_after || '');
+      encode = Entities.getEncodeFunc(settings.entity_encoding || 'raw', settings.entities);
+      htmlOutput = settings.element_format == "html";
+
+      return {
+        /**
+         * Writes the a start element such as <p id="a">.
+         *
+         * @method start
+         * @param {String} name Name of the element.
+         * @param {Array} attrs Optional attribute array or undefined if it hasn't any.
+         * @param {Boolean} empty Optional empty state if the tag should end like <br />.
+         */
+        start: function (name, attrs, empty) {
+          var i, l, attr, value;
+
+          if (indent && indentBefore[name] && html.length > 0) {
+            value = html[html.length - 1];
+
+            if (value.length > 0 && value !== '\n') {
+              html.push('\n');
+            }
+          }
+
+          html.push('<', name);
+
+          if (attrs) {
+            for (i = 0, l = attrs.length; i < l; i++) {
+              attr = attrs[i];
+              html.push(' ', attr.name, '="', encode(attr.value, true), '"');
+            }
+          }
+
+          if (!empty || htmlOutput) {
+            html[html.length] = '>';
+          } else {
+            html[html.length] = ' />';
+          }
+
+          if (empty && indent && indentAfter[name] && html.length > 0) {
+            value = html[html.length - 1];
+
+            if (value.length > 0 && value !== '\n') {
+              html.push('\n');
+            }
+          }
+        },
+
+        /**
+         * Writes the a end element such as </p>.
+         *
+         * @method end
+         * @param {String} name Name of the element.
+         */
+        end: function (name) {
+          var value;
+
+          /*if (indent && indentBefore[name] && html.length > 0) {
+            value = html[html.length - 1];
+
+            if (value.length > 0 && value !== '\n')
+              html.push('\n');
+          }*/
+
+          html.push('</', name, '>');
+
+          if (indent && indentAfter[name] && html.length > 0) {
+            value = html[html.length - 1];
+
+            if (value.length > 0 && value !== '\n') {
+              html.push('\n');
+            }
+          }
+        },
+
+        /**
+         * Writes a text node.
+         *
+         * @method text
+         * @param {String} text String to write out.
+         * @param {Boolean} raw Optional raw state if true the contents wont get encoded.
+         */
+        text: function (text, raw) {
+          if (text.length > 0) {
+            html[html.length] = raw ? text : encode(text);
+          }
+        },
+
+        /**
+         * Writes a cdata node such as <![CDATA[data]]>.
+         *
+         * @method cdata
+         * @param {String} text String to write out inside the cdata.
+         */
+        cdata: function (text) {
+          html.push('<![CDATA[', text, ']]>');
+        },
+
+        /**
+         * Writes a comment node such as <!-- Comment -->.
+         *
+         * @method cdata
+         * @param {String} text String to write out inside the comment.
+         */
+        comment: function (text) {
+          html.push('<!--', text, '-->');
+        },
+
+        /**
+         * Writes a PI node such as <?xml attr="value" ?>.
+         *
+         * @method pi
+         * @param {String} name Name of the pi.
+         * @param {String} text String to write out inside the pi.
+         */
+        pi: function (name, text) {
+          if (text) {
+            html.push('<?', name, ' ', encode(text), '?>');
+          } else {
+            html.push('<?', name, '?>');
+          }
+
+          if (indent) {
+            html.push('\n');
+          }
+        },
+
+        /**
+         * Writes a doctype node such as <!DOCTYPE data>.
+         *
+         * @method doctype
+         * @param {String} text String to write out inside the doctype.
+         */
+        doctype: function (text) {
+          html.push('<!DOCTYPE', text, '>', indent ? '\n' : '');
+        },
+
+        /**
+         * Resets the internal buffer if one wants to reuse the writer.
+         *
+         * @method reset
+         */
+        reset: function () {
+          html.length = 0;
+        },
+
+        /**
+         * Returns the contents that got serialized.
+         *
+         * @method getContent
+         * @return {String} HTML contents that got written down.
+         */
+        getContent: function () {
+          return html.join('').replace(/\n$/, '');
+        }
+      };
+    };
+  }
+);
+/**
+ * Serializer.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+/**
+ * This class is used to serialize down the DOM tree into a string using a Writer instance.
+ *
+ *
+ * @example
+ * new tinymce.html.Serializer().serialize(new tinymce.html.DomParser().parse('<p>text</p>'));
+ * @class tinymce.html.Serializer
+ * @version 3.4
+ */
+define(
+  'tinymce.core.html.Serializer',
+  [
+    "tinymce.core.html.Writer",
+    "tinymce.core.html.Schema"
+  ],
+  function (Writer, Schema) {
+    /**
+     * Constructs a new Serializer instance.
+     *
+     * @constructor
+     * @method Serializer
+     * @param {Object} settings Name/value settings object.
+     * @param {tinymce.html.Schema} schema Schema instance to use.
+     */
+    return function (settings, schema) {
+      var self = this, writer = new Writer(settings);
+
+      settings = settings || {};
+      settings.validate = "validate" in settings ? settings.validate : true;
+
+      self.schema = schema = schema || new Schema();
+      self.writer = writer;
+
+      /**
+       * Serializes the specified node into a string.
+       *
+       * @example
+       * new tinymce.html.Serializer().serialize(new tinymce.html.DomParser().parse('<p>text</p>'));
+       * @method serialize
+       * @param {tinymce.html.Node} node Node instance to serialize.
+       * @return {String} String with HTML based on DOM tree.
+       */
+      self.serialize = function (node) {
+        var handlers, validate;
+
+        validate = settings.validate;
+
+        handlers = {
+          // #text
+          3: function (node) {
+            writer.text(node.value, node.raw);
+          },
+
+          // #comment
+          8: function (node) {
+            writer.comment(node.value);
+          },
+
+          // Processing instruction
+          7: function (node) {
+            writer.pi(node.name, node.value);
+          },
+
+          // Doctype
+          10: function (node) {
+            writer.doctype(node.value);
+          },
+
+          // CDATA
+          4: function (node) {
+            writer.cdata(node.value);
+          },
+
+          // Document fragment
+          11: function (node) {
+            if ((node = node.firstChild)) {
+              do {
+                walk(node);
+              } while ((node = node.next));
+            }
+          }
+        };
+
+        writer.reset();
+
+        var walk = function (node) {
+          var handler = handlers[node.type], name, isEmpty, attrs, attrName, attrValue, sortedAttrs, i, l, elementRule;
+
+          if (!handler) {
+            name = node.name;
+            isEmpty = node.shortEnded;
+            attrs = node.attributes;
+
+            // Sort attributes
+            if (validate && attrs && attrs.length > 1) {
+              sortedAttrs = [];
+              sortedAttrs.map = {};
+
+              elementRule = schema.getElementRule(node.name);
+              if (elementRule) {
+                for (i = 0, l = elementRule.attributesOrder.length; i < l; i++) {
+                  attrName = elementRule.attributesOrder[i];
+
+                  if (attrName in attrs.map) {
+                    attrValue = attrs.map[attrName];
+                    sortedAttrs.map[attrName] = attrValue;
+                    sortedAttrs.push({ name: attrName, value: attrValue });
+                  }
+                }
+
+                for (i = 0, l = attrs.length; i < l; i++) {
+                  attrName = attrs[i].name;
+
+                  if (!(attrName in sortedAttrs.map)) {
+                    attrValue = attrs.map[attrName];
+                    sortedAttrs.map[attrName] = attrValue;
+                    sortedAttrs.push({ name: attrName, value: attrValue });
+                  }
+                }
+
+                attrs = sortedAttrs;
+              }
+            }
+
+            writer.start(node.name, attrs, isEmpty);
+
+            if (!isEmpty) {
+              if ((node = node.firstChild)) {
+                do {
+                  walk(node);
+                } while ((node = node.next));
+              }
+
+              writer.end(name);
+            }
+          } else {
+            handler(node);
+          }
+        };
+
+        // Serialize element and treat all non elements as fragments
+        if (node.type == 1 && !settings.inner) {
+          walk(node);
+        } else {
+          handlers[11](node);
+        }
+
+        return writer.getContent();
+      };
+    };
+  }
+);
+
+/**
+ * CaretFinder.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.caret.CaretFinder',
+  [
+    'ephox.katamari.api.Fun',
+    'ephox.katamari.api.Option',
+    'tinymce.core.caret.CaretCandidate',
+    'tinymce.core.caret.CaretPosition',
+    'tinymce.core.caret.CaretUtils',
+    'tinymce.core.caret.CaretWalker',
+    'tinymce.core.dom.NodeType'
+  ],
+  function (Fun, Option, CaretCandidate, CaretPosition, CaretUtils, CaretWalker, NodeType) {
+    var walkToPositionIn = function (forward, rootNode, startNode) {
+      var position = forward ? CaretPosition.before(startNode) : CaretPosition.after(startNode);
+      return fromPosition(forward, rootNode, position);
+    };
+
+    var afterElement = function (node) {
+      return NodeType.isBr(node) ? CaretPosition.before(node) : CaretPosition.after(node);
+    };
+
+    var isBeforeOrStart = function (position) {
+      if (CaretPosition.isTextPosition(position)) {
+        return position.offset() === 0;
+      } else {
+        return CaretCandidate.isCaretCandidate(position.getNode());
+      }
+    };
+
+    var isAfterOrEnd = function (position) {
+      if (CaretPosition.isTextPosition(position)) {
+        return position.offset() === position.container().data.length;
+      } else {
+        return CaretCandidate.isCaretCandidate(position.getNode(true));
+      }
+    };
+
+    var isBeforeAfterSameElement = function (from, to) {
+      return !CaretPosition.isTextPosition(from) && !CaretPosition.isTextPosition(to) && from.getNode() === to.getNode(true);
+    };
+
+    var isAtBr = function (position) {
+      return !CaretPosition.isTextPosition(position) && NodeType.isBr(position.getNode());
+    };
+
+    var shouldSkipPosition = function (forward, from, to) {
+      if (forward) {
+        return !isBeforeAfterSameElement(from, to) && !isAtBr(from) && isAfterOrEnd(from) && isBeforeOrStart(to);
+      } else {
+        return !isBeforeAfterSameElement(to, from) && isBeforeOrStart(from) && isAfterOrEnd(to);
+      }
+    };
+
+    // Finds: <p>a|<b>b</b></p> -> <p>a<b>|b</b></p>
+    var fromPosition = function (forward, rootNode, position) {
+      var walker = new CaretWalker(rootNode);
+      return Option.from(forward ? walker.next(position) : walker.prev(position));
+    };
+
+    // Finds: <p>a|<b>b</b></p> -> <p>a<b>b|</b></p>
+    var navigate = function (forward, rootNode, from) {
+      return fromPosition(forward, rootNode, from).bind(function (to) {
+        if (CaretUtils.isInSameBlock(from, to, rootNode) && shouldSkipPosition(forward, from, to)) {
+          return fromPosition(forward, rootNode, to);
+        } else {
+          return Option.some(to);
+        }
+      });
+    };
+
+    var positionIn = function (forward, element) {
+      var startNode = forward ? element.firstChild : element.lastChild;
+      if (NodeType.isText(startNode)) {
+        return Option.some(new CaretPosition(startNode, forward ? 0 : startNode.data.length));
+      } else if (startNode) {
+        if (CaretCandidate.isCaretCandidate(startNode)) {
+          return Option.some(forward ? CaretPosition.before(startNode) : afterElement(startNode));
+        } else {
+          return walkToPositionIn(forward, element, startNode);
+        }
+      } else {
+        return Option.none();
+      }
+    };
+
+    return {
+      fromPosition: fromPosition,
+      nextPosition: Fun.curry(fromPosition, true),
+      prevPosition: Fun.curry(fromPosition, false),
+      navigate: navigate,
+      positionIn: positionIn,
+      firstPositionIn: Fun.curry(positionIn, true),
+      lastPositionIn: Fun.curry(positionIn, false)
+    };
+  }
+);
+
+/**
+ * RangeNormalizer.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.selection.RangeNormalizer',
+  [
+    'global!document',
+    'tinymce.core.caret.CaretFinder',
+    'tinymce.core.caret.CaretPosition',
+    'tinymce.core.caret.CaretUtils'
+  ],
+  function (document, CaretFinder, CaretPosition, CaretUtils) {
+    var createRange = function (sc, so, ec, eo) {
+      var rng = document.createRange();
+      rng.setStart(sc, so);
+      rng.setEnd(ec, eo);
+      return rng;
+    };
+
+    // If you triple click a paragraph in this case:
+    //   <blockquote><p>a</p></blockquote><p>b</p>
+    // It would become this range in webkit:
+    //   <blockquote><p>[a</p></blockquote><p>]b</p>
+    // We would want it to be:
+    //   <blockquote><p>[a]</p></blockquote><p>b</p>
+    // Since it would otherwise produces spans out of thin air on insertContent for example.
+    var normalizeBlockSelectionRange = function (rng) {
+      var startPos = CaretPosition.fromRangeStart(rng);
+      var endPos = CaretPosition.fromRangeEnd(rng);
+      var rootNode = rng.commonAncestorContainer;
+
+      return CaretFinder.fromPosition(false, rootNode, endPos)
+        .map(function (newEndPos) {
+          if (!CaretUtils.isInSameBlock(startPos, endPos, rootNode) && CaretUtils.isInSameBlock(startPos, newEndPos, rootNode)) {
+            return createRange(startPos.container(), startPos.offset(), newEndPos.container(), newEndPos.offset());
+          } else {
+            return rng;
+          }
+        }).getOr(rng);
+    };
+
+    var normalizeBlockSelection = function (rng) {
+      return rng.collapsed ? rng : normalizeBlockSelectionRange(rng);
+    };
+
+    var normalize = function (rng) {
+      return normalizeBlockSelection(rng);
+    };
+
+    return {
+      normalize: normalize
+    };
+  }
+);
+/**
+ * InsertContent.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+/**
+ * Handles inserts of contents into the editor instance.
+ *
+ * @class tinymce.InsertContent
+ * @private
+ */
+define(
+  'tinymce.core.InsertContent',
+  [
+    'ephox.katamari.api.Option',
+    'ephox.sugar.api.node.Element',
+    'tinymce.core.Env',
+    'tinymce.core.InsertList',
+    'tinymce.core.caret.CaretPosition',
+    'tinymce.core.caret.CaretWalker',
+    'tinymce.core.dom.ElementUtils',
+    'tinymce.core.dom.NodeType',
+    'tinymce.core.dom.PaddingBr',
+    'tinymce.core.html.Serializer',
+    'tinymce.core.selection.RangeNormalizer',
+    'tinymce.core.util.Tools'
+  ],
+  function (Option, Element, Env, InsertList, CaretPosition, CaretWalker, ElementUtils, NodeType, PaddingBr, Serializer, RangeNormalizer, Tools) {
+    var isTableCell = NodeType.matchNodeNames('td th');
+
+    var validInsertion = function (editor, value, parentNode) {
+      // Should never insert content into bogus elements, since these can
+      // be resize handles or similar
+      if (parentNode.getAttribute('data-mce-bogus') === 'all') {
+        parentNode.parentNode.insertBefore(editor.dom.createFragment(value), parentNode);
+      } else {
+        // Check if parent is empty or only has one BR element then set the innerHTML of that parent
+        var node = parentNode.firstChild;
+        var node2 = parentNode.lastChild;
+        if (!node || (node === node2 && node.nodeName === 'BR')) {///
+          editor.dom.setHTML(parentNode, value);
+        } else {
+          editor.selection.setContent(value);
+        }
+      }
+    };
+
+    var trimBrsFromTableCell = function (dom, elm) {
+      Option.from(dom.getParent(elm, 'td,th')).map(Element.fromDom).each(PaddingBr.trimBlockTrailingBr);
+    };
+
+    var insertHtmlAtCaret = function (editor, value, details) {
+      var parser, serializer, parentNode, rootNode, fragment, args;
+      var marker, rng, node, node2, bookmarkHtml, merge;
+      var textInlineElements = editor.schema.getTextInlineElements();
+      var selection = editor.selection, dom = editor.dom;
+
+      var trimOrPaddLeftRight = function (html) {
+        var rng, container, offset;
+
+        rng = selection.getRng(true);
+        container = rng.startContainer;
+        offset = rng.startOffset;
+
+        var hasSiblingText = function (siblingName) {
+          return container[siblingName] && container[siblingName].nodeType == 3;
+        };
+
+        if (container.nodeType == 3) {
+          if (offset > 0) {
+            html = html.replace(/^&nbsp;/, ' ');
+          } else if (!hasSiblingText('previousSibling')) {
+            html = html.replace(/^ /, '&nbsp;');
+          }
+
+          if (offset < container.length) {
+            html = html.replace(/&nbsp;(<br>|)$/, ' ');
+          } else if (!hasSiblingText('nextSibling')) {
+            html = html.replace(/(&nbsp;| )(<br>|)$/, '&nbsp;');
+          }
+        }
+
+        return html;
+      };
+
+      // Removes &nbsp; from a [b] c -> a &nbsp;c -> a c
+      var trimNbspAfterDeleteAndPaddValue = function () {
+        var rng, container, offset;
+
+        rng = selection.getRng(true);
+        container = rng.startContainer;
+        offset = rng.startOffset;
+
+        if (container.nodeType == 3 && rng.collapsed) {
+          if (container.data[offset] === '\u00a0') {
+            container.deleteData(offset, 1);
+
+            if (!/[\u00a0| ]$/.test(value)) {
+              value += ' ';
+            }
+          } else if (container.data[offset - 1] === '\u00a0') {
+            container.deleteData(offset - 1, 1);
+
+            if (!/[\u00a0| ]$/.test(value)) {
+              value = ' ' + value;
+            }
+          }
+        }
+      };
+
+      var reduceInlineTextElements = function () {
+        if (merge) {
+          var root = editor.getBody(), elementUtils = new ElementUtils(dom);
+
+          Tools.each(dom.select('*[data-mce-fragment]'), function (node) {
+            for (var testNode = node.parentNode; testNode && testNode != root; testNode = testNode.parentNode) {
+              if (textInlineElements[node.nodeName.toLowerCase()] && elementUtils.compare(testNode, node)) {
+                dom.remove(node, true);
+              }
+            }
+          });
+        }
+      };
+
+      var markFragmentElements = function (fragment) {
+        var node = fragment;
+
+        while ((node = node.walk())) {
+          if (node.type === 1) {
+            node.attr('data-mce-fragment', '1');
+          }
+        }
+      };
+
+      var umarkFragmentElements = function (elm) {
+        Tools.each(elm.getElementsByTagName('*'), function (elm) {
+          elm.removeAttribute('data-mce-fragment');
+        });
+      };
+
+      var isPartOfFragment = function (node) {
+        return !!node.getAttribute('data-mce-fragment');
+      };
+
+      var canHaveChildren = function (node) {
+        return node && !editor.schema.getShortEndedElements()[node.nodeName];
+      };
+
+      var moveSelectionToMarker = function (marker) {
+        var parentEditableFalseElm, parentBlock, nextRng;
+
+        var getContentEditableFalseParent = function (node) {
+          var root = editor.getBody();
+
+          for (; node && node !== root; node = node.parentNode) {
+            if (editor.dom.getContentEditable(node) === 'false') {
+              return node;
+            }
+          }
+
+          return null;
+        };
+
+        if (!marker) {
+          return;
+        }
+
+        selection.scrollIntoView(marker);
+
+        // If marker is in cE=false then move selection to that element instead
+        parentEditableFalseElm = getContentEditableFalseParent(marker);
+        if (parentEditableFalseElm) {
+          dom.remove(marker);
+          selection.select(parentEditableFalseElm);
+          return;
+        }
+
+        // Move selection before marker and remove it
+        rng = dom.createRng();
+
+        // If previous sibling is a text node set the selection to the end of that node
+        node = marker.previousSibling;
+        if (node && node.nodeType == 3) {
+          rng.setStart(node, node.nodeValue.length);
+
+          // TODO: Why can't we normalize on IE
+          if (!Env.ie) {
+            node2 = marker.nextSibling;
+            if (node2 && node2.nodeType == 3) {
+              node.appendData(node2.data);
+              node2.parentNode.removeChild(node2);
+            }
+          }
+        } else {
+          // If the previous sibling isn't a text node or doesn't exist set the selection before the marker node
+          rng.setStartBefore(marker);
+          rng.setEndBefore(marker);
+        }
+
+        var findNextCaretRng = function (rng) {
+          var caretPos = CaretPosition.fromRangeStart(rng);
+          var caretWalker = new CaretWalker(editor.getBody());
+
+          caretPos = caretWalker.next(caretPos);
+          if (caretPos) {
+            return caretPos.toRange();
+          }
+        };
+
+        // Remove the marker node and set the new range
+        parentBlock = dom.getParent(marker, dom.isBlock);
+        dom.remove(marker);
+
+        if (parentBlock && dom.isEmpty(parentBlock)) {
+          editor.$(parentBlock).empty();
+
+          rng.setStart(parentBlock, 0);
+          rng.setEnd(parentBlock, 0);
+
+          if (!isTableCell(parentBlock) && !isPartOfFragment(parentBlock) && (nextRng = findNextCaretRng(rng))) {
+            rng = nextRng;
+            dom.remove(parentBlock);
+          } else {
+            dom.add(parentBlock, dom.create('br', { 'data-mce-bogus': '1' }));
+          }
+        }
+
+        selection.setRng(rng);
+      };
+
+      // Check for whitespace before/after value
+      if (/^ | $/.test(value)) {
+        value = trimOrPaddLeftRight(value);
+      }
+
+      // Setup parser and serializer
+      parser = editor.parser;
+      merge = details.merge;
+
+      serializer = new Serializer({
+        validate: editor.settings.validate
+      }, editor.schema);
+      bookmarkHtml = '<span id="mce_marker" data-mce-type="bookmark">&#xFEFF;&#x200B;</span>';
+
+      // Run beforeSetContent handlers on the HTML to be inserted
+      args = { content: value, format: 'html', selection: true, paste: details.paste };
+      args = editor.fire('BeforeSetContent', args);
+      if (args.isDefaultPrevented()) {
+        editor.fire('SetContent', { content: args.content, format: 'html', selection: true, paste: details.paste });
+        return;
+      }
+
+      value = args.content;
+
+      // Add caret at end of contents if it's missing
+      if (value.indexOf('{$caret}') == -1) {
+        value += '{$caret}';
+      }
+
+      // Replace the caret marker with a span bookmark element
+      value = value.replace(/\{\$caret\}/, bookmarkHtml);
+
+      // If selection is at <body>|<p></p> then move it into <body><p>|</p>
+      rng = selection.getRng();
+      var caretElement = rng.startContainer || (rng.parentElement ? rng.parentElement() : null);
+      var body = editor.getBody();
+      if (caretElement === body && selection.isCollapsed()) {
+        if (dom.isBlock(body.firstChild) && canHaveChildren(body.firstChild) && dom.isEmpty(body.firstChild)) {
+          rng = dom.createRng();
+          rng.setStart(body.firstChild, 0);
+          rng.setEnd(body.firstChild, 0);
+          selection.setRng(rng);
+        }
+      }
+
+      // Insert node maker where we will insert the new HTML and get it's parent
+      if (!selection.isCollapsed()) {
+        // Fix for #2595 seems that delete removes one extra character on
+        // WebKit for some odd reason if you double click select a word
+        editor.selection.setRng(RangeNormalizer.normalize(editor.selection.getRng()));
+        editor.getDoc().execCommand('Delete', false, null);
+        trimNbspAfterDeleteAndPaddValue();
+      }
+
+      parentNode = selection.getNode();
+
+      // Parse the fragment within the context of the parent node
+      var parserArgs = { context: parentNode.nodeName.toLowerCase(), data: details.data, insert: true };
+      fragment = parser.parse(value, parserArgs);
+
+      // Custom handling of lists
+      if (details.paste === true && InsertList.isListFragment(editor.schema, fragment) && InsertList.isParentBlockLi(dom, parentNode)) {
+        rng = InsertList.insertAtCaret(serializer, dom, editor.selection.getRng(true), fragment);
+        editor.selection.setRng(rng);
+        editor.fire('SetContent', args);
+        return;
+      }
+
+      markFragmentElements(fragment);
+
+      // Move the caret to a more suitable location
+      node = fragment.lastChild;
+      if (node.attr('id') == 'mce_marker') {
+        marker = node;
+
+        for (node = node.prev; node; node = node.walk(true)) {
+          if (node.type == 3 || !dom.isBlock(node.name)) {
+            if (editor.schema.isValidChild(node.parent.name, 'span')) {
+              node.parent.insert(marker, node, node.name === 'br');
+            }
+            break;
+          }
+        }
+      }
+
+      editor._selectionOverrides.showBlockCaretContainer(parentNode);
+
+      // If parser says valid we can insert the contents into that parent
+      if (!parserArgs.invalid) {
+        value = serializer.serialize(fragment);
+        validInsertion(editor, value, parentNode);
+      } else {
+        // If the fragment was invalid within that context then we need
+        // to parse and process the parent it's inserted into
+
+        // Insert bookmark node and get the parent
+        selection.setContent(bookmarkHtml);
+        parentNode = selection.getNode();
+        rootNode = editor.getBody();
+
+        // Opera will return the document node when selection is in root
+        if (parentNode.nodeType == 9) {
+          parentNode = node = rootNode;
+        } else {
+          node = parentNode;
+        }
+
+        // Find the ancestor just before the root element
+        while (node !== rootNode) {
+          parentNode = node;
+          node = node.parentNode;
+        }
+
+        // Get the outer/inner HTML depending on if we are in the root and parser and serialize that
+        value = parentNode == rootNode ? rootNode.innerHTML : dom.getOuterHTML(parentNode);
+        value = serializer.serialize(
+          parser.parse(
+            // Need to replace by using a function since $ in the contents would otherwise be a problem
+            value.replace(/<span (id="mce_marker"|id=mce_marker).+?<\/span>/i, function () {
+              return serializer.serialize(fragment);
+            })
+          )
+        );
+
+        // Set the inner/outer HTML depending on if we are in the root or not
+        if (parentNode == rootNode) {
+          dom.setHTML(rootNode, value);
+        } else {
+          dom.setOuterHTML(parentNode, value);
+        }
+      }
+
+      reduceInlineTextElements();
+      moveSelectionToMarker(dom.get('mce_marker'));
+      umarkFragmentElements(editor.getBody());
+      trimBrsFromTableCell(editor.dom, editor.selection.getStart());
+
+      editor.fire('SetContent', args);
+      editor.addVisual();
+    };
+
+    var processValue = function (value) {
+      var details;
+
+      if (typeof value !== 'string') {
+        details = Tools.extend({
+          paste: value.paste,
+          data: {
+            paste: value.paste
+          }
+        }, value);
+
+        return {
+          content: value.content,
+          details: details
+        };
+      }
+
+      return {
+        content: value,
+        details: {}
+      };
+    };
+
+    var insertAtCaret = function (editor, value) {
+      var result = processValue(value);
+      insertHtmlAtCaret(editor, result.content, result.details);
+    };
+
+    return {
+      insertAtCaret: insertAtCaret
+    };
+  }
+);
+define(
+  'ephox.katamari.api.Options',
+
+  [
+    'ephox.katamari.api.Option'
+  ],
+
+  function (Option) {
+    /** cat :: [Option a] -> [a] */
+    var cat = function (arr) {
+      var r = [];
+      var push = function (x) {
+        r.push(x);
+      };
+      for (var i = 0; i < arr.length; i++) {
+        arr[i].each(push);
+      }
+      return r;
+    };
+
+    /** findMap :: ([a], (a, Int -> Option b)) -> Option b */
+    var findMap = function (arr, f) {
+      for (var i = 0; i < arr.length; i++) {
+        var r = f(arr[i], i);
+        if (r.isSome()) {
+          return r;
+        }
+      }
+      return Option.none();
+    };
+
+    /**
+     * if all elements in arr are 'some', their inner values are passed as arguments to f
+     * f must have arity arr.length
+    */
+    var liftN = function(arr, f) {
+      var r = [];
+      for (var i = 0; i < arr.length; i++) {
+        var x = arr[i];
+        if (x.isSome()) {
+          r.push(x.getOrDie());
+        } else {
+          return Option.none();
+        }
+      }
+      return Option.some(f.apply(null, r));
+    };
+
+    return {
+      cat: cat,
+      findMap: findMap,
+      liftN: liftN
+    };
+  }
+);
+
+define(
+  'ephox.sugar.impl.ClosestOrAncestor',
+
+  [
+    'ephox.katamari.api.Type',
+    'ephox.katamari.api.Option'
+  ],
+
+  function (Type, Option) {
+    return function (is, ancestor, scope, a, isRoot) {
+      return is(scope, a) ?
+              Option.some(scope) :
+              Type.isFunction(isRoot) && isRoot(scope) ?
+                  Option.none() :
+                  ancestor(scope, a, isRoot);
+    };
+  }
+);
+define(
+  'ephox.sugar.api.search.PredicateFind',
+
+  [
+    'ephox.katamari.api.Type',
+    'ephox.katamari.api.Arr',
+    'ephox.katamari.api.Fun',
+    'ephox.katamari.api.Option',
+    'ephox.sugar.api.node.Body',
+    'ephox.sugar.api.dom.Compare',
+    'ephox.sugar.api.node.Element',
+    'ephox.sugar.impl.ClosestOrAncestor'
+  ],
+
+  function (Type, Arr, Fun, Option, Body, Compare, Element, ClosestOrAncestor) {
+    var first = function (predicate) {
+      return descendant(Body.body(), predicate);
+    };
+
+    var ancestor = function (scope, predicate, isRoot) {
+      var element = scope.dom();
+      var stop = Type.isFunction(isRoot) ? isRoot : Fun.constant(false);
+
+      while (element.parentNode) {
+        element = element.parentNode;
+        var el = Element.fromDom(element);
+
+        if (predicate(el)) return Option.some(el);
+        else if (stop(el)) break;
+      }
+      return Option.none();
+    };
+
+    var closest = function (scope, predicate, isRoot) {
+      // This is required to avoid ClosestOrAncestor passing the predicate to itself
+      var is = function (scope) {
+        return predicate(scope);
+      };
+      return ClosestOrAncestor(is, ancestor, scope, predicate, isRoot);
+    };
+
+    var sibling = function (scope, predicate) {
+      var element = scope.dom();
+      if (!element.parentNode) return Option.none();
+
+      return child(Element.fromDom(element.parentNode), function (x) {
+        return !Compare.eq(scope, x) && predicate(x);
+      });
+    };
+
+    var child = function (scope, predicate) {
+      var result = Arr.find(scope.dom().childNodes,
+        Fun.compose(predicate, Element.fromDom));
+      return result.map(Element.fromDom);
+    };
+
+    var descendant = function (scope, predicate) {
+      var descend = function (element) {
+        for (var i = 0; i < element.childNodes.length; i++) {
+          if (predicate(Element.fromDom(element.childNodes[i])))
+            return Option.some(Element.fromDom(element.childNodes[i]));
+
+          var res = descend(element.childNodes[i]);
+          if (res.isSome())
+            return res;
+        }
+
+        return Option.none();
+      };
+
+      return descend(scope.dom());
+    };
+
+    return {
+      first: first,
+      ancestor: ancestor,
+      closest: closest,
+      sibling: sibling,
+      child: child,
+      descendant: descendant
+    };
+  }
+);
+
+/**
+ * DefaultSettings.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.EditorSettings',
+  [
+    'ephox.katamari.api.Arr',
+    'ephox.katamari.api.Fun',
+    'ephox.katamari.api.Obj',
+    'ephox.katamari.api.Option',
+    'ephox.katamari.api.Strings',
+    'ephox.katamari.api.Struct',
+    'ephox.katamari.api.Type',
+    'ephox.sand.api.PlatformDetection',
+    'tinymce.core.util.Tools'
+  ],
+  function (Arr, Fun, Obj, Option, Strings, Struct, Type, PlatformDetection, Tools) {
+    var sectionResult = Struct.immutable('sections', 'settings');
+    var detection = PlatformDetection.detect();
+    var isTouch = detection.deviceType.isTouch();
+    var mobilePlugins = [ 'lists', 'autolink', 'autosave' ];
+    var defaultMobileSettings = { theme: 'mobile' };
+
+    var normalizePlugins = function (plugins) {
+      var pluginNames = Type.isArray(plugins) ? plugins.join(' ') : plugins;
+      var trimmedPlugins = Arr.map(Type.isString(pluginNames) ? pluginNames.split(' ') : [ ], Strings.trim);
+      return Arr.filter(trimmedPlugins, function (item) {
+        return item.length > 0;
+      });
+    };
+
+    var filterMobilePlugins = function (plugins) {
+      return Arr.filter(plugins, Fun.curry(Arr.contains, mobilePlugins));
+    };
+
+    var extractSections = function (keys, settings) {
+      var result = Obj.bifilter(settings, function (value, key) {
+        return Arr.contains(keys, key);
+      });
+
+      return sectionResult(result.t, result.f);
+    };
+
+    var getSection = function (sectionResult, name, defaults) {
+      var sections = sectionResult.sections();
+      var sectionSettings = sections.hasOwnProperty(name) ? sections[name] : { };
+      return Tools.extend({}, defaults, sectionSettings);
+    };
+
+    var hasSection = function (sectionResult, name) {
+      return sectionResult.sections().hasOwnProperty(name);
+    };
+
+    var getDefaultSettings = function (id, documentBaseUrl, editor) {
+      return {
+        id: id,
+        theme: 'modern',
+        delta_width: 0,
+        delta_height: 0,
+        popup_css: '',
+        plugins: '',
+        document_base_url: documentBaseUrl,
+        add_form_submit_trigger: true,
+        submit_patch: true,
+        add_unload_trigger: true,
+        convert_urls: true,
+        relative_urls: true,
+        remove_script_host: true,
+        object_resizing: true,
+        doctype: '<!DOCTYPE html>',
+        visual: true,
+        font_size_style_values: 'xx-small,x-small,small,medium,large,x-large,xx-large',
+
+        // See: http://www.w3.org/TR/CSS2/fonts.html#propdef-font-size
+        font_size_legacy_values: 'xx-small,small,medium,large,x-large,xx-large,300%',
+        forced_root_block: 'p',
+        hidden_input: true,
+        padd_empty_editor: true,
+        render_ui: true,
+        indentation: '30px',
+        inline_styles: true,
+        convert_fonts_to_spans: true,
+        indent: 'simple',
+        indent_before: 'p,h1,h2,h3,h4,h5,h6,blockquote,div,title,style,pre,script,td,th,ul,ol,li,dl,dt,dd,area,table,thead,' +
+        'tfoot,tbody,tr,section,article,hgroup,aside,figure,figcaption,option,optgroup,datalist',
+        indent_after: 'p,h1,h2,h3,h4,h5,h6,blockquote,div,title,style,pre,script,td,th,ul,ol,li,dl,dt,dd,area,table,thead,' +
+        'tfoot,tbody,tr,section,article,hgroup,aside,figure,figcaption,option,optgroup,datalist',
+        entity_encoding: 'named',
+        url_converter: editor.convertURL,
+        url_converter_scope: editor,
+        ie7_compat: true
+      };
+    };
+
+    var getExternalPlugins = function (overrideSettings, settings) {
+      var userDefinedExternalPlugins = settings.external_plugins ? settings.external_plugins : { };
+
+      if (overrideSettings && overrideSettings.external_plugins) {
+        return Tools.extend({}, overrideSettings.external_plugins, userDefinedExternalPlugins);
+      } else {
+        return userDefinedExternalPlugins;
+      }
+    };
+
+    var combinePlugins = function (forcedPlugins, plugins) {
+      return [].concat(normalizePlugins(forcedPlugins)).concat(normalizePlugins(plugins));
+    };
+
+    var processPlugins = function (isTouchDevice, sectionResult, defaultOverrideSettings, settings) {
+      var forcedPlugins = normalizePlugins(defaultOverrideSettings.forced_plugins);
+      var plugins = normalizePlugins(settings.plugins);
+      var platformPlugins = isTouchDevice && hasSection(sectionResult, 'mobile') ? filterMobilePlugins(plugins) : plugins;
+      var combinedPlugins = combinePlugins(forcedPlugins, platformPlugins);
+
+      return Tools.extend(settings, {
+        plugins: combinedPlugins.join(' ')
+      });
+    };
+
+    var isOnMobile = function (isTouchDevice, sectionResult) {
+      var isInline = sectionResult.settings().inline; // We don't support mobile inline yet
+      return isTouchDevice && hasSection(sectionResult, 'mobile') && !isInline;
+    };
+
+    var combineSettings = function (isTouchDevice, defaultSettings, defaultOverrideSettings, settings) {
+      var sectionResult = extractSections(['mobile'], settings);
+      var extendedSettings = Tools.extend(
+        // Default settings
+        defaultSettings,
+
+        // tinymce.overrideDefaults settings
+        defaultOverrideSettings,
+
+        // User settings
+        sectionResult.settings(),
+
+        // Sections
+        isOnMobile(isTouchDevice, sectionResult) ? getSection(sectionResult, 'mobile', defaultMobileSettings) : { },
+
+        // Forced settings
+        {
+          validate: true,
+          content_editable: sectionResult.settings().inline,
+          external_plugins: getExternalPlugins(defaultOverrideSettings, sectionResult.settings())
+        }
+      );
+
+      return processPlugins(isTouchDevice, sectionResult, defaultOverrideSettings, extendedSettings);
+    };
+
+    var getEditorSettings = function (editor, id, documentBaseUrl, defaultOverrideSettings, settings) {
+      var defaultSettings = getDefaultSettings(id, documentBaseUrl, editor);
+      return combineSettings(isTouch, defaultSettings, defaultOverrideSettings, settings);
+    };
+
+    var get = function (editor, name) {
+      return Option.from(editor.settings[name]);
+    };
+
+    var getFiltered = function (predicate, editor, name) {
+      return Option.from(editor.settings[name]).filter(predicate);
+    };
+
+    return {
+      getEditorSettings: getEditorSettings,
+      get: get,
+      getString: Fun.curry(getFiltered, Type.isString),
+      combineSettings: combineSettings
+    };
+  }
+);
+
+/**
+ * Bidi.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.text.Bidi',
+  [
+  ],
+  function () {
+    var strongRtl = /[\u0591-\u07FF\uFB1D-\uFDFF\uFE70-\uFEFC]/;
+
+    var hasStrongRtl = function (text) {
+      return strongRtl.test(text);
+    };
+
+    return {
+      hasStrongRtl: hasStrongRtl
+    };
+  }
+);
+/**
+ * InlineUtils.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.keyboard.InlineUtils',
+  [
+    'ephox.katamari.api.Arr',
+    'ephox.katamari.api.Fun',
+    'ephox.katamari.api.Option',
+    'ephox.sugar.api.node.Element',
+    'ephox.sugar.api.search.Selectors',
+    'tinymce.core.EditorSettings',
+    'tinymce.core.caret.CaretContainer',
+    'tinymce.core.caret.CaretPosition',
+    'tinymce.core.caret.CaretUtils',
+    'tinymce.core.dom.DOMUtils',
+    'tinymce.core.dom.NodeType',
+    'tinymce.core.text.Bidi'
+  ],
+  function (Arr, Fun, Option, Element, Selectors, EditorSettings, CaretContainer, CaretPosition, CaretUtils, DOMUtils, NodeType, Bidi) {
+    var isInlineTarget = function (editor, elm) {
+      var selector = EditorSettings.getString(editor, 'inline_boundaries_selector').getOr('a[href],code');
+      return Selectors.is(Element.fromDom(elm), selector);
+    };
+
+    var isRtl = function (element) {
+      return DOMUtils.DOM.getStyle(element, 'direction', true) === 'rtl' || Bidi.hasStrongRtl(element.textContent);
+    };
+
+    var findInlineParents = function (isInlineTarget, rootNode, pos) {
+      return Arr.filter(DOMUtils.DOM.getParents(pos.container(), '*', rootNode), isInlineTarget);
+    };
+
+    var findRootInline = function (isInlineTarget, rootNode, pos) {
+      var parents = findInlineParents(isInlineTarget, rootNode, pos);
+      return Option.from(parents[parents.length - 1]);
+    };
+
+    var hasSameParentBlock = function (rootNode, node1, node2) {
+      var block1 = CaretUtils.getParentBlock(node1, rootNode);
+      var block2 = CaretUtils.getParentBlock(node2, rootNode);
+      return block1 && block1 === block2;
+    };
+
+    var isAtZwsp = function (pos) {
+      return CaretContainer.isBeforeInline(pos) || CaretContainer.isAfterInline(pos);
+    };
+
+    var normalizePosition = function (forward, pos) {
+      var container = pos.container(), offset = pos.offset();
+
+      if (forward) {
+        if (CaretContainer.isCaretContainerInline(container)) {
+          if (NodeType.isText(container.nextSibling)) {
+            return new CaretPosition(container.nextSibling, 0);
+          } else {
+            return CaretPosition.after(container);
+          }
+        } else {
+          return CaretContainer.isBeforeInline(pos) ? new CaretPosition(container, offset + 1) : pos;
+        }
+      } else {
+        if (CaretContainer.isCaretContainerInline(container)) {
+          if (NodeType.isText(container.previousSibling)) {
+            return new CaretPosition(container.previousSibling, container.previousSibling.data.length);
+          } else {
+            return CaretPosition.before(container);
+          }
+        } else {
+          return CaretContainer.isAfterInline(pos) ? new CaretPosition(container, offset - 1) : pos;
+        }
+      }
+    };
+
+    var normalizeForwards = Fun.curry(normalizePosition, true);
+    var normalizeBackwards = Fun.curry(normalizePosition, false);
+
+    return {
+      isInlineTarget: isInlineTarget,
+      findRootInline: findRootInline,
+      isRtl: isRtl,
+      isAtZwsp: isAtZwsp,
+      normalizePosition: normalizePosition,
+      normalizeForwards: normalizeForwards,
+      normalizeBackwards: normalizeBackwards,
+      hasSameParentBlock: hasSameParentBlock
+    };
+  }
+);
+/**
+ * DeleteUtils.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.delete.DeleteUtils',
+  [
+    'ephox.katamari.api.Option',
+    'ephox.katamari.api.Options',
+    'ephox.sugar.api.dom.Compare',
+    'ephox.sugar.api.node.Element',
+    'ephox.sugar.api.search.PredicateFind',
+    'tinymce.core.caret.CaretFinder',
+    'tinymce.core.dom.ElementType',
+    'tinymce.core.keyboard.InlineUtils'
+  ],
+  function (Option, Options, Compare, Element, PredicateFind, CaretFinder, ElementType, InlineUtils) {
+    var isBeforeRoot = function (rootNode) {
+      return function (elm) {
+        return Compare.eq(rootNode, Element.fromDom(elm.dom().parentNode));
+      };
+    };
+
+    var getParentBlock = function (rootNode, elm) {
+      return Compare.contains(rootNode, elm) ? PredicateFind.closest(elm, function (element) {
+        return ElementType.isTextBlock(element) || ElementType.isListItem(element);
+      }, isBeforeRoot(rootNode)) : Option.none();
+    };
+
+    var placeCaretInEmptyBody = function (editor) {
+      var body = editor.getBody();
+      var node = body.firstChild && editor.dom.isBlock(body.firstChild) ? body.firstChild : body;
+      editor.selection.setCursorLocation(node, 0);
+    };
+
+    var paddEmptyBody = function (editor) {
+      if (editor.dom.isEmpty(editor.getBody())) {
+        editor.setContent('');
+        placeCaretInEmptyBody(editor);
+      }
+    };
+
+    var willDeleteLastPositionInElement = function (forward, fromPos, elm) {
+      return Options.liftN([
+        CaretFinder.firstPositionIn(elm),
+        CaretFinder.lastPositionIn(elm)
+      ], function (firstPos, lastPos) {
+        var normalizedFirstPos = InlineUtils.normalizePosition(true, firstPos);
+        var normalizedLastPos = InlineUtils.normalizePosition(false, lastPos);
+        var normalizedFromPos = InlineUtils.normalizePosition(false, fromPos);
+
+        if (forward) {
+          return CaretFinder.nextPosition(elm, normalizedFromPos).map(function (nextPos) {
+            return nextPos.isEqual(normalizedLastPos) && fromPos.isEqual(normalizedFirstPos);
+          }).getOr(false);
+        } else {
+          return CaretFinder.prevPosition(elm, normalizedFromPos).map(function (prevPos) {
+            return prevPos.isEqual(normalizedFirstPos) && fromPos.isEqual(normalizedLastPos);
+          }).getOr(false);
+        }
+      }).getOr(true);
+    };
+
+    return {
+      getParentBlock: getParentBlock,
+      paddEmptyBody: paddEmptyBody,
+      willDeleteLastPositionInElement: willDeleteLastPositionInElement
+    };
+  }
+);
+
+define(
+  'ephox.sugar.api.search.SelectorFind',
+
+  [
+    'ephox.sugar.api.search.PredicateFind',
+    'ephox.sugar.api.search.Selectors',
+    'ephox.sugar.impl.ClosestOrAncestor'
+  ],
+
+  function (PredicateFind, Selectors, ClosestOrAncestor) {
+    // TODO: An internal SelectorFilter module that doesn't Element.fromDom() everything
+
+    var first = function (selector) {
+      return Selectors.one(selector);
+    };
+
+    var ancestor = function (scope, selector, isRoot) {
+      return PredicateFind.ancestor(scope, function (e) {
+        return Selectors.is(e, selector);
+      }, isRoot);
+    };
+
+    var sibling = function (scope, selector) {
+      return PredicateFind.sibling(scope, function (e) {
+        return Selectors.is(e, selector);
+      });
+    };
+
+    var child = function (scope, selector) {
+      return PredicateFind.child(scope, function (e) {
+        return Selectors.is(e, selector);
+      });
+    };
+
+    var descendant = function (scope, selector) {
+      return Selectors.one(selector, scope);
+    };
+
+    // Returns Some(closest ancestor element (sugared)) matching 'selector' up to isRoot, or None() otherwise
+    var closest = function (scope, selector, isRoot) {
+      return ClosestOrAncestor(Selectors.is, ancestor, scope, selector, isRoot);
+    };
+
+    return {
+      first: first,
+      ancestor: ancestor,
+      sibling: sibling,
+      child: child,
+      descendant: descendant,
+      closest: closest
+    };
+  }
+);
+
+define(
+  'ephox.sugar.api.search.SelectorExists',
+
+  [
+    'ephox.sugar.api.search.SelectorFind'
+  ],
+
+  function (SelectorFind) {
+    var any = function (selector) {
+      return SelectorFind.first(selector).isSome();
+    };
+
+    var ancestor = function (scope, selector, isRoot) {
+      return SelectorFind.ancestor(scope, selector, isRoot).isSome();
+    };
+
+    var sibling = function (scope, selector) {
+      return SelectorFind.sibling(scope, selector).isSome();
+    };
+
+    var child = function (scope, selector) {
+      return SelectorFind.child(scope, selector).isSome();
+    };
+
+    var descendant = function (scope, selector) {
+      return SelectorFind.descendant(scope, selector).isSome();
+    };
+
+    var closest = function (scope, selector, isRoot) {
+      return SelectorFind.closest(scope, selector, isRoot).isSome();
+    };
+
+    return {
+      any: any,
+      ancestor: ancestor,
+      sibling: sibling,
+      child: child,
+      descendant: descendant,
+      closest: closest
+    };
+  }
+);
+
+/**
+ * Empty.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.dom.Empty',
+  [
+    'ephox.katamari.api.Fun',
+    'ephox.sugar.api.dom.Compare',
+    'ephox.sugar.api.node.Element',
+    'ephox.sugar.api.search.SelectorExists',
+    'tinymce.core.caret.CaretCandidate',
+    'tinymce.core.dom.NodeType',
+    'tinymce.core.dom.TreeWalker'
+  ],
+  function (Fun, Compare, Element, SelectorExists, CaretCandidate, NodeType, TreeWalker) {
+    var hasWhitespacePreserveParent = function (rootNode, node) {
+      var rootElement = Element.fromDom(rootNode);
+      var startNode = Element.fromDom(node);
+      return SelectorExists.ancestor(startNode, 'pre,code', Fun.curry(Compare.eq, rootElement));
+    };
+
+    var isWhitespace = function (rootNode, node) {
+      return NodeType.isText(node) && /^[ \t\r\n]*$/.test(node.data) && hasWhitespacePreserveParent(rootNode, node) === false;
+    };
+
+    var isNamedAnchor = function (node) {
+      return NodeType.isElement(node) && node.nodeName === 'A' && node.hasAttribute('name');
+    };
+
+    var isContent = function (rootNode, node) {
+      return (CaretCandidate.isCaretCandidate(node) && isWhitespace(rootNode, node) === false) || isNamedAnchor(node) || isBookmark(node);
+    };
+
+    var isBookmark = NodeType.hasAttribute('data-mce-bookmark');
+    var isBogus = NodeType.hasAttribute('data-mce-bogus');
+    var isBogusAll = NodeType.hasAttributeValue('data-mce-bogus', 'all');
+
+    var isEmptyNode = function (targetNode) {
+      var walker, node, brCount = 0;
+
+      if (isContent(targetNode, targetNode)) {
+        return false;
+      } else {
+        node = targetNode.firstChild;
+        if (!node) {
+          return true;
+        }
+
+        walker = new TreeWalker(node, targetNode);
+        do {
+          if (isBogusAll(node)) {
+            node = walker.next(true);
+            continue;
+          }
+
+          if (isBogus(node)) {
+            node = walker.next();
+            continue;
+          }
+
+          if (NodeType.isBr(node)) {
+            brCount++;
+            node = walker.next();
+            continue;
+          }
+
+          if (isContent(targetNode, node)) {
+            return false;
+          }
+
+          node = walker.next();
+        } while (node);
+
+        return brCount <= 1;
+      }
+    };
+
+    var isEmpty = function (elm) {
+      return isEmptyNode(elm.dom());
+    };
+
+    return {
+      isEmpty: isEmpty
+    };
+  }
+);
+
+/**
+ * BlockBoundary.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.delete.BlockBoundary',
+  [
+    'ephox.katamari.api.Arr',
+    'ephox.katamari.api.Fun',
+    'ephox.katamari.api.Option',
+    'ephox.katamari.api.Options',
+    'ephox.katamari.api.Struct',
+    'ephox.sugar.api.dom.Compare',
+    'ephox.sugar.api.node.Element',
+    'ephox.sugar.api.node.Node',
+    'ephox.sugar.api.search.PredicateFind',
+    'ephox.sugar.api.search.Traverse',
+    'tinymce.core.caret.CaretFinder',
+    'tinymce.core.caret.CaretPosition',
+    'tinymce.core.delete.DeleteUtils',
+    'tinymce.core.dom.Empty',
+    'tinymce.core.dom.NodeType'
+  ],
+  function (Arr, Fun, Option, Options, Struct, Compare, Element, Node, PredicateFind, Traverse, CaretFinder, CaretPosition, DeleteUtils, Empty, NodeType) {
+    var BlockPosition = Struct.immutable('block', 'position');
+    var BlockBoundary = Struct.immutable('from', 'to');
+
+    var getBlockPosition = function (rootNode, pos) {
+      var rootElm = Element.fromDom(rootNode);
+      var containerElm = Element.fromDom(pos.container());
+      return DeleteUtils.getParentBlock(rootElm, containerElm).map(function (block) {
+        return BlockPosition(block, pos);
+      });
+    };
+
+    var isDifferentBlocks = function (blockBoundary) {
+      return Compare.eq(blockBoundary.from().block(), blockBoundary.to().block()) === false;
+    };
+
+    var hasSameParent = function (blockBoundary) {
+      return Traverse.parent(blockBoundary.from().block()).bind(function (parent1) {
+        return Traverse.parent(blockBoundary.to().block()).filter(function (parent2) {
+          return Compare.eq(parent1, parent2);
+        });
+      }).isSome();
+    };
+
+    var isEditable = function (blockBoundary) {
+      return NodeType.isContentEditableFalse(blockBoundary.from().block()) === false && NodeType.isContentEditableFalse(blockBoundary.to().block()) === false;
+    };
+
+    var skipLastBr = function (rootNode, forward, blockPosition) {
+      if (NodeType.isBr(blockPosition.position().getNode()) && Empty.isEmpty(blockPosition.block()) === false) {
+        return CaretFinder.positionIn(false, blockPosition.block().dom()).bind(function (lastPositionInBlock) {
+          if (lastPositionInBlock.isEqual(blockPosition.position())) {
+            return CaretFinder.fromPosition(forward, rootNode, lastPositionInBlock).bind(function (to) {
+              return getBlockPosition(rootNode, to);
+            });
+          } else {
+            return Option.some(blockPosition);
+          }
+        }).getOr(blockPosition);
+      } else {
+        return blockPosition;
+      }
+    };
+
+    var readFromRange = function (rootNode, forward, rng) {
+      var fromBlockPos = getBlockPosition(rootNode, CaretPosition.fromRangeStart(rng));
+      var toBlockPos = fromBlockPos.bind(function (blockPos) {
+        return CaretFinder.fromPosition(forward, rootNode, blockPos.position()).bind(function (to) {
+          return getBlockPosition(rootNode, to).map(function (blockPos) {
+            return skipLastBr(rootNode, forward, blockPos);
+          });
+        });
+      });
+
+      return Options.liftN([fromBlockPos, toBlockPos], BlockBoundary).filter(function (blockBoundary) {
+        return isDifferentBlocks(blockBoundary) && hasSameParent(blockBoundary) && isEditable(blockBoundary);
+      });
+    };
+
+    var read = function (rootNode, forward, rng) {
+      return rng.collapsed ? readFromRange(rootNode, forward, rng) : Option.none();
+    };
+
+    return {
+      read: read
+    };
+  }
+);
+
+/**
+ * Parents.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.dom.Parents',
+  [
+    'ephox.katamari.api.Fun',
+    'ephox.sugar.api.dom.Compare',
+    'ephox.sugar.api.search.Traverse'
+  ],
+  function (Fun, Compare, Traverse) {
+    var dropLast = function (xs) {
+      return xs.slice(0, -1);
+    };
+
+    var parentsUntil = function (startNode, rootElm, predicate) {
+      if (Compare.contains(rootElm, startNode)) {
+        return dropLast(Traverse.parents(startNode, function (elm) {
+          return predicate(elm) || Compare.eq(elm, rootElm);
+        }));
+      } else {
+        return [];
+      }
+    };
+
+    var parents = function (startNode, rootElm) {
+      return parentsUntil(startNode, rootElm, Fun.constant(false));
+    };
+
+    var parentsAndSelf = function (startNode, rootElm) {
+      return [startNode].concat(parents(startNode, rootElm));
+    };
+
+    return {
+      parentsUntil: parentsUntil,
+      parents: parents,
+      parentsAndSelf: parentsAndSelf
+    };
+  }
+);
+
+/**
+ * MergeBlocks.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.delete.MergeBlocks',
+  [
+    'ephox.katamari.api.Arr',
+    'ephox.katamari.api.Option',
+    'ephox.sugar.api.dom.Compare',
+    'ephox.sugar.api.dom.Insert',
+    'ephox.sugar.api.dom.Remove',
+    'ephox.sugar.api.node.Element',
+    'ephox.sugar.api.search.Traverse',
+    'tinymce.core.caret.CaretFinder',
+    'tinymce.core.caret.CaretPosition',
+    'tinymce.core.dom.ElementType',
+    'tinymce.core.dom.Empty',
+    'tinymce.core.dom.NodeType',
+    'tinymce.core.dom.Parents'
+  ],
+  function (Arr, Option, Compare, Insert, Remove, Element, Traverse, CaretFinder, CaretPosition, ElementType, Empty, NodeType, Parents) {
+    var getChildrenUntilBlockBoundary = function (block) {
+      var children = Traverse.children(block);
+      return Arr.findIndex(children, ElementType.isBlock).fold(
+        function () {
+          return children;
+        },
+        function (index) {
+          return children.slice(0, index);
+        }
+      );
+    };
+
+    var extractChildren = function (block) {
+      var children = getChildrenUntilBlockBoundary(block);
+
+      Arr.each(children, function (node) {
+        Remove.remove(node);
+      });
+
+      return children;
+    };
+
+    var trimBr = function (first, block) {
+      CaretFinder.positionIn(first, block.dom()).each(function (position) {
+        var node = position.getNode();
+        if (NodeType.isBr(node)) {
+          Remove.remove(Element.fromDom(node));
+        }
+      });
+    };
+
+    var removeEmptyRoot = function (rootNode, block) {
+      var parents = Parents.parentsAndSelf(block, rootNode);
+      return Arr.find(parents.reverse(), Empty.isEmpty).each(Remove.remove);
+    };
+
+    var findParentInsertPoint = function (toBlock, block) {
+      var parents = Traverse.parents(block, function (elm) {
+        return Compare.eq(elm, toBlock);
+      });
+
+      return Option.from(parents[parents.length - 2]);
+    };
+
+    var getInsertionPoint = function (fromBlock, toBlock) {
+      if (Compare.contains(toBlock, fromBlock)) {
+        return Traverse.parent(fromBlock).bind(function (parent) {
+          return Compare.eq(parent, toBlock) ? Option.some(fromBlock) : findParentInsertPoint(toBlock, fromBlock);
+        });
+      } else {
+        return Option.none();
+      }
+    };
+
+    var mergeBlockInto = function (rootNode, fromBlock, toBlock) {
+      if (Empty.isEmpty(toBlock)) {
+        Remove.remove(toBlock);
+        return CaretFinder.firstPositionIn(fromBlock.dom());
+      } else {
+        trimBr(true, fromBlock);
+        trimBr(false, toBlock);
+
+        var children = extractChildren(fromBlock);
+
+        return getInsertionPoint(fromBlock, toBlock).fold(
+          function () {
+            removeEmptyRoot(rootNode, fromBlock);
+
+            var position = CaretFinder.lastPositionIn(toBlock.dom());
+
+            Arr.each(children, function (node) {
+              Insert.append(toBlock, node);
+            });
+
+            return position;
+          },
+          function (target) {
+            var position = CaretFinder.prevPosition(toBlock.dom(), CaretPosition.before(target.dom()));
+
+            Arr.each(children, function (node) {
+              Insert.before(target, node);
+            });
+
+            removeEmptyRoot(rootNode, fromBlock);
+
+            return position;
+          }
+        );
+      }
+    };
+
+    var mergeBlocks = function (rootNode, forward, block1, block2) {
+      return forward ? mergeBlockInto(rootNode, block2, block1) : mergeBlockInto(rootNode, block1, block2);
+    };
+
+    return {
+      mergeBlocks: mergeBlocks
+    };
+  }
+);
+
+/**
+ * BlockBoundaryDelete.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.delete.BlockBoundaryDelete',
+  [
+    'ephox.sugar.api.node.Element',
+    'tinymce.core.delete.BlockBoundary',
+    'tinymce.core.delete.MergeBlocks'
+  ],
+  function (Element, BlockBoundary, MergeBlocks) {
+    var backspaceDelete = function (editor, forward) {
+      var position, rootNode = Element.fromDom(editor.getBody());
+
+      position = BlockBoundary.read(rootNode.dom(), forward, editor.selection.getRng()).bind(function (blockBoundary) {
+        return MergeBlocks.mergeBlocks(rootNode, forward, blockBoundary.from().block(), blockBoundary.to().block());
+      });
+
+      position.each(function (pos) {
+        editor.selection.setRng(pos.toRange());
+      });
+
+      return position.isSome();
+    };
+
+    return {
+      backspaceDelete: backspaceDelete
+    };
+  }
+);
+
+/**
+ * BlockRangeDelete.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.delete.BlockRangeDelete',
+  [
+    'ephox.katamari.api.Options',
+    'ephox.sugar.api.dom.Compare',
+    'ephox.sugar.api.node.Element',
+    'tinymce.core.caret.CaretFinder',
+    'tinymce.core.caret.CaretPosition',
+    'tinymce.core.delete.DeleteUtils',
+    'tinymce.core.delete.MergeBlocks'
+  ],
+  function (Options, Compare, Element, CaretFinder, CaretPosition, DeleteUtils, MergeBlocks) {
+    var deleteRangeMergeBlocks = function (rootNode, selection) {
+      var rng = selection.getRng();
+
+      return Options.liftN([
+        DeleteUtils.getParentBlock(rootNode, Element.fromDom(rng.startContainer)),
+        DeleteUtils.getParentBlock(rootNode, Element.fromDom(rng.endContainer))
+      ], function (block1, block2) {
+        if (Compare.eq(block1, block2) === false) {
+          rng.deleteContents();
+
+          MergeBlocks.mergeBlocks(rootNode, true, block1, block2).each(function (pos) {
+            selection.setRng(pos.toRange());
+          });
+
+          return true;
+        } else {
+          return false;
+        }
+      }).getOr(false);
+    };
+
+    var isEverythingSelected = function (rootNode, rng) {
+      var noPrevious = CaretFinder.prevPosition(rootNode.dom(), CaretPosition.fromRangeStart(rng)).isNone();
+      var noNext = CaretFinder.nextPosition(rootNode.dom(), CaretPosition.fromRangeEnd(rng)).isNone();
+      return noPrevious && noNext;
+    };
+
+    var emptyEditor = function (editor) {
+      editor.setContent('');
+      editor.selection.setCursorLocation();
+      return true;
+    };
+
+    var deleteRange = function (editor) {
+      var rootNode = Element.fromDom(editor.getBody());
+      var rng = editor.selection.getRng();
+      return isEverythingSelected(rootNode, rng) ? emptyEditor(editor) : deleteRangeMergeBlocks(rootNode, editor.selection);
+    };
+
+    var backspaceDelete = function (editor, forward) {
+      return editor.selection.isCollapsed() ? false : deleteRange(editor, editor.selection.getRng());
+    };
+
+    return {
+      backspaceDelete: backspaceDelete
+    };
+  }
+);
+
+define(
+  'ephox.katamari.api.Adt',
+
+  [
+    'ephox.katamari.api.Arr',
+    'ephox.katamari.api.Obj',
+    'ephox.katamari.api.Type',
+    'global!Array',
+    'global!Error',
+    'global!console'
+  ],
+
+  function (Arr, Obj, Type, Array, Error, console) {
+    /*
+     * Generates a church encoded ADT (https://en.wikipedia.org/wiki/Church_encoding)
+     * For syntax and use, look at the test code.
+     */
+    var generate = function (cases) {
+      // validation
+      if (!Type.isArray(cases)) {
+        throw new Error('cases must be an array');
+      }
+      if (cases.length === 0) {
+        throw new Error('there must be at least one case');
+      }
+
+      var constructors = [ ];
+
+      // adt is mutated to add the individual cases
+      var adt = {};
+      Arr.each(cases, function (acase, count) {
+        var keys = Obj.keys(acase);
+
+        // validation
+        if (keys.length !== 1) {
+          throw new Error('one and only one name per case');
+        }
+
+        var key = keys[0];
+        var value = acase[key];
+
+        // validation
+        if (adt[key] !== undefined) {
+          throw new Error('duplicate key detected:' + key);
+        } else if (key === 'cata') {
+          throw new Error('cannot have a case named cata (sorry)');
+        } else if (!Type.isArray(value)) {
+          // this implicitly checks if acase is an object
+          throw new Error('case arguments must be an array');
+        }
+
+        constructors.push(key);
+        //
+        // constructor for key
+        //
+        adt[key] = function () {
+          var argLength = arguments.length;
+
+          // validation
+          if (argLength !== value.length) {
+            throw new Error('Wrong number of arguments to case ' + key + '. Expected ' + value.length + ' (' + value + '), got ' + argLength);
+          }
+
+          // Don't use array slice(arguments), makes the whole function unoptimisable on Chrome
+          var args = new Array(argLength);
+          for (var i = 0; i < args.length; i++) args[i] = arguments[i];
+
+
+          var match = function (branches) {
+            var branchKeys = Obj.keys(branches);
+            if (constructors.length !== branchKeys.length) {
+              throw new Error('Wrong number of arguments to match. Expected: ' + constructors.join(',') + '\nActual: ' + branchKeys.join(','));
+            }
+
+            var allReqd = Arr.forall(constructors, function (reqKey) {
+              return Arr.contains(branchKeys, reqKey);
+            });
+
+            if (!allReqd) throw new Error('Not all branches were specified when using match. Specified: ' + branchKeys.join(', ') + '\nRequired: ' + constructors.join(', '));
+
+            return branches[key].apply(null, args);
+          };
+
+          //
+          // the fold function for key
+          //
+          return {
+            fold: function (/* arguments */) {
+              // runtime validation
+              if (arguments.length !== cases.length) {
+                throw new Error('Wrong number of arguments to fold. Expected ' + cases.length + ', got ' + arguments.length);
+              }
+              var target = arguments[count];
+              return target.apply(null, args);
+            },
+            match: match,
+
+            // NOTE: Only for debugging.
+            log: function (label) {
+              console.log(label, {
+                constructors: constructors,
+                constructor: key,
+                params: args
+              });
+            }
+          };
+        };
+      });
+
+      return adt;
+    };
+    return {
+      generate: generate
+    };
+  }
+);
+/**
+ * CefDeleteAction.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.delete.CefDeleteAction',
+  [
+    'ephox.katamari.api.Adt',
+    'ephox.katamari.api.Option',
+    'ephox.sugar.api.node.Element',
+    'tinymce.core.caret.CaretFinder',
+    'tinymce.core.caret.CaretPosition',
+    'tinymce.core.caret.CaretUtils',
+    'tinymce.core.delete.DeleteUtils',
+    'tinymce.core.dom.Empty',
+    'tinymce.core.dom.NodeType'
+  ],
+  function (Adt, Option, Element, CaretFinder, CaretPosition, CaretUtils, DeleteUtils, Empty, NodeType) {
+    var DeleteAction = Adt.generate([
+      { remove: [ 'element' ] },
+      { moveToElement: [ 'element' ] },
+      { moveToPosition: [ 'position' ] }
+    ]);
+
+    var isAtContentEditableBlockCaret = function (forward, from) {
+      var elm = from.getNode(forward === false);
+      var caretLocation = forward ? 'after' : 'before';
+      return NodeType.isElement(elm) && elm.getAttribute('data-mce-caret') === caretLocation;
+    };
+
+    var deleteEmptyBlockOrMoveToCef = function (rootNode, forward, from, to) {
+      var toCefElm = to.getNode(forward === false);
+      return DeleteUtils.getParentBlock(Element.fromDom(rootNode), Element.fromDom(from.getNode())).map(function (blockElm) {
+        return Empty.isEmpty(blockElm) ? DeleteAction.remove(blockElm.dom()) : DeleteAction.moveToElement(toCefElm);
+      }).orThunk(function () {
+        return Option.some(DeleteAction.moveToElement(toCefElm));
+      });
+    };
+
+    var findCefPosition = function (rootNode, forward, from) {
+      return CaretFinder.fromPosition(forward, rootNode, from).bind(function (to) {
+        if (forward && NodeType.isContentEditableFalse(to.getNode())) {
+          return deleteEmptyBlockOrMoveToCef(rootNode, forward, from, to);
+        } else if (forward === false && NodeType.isContentEditableFalse(to.getNode(true))) {
+          return deleteEmptyBlockOrMoveToCef(rootNode, forward, from, to);
+        } else if (forward && CaretUtils.isAfterContentEditableFalse(from)) {
+          return Option.some(DeleteAction.moveToPosition(to));
+        } else if (forward === false && CaretUtils.isBeforeContentEditableFalse(from)) {
+          return Option.some(DeleteAction.moveToPosition(to));
+        } else {
+          return Option.none();
+        }
+      });
+    };
+
+    var getContentEditableBlockAction = function (forward, elm) {
+      if (forward && NodeType.isContentEditableFalse(elm.nextSibling)) {
+        return Option.some(DeleteAction.moveToElement(elm.nextSibling));
+      } else if (forward === false && NodeType.isContentEditableFalse(elm.previousSibling)) {
+        return Option.some(DeleteAction.moveToElement(elm.previousSibling));
+      } else {
+        return Option.none();
+      }
+    };
+
+    var getContentEditableAction = function (rootNode, forward, from) {
+      if (isAtContentEditableBlockCaret(forward, from)) {
+        return getContentEditableBlockAction(forward, from.getNode(forward === false))
+          .fold(
+            function () {
+              return findCefPosition(rootNode, forward, from);
+            },
+            Option.some
+          );
+      } else {
+        return findCefPosition(rootNode, forward, from);
+      }
+    };
+
+    var read = function (rootNode, forward, rng) {
+      var normalizedRange = CaretUtils.normalizeRange(forward ? 1 : -1, rootNode, rng);
+      var from = CaretPosition.fromRangeStart(normalizedRange);
+
+      if (forward === false && CaretUtils.isAfterContentEditableFalse(from)) {
+        return Option.some(DeleteAction.remove(from.getNode(true)));
+      } else if (forward && CaretUtils.isBeforeContentEditableFalse(from)) {
+        return Option.some(DeleteAction.remove(from.getNode()));
+      } else {
+        return getContentEditableAction(rootNode, forward, from);
+      }
+    };
+
+    return {
+      read: read
+    };
+  }
+);
+
+/**
+ * DeleteElement.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.delete.DeleteElement',
+  [
+    'ephox.katamari.api.Fun',
+    'ephox.katamari.api.Option',
+    'ephox.katamari.api.Options',
+    'ephox.sugar.api.dom.Insert',
+    'ephox.sugar.api.dom.Remove',
+    'ephox.sugar.api.node.Element',
+    'ephox.sugar.api.node.Node',
+    'ephox.sugar.api.search.PredicateFind',
+    'ephox.sugar.api.search.Traverse',
+    'tinymce.core.caret.CaretCandidate',
+    'tinymce.core.caret.CaretFinder',
+    'tinymce.core.caret.CaretPosition',
+    'tinymce.core.dom.Empty',
+    'tinymce.core.dom.NodeType'
+  ],
+  function (Fun, Option, Options, Insert, Remove, Element, Node, PredicateFind, Traverse, CaretCandidate, CaretFinder, CaretPosition, Empty, NodeType) {
+    var needsReposition = function (pos, elm) {
+      var container = pos.container();
+      var offset = pos.offset();
+      return CaretPosition.isTextPosition(pos) === false && container === elm.parentNode && offset > CaretPosition.before(elm).offset();
+    };
+
+    var reposition = function (elm, pos) {
+      return needsReposition(pos, elm) ? new CaretPosition(pos.container(), pos.offset() - 1) : pos;
+    };
+
+    var beforeOrStartOf = function (node) {
+      return NodeType.isText(node) ? new CaretPosition(node, 0) : CaretPosition.before(node);
+    };
+
+    var afterOrEndOf = function (node) {
+      return NodeType.isText(node) ? new CaretPosition(node, node.data.length) : CaretPosition.after(node);
+    };
+
+    var getPreviousSiblingCaretPosition = function (elm) {
+      if (CaretCandidate.isCaretCandidate(elm.previousSibling)) {
+        return Option.some(afterOrEndOf(elm.previousSibling));
+      } else {
+        return elm.previousSibling ? CaretFinder.lastPositionIn(elm.previousSibling) : Option.none();
+      }
+    };
+
+    var getNextSiblingCaretPosition = function (elm) {
+      if (CaretCandidate.isCaretCandidate(elm.nextSibling)) {
+        return Option.some(beforeOrStartOf(elm.nextSibling));
+      } else {
+        return elm.nextSibling ? CaretFinder.firstPositionIn(elm.nextSibling) : Option.none();
+      }
+    };
+
+    var findCaretPositionBackwardsFromElm = function (rootElement, elm) {
+      var startPosition = CaretPosition.before(elm.previousSibling ? elm.previousSibling : elm.parentNode);
+      return CaretFinder.prevPosition(rootElement, startPosition).fold(
+        function () {
+          return CaretFinder.nextPosition(rootElement, CaretPosition.after(elm));
+        },
+        Option.some
+      );
+    };
+
+    var findCaretPositionForwardsFromElm = function (rootElement, elm) {
+      return CaretFinder.nextPosition(rootElement, CaretPosition.after(elm)).fold(
+        function () {
+          return CaretFinder.prevPosition(rootElement, CaretPosition.before(elm));
+        },
+        Option.some
+      );
+    };
+
+    var findCaretPositionBackwards = function (rootElement, elm) {
+      return getPreviousSiblingCaretPosition(elm).orThunk(function () {
+        return getNextSiblingCaretPosition(elm);
+      }).orThunk(function () {
+        return findCaretPositionBackwardsFromElm(rootElement, elm);
+      });
+    };
+
+    var findCaretPositionForward = function (rootElement, elm) {
+      return getNextSiblingCaretPosition(elm).orThunk(function () {
+        return getPreviousSiblingCaretPosition(elm);
+      }).orThunk(function () {
+        return findCaretPositionForwardsFromElm(rootElement, elm);
+      });
+    };
+
+    var findCaretPosition = function (forward, rootElement, elm) {
+      return forward ? findCaretPositionForward(rootElement, elm) : findCaretPositionBackwards(rootElement, elm);
+    };
+
+    var findCaretPosOutsideElmAfterDelete = function (forward, rootElement, elm) {
+      return findCaretPosition(forward, rootElement, elm).map(Fun.curry(reposition, elm));
+    };
+
+    var setSelection = function (editor, forward, pos) {
+      pos.fold(
+        function () {
+          editor.focus();
+        },
+        function (pos) {
+          editor.selection.setRng(pos.toRange(), forward);
+        }
+      );
+    };
+
+    var eqRawNode = function (rawNode) {
+      return function (elm) {
+        return elm.dom() === rawNode;
+      };
+    };
+
+    var isBlock = function (editor, elm) {
+      return elm && editor.schema.getBlockElements().hasOwnProperty(Node.name(elm));
+    };
+
+    var paddEmptyBlock = function (elm) {
+      if (Empty.isEmpty(elm)) {
+        var br = Element.fromHtml('<br data-mce-bogus="1">');
+        Remove.empty(elm);
+        Insert.append(elm, br);
+        return Option.some(CaretPosition.before(br.dom()));
+      } else {
+        return Option.none();
+      }
+    };
+
+    // When deleting an element between two text nodes IE 11 doesn't automatically merge the adjacent text nodes
+    var deleteNormalized = function (elm, afterDeletePosOpt) {
+      return Options.liftN([Traverse.prevSibling(elm), Traverse.nextSibling(elm), afterDeletePosOpt], function (prev, next, afterDeletePos) {
+        var offset, prevNode = prev.dom(), nextNode = next.dom();
+
+        if (NodeType.isText(prevNode) && NodeType.isText(nextNode)) {
+          offset = prevNode.data.length;
+          prevNode.appendData(nextNode.data);
+          Remove.remove(next);
+          Remove.remove(elm);
+          if (afterDeletePos.container() === nextNode) {
+            return new CaretPosition(prevNode, offset);
+          } else {
+            return afterDeletePos;
+          }
+        } else {
+          Remove.remove(elm);
+          return afterDeletePos;
+        }
+      }).orThunk(function () {
+        Remove.remove(elm);
+        return afterDeletePosOpt;
+      });
+    };
+
+    var deleteElement = function (editor, forward, elm) {
+      var afterDeletePos = findCaretPosOutsideElmAfterDelete(forward, editor.getBody(), elm.dom());
+      var parentBlock = PredicateFind.ancestor(elm, Fun.curry(isBlock, editor), eqRawNode(editor.getBody()));
+      var normalizedAfterDeletePos = deleteNormalized(elm, afterDeletePos);
+
+      parentBlock.bind(paddEmptyBlock).fold(
+        function () {
+          setSelection(editor, forward, normalizedAfterDeletePos);
+        },
+        function (paddPos) {
+          setSelection(editor, forward, Option.some(paddPos));
+        }
+      );
+    };
+
+    return {
+      deleteElement: deleteElement
+    };
+  }
+);
+/**
+ * CefDelete.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.delete.CefDelete',
+  [
+    'ephox.katamari.api.Arr',
+    'ephox.sugar.api.dom.Remove',
+    'ephox.sugar.api.node.Element',
+    'ephox.sugar.api.search.SelectorFilter',
+    'tinymce.core.caret.CaretPosition',
+    'tinymce.core.delete.CefDeleteAction',
+    'tinymce.core.delete.DeleteElement',
+    'tinymce.core.delete.DeleteUtils',
+    'tinymce.core.dom.NodeType'
+  ],
+  function (Arr, Remove, Element, SelectorFilter, CaretPosition, CefDeleteAction, DeleteElement, DeleteUtils, NodeType) {
+    var deleteElement = function (editor, forward) {
+      return function (element) {
+        DeleteElement.deleteElement(editor, forward, Element.fromDom(element));
+        return true;
+      };
+    };
+
+    var moveToElement = function (editor, forward) {
+      return function (element) {
+        var pos = forward ? CaretPosition.before(element) : CaretPosition.after(element);
+        editor.selection.setRng(pos.toRange());
+        return true;
+      };
+    };
+
+    var moveToPosition = function (editor) {
+      return function (pos) {
+        editor.selection.setRng(pos.toRange());
+        return true;
+      };
+    };
+
+    var backspaceDeleteCaret = function (editor, forward) {
+      var result = CefDeleteAction.read(editor.getBody(), forward, editor.selection.getRng()).map(function (deleteAction) {
+        return deleteAction.fold(
+          deleteElement(editor, forward),
+          moveToElement(editor, forward),
+          moveToPosition(editor)
+        );
+      });
+
+      return result.getOr(false);
+    };
+
+    var deleteOffscreenSelection = function (rootElement) {
+      Arr.each(SelectorFilter.descendants(rootElement, '.mce-offscreen-selection'), Remove.remove);
+    };
+
+    var backspaceDeleteRange = function (editor, forward) {
+      var selectedElement = editor.selection.getNode();
+      if (NodeType.isContentEditableFalse(selectedElement)) {
+        deleteOffscreenSelection(Element.fromDom(editor.getBody()));
+        DeleteElement.deleteElement(editor, forward, Element.fromDom(editor.selection.getNode()));
+        DeleteUtils.paddEmptyBody(editor);
+        return true;
+      } else {
+        return false;
+      }
+    };
+
+    var getContentEditableRoot = function (root, node) {
+      while (node && node !== root) {
+        if (NodeType.isContentEditableTrue(node) || NodeType.isContentEditableFalse(node)) {
+          return node;
+        }
+
+        node = node.parentNode;
+      }
+
+      return null;
+    };
+
+    var paddEmptyElement = function (editor) {
+      var br, ceRoot = getContentEditableRoot(editor.getBody(), editor.selection.getNode());
+
+      if (NodeType.isContentEditableTrue(ceRoot) && editor.dom.isBlock(ceRoot) && editor.dom.isEmpty(ceRoot)) {
+        br = editor.dom.create('br', { "data-mce-bogus": "1" });
+        editor.dom.setHTML(ceRoot, '');
+        ceRoot.appendChild(br);
+        editor.selection.setRng(CaretPosition.before(br).toRange());
+      }
+
+      return true;
+    };
+
+    var backspaceDelete = function (editor, forward) {
+      if (editor.selection.isCollapsed()) {
+        return backspaceDeleteCaret(editor, forward);
+      } else {
+        return backspaceDeleteRange(editor, forward);
+      }
+    };
+
+    return {
+      backspaceDelete: backspaceDelete,
+      paddEmptyElement: paddEmptyElement
+    };
+  }
+);
+
+/**
+ * CaretContainerInline.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.caret.CaretContainerInline',
+  [
+    'ephox.katamari.api.Fun',
+    'tinymce.core.dom.NodeType',
+    'tinymce.core.text.Zwsp'
+  ],
+  function (Fun, NodeType, Zwsp) {
+    var isText = NodeType.isText;
+
+    var startsWithCaretContainer = function (node) {
+      return isText(node) && node.data[0] === Zwsp.ZWSP;
+    };
+
+    var endsWithCaretContainer = function (node) {
+      return isText(node) && node.data[node.data.length - 1] === Zwsp.ZWSP;
+    };
+
+    var createZwsp = function (node) {
+      return node.ownerDocument.createTextNode(Zwsp.ZWSP);
+    };
+
+    var insertBefore = function (node) {
+      if (isText(node.previousSibling)) {
+        if (endsWithCaretContainer(node.previousSibling)) {
+          return node.previousSibling;
+        } else {
+          node.previousSibling.appendData(Zwsp.ZWSP);
+          return node.previousSibling;
+        }
+      } else if (isText(node)) {
+        if (startsWithCaretContainer(node)) {
+          return node;
+        } else {
+          node.insertData(0, Zwsp.ZWSP);
+          return node;
+        }
+      } else {
+        var newNode = createZwsp(node);
+        node.parentNode.insertBefore(newNode, node);
+        return newNode;
+      }
+    };
+
+    var insertAfter = function (node) {
+      if (isText(node.nextSibling)) {
+        if (startsWithCaretContainer(node.nextSibling)) {
+          return node.nextSibling;
+        } else {
+          node.nextSibling.insertData(0, Zwsp.ZWSP);
+          return node.nextSibling;
+        }
+      } else if (isText(node)) {
+        if (endsWithCaretContainer(node)) {
+          return node;
+        } else {
+          node.appendData(Zwsp.ZWSP);
+          return node;
+        }
+      } else {
+        var newNode = createZwsp(node);
+        if (node.nextSibling) {
+          node.parentNode.insertBefore(newNode, node.nextSibling);
+        } else {
+          node.parentNode.appendChild(newNode);
+        }
+        return newNode;
+      }
+    };
+
+    var insertInline = function (before, node) {
+      return before ? insertBefore(node) : insertAfter(node);
+    };
+
+    return {
+      insertInline: insertInline,
+      insertInlineBefore: Fun.curry(insertInline, true),
+      insertInlineAfter: Fun.curry(insertInline, false)
+    };
+  }
+);
+/**
+ * CaretContainerRemove.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.caret.CaretContainerRemove',
+  [
+    'ephox.katamari.api.Arr',
+    'tinymce.core.caret.CaretContainer',
+    'tinymce.core.caret.CaretPosition',
+    'tinymce.core.dom.NodeType',
+    'tinymce.core.text.Zwsp'
+  ],
+  function (Arr, CaretContainer, CaretPosition, NodeType, Zwsp) {
+    var isElement = NodeType.isElement;
+    var isText = NodeType.isText;
+
+    var removeNode = function (node) {
+      var parentNode = node.parentNode;
+      if (parentNode) {
+        parentNode.removeChild(node);
+      }
+    };
+
+    var getNodeValue = function (node) {
+      try {
+        return node.nodeValue;
+      } catch (ex) {
+        // IE sometimes produces "Invalid argument" on nodes
+        return "";
+      }
+    };
+
+    var setNodeValue = function (node, text) {
+      if (text.length === 0) {
+        removeNode(node);
+      } else {
+        node.nodeValue = text;
+      }
+    };
+
+    var trimCount = function (text) {
+      var trimmedText = Zwsp.trim(text);
+      return { count: text.length - trimmedText.length, text: trimmedText };
+    };
+
+    var removeUnchanged = function (caretContainer, pos) {
+      remove(caretContainer);
+      return pos;
+    };
+
+    var removeTextAndReposition = function (caretContainer, pos) {
+      var before = trimCount(caretContainer.data.substr(0, pos.offset()));
+      var after = trimCount(caretContainer.data.substr(pos.offset()));
+      var text = before.text + after.text;
+
+      if (text.length > 0) {
+        setNodeValue(caretContainer, text);
+        return new CaretPosition(caretContainer, pos.offset() - before.count);
+      } else {
+        return pos;
+      }
+    };
+
+    var removeElementAndReposition = function (caretContainer, pos) {
+      var parentNode = pos.container();
+      var newPosition = Arr.indexOf(parentNode.childNodes, caretContainer).map(function (index) {
+        return index < pos.offset() ? new CaretPosition(parentNode, pos.offset() - 1) : pos;
+      }).getOr(pos);
+      remove(caretContainer);
+      return newPosition;
+    };
+
+    var removeTextCaretContainer = function (caretContainer, pos) {
+      return pos.container() === caretContainer ? removeTextAndReposition(caretContainer, pos) : removeUnchanged(caretContainer, pos);
+    };
+
+    var removeElementCaretContainer = function (caretContainer, pos) {
+      return pos.container() === caretContainer.parentNode ? removeElementAndReposition(caretContainer, pos) : removeUnchanged(caretContainer, pos);
+    };
+
+    var removeAndReposition = function (container, pos) {
+      return CaretPosition.isTextPosition(pos) ? removeTextCaretContainer(container, pos) : removeElementCaretContainer(container, pos);
+    };
+
+    var remove = function (caretContainerNode) {
+      if (isElement(caretContainerNode) && CaretContainer.isCaretContainer(caretContainerNode)) {
+        if (CaretContainer.hasContent(caretContainerNode)) {
+          caretContainerNode.removeAttribute('data-mce-caret');
+        } else {
+          removeNode(caretContainerNode);
+        }
+      }
+
+      if (isText(caretContainerNode)) {
+        var text = Zwsp.trim(getNodeValue(caretContainerNode));
+        setNodeValue(caretContainerNode, text);
+      }
+    };
+
+    return {
+      removeAndReposition: removeAndReposition,
+      remove: remove
+    };
+  }
+);
+/**
+ * BoundaryCaret.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.keyboard.BoundaryCaret',
+  [
+    'ephox.katamari.api.Option',
+    'tinymce.core.caret.CaretContainer',
+    'tinymce.core.caret.CaretContainerInline',
+    'tinymce.core.caret.CaretContainerRemove',
+    'tinymce.core.caret.CaretFinder',
+    'tinymce.core.caret.CaretPosition',
+    'tinymce.core.dom.NodeType',
+    'tinymce.core.keyboard.InlineUtils'
+  ],
+  function (Option, CaretContainer, CaretContainerInline, CaretContainerRemove, CaretFinder, CaretPosition, NodeType, InlineUtils) {
+    var insertInlinePos = function (pos, before) {
+      if (NodeType.isText(pos.container())) {
+        return CaretContainerInline.insertInline(before, pos.container());
+      } else {
+        return CaretContainerInline.insertInline(before, pos.getNode());
+      }
+    };
+
+    var isPosCaretContainer = function (pos, caret) {
+      var caretNode = caret.get();
+      return caretNode && pos.container() === caretNode && CaretContainer.isCaretContainerInline(caretNode);
+    };
+
+    var renderCaret = function (caret, location) {
+      return location.fold(
+        function (element) { // Before
+          CaretContainerRemove.remove(caret.get());
+          var text = CaretContainerInline.insertInlineBefore(element);
+          caret.set(text);
+          return Option.some(new CaretPosition(text, text.length - 1));
+        },
+        function (element) { // Start
+          return CaretFinder.firstPositionIn(element).map(function (pos) {
+            if (!isPosCaretContainer(pos, caret)) {
+              CaretContainerRemove.remove(caret.get());
+              var text = insertInlinePos(pos, true);
+              caret.set(text);
+              return new CaretPosition(text, 1);
+            } else {
+              return new CaretPosition(caret.get(), 1);
+            }
+          });
+        },
+        function (element) { // End
+          return CaretFinder.lastPositionIn(element).map(function (pos) {
+            if (!isPosCaretContainer(pos, caret)) {
+              CaretContainerRemove.remove(caret.get());
+              var text = insertInlinePos(pos, false);
+              caret.set(text);
+              return new CaretPosition(text, text.length - 1);
+            } else {
+              return new CaretPosition(caret.get(), caret.get().length - 1);
+            }
+          });
+        },
+        function (element) { // After
+          CaretContainerRemove.remove(caret.get());
+          var text = CaretContainerInline.insertInlineAfter(element);
+          caret.set(text);
+          return Option.some(new CaretPosition(text, 1));
+        }
+      );
+    };
+
+    return {
+      renderCaret: renderCaret
     };
   }
 );
@@ -16677,14 +19443,15 @@ define(
   [
     'tinymce.core.dom.BookmarkManager',
     'tinymce.core.dom.TreeWalker',
-    'tinymce.core.fmt.FormatUtils'
+    'tinymce.core.fmt.FormatUtils',
+    'tinymce.core.selection.RangeNodes'
   ],
-  function (BookmarkManager, TreeWalker, FormatUtils) {
+  function (BookmarkManager, TreeWalker, FormatUtils, RangeNodes) {
     var isBookmarkNode = BookmarkManager.isBookmarkNode;
     var getParents = FormatUtils.getParents, isWhiteSpaceNode = FormatUtils.isWhiteSpaceNode, isTextBlock = FormatUtils.isTextBlock;
 
     // This function walks down the tree to find the leaf at the selection.
-      // The offset is also returned as if node initially a leaf, the offset may be in the middle of the text node.
+    // The offset is also returned as if node initially a leaf, the offset may be in the middle of the text node.
     var findLeaf = function (node, offset) {
       if (typeof offset === 'undefined') {
         offset = node.nodeType === 3 ? node.length : node.childNodes.length;
@@ -16696,6 +19463,7 @@ define(
           offset = node.nodeType === 3 ? node.length : node.childNodes.length;
         }
       }
+
       return { node: node, offset: offset };
     };
 
@@ -16725,60 +19493,203 @@ define(
       return node.nodeName === "BR" && node.getAttribute('data-mce-bogus') && !node.nextSibling;
     };
 
+    // Expands the node to the closes contentEditable false element if it exists
+    var findParentContentEditable = function (dom, node) {
+      var parent = node;
+
+      while (parent) {
+        if (parent.nodeType === 1 && dom.getContentEditable(parent)) {
+          return dom.getContentEditable(parent) === "false" ? parent : node;
+        }
+
+        parent = parent.parentNode;
+      }
+
+      return node;
+    };
+
+    var findSpace = function (start, remove, node, offset) {
+      var pos, pos2, str = node.nodeValue;
+
+      if (typeof offset === "undefined") {
+        offset = start ? str.length : 0;
+      }
+
+      if (start) {
+        pos = str.lastIndexOf(' ', offset);
+        pos2 = str.lastIndexOf('\u00a0', offset);
+        pos = pos > pos2 ? pos : pos2;
+
+        // Include the space on remove to avoid tag soup
+        if (pos !== -1 && !remove) {
+          pos++;
+        }
+      } else {
+        pos = str.indexOf(' ', offset);
+        pos2 = str.indexOf('\u00a0', offset);
+        pos = pos !== -1 && (pos2 === -1 || pos < pos2) ? pos : pos2;
+      }
+
+      return pos;
+    };
+
+    var findWordEndPoint = function (dom, body, container, offset, start, remove) {
+      var walker, node, pos, lastTextNode;
+
+      if (container.nodeType === 3) {
+        pos = findSpace(start, remove, container, offset);
+
+        if (pos !== -1) {
+          return { container: container, offset: pos };
+        }
+
+        lastTextNode = container;
+      }
+
+      // Walk the nodes inside the block
+      walker = new TreeWalker(container, dom.getParent(container, dom.isBlock) || body);
+      while ((node = walker[start ? 'prev' : 'next']())) {
+        if (node.nodeType === 3) {
+          lastTextNode = node;
+          pos = findSpace(start, remove, node);
+
+          if (pos !== -1) {
+            return { container: node, offset: pos };
+          }
+        } else if (dom.isBlock(node)) {
+          break;
+        }
+      }
+
+      if (lastTextNode) {
+        if (start) {
+          offset = 0;
+        } else {
+          offset = lastTextNode.length;
+        }
+
+        return { container: lastTextNode, offset: offset };
+      }
+    };
+
+    var findSelectorEndPoint = function (dom, format, rng, container, siblingName) {
+      var parents, i, y, curFormat;
+
+      if (container.nodeType === 3 && container.nodeValue.length === 0 && container[siblingName]) {
+        container = container[siblingName];
+      }
+
+      parents = getParents(dom, container);
+      for (i = 0; i < parents.length; i++) {
+        for (y = 0; y < format.length; y++) {
+          curFormat = format[y];
+
+          // If collapsed state is set then skip formats that doesn't match that
+          if ("collapsed" in curFormat && curFormat.collapsed !== rng.collapsed) {
+            continue;
+          }
+
+          if (dom.is(parents[i], curFormat.selector)) {
+            return parents[i];
+          }
+        }
+      }
+
+      return container;
+    };
+
+    var findBlockEndPoint = function (editor, format, container, siblingName) {
+      var node, dom = editor.dom, root = dom.getRoot();
+
+      // Expand to block of similar type
+      if (!format[0].wrapper) {
+        node = dom.getParent(container, format[0].block, root);
+      }
+
+      // Expand to first wrappable block element or any block element
+      if (!node) {
+        var scopeRoot = dom.getParent(container, 'LI,TD,TH');
+        node = dom.getParent(container.nodeType === 3 ? container.parentNode : container, function (node) {
+          // Fixes #6183 where it would expand to editable parent element in inline mode
+          return node !== root && isTextBlock(editor, node);
+        }, scopeRoot);
+      }
+
+      // Exclude inner lists from wrapping
+      if (node && format[0].wrapper) {
+        node = getParents(dom, node, 'ul,ol').reverse()[0] || node;
+      }
+
+      // Didn't find a block element look for first/last wrappable element
+      if (!node) {
+        node = container;
+
+        while (node[siblingName] && !dom.isBlock(node[siblingName])) {
+          node = node[siblingName];
+
+          // Break on BR but include it will be removed later on
+          // we can't remove it now since we need to check if it can be wrapped
+          if (FormatUtils.isEq(node, 'br')) {
+            break;
+          }
+        }
+      }
+
+      return node || container;
+    };
+
+    // This function walks up the tree if there is no siblings before/after the node
+    var findParentContainer = function (dom, format, startContainer, startOffset, endContainer, endOffset, start) {
+      var container, parent, sibling, siblingName, root;
+
+      container = parent = start ? startContainer : endContainer;
+      siblingName = start ? 'previousSibling' : 'nextSibling';
+      root = dom.getRoot();
+
+      // If it's a text node and the offset is inside the text
+      if (container.nodeType === 3 && !isWhiteSpaceNode(container)) {
+        if (start ? startOffset > 0 : endOffset < container.nodeValue.length) {
+          return container;
+        }
+      }
+
+      /*eslint no-constant-condition:0 */
+      while (true) {
+        // Stop expanding on block elements
+        if (!format[0].block_expand && dom.isBlock(parent)) {
+          return parent;
+        }
+
+        // Walk left/right
+        for (sibling = parent[siblingName]; sibling; sibling = sibling[siblingName]) {
+          if (!isBookmarkNode(sibling) && !isWhiteSpaceNode(sibling) && !isBogusBr(sibling)) {
+            return parent;
+          }
+        }
+
+        // Check if we can move up are we at root level or body level
+        if (parent === root || parent.parentNode === root) {
+          container = parent;
+          break;
+        }
+
+        parent = parent.parentNode;
+      }
+
+      return container;
+    };
+
     var expandRng = function (editor, rng, format, remove) {
-      var lastIdx, endPoint,
+      var endPoint,
         startContainer = rng.startContainer,
         startOffset = rng.startOffset,
         endContainer = rng.endContainer,
         endOffset = rng.endOffset,
         dom = editor.dom;
 
-      // This function walks up the tree if there is no siblings before/after the node
-      var findParentContainer = function (start) {
-        var container, parent, sibling, siblingName, root;
-
-        container = parent = start ? startContainer : endContainer;
-        siblingName = start ? 'previousSibling' : 'nextSibling';
-        root = dom.getRoot();
-
-        // If it's a text node and the offset is inside the text
-        if (container.nodeType === 3 && !isWhiteSpaceNode(container)) {
-          if (start ? startOffset > 0 : endOffset < container.nodeValue.length) {
-            return container;
-          }
-        }
-
-        /*eslint no-constant-condition:0 */
-        while (true) {
-          // Stop expanding on block elements
-          if (!format[0].block_expand && dom.isBlock(parent)) {
-            return parent;
-          }
-
-          // Walk left/right
-          for (sibling = parent[siblingName]; sibling; sibling = sibling[siblingName]) {
-            if (!isBookmarkNode(sibling) && !isWhiteSpaceNode(sibling) && !isBogusBr(sibling)) {
-              return parent;
-            }
-          }
-
-          // Check if we can move up are we at root level or body level
-          if (parent === root || parent.parentNode === root) {
-            container = parent;
-            break;
-          }
-
-          parent = parent.parentNode;
-        }
-
-        return container;
-      };
-
       // If index based start position then resolve it
       if (startContainer.nodeType === 1 && startContainer.hasChildNodes()) {
-        lastIdx = startContainer.childNodes.length - 1;
-        startContainer = startContainer.childNodes[startOffset > lastIdx ? lastIdx : startOffset];
-
+        startContainer = RangeNodes.getNode(startContainer, startOffset);
         if (startContainer.nodeType === 3) {
           startOffset = 0;
         }
@@ -16786,162 +19697,15 @@ define(
 
       // If index based end position then resolve it
       if (endContainer.nodeType === 1 && endContainer.hasChildNodes()) {
-        lastIdx = endContainer.childNodes.length - 1;
-        endContainer = endContainer.childNodes[endOffset > lastIdx ? lastIdx : endOffset - 1];
-
+        endContainer = RangeNodes.getNode(endContainer, rng.collapsed ? endOffset : endOffset - 1);
         if (endContainer.nodeType === 3) {
           endOffset = endContainer.nodeValue.length;
         }
       }
 
-      // Expands the node to the closes contentEditable false element if it exists
-      var findParentContentEditable = function (node) {
-        var parent = node;
-
-        while (parent) {
-          if (parent.nodeType === 1 && dom.getContentEditable(parent)) {
-            return dom.getContentEditable(parent) === "false" ? parent : node;
-          }
-
-          parent = parent.parentNode;
-        }
-
-        return node;
-      };
-
-      var findWordEndPoint = function (container, offset, start) {
-        var walker, node, pos, lastTextNode;
-
-        var findSpace = function (node, offset) {
-          var pos, pos2, str = node.nodeValue;
-
-          if (typeof offset === "undefined") {
-            offset = start ? str.length : 0;
-          }
-
-          if (start) {
-            pos = str.lastIndexOf(' ', offset);
-            pos2 = str.lastIndexOf('\u00a0', offset);
-            pos = pos > pos2 ? pos : pos2;
-
-            // Include the space on remove to avoid tag soup
-            if (pos !== -1 && !remove) {
-              pos++;
-            }
-          } else {
-            pos = str.indexOf(' ', offset);
-            pos2 = str.indexOf('\u00a0', offset);
-            pos = pos !== -1 && (pos2 === -1 || pos < pos2) ? pos : pos2;
-          }
-
-          return pos;
-        };
-
-        if (container.nodeType === 3) {
-          pos = findSpace(container, offset);
-
-          if (pos !== -1) {
-            return { container: container, offset: pos };
-          }
-
-          lastTextNode = container;
-        }
-
-        // Walk the nodes inside the block
-        walker = new TreeWalker(container, dom.getParent(container, dom.isBlock) || editor.getBody());
-        while ((node = walker[start ? 'prev' : 'next']())) {
-          if (node.nodeType === 3) {
-            lastTextNode = node;
-            pos = findSpace(node);
-
-            if (pos !== -1) {
-              return { container: node, offset: pos };
-            }
-          } else if (dom.isBlock(node)) {
-            break;
-          }
-        }
-
-        if (lastTextNode) {
-          if (start) {
-            offset = 0;
-          } else {
-            offset = lastTextNode.length;
-          }
-
-          return { container: lastTextNode, offset: offset };
-        }
-      };
-
-      var findSelectorEndPoint = function (container, siblingName) {
-        var parents, i, y, curFormat;
-
-        if (container.nodeType === 3 && container.nodeValue.length === 0 && container[siblingName]) {
-          container = container[siblingName];
-        }
-
-        parents = getParents(dom, container);
-        for (i = 0; i < parents.length; i++) {
-          for (y = 0; y < format.length; y++) {
-            curFormat = format[y];
-
-            // If collapsed state is set then skip formats that doesn't match that
-            if ("collapsed" in curFormat && curFormat.collapsed !== rng.collapsed) {
-              continue;
-            }
-
-            if (dom.is(parents[i], curFormat.selector)) {
-              return parents[i];
-            }
-          }
-        }
-
-        return container;
-      };
-
-      var findBlockEndPoint = function (container, siblingName) {
-        var node, root = dom.getRoot();
-
-        // Expand to block of similar type
-        if (!format[0].wrapper) {
-          node = dom.getParent(container, format[0].block, root);
-        }
-
-        // Expand to first wrappable block element or any block element
-        if (!node) {
-          var scopeRoot = dom.getParent(container, 'LI,TD,TH');
-          node = dom.getParent(container.nodeType === 3 ? container.parentNode : container, function (node) {
-            // Fixes #6183 where it would expand to editable parent element in inline mode
-            return node !== root && isTextBlock(editor, node);
-          }, scopeRoot);
-        }
-
-        // Exclude inner lists from wrapping
-        if (node && format[0].wrapper) {
-          node = getParents(dom, node, 'ul,ol').reverse()[0] || node;
-        }
-
-        // Didn't find a block element look for first/last wrappable element
-        if (!node) {
-          node = container;
-
-          while (node[siblingName] && !dom.isBlock(node[siblingName])) {
-            node = node[siblingName];
-
-            // Break on BR but include it will be removed later on
-            // we can't remove it now since we need to check if it can be wrapped
-            if (FormatUtils.isEq(node, 'br')) {
-              break;
-            }
-          }
-        }
-
-        return node || container;
-      };
-
       // Expand to closest contentEditable element
-      startContainer = findParentContentEditable(startContainer);
-      endContainer = findParentContentEditable(endContainer);
+      startContainer = findParentContentEditable(dom, startContainer);
+      endContainer = findParentContentEditable(dom, endContainer);
 
       // Exclude bookmark nodes if possible
       if (isBookmarkNode(startContainer.parentNode) || isBookmarkNode(startContainer)) {
@@ -16965,14 +19729,14 @@ define(
       if (format[0].inline) {
         if (rng.collapsed) {
           // Expand left to closest word boundary
-          endPoint = findWordEndPoint(startContainer, startOffset, true);
+          endPoint = findWordEndPoint(dom, editor.getBody(), startContainer, startOffset, true, remove);
           if (endPoint) {
             startContainer = endPoint.container;
             startOffset = endPoint.offset;
           }
 
           // Expand right to closest word boundary
-          endPoint = findWordEndPoint(endContainer, endOffset);
+          endPoint = findWordEndPoint(dom, editor.getBody(), endContainer, endOffset, false, remove);
           if (endPoint) {
             endContainer = endPoint.container;
             endOffset = endPoint.offset;
@@ -16988,35 +19752,35 @@ define(
       // Move start point up the tree
       if (format[0].inline || format[0].block_expand) {
         if (!format[0].inline || (startContainer.nodeType !== 3 || startOffset === 0)) {
-          startContainer = findParentContainer(true);
+          startContainer = findParentContainer(dom, format, startContainer, startOffset, endContainer, endOffset, true);
         }
 
         if (!format[0].inline || (endContainer.nodeType !== 3 || endOffset === endContainer.nodeValue.length)) {
-          endContainer = findParentContainer();
+          endContainer = findParentContainer(dom, format, startContainer, startOffset, endContainer, endOffset, false);
         }
       }
 
       // Expand start/end container to matching selector
       if (format[0].selector && format[0].expand !== false && !format[0].inline) {
         // Find new startContainer/endContainer if there is better one
-        startContainer = findSelectorEndPoint(startContainer, 'previousSibling');
-        endContainer = findSelectorEndPoint(endContainer, 'nextSibling');
+        startContainer = findSelectorEndPoint(dom, format, rng, startContainer, 'previousSibling');
+        endContainer = findSelectorEndPoint(dom, format, rng, endContainer, 'nextSibling');
       }
 
       // Expand start/end container to matching block element or text node
       if (format[0].block || format[0].selector) {
         // Find new startContainer/endContainer if there is better one
-        startContainer = findBlockEndPoint(startContainer, 'previousSibling');
-        endContainer = findBlockEndPoint(endContainer, 'nextSibling');
+        startContainer = findBlockEndPoint(editor, format, startContainer, 'previousSibling');
+        endContainer = findBlockEndPoint(editor, format, endContainer, 'nextSibling');
 
         // Non block element then try to expand up the leaf
         if (format[0].block) {
           if (!dom.isBlock(startContainer)) {
-            startContainer = findParentContainer(true);
+            startContainer = findParentContainer(dom, format, startContainer, startOffset, endContainer, endOffset, true);
           }
 
           if (!dom.isBlock(endContainer)) {
-            endContainer = findParentContainer();
+            endContainer = findParentContainer(dom, format, startContainer, startOffset, endContainer, endOffset, false);
           }
         }
       }
@@ -17267,6 +20031,75 @@ define(
   }
 );
 /**
+ * SplitRange.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.selection.SplitRange',
+  [
+    'tinymce.core.dom.NodeType'
+  ],
+  function (NodeType) {
+    var splitText = function (node, offset) {
+      return node.splitText(offset);
+    };
+
+    var split = function (rng) {
+      var startContainer = rng.startContainer,
+        startOffset = rng.startOffset,
+        endContainer = rng.endContainer,
+        endOffset = rng.endOffset;
+
+      // Handle single text node
+      if (startContainer === endContainer && NodeType.isText(startContainer)) {
+        if (startOffset > 0 && startOffset < startContainer.nodeValue.length) {
+          endContainer = splitText(startContainer, startOffset);
+          startContainer = endContainer.previousSibling;
+
+          if (endOffset > startOffset) {
+            endOffset = endOffset - startOffset;
+            startContainer = endContainer = splitText(endContainer, endOffset).previousSibling;
+            endOffset = endContainer.nodeValue.length;
+            startOffset = 0;
+          } else {
+            endOffset = 0;
+          }
+        }
+      } else {
+        // Split startContainer text node if needed
+        if (NodeType.isText(startContainer) && startOffset > 0 && startOffset < startContainer.nodeValue.length) {
+          startContainer = splitText(startContainer, startOffset);
+          startOffset = 0;
+        }
+
+        // Split endContainer text node if needed
+        if (NodeType.isText(endContainer) && endOffset > 0 && endOffset < endContainer.nodeValue.length) {
+          endContainer = splitText(endContainer, endOffset).previousSibling;
+          endOffset = endContainer.nodeValue.length;
+        }
+      }
+
+      return {
+        startContainer: startContainer,
+        startOffset: startOffset,
+        endContainer: endContainer,
+        endOffset: endOffset
+      };
+    };
+
+    return {
+      split: split
+    };
+  }
+);
+
+/**
  * CaretFormat.js
  *
  * Released under LGPL License.
@@ -17280,39 +20113,59 @@ define(
   'tinymce.core.fmt.CaretFormat',
   [
     'ephox.katamari.api.Arr',
+    'ephox.sugar.api.dom.Insert',
+    'ephox.sugar.api.dom.Remove',
     'ephox.sugar.api.node.Element',
+    'ephox.sugar.api.node.Node',
+    'ephox.sugar.api.properties.Attr',
+    'ephox.sugar.api.search.SelectorFind',
+    'tinymce.core.caret.CaretPosition',
+    'tinymce.core.dom.NodeType',
     'tinymce.core.dom.PaddingBr',
-    'tinymce.core.dom.RangeUtils',
     'tinymce.core.dom.TreeWalker',
     'tinymce.core.fmt.ExpandRange',
     'tinymce.core.fmt.FormatUtils',
     'tinymce.core.fmt.MatchFormat',
+    'tinymce.core.selection.SplitRange',
     'tinymce.core.text.Zwsp',
     'tinymce.core.util.Fun',
     'tinymce.core.util.Tools'
   ],
-  function (Arr, Element, PaddingBr, RangeUtils, TreeWalker, ExpandRange, FormatUtils, MatchFormat, Zwsp, Fun, Tools) {
-    var ZWSP = Zwsp.ZWSP, CARET_ID = '_mce_caret', DEBUG = false;
+  function (
+    Arr, Insert, Remove, Element, Node, Attr, SelectorFind, CaretPosition, NodeType, PaddingBr, TreeWalker, ExpandRange, FormatUtils, MatchFormat, SplitRange,
+    Zwsp, Fun, Tools
+  ) {
+    var ZWSP = Zwsp.ZWSP, CARET_ID = '_mce_caret';
+
+    var importNode = function (ownerDocument, node) {
+      return ownerDocument.importNode(node, true);
+    };
 
     var isCaretNode = function (node) {
       return node.nodeType === 1 && node.id === CARET_ID;
     };
 
-    var isCaretContainerEmpty = function (node, nodes) {
+    var getEmptyCaretContainers = function (node) {
+      var nodes = [];
+
       while (node) {
         if ((node.nodeType === 3 && node.nodeValue !== ZWSP) || node.childNodes.length > 1) {
-          return false;
+          return [];
         }
 
         // Collect nodes
-        if (nodes && node.nodeType === 1) {
+        if (node.nodeType === 1) {
           nodes.push(node);
         }
 
         node = node.firstChild;
       }
 
-      return true;
+      return nodes;
+    };
+
+    var isCaretContainerEmpty = function (node) {
+      return getEmptyCaretContainers(node).length > 0;
     };
 
     var findFirstTextNode = function (node) {
@@ -17331,32 +20184,40 @@ define(
       return null;
     };
 
-    var createCaretContainer = function (dom, fill) {
-      var caretContainer = dom.create('span', { id: CARET_ID, 'data-mce-bogus': '1', style: DEBUG ? 'color:red' : '' });
+    var createCaretContainer = function (fill) {
+      var caretContainer = Element.fromTag('span');
+
+      Attr.setAll(caretContainer, {
+        //style: 'color:red',
+        id: CARET_ID,
+        'data-mce-bogus': '1'
+      });
 
       if (fill) {
-        caretContainer.appendChild(dom.doc.createTextNode(ZWSP));
+        Insert.append(caretContainer, Element.fromText(ZWSP));
       }
 
       return caretContainer;
     };
 
-    var getParentCaretContainer = function (node) {
-      while (node) {
+    var getParentCaretContainer = function (body, node) {
+      while (node && node !== body) {
         if (node.id === CARET_ID) {
           return node;
         }
 
         node = node.parentNode;
       }
+
+      return null;
     };
 
     // Checks if the parent caret container node isn't empty if that is the case it
     // will remove the bogus state on all children that isn't empty
-    var unmarkBogusCaretParents = function (dom, selection) {
+    var unmarkBogusCaretParents = function (body, dom, selection) {
       var caretContainer;
 
-      caretContainer = getParentCaretContainer(selection.getStart());
+      caretContainer = getParentCaretContainer(body, selection.getStart());
       if (caretContainer && !dom.isEmpty(caretContainer)) {
         Tools.walk(caretContainer, function (node) {
           if (node.nodeType === 1 && node.id !== CARET_ID && !dom.isEmpty(node)) {
@@ -17409,9 +20270,9 @@ define(
     };
 
     // Removes the caret container for the specified node or all on the current document
-    var removeCaretContainer = function (dom, selection, node, moveCaret) {
+    var removeCaretContainer = function (body, dom, selection, node, moveCaret) {
       if (!node) {
-        node = getParentCaretContainer(selection.getStart());
+        node = getParentCaretContainer(body, selection.getStart());
 
         if (!node) {
           while ((node = dom.get(CARET_ID))) {
@@ -17452,25 +20313,25 @@ define(
       return appendNode(innerMostFormatNode, innerMostFormatNode.ownerDocument.createTextNode(ZWSP));
     };
 
-    var setupCaretEvents = function (editor) {
-      if (!editor._hasCaretEvents) {
-        bindEvents(editor);
-        editor._hasCaretEvents = true;
-      }
+    // Mark caret container elements as bogus when getting the contents so we don't end up with empty elements
+    var markCaretContainersBogus = function (dom, scope) {
+      SelectorFind.descendant(Element.fromDom(scope), '#' + CARET_ID).each(function (node) {
+        Arr.each(getEmptyCaretContainers(node.dom()), function (node) {
+          dom.setAttrib(node, 'data-mce-bogus', '1');
+        });
+      });
     };
 
     var applyCaretFormat = function (editor, name, vars) {
       var rng, caretContainer, textNode, offset, bookmark, container, text;
-      var dom = editor.dom, selection = editor.selection;
-
-      setupCaretEvents(editor);
+      var selection = editor.selection;
 
       rng = selection.getRng(true);
       offset = rng.startOffset;
       container = rng.startContainer;
       text = container.nodeValue;
 
-      caretContainer = getParentCaretContainer(selection.getStart());
+      caretContainer = getParentCaretContainer(editor.getBody(), selection.getStart());
       if (caretContainer) {
         textNode = findFirstTextNode(caretContainer);
       }
@@ -17487,7 +20348,7 @@ define(
 
         // Expand the range to the closest word and split it at those points
         rng = ExpandRange.expandRng(editor, rng, editor.formatter.get(name));
-        rng = new RangeUtils(dom).split(rng);
+        rng = SplitRange.split(rng);
 
         // Apply the format to the range
         editor.formatter.apply(name, vars, rng);
@@ -17496,7 +20357,8 @@ define(
         selection.moveToBookmark(bookmark);
       } else {
         if (!caretContainer || textNode.nodeValue !== ZWSP) {
-          caretContainer = createCaretContainer(dom, true);
+          // Need to import the node into the document on IE or we get a lovely WrongDocument exception
+          caretContainer = importNode(editor.getDoc(), createCaretContainer(true).dom());
           textNode = caretContainer.firstChild;
 
           rng.insertNode(caretContainer);
@@ -17516,8 +20378,6 @@ define(
       var dom = editor.dom, selection = editor.selection;
       var rng = selection.getRng(true), container, offset, bookmark;
       var hasContentAfter, node, formatNode, parents = [], caretContainer;
-
-      setupCaretEvents(editor);
 
       container = rng.startContainer;
       offset = rng.startOffset;
@@ -17559,13 +20419,13 @@ define(
 
         // Expand the range to the closest word and split it at those points
         rng = ExpandRange.expandRng(editor, rng, editor.formatter.get(name), true);
-        rng = new RangeUtils(dom).split(rng);
+        rng = SplitRange.split(rng);
 
         editor.formatter.remove(name, vars, rng);
         selection.moveToBookmark(bookmark);
       } else {
-        caretContainer = getParentCaretContainer(formatNode);
-        var newCaretContainer = createCaretContainer(dom, false);
+        caretContainer = getParentCaretContainer(editor.getBody(), formatNode);
+        var newCaretContainer = createCaretContainer(false).dom();
         var caretNode = insertFormatNodesIntoCaretContainer(parents, newCaretContainer);
 
         if (caretContainer) {
@@ -17583,72 +20443,4413 @@ define(
       }
     };
 
-    var bindEvents = function (editor) {
+    var disableCaretContainer = function (body, dom, selection, keyCode) {
+      removeCaretContainer(body, dom, selection, null, false);
+
+      // Remove caret container if it's empty
+      if (keyCode === 8 && selection.isCollapsed() && selection.getStart().innerHTML === ZWSP) {
+        removeCaretContainer(body, dom, selection, getParentCaretContainer(body, selection.getStart()));
+      }
+
+      // Remove caret container on keydown and it's left/right arrow keys
+      if (keyCode === 37 || keyCode === 39) {
+        removeCaretContainer(body, dom, selection, getParentCaretContainer(body, selection.getStart()));
+      }
+
+      unmarkBogusCaretParents(body, dom, selection);
+    };
+
+    var setup = function (editor) {
       var dom = editor.dom, selection = editor.selection;
+      var body = editor.getBody();
 
-      if (!editor._hasCaretEvents) {
-        var markCaretContainersBogus, disableCaretContainer;
+      editor.on('PreProcess', function (e) {
+        if (e.format !== 'raw') {
+          markCaretContainersBogus(dom, e.node);
+        }
+      });
 
-        editor.on('BeforeGetContent', function (e) {
-          if (markCaretContainersBogus && e.format !== 'raw') {
-            markCaretContainersBogus();
-          }
-        });
+      editor.on('mouseup keydown', function (e) {
+        disableCaretContainer(body, dom, selection, e.keyCode);
+      });
 
-        editor.on('mouseup keydown', function (e) {
-          if (disableCaretContainer) {
-            disableCaretContainer(e);
-          }
-        });
+      // Remove bogus state if they got filled by contents using editor.selection.setContent
+      editor.on('SetContent', function (e) {
+        if (e.selection) {
+          unmarkBogusCaretParents(body, dom, selection);
+        }
+      });
+    };
 
-        // Mark current caret container elements as bogus when getting the contents so we don't end up with empty elements
-        markCaretContainersBogus = function () {
-          var nodes = [], i;
+    var replaceWithCaretFormat = function (targetNode, formatNodes) {
+      var caretContainer = createCaretContainer(false);
+      var innerMost = insertFormatNodesIntoCaretContainer(formatNodes, caretContainer.dom());
+      Insert.before(Element.fromDom(targetNode), caretContainer);
+      Remove.remove(Element.fromDom(targetNode));
 
-          if (isCaretContainerEmpty(getParentCaretContainer(selection.getStart()), nodes)) {
-            // Mark children
-            i = nodes.length;
-            while (i--) {
-              dom.setAttrib(nodes[i], 'data-mce-bogus', '1');
-            }
-          }
-        };
+      return CaretPosition(innerMost, 0);
+    };
 
-        disableCaretContainer = function (e) {
-          var keyCode = e.keyCode;
+    var isFormatElement = function (editor, element) {
+      var inlineElements = editor.schema.getTextInlineElements();
+      return inlineElements.hasOwnProperty(Node.name(element)) && !isCaretNode(element.dom()) && !NodeType.isBogus(element.dom());
+    };
 
-          removeCaretContainer(dom, selection, null, false);
+    return {
+      setup: setup,
+      applyCaretFormat: applyCaretFormat,
+      removeCaretFormat: removeCaretFormat,
+      isCaretNode: isCaretNode,
+      getParentCaretContainer: getParentCaretContainer,
+      replaceWithCaretFormat: replaceWithCaretFormat,
+      isFormatElement: isFormatElement
+    };
+  }
+);
+/**
+ * LazyEvaluator.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
 
-          // Remove caret container if it's empty
-          if (keyCode === 8 && selection.isCollapsed() && selection.getStart().innerHTML === ZWSP) {
-            removeCaretContainer(dom, selection, getParentCaretContainer(selection.getStart()));
-          }
+define(
+  'tinymce.core.util.LazyEvaluator',
+  [
+    'ephox.katamari.api.Option'
+  ],
+  function (Option) {
+    var evaluateUntil = function (fns, args) {
+      for (var i = 0; i < fns.length; i++) {
+        var result = fns[i].apply(null, args);
+        if (result.isSome()) {
+          return result;
+        }
+      }
 
-          // Remove caret container on keydown and it's left/right arrow keys
-          if (keyCode === 37 || keyCode === 39) {
-            removeCaretContainer(dom, selection, getParentCaretContainer(selection.getStart()));
-          }
+      return Option.none();
+    };
 
-          unmarkBogusCaretParents(dom, selection);
-        };
+    return {
+      evaluateUntil: evaluateUntil
+    };
+  }
+);
+/**
+ * BoundaryLocation.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
 
-        // Remove bogus state if they got filled by contents using editor.selection.setContent
-        editor.on('SetContent', function (e) {
-          if (e.selection) {
-            unmarkBogusCaretParents(dom, selection);
-          }
-        });
-        editor._hasCaretEvents = true;
+define(
+  'tinymce.core.keyboard.BoundaryLocation',
+  [
+    'ephox.katamari.api.Adt',
+    'ephox.katamari.api.Fun',
+    'ephox.katamari.api.Option',
+    'ephox.katamari.api.Options',
+    'tinymce.core.caret.CaretFinder',
+    'tinymce.core.caret.CaretUtils',
+    'tinymce.core.fmt.CaretFormat',
+    'tinymce.core.keyboard.InlineUtils',
+    'tinymce.core.util.LazyEvaluator'
+  ],
+  function (Adt, Fun, Option, Options, CaretFinder, CaretUtils, CaretFormat, InlineUtils, LazyEvaluator) {
+    var Location = Adt.generate([
+      { before: [ 'element' ] },
+      { start: [ 'element' ] },
+      { end: [ 'element' ] },
+      { after: [ 'element' ] }
+    ]);
+
+    var rescope = function (rootNode, node) {
+      var parentBlock = CaretUtils.getParentBlock(node, rootNode);
+      return parentBlock ? parentBlock : rootNode;
+    };
+
+    var before = function (isInlineTarget, rootNode, pos) {
+      var nPos = InlineUtils.normalizeForwards(pos);
+      var scope = rescope(rootNode, nPos.container());
+      return InlineUtils.findRootInline(isInlineTarget, scope, nPos).fold(
+        function () {
+          return CaretFinder.nextPosition(scope, nPos)
+            .bind(Fun.curry(InlineUtils.findRootInline, isInlineTarget, scope))
+            .map(function (inline) {
+              return Location.before(inline);
+            });
+        },
+        Option.none
+      );
+    };
+
+    var isNotInsideFormatCaretContainer = function (rootNode, elm) {
+      return CaretFormat.getParentCaretContainer(rootNode, elm) === null;
+    };
+
+    var findInsideRootInline = function (isInlineTarget, rootNode, pos) {
+      return InlineUtils.findRootInline(isInlineTarget, rootNode, pos).filter(Fun.curry(isNotInsideFormatCaretContainer, rootNode));
+    };
+
+    var start = function (isInlineTarget, rootNode, pos) {
+      var nPos = InlineUtils.normalizeBackwards(pos);
+      return findInsideRootInline(isInlineTarget, rootNode, nPos).bind(function (inline) {
+        var prevPos = CaretFinder.prevPosition(inline, nPos);
+        return prevPos.isNone() ? Option.some(Location.start(inline)) : Option.none();
+      });
+    };
+
+    var end = function (isInlineTarget, rootNode, pos) {
+      var nPos = InlineUtils.normalizeForwards(pos);
+      return findInsideRootInline(isInlineTarget, rootNode, nPos).bind(function (inline) {
+        var nextPos = CaretFinder.nextPosition(inline, nPos);
+        return nextPos.isNone() ? Option.some(Location.end(inline)) : Option.none();
+      });
+    };
+
+    var after = function (isInlineTarget, rootNode, pos) {
+      var nPos = InlineUtils.normalizeBackwards(pos);
+      var scope = rescope(rootNode, nPos.container());
+      return InlineUtils.findRootInline(isInlineTarget, scope, nPos).fold(
+        function () {
+          return CaretFinder.prevPosition(scope, nPos)
+            .bind(Fun.curry(InlineUtils.findRootInline, isInlineTarget, scope))
+            .map(function (inline) {
+              return Location.after(inline);
+            });
+        },
+        Option.none
+      );
+    };
+
+    var isValidLocation = function (location) {
+      return InlineUtils.isRtl(getElement(location)) === false;
+    };
+
+    var readLocation = function (isInlineTarget, rootNode, pos) {
+      var location = LazyEvaluator.evaluateUntil([
+        before,
+        start,
+        end,
+        after
+      ], [isInlineTarget, rootNode, pos]);
+
+      return location.filter(isValidLocation);
+    };
+
+    var getElement = function (location) {
+      return location.fold(
+        Fun.identity, // Before
+        Fun.identity, // Start
+        Fun.identity, // End
+        Fun.identity  // After
+      );
+    };
+
+    var getName = function (location) {
+      return location.fold(
+        Fun.constant('before'), // Before
+        Fun.constant('start'),  // Start
+        Fun.constant('end'),    // End
+        Fun.constant('after')   // After
+      );
+    };
+
+    var outside = function (location) {
+      return location.fold(
+        Location.before, // Before
+        Location.before, // Start
+        Location.after,  // End
+        Location.after   // After
+      );
+    };
+
+    var inside = function (location) {
+      return location.fold(
+        Location.start, // Before
+        Location.start, // Start
+        Location.end,   // End
+        Location.end    // After
+      );
+    };
+
+    var isEq = function (location1, location2) {
+      return getName(location1) === getName(location2) && getElement(location1) === getElement(location2);
+    };
+
+    var betweenInlines = function (forward, isInlineTarget, rootNode, from, to, location) {
+      return Options.liftN([
+        InlineUtils.findRootInline(isInlineTarget, rootNode, from),
+        InlineUtils.findRootInline(isInlineTarget, rootNode, to)
+      ], function (fromInline, toInline) {
+        if (fromInline !== toInline && InlineUtils.hasSameParentBlock(rootNode, fromInline, toInline)) {
+          // Force after since some browsers normalize and lean left into the closest inline
+          return Location.after(forward ? fromInline : toInline);
+        } else {
+          return location;
+        }
+      }).getOr(location);
+    };
+
+    var skipNoMovement = function (fromLocation, toLocation) {
+      return fromLocation.fold(
+        Fun.constant(true),
+        function (fromLocation) {
+          return !isEq(fromLocation, toLocation);
+        }
+      );
+    };
+
+    var findLocationTraverse = function (forward, isInlineTarget, rootNode, fromLocation, pos) {
+      var from = InlineUtils.normalizePosition(forward, pos);
+      var to = CaretFinder.fromPosition(forward, rootNode, from).map(Fun.curry(InlineUtils.normalizePosition, forward));
+
+      var location = to.fold(
+        function () {
+          return fromLocation.map(outside);
+        },
+        function (to) {
+          return readLocation(isInlineTarget, rootNode, to)
+            .map(Fun.curry(betweenInlines, forward, isInlineTarget, rootNode, from, to))
+            .filter(Fun.curry(skipNoMovement, fromLocation));
+        }
+      );
+
+      return location.filter(isValidLocation);
+    };
+
+    var findLocationSimple = function (forward, location) {
+      if (forward) {
+        return location.fold(
+          Fun.compose(Option.some, Location.start), // Before -> Start
+          Option.none,
+          Fun.compose(Option.some, Location.after), // End -> After
+          Option.none
+        );
+      } else {
+        return location.fold(
+          Option.none,
+          Fun.compose(Option.some, Location.before), // Before <- Start
+          Option.none,
+          Fun.compose(Option.some, Location.end) // End <- After
+        );
+      }
+    };
+
+    var findLocation = function (forward, isInlineTarget, rootNode, pos) {
+      var from = InlineUtils.normalizePosition(forward, pos);
+      var fromLocation = readLocation(isInlineTarget, rootNode, from);
+
+      return readLocation(isInlineTarget, rootNode, from).bind(Fun.curry(findLocationSimple, forward)).orThunk(function () {
+        return findLocationTraverse(forward, isInlineTarget, rootNode, fromLocation, pos);
+      });
+    };
+
+    return {
+      readLocation: readLocation,
+      findLocation: findLocation,
+      prevLocation: Fun.curry(findLocation, false),
+      nextLocation: Fun.curry(findLocation, true),
+      getElement: getElement,
+      outside: outside,
+      inside: inside
+    };
+  }
+);
+define(
+  'ephox.katamari.api.Cell',
+
+  [
+  ],
+
+  function () {
+    var Cell = function (initial) {
+      var value = initial;
+
+      var get = function () {
+        return value;
+      };
+
+      var set = function (v) {
+        value = v;
+      };
+
+      var clone = function () {
+        return Cell(get());
+      };
+
+      return {
+        get: get,
+        set: set,
+        clone: clone
+      };
+    };
+
+    return Cell;
+  }
+);
+
+/**
+ * WordSelection.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.selection.WordSelection',
+  [
+    'ephox.katamari.api.Type',
+    'tinymce.core.caret.CaretContainer',
+    'tinymce.core.caret.CaretPosition'
+  ],
+  function (Type, CaretContainer, CaretPosition) {
+    var hasSelectionModifyApi = function (editor) {
+      return Type.isFunction(editor.selection.getSel().modify);
+    };
+
+    var moveRel = function (forward, selection, pos) {
+      var delta = forward ? 1 : -1;
+      selection.setRng(CaretPosition(pos.container(), pos.offset() + delta).toRange());
+      selection.getSel().modify('move', forward ? 'forward' : 'backward', 'word');
+      return true;
+    };
+
+    var moveByWord = function (forward, editor) {
+      var rng = editor.selection.getRng();
+      var pos = forward ? CaretPosition.fromRangeEnd(rng) : CaretPosition.fromRangeStart(rng);
+
+      if (!hasSelectionModifyApi(editor)) {
+        return false;
+      } else if (forward && CaretContainer.isBeforeInline(pos)) {
+        return moveRel(true, editor.selection, pos);
+      } else if (!forward && CaretContainer.isAfterInline(pos)) {
+        return moveRel(false, editor.selection, pos);
+      } else {
+        return false;
       }
     };
 
     return {
-      applyCaretFormat: applyCaretFormat,
-      removeCaretFormat: removeCaretFormat,
-      isCaretNode: isCaretNode
+      hasSelectionModifyApi: hasSelectionModifyApi,
+      moveByWord: moveByWord
     };
   }
 );
+/**
+ * BoundarySelection.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.keyboard.BoundarySelection',
+  [
+    'ephox.katamari.api.Arr',
+    'ephox.katamari.api.Cell',
+    'ephox.katamari.api.Fun',
+    'tinymce.core.caret.CaretContainerRemove',
+    'tinymce.core.caret.CaretPosition',
+    'tinymce.core.keyboard.BoundaryCaret',
+    'tinymce.core.keyboard.BoundaryLocation',
+    'tinymce.core.keyboard.InlineUtils',
+    'tinymce.core.selection.WordSelection'
+  ],
+  function (Arr, Cell, Fun, CaretContainerRemove, CaretPosition, BoundaryCaret, BoundaryLocation, InlineUtils, WordSelection) {
+    var setCaretPosition = function (editor, pos) {
+      var rng = editor.dom.createRng();
+      rng.setStart(pos.container(), pos.offset());
+      rng.setEnd(pos.container(), pos.offset());
+      editor.selection.setRng(rng);
+    };
+
+    var isFeatureEnabled = function (editor) {
+      return editor.settings.inline_boundaries !== false;
+    };
+
+    var setSelected = function (state, elm) {
+      if (state) {
+        elm.setAttribute('data-mce-selected', 'inline-boundary');
+      } else {
+        elm.removeAttribute('data-mce-selected');
+      }
+    };
+
+    var renderCaretLocation = function (editor, caret, location) {
+      return BoundaryCaret.renderCaret(caret, location).map(function (pos) {
+        setCaretPosition(editor, pos);
+        return location;
+      });
+    };
+
+    var findLocation = function (editor, caret, forward) {
+      var rootNode = editor.getBody();
+      var from = CaretPosition.fromRangeStart(editor.selection.getRng());
+      var isInlineTarget = Fun.curry(InlineUtils.isInlineTarget, editor);
+      var location = BoundaryLocation.findLocation(forward, isInlineTarget, rootNode, from);
+      return location.bind(function (location) {
+        return renderCaretLocation(editor, caret, location);
+      });
+    };
+
+    var toggleInlines = function (isInlineTarget, dom, elms) {
+      var selectedInlines = Arr.filter(dom.select('*[data-mce-selected="inline-boundary"]'), isInlineTarget);
+      var targetInlines = Arr.filter(elms, isInlineTarget);
+      Arr.each(Arr.difference(selectedInlines, targetInlines), Fun.curry(setSelected, false));
+      Arr.each(Arr.difference(targetInlines, selectedInlines), Fun.curry(setSelected, true));
+    };
+
+    var safeRemoveCaretContainer = function (editor, caret) {
+      if (editor.selection.isCollapsed() && editor.composing !== true && caret.get()) {
+        var pos = CaretPosition.fromRangeStart(editor.selection.getRng());
+        if (CaretPosition.isTextPosition(pos) && InlineUtils.isAtZwsp(pos) === false) {
+          setCaretPosition(editor, CaretContainerRemove.removeAndReposition(caret.get(), pos));
+          caret.set(null);
+        }
+      }
+    };
+
+    var renderInsideInlineCaret = function (isInlineTarget, editor, caret, elms) {
+      if (editor.selection.isCollapsed()) {
+        var inlines = Arr.filter(elms, isInlineTarget);
+        Arr.each(inlines, function (inline) {
+          var pos = CaretPosition.fromRangeStart(editor.selection.getRng());
+          BoundaryLocation.readLocation(isInlineTarget, editor.getBody(), pos).bind(function (location) {
+            return renderCaretLocation(editor, caret, location);
+          });
+        });
+      }
+    };
+
+    var move = function (editor, caret, forward) {
+      return function () {
+        return isFeatureEnabled(editor) ? findLocation(editor, caret, forward).isSome() : false;
+      };
+    };
+
+    var moveWord = function (forward, editor, caret) {
+      return function () {
+        return isFeatureEnabled(editor) ? WordSelection.moveByWord(forward, editor) : false;
+      };
+    };
+
+    var setupSelectedState = function (editor) {
+      var caret = new Cell(null);
+      var isInlineTarget = Fun.curry(InlineUtils.isInlineTarget, editor);
+
+      editor.on('NodeChange', function (e) {
+        if (isFeatureEnabled(editor)) {
+          toggleInlines(isInlineTarget, editor.dom, e.parents);
+          safeRemoveCaretContainer(editor, caret);
+          renderInsideInlineCaret(isInlineTarget, editor, caret, e.parents);
+        }
+      });
+
+      return caret;
+    };
+
+    return {
+      move: move,
+      moveNextWord: Fun.curry(moveWord, true),
+      movePrevWord: Fun.curry(moveWord, false),
+      setupSelectedState: setupSelectedState,
+      setCaretPosition: setCaretPosition
+    };
+  }
+);
+/**
+ * InlineBoundaryDelete.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.delete.InlineBoundaryDelete',
+  [
+    'ephox.katamari.api.Fun',
+    'ephox.katamari.api.Option',
+    'ephox.katamari.api.Options',
+    'ephox.sugar.api.node.Element',
+    'global!document',
+    'tinymce.core.caret.CaretContainer',
+    'tinymce.core.caret.CaretFinder',
+    'tinymce.core.caret.CaretPosition',
+    'tinymce.core.caret.CaretUtils',
+    'tinymce.core.delete.DeleteElement',
+    'tinymce.core.keyboard.BoundaryCaret',
+    'tinymce.core.keyboard.BoundaryLocation',
+    'tinymce.core.keyboard.BoundarySelection',
+    'tinymce.core.keyboard.InlineUtils'
+  ],
+  function (
+    Fun, Option, Options, Element, document, CaretContainer, CaretFinder, CaretPosition, CaretUtils, DeleteElement, BoundaryCaret, BoundaryLocation, BoundarySelection,
+    InlineUtils
+  ) {
+    var isFeatureEnabled = function (editor) {
+      return editor.settings.inline_boundaries !== false;
+    };
+
+    var rangeFromPositions = function (from, to) {
+      var range = document.createRange();
+
+      range.setStart(from.container(), from.offset());
+      range.setEnd(to.container(), to.offset());
+
+      return range;
+    };
+
+    // Checks for delete at <code>|a</code> when there is only one item left except the zwsp caret container nodes
+    var hasOnlyTwoOrLessPositionsLeft = function (elm) {
+      return Options.liftN([
+        CaretFinder.firstPositionIn(elm),
+        CaretFinder.lastPositionIn(elm)
+      ], function (firstPos, lastPos) {
+        var normalizedFirstPos = InlineUtils.normalizePosition(true, firstPos);
+        var normalizedLastPos = InlineUtils.normalizePosition(false, lastPos);
+
+        return CaretFinder.nextPosition(elm, normalizedFirstPos).map(function (pos) {
+          return pos.isEqual(normalizedLastPos);
+        }).getOr(true);
+      }).getOr(true);
+    };
+
+    var setCaretLocation = function (editor, caret) {
+      return function (location) {
+        return BoundaryCaret.renderCaret(caret, location).map(function (pos) {
+          BoundarySelection.setCaretPosition(editor, pos);
+          return true;
+        }).getOr(false);
+      };
+    };
+
+    var deleteFromTo = function (editor, caret, from, to) {
+      var rootNode = editor.getBody();
+      var isInlineTarget = Fun.curry(InlineUtils.isInlineTarget, editor);
+
+      editor.undoManager.ignore(function () {
+        editor.selection.setRng(rangeFromPositions(from, to));
+        editor.execCommand('Delete');
+
+        BoundaryLocation.readLocation(isInlineTarget, rootNode, CaretPosition.fromRangeStart(editor.selection.getRng()))
+          .map(BoundaryLocation.inside)
+          .map(setCaretLocation(editor, caret));
+      });
+
+      editor.nodeChanged();
+    };
+
+    var rescope = function (rootNode, node) {
+      var parentBlock = CaretUtils.getParentBlock(node, rootNode);
+      return parentBlock ? parentBlock : rootNode;
+    };
+
+    var backspaceDeleteCollapsed = function (editor, caret, forward, from) {
+      var rootNode = rescope(editor.getBody(), from.container());
+      var isInlineTarget = Fun.curry(InlineUtils.isInlineTarget, editor);
+      var fromLocation = BoundaryLocation.readLocation(isInlineTarget, rootNode, from);
+
+      return fromLocation.bind(function (location) {
+        if (forward) {
+          return location.fold(
+            Fun.constant(Option.some(BoundaryLocation.inside(location))), // Before
+            Option.none, // Start
+            Fun.constant(Option.some(BoundaryLocation.outside(location))), // End
+            Option.none  // After
+          );
+        } else {
+          return location.fold(
+            Option.none, // Before
+            Fun.constant(Option.some(BoundaryLocation.outside(location))), // Start
+            Option.none, // End
+            Fun.constant(Option.some(BoundaryLocation.inside(location)))  // After
+          );
+        }
+      })
+      .map(setCaretLocation(editor, caret))
+      .getOrThunk(function () {
+        var toPosition = CaretFinder.navigate(forward, rootNode, from);
+        var toLocation = toPosition.bind(function (pos) {
+          return BoundaryLocation.readLocation(isInlineTarget, rootNode, pos);
+        });
+
+        if (fromLocation.isSome() && toLocation.isSome()) {
+          return InlineUtils.findRootInline(isInlineTarget, rootNode, from).map(function (elm) {
+            if (hasOnlyTwoOrLessPositionsLeft(elm)) {
+              DeleteElement.deleteElement(editor, forward, Element.fromDom(elm));
+              return true;
+            } else {
+              return false;
+            }
+          }).getOr(false);
+        } else {
+          return toLocation.bind(function (_) {
+            return toPosition.map(function (to) {
+              if (forward) {
+                deleteFromTo(editor, caret, from, to);
+              } else {
+                deleteFromTo(editor, caret, to, from);
+              }
+
+              return true;
+            });
+          }).getOr(false);
+        }
+      });
+    };
+
+    var backspaceDelete = function (editor, caret, forward) {
+      if (editor.selection.isCollapsed() && isFeatureEnabled(editor)) {
+        var from = CaretPosition.fromRangeStart(editor.selection.getRng());
+        return backspaceDeleteCollapsed(editor, caret, forward, from);
+      }
+
+      return false;
+    };
+
+    return {
+      backspaceDelete: backspaceDelete
+    };
+  }
+);
+define(
+  'tinymce.core.delete.TableDeleteAction',
+
+  [
+    'ephox.katamari.api.Adt',
+    'ephox.katamari.api.Arr',
+    'ephox.katamari.api.Fun',
+    'ephox.katamari.api.Option',
+    'ephox.katamari.api.Options',
+    'ephox.katamari.api.Struct',
+    'ephox.sugar.api.dom.Compare',
+    'ephox.sugar.api.node.Element',
+    'ephox.sugar.api.search.SelectorFilter',
+    'ephox.sugar.api.search.SelectorFind'
+  ],
+
+  function (Adt, Arr, Fun, Option, Options, Struct, Compare, Element, SelectorFilter, SelectorFind) {
+    var tableCellRng = Struct.immutable('start', 'end');
+    var tableSelection = Struct.immutable('rng', 'table', 'cells');
+    var deleteAction = Adt.generate([
+      { removeTable: [ 'element' ] },
+      { emptyCells: [ 'cells' ] }
+    ]);
+
+    var getClosestCell = function (container, isRoot) {
+      return SelectorFind.closest(Element.fromDom(container), 'td,th', isRoot);
+    };
+
+    var getClosestTable = function (cell, isRoot) {
+      return SelectorFind.ancestor(cell, 'table', isRoot);
+    };
+
+    var isExpandedCellRng = function (cellRng) {
+      return Compare.eq(cellRng.start(), cellRng.end()) === false;
+    };
+
+    var getTableFromCellRng = function (cellRng, isRoot) {
+      return getClosestTable(cellRng.start(), isRoot)
+        .bind(function (startParentTable) {
+          return getClosestTable(cellRng.end(), isRoot)
+            .bind(function (endParentTable) {
+              return Compare.eq(startParentTable, endParentTable) ? Option.some(startParentTable) : Option.none();
+            });
+        });
+    };
+
+    var getCellRng = function (rng, isRoot) {
+      return Options.liftN([ // get start and end cell
+        getClosestCell(rng.startContainer, isRoot),
+        getClosestCell(rng.endContainer, isRoot)
+      ], tableCellRng)
+        .filter(isExpandedCellRng);
+    };
+
+    var getTableSelectionFromCellRng = function (cellRng, isRoot) {
+      return getTableFromCellRng(cellRng, isRoot)
+        .bind(function (table) {
+          var cells = SelectorFilter.descendants(table, 'td,th');
+
+          return tableSelection(cellRng, table, cells);
+        });
+    };
+
+    var getTableSelectionFromRng = function (rootNode, rng) {
+      var isRoot = Fun.curry(Compare.eq, rootNode);
+
+      return getCellRng(rng, isRoot)
+        .map(function (cellRng) {
+          return getTableSelectionFromCellRng(cellRng, isRoot);
+        });
+    };
+
+    var getCellIndex = function (cellArray, cell) {
+      return Arr.findIndex(cellArray, function (x) {
+        return Compare.eq(x, cell);
+      });
+    };
+
+    var getSelectedCells = function (tableSelection) {
+      return Options.liftN([
+        getCellIndex(tableSelection.cells(), tableSelection.rng().start()),
+        getCellIndex(tableSelection.cells(), tableSelection.rng().end())
+      ], function (startIndex, endIndex) {
+        return tableSelection.cells().slice(startIndex, endIndex + 1);
+      });
+    };
+
+    var getAction = function (tableSelection) {
+      return getSelectedCells(tableSelection)
+        .bind(function (selected) {
+          var cells = tableSelection.cells();
+
+          return selected.length === cells.length ? deleteAction.removeTable(tableSelection.table()) : deleteAction.emptyCells(selected);
+        });
+    };
+
+    var getActionFromCells = function (cells) {
+      return deleteAction.emptyCells(cells);
+    };
+
+    var getActionFromRange = function (rootNode, rng) {
+      return getTableSelectionFromRng(rootNode, rng)
+        .map(getAction);
+    };
+
+    return {
+      getActionFromRange: getActionFromRange,
+      getActionFromCells: getActionFromCells
+    };
+  }
+);
+
+/**
+ * MultiRange.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.selection.MultiRange',
+  [
+    'ephox.katamari.api.Arr',
+    'ephox.sugar.api.node.Element',
+    'tinymce.core.selection.RangeNodes'
+  ],
+  function (Arr, Element, RangeNodes) {
+    var getRanges = function (selection) {
+      var ranges = [];
+
+      for (var i = 0; i < selection.rangeCount; i++) {
+        ranges.push(selection.getRangeAt(i));
+      }
+
+      return ranges;
+    };
+
+    var getSelectedNodes = function (ranges) {
+      return Arr.bind(ranges, function (range) {
+        var node = RangeNodes.getSelectedNode(range);
+        return node ? [ Element.fromDom(node) ] : [];
+      });
+    };
+
+    var hasMultipleRanges = function (selection) {
+      return getRanges(selection).length > 1;
+    };
+
+    return {
+      getRanges: getRanges,
+      getSelectedNodes: getSelectedNodes,
+      hasMultipleRanges: hasMultipleRanges
+    };
+  }
+);
+
+/**
+ * TableCellSelection.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.selection.TableCellSelection',
+  [
+    'ephox.katamari.api.Arr',
+    'ephox.sugar.api.node.Element',
+    'ephox.sugar.api.search.SelectorFilter',
+    'tinymce.core.dom.ElementType',
+    'tinymce.core.selection.MultiRange'
+  ],
+  function (Arr, Element, SelectorFilter, ElementType, MultiRange) {
+    var getCellsFromRanges = function (ranges) {
+      return Arr.filter(MultiRange.getSelectedNodes(ranges), ElementType.isTableCell);
+    };
+
+    var getCellsFromElement = function (elm) {
+      var selectedCells = SelectorFilter.descendants(elm, 'td[data-mce-selected],th[data-mce-selected]');
+      return selectedCells;
+    };
+
+    var getCellsFromElementOrRanges = function (ranges, element) {
+      var selectedCells = getCellsFromElement(element);
+      var rangeCells = getCellsFromRanges(ranges);
+      return selectedCells.length > 0 ? selectedCells : rangeCells;
+    };
+
+    var getCellsFromEditor = function (editor) {
+      return getCellsFromElementOrRanges(MultiRange.getRanges(editor.selection.getSel()), Element.fromDom(editor.getBody()));
+    };
+
+    return {
+      getCellsFromRanges: getCellsFromRanges,
+      getCellsFromElement: getCellsFromElement,
+      getCellsFromElementOrRanges: getCellsFromElementOrRanges,
+      getCellsFromEditor: getCellsFromEditor
+    };
+  }
+);
+
+/**
+ * TableDelete.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.delete.TableDelete',
+  [
+    'ephox.katamari.api.Arr',
+    'ephox.katamari.api.Fun',
+    'ephox.katamari.api.Option',
+    'ephox.sugar.api.dom.Compare',
+    'ephox.sugar.api.node.Element',
+    'ephox.sugar.api.node.Node',
+    'tinymce.core.caret.CaretFinder',
+    'tinymce.core.caret.CaretPosition',
+    'tinymce.core.delete.DeleteElement',
+    'tinymce.core.delete.TableDeleteAction',
+    'tinymce.core.dom.ElementType',
+    'tinymce.core.dom.Empty',
+    'tinymce.core.dom.PaddingBr',
+    'tinymce.core.dom.Parents',
+    'tinymce.core.selection.TableCellSelection'
+  ],
+  function (Arr, Fun, Option, Compare, Element, Node, CaretFinder, CaretPosition, DeleteElement, TableDeleteAction, ElementType, Empty, PaddingBr, Parents, TableCellSelection) {
+    var emptyCells = function (editor, cells) {
+      Arr.each(cells, PaddingBr.fillWithPaddingBr);
+      editor.selection.setCursorLocation(cells[0].dom(), 0);
+
+      return true;
+    };
+
+    var deleteTableElement = function (editor, table) {
+      DeleteElement.deleteElement(editor, false, table);
+
+      return true;
+    };
+
+    var deleteCellRange = function (editor, rootElm, rng) {
+      return TableDeleteAction.getActionFromRange(rootElm, rng).map(function (action) {
+        return action.fold(
+          Fun.curry(deleteTableElement, editor),
+          Fun.curry(emptyCells, editor)
+        );
+      });
+    };
+
+    var deleteCaptionRange = function (editor, caption) {
+      return emptyElement(editor, caption);
+    };
+
+    var deleteTableRange = function (editor, rootElm, rng, startElm) {
+      return getParentCaption(rootElm, startElm).fold(
+        function () {
+          return deleteCellRange(editor, rootElm, rng);
+        },
+        function (caption) {
+          return deleteCaptionRange(editor, caption);
+        }
+      ).getOr(false);
+    };
+
+    var deleteRange = function (editor, startElm) {
+      var rootNode = Element.fromDom(editor.getBody());
+      var rng = editor.selection.getRng();
+      var selectedCells = TableCellSelection.getCellsFromEditor(editor);
+
+      return selectedCells.length !== 0 ? emptyCells(editor, selectedCells) : deleteTableRange(editor, rootNode, rng, startElm);
+    };
+
+    var getParentCell = function (rootElm, elm) {
+      return Arr.find(Parents.parentsAndSelf(elm, rootElm), ElementType.isTableCell);
+    };
+
+    var getParentCaption = function (rootElm, elm) {
+      return Arr.find(Parents.parentsAndSelf(elm, rootElm), function (elm) {
+        return Node.name(elm) === 'caption';
+      });
+    };
+
+    var deleteBetweenCells = function (editor, rootElm, forward, fromCell, from) {
+      return CaretFinder.navigate(forward, editor.getBody(), from).bind(function (to) {
+        return getParentCell(rootElm, Element.fromDom(to.getNode())).map(function (toCell) {
+          return Compare.eq(toCell, fromCell) === false;
+        });
+      });
+    };
+
+    var emptyElement = function (editor, elm) {
+      PaddingBr.fillWithPaddingBr(elm);
+      editor.selection.setCursorLocation(elm.dom(), 0);
+      return Option.some(true);
+    };
+
+    var isDeleteOfLastCharPos = function (fromCaption, forward, from, to) {
+      return CaretFinder.firstPositionIn(fromCaption.dom()).bind(function (first) {
+        return CaretFinder.lastPositionIn(fromCaption.dom()).map(function (last) {
+          return forward ? from.isEqual(first) && to.isEqual(last) : from.isEqual(last) && to.isEqual(first);
+        });
+      }).getOr(true);
+    };
+
+    var emptyCaretCaption = function (editor, elm) {
+      return emptyElement(editor, elm);
+    };
+
+    var validateCaretCaption = function (rootElm, fromCaption, to) {
+      return getParentCaption(rootElm, Element.fromDom(to.getNode())).map(function (toCaption) {
+        return Compare.eq(toCaption, fromCaption) === false;
+      });
+    };
+
+    var deleteCaretInsideCaption = function (editor, rootElm, forward, fromCaption, from) {
+      return CaretFinder.navigate(forward, editor.getBody(), from).bind(function (to) {
+        return isDeleteOfLastCharPos(fromCaption, forward, from, to) ? emptyCaretCaption(editor, fromCaption) : validateCaretCaption(rootElm, fromCaption, to);
+      }).or(Option.some(true));
+    };
+
+    var deleteCaretCells = function (editor, forward, rootElm, startElm) {
+      var from = CaretPosition.fromRangeStart(editor.selection.getRng());
+      return getParentCell(rootElm, startElm).bind(function (fromCell) {
+        return Empty.isEmpty(fromCell) ? emptyElement(editor, fromCell) : deleteBetweenCells(editor, rootElm, forward, fromCell, from);
+      });
+    };
+
+    var deleteCaretCaption = function (editor, forward, rootElm, fromCaption) {
+      var from = CaretPosition.fromRangeStart(editor.selection.getRng());
+      return Empty.isEmpty(fromCaption) ? emptyElement(editor, fromCaption) : deleteCaretInsideCaption(editor, rootElm, forward, fromCaption, from);
+    };
+
+    var deleteCaret = function (editor, forward, startElm) {
+      var rootElm = Element.fromDom(editor.getBody());
+
+      return getParentCaption(rootElm, startElm).fold(
+        function () {
+          return deleteCaretCells(editor, forward, rootElm, startElm);
+        },
+        function (fromCaption) {
+          return deleteCaretCaption(editor, forward, rootElm, fromCaption);
+        }
+      ).getOr(false);
+    };
+
+    var backspaceDelete = function (editor, forward) {
+      var startElm = Element.fromDom(editor.selection.getStart(true));
+      return editor.selection.isCollapsed() ? deleteCaret(editor, forward, startElm) : deleteRange(editor, startElm);
+    };
+
+    return {
+      backspaceDelete: backspaceDelete
+    };
+  }
+);
+
+/**
+ * Commands.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.delete.DeleteCommands',
+  [
+    'tinymce.core.delete.BlockBoundaryDelete',
+    'tinymce.core.delete.BlockRangeDelete',
+    'tinymce.core.delete.CefDelete',
+    'tinymce.core.delete.DeleteUtils',
+    'tinymce.core.delete.InlineBoundaryDelete',
+    'tinymce.core.delete.TableDelete'
+  ],
+  function (BlockBoundaryDelete, BlockRangeDelete, CefDelete, DeleteUtils, BoundaryDelete, TableDelete) {
+    var nativeCommand = function (editor, command) {
+      editor.getDoc().execCommand(command, false, null);
+    };
+
+    var deleteCommand = function (editor) {
+      if (CefDelete.backspaceDelete(editor, false)) {
+        return;
+      } else if (BoundaryDelete.backspaceDelete(editor, false)) {
+        return;
+      } else if (BlockBoundaryDelete.backspaceDelete(editor, false)) {
+        return;
+      } else if (TableDelete.backspaceDelete(editor)) {
+        return;
+      } else if (BlockRangeDelete.backspaceDelete(editor, false)) {
+        return;
+      } else {
+        nativeCommand(editor, 'Delete');
+        DeleteUtils.paddEmptyBody(editor);
+      }
+    };
+
+    var forwardDeleteCommand = function (editor) {
+      if (CefDelete.backspaceDelete(editor, true)) {
+        return;
+      } else if (BoundaryDelete.backspaceDelete(editor, true)) {
+        return;
+      } else if (BlockBoundaryDelete.backspaceDelete(editor, true)) {
+        return;
+      } else if (TableDelete.backspaceDelete(editor)) {
+        return;
+      } else if (BlockRangeDelete.backspaceDelete(editor, true)) {
+        return;
+      } else {
+        nativeCommand(editor, 'ForwardDelete');
+      }
+    };
+
+    return {
+      deleteCommand: deleteCommand,
+      forwardDeleteCommand: forwardDeleteCommand
+    };
+  }
+);
+/**
+ * RangeCompare.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.selection.RangeCompare',
+  [
+  ],
+  function () {
+    var isEq = function (rng1, rng2) {
+      return rng1 && rng2 &&
+        (rng1.startContainer === rng2.startContainer && rng1.startOffset === rng2.startOffset) &&
+        (rng1.endContainer === rng2.endContainer && rng1.endOffset === rng2.endOffset);
+    };
+
+    return {
+      isEq: isEq
+    };
+  }
+);
+
+/**
+ * NormalizeRange.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.selection.NormalizeRange',
+  [
+    'ephox.katamari.api.Option',
+    'ephox.katamari.api.Struct',
+    'tinymce.core.caret.CaretContainer',
+    'tinymce.core.dom.NodeType',
+    'tinymce.core.dom.TreeWalker',
+    'tinymce.core.fmt.CaretFormat',
+    'tinymce.core.selection.RangeCompare'
+  ],
+  function (Option, Struct, CaretContainer, NodeType, TreeWalker, CaretFormat, RangeCompare) {
+    var position = Struct.immutable('container', 'offset');
+
+    var findParent = function (node, rootNode, predicate) {
+      while (node && node !== rootNode) {
+        if (predicate(node)) {
+          return node;
+        }
+
+        node = node.parentNode;
+      }
+
+      return null;
+    };
+
+    var hasParent = function (node, rootNode, predicate) {
+      return findParent(node, rootNode, predicate) !== null;
+    };
+
+    var hasParentWithName = function (node, rootNode, name) {
+      return hasParent(node, rootNode, function (node) {
+        return node.nodeName === name;
+      });
+    };
+
+    var isTable = function (node) {
+      return node && node.nodeName === 'TABLE';
+    };
+
+    var isTableCell = function (node) {
+      return node && /^(TD|TH|CAPTION)$/.test(node.nodeName);
+    };
+
+    var isCeFalseCaretContainer = function (node, rootNode) {
+      return CaretContainer.isCaretContainer(node) && hasParent(node, rootNode, CaretFormat.isCaretNode) === false;
+    };
+
+    var hasBrBeforeAfter = function (dom, node, left) {
+      var walker = new TreeWalker(node, dom.getParent(node.parentNode, dom.isBlock) || dom.getRoot());
+
+      while ((node = walker[left ? 'prev' : 'next']())) {
+        if (NodeType.isBr(node)) {
+          return true;
+        }
+      }
+    };
+
+    var isPrevNode = function (node, name) {
+      return node.previousSibling && node.previousSibling.nodeName === name;
+    };
+
+    var hasContentEditableFalseParent = function (body, node) {
+      while (node && node !== body) {
+        if (NodeType.isContentEditableFalse(node)) {
+          return true;
+        }
+
+        node = node.parentNode;
+      }
+
+      return false;
+    };
+
+    // Walks the dom left/right to find a suitable text node to move the endpoint into
+    // It will only walk within the current parent block or body and will stop if it hits a block or a BR/IMG
+    var findTextNodeRelative = function (dom, isAfterNode, collapsed, left, startNode) {
+      var walker, lastInlineElement, parentBlockContainer, body = dom.getRoot(), node;
+      var nonEmptyElementsMap = dom.schema.getNonEmptyElements();
+
+      parentBlockContainer = dom.getParent(startNode.parentNode, dom.isBlock) || body;
+
+      // Lean left before the BR element if it's the only BR within a block element. Gecko bug: #6680
+      // This: <p><br>|</p> becomes <p>|<br></p>
+      if (left && NodeType.isBr(startNode) && isAfterNode && dom.isEmpty(parentBlockContainer)) {
+        return Option.some(position(startNode.parentNode, dom.nodeIndex(startNode)));
+      }
+
+      // Walk left until we hit a text node we can move to or a block/br/img
+      walker = new TreeWalker(startNode, parentBlockContainer);
+      while ((node = walker[left ? 'prev' : 'next']())) {
+        // Break if we hit a non content editable node
+        if (dom.getContentEditableParent(node) === "false" || isCeFalseCaretContainer(node, body)) {
+          return Option.none();
+        }
+
+        // Found text node that has a length
+        if (NodeType.isText(node) && node.nodeValue.length > 0) {
+          if (hasParentWithName(node, body, 'A') === false) {
+            return Option.some(position(node, left ? node.nodeValue.length : 0));
+          }
+
+          return Option.none();
+        }
+
+        // Break if we find a block or a BR/IMG/INPUT etc
+        if (dom.isBlock(node) || nonEmptyElementsMap[node.nodeName.toLowerCase()]) {
+          return Option.none();
+        }
+
+        lastInlineElement = node;
+      }
+
+      // Only fetch the last inline element when in caret mode for now
+      if (collapsed && lastInlineElement) {
+        return Option.some(position(lastInlineElement, 0));
+      }
+
+      return Option.none();
+    };
+
+    var normalizeEndPoint = function (dom, collapsed, start, rng) {
+      var container, offset, walker, body = dom.getRoot(), node, nonEmptyElementsMap;
+      var directionLeft, isAfterNode, normalized = false;
+
+      container = rng[(start ? 'start' : 'end') + 'Container'];
+      offset = rng[(start ? 'start' : 'end') + 'Offset'];
+      isAfterNode = NodeType.isElement(container) && offset === container.childNodes.length;
+      nonEmptyElementsMap = dom.schema.getNonEmptyElements();
+      directionLeft = start;
+
+      if (CaretContainer.isCaretContainer(container)) {
+        return Option.none();
+      }
+
+      if (NodeType.isElement(container) && offset > container.childNodes.length - 1) {
+        directionLeft = false;
+      }
+
+      // If the container is a document move it to the body element
+      if (NodeType.isDocument(container)) {
+        container = body;
+        offset = 0;
+      }
+
+      // If the container is body try move it into the closest text node or position
+      if (container === body) {
+        // If start is before/after a image, table etc
+        if (directionLeft) {
+          node = container.childNodes[offset > 0 ? offset - 1 : 0];
+          if (node) {
+            if (CaretContainer.isCaretContainer(node)) {
+              return Option.none();
+            }
+
+            if (nonEmptyElementsMap[node.nodeName] || isTable(node)) {
+              return Option.none();
+            }
+          }
+        }
+
+        // Resolve the index
+        if (container.hasChildNodes()) {
+          offset = Math.min(!directionLeft && offset > 0 ? offset - 1 : offset, container.childNodes.length - 1);
+          container = container.childNodes[offset];
+          offset = NodeType.isText(container) && isAfterNode ? container.data.length : 0;
+
+          // Don't normalize non collapsed selections like <p>[a</p><table></table>]
+          if (!collapsed && container === body.lastChild && isTable(container)) {
+            return Option.none();
+          }
+
+          if (hasContentEditableFalseParent(body, container) || CaretContainer.isCaretContainer(container)) {
+            return Option.none();
+          }
+
+          // Don't walk into elements that doesn't have any child nodes like a IMG
+          if (container.hasChildNodes() && isTable(container) === false) {
+            // Walk the DOM to find a text node to place the caret at or a BR
+            node = container;
+            walker = new TreeWalker(container, body);
+
+            do {
+              if (NodeType.isContentEditableFalse(node) || CaretContainer.isCaretContainer(node)) {
+                normalized = false;
+                break;
+              }
+
+              // Found a text node use that position
+              if (NodeType.isText(node) && node.nodeValue.length > 0) {
+                offset = directionLeft ? 0 : node.nodeValue.length;
+                container = node;
+                normalized = true;
+                break;
+              }
+
+              // Found a BR/IMG/PRE element that we can place the caret before
+              if (nonEmptyElementsMap[node.nodeName.toLowerCase()] && !isTableCell(node)) {
+                offset = dom.nodeIndex(node);
+                container = node.parentNode;
+
+                // Put caret after image and pre tag when moving the end point
+                if ((node.nodeName === 'IMG' || node.nodeName === 'PRE') && !directionLeft) {
+                  offset++;
+                }
+
+                normalized = true;
+                break;
+              }
+            } while ((node = (directionLeft ? walker.next() : walker.prev())));
+          }
+        }
+      }
+
+      // Lean the caret to the left if possible
+      if (collapsed) {
+        // So this: <b>x</b><i>|x</i>
+        // Becomes: <b>x|</b><i>x</i>
+        // Seems that only gecko has issues with this
+        if (NodeType.isText(container) && offset === 0) {
+          findTextNodeRelative(dom, isAfterNode, collapsed, true, container).each(function (pos) {
+            container = pos.container();
+            offset = pos.offset();
+            normalized = true;
+          });
+        }
+
+        // Lean left into empty inline elements when the caret is before a BR
+        // So this: <i><b></b><i>|<br></i>
+        // Becomes: <i><b>|</b><i><br></i>
+        // Seems that only gecko has issues with this.
+        // Special edge case for <p><a>x</a>|<br></p> since we don't want <p><a>x|</a><br></p>
+        if (NodeType.isElement(container)) {
+          node = container.childNodes[offset];
+
+          // Offset is after the containers last child
+          // then use the previous child for normalization
+          if (!node) {
+            node = container.childNodes[offset - 1];
+          }
+
+          if (node && NodeType.isBr(node) && !isPrevNode(node, 'A') &&
+            !hasBrBeforeAfter(dom, node, false) && !hasBrBeforeAfter(dom, node, true)) {
+            findTextNodeRelative(dom, isAfterNode, collapsed, true, node).each(function (pos) {
+              container = pos.container();
+              offset = pos.offset();
+              normalized = true;
+            });
+          }
+        }
+      }
+
+      // Lean the start of the selection right if possible
+      // So this: x[<b>x]</b>
+      // Becomes: x<b>[x]</b>
+      if (directionLeft && !collapsed && NodeType.isText(container) && offset === container.nodeValue.length) {
+        findTextNodeRelative(dom, isAfterNode, collapsed, false, container).each(function (pos) {
+          container = pos.container();
+          offset = pos.offset();
+          normalized = true;
+        });
+      }
+
+      return normalized ? Option.some(position(container, offset)) : Option.none();
+    };
+
+    var normalize = function (dom, rng) {
+      var collapsed = rng.collapsed, normRng = rng.cloneRange();
+
+      normalizeEndPoint(dom, collapsed, true, normRng).each(function (pos) {
+        normRng.setStart(pos.container(), pos.offset());
+      });
+
+      if (!collapsed) {
+        normalizeEndPoint(dom, collapsed, false, normRng).each(function (pos) {
+          normRng.setEnd(pos.container(), pos.offset());
+        });
+      }
+
+      // If it was collapsed then make sure it still is
+      if (collapsed) {
+        normRng.collapse(true);
+      }
+
+      return RangeCompare.isEq(rng, normRng) ? Option.none() : Option.some(normRng);
+    };
+
+    return {
+      normalize: normalize
+    };
+  }
+);
+/**
+ * InsertBr.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.keyboard.InsertBr',
+  [
+    'ephox.katamari.api.Fun',
+    'ephox.sugar.api.dom.Insert',
+    'ephox.sugar.api.node.Element',
+    'tinymce.core.caret.CaretFinder',
+    'tinymce.core.caret.CaretPosition',
+    'tinymce.core.dom.NodeType',
+    'tinymce.core.dom.TreeWalker',
+    'tinymce.core.keyboard.BoundaryLocation',
+    'tinymce.core.keyboard.InlineUtils',
+    'tinymce.core.selection.NormalizeRange'
+  ],
+  function (Fun, Insert, Element, CaretFinder, CaretPosition, NodeType, TreeWalker, BoundaryLocation, InlineUtils, NormalizeRange) {
+    // Walks the parent block to the right and look for BR elements
+    var hasRightSideContent = function (schema, container, parentBlock) {
+      var walker = new TreeWalker(container, parentBlock), node;
+      var nonEmptyElementsMap = schema.getNonEmptyElements();
+
+      while ((node = walker.next())) {
+        if (nonEmptyElementsMap[node.nodeName.toLowerCase()] || node.length > 0) {
+          return true;
+        }
+      }
+    };
+
+    var scrollToBr = function (dom, selection, brElm) {
+      // Insert temp marker and scroll to that
+      var marker = dom.create('span', {}, '&nbsp;');
+      brElm.parentNode.insertBefore(marker, brElm);
+      selection.scrollIntoView(marker);
+      dom.remove(marker);
+    };
+
+    var moveSelectionToBr = function (dom, selection, brElm, extraBr) {
+      var rng = dom.createRng();
+
+      if (!extraBr) {
+        rng.setStartAfter(brElm);
+        rng.setEndAfter(brElm);
+      } else {
+        rng.setStartBefore(brElm);
+        rng.setEndBefore(brElm);
+      }
+
+      selection.setRng(rng);
+    };
+
+    var insertBrAtCaret = function (editor, evt) {
+      // We load the current event in from EnterKey.js when appropriate to heed
+      // certain event-specific variations such as ctrl-enter in a list
+      var selection = editor.selection, dom = editor.dom;
+      var brElm, extraBr;
+      var rng = selection.getRng(true);
+
+      NormalizeRange.normalize(dom, rng).each(function (normRng) {
+        rng.setStart(normRng.startContainer, normRng.startOffset);
+        rng.setEnd(normRng.endContainer, normRng.endOffset);
+      });
+
+      var offset = rng.startOffset;
+      var container = rng.startContainer;
+
+      // Resolve node index
+      if (container.nodeType === 1 && container.hasChildNodes()) {
+        var isAfterLastNodeInContainer = offset > container.childNodes.length - 1;
+
+        container = container.childNodes[Math.min(offset, container.childNodes.length - 1)] || container;
+        if (isAfterLastNodeInContainer && container.nodeType === 3) {
+          offset = container.nodeValue.length;
+        } else {
+          offset = 0;
+        }
+      }
+
+      var parentBlock = dom.getParent(container, dom.isBlock);
+      var containerBlock = parentBlock ? dom.getParent(parentBlock.parentNode, dom.isBlock) : null;
+      var containerBlockName = containerBlock ? containerBlock.nodeName.toUpperCase() : ''; // IE < 9 & HTML5
+
+      // Enter inside block contained within a LI then split or insert before/after LI
+      var isControlKey = evt && evt.ctrlKey;
+      if (containerBlockName === 'LI' && !isControlKey) {
+        parentBlock = containerBlock;
+      }
+
+      if (container && container.nodeType === 3 && offset >= container.nodeValue.length) {
+        // Insert extra BR element at the end block elements
+        if (!hasRightSideContent(editor.schema, container, parentBlock)) {
+          brElm = dom.create('br');
+          rng.insertNode(brElm);
+          rng.setStartAfter(brElm);
+          rng.setEndAfter(brElm);
+          extraBr = true;
+        }
+      }
+
+      brElm = dom.create('br');
+      rng.insertNode(brElm);
+
+      scrollToBr(dom, selection, brElm);
+      moveSelectionToBr(dom, selection, brElm, extraBr);
+      editor.undoManager.add();
+    };
+
+    var insertBrBefore = function (editor, inline) {
+      var br = Element.fromTag('br');
+      Insert.before(Element.fromDom(inline), br);
+      editor.undoManager.add();
+    };
+
+    var insertBrAfter = function (editor, inline) {
+      if (!hasBrAfter(editor.getBody(), inline)) {
+        Insert.after(Element.fromDom(inline), Element.fromTag('br'));
+      }
+
+      var br = Element.fromTag('br');
+      Insert.after(Element.fromDom(inline), br);
+      scrollToBr(editor.dom, editor.selection, br.dom());
+      moveSelectionToBr(editor.dom, editor.selection, br.dom(), false);
+      editor.undoManager.add();
+    };
+
+    var isBeforeBr = function (pos) {
+      return NodeType.isBr(pos.getNode());
+    };
+
+    var hasBrAfter = function (rootNode, startNode) {
+      if (isBeforeBr(CaretPosition.after(startNode))) {
+        return true;
+      } else {
+        return CaretFinder.nextPosition(rootNode, CaretPosition.after(startNode)).map(function (pos) {
+          return NodeType.isBr(pos.getNode());
+        }).getOr(false);
+      }
+    };
+
+    var isAnchorLink = function (elm) {
+      return elm && elm.nodeName === 'A' && 'href' in elm;
+    };
+
+    var isInsideAnchor = function (location) {
+      return location.fold(
+        Fun.constant(false),
+        isAnchorLink,
+        isAnchorLink,
+        Fun.constant(false)
+      );
+    };
+
+    var readInlineAnchorLocation = function (editor) {
+      var isInlineTarget = Fun.curry(InlineUtils.isInlineTarget, editor);
+      var position = CaretPosition.fromRangeStart(editor.selection.getRng());
+      return BoundaryLocation.readLocation(isInlineTarget, editor.getBody(), position).filter(isInsideAnchor);
+    };
+
+    var insertBrOutsideAnchor = function (editor, location) {
+      location.fold(
+        Fun.noop,
+        Fun.curry(insertBrBefore, editor),
+        Fun.curry(insertBrAfter, editor),
+        Fun.noop
+      );
+    };
+
+    var insertBr = function (editor, evt) {
+      var anchorLocation = readInlineAnchorLocation(editor);
+
+      if (anchorLocation.isSome()) {
+        anchorLocation.each(Fun.curry(insertBrOutsideAnchor, editor));
+      } else {
+        insertBrAtCaret(editor, evt);
+      }
+    };
+
+    return {
+      insertBr: insertBr
+    };
+  }
+);
+
+define(
+  'ephox.sugar.api.selection.Situ',
+
+  [
+    'ephox.katamari.api.Adt',
+    'ephox.katamari.api.Fun'
+  ],
+
+  function (Adt, Fun) {
+    var adt = Adt.generate([
+      { 'before': [ 'element' ] },
+      { 'on': [ 'element', 'offset' ] },
+      { after: [ 'element' ] }
+    ]);
+
+    // Probably don't need this given that we now have "match"
+    var cata = function (subject, onBefore, onOn, onAfter) {
+      return subject.fold(onBefore, onOn, onAfter);
+    };
+
+    var getStart = function (situ) {
+      return situ.fold(Fun.identity, Fun.identity, Fun.identity)
+    };
+
+    return {
+      before: adt.before,
+      on: adt.on,
+      after: adt.after,
+      cata: cata,
+      getStart: getStart
+    };
+  }
+);
+
+define(
+  'ephox.sugar.api.selection.Selection',
+
+  [
+    'ephox.katamari.api.Adt',
+    'ephox.katamari.api.Struct',
+    'ephox.sugar.api.node.Element',
+    'ephox.sugar.api.search.Traverse',
+    'ephox.sugar.api.selection.Situ'
+  ],
+
+  function (Adt, Struct, Element, Traverse, Situ) {
+    // Consider adding a type for "element"
+    var type = Adt.generate([
+      { domRange: [ 'rng' ] },
+      { relative: [ 'startSitu', 'finishSitu' ] },
+      { exact: [ 'start', 'soffset', 'finish', 'foffset' ] }
+    ]);
+
+    var range = Struct.immutable(
+      'start',
+      'soffset',
+      'finish',
+      'foffset'
+    );
+
+    var exactFromRange = function (simRange) {
+      return type.exact(simRange.start(), simRange.soffset(), simRange.finish(), simRange.foffset());
+    };
+
+    var getStart = function (selection) {
+      return selection.match({
+        domRange: function (rng) {
+          return Element.fromDom(rng.startContainer);
+        },
+        relative: function (startSitu, finishSitu) {
+          return Situ.getStart(startSitu);
+        },
+        exact: function (start, soffset, finish, foffset) {
+          return start;
+        }
+      });
+    };
+
+    var getWin = function (selection) {
+      var start = getStart(selection);
+
+      return Traverse.defaultView(start);
+    };
+
+    return {
+      domRange: type.domRange,
+      relative: type.relative,
+      exact: type.exact,
+
+      exactFromRange: exactFromRange,
+      range: range,
+
+      getWin: getWin
+    };
+  }
+);
+
+define(
+  'tinymce.core.selection.SelectionBookmark',
+
+  [
+    'ephox.katamari.api.Fun',
+    'ephox.katamari.api.Option',
+    'ephox.sand.api.PlatformDetection',
+    'ephox.sugar.api.dom.Compare',
+    'ephox.sugar.api.node.Element',
+    'ephox.sugar.api.node.Node',
+    'ephox.sugar.api.node.Text',
+    'ephox.sugar.api.search.Traverse',
+    'ephox.sugar.api.selection.Selection',
+    'global!document'
+  ],
+
+  function (Fun, Option, PlatformDetection, Compare, Element, Node, Text, Traverse, Selection, document) {
+    var browser = PlatformDetection.detect().browser;
+
+    var clamp = function (offset, element) {
+      var max = Node.isText(element) ? Text.get(element).length : Traverse.children(element).length + 1;
+
+      if (offset > max) {
+        return max;
+      } else if (offset < 0) {
+        return 0;
+      }
+
+      return offset;
+    };
+
+    var normalizeRng = function (rng) {
+      return Selection.range(
+        rng.start(),
+        clamp(rng.soffset(), rng.start()),
+        rng.finish(),
+        clamp(rng.foffset(), rng.finish())
+      );
+    };
+
+    var isOrContains = function (root, elm) {
+      return Compare.contains(root, elm) || Compare.eq(root, elm);
+    };
+
+    var isRngInRoot = function (root) {
+      return function (rng) {
+        return isOrContains(root, rng.start()) && isOrContains(root, rng.finish());
+      };
+    };
+
+    // var dumpRng = function (rng) {
+    //   console.log('start', rng.start().dom());
+    //   console.log('soffset', rng.soffset());
+    //   console.log('finish', rng.finish().dom());
+    //   console.log('foffset', rng.foffset());
+    //   return rng;
+    // };
+
+    var shouldStore = function (editor) {
+      return editor.inline === true || browser.isIE();
+    };
+
+    var nativeRangeToSelectionRange = function (r) {
+      return Selection.range(Element.fromDom(r.startContainer), r.startOffset, Element.fromDom(r.endContainer), r.endOffset);
+    };
+
+    var readRange = function (win) {
+      var selection = win.getSelection();
+      var rng = !selection || selection.rangeCount === 0 ? Option.none() : Option.from(selection.getRangeAt(0));
+      return rng.map(nativeRangeToSelectionRange);
+    };
+
+    var getBookmark = function (root) {
+      var win = Traverse.defaultView(root);
+
+      return readRange(win.dom())
+        .filter(isRngInRoot(root));
+    };
+
+    var validate = function (root, bookmark) {
+      return Option.from(bookmark)
+          .filter(isRngInRoot(root))
+          .map(normalizeRng);
+    };
+
+    var bookmarkToNativeRng = function (bookmark) {
+      var rng = document.createRange();
+      rng.setStart(bookmark.start().dom(), bookmark.soffset());
+      rng.setEnd(bookmark.finish().dom(), bookmark.foffset());
+
+      return Option.some(rng);
+    };
+
+    var store = function (editor) {
+      var newBookmark = shouldStore(editor) ? getBookmark(Element.fromDom(editor.getBody())) : Option.none();
+
+      editor.bookmark = newBookmark.isSome() ? newBookmark : editor.bookmark;
+    };
+
+    var storeNative = function (editor, rng) {
+      var root = Element.fromDom(editor.getBody());
+      var range = shouldStore(editor) ? Option.from(rng) : Option.none();
+
+      var newBookmark = range.map(nativeRangeToSelectionRange)
+        .filter(isRngInRoot(root));
+
+      editor.bookmark = newBookmark.isSome() ? newBookmark : editor.bookmark;
+    };
+
+    var getRng = function (editor) {
+      var bookmark = editor.bookmark ? editor.bookmark : Option.none();
+
+      return bookmark
+        .bind(Fun.curry(validate, Element.fromDom(editor.getBody())))
+        .bind(bookmarkToNativeRng);
+    };
+
+    var restore = function (editor) {
+      getRng(editor).each(function (rng) {
+        editor.selection.setRng(rng);
+      });
+    };
+
+    return {
+      store: store,
+      storeNative: storeNative,
+      readRange: readRange,
+      restore: restore,
+      getRng: getRng,
+      getBookmark: getBookmark,
+      validate: validate
+    };
+  }
+);
+
+/**
+ * EditorCommands.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+/**
+ * This class enables you to add custom editor commands and it contains
+ * overrides for native browser commands to address various bugs and issues.
+ *
+ * @class tinymce.EditorCommands
+ */
+define(
+  'tinymce.core.EditorCommands',
+  [
+    'tinymce.core.Env',
+    'tinymce.core.InsertContent',
+    'tinymce.core.delete.DeleteCommands',
+    'tinymce.core.dom.NodeType',
+    'tinymce.core.keyboard.InsertBr',
+    'tinymce.core.selection.SelectionBookmark',
+    'tinymce.core.util.Tools'
+  ],
+  function (Env, InsertContent, DeleteCommands, NodeType, InsertBr, SelectionBookmark, Tools) {
+    // Added for compression purposes
+    var each = Tools.each, extend = Tools.extend;
+    var map = Tools.map, inArray = Tools.inArray, explode = Tools.explode;
+    var TRUE = true, FALSE = false;
+
+    return function (editor) {
+      var dom, selection, formatter,
+        commands = { state: {}, exec: {}, value: {} },
+        settings = editor.settings,
+        bookmark;
+
+      editor.on('PreInit', function () {
+        dom = editor.dom;
+        selection = editor.selection;
+        settings = editor.settings;
+        formatter = editor.formatter;
+      });
+
+      /**
+       * Executes the specified command.
+       *
+       * @method execCommand
+       * @param {String} command Command to execute.
+       * @param {Boolean} ui Optional user interface state.
+       * @param {Object} value Optional value for command.
+       * @param {Object} args Optional extra arguments to the execCommand.
+       * @return {Boolean} true/false if the command was found or not.
+       */
+      var execCommand = function (command, ui, value, args) {
+        var func, customCommand, state = 0;
+
+        if (editor.removed) {
+          return;
+        }
+
+        if (!/^(mceAddUndoLevel|mceEndUndoLevel|mceBeginUndoLevel|mceRepaint)$/.test(command) && (!args || !args.skip_focus)) {
+          editor.focus();
+        } else {
+          SelectionBookmark.restore(editor);
+        }
+
+        args = editor.fire('BeforeExecCommand', { command: command, ui: ui, value: value });
+        if (args.isDefaultPrevented()) {
+          return false;
+        }
+
+        customCommand = command.toLowerCase();
+        if ((func = commands.exec[customCommand])) {
+          func(customCommand, ui, value);
+          editor.fire('ExecCommand', { command: command, ui: ui, value: value });
+          return true;
+        }
+
+        // Plugin commands
+        each(editor.plugins, function (p) {
+          if (p.execCommand && p.execCommand(command, ui, value)) {
+            editor.fire('ExecCommand', { command: command, ui: ui, value: value });
+            state = true;
+            return false;
+          }
+        });
+
+        if (state) {
+          return state;
+        }
+
+        // Theme commands
+        if (editor.theme && editor.theme.execCommand && editor.theme.execCommand(command, ui, value)) {
+          editor.fire('ExecCommand', { command: command, ui: ui, value: value });
+          return true;
+        }
+
+        // Browser commands
+        try {
+          state = editor.getDoc().execCommand(command, ui, value);
+        } catch (ex) {
+          // Ignore old IE errors
+        }
+
+        if (state) {
+          editor.fire('ExecCommand', { command: command, ui: ui, value: value });
+          return true;
+        }
+
+        return false;
+      };
+
+      /**
+       * Queries the current state for a command for example if the current selection is "bold".
+       *
+       * @method queryCommandState
+       * @param {String} command Command to check the state of.
+       * @return {Boolean/Number} true/false if the selected contents is bold or not, -1 if it's not found.
+       */
+      var queryCommandState = function (command) {
+        var func;
+
+        if (editor.quirks.isHidden() || editor.removed) {
+          return;
+        }
+
+        command = command.toLowerCase();
+        if ((func = commands.state[command])) {
+          return func(command);
+        }
+
+        // Browser commands
+        try {
+          return editor.getDoc().queryCommandState(command);
+        } catch (ex) {
+          // Fails sometimes see bug: 1896577
+        }
+
+        return false;
+      };
+
+      /**
+       * Queries the command value for example the current fontsize.
+       *
+       * @method queryCommandValue
+       * @param {String} command Command to check the value of.
+       * @return {Object} Command value of false if it's not found.
+       */
+      var queryCommandValue = function (command) {
+        var func;
+
+        if (editor.quirks.isHidden() || editor.removed) {
+          return;
+        }
+
+        command = command.toLowerCase();
+        if ((func = commands.value[command])) {
+          return func(command);
+        }
+
+        // Browser commands
+        try {
+          return editor.getDoc().queryCommandValue(command);
+        } catch (ex) {
+          // Fails sometimes see bug: 1896577
+        }
+      };
+
+      /**
+       * Adds commands to the command collection.
+       *
+       * @method addCommands
+       * @param {Object} commandList Name/value collection with commands to add, the names can also be comma separated.
+       * @param {String} type Optional type to add, defaults to exec. Can be value or state as well.
+       */
+      var addCommands = function (commandList, type) {
+        type = type || 'exec';
+
+        each(commandList, function (callback, command) {
+          each(command.toLowerCase().split(','), function (command) {
+            commands[type][command] = callback;
+          });
+        });
+      };
+
+      var addCommand = function (command, callback, scope) {
+        command = command.toLowerCase();
+        commands.exec[command] = function (command, ui, value, args) {
+          return callback.call(scope || editor, ui, value, args);
+        };
+      };
+
+      /**
+       * Returns true/false if the command is supported or not.
+       *
+       * @method queryCommandSupported
+       * @param {String} command Command that we check support for.
+       * @return {Boolean} true/false if the command is supported or not.
+       */
+      var queryCommandSupported = function (command) {
+        command = command.toLowerCase();
+
+        if (commands.exec[command]) {
+          return true;
+        }
+
+        // Browser commands
+        try {
+          return editor.getDoc().queryCommandSupported(command);
+        } catch (ex) {
+          // Fails sometimes see bug: 1896577
+        }
+
+        return false;
+      };
+
+      var addQueryStateHandler = function (command, callback, scope) {
+        command = command.toLowerCase();
+        commands.state[command] = function () {
+          return callback.call(scope || editor);
+        };
+      };
+
+      var addQueryValueHandler = function (command, callback, scope) {
+        command = command.toLowerCase();
+        commands.value[command] = function () {
+          return callback.call(scope || editor);
+        };
+      };
+
+      var hasCustomCommand = function (command) {
+        command = command.toLowerCase();
+        return !!commands.exec[command];
+      };
+
+      // Expose public methods
+      extend(this, {
+        execCommand: execCommand,
+        queryCommandState: queryCommandState,
+        queryCommandValue: queryCommandValue,
+        queryCommandSupported: queryCommandSupported,
+        addCommands: addCommands,
+        addCommand: addCommand,
+        addQueryStateHandler: addQueryStateHandler,
+        addQueryValueHandler: addQueryValueHandler,
+        hasCustomCommand: hasCustomCommand
+      });
+
+      // Private methods
+
+      var execNativeCommand = function (command, ui, value) {
+        if (ui === undefined) {
+          ui = FALSE;
+        }
+
+        if (value === undefined) {
+          value = null;
+        }
+
+        return editor.getDoc().execCommand(command, ui, value);
+      };
+
+      var isFormatMatch = function (name) {
+        return formatter.match(name);
+      };
+
+      var toggleFormat = function (name, value) {
+        formatter.toggle(name, value ? { value: value } : undefined);
+        editor.nodeChanged();
+      };
+
+      var storeSelection = function (type) {
+        bookmark = selection.getBookmark(type);
+      };
+
+      var restoreSelection = function () {
+        selection.moveToBookmark(bookmark);
+      };
+
+      // Add execCommand overrides
+      addCommands({
+        // Ignore these, added for compatibility
+        'mceResetDesignMode,mceBeginUndoLevel': function () { },
+
+        // Add undo manager logic
+        'mceEndUndoLevel,mceAddUndoLevel': function () {
+          editor.undoManager.add();
+        },
+
+        'Cut,Copy,Paste': function (command) {
+          var doc = editor.getDoc(), failed;
+
+          // Try executing the native command
+          try {
+            execNativeCommand(command);
+          } catch (ex) {
+            // Command failed
+            failed = TRUE;
+          }
+
+          // Chrome reports the paste command as supported however older IE:s will return false for cut/paste
+          if (command === 'paste' && !doc.queryCommandEnabled(command)) {
+            failed = true;
+          }
+
+          // Present alert message about clipboard access not being available
+          if (failed || !doc.queryCommandSupported(command)) {
+            var msg = editor.translate(
+              "Your browser doesn't support direct access to the clipboard. " +
+              "Please use the Ctrl+X/C/V keyboard shortcuts instead."
+            );
+
+            if (Env.mac) {
+              msg = msg.replace(/Ctrl\+/g, '\u2318+');
+            }
+
+            editor.notificationManager.open({ text: msg, type: 'error' });
+          }
+        },
+
+        // Override unlink command
+        unlink: function () {
+          if (selection.isCollapsed()) {
+            var elm = editor.dom.getParent(editor.selection.getStart(), 'a');
+            if (elm) {
+              editor.dom.remove(elm, true);
+            }
+
+            return;
+          }
+
+          formatter.remove("link");
+        },
+
+        // Override justify commands to use the text formatter engine
+        'JustifyLeft,JustifyCenter,JustifyRight,JustifyFull,JustifyNone': function (command) {
+          var align = command.substring(7);
+
+          if (align == 'full') {
+            align = 'justify';
+          }
+
+          // Remove all other alignments first
+          each('left,center,right,justify'.split(','), function (name) {
+            if (align != name) {
+              formatter.remove('align' + name);
+            }
+          });
+
+          if (align != 'none') {
+            toggleFormat('align' + align);
+          }
+        },
+
+        // Override list commands to fix WebKit bug
+        'InsertUnorderedList,InsertOrderedList': function (command) {
+          var listElm, listParent;
+
+          execNativeCommand(command);
+
+          // WebKit produces lists within block elements so we need to split them
+          // we will replace the native list creation logic to custom logic later on
+          // TODO: Remove this when the list creation logic is removed
+          listElm = dom.getParent(selection.getNode(), 'ol,ul');
+          if (listElm) {
+            listParent = listElm.parentNode;
+
+            // If list is within a text block then split that block
+            if (/^(H[1-6]|P|ADDRESS|PRE)$/.test(listParent.nodeName)) {
+              storeSelection();
+              dom.split(listParent, listElm);
+              restoreSelection();
+            }
+          }
+        },
+
+        // Override commands to use the text formatter engine
+        'Bold,Italic,Underline,Strikethrough,Superscript,Subscript': function (command) {
+          toggleFormat(command);
+        },
+
+        // Override commands to use the text formatter engine
+        'ForeColor,HiliteColor,FontName': function (command, ui, value) {
+          toggleFormat(command, value);
+        },
+
+        FontSize: function (command, ui, value) {
+          var fontClasses, fontSizes;
+
+          // Convert font size 1-7 to styles
+          if (value >= 1 && value <= 7) {
+            fontSizes = explode(settings.font_size_style_values);
+            fontClasses = explode(settings.font_size_classes);
+
+            if (fontClasses) {
+              value = fontClasses[value - 1] || value;
+            } else {
+              value = fontSizes[value - 1] || value;
+            }
+          }
+
+          toggleFormat(command, value);
+        },
+
+        RemoveFormat: function (command) {
+          formatter.remove(command);
+        },
+
+        mceBlockQuote: function () {
+          toggleFormat('blockquote');
+        },
+
+        FormatBlock: function (command, ui, value) {
+          return toggleFormat(value || 'p');
+        },
+
+        mceCleanup: function () {
+          var bookmark = selection.getBookmark();
+
+          editor.setContent(editor.getContent({ cleanup: TRUE }), { cleanup: TRUE });
+
+          selection.moveToBookmark(bookmark);
+        },
+
+        mceRemoveNode: function (command, ui, value) {
+          var node = value || selection.getNode();
+
+          // Make sure that the body node isn't removed
+          if (node != editor.getBody()) {
+            storeSelection();
+            editor.dom.remove(node, TRUE);
+            restoreSelection();
+          }
+        },
+
+        mceSelectNodeDepth: function (command, ui, value) {
+          var counter = 0;
+
+          dom.getParent(selection.getNode(), function (node) {
+            if (node.nodeType == 1 && counter++ == value) {
+              selection.select(node);
+              return FALSE;
+            }
+          }, editor.getBody());
+        },
+
+        mceSelectNode: function (command, ui, value) {
+          selection.select(value);
+        },
+
+        mceInsertContent: function (command, ui, value) {
+          InsertContent.insertAtCaret(editor, value);
+        },
+
+        mceInsertRawHTML: function (command, ui, value) {
+          selection.setContent('tiny_mce_marker');
+          editor.setContent(
+            editor.getContent().replace(/tiny_mce_marker/g, function () {
+              return value;
+            })
+          );
+        },
+
+        mceToggleFormat: function (command, ui, value) {
+          toggleFormat(value);
+        },
+
+        mceSetContent: function (command, ui, value) {
+          editor.setContent(value);
+        },
+
+        'Indent,Outdent': function (command) {
+          var intentValue, indentUnit, value;
+
+          // Setup indent level
+          intentValue = settings.indentation;
+          indentUnit = /[a-z%]+$/i.exec(intentValue);
+          intentValue = parseInt(intentValue, 10);
+
+          if (!queryCommandState('InsertUnorderedList') && !queryCommandState('InsertOrderedList')) {
+            // If forced_root_blocks is set to false we don't have a block to indent so lets create a div
+            if (!settings.forced_root_block && !dom.getParent(selection.getNode(), dom.isBlock)) {
+              formatter.apply('div');
+            }
+
+            each(selection.getSelectedBlocks(), function (element) {
+              if (dom.getContentEditable(element) === "false") {
+                return;
+              }
+
+              if (element.nodeName !== "LI") {
+                var indentStyleName = editor.getParam('indent_use_margin', false) ? 'margin' : 'padding';
+                indentStyleName = element.nodeName === 'TABLE' ? 'margin' : indentStyleName;
+                indentStyleName += dom.getStyle(element, 'direction', true) == 'rtl' ? 'Right' : 'Left';
+
+                if (command == 'outdent') {
+                  value = Math.max(0, parseInt(element.style[indentStyleName] || 0, 10) - intentValue);
+                  dom.setStyle(element, indentStyleName, value ? value + indentUnit : '');
+                } else {
+                  value = (parseInt(element.style[indentStyleName] || 0, 10) + intentValue) + indentUnit;
+                  dom.setStyle(element, indentStyleName, value);
+                }
+              }
+            });
+          } else {
+            execNativeCommand(command);
+          }
+        },
+
+        mceRepaint: function () {
+        },
+
+        InsertHorizontalRule: function () {
+          editor.execCommand('mceInsertContent', false, '<hr />');
+        },
+
+        mceToggleVisualAid: function () {
+          editor.hasVisual = !editor.hasVisual;
+          editor.addVisual();
+        },
+
+        mceReplaceContent: function (command, ui, value) {
+          editor.execCommand('mceInsertContent', false, value.replace(/\{\$selection\}/g, selection.getContent({ format: 'text' })));
+        },
+
+        mceInsertLink: function (command, ui, value) {
+          var anchor;
+
+          if (typeof value == 'string') {
+            value = { href: value };
+          }
+
+          anchor = dom.getParent(selection.getNode(), 'a');
+
+          // Spaces are never valid in URLs and it's a very common mistake for people to make so we fix it here.
+          value.href = value.href.replace(' ', '%20');
+
+          // Remove existing links if there could be child links or that the href isn't specified
+          if (!anchor || !value.href) {
+            formatter.remove('link');
+          }
+
+          // Apply new link to selection
+          if (value.href) {
+            formatter.apply('link', value, anchor);
+          }
+        },
+
+        selectAll: function () {
+          var editingHost = dom.getParent(selection.getStart(), NodeType.isContentEditableTrue);
+          if (editingHost) {
+            var rng = dom.createRng();
+            rng.selectNodeContents(editingHost);
+            selection.setRng(rng);
+          }
+        },
+
+        "delete": function () {
+          DeleteCommands.deleteCommand(editor);
+        },
+
+        "forwardDelete": function () {
+          DeleteCommands.forwardDeleteCommand(editor);
+        },
+
+        mceNewDocument: function () {
+          editor.setContent('');
+        },
+
+        InsertLineBreak: function (command, ui, value) {
+          InsertBr.insertBr(editor, value);
+          return true;
+        }
+      });
+
+      // Add queryCommandState overrides
+      addCommands({
+        // Override justify commands
+        'JustifyLeft,JustifyCenter,JustifyRight,JustifyFull': function (command) {
+          var name = 'align' + command.substring(7);
+          var nodes = selection.isCollapsed() ? [dom.getParent(selection.getNode(), dom.isBlock)] : selection.getSelectedBlocks();
+          var matches = map(nodes, function (node) {
+            return !!formatter.matchNode(node, name);
+          });
+          return inArray(matches, TRUE) !== -1;
+        },
+
+        'Bold,Italic,Underline,Strikethrough,Superscript,Subscript': function (command) {
+          return isFormatMatch(command);
+        },
+
+        mceBlockQuote: function () {
+          return isFormatMatch('blockquote');
+        },
+
+        Outdent: function () {
+          var node;
+
+          if (settings.inline_styles) {
+            if ((node = dom.getParent(selection.getStart(), dom.isBlock)) && parseInt(node.style.paddingLeft, 10) > 0) {
+              return TRUE;
+            }
+
+            if ((node = dom.getParent(selection.getEnd(), dom.isBlock)) && parseInt(node.style.paddingLeft, 10) > 0) {
+              return TRUE;
+            }
+          }
+
+          return (
+            queryCommandState('InsertUnorderedList') ||
+            queryCommandState('InsertOrderedList') ||
+            (!settings.inline_styles && !!dom.getParent(selection.getNode(), 'BLOCKQUOTE'))
+          );
+        },
+
+        'InsertUnorderedList,InsertOrderedList': function (command) {
+          var list = dom.getParent(selection.getNode(), 'ul,ol');
+
+          return list &&
+            (
+              command === 'insertunorderedlist' && list.tagName === 'UL' ||
+              command === 'insertorderedlist' && list.tagName === 'OL'
+            );
+        }
+      }, 'state');
+
+      // Add queryCommandValue overrides
+      addCommands({
+        'FontSize,FontName': function (command) {
+          var value = 0, parent;
+
+          if ((parent = dom.getParent(selection.getNode(), 'span'))) {
+            if (command == 'fontsize') {
+              value = parent.style.fontSize;
+            } else {
+              value = parent.style.fontFamily.replace(/, /g, ',').replace(/[\'\"]/g, '').toLowerCase();
+            }
+          }
+
+          return value;
+        }
+      }, 'value');
+
+      // Add undo manager logic
+      addCommands({
+        Undo: function () {
+          editor.undoManager.undo();
+        },
+
+        Redo: function () {
+          editor.undoManager.redo();
+        }
+      });
+    };
+  }
+);
+
+/**
+ * EventDispatcher.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+/**
+ * This class lets you add/remove and fire events by name on the specified scope. This makes
+ * it easy to add event listener logic to any class.
+ *
+ * @class tinymce.util.EventDispatcher
+ * @example
+ *  var eventDispatcher = new EventDispatcher();
+ *
+ *  eventDispatcher.on('click', function() {console.log('data');});
+ *  eventDispatcher.fire('click', {data: 123});
+ */
+define(
+  'tinymce.core.util.EventDispatcher',
+  [
+    "tinymce.core.util.Tools"
+  ],
+  function (Tools) {
+    var nativeEvents = Tools.makeMap(
+      "focus blur focusin focusout click dblclick mousedown mouseup mousemove mouseover beforepaste paste cut copy selectionchange " +
+      "mouseout mouseenter mouseleave wheel keydown keypress keyup input contextmenu dragstart dragend dragover " +
+      "draggesture dragdrop drop drag submit " +
+      "compositionstart compositionend compositionupdate touchstart touchmove touchend",
+      ' '
+    );
+
+    var Dispatcher = function (settings) {
+      var self = this, scope, bindings = {}, toggleEvent;
+
+      var returnFalse = function () {
+        return false;
+      };
+
+      var returnTrue = function () {
+        return true;
+      };
+
+      settings = settings || {};
+      scope = settings.scope || self;
+      toggleEvent = settings.toggleEvent || returnFalse;
+
+      /**
+       * Fires the specified event by name.
+       *
+       * @method fire
+       * @param {String} name Name of the event to fire.
+       * @param {Object?} args Event arguments.
+       * @return {Object} Event args instance passed in.
+       * @example
+       * instance.fire('event', {...});
+       */
+      var fire = function (name, args) {
+        var handlers, i, l, callback;
+
+        name = name.toLowerCase();
+        args = args || {};
+        args.type = name;
+
+        // Setup target is there isn't one
+        if (!args.target) {
+          args.target = scope;
+        }
+
+        // Add event delegation methods if they are missing
+        if (!args.preventDefault) {
+          // Add preventDefault method
+          args.preventDefault = function () {
+            args.isDefaultPrevented = returnTrue;
+          };
+
+          // Add stopPropagation
+          args.stopPropagation = function () {
+            args.isPropagationStopped = returnTrue;
+          };
+
+          // Add stopImmediatePropagation
+          args.stopImmediatePropagation = function () {
+            args.isImmediatePropagationStopped = returnTrue;
+          };
+
+          // Add event delegation states
+          args.isDefaultPrevented = returnFalse;
+          args.isPropagationStopped = returnFalse;
+          args.isImmediatePropagationStopped = returnFalse;
+        }
+
+        if (settings.beforeFire) {
+          settings.beforeFire(args);
+        }
+
+        handlers = bindings[name];
+        if (handlers) {
+          for (i = 0, l = handlers.length; i < l; i++) {
+            callback = handlers[i];
+
+            // Unbind handlers marked with "once"
+            if (callback.once) {
+              off(name, callback.func);
+            }
+
+            // Stop immediate propagation if needed
+            if (args.isImmediatePropagationStopped()) {
+              args.stopPropagation();
+              return args;
+            }
+
+            // If callback returns false then prevent default and stop all propagation
+            if (callback.func.call(scope, args) === false) {
+              args.preventDefault();
+              return args;
+            }
+          }
+        }
+
+        return args;
+      };
+
+      /**
+       * Binds an event listener to a specific event by name.
+       *
+       * @method on
+       * @param {String} name Event name or space separated list of events to bind.
+       * @param {callback} callback Callback to be executed when the event occurs.
+       * @param {Boolean} first Optional flag if the event should be prepended. Use this with care.
+       * @return {Object} Current class instance.
+       * @example
+       * instance.on('event', function(e) {
+       *     // Callback logic
+       * });
+       */
+      var on = function (name, callback, prepend, extra) {
+        var handlers, names, i;
+
+        if (callback === false) {
+          callback = returnFalse;
+        }
+
+        if (callback) {
+          callback = {
+            func: callback
+          };
+
+          if (extra) {
+            Tools.extend(callback, extra);
+          }
+
+          names = name.toLowerCase().split(' ');
+          i = names.length;
+          while (i--) {
+            name = names[i];
+            handlers = bindings[name];
+            if (!handlers) {
+              handlers = bindings[name] = [];
+              toggleEvent(name, true);
+            }
+
+            if (prepend) {
+              handlers.unshift(callback);
+            } else {
+              handlers.push(callback);
+            }
+          }
+        }
+
+        return self;
+      };
+
+      /**
+       * Unbinds an event listener to a specific event by name.
+       *
+       * @method off
+       * @param {String?} name Name of the event to unbind.
+       * @param {callback?} callback Callback to unbind.
+       * @return {Object} Current class instance.
+       * @example
+       * // Unbind specific callback
+       * instance.off('event', handler);
+       *
+       * // Unbind all listeners by name
+       * instance.off('event');
+       *
+       * // Unbind all events
+       * instance.off();
+       */
+      var off = function (name, callback) {
+        var i, handlers, bindingName, names, hi;
+
+        if (name) {
+          names = name.toLowerCase().split(' ');
+          i = names.length;
+          while (i--) {
+            name = names[i];
+            handlers = bindings[name];
+
+            // Unbind all handlers
+            if (!name) {
+              for (bindingName in bindings) {
+                toggleEvent(bindingName, false);
+                delete bindings[bindingName];
+              }
+
+              return self;
+            }
+
+            if (handlers) {
+              // Unbind all by name
+              if (!callback) {
+                handlers.length = 0;
+              } else {
+                // Unbind specific ones
+                hi = handlers.length;
+                while (hi--) {
+                  if (handlers[hi].func === callback) {
+                    handlers = handlers.slice(0, hi).concat(handlers.slice(hi + 1));
+                    bindings[name] = handlers;
+                  }
+                }
+              }
+
+              if (!handlers.length) {
+                toggleEvent(name, false);
+                delete bindings[name];
+              }
+            }
+          }
+        } else {
+          for (name in bindings) {
+            toggleEvent(name, false);
+          }
+
+          bindings = {};
+        }
+
+        return self;
+      };
+
+      /**
+       * Binds an event listener to a specific event by name
+       * and automatically unbind the event once the callback fires.
+       *
+       * @method once
+       * @param {String} name Event name or space separated list of events to bind.
+       * @param {callback} callback Callback to be executed when the event occurs.
+       * @param {Boolean} first Optional flag if the event should be prepended. Use this with care.
+       * @return {Object} Current class instance.
+       * @example
+       * instance.once('event', function(e) {
+       *     // Callback logic
+       * });
+       */
+      var once = function (name, callback, prepend) {
+        return on(name, callback, prepend, { once: true });
+      };
+
+      /**
+       * Returns true/false if the dispatcher has a event of the specified name.
+       *
+       * @method has
+       * @param {String} name Name of the event to check for.
+       * @return {Boolean} true/false if the event exists or not.
+       */
+      var has = function (name) {
+        name = name.toLowerCase();
+        return !(!bindings[name] || bindings[name].length === 0);
+      };
+
+      // Expose
+      self.fire = fire;
+      self.on = on;
+      self.off = off;
+      self.once = once;
+      self.has = has;
+    };
+
+    /**
+     * Returns true/false if the specified event name is a native browser event or not.
+     *
+     * @method isNative
+     * @param {String} name Name to check if it's native.
+     * @return {Boolean} true/false if the event is native or not.
+     * @static
+     */
+    Dispatcher.isNative = function (name) {
+      return !!nativeEvents[name.toLowerCase()];
+    };
+
+    return Dispatcher;
+  }
+);
+
+/**
+ * Observable.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+/**
+ * This mixin will add event binding logic to classes.
+ *
+ * @mixin tinymce.util.Observable
+ */
+define(
+  'tinymce.core.util.Observable',
+  [
+    "tinymce.core.util.EventDispatcher"
+  ],
+  function (EventDispatcher) {
+    var getEventDispatcher = function (obj) {
+      if (!obj._eventDispatcher) {
+        obj._eventDispatcher = new EventDispatcher({
+          scope: obj,
+          toggleEvent: function (name, state) {
+            if (EventDispatcher.isNative(name) && obj.toggleNativeEvent) {
+              obj.toggleNativeEvent(name, state);
+            }
+          }
+        });
+      }
+
+      return obj._eventDispatcher;
+    };
+
+    return {
+      /**
+       * Fires the specified event by name. Consult the
+       * <a href="/docs/advanced/events">event reference</a> for more details on each event.
+       *
+       * @method fire
+       * @param {String} name Name of the event to fire.
+       * @param {Object?} args Event arguments.
+       * @param {Boolean?} bubble True/false if the event is to be bubbled.
+       * @return {Object} Event args instance passed in.
+       * @example
+       * instance.fire('event', {...});
+       */
+      fire: function (name, args, bubble) {
+        var self = this;
+
+        // Prevent all events except the remove event after the instance has been removed
+        if (self.removed && name !== "remove") {
+          return args;
+        }
+
+        args = getEventDispatcher(self).fire(name, args, bubble);
+
+        // Bubble event up to parents
+        if (bubble !== false && self.parent) {
+          var parent = self.parent();
+          while (parent && !args.isPropagationStopped()) {
+            parent.fire(name, args, false);
+            parent = parent.parent();
+          }
+        }
+
+        return args;
+      },
+
+      /**
+       * Binds an event listener to a specific event by name. Consult the
+       * <a href="/docs/advanced/events">event reference</a> for more details on each event.
+       *
+       * @method on
+       * @param {String} name Event name or space separated list of events to bind.
+       * @param {callback} callback Callback to be executed when the event occurs.
+       * @param {Boolean} first Optional flag if the event should be prepended. Use this with care.
+       * @return {Object} Current class instance.
+       * @example
+       * instance.on('event', function(e) {
+       *     // Callback logic
+       * });
+       */
+      on: function (name, callback, prepend) {
+        return getEventDispatcher(this).on(name, callback, prepend);
+      },
+
+      /**
+       * Unbinds an event listener to a specific event by name. Consult the
+       * <a href="/docs/advanced/events">event reference</a> for more details on each event.
+       *
+       * @method off
+       * @param {String?} name Name of the event to unbind.
+       * @param {callback?} callback Callback to unbind.
+       * @return {Object} Current class instance.
+       * @example
+       * // Unbind specific callback
+       * instance.off('event', handler);
+       *
+       * // Unbind all listeners by name
+       * instance.off('event');
+       *
+       * // Unbind all events
+       * instance.off();
+       */
+      off: function (name, callback) {
+        return getEventDispatcher(this).off(name, callback);
+      },
+
+      /**
+       * Bind the event callback and once it fires the callback is removed. Consult the
+       * <a href="/docs/advanced/events">event reference</a> for more details on each event.
+       *
+       * @method once
+       * @param {String} name Name of the event to bind.
+       * @param {callback} callback Callback to bind only once.
+       * @return {Object} Current class instance.
+       */
+      once: function (name, callback) {
+        return getEventDispatcher(this).once(name, callback);
+      },
+
+      /**
+       * Returns true/false if the object has a event of the specified name.
+       *
+       * @method hasEventListeners
+       * @param {String} name Name of the event to check for.
+       * @return {Boolean} true/false if the event exists or not.
+       */
+      hasEventListeners: function (name) {
+        return getEventDispatcher(this).has(name);
+      }
+    };
+  }
+);
+/**
+ * EditorObservable.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+/**
+ * This mixin contains the event logic for the tinymce.Editor class.
+ *
+ * @mixin tinymce.EditorObservable
+ * @extends tinymce.util.Observable
+ */
+define(
+  'tinymce.core.EditorObservable',
+  [
+    "tinymce.core.util.Observable",
+    "tinymce.core.dom.DOMUtils",
+    "tinymce.core.util.Tools"
+  ],
+  function (Observable, DOMUtils, Tools) {
+    var DOM = DOMUtils.DOM, customEventRootDelegates;
+
+    /**
+     * Returns the event target so for the specified event. Some events fire
+     * only on document, some fire on documentElement etc. This also handles the
+     * custom event root setting where it returns that element instead of the body.
+     *
+     * @private
+     * @param {tinymce.Editor} editor Editor instance to get event target from.
+     * @param {String} eventName Name of the event for example "click".
+     * @return {Element/Document} HTML Element or document target to bind on.
+     */
+    var getEventTarget = function (editor, eventName) {
+      if (eventName == 'selectionchange') {
+        return editor.getDoc();
+      }
+
+      // Need to bind mousedown/mouseup etc to document not body in iframe mode
+      // Since the user might click on the HTML element not the BODY
+      if (!editor.inline && /^mouse|touch|click|contextmenu|drop|dragover|dragend/.test(eventName)) {
+        return editor.getDoc().documentElement;
+      }
+
+      // Bind to event root instead of body if it's defined
+      if (editor.settings.event_root) {
+        if (!editor.eventRoot) {
+          editor.eventRoot = DOM.select(editor.settings.event_root)[0];
+        }
+
+        return editor.eventRoot;
+      }
+
+      return editor.getBody();
+    };
+
+    /**
+     * Binds a event delegate for the specified name this delegate will fire
+     * the event to the editor dispatcher.
+     *
+     * @private
+     * @param {tinymce.Editor} editor Editor instance to get event target from.
+     * @param {String} eventName Name of the event for example "click".
+     */
+    var bindEventDelegate = function (editor, eventName) {
+      var eventRootElm, delegate;
+
+      var isListening = function (editor) {
+        return !editor.hidden && !editor.readonly;
+      };
+
+      if (!editor.delegates) {
+        editor.delegates = {};
+      }
+
+      if (editor.delegates[eventName] || editor.removed) {
+        return;
+      }
+
+      eventRootElm = getEventTarget(editor, eventName);
+
+      if (editor.settings.event_root) {
+        if (!customEventRootDelegates) {
+          customEventRootDelegates = {};
+          editor.editorManager.on('removeEditor', function () {
+            var name;
+
+            if (!editor.editorManager.activeEditor) {
+              if (customEventRootDelegates) {
+                for (name in customEventRootDelegates) {
+                  editor.dom.unbind(getEventTarget(editor, name));
+                }
+
+                customEventRootDelegates = null;
+              }
+            }
+          });
+        }
+
+        if (customEventRootDelegates[eventName]) {
+          return;
+        }
+
+        delegate = function (e) {
+          var target = e.target, editors = editor.editorManager.get(), i = editors.length;
+
+          while (i--) {
+            var body = editors[i].getBody();
+
+            if (body === target || DOM.isChildOf(target, body)) {
+              if (isListening(editors[i])) {
+                editors[i].fire(eventName, e);
+              }
+            }
+          }
+        };
+
+        customEventRootDelegates[eventName] = delegate;
+        DOM.bind(eventRootElm, eventName, delegate);
+      } else {
+        delegate = function (e) {
+          if (isListening(editor)) {
+            editor.fire(eventName, e);
+          }
+        };
+
+        DOM.bind(eventRootElm, eventName, delegate);
+        editor.delegates[eventName] = delegate;
+      }
+    };
+
+    var EditorObservable = {
+      /**
+       * Bind any pending event delegates. This gets executed after the target body/document is created.
+       *
+       * @private
+       */
+      bindPendingEventDelegates: function () {
+        var self = this;
+
+        Tools.each(self._pendingNativeEvents, function (name) {
+          bindEventDelegate(self, name);
+        });
+      },
+
+      /**
+       * Toggles a native event on/off this is called by the EventDispatcher when
+       * the first native event handler is added and when the last native event handler is removed.
+       *
+       * @private
+       */
+      toggleNativeEvent: function (name, state) {
+        var self = this;
+
+        // Never bind focus/blur since the FocusManager fakes those
+        if (name == "focus" || name == "blur") {
+          return;
+        }
+
+        if (state) {
+          if (self.initialized) {
+            bindEventDelegate(self, name);
+          } else {
+            if (!self._pendingNativeEvents) {
+              self._pendingNativeEvents = [name];
+            } else {
+              self._pendingNativeEvents.push(name);
+            }
+          }
+        } else if (self.initialized) {
+          self.dom.unbind(getEventTarget(self, name), name, self.delegates[name]);
+          delete self.delegates[name];
+        }
+      },
+
+      /**
+       * Unbinds all native event handlers that means delegates, custom events bound using the Events API etc.
+       *
+       * @private
+       */
+      unbindAllNativeEvents: function () {
+        var self = this, name;
+
+        if (self.delegates) {
+          for (name in self.delegates) {
+            self.dom.unbind(getEventTarget(self, name), name, self.delegates[name]);
+          }
+
+          delete self.delegates;
+        }
+
+        if (!self.inline) {
+          self.getBody().onload = null;
+          self.dom.unbind(self.getWin());
+          self.dom.unbind(self.getDoc());
+        }
+
+        self.dom.unbind(self.getBody());
+        self.dom.unbind(self.getContainer());
+      }
+    };
+
+    EditorObservable = Tools.extend({}, Observable, EditorObservable);
+
+    return EditorObservable;
+  }
+);
+
+/**
+ * Mode.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+/**
+ * Mode switcher logic.
+ *
+ * @private
+ * @class tinymce.Mode
+ */
+define(
+  'tinymce.core.Mode',
+  [
+  ],
+  function () {
+    var setEditorCommandState = function (editor, cmd, state) {
+      try {
+        editor.getDoc().execCommand(cmd, false, state);
+      } catch (ex) {
+        // Ignore
+      }
+    };
+
+    var clickBlocker = function (editor) {
+      var target, handler;
+
+      target = editor.getBody();
+
+      handler = function (e) {
+        if (editor.dom.getParents(e.target, 'a').length > 0) {
+          e.preventDefault();
+        }
+      };
+
+      editor.dom.bind(target, 'click', handler);
+
+      return {
+        unbind: function () {
+          editor.dom.unbind(target, 'click', handler);
+        }
+      };
+    };
+
+    var toggleReadOnly = function (editor, state) {
+      if (editor._clickBlocker) {
+        editor._clickBlocker.unbind();
+        editor._clickBlocker = null;
+      }
+
+      if (state) {
+        editor._clickBlocker = clickBlocker(editor);
+        editor.selection.controlSelection.hideResizeRect();
+        editor.readonly = true;
+        editor.getBody().contentEditable = false;
+      } else {
+        editor.readonly = false;
+        editor.getBody().contentEditable = true;
+        setEditorCommandState(editor, "StyleWithCSS", false);
+        setEditorCommandState(editor, "enableInlineTableEditing", false);
+        setEditorCommandState(editor, "enableObjectResizing", false);
+        editor.focus();
+        editor.nodeChanged();
+      }
+    };
+
+    var setMode = function (editor, mode) {
+      var currentMode = editor.readonly ? 'readonly' : 'design';
+
+      if (mode == currentMode) {
+        return;
+      }
+
+      if (editor.initialized) {
+        toggleReadOnly(editor, mode == 'readonly');
+      } else {
+        editor.on('init', function () {
+          toggleReadOnly(editor, mode == 'readonly');
+        });
+      }
+
+      // Event is NOT preventable
+      editor.fire('SwitchMode', { mode: mode });
+    };
+
+    return {
+      setMode: setMode
+    };
+  }
+);
+/**
+ * Shortcuts.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+/**
+ * Contains logic for handling keyboard shortcuts.
+ *
+ * @class tinymce.Shortcuts
+ * @example
+ * editor.shortcuts.add('ctrl+a', "description of the shortcut", function() {});
+ * editor.shortcuts.add('meta+a', "description of the shortcut", function() {}); // "meta" maps to Command on Mac and Ctrl on PC
+ * editor.shortcuts.add('ctrl+alt+a', "description of the shortcut", function() {});
+ * editor.shortcuts.add('access+a', "description of the shortcut", function() {}); // "access" maps to ctrl+alt on Mac and shift+alt on PC
+ */
+define(
+  'tinymce.core.Shortcuts',
+  [
+    'tinymce.core.util.Tools',
+    'tinymce.core.Env'
+  ],
+  function (Tools, Env) {
+    var each = Tools.each, explode = Tools.explode;
+
+    var keyCodeLookup = {
+      "f9": 120,
+      "f10": 121,
+      "f11": 122
+    };
+
+    var modifierNames = Tools.makeMap('alt,ctrl,shift,meta,access');
+
+    return function (editor) {
+      var self = this, shortcuts = {}, pendingPatterns = [];
+
+      var parseShortcut = function (pattern) {
+        var id, key, shortcut = {};
+
+        // Parse modifiers and keys ctrl+alt+b for example
+        each(explode(pattern, '+'), function (value) {
+          if (value in modifierNames) {
+            shortcut[value] = true;
+          } else {
+            // Allow numeric keycodes like ctrl+219 for ctrl+[
+            if (/^[0-9]{2,}$/.test(value)) {
+              shortcut.keyCode = parseInt(value, 10);
+            } else {
+              shortcut.charCode = value.charCodeAt(0);
+              shortcut.keyCode = keyCodeLookup[value] || value.toUpperCase().charCodeAt(0);
+            }
+          }
+        });
+
+        // Generate unique id for modifier combination and set default state for unused modifiers
+        id = [shortcut.keyCode];
+        for (key in modifierNames) {
+          if (shortcut[key]) {
+            id.push(key);
+          } else {
+            shortcut[key] = false;
+          }
+        }
+        shortcut.id = id.join(',');
+
+        // Handle special access modifier differently depending on Mac/Win
+        if (shortcut.access) {
+          shortcut.alt = true;
+
+          if (Env.mac) {
+            shortcut.ctrl = true;
+          } else {
+            shortcut.shift = true;
+          }
+        }
+
+        // Handle special meta modifier differently depending on Mac/Win
+        if (shortcut.meta) {
+          if (Env.mac) {
+            shortcut.meta = true;
+          } else {
+            shortcut.ctrl = true;
+            shortcut.meta = false;
+          }
+        }
+
+        return shortcut;
+      };
+
+      var createShortcut = function (pattern, desc, cmdFunc, scope) {
+        var shortcuts;
+
+        shortcuts = Tools.map(explode(pattern, '>'), parseShortcut);
+        shortcuts[shortcuts.length - 1] = Tools.extend(shortcuts[shortcuts.length - 1], {
+          func: cmdFunc,
+          scope: scope || editor
+        });
+
+        return Tools.extend(shortcuts[0], {
+          desc: editor.translate(desc),
+          subpatterns: shortcuts.slice(1)
+        });
+      };
+
+      var hasModifier = function (e) {
+        return e.altKey || e.ctrlKey || e.metaKey;
+      };
+
+      var isFunctionKey = function (e) {
+        return e.type === "keydown" && e.keyCode >= 112 && e.keyCode <= 123;
+      };
+
+      var matchShortcut = function (e, shortcut) {
+        if (!shortcut) {
+          return false;
+        }
+
+        if (shortcut.ctrl != e.ctrlKey || shortcut.meta != e.metaKey) {
+          return false;
+        }
+
+        if (shortcut.alt != e.altKey || shortcut.shift != e.shiftKey) {
+          return false;
+        }
+
+        if (e.keyCode == shortcut.keyCode || (e.charCode && e.charCode == shortcut.charCode)) {
+          e.preventDefault();
+          return true;
+        }
+
+        return false;
+      };
+
+      var executeShortcutAction = function (shortcut) {
+        return shortcut.func ? shortcut.func.call(shortcut.scope) : null;
+      };
+
+      editor.on('keyup keypress keydown', function (e) {
+        if ((hasModifier(e) || isFunctionKey(e)) && !e.isDefaultPrevented()) {
+          each(shortcuts, function (shortcut) {
+            if (matchShortcut(e, shortcut)) {
+              pendingPatterns = shortcut.subpatterns.slice(0);
+
+              if (e.type == "keydown") {
+                executeShortcutAction(shortcut);
+              }
+
+              return true;
+            }
+          });
+
+          if (matchShortcut(e, pendingPatterns[0])) {
+            if (pendingPatterns.length === 1) {
+              if (e.type == "keydown") {
+                executeShortcutAction(pendingPatterns[0]);
+              }
+            }
+
+            pendingPatterns.shift();
+          }
+        }
+      });
+
+      /**
+       * Adds a keyboard shortcut for some command or function.
+       *
+       * @method add
+       * @param {String} pattern Shortcut pattern. Like for example: ctrl+alt+o.
+       * @param {String} desc Text description for the command.
+       * @param {String/Function} cmdFunc Command name string or function to execute when the key is pressed.
+       * @param {Object} scope Optional scope to execute the function in.
+       * @return {Boolean} true/false state if the shortcut was added or not.
+       */
+      self.add = function (pattern, desc, cmdFunc, scope) {
+        var cmd;
+
+        cmd = cmdFunc;
+
+        if (typeof cmdFunc === 'string') {
+          cmdFunc = function () {
+            editor.execCommand(cmd, false, null);
+          };
+        } else if (Tools.isArray(cmd)) {
+          cmdFunc = function () {
+            editor.execCommand(cmd[0], cmd[1], cmd[2]);
+          };
+        }
+
+        each(explode(Tools.trim(pattern.toLowerCase())), function (pattern) {
+          var shortcut = createShortcut(pattern, desc, cmdFunc, scope);
+          shortcuts[shortcut.id] = shortcut;
+        });
+
+        return true;
+      };
+
+      /**
+       * Remove a keyboard shortcut by pattern.
+       *
+       * @method remove
+       * @param {String} pattern Shortcut pattern. Like for example: ctrl+alt+o.
+       * @return {Boolean} true/false state if the shortcut was removed or not.
+       */
+      self.remove = function (pattern) {
+        var shortcut = createShortcut(pattern);
+
+        if (shortcuts[shortcut.id]) {
+          delete shortcuts[shortcut.id];
+          return true;
+        }
+
+        return false;
+      };
+    };
+  }
+);
+
+define(
+  'ephox.sugar.api.search.PredicateExists',
+
+  [
+    'ephox.sugar.api.search.PredicateFind'
+  ],
+
+  function (PredicateFind) {
+    var any = function (predicate) {
+      return PredicateFind.first(predicate).isSome();
+    };
+
+    var ancestor = function (scope, predicate, isRoot) {
+      return PredicateFind.ancestor(scope, predicate, isRoot).isSome();
+    };
+
+    var closest = function (scope, predicate, isRoot) {
+      return PredicateFind.closest(scope, predicate, isRoot).isSome();
+    };
+
+    var sibling = function (scope, predicate) {
+      return PredicateFind.sibling(scope, predicate).isSome();
+    };
+
+    var child = function (scope, predicate) {
+      return PredicateFind.child(scope, predicate).isSome();
+    };
+
+    var descendant = function (scope, predicate) {
+      return PredicateFind.descendant(scope, predicate).isSome();
+    };
+
+    return {
+      any: any,
+      ancestor: ancestor,
+      closest: closest,
+      sibling: sibling,
+      child: child,
+      descendant: descendant
+    };
+  }
+);
+
+define(
+  'ephox.sugar.api.dom.Focus',
+
+  [
+    'ephox.katamari.api.Fun',
+    'ephox.katamari.api.Option',
+    'ephox.sugar.api.dom.Compare',
+    'ephox.sugar.api.node.Element',
+    'ephox.sugar.api.search.PredicateExists',
+    'ephox.sugar.api.search.Traverse',
+    'global!document'
+  ],
+
+  function (Fun, Option, Compare, Element, PredicateExists, Traverse, document) {
+    var focus = function (element) {
+      element.dom().focus();
+    };
+
+    var blur = function (element) {
+      element.dom().blur();
+    };
+
+    var hasFocus = function (element) {
+      var doc = Traverse.owner(element).dom();
+      return element.dom() === doc.activeElement;
+    };
+
+    var active = function (_doc) {
+      var doc = _doc !== undefined ? _doc.dom() : document;
+      return Option.from(doc.activeElement).map(Element.fromDom);
+    };
+
+    var focusInside = function (element) {
+      // Only call focus if the focus is not already inside it.
+      var doc = Traverse.owner(element);
+      var inside = active(doc).filter(function (a) {
+        return PredicateExists.closest(a, Fun.curry(Compare.eq, element));
+      });
+
+      inside.fold(function () {
+        focus(element);
+      }, Fun.noop);
+    };
+
+    /**
+     * Return the descendant element that has focus.
+     * Use instead of SelectorFind.descendant(container, ':focus')
+     *  because the :focus selector relies on keyboard focus.
+     */
+    var search = function (element) {
+      return active(Traverse.owner(element)).filter(function (e) {
+        return element.dom().contains(e.dom());
+      });
+    };
+
+    return {
+      hasFocus: hasFocus,
+      focus: focus,
+      blur: blur,
+      active: active,
+      search: search,
+      focusInside: focusInside
+    };
+  }
+);
+/**
+ * EditorFocus.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.focus.EditorFocus',
+  [
+    'ephox.katamari.api.Option',
+    'ephox.sugar.api.dom.Compare',
+    'ephox.sugar.api.dom.Focus',
+    'ephox.sugar.api.node.Element',
+    'tinymce.core.Env',
+    'tinymce.core.caret.CaretFinder',
+    'tinymce.core.dom.ElementType',
+    'tinymce.core.selection.RangeNodes',
+    'tinymce.core.selection.SelectionBookmark'
+  ],
+  function (Option, Compare, Focus, Element, Env, CaretFinder, ElementType, RangeNodes, SelectionBookmark) {
+    var getContentEditableHost = function (editor, node) {
+      return editor.dom.getParent(node, function (node) {
+        return editor.dom.getContentEditable(node) === "true";
+      });
+    };
+
+    var getCollapsedNode = function (rng) {
+      return rng.collapsed ? Option.from(RangeNodes.getNode(rng.startContainer, rng.startOffset)).map(Element.fromDom) : Option.none();
+    };
+
+    var getFocusInElement = function (root, rng) {
+      return getCollapsedNode(rng).bind(function (node) {
+        if (ElementType.isTableSection(node)) {
+          return Option.some(node);
+        } else if (Compare.contains(root, node) === false) {
+          return Option.some(root);
+        } else {
+          return Option.none();
+        }
+      });
+    };
+
+    var normalizeSelection = function (editor, rng) {
+      getFocusInElement(Element.fromDom(editor.getBody()), rng).bind(function (elm) {
+        return CaretFinder.firstPositionIn(elm.dom());
+      }).fold(
+        function () {
+          editor.selection.normalize();
+        },
+        function (caretPos) {
+          editor.selection.setRng(caretPos.toRange());
+        }
+      );
+    };
+
+    var focusBody = function (body) {
+      if (body.setActive) {
+        // IE 11 sometimes throws "Invalid function" then fallback to focus
+        // setActive is better since it doesn't scroll to the element being focused
+        try {
+          body.setActive();
+        } catch (ex) {
+          body.focus();
+        }
+      } else {
+        body.focus();
+      }
+    };
+
+    var hasElementFocus = function (elm) {
+      return Focus.hasFocus(elm) || Focus.search(elm).isSome();
+    };
+
+    var hasIframeFocus = function (editor) {
+      return editor.iframeElement && Focus.hasFocus(Element.fromDom(editor.iframeElement));
+    };
+
+    var hasInlineFocus = function (editor) {
+      var rawBody = editor.getBody();
+      return rawBody && hasElementFocus(Element.fromDom(rawBody));
+    };
+
+    var hasFocus = function (editor) {
+      return editor.inline ? hasInlineFocus(editor) : hasIframeFocus(editor);
+    };
+
+    var focusEditor = function (editor) {
+      var selection = editor.selection, contentEditable = editor.settings.content_editable;
+      var body = editor.getBody(), contentEditableHost, rng = selection.getRng();
+
+      editor.quirks.refreshContentEditable();
+
+      // Move focus to contentEditable=true child if needed
+      contentEditableHost = getContentEditableHost(editor, selection.getNode());
+      if (editor.$.contains(body, contentEditableHost)) {
+        focusBody(contentEditableHost);
+        normalizeSelection(editor, rng);
+        activateEditor(editor);
+        return;
+      }
+
+      if (editor.bookmark !== undefined && hasFocus(editor) === false) {
+        SelectionBookmark.getRng(editor).each(function (bookmarkRng) {
+          editor.selection.setRng(bookmarkRng);
+          rng = bookmarkRng;
+        });
+      }
+
+      // Focus the window iframe
+      if (!contentEditable) {
+        // WebKit needs this call to fire focusin event properly see #5948
+        // But Opera pre Blink engine will produce an empty selection so skip Opera
+        if (!Env.opera) {
+          focusBody(body);
+        }
+
+        editor.getWin().focus();
+      }
+
+      // Focus the body as well since it's contentEditable
+      if (Env.gecko || contentEditable) {
+        focusBody(body);
+        normalizeSelection(editor, rng);
+      }
+
+      activateEditor(editor);
+    };
+
+    var activateEditor = function (editor) {
+      editor.editorManager.setActive(editor);
+    };
+
+    var focus = function (editor, skipFocus) {
+      if (editor.removed) {
+        return;
+      }
+
+      skipFocus ? activateEditor(editor) : focusEditor(editor);
+    };
+
+    return {
+      focus: focus,
+      hasFocus: hasFocus
+    };
+  }
+);
+
+/**
+ * EditorView.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2016 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.EditorView',
+  [
+    'ephox.katamari.api.Fun',
+    'ephox.katamari.api.Option',
+    'ephox.sugar.api.dom.Compare',
+    'ephox.sugar.api.node.Element',
+    'ephox.sugar.api.properties.Css',
+    'ephox.sugar.api.search.Traverse'
+  ],
+  function (Fun, Option, Compare, Element, Css, Traverse) {
+    var getProp = function (propName, elm) {
+      var rawElm = elm.dom();
+      return rawElm[propName];
+    };
+
+    var getComputedSizeProp = function (propName, elm) {
+      return parseInt(Css.get(elm, propName), 10);
+    };
+
+    var getClientWidth = Fun.curry(getProp, 'clientWidth');
+    var getClientHeight = Fun.curry(getProp, 'clientHeight');
+    var getMarginTop = Fun.curry(getComputedSizeProp, 'margin-top');
+    var getMarginLeft = Fun.curry(getComputedSizeProp, 'margin-left');
+
+    var getBoundingClientRect = function (elm) {
+      return elm.dom().getBoundingClientRect();
+    };
+
+    var isInsideElementContentArea = function (bodyElm, clientX, clientY) {
+      var clientWidth = getClientWidth(bodyElm);
+      var clientHeight = getClientHeight(bodyElm);
+
+      return clientX >= 0 && clientY >= 0 && clientX <= clientWidth && clientY <= clientHeight;
+    };
+
+    var transpose = function (inline, elm, clientX, clientY) {
+      var clientRect = getBoundingClientRect(elm);
+      var deltaX = inline ? clientRect.left + elm.dom().clientLeft + getMarginLeft(elm) : 0;
+      var deltaY = inline ? clientRect.top + elm.dom().clientTop + getMarginTop(elm) : 0;
+      var x = clientX - deltaX;
+      var y = clientY - deltaY;
+
+      return { x: x, y: y };
+    };
+
+    // Checks if the specified coordinate is within the visual content area excluding the scrollbars
+    var isXYInContentArea = function (editor, clientX, clientY) {
+      var bodyElm = Element.fromDom(editor.getBody());
+      var targetElm = editor.inline ? bodyElm : Traverse.documentElement(bodyElm);
+      var transposedPoint = transpose(editor.inline, targetElm, clientX, clientY);
+
+      return isInsideElementContentArea(targetElm, transposedPoint.x, transposedPoint.y);
+    };
+
+    var fromDomSafe = function (node) {
+      return Option.from(node).map(Element.fromDom);
+    };
+
+    var isEditorAttachedToDom = function (editor) {
+      var rawContainer = editor.inline ? editor.getBody() : editor.getContentAreaContainer();
+
+      return fromDomSafe(rawContainer).map(function (container) {
+        return Compare.contains(Traverse.owner(container), container);
+      }).getOr(false);
+    };
+
+    return {
+      isXYInContentArea: isXYInContentArea,
+      isEditorAttachedToDom: isEditorAttachedToDom
+    };
+  }
+);
+
+/**
+ * NotificationManagerImpl.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.ui.NotificationManagerImpl',
+  [
+  ],
+  function () {
+    return function () {
+      var unimplemented = function () {
+        throw new Error('Theme did not provide a NotificationManager implementation.');
+      };
+
+      return {
+        open: unimplemented,
+        close: unimplemented,
+        reposition: unimplemented,
+        getArgs: unimplemented
+      };
+    };
+  }
+);
+
+/**
+ * NotificationManager.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+/**
+ * This class handles the creation of TinyMCE's notifications.
+ *
+ * @class tinymce.NotificationManager
+ * @example
+ * // Opens a new notification of type "error" with text "An error occurred."
+ * tinymce.activeEditor.notificationManager.open({
+ *    text: 'An error occurred.',
+ *    type: 'error'
+ * });
+ */
+define(
+  'tinymce.core.api.NotificationManager',
+  [
+    'ephox.katamari.api.Arr',
+    'ephox.katamari.api.Option',
+    'tinymce.core.EditorView',
+    'tinymce.core.ui.NotificationManagerImpl',
+    'tinymce.core.util.Delay'
+  ],
+  function (Arr, Option, EditorView, NotificationManagerImpl, Delay) {
+    return function (editor) {
+      var notifications = [];
+
+      var getImplementation = function () {
+        var theme = editor.theme;
+        return theme && theme.getNotificationManagerImpl ? theme.getNotificationManagerImpl() : NotificationManagerImpl();
+      };
+
+      var getTopNotification = function () {
+        return Option.from(notifications[0]);
+      };
+
+      var isEqual = function (a, b) {
+        return a.type === b.type && a.text === b.text && !a.progressBar && !a.timeout && !b.progressBar && !b.timeout;
+      };
+
+      var reposition = function () {
+        if (notifications.length > 0) {
+          getImplementation().reposition(notifications);
+        }
+      };
+
+      var addNotification = function (notification) {
+        notifications.push(notification);
+      };
+
+      var closeNotification = function (notification) {
+        Arr.findIndex(notifications, function (otherNotification) {
+          return otherNotification === notification;
+        }).each(function (index) {
+          // Mutate here since third party might have stored away the window array
+          // TODO: Consider breaking this api
+          notifications.splice(index, 1);
+        });
+      };
+
+      var open = function (args) {
+        // Never open notification if editor has been removed.
+        if (editor.removed || !EditorView.isEditorAttachedToDom(editor)) {
+          return;
+        }
+
+        return Arr.find(notifications, function (notification) {
+          return isEqual(getImplementation().getArgs(notification), args);
+        }).getOrThunk(function () {
+          editor.editorManager.setActive(editor);
+
+          var notification = getImplementation().open(args, function () {
+            closeNotification(notification);
+            reposition();
+          });
+
+          addNotification(notification);
+          reposition();
+          return notification;
+        });
+      };
+
+      var close = function () {
+        getTopNotification().each(function (notification) {
+          getImplementation().close(notification);
+          closeNotification(notification);
+          reposition();
+        });
+      };
+
+      var getNotifications = function () {
+        return notifications;
+      };
+
+      var registerEvents = function (editor) {
+        editor.on('SkinLoaded', function () {
+          var serviceMessage = editor.settings.service_message;
+
+          if (serviceMessage) {
+            open({
+              text: serviceMessage,
+              type: 'warning',
+              timeout: 0,
+              icon: ''
+            });
+          }
+        });
+
+        editor.on('ResizeEditor ResizeWindow', function () {
+          Delay.requestAnimationFrame(reposition);
+        });
+
+        editor.on('remove', function () {
+          Arr.each(notifications, function (notification) {
+            getImplementation().close(notification);
+          });
+        });
+      };
+
+      registerEvents(editor);
+
+      return {
+        /**
+         * Opens a new notification.
+         *
+         * @method open
+         * @param {Object} args Optional name/value settings collection contains things like timeout/color/message etc.
+         */
+        open: open,
+
+        /**
+         * Closes the top most notification.
+         *
+         * @method close
+         */
+        close: close,
+
+        /**
+         * Returns the currently opened notification objects.
+         *
+         * @method getNotifications
+         * @return {Array} Array of the currently opened notifications.
+         */
+        getNotifications: getNotifications
+      };
+    };
+  }
+);
+
+/**
+ * WindowManagerImpl.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.ui.WindowManagerImpl',
+  [
+  ],
+  function () {
+    return function () {
+      var unimplemented = function () {
+        throw new Error('Theme did not provide a WindowManager implementation.');
+      };
+
+      return {
+        open: unimplemented,
+        alert: unimplemented,
+        confirm: unimplemented,
+        close: unimplemented,
+        getParams: unimplemented,
+        setParams: unimplemented
+      };
+    };
+  }
+);
+
+/**
+ * WindowManager.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+/**
+ * This class handles the creation of native windows and dialogs. This class can be extended to provide for example inline dialogs.
+ *
+ * @class tinymce.WindowManager
+ * @example
+ * // Opens a new dialog with the file.htm file and the size 320x240
+ * // It also adds a custom parameter this can be retrieved by using tinyMCEPopup.getWindowArg inside the dialog.
+ * tinymce.activeEditor.windowManager.open({
+ *    url: 'file.htm',
+ *    width: 320,
+ *    height: 240
+ * }, {
+ *    custom_param: 1
+ * });
+ *
+ * // Displays an alert box using the active editors window manager instance
+ * tinymce.activeEditor.windowManager.alert('Hello world!');
+ *
+ * // Displays an confirm box and an alert message will be displayed depending on what you choose in the confirm
+ * });
+ */
+define(
+  'tinymce.core.api.WindowManager',
+  [
+    'ephox.katamari.api.Arr',
+    'ephox.katamari.api.Option',
+    'tinymce.core.selection.SelectionBookmark',
+    'tinymce.core.ui.WindowManagerImpl'
+  ],
+  function (Arr, Option, SelectionBookmark, WindowManagerImpl) {
+    return function (editor) {
+      var windows = [];
+
+      var getImplementation = function () {
+        var theme = editor.theme;
+        return theme && theme.getWindowManagerImpl ? theme.getWindowManagerImpl() : WindowManagerImpl();
+      };
+
+      var funcBind = function (scope, f) {
+        return function () {
+          return f ? f.apply(scope, arguments) : undefined;
+        };
+      };
+
+      var fireOpenEvent = function (win) {
+        editor.fire('OpenWindow', {
+          win: win
+        });
+      };
+
+      var fireCloseEvent = function (win) {
+        editor.fire('CloseWindow', {
+          win: win
+        });
+      };
+
+      var addWindow = function (win) {
+        windows.push(win);
+        fireOpenEvent(win);
+      };
+
+      var closeWindow = function (win) {
+        Arr.findIndex(windows, function (otherWindow) {
+          return otherWindow === win;
+        }).each(function (index) {
+          // Mutate here since third party might have stored away the window array, consider breaking this api
+          windows.splice(index, 1);
+
+          fireCloseEvent(win);
+
+          // Move focus back to editor when the last window is closed
+          if (windows.length === 0) {
+            editor.focus();
+          }
+        });
+      };
+
+      var getTopWindow = function () {
+        return Option.from(windows[windows.length - 1]);
+      };
+
+      var open = function (args, params) {
+        editor.editorManager.setActive(editor);
+        SelectionBookmark.store(editor);
+
+        var win = getImplementation().open(args, params, closeWindow);
+        addWindow(win);
+        return win;
+      };
+
+      var alert = function (message, callback, scope) {
+        var win = getImplementation().alert(message, funcBind(scope ? scope : this, callback), closeWindow);
+        addWindow(win);
+      };
+
+      var confirm = function (message, callback, scope) {
+        var win = getImplementation().confirm(message, funcBind(scope ? scope : this, callback), closeWindow);
+        addWindow(win);
+      };
+
+      var close = function () {
+        getTopWindow().each(function (win) {
+          getImplementation().close(win);
+          closeWindow(win);
+        });
+      };
+
+      var getParams = function () {
+        return getTopWindow().map(getImplementation().getParams).getOr(null);
+      };
+
+      var setParams = function (params) {
+        getTopWindow().each(function (win) {
+          getImplementation().setParams(win, params);
+        });
+      };
+
+      var getWindows = function () {
+        return windows;
+      };
+
+      editor.on('remove', function () {
+        Arr.each(windows.slice(0), function (win) {
+          getImplementation().close(win);
+        });
+      });
+
+      return {
+        // Used by the legacy3x compat layer and possible third party
+        // TODO: Deprecate this, and possible switch to a immutable window array for getWindows
+        windows: windows,
+
+        /**
+         * Opens a new window.
+         *
+         * @method open
+         * @param {Object} args Optional name/value settings collection contains things like width/height/url etc.
+         * @param {Object} params Options like title, file, width, height etc.
+         * @option {String} title Window title.
+         * @option {String} file URL of the file to open in the window.
+         * @option {Number} width Width in pixels.
+         * @option {Number} height Height in pixels.
+         * @option {Boolean} autoScroll Specifies whether the popup window can have scrollbars if required (i.e. content
+         * larger than the popup size specified).
+         */
+        open: open,
+
+        /**
+         * Creates a alert dialog. Please don't use the blocking behavior of this
+         * native version use the callback method instead then it can be extended.
+         *
+         * @method alert
+         * @param {String} message Text to display in the new alert dialog.
+         * @param {function} callback Callback function to be executed after the user has selected ok.
+         * @param {Object} scope Optional scope to execute the callback in.
+         * @example
+         * // Displays an alert box using the active editors window manager instance
+         * tinymce.activeEditor.windowManager.alert('Hello world!');
+         */
+        alert: alert,
+
+        /**
+         * Creates a confirm dialog. Please don't use the blocking behavior of this
+         * native version use the callback method instead then it can be extended.
+         *
+         * @method confirm
+         * @param {String} message Text to display in the new confirm dialog.
+         * @param {function} callback Callback function to be executed after the user has selected ok or cancel.
+         * @param {Object} scope Optional scope to execute the callback in.
+         * @example
+         * // Displays an confirm box and an alert message will be displayed depending on what you choose in the confirm
+         * tinymce.activeEditor.windowManager.confirm("Do you want to do something", function(s) {
+         *    if (s)
+         *       tinymce.activeEditor.windowManager.alert("Ok");
+         *    else
+         *       tinymce.activeEditor.windowManager.alert("Cancel");
+         * });
+         */
+        confirm: confirm,
+
+        /**
+         * Closes the top most window.
+         *
+         * @method close
+         */
+        close: close,
+
+        /**
+         * Returns the params of the last window open call. This can be used in iframe based
+         * dialog to get params passed from the tinymce plugin.
+         *
+         * @example
+         * var dialogArguments = top.tinymce.activeEditor.windowManager.getParams();
+         *
+         * @method getParams
+         * @return {Object} Name/value object with parameters passed from windowManager.open call.
+         */
+        getParams: getParams,
+
+        /**
+         * Sets the params of the last opened window.
+         *
+         * @method setParams
+         * @param {Object} params Params object to set for the last opened window.
+         */
+        setParams: setParams,
+
+        /**
+         * Returns the currently opened window objects.
+         *
+         * @method getWindows
+         * @return {Array} Array of the currently opened windows.
+         */
+        getWindows: getWindows
+      };
+    };
+  }
+);
+
+/**
+ * ErrorReporter.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+/**
+ * Various error reporting helper functions.
+ *
+ * @class tinymce.ErrorReporter
+ * @private
+ */
+define(
+  'tinymce.core.ErrorReporter',
+  [
+    'global!window',
+    'tinymce.core.AddOnManager'
+  ],
+  function (window, AddOnManager) {
+    var PluginManager = AddOnManager.PluginManager;
+
+    var resolvePluginName = function (targetUrl, suffix) {
+      for (var name in PluginManager.urls) {
+        var matchUrl = PluginManager.urls[name] + '/plugin' + suffix + '.js';
+        if (matchUrl === targetUrl) {
+          return name;
+        }
+      }
+
+      return null;
+    };
+
+    var pluginUrlToMessage = function (editor, url) {
+      var plugin = resolvePluginName(url, editor.suffix);
+      return plugin ?
+        'Failed to load plugin: ' + plugin + ' from url ' + url :
+        'Failed to load plugin url: ' + url;
+    };
+
+    var displayNotification = function (editor, message) {
+      editor.notificationManager.open({
+        type: 'error',
+        text: message
+      });
+    };
+
+    var displayError = function (editor, message) {
+      if (editor._skinLoaded) {
+        displayNotification(editor, message);
+      } else {
+        editor.on('SkinLoaded', function () {
+          displayNotification(editor, message);
+        });
+      }
+    };
+
+    var uploadError = function (editor, message) {
+      displayError(editor, 'Failed to upload image: ' + message);
+    };
+
+    var pluginLoadError = function (editor, url) {
+      displayError(editor, pluginUrlToMessage(editor, url));
+    };
+
+    var initError = function (message) {
+      var console = window.console;
+      if (console && !window.test) { // Skip test env
+        if (console.error) {
+          console.error.apply(console, arguments);
+        } else {
+          console.log.apply(console, arguments);
+        }
+      }
+    };
+
+    return {
+      pluginLoadError: pluginLoadError,
+      uploadError: uploadError,
+      displayError: displayError,
+      initError: initError
+    };
+  }
+);
+/**
+ * PluginManager.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.PluginManager',
+  [
+    'tinymce.core.AddOnManager'
+  ],
+  function (AddOnManager) {
+    return AddOnManager.PluginManager;
+  }
+);
+
+/**
+ * ThemeManager.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.ThemeManager',
+  [
+    'tinymce.core.AddOnManager'
+  ],
+  function (AddOnManager) {
+    return AddOnManager.ThemeManager;
+  }
+);
+
 /**
  * Hooks.js
  *
@@ -17675,7 +24876,7 @@ define(
   function (Arr, NodeType, $) {
     var postProcessHooks = {}, filter = Arr.filter, each = Arr.each;
 
-    function addPostProcessHook(name, hook) {
+    var addPostProcessHook = function (name, hook) {
       var hooks = postProcessHooks[name];
 
       if (!hooks) {
@@ -17683,25 +24884,25 @@ define(
       }
 
       postProcessHooks[name].push(hook);
-    }
+    };
 
-    function postProcess(name, editor) {
+    var postProcess = function (name, editor) {
       each(postProcessHooks[name], function (hook) {
         hook(editor);
       });
-    }
+    };
 
     addPostProcessHook("pre", function (editor) {
       var rng = editor.selection.getRng(), isPre, blocks;
 
-      function hasPreSibling(pre) {
+      var hasPreSibling = function (pre) {
         return isPre(pre.previousSibling) && Arr.indexOf(blocks, pre.previousSibling) !== -1;
-      }
+      };
 
-      function joinPre(pre1, pre2) {
+      var joinPre = function (pre1, pre2) {
         $(pre2).remove();
         $(pre1).append('<br><br>').append(pre2.childNodes);
-      }
+      };
 
       isPre = NodeType.matchNodeNames('pre');
 
@@ -17721,7 +24922,7 @@ define(
 );
 
 /**
- * ElementUtils.js
+ * RangeWalk.js
  *
  * Released under LGPL License.
  * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
@@ -17730,116 +24931,174 @@ define(
  * Contributing: http://www.tinymce.com/contributing
  */
 
-/**
- * Utility class for various element specific functions.
- *
- * @private
- * @class tinymce.dom.ElementUtils
- */
 define(
-  'tinymce.core.dom.ElementUtils',
+  'tinymce.core.selection.RangeWalk',
   [
-    "tinymce.core.dom.BookmarkManager",
-    "tinymce.core.util.Tools"
+    'tinymce.core.util.Tools'
   ],
-  function (BookmarkManager, Tools) {
+  function (Tools) {
     var each = Tools.each;
 
-    function ElementUtils(dom) {
+    var getEndChild = function (container, index) {
+      var childNodes = container.childNodes;
+
+      index--;
+
+      if (index > childNodes.length - 1) {
+        index = childNodes.length - 1;
+      } else if (index < 0) {
+        index = 0;
+      }
+
+      return childNodes[index] || container;
+    };
+
+    var walk = function (dom, rng, callback) {
+      var startContainer = rng.startContainer,
+        startOffset = rng.startOffset,
+        endContainer = rng.endContainer,
+        endOffset = rng.endOffset,
+        ancestor, startPoint,
+        endPoint, node, parent, siblings, nodes;
+
+      // Handle table cell selection the table plugin enables
+      // you to fake select table cells and perform formatting actions on them
+      nodes = dom.select('td[data-mce-selected],th[data-mce-selected]');
+      if (nodes.length > 0) {
+        each(nodes, function (node) {
+          callback([node]);
+        });
+
+        return;
+      }
+
       /**
-       * Compares two nodes and checks if it's attributes and styles matches.
-       * This doesn't compare classes as items since their order is significant.
+       * Excludes start/end text node if they are out side the range
        *
-       * @method compare
-       * @param {Node} node1 First node to compare with.
-       * @param {Node} node2 Second node to compare with.
-       * @return {boolean} True/false if the nodes are the same or not.
+       * @private
+       * @param {Array} nodes Nodes to exclude items from.
+       * @return {Array} Array with nodes excluding the start/end container if needed.
        */
-      this.compare = function (node1, node2) {
-        // Not the same name
-        if (node1.nodeName != node2.nodeName) {
-          return false;
+      var exclude = function (nodes) {
+        var node;
+
+        // First node is excluded
+        node = nodes[0];
+        if (node.nodeType === 3 && node === startContainer && startOffset >= node.nodeValue.length) {
+          nodes.splice(0, 1);
         }
 
-        /**
-         * Returns all the nodes attributes excluding internal ones, styles and classes.
-         *
-         * @private
-         * @param {Node} node Node to get attributes from.
-         * @return {Object} Name/value object with attributes and attribute values.
-         */
-        function getAttribs(node) {
-          var attribs = {};
-
-          each(dom.getAttribs(node), function (attr) {
-            var name = attr.nodeName.toLowerCase();
-
-            // Don't compare internal attributes or style
-            if (name.indexOf('_') !== 0 && name !== 'style' && name.indexOf('data-') !== 0) {
-              attribs[name] = dom.getAttrib(node, name);
-            }
-          });
-
-          return attribs;
+        // Last node is excluded
+        node = nodes[nodes.length - 1];
+        if (endOffset === 0 && nodes.length > 0 && node === endContainer && node.nodeType === 3) {
+          nodes.splice(nodes.length - 1, 1);
         }
 
-        /**
-         * Compares two objects checks if it's key + value exists in the other one.
-         *
-         * @private
-         * @param {Object} obj1 First object to compare.
-         * @param {Object} obj2 Second object to compare.
-         * @return {boolean} True/false if the objects matches or not.
-         */
-        function compareObjects(obj1, obj2) {
-          var value, name;
-
-          for (name in obj1) {
-            // Obj1 has item obj2 doesn't have
-            if (obj1.hasOwnProperty(name)) {
-              value = obj2[name];
-
-              // Obj2 doesn't have obj1 item
-              if (typeof value == "undefined") {
-                return false;
-              }
-
-              // Obj2 item has a different value
-              if (obj1[name] != value) {
-                return false;
-              }
-
-              // Delete similar value
-              delete obj2[name];
-            }
-          }
-
-          // Check if obj 2 has something obj 1 doesn't have
-          for (name in obj2) {
-            // Obj2 has item obj1 doesn't have
-            if (obj2.hasOwnProperty(name)) {
-              return false;
-            }
-          }
-
-          return true;
-        }
-
-        // Attribs are not the same
-        if (!compareObjects(getAttribs(node1), getAttribs(node2))) {
-          return false;
-        }
-
-        // Styles are not the same
-        if (!compareObjects(dom.parseStyle(dom.getAttrib(node1, 'style')), dom.parseStyle(dom.getAttrib(node2, 'style')))) {
-          return false;
-        }
-
-        return !BookmarkManager.isBookmarkNode(node1) && !BookmarkManager.isBookmarkNode(node2);
+        return nodes;
       };
-    }
 
-    return ElementUtils;
+      var collectSiblings = function (node, name, endNode) {
+        var siblings = [];
+
+        for (; node && node != endNode; node = node[name]) {
+          siblings.push(node);
+        }
+
+        return siblings;
+      };
+
+      var findEndPoint = function (node, root) {
+        do {
+          if (node.parentNode === root) {
+            return node;
+          }
+
+          node = node.parentNode;
+        } while (node);
+      };
+
+      var walkBoundary = function (startNode, endNode, next) {
+        var siblingName = next ? 'nextSibling' : 'previousSibling';
+
+        for (node = startNode, parent = node.parentNode; node && node != endNode; node = parent) {
+          parent = node.parentNode;
+          siblings = collectSiblings(node === startNode ? node : node[siblingName], siblingName);
+
+          if (siblings.length) {
+            if (!next) {
+              siblings.reverse();
+            }
+
+            callback(exclude(siblings));
+          }
+        }
+      };
+
+      // If index based start position then resolve it
+      if (startContainer.nodeType === 1 && startContainer.hasChildNodes()) {
+        startContainer = startContainer.childNodes[startOffset];
+      }
+
+      // If index based end position then resolve it
+      if (endContainer.nodeType === 1 && endContainer.hasChildNodes()) {
+        endContainer = getEndChild(endContainer, endOffset);
+      }
+
+      // Same container
+      if (startContainer === endContainer) {
+        return callback(exclude([startContainer]));
+      }
+
+      // Find common ancestor and end points
+      ancestor = dom.findCommonAncestor(startContainer, endContainer);
+
+      // Process left side
+      for (node = startContainer; node; node = node.parentNode) {
+        if (node === endContainer) {
+          return walkBoundary(startContainer, ancestor, true);
+        }
+
+        if (node === ancestor) {
+          break;
+        }
+      }
+
+      // Process right side
+      for (node = endContainer; node; node = node.parentNode) {
+        if (node === startContainer) {
+          return walkBoundary(endContainer, ancestor);
+        }
+
+        if (node === ancestor) {
+          break;
+        }
+      }
+
+      // Find start/end point
+      startPoint = findEndPoint(startContainer, ancestor) || startContainer;
+      endPoint = findEndPoint(endContainer, ancestor) || endContainer;
+
+      // Walk left leaf
+      walkBoundary(startContainer, startPoint, true);
+
+      // Walk the middle from start to end point
+      siblings = collectSiblings(
+        startPoint === startContainer ? startPoint : startPoint.nextSibling,
+        'nextSibling',
+        endPoint === endContainer ? endPoint.nextSibling : endPoint
+      );
+
+      if (siblings.length) {
+        callback(exclude(siblings));
+      }
+
+      // Walk right leaf
+      walkBoundary(endContainer, endPoint);
+    };
+
+    return {
+      walk: walk
+    };
   }
 );
 
@@ -17856,17 +25115,17 @@ define(
 define(
   'tinymce.core.fmt.RemoveFormat',
   [
-    'ephox.katamari.api.Fun',
     'tinymce.core.dom.BookmarkManager',
-    'tinymce.core.dom.RangeUtils',
+    'tinymce.core.dom.NodeType',
     'tinymce.core.dom.TreeWalker',
     'tinymce.core.fmt.CaretFormat',
     'tinymce.core.fmt.ExpandRange',
     'tinymce.core.fmt.FormatUtils',
     'tinymce.core.fmt.MatchFormat',
+    'tinymce.core.selection.RangeWalk',
     'tinymce.core.util.Tools'
   ],
-  function (Fun, BookmarkManager, RangeUtils, TreeWalker, CaretFormat, ExpandRange, FormatUtils, MatchFormat, Tools) {
+  function (BookmarkManager, NodeType, TreeWalker, CaretFormat, ExpandRange, FormatUtils, MatchFormat, RangeWalk, Tools) {
     var MCE_ATTR_RE = /^(src|href|style)$/;
     var each = Tools.each;
     var isEq = FormatUtils.isEq;
@@ -17881,7 +25140,7 @@ define(
       container = rng[start ? 'startContainer' : 'endContainer'];
       offset = rng[start ? 'startOffset' : 'endOffset'];
 
-      if (container.nodeType === 1) {
+      if (NodeType.isElement(container)) {
         lastIdx = container.childNodes.length - 1;
 
         if (!start && offset) {
@@ -17892,12 +25151,12 @@ define(
       }
 
       // If start text node is excluded then walk to the next node
-      if (container.nodeType === 3 && start && offset >= container.nodeValue.length) {
+      if (NodeType.isText(container) && start && offset >= container.nodeValue.length) {
         container = new TreeWalker(container, ed.getBody()).next() || container;
       }
 
       // If end text node is excluded then walk to the previous node
-      if (container.nodeType === 3 && !start && offset === 0) {
+      if (NodeType.isText(container) && !start && offset === 0) {
         container = new TreeWalker(container, ed.getBody()).prev() || container;
       }
 
@@ -17934,7 +25193,7 @@ define(
 
       // Check for selector match
       if (format.selector) {
-        return node.nodeType === 1 && dom.is(node, format.selector);
+        return NodeType.isElement(node) && dom.is(node, format.selector);
       }
     };
 
@@ -18207,7 +25466,7 @@ define(
         var children, i, l, lastContentEditable, hasContentEditableState;
 
         // Node has a contentEditable value
-        if (node.nodeType === 1 && dom.getContentEditable(node)) {
+        if (NodeType.isElement(node) && dom.getContentEditable(node)) {
           lastContentEditable = contentEditable;
           contentEditable = dom.getContentEditable(node) === "true";
           hasContentEditableState = true; // We don't want to wrap the container only it's children
@@ -18251,7 +25510,7 @@ define(
         }
 
         // Since dom.remove removes empty text nodes then we need to try to find a better node
-        if (out.nodeType === 3 && out.data.length === 0) {
+        if (NodeType.isText(out) && out.data.length === 0) {
           out = start ? node.previousSibling || node.nextSibling : node.nextSibling || node.previousSibling;
         }
 
@@ -18289,8 +25548,7 @@ define(
               endContainer = endContainer.firstChild || endContainer;
             }
 
-            if (dom.isChildOf(startContainer, endContainer) && !dom.isBlock(endContainer) &&
-              !isTableCell(startContainer) && !isTableCell(endContainer)) {
+            if (dom.isChildOf(startContainer, endContainer) && startContainer !== endContainer && !dom.isBlock(endContainer) && !isTableCell(startContainer) && !isTableCell(endContainer)) {
               startContainer = wrap(dom, startContainer, 'span', { id: '_start', 'data-mce-type': 'bookmark' });
               splitToFormatRoot(startContainer);
               startContainer = unwrap(true);
@@ -18320,12 +25578,12 @@ define(
         }
 
         // Remove items between start/end
-        new RangeUtils(dom).walk(rng, function (nodes) {
+        RangeWalk.walk(dom, rng, function (nodes) {
           each(nodes, function (node) {
             process(node);
 
             // Remove parent span if it only contains text-decoration: underline, yet a parent node is also underlined.
-            if (node.nodeType === 1 && ed.dom.getStyle(node, 'text-decoration') === 'underline' &&
+            if (NodeType.isElement(node) && ed.dom.getStyle(node, 'text-decoration') === 'underline' &&
               node.parentNode && FormatUtils.getTextDecoration(dom, node.parentNode) === 'underline') {
               removeFormat(ed, {
                 'deep': false,
@@ -18629,17 +25887,17 @@ define(
   [
     'tinymce.core.dom.BookmarkManager',
     'tinymce.core.dom.NodeType',
-    'tinymce.core.dom.RangeNormalizer',
-    'tinymce.core.dom.RangeUtils',
     'tinymce.core.fmt.CaretFormat',
     'tinymce.core.fmt.ExpandRange',
     'tinymce.core.fmt.FormatUtils',
     'tinymce.core.fmt.Hooks',
     'tinymce.core.fmt.MatchFormat',
     'tinymce.core.fmt.MergeFormats',
+    'tinymce.core.selection.RangeNormalizer',
+    'tinymce.core.selection.RangeWalk',
     'tinymce.core.util.Tools'
   ],
-  function (BookmarkManager, NodeType, RangeNormalizer, RangeUtils, CaretFormat, ExpandRange, FormatUtils, Hooks, MatchFormat, MergeFormats, Tools) {
+  function (BookmarkManager, NodeType, CaretFormat, ExpandRange, FormatUtils, Hooks, MatchFormat, MergeFormats, RangeNormalizer, RangeWalk, Tools) {
     var each = Tools.each;
 
     var isElementNode = function (node) {
@@ -18731,7 +25989,7 @@ define(
         wrapElm = dom.create(wrapName);
         setElementFormat(wrapElm);
 
-        new RangeUtils(dom).walk(rng, function (nodes) {
+        RangeWalk.walk(dom, rng, function (nodes) {
           var currentWrapElm;
 
           /**
@@ -19394,18 +26652,18 @@ define(
     var each = Tools.each;
     var dom = DOMUtils.DOM;
 
-    function parsedSelectorToHtml(ancestry, editor) {
+    var parsedSelectorToHtml = function (ancestry, editor) {
       var elm, item, fragment;
       var schema = editor && editor.schema || new Schema({});
 
-      function decorate(elm, item) {
+      var decorate = function (elm, item) {
         if (item.classes.length) {
           dom.addClass(elm, item.classes.join(' '));
         }
         dom.setAttribs(elm, item.attrs);
-      }
+      };
 
-      function createElement(sItem) {
+      var createElement = function (sItem) {
         var elm;
 
         item = typeof sItem === 'string' ? {
@@ -19417,9 +26675,9 @@ define(
         elm = dom.create(item.name);
         decorate(elm, item);
         return elm;
-      }
+      };
 
-      function getRequiredParent(elm, candidate) {
+      var getRequiredParent = function (elm, candidate) {
         var name = typeof elm !== 'string' ? elm.nodeName.toLowerCase() : elm;
         var elmRule = schema.getElementRule(name);
         var parentsRequired = elmRule && elmRule.parentsRequired;
@@ -19429,9 +26687,9 @@ define(
         } else {
           return false;
         }
-      }
+      };
 
-      function wrapInHtml(elm, ancestry, siblings) {
+      var wrapInHtml = function (elm, ancestry, siblings) {
         var parent, parentCandidate, parentRequired;
         var ancestor = ancestry.length > 0 && ancestry[0];
         var ancestorName = ancestor && ancestor.name;
@@ -19471,7 +26729,7 @@ define(
         }
 
         return wrapInHtml(parent, ancestry, parentCandidate && parentCandidate.siblings);
-      }
+      };
 
       if (ancestry && ancestry.length) {
         item = ancestry[0];
@@ -19482,15 +26740,13 @@ define(
       } else {
         return '';
       }
-    }
+    };
 
-
-    function selectorToHtml(selector, editor) {
+    var selectorToHtml = function (selector, editor) {
       return parsedSelectorToHtml(parseSelector(selector), editor);
-    }
+    };
 
-
-    function parseSelectorItem(item) {
+    var parseSelectorItem = function (item) {
       var tagName;
       var obj = {
         classes: [],
@@ -19532,10 +26788,9 @@ define(
 
       obj.name = tagName || 'div';
       return obj;
-    }
+    };
 
-
-    function parseSelector(selector) {
+    var parseSelector = function (selector) {
       if (!selector || typeof selector !== 'string') {
         return [];
       }
@@ -19557,10 +26812,9 @@ define(
         }
         return obj;
       }).reverse();
-    }
+    };
 
-
-    function getCssText(editor, format) {
+    var getCssText = function (editor, format) {
       var name, previewFrag, previewElm, items;
       var previewCss = '', parentFontSize, previewStyles;
 
@@ -19578,9 +26832,9 @@ define(
       }
 
       // Removes any variables since these can't be previewed
-      function removeVars(val) {
+      var removeVars = function (val) {
         return val.replace(/%(\w+)/g, '');
-      }
+      };
 
       // Create block/inline element to use for preview
       if (typeof format === "string") {
@@ -19702,7 +26956,7 @@ define(
       dom.remove(previewFrag);
 
       return previewCss;
-    }
+    };
 
     return {
       getCssText: getCssText,
@@ -19813,6 +27067,7 @@ define(
     'ephox.katamari.api.Cell',
     'ephox.katamari.api.Fun',
     'tinymce.core.fmt.ApplyFormat',
+    'tinymce.core.fmt.CaretFormat',
     'tinymce.core.fmt.FormatChanged',
     'tinymce.core.fmt.FormatRegistry',
     'tinymce.core.fmt.MatchFormat',
@@ -19821,7 +27076,7 @@ define(
     'tinymce.core.fmt.ToggleFormat',
     'tinymce.core.keyboard.FormatShortcuts'
   ],
-  function (Cell, Fun, ApplyFormat, FormatChanged, FormatRegistry, MatchFormat, Preview, RemoveFormat, ToggleFormat, FormatShortcuts) {
+  function (Cell, Fun, ApplyFormat, CaretFormat, FormatChanged, FormatRegistry, MatchFormat, Preview, RemoveFormat, ToggleFormat, FormatShortcuts) {
     /**
      * Constructs a new formatter instance.
      *
@@ -19833,6 +27088,7 @@ define(
       var formatChangeState = Cell(null);
 
       FormatShortcuts.setup(editor);
+      CaretFormat.setup(editor);
 
       return {
         /**
@@ -19961,425 +27217,8 @@ define(
   }
 );
 
-define(
-  'ephox.sugar.api.properties.Attr',
-
-  [
-    'ephox.katamari.api.Type',
-    'ephox.katamari.api.Arr',
-    'ephox.katamari.api.Obj',
-    'ephox.sugar.api.node.Node',
-    'global!Error',
-    'global!console'
-  ],
-
-  /*
-   * Direct attribute manipulation has been around since IE8, but
-   * was apparently unstable until IE10.
-   */
-  function (Type, Arr, Obj, Node, Error, console) {
-    var rawSet = function (dom, key, value) {
-      /*
-       * JQuery coerced everything to a string, and silently did nothing on text node/null/undefined.
-       *
-       * We fail on those invalid cases, only allowing numbers and booleans.
-       */
-      if (Type.isString(value) || Type.isBoolean(value) || Type.isNumber(value)) {
-        dom.setAttribute(key, value + '');
-      } else {
-        console.error('Invalid call to Attr.set. Key ', key, ':: Value ', value, ':: Element ', dom);
-        throw new Error('Attribute value was not simple');
-      }
-    };
-
-    var set = function (element, key, value) {
-      rawSet(element.dom(), key, value);
-    };
-
-    var setAll = function (element, attrs) {
-      var dom = element.dom();
-      Obj.each(attrs, function (v, k) {
-        rawSet(dom, k, v);
-      });
-    };
-
-    var get = function (element, key) {
-      var v = element.dom().getAttribute(key);
-
-      // undefined is the more appropriate value for JS, and this matches JQuery
-      return v === null ? undefined : v;
-    };
-
-    var has = function (element, key) {
-      var dom = element.dom();
-
-      // return false for non-element nodes, no point in throwing an error
-      return dom && dom.hasAttribute ? dom.hasAttribute(key) : false;
-    };
-
-    var remove = function (element, key) {
-      element.dom().removeAttribute(key);
-    };
-
-    var hasNone = function (element) {
-      var attrs = element.dom().attributes;
-      return attrs === undefined || attrs === null || attrs.length === 0;
-    };
-
-    var clone = function (element) {
-      return Arr.foldl(element.dom().attributes, function (acc, attr) {
-        acc[attr.name] = attr.value;
-        return acc;
-      }, {});
-    };
-
-    var transferOne = function (source, destination, attr) {
-      // NOTE: We don't want to clobber any existing attributes
-      if (has(source, attr) && !has(destination, attr)) set(destination, attr, get(source, attr));        
-    };
-
-    // Transfer attributes(attrs) from source to destination, unless they are already present
-    var transfer = function (source, destination, attrs) {
-      if (!Node.isElement(source) || !Node.isElement(destination)) return;
-      Arr.each(attrs, function (attr) {
-        transferOne(source, destination, attr);
-      });
-    };
-
-    return {
-      clone: clone,
-      set: set,
-      setAll: setAll,
-      get: get,
-      has: has,
-      remove: remove,
-      hasNone: hasNone,
-      transfer: transfer
-    };
-  }
-);
-
-define(
-  'ephox.sugar.impl.Style',
-
-  [
-
-  ],
-
-  function () {
-    // some elements, such as mathml, don't have style attributes
-    var isSupported = function (dom) {
-      return dom.style !== undefined;
-    };
-
-    return {
-      isSupported: isSupported
-    };
-  }
-);
-define(
-  'ephox.sugar.api.properties.Css',
-
-  [
-    'ephox.katamari.api.Type',
-    'ephox.katamari.api.Arr',
-    'ephox.katamari.api.Obj',
-    'ephox.katamari.api.Option',
-    'ephox.sugar.api.properties.Attr',
-    'ephox.sugar.api.node.Body',
-    'ephox.sugar.api.node.Element',
-    'ephox.sugar.api.node.Node',
-    'ephox.sugar.impl.Style',
-    'ephox.katamari.api.Strings',
-    'global!Error',
-    'global!console',
-    'global!window'
-  ],
-
-  function (Type, Arr, Obj, Option, Attr, Body, Element, Node, Style, Strings, Error, console, window) {
-    var internalSet = function (dom, property, value) {
-      // This is going to hurt. Apologies.
-      // JQuery coerces numbers to pixels for certain property names, and other times lets numbers through.
-      // we're going to be explicit; strings only.
-      if (!Type.isString(value)) {
-        console.error('Invalid call to CSS.set. Property ', property, ':: Value ', value, ':: Element ', dom);
-        throw new Error('CSS value must be a string: ' + value);
-      }
-
-      // removed: support for dom().style[property] where prop is camel case instead of normal property name
-      if (Style.isSupported(dom)) dom.style.setProperty(property, value);
-    };
-
-    var internalRemove = function (dom, property) {
-      /*
-       * IE9 and above - MDN doesn't have details, but here's a couple of random internet claims
-       *
-       * http://help.dottoro.com/ljopsjck.php
-       * http://stackoverflow.com/a/7901886/7546
-       */
-      if (Style.isSupported(dom)) dom.style.removeProperty(property);
-    };
-
-    var set = function (element, property, value) {
-      var dom = element.dom();
-      internalSet(dom, property, value);
-    };
-
-    var setAll = function (element, css) {
-      var dom = element.dom();
-
-      Obj.each(css, function (v, k) {
-        internalSet(dom, k, v);
-      });
-    };
-
-    var setOptions = function(element, css) {
-      var dom = element.dom();
-
-      Obj.each(css, function (v, k) {
-        v.fold(function () {
-          internalRemove(dom, k);
-        }, function (value) {
-          internalSet(dom, k, value);
-        });
-      });
-    };
-
-    /*
-     * NOTE: For certain properties, this returns the "used value" which is subtly different to the "computed value" (despite calling getComputedStyle).
-     * Blame CSS 2.0.
-     *
-     * https://developer.mozilla.org/en-US/docs/Web/CSS/used_value
-     */
-    var get = function (element, property) {
-      var dom = element.dom();
-      /*
-       * IE9 and above per
-       * https://developer.mozilla.org/en/docs/Web/API/window.getComputedStyle
-       *
-       * Not in numerosity, because it doesn't memoize and looking this up dynamically in performance critical code would be horrendous.
-       *
-       * JQuery has some magic here for IE popups, but we don't really need that.
-       * It also uses element.ownerDocument.defaultView to handle iframes but that hasn't been required since FF 3.6.
-       */
-      var styles = window.getComputedStyle(dom);
-      var r = styles.getPropertyValue(property);
-
-      // jquery-ism: If r is an empty string, check that the element is not in a document. If it isn't, return the raw value.
-      // Turns out we do this a lot.
-      var v = (r === '' && !Body.inBody(element)) ? getUnsafeProperty(dom, property) : r;
-
-      // undefined is the more appropriate value for JS. JQuery coerces to an empty string, but screw that!
-      return v === null ? undefined : v;
-    };
-
-    var getUnsafeProperty = function (dom, property) {
-      // removed: support for dom().style[property] where prop is camel case instead of normal property name
-      // empty string is what the browsers (IE11 and Chrome) return when the propertyValue doesn't exists.
-      return Style.isSupported(dom) ? dom.style.getPropertyValue(property) : '';
-    };
-
-    /*
-     * Gets the raw value from the style attribute. Useful for retrieving "used values" from the DOM:
-     * https://developer.mozilla.org/en-US/docs/Web/CSS/used_value
-     *
-     * Returns NONE if the property isn't set, or the value is an empty string.
-     */
-    var getRaw = function (element, property) {
-      var dom = element.dom();
-      var raw = getUnsafeProperty(dom, property);
-
-      return Option.from(raw).filter(function (r) { return r.length > 0; });
-    };
-
-    var isValidValue = function (tag, property, value) {
-      var element = Element.fromTag(tag);
-      set(element, property, value);
-      var style = getRaw(element, property);
-      return style.isSome();
-    };
-
-    var remove = function (element, property) {
-      var dom = element.dom();
-
-      internalRemove(dom, property);
-
-      if (Attr.has(element, 'style') && Strings.trim(Attr.get(element, 'style')) === '') {
-        // No more styles left, remove the style attribute as well
-        Attr.remove(element, 'style');
-      }
-    };
-
-    var preserve = function (element, f) {
-      var oldStyles = Attr.get(element, 'style');
-      var result = f(element);
-      var restore = oldStyles === undefined ? Attr.remove : Attr.set;
-      restore(element, 'style', oldStyles);
-      return result;
-    };
-
-    var copy = function (source, target) {
-      var sourceDom = source.dom();
-      var targetDom = target.dom();
-      if (Style.isSupported(sourceDom) && Style.isSupported(targetDom)) {
-        targetDom.style.cssText = sourceDom.style.cssText;
-      }
-    };
-
-    var reflow = function (e) {
-      /* NOTE:
-       * do not rely on this return value.
-       * It's here so the closure compiler doesn't optimise the property access away.
-       */
-      return e.dom().offsetWidth;
-    };
-
-    var transferOne = function (source, destination, style) {
-      getRaw(source, style).each(function (value) {
-        // NOTE: We don't want to clobber any existing inline styles.
-        if (getRaw(destination, style).isNone()) set(destination, style, value);
-      });
-    };
-
-    var transfer = function (source, destination, styles) {
-      if (!Node.isElement(source) || !Node.isElement(destination)) return;
-      Arr.each(styles, function (style) {
-        transferOne(source, destination, style);
-      });
-    };
-
-    return {
-      copy: copy,
-      set: set,
-      preserve: preserve,
-      setAll: setAll,
-      setOptions: setOptions,
-      remove: remove,
-      get: get,
-      getRaw: getRaw,
-      isValidValue: isValidValue,
-      reflow: reflow,
-      transfer: transfer
-    };
-  }
-);
-
 /**
- * EditorView.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2016 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.EditorView',
-  [
-    'ephox.katamari.api.Fun',
-    'ephox.katamari.api.Option',
-    'ephox.sugar.api.dom.Compare',
-    'ephox.sugar.api.node.Element',
-    'ephox.sugar.api.properties.Css',
-    'ephox.sugar.api.search.Traverse'
-  ],
-  function (Fun, Option, Compare, Element, Css, Traverse) {
-    var getProp = function (propName, elm) {
-      var rawElm = elm.dom();
-      return rawElm[propName];
-    };
-
-    var getComputedSizeProp = function (propName, elm) {
-      return parseInt(Css.get(elm, propName), 10);
-    };
-
-    var getClientWidth = Fun.curry(getProp, 'clientWidth');
-    var getClientHeight = Fun.curry(getProp, 'clientHeight');
-    var getMarginTop = Fun.curry(getComputedSizeProp, 'margin-top');
-    var getMarginLeft = Fun.curry(getComputedSizeProp, 'margin-left');
-
-    var getBoundingClientRect = function (elm) {
-      return elm.dom().getBoundingClientRect();
-    };
-
-    var isInsideElementContentArea = function (bodyElm, clientX, clientY) {
-      var clientWidth = getClientWidth(bodyElm);
-      var clientHeight = getClientHeight(bodyElm);
-
-      return clientX >= 0 && clientY >= 0 && clientX <= clientWidth && clientY <= clientHeight;
-    };
-
-    var transpose = function (inline, elm, clientX, clientY) {
-      var clientRect = getBoundingClientRect(elm);
-      var deltaX = inline ? clientRect.left + elm.dom().clientLeft + getMarginLeft(elm) : 0;
-      var deltaY = inline ? clientRect.top + elm.dom().clientTop + getMarginTop(elm) : 0;
-      var x = clientX - deltaX;
-      var y = clientY - deltaY;
-
-      return { x: x, y: y };
-    };
-
-    // Checks if the specified coordinate is within the visual content area excluding the scrollbars
-    var isXYInContentArea = function (editor, clientX, clientY) {
-      var bodyElm = Element.fromDom(editor.getBody());
-      var targetElm = editor.inline ? bodyElm : Traverse.documentElement(bodyElm);
-      var transposedPoint = transpose(editor.inline, targetElm, clientX, clientY);
-
-      return isInsideElementContentArea(targetElm, transposedPoint.x, transposedPoint.y);
-    };
-
-    var fromDomSafe = function (node) {
-      return Option.from(node).map(Element.fromDom);
-    };
-
-    var isEditorAttachedToDom = function (editor) {
-      var rawContainer = editor.inline ? editor.getBody() : editor.getContentAreaContainer();
-
-      return fromDomSafe(rawContainer).map(function (container) {
-        return Compare.contains(Traverse.owner(container), container);
-      }).getOr(false);
-    };
-
-    return {
-      isXYInContentArea: isXYInContentArea,
-      isEditorAttachedToDom: isEditorAttachedToDom
-    };
-  }
-);
-
-/**
- * NotificationManagerImpl.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.ui.NotificationManagerImpl',
-  [
-  ],
-  function () {
-    return function () {
-      var unimplemented = function () {
-        throw new Error('Theme did not provide a NotificationManager implementation.');
-      };
-
-      return {
-        open: unimplemented,
-        close: unimplemented,
-        reposition: unimplemented,
-        getArgs: unimplemented
-      };
-    };
-  }
-);
-
-/**
- * NotificationManager.js
+ * CaretContainerInput.js
  *
  * Released under LGPL License.
  * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
@@ -20389,1805 +27228,63 @@ define(
  */
 
 /**
- * This class handles the creation of TinyMCE's notifications.
- *
- * @class tinymce.NotificationManager
- * @example
- * // Opens a new notification of type "error" with text "An error occurred."
- * tinymce.activeEditor.notificationManager.open({
- *    text: 'An error occurred.',
- *    type: 'error'
- * });
+ * This module shows the invisble block that the caret is currently in when contents is added to that block.
  */
 define(
-  'tinymce.core.api.NotificationManager',
-  [
-    'ephox.katamari.api.Arr',
-    'ephox.katamari.api.Option',
-    'tinymce.core.EditorView',
-    'tinymce.core.ui.NotificationManagerImpl',
-    'tinymce.core.util.Delay'
-  ],
-  function (Arr, Option, EditorView, NotificationManagerImpl, Delay) {
-    return function (editor) {
-      var notifications = [];
-
-      var getImplementation = function () {
-        var theme = editor.theme;
-        return theme && theme.getNotificationManagerImpl ? theme.getNotificationManagerImpl() : NotificationManagerImpl();
-      };
-
-      var getTopNotification = function () {
-        return Option.from(notifications[0]);
-      };
-
-      var isEqual = function (a, b) {
-        return a.type === b.type && a.text === b.text && !a.progressBar && !a.timeout && !b.progressBar && !b.timeout;
-      };
-
-      var reposition = function () {
-        if (notifications.length > 0) {
-          getImplementation().reposition(notifications);
-        }
-      };
-
-      var addNotification = function (notification) {
-        notifications.push(notification);
-      };
-
-      var closeNotification = function (notification) {
-        Arr.findIndex(notifications, function (otherNotification) {
-          return otherNotification === notification;
-        }).each(function (index) {
-          // Mutate here since third party might have stored away the window array
-          // TODO: Consider breaking this api
-          notifications.splice(index, 1);
-        });
-      };
-
-      var open = function (args) {
-        // Never open notification if editor has been removed.
-        if (editor.removed || !EditorView.isEditorAttachedToDom(editor)) {
-          return;
-        }
-
-        return Arr.find(notifications, function (notification) {
-          return isEqual(getImplementation().getArgs(notification), args);
-        }).getOrThunk(function () {
-          editor.editorManager.setActive(editor);
-
-          var notification = getImplementation().open(args, function () {
-            closeNotification(notification);
-            reposition();
-          });
-
-          addNotification(notification);
-          reposition();
-          return notification;
-        });
-      };
-
-      var close = function () {
-        getTopNotification().each(function (notification) {
-          getImplementation().close(notification);
-          closeNotification(notification);
-          reposition();
-        });
-      };
-
-      var getNotifications = function () {
-        return notifications;
-      };
-
-      var registerEvents = function (editor) {
-        editor.on('SkinLoaded', function () {
-          var serviceMessage = editor.settings.service_message;
-
-          if (serviceMessage) {
-            open({
-              text: serviceMessage,
-              type: 'warning',
-              timeout: 0,
-              icon: ''
-            });
-          }
-        });
-
-        editor.on('ResizeEditor ResizeWindow', function () {
-          Delay.requestAnimationFrame(reposition);
-        });
-
-        editor.on('remove', function () {
-          Arr.each(notifications, function (notification) {
-            getImplementation().close(notification);
-          });
-        });
-      };
-
-      registerEvents(editor);
-
-      return {
-        /**
-         * Opens a new notification.
-         *
-         * @method open
-         * @param {Object} args Optional name/value settings collection contains things like timeout/color/message etc.
-         */
-        open: open,
-
-        /**
-         * Closes the top most notification.
-         *
-         * @method close
-         */
-        close: close,
-
-        /**
-         * Returns the currently opened notification objects.
-         *
-         * @method getNotifications
-         * @return {Array} Array of the currently opened notifications.
-         */
-        getNotifications: getNotifications
-      };
-    };
-  }
-);
-
-define(
-  'ephox.katamari.api.Adt',
-
-  [
-    'ephox.katamari.api.Arr',
-    'ephox.katamari.api.Obj',
-    'ephox.katamari.api.Type',
-    'global!Array',
-    'global!Error',
-    'global!console'
-  ],
-
-  function (Arr, Obj, Type, Array, Error, console) {
-    /*
-     * Generates a church encoded ADT (https://en.wikipedia.org/wiki/Church_encoding)
-     * For syntax and use, look at the test code.
-     */
-    var generate = function (cases) {
-      // validation
-      if (!Type.isArray(cases)) {
-        throw new Error('cases must be an array');
-      }
-      if (cases.length === 0) {
-        throw new Error('there must be at least one case');
-      }
-
-      var constructors = [ ];
-
-      // adt is mutated to add the individual cases
-      var adt = {};
-      Arr.each(cases, function (acase, count) {
-        var keys = Obj.keys(acase);
-
-        // validation
-        if (keys.length !== 1) {
-          throw new Error('one and only one name per case');
-        }
-
-        var key = keys[0];
-        var value = acase[key];
-
-        // validation
-        if (adt[key] !== undefined) {
-          throw new Error('duplicate key detected:' + key);
-        } else if (key === 'cata') {
-          throw new Error('cannot have a case named cata (sorry)');
-        } else if (!Type.isArray(value)) {
-          // this implicitly checks if acase is an object
-          throw new Error('case arguments must be an array');
-        }
-
-        constructors.push(key);
-        //
-        // constructor for key
-        //
-        adt[key] = function () {
-          var argLength = arguments.length;
-
-          // validation
-          if (argLength !== value.length) {
-            throw new Error('Wrong number of arguments to case ' + key + '. Expected ' + value.length + ' (' + value + '), got ' + argLength);
-          }
-
-          // Don't use array slice(arguments), makes the whole function unoptimisable on Chrome
-          var args = new Array(argLength);
-          for (var i = 0; i < args.length; i++) args[i] = arguments[i];
-
-
-          var match = function (branches) {
-            var branchKeys = Obj.keys(branches);
-            if (constructors.length !== branchKeys.length) {
-              throw new Error('Wrong number of arguments to match. Expected: ' + constructors.join(',') + '\nActual: ' + branchKeys.join(','));
-            }
-
-            var allReqd = Arr.forall(constructors, function (reqKey) {
-              return Arr.contains(branchKeys, reqKey);
-            });
-
-            if (!allReqd) throw new Error('Not all branches were specified when using match. Specified: ' + branchKeys.join(', ') + '\nRequired: ' + constructors.join(', '));
-
-            return branches[key].apply(null, args);
-          };
-
-          //
-          // the fold function for key
-          //
-          return {
-            fold: function (/* arguments */) {
-              // runtime validation
-              if (arguments.length !== cases.length) {
-                throw new Error('Wrong number of arguments to fold. Expected ' + cases.length + ', got ' + arguments.length);
-              }
-              var target = arguments[count];
-              return target.apply(null, args);
-            },
-            match: match,
-
-            // NOTE: Only for debugging.
-            log: function (label) {
-              console.log(label, {
-                constructors: constructors,
-                constructor: key,
-                params: args
-              });
-            }
-          };
-        };
-      });
-
-      return adt;
-    };
-    return {
-      generate: generate
-    };
-  }
-);
-define(
-  'ephox.sugar.api.selection.Selection',
-
-  [
-    'ephox.katamari.api.Adt',
-    'ephox.katamari.api.Struct'
-  ],
-
-  function (Adt, Struct) {
-    // Consider adding a type for "element"
-    var type = Adt.generate([
-      { domRange: [ 'rng' ] },
-      { relative: [ 'startSitu', 'finishSitu' ] },
-      { exact: [ 'start', 'soffset', 'finish', 'foffset' ] }
-    ]);
-
-    var range = Struct.immutable(
-      'start',
-      'soffset',
-      'finish',
-      'foffset'
-    );
-
-    var exactFromRange = function (simRange) {
-      return type.exact(simRange.start(), simRange.soffset(), simRange.finish(), simRange.foffset());
-    };
-
-    return {
-      domRange: type.domRange,
-      relative: type.relative,
-      exact: type.exact,
-
-      exactFromRange: exactFromRange,
-      range: range
-    };
-  }
-);
-
-define(
-  'ephox.sugar.api.dom.DocumentPosition',
-
-  [
-    'ephox.sugar.api.dom.Compare',
-    'ephox.sugar.api.node.Element',
-    'ephox.sugar.api.search.Traverse'
-  ],
-
-  function (Compare, Element, Traverse) {
-    var makeRange = function (start, soffset, finish, foffset) {
-      var doc = Traverse.owner(start);
-
-      // TODO: We need to think about a better place to put native range creation code. Does it even belong in sugar?
-      // Could the `Compare` checks (node.compareDocumentPosition) handle these situations better?
-      var rng = doc.dom().createRange();
-      rng.setStart(start.dom(), soffset);
-      rng.setEnd(finish.dom(), foffset);
-      return rng;
-    };
-
-    // Return the deepest - or furthest down the document tree - Node that contains both boundary points
-    // of the range (start:soffset, finish:foffset).
-    var commonAncestorContainer = function (start, soffset, finish, foffset) {
-      var r = makeRange(start, soffset, finish, foffset);
-      return Element.fromDom(r.commonAncestorContainer);
-    };
-
-    var after = function (start, soffset, finish, foffset) {
-      var r = makeRange(start, soffset, finish, foffset);
-
-      var same = Compare.eq(start, finish) && soffset === foffset;
-      return r.collapsed && !same;
-    };
-
-    return {
-      after: after,
-      commonAncestorContainer: commonAncestorContainer
-    };
-  }
-);
-define(
-  'ephox.sugar.api.node.Fragment',
-
-  [
-    'ephox.katamari.api.Arr',
-    'ephox.sugar.api.node.Element',
-    'global!document'
-  ],
-
-  function (Arr, Element, document) {
-    var fromElements = function (elements, scope) {
-      var doc = scope || document;
-      var fragment = doc.createDocumentFragment();
-      Arr.each(elements, function (element) {
-        fragment.appendChild(element.dom());
-      });
-      return Element.fromDom(fragment);
-    };
-
-    return {
-      fromElements: fromElements
-    };
-  }
-);
-
-define(
-  'ephox.sugar.api.selection.Situ',
-
-  [
-    'ephox.katamari.api.Adt'
-  ],
-
-  function (Adt) {
-    var adt = Adt.generate([
-      { 'before': [ 'element' ] },
-      { 'on': [ 'element', 'offset' ] },
-      { after: [ 'element' ] }
-    ]);
-
-    // Probably don't need this given that we now have "match"
-    var cata = function (subject, onBefore, onOn, onAfter) {
-      return subject.fold(onBefore, onOn, onAfter);
-    };
-
-    return {
-      before: adt.before,
-      on: adt.on,
-      after: adt.after,
-      cata: cata
-    };
-  }
-);
-
-define(
-  'ephox.sugar.selection.core.NativeRange',
-
+  'tinymce.core.caret.CaretContainerInput',
   [
     'ephox.katamari.api.Fun',
-    'ephox.katamari.api.Option',
-    'ephox.sugar.api.dom.Compare',
-    'ephox.sugar.api.node.Element'
-  ],
-
-  function (Fun, Option, Compare, Element) {
-    var selectNodeContents = function (win, element) {
-      var rng = win.document.createRange();
-      selectNodeContentsUsing(rng, element);
-      return rng;
-    };
-
-    var selectNodeContentsUsing = function (rng, element) {
-      rng.selectNodeContents(element.dom());
-    };
-
-    var isWithin = function (outerRange, innerRange) {
-      // Adapted from: http://stackoverflow.com/questions/5605401/insert-link-in-contenteditable-element
-      return innerRange.compareBoundaryPoints(outerRange.END_TO_START, outerRange) < 1 &&
-        innerRange.compareBoundaryPoints(outerRange.START_TO_END, outerRange) > -1;
-    };
-
-    var create = function (win) {
-      return win.document.createRange();
-    };
-
-    // NOTE: Mutates the range.
-    var setStart = function (rng, situ) {
-      situ.fold(function (e) {
-        rng.setStartBefore(e.dom());
-      }, function (e, o) {
-        rng.setStart(e.dom(), o);
-      }, function (e) {
-        rng.setStartAfter(e.dom());
-      });
-    };
-
-    var setFinish = function (rng, situ) {
-      situ.fold(function (e) {
-        rng.setEndBefore(e.dom());
-      }, function (e, o) {
-        rng.setEnd(e.dom(), o);
-      }, function (e) {
-        rng.setEndAfter(e.dom());
-      });
-    };
-
-    var replaceWith = function (rng, fragment) {
-      // Note: this document fragment approach may not work on IE9.
-      deleteContents(rng);
-      rng.insertNode(fragment.dom());
-    };
-
-    var isCollapsed = function (start, soffset, finish, foffset) {
-      return Compare.eq(start, finish) && soffset === foffset;
-    };
-
-    var relativeToNative = function (win, startSitu, finishSitu) {
-      var range = win.document.createRange();
-      setStart(range, startSitu);
-      setFinish(range, finishSitu);
-      return range;
-    };
-
-    var exactToNative = function (win, start, soffset, finish, foffset) {
-      var rng = win.document.createRange();
-      rng.setStart(start.dom(), soffset);
-      rng.setEnd(finish.dom(), foffset);
-      return rng;
-    };
-
-    var deleteContents = function (rng) {
-      rng.deleteContents();
-    };
-
-    var cloneFragment = function (rng) {
-      var fragment = rng.cloneContents();
-      return Element.fromDom(fragment);
-    };
-
-    var toRect = function (rect) {
-      return {
-        left: Fun.constant(rect.left),
-        top: Fun.constant(rect.top),
-        right: Fun.constant(rect.right),
-        bottom: Fun.constant(rect.bottom),
-        width: Fun.constant(rect.width),
-        height: Fun.constant(rect.height)
-      };
-    };
-    
-    var getFirstRect = function (rng) {
-      var rects = rng.getClientRects();
-      // ASSUMPTION: The first rectangle is the start of the selection
-      var rect = rects.length > 0 ? rects[0] : rng.getBoundingClientRect();
-      return rect.width > 0 || rect.height > 0  ? Option.some(rect).map(toRect) : Option.none();
-    };
-
-    var getBounds = function (rng) {
-      var rect = rng.getBoundingClientRect();
-      return rect.width > 0 || rect.height > 0  ? Option.some(rect).map(toRect) : Option.none();
-    };
-
-    var toString = function (rng) {
-      return rng.toString();
-    };
-
-    return {
-      create: create,
-      replaceWith: replaceWith,
-      selectNodeContents: selectNodeContents,
-      selectNodeContentsUsing: selectNodeContentsUsing,
-      isCollapsed: isCollapsed,
-      relativeToNative: relativeToNative,
-      exactToNative: exactToNative,
-      deleteContents: deleteContents,
-      cloneFragment: cloneFragment,
-      getFirstRect: getFirstRect,
-      getBounds: getBounds,
-      isWithin: isWithin,
-      toString: toString
-    };
-  }
-);
-
-define(
-  'ephox.sugar.selection.core.SelectionDirection',
-
-  [
-    'ephox.katamari.api.Adt',
-    'ephox.katamari.api.Fun',
-    'ephox.katamari.api.Option',
-    'ephox.katamari.api.Thunk',
     'ephox.sugar.api.node.Element',
-    'ephox.sugar.selection.core.NativeRange'
+    'ephox.sugar.api.search.SelectorFind',
+    'tinymce.core.caret.CaretContainer'
   ],
-
-  function (Adt, Fun, Option, Thunk, Element, NativeRange) {
-    var adt = Adt.generate([
-      { ltr: [ 'start', 'soffset', 'finish', 'foffset' ] },
-      { rtl: [ 'start', 'soffset', 'finish', 'foffset' ] }
-    ]);
-
-    var fromRange = function (win, type, range) {
-      return type(Element.fromDom(range.startContainer), range.startOffset, Element.fromDom(range.endContainer), range.endOffset);
-    };
-
-    var getRanges = function (win, selection) {
-      return selection.match({
-        domRange: function (rng) {
-          return {
-            ltr: Fun.constant(rng),
-            rtl: Option.none
-          };
-        },
-        relative: function (startSitu, finishSitu) {
-          return {
-            ltr: Thunk.cached(function () {
-              return NativeRange.relativeToNative(win, startSitu, finishSitu);
-            }),
-            rtl: Thunk.cached(function () {
-              return Option.some(
-                NativeRange.relativeToNative(win, finishSitu, startSitu)
-              );
-            })
-          };
-        },
-        exact: function (start, soffset, finish, foffset) {
-          return {
-            ltr: Thunk.cached(function () {
-              return NativeRange.exactToNative(win, start, soffset, finish, foffset);
-            }),
-            rtl: Thunk.cached(function () {
-              return Option.some(
-                NativeRange.exactToNative(win, finish, foffset, start, soffset)
-              );
-            })
-          };
-        }
+  function (Fun, Element, SelectorFind, CaretContainer) {
+    var findBlockCaretContainer = function (editor) {
+      return SelectorFind.descendant(Element.fromDom(editor.getBody()), '*[data-mce-caret]').fold(Fun.constant(null), function (elm) {
+        return elm.dom();
       });
     };
 
-    var doDiagnose = function (win, ranges) {
-      // If we cannot create a ranged selection from start > finish, it could be RTL
-      var rng = ranges.ltr();
-      if (rng.collapsed) {
-        // Let's check if it's RTL ... if it is, then reversing the direction will not be collapsed
-        var reversed = ranges.rtl().filter(function (rev) {
-          return rev.collapsed === false;
-        });
-        
-        return reversed.map(function (rev) {
-          // We need to use "reversed" here, because the original only has one point (collapsed)
-          return adt.rtl(
-            Element.fromDom(rev.endContainer), rev.endOffset,
-            Element.fromDom(rev.startContainer), rev.startOffset  
-          );
-        }).getOrThunk(function () {
-          return fromRange(win, adt.ltr, rng);
-        });
-      } else {
-        return fromRange(win, adt.ltr, rng);
+    var removeIeControlRect = function (editor) {
+      editor.selection.setRng(editor.selection.getRng());
+    };
+
+    var showBlockCaretContainer = function (editor, blockCaretContainer) {
+      if (blockCaretContainer.hasAttribute('data-mce-caret')) {
+        CaretContainer.showCaretContainerBlock(blockCaretContainer);
+        removeIeControlRect(editor);
+        editor.selection.scrollIntoView(blockCaretContainer);
       }
     };
 
-    var diagnose = function (win, selection) {
-      var ranges = getRanges(win, selection);
-      return doDiagnose(win, ranges);
-    };
-
-    var asLtrRange = function (win, selection) {
-      var diagnosis = diagnose(win, selection);
-      return diagnosis.match({
-        ltr: function (start, soffset, finish, foffset) {
-          var rng = win.document.createRange();
-          rng.setStart(start.dom(), soffset);
-          rng.setEnd(finish.dom(), foffset);
-          return rng;
-        },
-        rtl: function (start, soffset, finish, foffset) {
-          // NOTE: Reversing start and finish
-          var rng = win.document.createRange();
-          rng.setStart(finish.dom(), foffset);
-          rng.setEnd(start.dom(), soffset);
-          return rng;
-        }
-      });
-    };
-
-    return {
-      ltr: adt.ltr,
-      rtl: adt.rtl,
-      diagnose: diagnose,
-      asLtrRange: asLtrRange
-    };
-  }
-);
-
-define(
-  'ephox.katamari.api.Options',
-
-  [
-    'ephox.katamari.api.Option'
-  ],
-
-  function (Option) {
-    /** cat :: [Option a] -> [a] */
-    var cat = function (arr) {
-      var r = [];
-      var push = function (x) {
-        r.push(x);
-      };
-      for (var i = 0; i < arr.length; i++) {
-        arr[i].each(push);
-      }
-      return r;
-    };
-
-    /** findMap :: ([a], (a, Int -> Option b)) -> Option b */
-    var findMap = function (arr, f) {
-      for (var i = 0; i < arr.length; i++) {
-        var r = f(arr[i], i);
-        if (r.isSome()) {
-          return r;
-        }
-      }
-      return Option.none();
-    };
-
-    /**
-     * if all elements in arr are 'some', their inner values are passed as arguments to f
-     * f must have arity arr.length
-    */
-    var liftN = function(arr, f) {
-      var r = [];
-      for (var i = 0; i < arr.length; i++) {
-        var x = arr[i];
-        if (x.isSome()) {
-          r.push(x.getOrDie());
-        } else {
-          return Option.none();
-        }
-      }
-      return Option.some(f.apply(null, r));
-    };
-
-    return {
-      cat: cat,
-      findMap: findMap,
-      liftN: liftN
-    };
-  }
-);
-
-defineGlobal("global!Math", Math);
-define(
-  'ephox.sugar.selection.alien.Geometry',
-
-  [
-    'global!Math'
-  ],
-
-  function (Math) {
-    var searchForPoint = function (rectForOffset, x, y, maxX, length) {
-      // easy cases
-      if (length === 0) return 0;
-      else if (x === maxX) return length - 1;
-
-      var xDelta = maxX;
-
-      // start at 1, zero is the fallback
-      for (var i = 1; i < length; i++) {
-        var rect = rectForOffset(i);
-        var curDeltaX = Math.abs(x - rect.left);
-
-        if (y > rect.bottom) {
-          // range is too high, above drop point, do nothing
-        } else if (y < rect.top || curDeltaX > xDelta) {
-          // if the search winds up on the line below the drop point,
-          // or we pass the best X offset,
-          // wind back to the previous (best) delta
-          return i - 1;
-        } else {
-          // update current search delta
-          xDelta = curDeltaX;
-        }
-      }
-      return 0; // always return something, even if it's not the exact offset it'll be better than nothing
-    };
-
-    var inRect = function (rect, x, y) {
-      return x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom;
-    };
-
-    return {
-      inRect: inRect,
-      searchForPoint: searchForPoint
-    };
-
-  }
-);
-
-define(
-  'ephox.sugar.selection.query.TextPoint',
-
-  [
-    'ephox.katamari.api.Option',
-    'ephox.katamari.api.Options',
-    'ephox.sugar.api.node.Text',
-    'ephox.sugar.selection.alien.Geometry',
-    'global!Math'
-  ],
-
-  function (Option, Options, Text, Geometry, Math) {
-    var locateOffset = function (doc, textnode, x, y, rect) {
-      var rangeForOffset = function (offset) {
-        var r = doc.dom().createRange();
-        r.setStart(textnode.dom(), offset);
-        r.collapse(true);
-        return r;
-      };
-
-      var rectForOffset = function (offset) {
-        var r = rangeForOffset(offset);
-        return r.getBoundingClientRect();
-      };
-
-      var length = Text.get(textnode).length;
-      var offset = Geometry.searchForPoint(rectForOffset, x, y, rect.right, length);
-      return rangeForOffset(offset);
-    };
-
-    var locate = function (doc, node, x, y) {
-      var r = doc.dom().createRange();
-      r.selectNode(node.dom());
-      var rects = r.getClientRects();
-      var foundRect = Options.findMap(rects, function (rect) {
-        return Geometry.inRect(rect, x, y) ? Option.some(rect) : Option.none();
-      });
-
-      return foundRect.map(function (rect) {
-        return locateOffset(doc, node, x, y, rect);
-      });
-    };
-
-    return {
-      locate: locate
-    };
-  }
-);
-
-define(
-  'ephox.sugar.selection.query.ContainerPoint',
-
-  [
-    'ephox.katamari.api.Option',
-    'ephox.katamari.api.Options',
-    'ephox.sugar.api.node.Node',
-    'ephox.sugar.api.search.Traverse',
-    'ephox.sugar.selection.alien.Geometry',
-    'ephox.sugar.selection.query.TextPoint',
-    'global!Math'
-  ],
-
-  function (Option, Options, Node, Traverse, Geometry, TextPoint, Math) {
-    /**
-     * Future idea:
-     *
-     * This code requires the drop point to be contained within the nodes array somewhere. If it isn't,
-     * we fall back to the extreme start or end of the node array contents.
-     * This isn't really what the user intended.
-     *
-     * In theory, we could just find the range point closest to the boxes representing the node
-     * (repartee does something similar).
-     */
-
-    var searchInChildren = function (doc, node, x, y) {
-      var r = doc.dom().createRange();
-      var nodes = Traverse.children(node);
-      return Options.findMap(nodes, function (n) {
-        // slight mutation because we assume creating ranges is expensive
-        r.selectNode(n.dom());
-        return Geometry.inRect(r.getBoundingClientRect(), x, y) ?
-                locateNode(doc, n, x, y) :
-                Option.none();
-      });
-    };
-
-    var locateNode = function (doc, node, x, y) {
-      var locator = Node.isText(node) ? TextPoint.locate : searchInChildren;
-      return locator(doc, node, x, y);
-    };
-
-    var locate = function (doc, node, x, y) {
-      var r = doc.dom().createRange();
-      r.selectNode(node.dom());
-      var rect = r.getBoundingClientRect();
-      // Clamp x,y at the bounds of the node so that the locate function has SOME chance
-      var boundedX = Math.max(rect.left, Math.min(rect.right, x));
-      var boundedY = Math.max(rect.top, Math.min(rect.bottom, y));
-
-      return locateNode(doc, node, boundedX, boundedY);
-    };
-
-    return {
-      locate: locate
-    };
-  }
-);
-
-define(
-  'ephox.sugar.impl.ClosestOrAncestor',
-
-  [
-    'ephox.katamari.api.Type',
-    'ephox.katamari.api.Option'
-  ],
-
-  function (Type, Option) {
-    return function (is, ancestor, scope, a, isRoot) {
-      return is(scope, a) ?
-              Option.some(scope) :
-              Type.isFunction(isRoot) && isRoot(scope) ?
-                  Option.none() :
-                  ancestor(scope, a, isRoot);
-    };
-  }
-);
-define(
-  'ephox.sugar.api.search.PredicateFind',
-
-  [
-    'ephox.katamari.api.Type',
-    'ephox.katamari.api.Arr',
-    'ephox.katamari.api.Fun',
-    'ephox.katamari.api.Option',
-    'ephox.sugar.api.node.Body',
-    'ephox.sugar.api.dom.Compare',
-    'ephox.sugar.api.node.Element',
-    'ephox.sugar.impl.ClosestOrAncestor'
-  ],
-
-  function (Type, Arr, Fun, Option, Body, Compare, Element, ClosestOrAncestor) {
-    var first = function (predicate) {
-      return descendant(Body.body(), predicate);
-    };
-
-    var ancestor = function (scope, predicate, isRoot) {
-      var element = scope.dom();
-      var stop = Type.isFunction(isRoot) ? isRoot : Fun.constant(false);
-
-      while (element.parentNode) {
-        element = element.parentNode;
-        var el = Element.fromDom(element);
-
-        if (predicate(el)) return Option.some(el);
-        else if (stop(el)) break;
-      }
-      return Option.none();
-    };
-
-    var closest = function (scope, predicate, isRoot) {
-      // This is required to avoid ClosestOrAncestor passing the predicate to itself
-      var is = function (scope) {
-        return predicate(scope);
-      };
-      return ClosestOrAncestor(is, ancestor, scope, predicate, isRoot);
-    };
-
-    var sibling = function (scope, predicate) {
-      var element = scope.dom();
-      if (!element.parentNode) return Option.none();
-
-      return child(Element.fromDom(element.parentNode), function (x) {
-        return !Compare.eq(scope, x) && predicate(x);
-      });
-    };
-
-    var child = function (scope, predicate) {
-      var result = Arr.find(scope.dom().childNodes,
-        Fun.compose(predicate, Element.fromDom));
-      return result.map(Element.fromDom);
-    };
-
-    var descendant = function (scope, predicate) {
-      var descend = function (element) {
-        for (var i = 0; i < element.childNodes.length; i++) {
-          if (predicate(Element.fromDom(element.childNodes[i])))
-            return Option.some(Element.fromDom(element.childNodes[i]));
-
-          var res = descend(element.childNodes[i]);
-          if (res.isSome())
-            return res;
-        }
-
-        return Option.none();
-      };
-
-      return descend(scope.dom());
-    };
-
-    return {
-      first: first,
-      ancestor: ancestor,
-      closest: closest,
-      sibling: sibling,
-      child: child,
-      descendant: descendant
-    };
-  }
-);
-
-define(
-  'ephox.sugar.api.selection.Awareness',
-
-  [
-    'ephox.katamari.api.Arr',
-    'ephox.sugar.api.node.Node',
-    'ephox.sugar.api.node.Text',
-    'ephox.sugar.api.search.Traverse'
-  ],
-
-  function (Arr, Node, Text, Traverse) {
-    var getEnd = function (element) {
-      return Node.name(element) === 'img' ? 1 : Text.getOption(element).fold(function () {
-        return Traverse.children(element).length;
-      }, function (v) {
-        return v.length;
-      });
-    };
-
-    var isEnd = function (element, offset) {
-      return getEnd(element) === offset;
-    };
-
-    var isStart = function (element, offset) {
-      return offset === 0;
-    };
-
-    var NBSP = '\u00A0';
-
-    var isTextNodeWithCursorPosition = function (el) {
-      return Text.getOption(el).filter(function (text) {
-        // For the purposes of finding cursor positions only allow text nodes with content,
-        // but trim removes &nbsp; and that's allowed
-        return text.trim().length !== 0 || text.indexOf(NBSP) > -1;
-      }).isSome();
-    };
-
-    var elementsWithCursorPosition = [ 'img', 'br' ];
-    var isCursorPosition = function (elem) {
-      var hasCursorPosition = isTextNodeWithCursorPosition(elem);
-      return hasCursorPosition || Arr.contains(elementsWithCursorPosition, Node.name(elem));
-    };
-
-    return {
-      getEnd: getEnd,
-      isEnd: isEnd,
-      isStart: isStart,
-      isCursorPosition: isCursorPosition
-    };
-  }
-);
-
-define(
-  'ephox.sugar.api.selection.CursorPosition',
-
-  [
-    'ephox.katamari.api.Option',
-    'ephox.sugar.api.search.PredicateFind',
-    'ephox.sugar.api.search.Traverse',
-    'ephox.sugar.api.selection.Awareness'
-  ],
-
-  function (Option, PredicateFind, Traverse, Awareness) {
-    var first = function (element) {
-      return PredicateFind.descendant(element, Awareness.isCursorPosition);
-    };
-
-    var last = function (element) {
-      return descendantRtl(element, Awareness.isCursorPosition);
-    };
-
-    // Note, sugar probably needs some RTL traversals.
-    var descendantRtl = function (scope, predicate) {
-      var descend = function (element) {
-        var children = Traverse.children(element);
-        for (var i = children.length - 1; i >= 0; i--) {
-          var child = children[i];
-          if (predicate(child)) return Option.some(child);
-          var res = descend(child);
-          if (res.isSome()) return res;
-        }
-
-        return Option.none();
-      };
-
-      return descend(scope);
-    };
-
-    return {
-      first: first,
-      last: last
-    };
-  }
-);
-
-define(
-  'ephox.sugar.selection.query.EdgePoint',
-
-  [
-    'ephox.katamari.api.Option',
-    'ephox.sugar.api.search.Traverse',
-    'ephox.sugar.api.selection.CursorPosition'
-  ],
-
-  function (Option, Traverse, CursorPosition) {
-    /* 
-     * When a node has children, we return either the first or the last cursor
-     * position, whichever is closer horizontally
-     * 
-     * When a node has no children, we return the start of end of the element,
-     * depending on which is closer horizontally
-     * */
-
-    // TODO: Make this RTL compatible
-    var COLLAPSE_TO_LEFT = true;
-    var COLLAPSE_TO_RIGHT = false;
-
-    var getCollapseDirection = function (rect, x) {
-      return x - rect.left < rect.right - x ? COLLAPSE_TO_LEFT : COLLAPSE_TO_RIGHT;
-    };
-
-    var createCollapsedNode = function (doc, target, collapseDirection) {
-      var r = doc.dom().createRange();
-      r.selectNode(target.dom());
-      r.collapse(collapseDirection);
-      return r;
-    };
-
-    var locateInElement = function (doc, node, x) {
-      var cursorRange = doc.dom().createRange();
-      cursorRange.selectNode(node.dom());
-      var rect = cursorRange.getBoundingClientRect();
-      var collapseDirection = getCollapseDirection(rect, x);
-
-      var f = collapseDirection === COLLAPSE_TO_LEFT ? CursorPosition.first : CursorPosition.last;
-      return f(node).map(function (target) {
-        return createCollapsedNode(doc, target, collapseDirection);
-      });
-    };
-
-    var locateInEmpty = function (doc, node, x) {
-      var rect = node.dom().getBoundingClientRect();
-      var collapseDirection = getCollapseDirection(rect, x);
-      return Option.some(createCollapsedNode(doc, node, collapseDirection));
-    };
-
-    var search = function (doc, node, x) {
-      var f = Traverse.children(node).length === 0 ? locateInEmpty : locateInElement;
-      return f(doc, node, x);
-    };
-
-    return {
-      search: search
-    };
-  }
-);
-
-define(
-  'ephox.sugar.selection.query.CaretRange',
-
-  [
-    'ephox.katamari.api.Option',
-    'ephox.sugar.api.node.Element',
-    'ephox.sugar.api.search.Traverse',
-    'ephox.sugar.api.selection.Selection',
-    'ephox.sugar.selection.query.ContainerPoint',
-    'ephox.sugar.selection.query.EdgePoint',
-    'global!document',
-    'global!Math'
-  ],
-
-  function (Option, Element, Traverse, Selection, ContainerPoint, EdgePoint, document, Math) {
-    var caretPositionFromPoint = function (doc, x, y) {
-      return Option.from(doc.dom().caretPositionFromPoint(x, y)).bind(function (pos) {
-        // It turns out that Firefox can return null for pos.offsetNode
-        if (pos.offsetNode === null) return Option.none();
-        var r = doc.dom().createRange();
-        r.setStart(pos.offsetNode, pos.offset);
-        r.collapse();
-        return Option.some(r);
-      });
-    };
-
-    var caretRangeFromPoint = function (doc, x, y) {
-      return Option.from(doc.dom().caretRangeFromPoint(x, y));
-    };
-
-    var searchTextNodes = function (doc, node, x, y) {
-      var r = doc.dom().createRange();
-      r.selectNode(node.dom());
-      var rect = r.getBoundingClientRect();
-      // Clamp x,y at the bounds of the node so that the locate function has SOME chance
-      var boundedX = Math.max(rect.left, Math.min(rect.right, x));
-      var boundedY = Math.max(rect.top, Math.min(rect.bottom, y));
-
-      return ContainerPoint.locate(doc, node, boundedX, boundedY);
-    };
-
-    var searchFromPoint = function (doc, x, y) {
-      // elementFromPoint is defined to return null when there is no element at the point
-      // This often happens when using IE10 event.y instead of event.clientY
-      return Option.from(doc.dom().elementFromPoint(x, y)).map(Element.fromDom).bind(function (elem) {
-        // used when the x,y position points to an image, or outside the bounds
-        var fallback = function () {
-          return EdgePoint.search(doc, elem, x);
-        };
-
-        return Traverse.children(elem).length === 0 ? fallback() :
-                // if we have children, search for the right text node and then get the offset out of it
-                searchTextNodes(doc, elem, x, y).orThunk(fallback);
-      });
-    };
-
-    var availableSearch = document.caretPositionFromPoint ? caretPositionFromPoint :  // defined standard
-                          document.caretRangeFromPoint ? caretRangeFromPoint :        // webkit implementation
-                          searchFromPoint;                                            // fallback
-
-
-    var fromPoint = function (win, x, y) {
-      var doc = Element.fromDom(win.document);
-      return availableSearch(doc, x, y).map(function (rng) {
-        return Selection.range(
-          Element.fromDom(rng.startContainer),
-          rng.startOffset,
-          Element.fromDom(rng.endContainer),
-          rng.endOffset
-        );
-      });
-    };
-
-    return {
-      fromPoint: fromPoint
-    };
-  }
-);
-
-define(
-  'ephox.sugar.selection.query.Within',
-
-  [
-    'ephox.katamari.api.Arr',
-    'ephox.sugar.api.node.Element',
-    'ephox.sugar.api.node.Node',
-    'ephox.sugar.api.search.SelectorFilter',
-    'ephox.sugar.api.search.Selectors',
-    'ephox.sugar.selection.core.NativeRange',
-    'ephox.sugar.selection.core.SelectionDirection'
-  ],
-
-  function (Arr, Element, Node, SelectorFilter, Selectors, NativeRange, SelectionDirection) {
-    var withinContainer = function (win, ancestor, outerRange, selector) {
-      var innerRange = NativeRange.create(win);
-      var self = Selectors.is(ancestor, selector) ? [ ancestor ] : [];
-      var elements = self.concat(SelectorFilter.descendants(ancestor, selector));
-      return Arr.filter(elements, function (elem) {
-        // Mutate the selection to save creating new ranges each time
-        NativeRange.selectNodeContentsUsing(innerRange, elem);
-        return NativeRange.isWithin(outerRange, innerRange);
-      });
-    };
-
-    var find = function (win, selection, selector) {
-      // Reverse the selection if it is RTL when doing the comparison
-      var outerRange = SelectionDirection.asLtrRange(win, selection);
-      var ancestor = Element.fromDom(outerRange.commonAncestorContainer);
-      // Note, this might need to change when we have to start looking for non elements.
-      return Node.isElement(ancestor) ? 
-        withinContainer(win, ancestor, outerRange, selector) : [];
-    };
-
-    return {
-      find: find
-    };
-  }
-);
-define(
-  'ephox.sugar.selection.quirks.Prefilter',
-
-  [
-    'ephox.katamari.api.Arr',
-    'ephox.sugar.api.node.Node',
-    'ephox.sugar.api.selection.Selection',
-    'ephox.sugar.api.selection.Situ'
-  ],
-
-  function (Arr, Node, Selection, Situ) {
-    var beforeSpecial = function (element, offset) {
-      // From memory, we don't want to use <br> directly on Firefox because it locks the keyboard input.
-      // It turns out that <img> directly on IE locks the keyboard as well.
-      // If the offset is 0, use before. If the offset is 1, use after.
-      // TBIO-3889: Firefox Situ.on <input> results in a child of the <input>; Situ.before <input> results in platform inconsistencies
-      var name = Node.name(element);
-      if ('input' === name) return Situ.after(element);
-      else if (!Arr.contains([ 'br', 'img' ], name)) return Situ.on(element, offset);
-      else return offset === 0 ? Situ.before(element) : Situ.after(element);
-    };
-
-    var preprocess = function (startSitu, finishSitu) {
-      var start = startSitu.fold(Situ.before, beforeSpecial, Situ.after);
-      var finish = finishSitu.fold(Situ.before, beforeSpecial, Situ.after);
-      return Selection.relative(start, finish);
-    };
-
-    return {
-      beforeSpecial: beforeSpecial,
-      preprocess: preprocess
-    };
-  }
-);
-
-define(
-  'ephox.sugar.api.selection.WindowSelection',
-
-  [
-    'ephox.katamari.api.Option',
-    'ephox.sugar.api.dom.DocumentPosition',
-    'ephox.sugar.api.node.Element',
-    'ephox.sugar.api.node.Fragment',
-    'ephox.sugar.api.selection.Selection',
-    'ephox.sugar.api.selection.Situ',
-    'ephox.sugar.selection.core.NativeRange',
-    'ephox.sugar.selection.core.SelectionDirection',
-    'ephox.sugar.selection.query.CaretRange',
-    'ephox.sugar.selection.query.Within',
-    'ephox.sugar.selection.quirks.Prefilter'
-  ],
-
-  function (Option, DocumentPosition, Element, Fragment, Selection, Situ, NativeRange, SelectionDirection, CaretRange, Within, Prefilter) {
-    var doSetNativeRange = function (win, rng) {
-      var selection = win.getSelection();
-      selection.removeAllRanges();
-      selection.addRange(rng);
-    };
-
-    var doSetRange = function (win, start, soffset, finish, foffset) {
-      var rng = NativeRange.exactToNative(win, start, soffset, finish, foffset);
-      doSetNativeRange(win, rng);
-    };
-
-    var findWithin = function (win, selection, selector) {
-      return Within.find(win, selection, selector);
-    };
-
-    var setExact = function (win, start, soffset, finish, foffset) {
-      setRelative(win, Situ.on(start, soffset), Situ.on(finish, foffset));
-    };
-
-    var setRelative = function (win, startSitu, finishSitu) {
-      var relative = Prefilter.preprocess(startSitu, finishSitu);
-
-      return SelectionDirection.diagnose(win, relative).match({
-        ltr: function (start, soffset, finish, foffset) {
-          doSetRange(win, start, soffset, finish, foffset);
-        },
-        rtl: function (start, soffset, finish, foffset) {
-          var selection = win.getSelection();
-          // If this selection is backwards, then we need to use extend.
-          if (selection.extend) {
-            selection.collapse(start.dom(), soffset);
-            selection.extend(finish.dom(), foffset);
-          } else {
-            doSetRange(win, finish, foffset, start, soffset);
-          }
-        }
-      });
-    };
-
-    // NOTE: We are still reading the range because it gives subtly different behaviour
-    // than using the anchorNode and focusNode. I'm not sure if this behaviour is any
-    // better or worse; it's just different.
-    var readRange = function (selection) {
-      var rng = Option.from(selection.getRangeAt(0));
-      return rng.map(function (r) {
-        return Selection.range(Element.fromDom(r.startContainer), r.startOffset, Element.fromDom(r.endContainer), r.endOffset);
-      });
-    };
-
-    var doGetExact = function (selection) {
-      var anchorNode = Element.fromDom(selection.anchorNode);
-      var focusNode = Element.fromDom(selection.focusNode);
-      return DocumentPosition.after(anchorNode, selection.anchorOffset, focusNode, selection.focusOffset) ? Option.some(
-        Selection.range(
-          Element.fromDom(selection.anchorNode),
-          selection.anchorOffset,
-          Element.fromDom(selection.focusNode),
-          selection.focusOffset
-        )
-      ) : readRange(selection);
-    };
-
-    var setToElement = function (win, element) {
-      var rng = NativeRange.selectNodeContents(win, element);
-      doSetNativeRange(win, rng);
-    };
-
-    var forElement = function (win, element) {
-      var rng = NativeRange.selectNodeContents(win, element);
-      return Selection.range(
-        Element.fromDom(rng.startContainer), rng.startOffset, 
-        Element.fromDom(rng.endContainer), rng.endOffset
-      );
-    };
-
-    var getExact = function (win) {
-      // We want to retrieve the selection as it is.
-      var selection = win.getSelection();
-      return selection.rangeCount > 0 ? doGetExact(selection) : Option.none();
-    };
-
-    // TODO: Test this.
-    var get = function (win) {
-      return getExact(win).map(function (range) {
-        return Selection.exact(range.start(), range.soffset(), range.finish(), range.foffset());
-      });
-    };
-
-    var getFirstRect = function (win, selection) {
-      var rng = SelectionDirection.asLtrRange(win, selection);
-      return NativeRange.getFirstRect(rng);
-    };
-
-    var getBounds = function (win, selection) {
-      var rng = SelectionDirection.asLtrRange(win, selection);
-      return NativeRange.getBounds(rng);
-    };
-
-    var getAtPoint = function (win, x, y) {
-      return CaretRange.fromPoint(win, x, y);
-    };
-
-    var getAsString = function (win, selection) {
-      var rng = SelectionDirection.asLtrRange(win, selection);
-      return NativeRange.toString(rng);
-    };
-
-    var clear = function (win) {
-      var selection = win.getSelection();
-      selection.removeAllRanges();
-    };
-
-    var clone = function (win, selection) {
-      var rng = SelectionDirection.asLtrRange(win, selection);
-      return NativeRange.cloneFragment(rng);
-    };
-
-    var replace = function (win, selection, elements) {
-      var rng = SelectionDirection.asLtrRange(win, selection);
-      var fragment = Fragment.fromElements(elements);
-      NativeRange.replaceWith(rng, fragment);
-    };
-
-    var deleteAt = function (win, selection) {
-      var rng = SelectionDirection.asLtrRange(win, selection);
-      NativeRange.deleteContents(rng);
-    };
-
-    return {
-      setExact: setExact,
-      getExact: getExact,
-      get: get,
-      setRelative: setRelative,
-      setToElement: setToElement,
-      clear: clear,
-
-      clone: clone,
-      replace: replace,
-      deleteAt: deleteAt,
-
-      forElement: forElement,
-
-      getFirstRect: getFirstRect,
-      getBounds: getBounds,
-      getAtPoint: getAtPoint,
-
-      findWithin: findWithin,
-      getAsString: getAsString
-    };
-  }
-);
-
-define(
-  'tinymce.core.selection.SelectionBookmark',
-
-  [
-    'ephox.katamari.api.Fun',
-    'ephox.katamari.api.Option',
-    'ephox.sugar.api.dom.Compare',
-    'ephox.sugar.api.node.Element',
-    'ephox.sugar.api.node.Node',
-    'ephox.sugar.api.node.Text',
-    'ephox.sugar.api.search.Traverse',
-    'ephox.sugar.api.selection.Selection',
-    'ephox.sugar.api.selection.WindowSelection',
-    'global!document',
-    'tinymce.core.caret.CaretFinder'
-  ],
-
-  function (Fun, Option, Compare, Element, Node, Text, Traverse, Selection, WindowSelection, document, CaretFinder) {
-    var clamp = function (offset, element) {
-      var max = Node.isText(element) ? Text.get(element).length : Traverse.children(element).length + 1;
-
-      if (offset > max) {
-        return max;
-      } else if (offset < 0) {
-        return 0;
+    var handleBlockContainer = function (editor, e) {
+      var blockCaretContainer = findBlockCaretContainer(editor);
+
+      if (!blockCaretContainer) {
+        return;
       }
 
-      return offset;
+      if (e.type === 'compositionstart') {
+        e.preventDefault();
+        e.stopPropagation();
+        showBlockCaretContainer(blockCaretContainer);
+        return;
+      }
+
+      if (CaretContainer.hasContent(blockCaretContainer)) {
+        showBlockCaretContainer(editor, blockCaretContainer);
+      }
     };
 
-    var normalizeRng = function (rng) {
-      return Selection.range(
-        rng.start(),
-        clamp(rng.soffset(), rng.start()),
-        rng.finish(),
-        clamp(rng.foffset(), rng.finish())
-      );
-    };
-
-    var isOrContains = function (root, elm) {
-      return Compare.contains(root, elm) || Compare.eq(root, elm);
-    };
-
-    var isRngInRoot = function (root) {
-      return function (rng) {
-        return isOrContains(root, rng.start()) && isOrContains(root, rng.finish());
-      };
-    };
-
-    // var dumpRng = function (rng) {
-    //   console.log('start', rng.start().dom());
-    //   console.log('soffset', rng.soffset());
-    //   console.log('finish', rng.finish().dom());
-    //   console.log('foffset', rng.foffset());
-    //   return rng;
-    // };
-
-    var getBookmark = function (root) {
-      var win = Traverse.defaultView(root);
-
-      return WindowSelection.getExact(win.dom())
-        .filter(isRngInRoot(root));
-    };
-
-    var validate = function (root, bookmark) {
-      return Option.from(bookmark)
-          .filter(isRngInRoot(root))
-          .map(normalizeRng);
-    };
-
-    var bookmarkToNativeRng = function (bookmark) {
-      var rng = document.createRange();
-      rng.setStart(bookmark.start().dom(), bookmark.soffset());
-      rng.setEnd(bookmark.finish().dom(), bookmark.foffset());
-
-      return Option.some(rng);
-    };
-
-    var store = function (editor) {
-      var newBookmark = getBookmark(Element.fromDom(editor.getBody()));
-
-      editor.bookmark = newBookmark.isSome() ? newBookmark : editor.bookmark;
-    };
-
-    var getRng = function (editor) {
-      var bookmark = editor.bookmark ? editor.bookmark : Option.none();
-
-      return bookmark
-        .bind(Fun.curry(validate, Element.fromDom(editor.getBody())))
-        .bind(bookmarkToNativeRng);
-    };
-
-    var restore = function (editor) {
-      getRng(editor).each(function (rng) {
-        editor.selection.setRng(rng);
-      });
+    var setup = function (editor) {
+      editor.on('keyup compositionstart', Fun.curry(handleBlockContainer, editor));
     };
 
     return {
-      store: store,
-      restore: restore,
-      getRng: getRng,
-      getBookmark: getBookmark,
-      validate: validate
+      setup: setup
     };
   }
 );
-
-/**
- * WindowManagerImpl.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.ui.WindowManagerImpl',
-  [
-  ],
-  function () {
-    return function () {
-      var unimplemented = function () {
-        throw new Error('Theme did not provide a WindowManager implementation.');
-      };
-
-      return {
-        open: unimplemented,
-        alert: unimplemented,
-        confirm: unimplemented,
-        close: unimplemented,
-        getParams: unimplemented,
-        setParams: unimplemented
-      };
-    };
-  }
-);
-
-/**
- * WindowManager.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-/**
- * This class handles the creation of native windows and dialogs. This class can be extended to provide for example inline dialogs.
- *
- * @class tinymce.WindowManager
- * @example
- * // Opens a new dialog with the file.htm file and the size 320x240
- * // It also adds a custom parameter this can be retrieved by using tinyMCEPopup.getWindowArg inside the dialog.
- * tinymce.activeEditor.windowManager.open({
- *    url: 'file.htm',
- *    width: 320,
- *    height: 240
- * }, {
- *    custom_param: 1
- * });
- *
- * // Displays an alert box using the active editors window manager instance
- * tinymce.activeEditor.windowManager.alert('Hello world!');
- *
- * // Displays an confirm box and an alert message will be displayed depending on what you choose in the confirm
- * });
- */
-define(
-  'tinymce.core.api.WindowManager',
-  [
-    'ephox.katamari.api.Arr',
-    'ephox.katamari.api.Option',
-    'tinymce.core.selection.SelectionBookmark',
-    'tinymce.core.ui.WindowManagerImpl'
-  ],
-  function (Arr, Option, SelectionBookmark, WindowManagerImpl) {
-    return function (editor) {
-      var windows = [];
-
-      var getImplementation = function () {
-        var theme = editor.theme;
-        return theme && theme.getWindowManagerImpl ? theme.getWindowManagerImpl() : WindowManagerImpl();
-      };
-
-      var funcBind = function (scope, f) {
-        return function () {
-          return f ? f.apply(scope, arguments) : undefined;
-        };
-      };
-
-      var fireOpenEvent = function (win) {
-        editor.fire('OpenWindow', {
-          win: win
-        });
-      };
-
-      var fireCloseEvent = function (win) {
-        editor.fire('CloseWindow', {
-          win: win
-        });
-      };
-
-      var addWindow = function (win) {
-        windows.push(win);
-        fireOpenEvent(win);
-      };
-
-      var closeWindow = function (win) {
-        Arr.findIndex(windows, function (otherWindow) {
-          return otherWindow === win;
-        }).each(function (index) {
-          // Mutate here since third party might have stored away the window array, consider breaking this api
-          windows.splice(index, 1);
-
-          fireCloseEvent(win);
-
-          // Move focus back to editor when the last window is closed
-          if (windows.length === 0) {
-            editor.focus();
-          }
-        });
-      };
-
-      var getTopWindow = function () {
-        return Option.from(windows[windows.length - 1]);
-      };
-
-      var open = function (args, params) {
-        editor.editorManager.setActive(editor);
-        SelectionBookmark.store(editor);
-
-        var win = getImplementation().open(args, params, closeWindow);
-        addWindow(win);
-        return win;
-      };
-
-      var alert = function (message, callback, scope) {
-        var win = getImplementation().alert(message, funcBind(scope ? scope : this, callback), closeWindow);
-        addWindow(win);
-      };
-
-      var confirm = function (message, callback, scope) {
-        var win = getImplementation().confirm(message, funcBind(scope ? scope : this, callback), closeWindow);
-        addWindow(win);
-      };
-
-      var close = function () {
-        getTopWindow().each(function (win) {
-          getImplementation().close(win);
-          closeWindow(win);
-        });
-      };
-
-      var getParams = function () {
-        return getTopWindow().map(getImplementation().getParams).getOr(null);
-      };
-
-      var setParams = function (params) {
-        getTopWindow().each(function (win) {
-          getImplementation().setParams(win, params);
-        });
-      };
-
-      var getWindows = function () {
-        return windows;
-      };
-
-      editor.on('remove', function () {
-        Arr.each(windows.slice(0), function (win) {
-          getImplementation().close(win);
-        });
-      });
-
-      return {
-        // Used by the legacy3x compat layer and possible third party
-        // TODO: Deprecate this, and possible switch to a immutable window array for getWindows
-        windows: windows,
-
-        /**
-         * Opens a new window.
-         *
-         * @method open
-         * @param {Object} args Optional name/value settings collection contains things like width/height/url etc.
-         * @param {Object} params Options like title, file, width, height etc.
-         * @option {String} title Window title.
-         * @option {String} file URL of the file to open in the window.
-         * @option {Number} width Width in pixels.
-         * @option {Number} height Height in pixels.
-         * @option {Boolean} autoScroll Specifies whether the popup window can have scrollbars if required (i.e. content
-         * larger than the popup size specified).
-         */
-        open: open,
-
-        /**
-         * Creates a alert dialog. Please don't use the blocking behavior of this
-         * native version use the callback method instead then it can be extended.
-         *
-         * @method alert
-         * @param {String} message Text to display in the new alert dialog.
-         * @param {function} callback Callback function to be executed after the user has selected ok.
-         * @param {Object} scope Optional scope to execute the callback in.
-         * @example
-         * // Displays an alert box using the active editors window manager instance
-         * tinymce.activeEditor.windowManager.alert('Hello world!');
-         */
-        alert: alert,
-
-        /**
-         * Creates a confirm dialog. Please don't use the blocking behavior of this
-         * native version use the callback method instead then it can be extended.
-         *
-         * @method confirm
-         * @param {String} message Text to display in the new confirm dialog.
-         * @param {function} callback Callback function to be executed after the user has selected ok or cancel.
-         * @param {Object} scope Optional scope to execute the callback in.
-         * @example
-         * // Displays an confirm box and an alert message will be displayed depending on what you choose in the confirm
-         * tinymce.activeEditor.windowManager.confirm("Do you want to do something", function(s) {
-         *    if (s)
-         *       tinymce.activeEditor.windowManager.alert("Ok");
-         *    else
-         *       tinymce.activeEditor.windowManager.alert("Cancel");
-         * });
-         */
-        confirm: confirm,
-
-        /**
-         * Closes the top most window.
-         *
-         * @method close
-         */
-        close: close,
-
-        /**
-         * Returns the params of the last window open call. This can be used in iframe based
-         * dialog to get params passed from the tinymce plugin.
-         *
-         * @example
-         * var dialogArguments = top.tinymce.activeEditor.windowManager.getParams();
-         *
-         * @method getParams
-         * @return {Object} Name/value object with parameters passed from windowManager.open call.
-         */
-        getParams: getParams,
-
-        /**
-         * Sets the params of the last opened window.
-         *
-         * @method setParams
-         * @param {Object} params Params object to set for the last opened window.
-         */
-        setParams: setParams,
-
-        /**
-         * Returns the currently opened window objects.
-         *
-         * @method getWindows
-         * @return {Array} Array of the currently opened windows.
-         */
-        getWindows: getWindows
-      };
-    };
-  }
-);
-
 /**
  * RangePoint.js
  *
@@ -22297,7 +27394,7 @@ define(
     var isContentEditableFalse = NodeType.isContentEditableFalse;
     var isContentEditableTrue = NodeType.isContentEditableTrue;
 
-    function getContentEditableRoot(root, node) {
+    var getContentEditableRoot = function (root, node) {
       while (node && node != root) {
         if (isContentEditableTrue(node) || isContentEditableFalse(node)) {
           return node;
@@ -22307,7 +27404,7 @@ define(
       }
 
       return null;
-    }
+    };
 
     var isImage = function (elm) {
       return elm && elm.nodeName === 'IMG';
@@ -22352,7 +27449,7 @@ define(
         rootClass + ' div.mce-resizehandle {' +
         'position: absolute;' +
         'border: 1px solid black;' +
-        'box-sizing: box-sizing;' +
+        'box-sizing: content-box;' +
         'background: #FFF;' +
         'width: 7px;' +
         'height: 7px;' +
@@ -22390,7 +27487,7 @@ define(
         '}'
       );
 
-      function isResizable(elm) {
+      var isResizable = function (elm) {
         var selector = editor.settings.object_resizing;
 
         if (selector === false || Env.iOS) {
@@ -22410,9 +27507,9 @@ define(
         }
 
         return Selectors.is(Element.fromDom(elm), selector);
-      }
+      };
 
-      function resizeGhostElement(e) {
+      var resizeGhostElement = function (e) {
         var deltaX, deltaY, proportional;
         var resizeHelperX, resizeHelperY;
 
@@ -22491,12 +27588,12 @@ define(
           editor.fire('ObjectResizeStart', { target: selectedElm, width: startW, height: startH });
           resizeStarted = true;
         }
-      }
+      };
 
-      function endGhostResize() {
+      var endGhostResize = function () {
         resizeStarted = false;
 
-        function setSizeProp(name, value) {
+        var setSizeProp = function (name, value) {
           if (value) {
             // Resize by using style or attribute
             if (selectedElm.style[name] || !editor.schema.isValid(selectedElm.nodeName.toLowerCase(), name)) {
@@ -22505,7 +27602,7 @@ define(
               dom.setAttrib(selectedElm, name, value);
             }
           }
-        }
+        };
 
         // Set width/height properties
         setSizeProp('width', width);
@@ -22530,9 +27627,9 @@ define(
         editor.fire('ObjectResized', { target: selectedElm, width: width, height: height });
         dom.setAttrib(selectedElm, 'style', dom.getAttrib(selectedElm, 'style'));
         editor.nodeChanged();
-      }
+      };
 
-      function showResizeRect(targetElm, mouseDownHandleName, mouseDownEvent) {
+      var showResizeRect = function (targetElm, mouseDownHandleName, mouseDownEvent) {
         var position, targetWidth, targetHeight, e, rect;
 
         hideResizeRect();
@@ -22560,7 +27657,7 @@ define(
           each(resizeHandles, function (handle, name) {
             var handleElm;
 
-            function startDrag(e) {
+            var startDrag = function (e) {
               startX = e.screenX;
               startY = e.screenY;
               startW = selectedElm.clientWidth;
@@ -22602,7 +27699,7 @@ define(
                 'class': 'mce-resize-helper',
                 'data-mce-bogus': 'all'
               }, startW + ' &times; ' + startH);
-            }
+            };
 
             if (mouseDownHandleName) {
               // Drag started by IE native resizestart
@@ -22652,9 +27749,9 @@ define(
         }
 
         selectedElm.setAttribute('data-mce-selected', '1');
-      }
+      };
 
-      function hideResizeRect() {
+      var hideResizeRect = function () {
         var name, handleElm;
 
         unbindResizeHandleEvents();
@@ -22670,12 +27767,12 @@ define(
             dom.remove(handleElm);
           }
         }
-      }
+      };
 
-      function updateResizeRect(e) {
+      var updateResizeRect = function (e) {
         var startElm, controlElm;
 
-        function isChildOrEqual(node, parent) {
+        var isChildOrEqual = function (node, parent) {
           if (node) {
             do {
               if (node === parent) {
@@ -22683,7 +27780,7 @@ define(
               }
             } while ((node = node.parentNode));
           }
-        }
+        };
 
         // Ignore all events while resizing or if the editor instance was removed
         if (resizeStarted || editor.removed) {
@@ -22711,21 +27808,21 @@ define(
         }
 
         hideResizeRect();
-      }
+      };
 
-      function attachEvent(elm, name, func) {
+      var attachEvent = function (elm, name, func) {
         if (elm && elm.attachEvent) {
           elm.attachEvent('on' + name, func);
         }
-      }
+      };
 
-      function detachEvent(elm, name, func) {
+      var detachEvent = function (elm, name, func) {
         if (elm && elm.detachEvent) {
           elm.detachEvent('on' + name, func);
         }
-      }
+      };
 
-      function resizeNativeStart(e) {
+      var resizeNativeStart = function (e) {
         var target = e.srcElement, pos, name, corner, cornerX, cornerY, relativeX, relativeY;
 
         pos = target.getBoundingClientRect();
@@ -22754,21 +27851,21 @@ define(
         });
         editor.getDoc().selection.empty();
         showResizeRect(target, name, lastMouseDownEvent);
-      }
+      };
 
-      function preventDefault(e) {
+      var preventDefault = function (e) {
         if (e.preventDefault) {
           e.preventDefault();
         } else {
           e.returnValue = false; // IE
         }
-      }
+      };
 
-      function isWithinContentEditableFalse(elm) {
+      var isWithinContentEditableFalse = function (elm) {
         return isContentEditableFalse(getContentEditableRoot(editor.getBody(), elm));
-      }
+      };
 
-      function nativeControlSelect(e) {
+      var nativeControlSelect = function (e) {
         var target = e.srcElement;
 
         if (isWithinContentEditableFalse(target)) {
@@ -22791,13 +27888,13 @@ define(
             attachEvent(target, 'resizestart', resizeNativeStart);
           }
         }
-      }
+      };
 
-      function detachResizeStartListener() {
+      var detachResizeStartListener = function () {
         detachEvent(selectedElm, 'resizestart', resizeNativeStart);
-      }
+      };
 
-      function unbindResizeHandleEvents() {
+      var unbindResizeHandleEvents = function () {
         for (var name in resizeHandles) {
           var handle = resizeHandles[name];
 
@@ -22806,18 +27903,18 @@ define(
             delete handle.elm;
           }
         }
-      }
+      };
 
-      function disableGeckoResize() {
+      var disableGeckoResize = function () {
         try {
           // Disable object resizing on Gecko
           editor.getDoc().execCommand('enableObjectResizing', false, false);
         } catch (ex) {
           // Ignore
         }
-      }
+      };
 
-      function controlSelect(elm) {
+      var controlSelect = function (elm) {
         var ctrlRng;
 
         if (!isIE) {
@@ -22833,7 +27930,7 @@ define(
         } catch (ex) {
           // Ignore since the element can't be control selected for example a P tag
         }
-      }
+      };
 
       editor.on('init', function () {
         if (isIE) {
@@ -22873,11 +27970,11 @@ define(
             });
 
             editor.dom.bind(rootElement, 'mscontrolselect', function (e) {
-              function delayedSelect(node) {
+              var delayedSelect = function (node) {
                 Delay.setEditorTimeout(editor, function () {
                   editor.selection.select(node);
                 });
-              }
+              };
 
               if (isWithinContentEditableFalse(e.target)) {
                 e.preventDefault();
@@ -22923,14 +28020,14 @@ define(
 
       editor.on('remove', unbindResizeHandleEvents);
 
-      function destroy() {
+      var destroy = function () {
         selectedElm = selectedElmGhost = null;
 
         if (isIE) {
           detachResizeStartListener();
           detachEvent(rootElement, 'controlselect', nativeControlSelect);
         }
-      }
+      };
 
       return {
         isResizable: isResizable,
@@ -22940,265 +28037,6 @@ define(
         controlSelect: controlSelect,
         destroy: destroy
       };
-    };
-  }
-);
-
-define(
-  'ephox.sugar.api.search.PredicateExists',
-
-  [
-    'ephox.sugar.api.search.PredicateFind'
-  ],
-
-  function (PredicateFind) {
-    var any = function (predicate) {
-      return PredicateFind.first(predicate).isSome();
-    };
-
-    var ancestor = function (scope, predicate, isRoot) {
-      return PredicateFind.ancestor(scope, predicate, isRoot).isSome();
-    };
-
-    var closest = function (scope, predicate, isRoot) {
-      return PredicateFind.closest(scope, predicate, isRoot).isSome();
-    };
-
-    var sibling = function (scope, predicate) {
-      return PredicateFind.sibling(scope, predicate).isSome();
-    };
-
-    var child = function (scope, predicate) {
-      return PredicateFind.child(scope, predicate).isSome();
-    };
-
-    var descendant = function (scope, predicate) {
-      return PredicateFind.descendant(scope, predicate).isSome();
-    };
-
-    return {
-      any: any,
-      ancestor: ancestor,
-      closest: closest,
-      sibling: sibling,
-      child: child,
-      descendant: descendant
-    };
-  }
-);
-
-define(
-  'ephox.sugar.api.dom.Focus',
-
-  [
-    'ephox.katamari.api.Fun',
-    'ephox.katamari.api.Option',
-    'ephox.sugar.api.dom.Compare',
-    'ephox.sugar.api.node.Element',
-    'ephox.sugar.api.search.PredicateExists',
-    'ephox.sugar.api.search.Traverse',
-    'global!document'
-  ],
-
-  function (Fun, Option, Compare, Element, PredicateExists, Traverse, document) {
-    var focus = function (element) {
-      element.dom().focus();
-    };
-
-    var blur = function (element) {
-      element.dom().blur();
-    };
-
-    var hasFocus = function (element) {
-      var doc = Traverse.owner(element).dom();
-      return element.dom() === doc.activeElement;
-    };
-
-    var active = function (_doc) {
-      var doc = _doc !== undefined ? _doc.dom() : document;
-      return Option.from(doc.activeElement).map(Element.fromDom);
-    };
-
-    var focusInside = function (element) {
-      // Only call focus if the focus is not already inside it.
-      var doc = Traverse.owner(element);
-      var inside = active(doc).filter(function (a) {
-        return PredicateExists.closest(a, Fun.curry(Compare.eq, element));
-      });
-
-      inside.fold(function () {
-        focus(element);
-      }, Fun.noop);
-    };
-
-    /**
-     * Return the descendant element that has focus.
-     * Use instead of SelectorFind.descendant(container, ':focus')
-     *  because the :focus selector relies on keyboard focus.
-     */
-    var search = function (element) {
-      return active(Traverse.owner(element)).filter(function (e) {
-        return element.dom().contains(e.dom());
-      });
-    };
-
-    return {
-      hasFocus: hasFocus,
-      focus: focus,
-      blur: blur,
-      active: active,
-      search: search,
-      focusInside: focusInside
-    };
-  }
-);
-/**
- * EditorFocus.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.EditorFocus',
-  [
-    'ephox.katamari.api.Option',
-    'ephox.sugar.api.dom.Compare',
-    'ephox.sugar.api.dom.Focus',
-    'ephox.sugar.api.node.Element',
-    'tinymce.core.Env',
-    'tinymce.core.caret.CaretFinder',
-    'tinymce.core.dom.ElementType',
-    'tinymce.core.dom.RangeUtils',
-    'tinymce.core.selection.SelectionBookmark'
-  ],
-  function (Option, Compare, Focus, Element, Env, CaretFinder, ElementType, RangeUtils, SelectionBookmark) {
-    var getContentEditableHost = function (editor, node) {
-      return editor.dom.getParent(node, function (node) {
-        return editor.dom.getContentEditable(node) === "true";
-      });
-    };
-
-    var getCollapsedNode = function (rng) {
-      return rng.collapsed ? Option.from(RangeUtils.getNode(rng.startContainer, rng.startOffset)).map(Element.fromDom) : Option.none();
-    };
-
-    var getFocusInElement = function (root, rng) {
-      return getCollapsedNode(rng).bind(function (node) {
-        if (ElementType.isTableSection(node)) {
-          return Option.some(node);
-        } else if (Compare.contains(root, node) === false) {
-          return Option.some(root);
-        } else {
-          return Option.none();
-        }
-      });
-    };
-
-    var normalizeSelection = function (editor, rng) {
-      getFocusInElement(Element.fromDom(editor.getBody()), rng).bind(function (elm) {
-        return CaretFinder.firstPositionIn(elm.dom());
-      }).fold(
-        function () {
-          editor.selection.normalize();
-        },
-        function (caretPos) {
-          editor.selection.setRng(caretPos.toRange());
-        }
-      );
-    };
-
-    var focusBody = function (body) {
-      if (body.setActive) {
-        // IE 11 sometimes throws "Invalid function" then fallback to focus
-        // setActive is better since it doesn't scroll to the element being focused
-        try {
-          body.setActive();
-        } catch (ex) {
-          body.focus();
-        }
-      } else {
-        body.focus();
-      }
-    };
-
-    var hasElementFocus = function (elm) {
-      return Focus.hasFocus(elm) || Focus.search(elm).isSome();
-    };
-
-    var hasIframeFocus = function (editor) {
-      return editor.iframeElement && Focus.hasFocus(Element.fromDom(editor.iframeElement));
-    };
-
-    var hasInlineFocus = function (editor) {
-      var rawBody = editor.getBody();
-      return rawBody && hasElementFocus(Element.fromDom(rawBody));
-    };
-
-    var hasFocus = function (editor) {
-      return editor.inline ? hasInlineFocus(editor) : hasIframeFocus(editor);
-    };
-
-    var focusEditor = function (editor) {
-      var selection = editor.selection, contentEditable = editor.settings.content_editable;
-      var body = editor.getBody(), contentEditableHost, rng = selection.getRng();
-
-      editor.quirks.refreshContentEditable();
-
-      // Move focus to contentEditable=true child if needed
-      contentEditableHost = getContentEditableHost(editor, selection.getNode());
-      if (editor.$.contains(body, contentEditableHost)) {
-        focusBody(contentEditableHost);
-        normalizeSelection(editor, rng);
-        activateEditor(editor);
-        return;
-      }
-
-      if (editor.bookmark !== undefined && hasFocus(editor) === false) {
-        SelectionBookmark.getRng(editor).each(function (bookmarkRng) {
-          editor.selection.setRng(bookmarkRng);
-          rng = bookmarkRng;
-        });
-      }
-
-      // Focus the window iframe
-      if (!contentEditable) {
-        // WebKit needs this call to fire focusin event properly see #5948
-        // But Opera pre Blink engine will produce an empty selection so skip Opera
-        if (!Env.opera) {
-          focusBody(body);
-        }
-
-        editor.getWin().focus();
-      }
-
-      // Focus the body as well since it's contentEditable
-      if (Env.gecko || contentEditable) {
-        focusBody(body);
-        normalizeSelection(editor, rng);
-      }
-
-      activateEditor(editor);
-    };
-
-    var activateEditor = function (editor) {
-      editor.editorManager.setActive(editor);
-    };
-
-    var focus = function (editor, skipFocus) {
-      if (editor.removed) {
-        return;
-      }
-
-      skipFocus ? activateEditor(editor) : focusEditor(editor);
-    };
-
-    return {
-      focus: focus,
-      hasFocus: hasFocus
     };
   }
 );
@@ -23278,6 +28116,117 @@ define(
 
     return {
       scrollIntoView: scrollIntoView
+    };
+  }
+);
+
+/**
+ * CaretRangeFromPoint.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.selection.CaretRangeFromPoint',
+  [
+    'tinymce.core.dom.NodeType',
+    'tinymce.core.util.Tools'
+  ],
+  function (NodeType, Tools) {
+    var hasCeProperty = function (node) {
+      return NodeType.isContentEditableTrue(node) || NodeType.isContentEditableFalse(node);
+    };
+
+    var findParent = function (node, rootNode, predicate) {
+      while (node && node !== rootNode) {
+        if (predicate(node)) {
+          return node;
+        }
+
+        node = node.parentNode;
+      }
+
+      return null;
+    };
+
+    /**
+     * Finds the closest selection rect tries to get the range from that.
+     */
+    var findClosestIeRange = function (clientX, clientY, doc) {
+      var element, rng, rects;
+
+      element = doc.elementFromPoint(clientX, clientY);
+      rng = doc.body.createTextRange();
+
+      if (!element || element.tagName === 'HTML') {
+        element = doc.body;
+      }
+
+      rng.moveToElementText(element);
+      rects = Tools.toArray(rng.getClientRects());
+
+      rects = rects.sort(function (a, b) {
+        a = Math.abs(Math.max(a.top - clientY, a.bottom - clientY));
+        b = Math.abs(Math.max(b.top - clientY, b.bottom - clientY));
+
+        return a - b;
+      });
+
+      if (rects.length > 0) {
+        clientY = (rects[0].bottom + rects[0].top) / 2;
+
+        try {
+          rng.moveToPoint(clientX, clientY);
+          rng.collapse(true);
+
+          return rng;
+        } catch (ex) {
+          // At least we tried
+        }
+      }
+
+      return null;
+    };
+
+    var moveOutOfContentEditableFalse = function (rng, rootNode) {
+      var parentElement = rng && rng.parentElement ? rng.parentElement() : null;
+      return NodeType.isContentEditableFalse(findParent(parentElement, rootNode, hasCeProperty)) ? null : rng;
+    };
+
+    var fromPoint = function (clientX, clientY, doc) {
+      var rng, point;
+
+      if (doc.caretPositionFromPoint) {
+        point = doc.caretPositionFromPoint(clientX, clientY);
+        if (point) {
+          rng = doc.createRange();
+          rng.setStart(point.offsetNode, point.offset);
+          rng.collapse(true);
+        }
+      } else if (doc.caretRangeFromPoint) {
+        rng = doc.caretRangeFromPoint(clientX, clientY);
+      } else if (doc.body.createTextRange) {
+        rng = doc.body.createTextRange();
+
+        try {
+          rng.moveToPoint(clientX, clientY);
+          rng.collapse(true);
+        } catch (ex) {
+          rng = findClosestIeRange(clientX, clientY, doc);
+        }
+
+        return moveOutOfContentEditableFalse(rng, doc.body);
+      }
+
+      return rng;
+    };
+
+    return {
+      fromPoint: fromPoint
     };
   }
 );
@@ -23388,103 +28337,26 @@ define(
 );
 
 define(
-  'ephox.sugar.api.search.SelectorFind',
+  'ephox.sugar.api.node.Fragment',
 
   [
-    'ephox.sugar.api.search.PredicateFind',
-    'ephox.sugar.api.search.Selectors',
-    'ephox.sugar.impl.ClosestOrAncestor'
+    'ephox.katamari.api.Arr',
+    'ephox.sugar.api.node.Element',
+    'global!document'
   ],
 
-  function (PredicateFind, Selectors, ClosestOrAncestor) {
-    // TODO: An internal SelectorFilter module that doesn't Element.fromDom() everything
-
-    var first = function (selector) {
-      return Selectors.one(selector);
-    };
-
-    var ancestor = function (scope, selector, isRoot) {
-      return PredicateFind.ancestor(scope, function (e) {
-        return Selectors.is(e, selector);
-      }, isRoot);
-    };
-
-    var sibling = function (scope, selector) {
-      return PredicateFind.sibling(scope, function (e) {
-        return Selectors.is(e, selector);
+  function (Arr, Element, document) {
+    var fromElements = function (elements, scope) {
+      var doc = scope || document;
+      var fragment = doc.createDocumentFragment();
+      Arr.each(elements, function (element) {
+        fragment.appendChild(element.dom());
       });
-    };
-
-    var child = function (scope, selector) {
-      return PredicateFind.child(scope, function (e) {
-        return Selectors.is(e, selector);
-      });
-    };
-
-    var descendant = function (scope, selector) {
-      return Selectors.one(selector, scope);
-    };
-
-    // Returns Some(closest ancestor element (sugared)) matching 'selector' up to isRoot, or None() otherwise
-    var closest = function (scope, selector, isRoot) {
-      return ClosestOrAncestor(Selectors.is, ancestor, scope, selector, isRoot);
+      return Element.fromDom(fragment);
     };
 
     return {
-      first: first,
-      ancestor: ancestor,
-      sibling: sibling,
-      child: child,
-      descendant: descendant,
-      closest: closest
-    };
-  }
-);
-
-/**
- * Parents.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.dom.Parents',
-  [
-    'ephox.katamari.api.Fun',
-    'ephox.sugar.api.dom.Compare',
-    'ephox.sugar.api.search.Traverse'
-  ],
-  function (Fun, Compare, Traverse) {
-    var dropLast = function (xs) {
-      return xs.slice(0, -1);
-    };
-
-    var parentsUntil = function (startNode, rootElm, predicate) {
-      if (Compare.contains(rootElm, startNode)) {
-        return dropLast(Traverse.parents(startNode, function (elm) {
-          return predicate(elm) || Compare.eq(elm, rootElm);
-        }));
-      } else {
-        return [];
-      }
-    };
-
-    var parents = function (startNode, rootElm) {
-      return parentsUntil(startNode, rootElm, Fun.constant(false));
-    };
-
-    var parentsAndSelf = function (startNode, rootElm) {
-      return [startNode].concat(parents(startNode, rootElm));
-    };
-
-    return {
-      parentsUntil: parentsUntil,
-      parents: parents,
-      parentsAndSelf: parentsAndSelf
+      fromElements: fromElements
     };
   }
 );
@@ -23731,101 +28603,6 @@ define(
       fromDom: fromDom,
       toDom: toDom,
       subsection: subsection
-    };
-  }
-);
-
-/**
- * MultiRange.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.selection.MultiRange',
-  [
-    'ephox.katamari.api.Arr',
-    'ephox.sugar.api.node.Element',
-    'tinymce.core.dom.RangeUtils'
-  ],
-  function (Arr, Element, RangeUtils) {
-    var getRanges = function (selection) {
-      var ranges = [];
-
-      for (var i = 0; i < selection.rangeCount; i++) {
-        ranges.push(selection.getRangeAt(i));
-      }
-
-      return ranges;
-    };
-
-    var getSelectedNodes = function (ranges) {
-      return Arr.bind(ranges, function (range) {
-        var node = RangeUtils.getSelectedNode(range);
-        return node ? [ Element.fromDom(node) ] : [];
-      });
-    };
-
-    var hasMultipleRanges = function (selection) {
-      return getRanges(selection).length > 1;
-    };
-
-    return {
-      getRanges: getRanges,
-      getSelectedNodes: getSelectedNodes,
-      hasMultipleRanges: hasMultipleRanges
-    };
-  }
-);
-
-/**
- * TableCellSelection.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.selection.TableCellSelection',
-  [
-    'ephox.katamari.api.Arr',
-    'ephox.sugar.api.node.Element',
-    'ephox.sugar.api.search.SelectorFilter',
-    'tinymce.core.dom.ElementType',
-    'tinymce.core.selection.MultiRange'
-  ],
-  function (Arr, Element, SelectorFilter, ElementType, MultiRange) {
-    var getCellsFromRanges = function (ranges) {
-      return Arr.filter(MultiRange.getSelectedNodes(ranges), ElementType.isTableCell);
-    };
-
-    var getCellsFromElement = function (elm) {
-      var selectedCells = SelectorFilter.descendants(elm, 'td[data-mce-selected],th[data-mce-selected]');
-      return selectedCells;
-    };
-
-    var getCellsFromElementOrRanges = function (ranges, element) {
-      var selectedCells = getCellsFromElement(element);
-      var rangeCells = getCellsFromRanges(ranges);
-      return selectedCells.length > 0 ? selectedCells : rangeCells;
-    };
-
-    var getCellsFromEditor = function (editor) {
-      return getCellsFromElementOrRanges(MultiRange.getRanges(editor.selection.getSel()), Element.fromDom(editor.getBody()));
-    };
-
-    return {
-      getCellsFromRanges: getCellsFromRanges,
-      getCellsFromElement: getCellsFromElement,
-      getCellsFromElementOrRanges: getCellsFromElementOrRanges,
-      getCellsFromEditor: getCellsFromEditor
     };
   }
 );
@@ -24165,24 +28942,25 @@ define(
   [
     'ephox.sugar.api.dom.Compare',
     'ephox.sugar.api.node.Element',
-    'tinymce.core.EditorFocus',
     'tinymce.core.Env',
     'tinymce.core.caret.CaretPosition',
     'tinymce.core.dom.BookmarkManager',
     'tinymce.core.dom.ControlSelection',
-    'tinymce.core.dom.RangeUtils',
     'tinymce.core.dom.ScrollIntoView',
     'tinymce.core.dom.TreeWalker',
+    'tinymce.core.focus.EditorFocus',
+    'tinymce.core.selection.CaretRangeFromPoint',
     'tinymce.core.selection.EventProcessRanges',
     'tinymce.core.selection.GetSelectionContent',
     'tinymce.core.selection.MultiRange',
+    'tinymce.core.selection.NormalizeRange',
     'tinymce.core.selection.SelectionBookmark',
     'tinymce.core.selection.SetSelectionContent',
     'tinymce.core.util.Tools'
   ],
   function (
-    Compare, Element, EditorFocus, Env, CaretPosition, BookmarkManager, ControlSelection, RangeUtils, ScrollIntoView, TreeWalker, EventProcessRanges, GetSelectionContent,
-    MultiRange, SelectionBookmark, SetSelectionContent, Tools
+    Compare, Element, Env, CaretPosition, BookmarkManager, ControlSelection, ScrollIntoView, TreeWalker, EditorFocus, CaretRangeFromPoint, EventProcessRanges,
+    GetSelectionContent, MultiRange, NormalizeRange, SelectionBookmark, SetSelectionContent, Tools
   ) {
     var each = Tools.each, trim = Tools.trim;
 
@@ -24210,7 +28988,7 @@ define(
      * @param {tinymce.Editor} editor Editor instance of the selection.
      * @param {tinymce.dom.Serializer} serializer DOM serialization class to use for getContent.
      */
-    function Selection(dom, win, serializer, editor) {
+    var Selection = function (dom, win, serializer, editor) {
       var self = this;
 
       self.dom = dom;
@@ -24219,7 +28997,7 @@ define(
       self.editor = editor;
       self.bookmarkManager = new BookmarkManager(self);
       self.controlSelection = new ControlSelection(self, editor);
-    }
+    };
 
     Selection.prototype = {
       /**
@@ -24463,7 +29241,7 @@ define(
       getRng: function (w3c) {
         var self = this, selection, rng, elm, doc;
 
-        function tryCompareBoundaryPoints(how, sourceRange, destinationRange) {
+        var tryCompareBoundaryPoints = function (how, sourceRange, destinationRange) {
           try {
             return sourceRange.compareBoundaryPoints(how, destinationRange);
           } catch (ex) {
@@ -24474,7 +29252,7 @@ define(
             // For performance reasons just return -1
             return -1;
           }
-        }
+        };
 
         if (!self.win) {
           return null;
@@ -24506,7 +29284,7 @@ define(
           // IE throws unspecified error here if TinyMCE is placed in a frame/iframe
         }
 
-        rng = EventProcessRanges.processRanges(self.editor, [ rng ])[0];
+        rng = EventProcessRanges.processRanges(self.editor, [rng])[0];
 
         // No range found then create an empty one
         // This can occur when the editor is placed in a hidden container element on Gecko
@@ -24648,7 +29426,7 @@ define(
         var self = this, rng = self.getRng(), elm;
         var startContainer, endContainer, startOffset, endOffset, root = self.dom.getRoot();
 
-        function skipEmptyTextNodes(node, forwards) {
+        var skipEmptyTextNodes = function (node, forwards) {
           var orig = node;
 
           while (node && node.nodeType === 3 && node.length === 0) {
@@ -24656,7 +29434,7 @@ define(
           }
 
           return node || orig;
-        }
+        };
 
         // Range maybe lost after the editor is made visible again
         if (!rng) {
@@ -24762,8 +29540,14 @@ define(
       normalize: function () {
         var self = this, rng = self.getRng();
 
-        if (new RangeUtils(self.dom).normalize(rng) && !MultiRange.hasMultipleRanges(self.getSel())) {
-          self.setRng(rng, self.isForward());
+        if (!MultiRange.hasMultipleRanges(self.getSel())) {
+          var normRng = NormalizeRange.normalize(self.dom, rng);
+
+          normRng.each(function (normRng) {
+            self.setRng(normRng, self.isForward());
+          });
+
+          return normRng.getOr(rng);
         }
 
         return rng;
@@ -24849,7 +29633,7 @@ define(
       },
 
       placeCaretAt: function (clientX, clientY) {
-        this.setRng(RangeUtils.getCaretRangeFromPoint(clientX, clientY, this.editor.getDoc()));
+        this.setRng(CaretRangeFromPoint.fromPoint(clientX, clientY, this.editor.getDoc()));
       },
 
       _moveEndPoint: function (rng, node, start) {
@@ -24956,7 +29740,7 @@ define(
     };
 
     // Walks the tree left/right
-    function walk(node, rootNode, prev) {
+    var walk = function (node, rootNode, prev) {
       var sibling, parent, startName = prev ? 'lastChild' : 'firstChild', siblingName = prev ? 'prev' : 'next';
 
       // Walk into nodes if it has a start
@@ -24981,7 +29765,7 @@ define(
           }
         }
       }
-    }
+    };
 
     /**
      * Constructs a new Node instance.
@@ -24991,7 +29775,7 @@ define(
      * @param {String} name Name of the node type.
      * @param {Number} type Numeric type representing the node.
      */
-    function Node(name, type) {
+    var Node = function (name, type) {
       this.name = name;
       this.type = type;
 
@@ -24999,7 +29783,7 @@ define(
         this.attributes = [];
         this.attributes.map = {};
       }
-    }
+    };
 
     Node.prototype = {
       /**
@@ -25517,7 +30301,7 @@ define(
      * @param {Number} startIndex Indext to start searching at should be after the start tag.
      * @return {Number} Index of the end tag.
      */
-    function findEndTag(schema, html, startIndex) {
+    var findEndTag = function (schema, html, startIndex) {
       var count = 1, index, matches, tokenRegExp, shortEndedElements;
 
       shortEndedElements = schema.getShortEndedElements();
@@ -25543,7 +30327,7 @@ define(
       }
 
       return index;
-    }
+    };
 
     /**
      * Constructs a new SaxParser instance.
@@ -25553,10 +30337,10 @@ define(
      * @param {Object} settings Name/value collection of settings. comment, cdata, text, start and end are callbacks.
      * @param {tinymce.html.Schema} schema HTML Schema class to use when parsing.
      */
-    function SaxParser(settings, schema) {
+    var SaxParser = function (settings, schema) {
       var self = this;
 
-      function noop() { }
+      var noop = function () { };
 
       settings = settings || {};
       self.schema = schema = schema || new Schema();
@@ -25589,7 +30373,7 @@ define(
         var decode = Entities.decode, fixSelfClosing, filteredUrlAttrs = Tools.makeMap('src,href,data,background,formaction,poster');
         var scriptUriRegExp = /((java|vb)script|mhtml):/i, dataUriRegExp = /^data:/i;
 
-        function processEndTag(name) {
+        var processEndTag = function (name) {
           var pos, i;
 
           // Find position of parent of the same type
@@ -25614,9 +30398,9 @@ define(
             // Remove the open elements from the stack
             stack.length = pos;
           }
-        }
+        };
 
-        function parseAttribute(match, name, value, val2, val3) {
+        var parseAttribute = function (match, name, value, val2, val3) {
           var attrRule, i, trimRegExp = /[\s\u0000-\u001F]+/g;
 
           name = name.toLowerCase();
@@ -25685,7 +30469,7 @@ define(
             name: name,
             value: value
           });
-        }
+        };
 
         // Precompile RegExps and map objects
         tokenRegExp = new RegExp('<(?:' +
@@ -25929,7 +30713,7 @@ define(
           }
         }
       };
-    }
+    };
 
     SaxParser.findEndTag = findEndTag;
 
@@ -25969,16 +30753,22 @@ define(
   function (Node, Schema, SaxParser, Tools) {
     var makeMap = Tools.makeMap, each = Tools.each, explode = Tools.explode, extend = Tools.extend;
 
-    var paddEmptyNode = function (settings, node) {
-      if (settings.padd_empty_with_br) {
+    var paddEmptyNode = function (settings, args, blockElements, node) {
+      var brPreferred = settings.padd_empty_with_br || args.insert;
+
+      if (brPreferred && blockElements[node.name]) {
         node.empty().append(new Node('br', '1')).shortEnded = true;
       } else {
         node.empty().append(new Node('#text', '3')).value = '\u00a0';
       }
     };
 
+    var isPaddedWithNbsp = function (node) {
+      return hasOnlyChild(node, '#text') && node.firstChild.value === '\u00a0';
+    };
+
     var hasOnlyChild = function (node, name) {
-      return node && node.firstChild === node.lastChild && node.firstChild.name === name;
+      return node && node.firstChild && node.firstChild === node.lastChild && node.firstChild.name === name;
     };
 
     var isPadded = function (schema, node) {
@@ -26008,7 +30798,7 @@ define(
       settings.root_name = settings.root_name || 'body';
       self.schema = schema = schema || new Schema();
 
-      function fixInvalidChildren(nodes) {
+      var fixInvalidChildren = function (nodes) {
         var ni, node, parent, parents, newParent, currentNode, tempNode, childNode, i;
         var nonEmptyElements, whitespaceElements, nonSplitableElements, textBlockElements, specialElements, sibling, nextNode;
 
@@ -26125,7 +30915,7 @@ define(
             }
           }
         }
-      }
+      };
 
       /**
        * Runs the specified node though the element and attributes filters.
@@ -26253,12 +31043,12 @@ define(
         allWhiteSpaceRegExp = /[ \t\r\n]+/g;
         isAllWhiteSpaceRegExp = /^[ \t\r\n]+$/;
 
-        function addRootBlocks() {
+        var addRootBlocks = function () {
           var node = rootNode.firstChild, next, rootBlockNode;
 
           // Removes whitespace at beginning and end of block so:
           // <p> x </p> -> <p>x</p>
-          function trim(rootBlockNode) {
+          var trim = function (rootBlockNode) {
             if (rootBlockNode) {
               node = rootBlockNode.firstChild;
               if (node && node.type == 3) {
@@ -26270,7 +31060,7 @@ define(
                 node.value = node.value.replace(endWhiteSpaceRegExp, '');
               }
             }
-          }
+          };
 
           // Check if rootBlock is valid within rootNode for example if P is valid in H1 if H1 is the contentEditabe root
           if (!schema.isValidChild(rootNode.name, rootBlockName.toLowerCase())) {
@@ -26300,9 +31090,9 @@ define(
           }
 
           trim(rootBlockNode);
-        }
+        };
 
-        function createNode(name, type) {
+        var createNode = function (name, type) {
           var node = new Node(name, type), list;
 
           if (name in nodeFilters) {
@@ -26316,9 +31106,9 @@ define(
           }
 
           return node;
-        }
+        };
 
-        function removeWhitespaceBefore(node) {
+        var removeWhitespaceBefore = function (node) {
           var textNode, textNodeNext, textVal, sibling, blockElements = schema.getBlockElements();
 
           for (textNode = node.prev; textNode && textNode.type === 3;) {
@@ -26350,9 +31140,9 @@ define(
             textNode.remove();
             textNode = sibling;
           }
-        }
+        };
 
-        function cloneAndExcludeBlocks(input) {
+        var cloneAndExcludeBlocks = function (input) {
           var name, output = {};
 
           for (name in input) {
@@ -26362,7 +31152,7 @@ define(
           }
 
           return output;
-        }
+        };
 
         parser = new SaxParser({
           validate: validate,
@@ -26547,27 +31337,24 @@ define(
                 isInWhiteSpacePreservedElement = false;
               }
 
-              // Handle empty nodes
-              if (elementRule.removeEmpty || elementRule.paddEmpty) {
-                if (isEmpty(schema, nonEmptyElements, whiteSpaceElements, node)) {
-                  if (elementRule.paddEmpty) {
-                    paddEmptyNode(settings, node);
+              if (elementRule.removeEmpty && isEmpty(schema, nonEmptyElements, whiteSpaceElements, node)) {
+                // Leave nodes that have a name like <a name="name">
+                if (!node.attributes.map.name && !node.attributes.map.id) {
+                  tempNode = node.parent;
+
+                  if (blockElements[node.name]) {
+                    node.empty().remove();
                   } else {
-                    // Leave nodes that have a name like <a name="name">
-                    if (!node.attributes.map.name && !node.attributes.map.id) {
-                      tempNode = node.parent;
-
-                      if (blockElements[node.name]) {
-                        node.empty().remove();
-                      } else {
-                        node.unwrap();
-                      }
-
-                      node = tempNode;
-                      return;
-                    }
+                    node.unwrap();
                   }
+
+                  node = tempNode;
+                  return;
                 }
+              }
+
+              if (elementRule.paddEmpty && (isPaddedWithNbsp(node) || isEmpty(schema, nonEmptyElements, whiteSpaceElements, node))) {
+                paddEmptyNode(settings, args, blockElements, node);
               }
 
               node = node.parent;
@@ -26642,7 +31429,7 @@ define(
       // make it possible to place the caret inside empty blocks. This logic tries to remove
       // these elements and keep br elements that where intended to be there intact
       if (settings.remove_trailing_brs) {
-        self.addNodeFilter('br', function (nodes) {
+        self.addNodeFilter('br', function (nodes, _, args) {
           var i, l = nodes.length, node, blockElements = extend({}, schema.getBlockElements());
           var nonEmptyElements = schema.getNonEmptyElements(), parent, lastParent, prev, prevName;
           var whiteSpaceElements = schema.getNonEmptyElements();
@@ -26692,7 +31479,7 @@ define(
                     if (elementRule.removeEmpty) {
                       parent.remove();
                     } else if (elementRule.paddEmpty) {
-                      paddEmptyNode(settings, parent);
+                      paddEmptyNode(settings, args, blockElements, parent);
                     }
                   }
                 }
@@ -26839,372 +31626,6 @@ define(
   }
 );
 /**
- * Writer.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-/**
- * This class is used to write HTML tags out it can be used with the Serializer or the SaxParser.
- *
- * @class tinymce.html.Writer
- * @example
- * var writer = new tinymce.html.Writer({indent: true});
- * var parser = new tinymce.html.SaxParser(writer).parse('<p><br></p>');
- * console.log(writer.getContent());
- *
- * @class tinymce.html.Writer
- * @version 3.4
- */
-define(
-  'tinymce.core.html.Writer',
-  [
-    "tinymce.core.html.Entities",
-    "tinymce.core.util.Tools"
-  ],
-  function (Entities, Tools) {
-    var makeMap = Tools.makeMap;
-
-    /**
-     * Constructs a new Writer instance.
-     *
-     * @constructor
-     * @method Writer
-     * @param {Object} settings Name/value settings object.
-     */
-    return function (settings) {
-      var html = [], indent, indentBefore, indentAfter, encode, htmlOutput;
-
-      settings = settings || {};
-      indent = settings.indent;
-      indentBefore = makeMap(settings.indent_before || '');
-      indentAfter = makeMap(settings.indent_after || '');
-      encode = Entities.getEncodeFunc(settings.entity_encoding || 'raw', settings.entities);
-      htmlOutput = settings.element_format == "html";
-
-      return {
-        /**
-         * Writes the a start element such as <p id="a">.
-         *
-         * @method start
-         * @param {String} name Name of the element.
-         * @param {Array} attrs Optional attribute array or undefined if it hasn't any.
-         * @param {Boolean} empty Optional empty state if the tag should end like <br />.
-         */
-        start: function (name, attrs, empty) {
-          var i, l, attr, value;
-
-          if (indent && indentBefore[name] && html.length > 0) {
-            value = html[html.length - 1];
-
-            if (value.length > 0 && value !== '\n') {
-              html.push('\n');
-            }
-          }
-
-          html.push('<', name);
-
-          if (attrs) {
-            for (i = 0, l = attrs.length; i < l; i++) {
-              attr = attrs[i];
-              html.push(' ', attr.name, '="', encode(attr.value, true), '"');
-            }
-          }
-
-          if (!empty || htmlOutput) {
-            html[html.length] = '>';
-          } else {
-            html[html.length] = ' />';
-          }
-
-          if (empty && indent && indentAfter[name] && html.length > 0) {
-            value = html[html.length - 1];
-
-            if (value.length > 0 && value !== '\n') {
-              html.push('\n');
-            }
-          }
-        },
-
-        /**
-         * Writes the a end element such as </p>.
-         *
-         * @method end
-         * @param {String} name Name of the element.
-         */
-        end: function (name) {
-          var value;
-
-          /*if (indent && indentBefore[name] && html.length > 0) {
-            value = html[html.length - 1];
-
-            if (value.length > 0 && value !== '\n')
-              html.push('\n');
-          }*/
-
-          html.push('</', name, '>');
-
-          if (indent && indentAfter[name] && html.length > 0) {
-            value = html[html.length - 1];
-
-            if (value.length > 0 && value !== '\n') {
-              html.push('\n');
-            }
-          }
-        },
-
-        /**
-         * Writes a text node.
-         *
-         * @method text
-         * @param {String} text String to write out.
-         * @param {Boolean} raw Optional raw state if true the contents wont get encoded.
-         */
-        text: function (text, raw) {
-          if (text.length > 0) {
-            html[html.length] = raw ? text : encode(text);
-          }
-        },
-
-        /**
-         * Writes a cdata node such as <![CDATA[data]]>.
-         *
-         * @method cdata
-         * @param {String} text String to write out inside the cdata.
-         */
-        cdata: function (text) {
-          html.push('<![CDATA[', text, ']]>');
-        },
-
-        /**
-         * Writes a comment node such as <!-- Comment -->.
-         *
-         * @method cdata
-         * @param {String} text String to write out inside the comment.
-         */
-        comment: function (text) {
-          html.push('<!--', text, '-->');
-        },
-
-        /**
-         * Writes a PI node such as <?xml attr="value" ?>.
-         *
-         * @method pi
-         * @param {String} name Name of the pi.
-         * @param {String} text String to write out inside the pi.
-         */
-        pi: function (name, text) {
-          if (text) {
-            html.push('<?', name, ' ', encode(text), '?>');
-          } else {
-            html.push('<?', name, '?>');
-          }
-
-          if (indent) {
-            html.push('\n');
-          }
-        },
-
-        /**
-         * Writes a doctype node such as <!DOCTYPE data>.
-         *
-         * @method doctype
-         * @param {String} text String to write out inside the doctype.
-         */
-        doctype: function (text) {
-          html.push('<!DOCTYPE', text, '>', indent ? '\n' : '');
-        },
-
-        /**
-         * Resets the internal buffer if one wants to reuse the writer.
-         *
-         * @method reset
-         */
-        reset: function () {
-          html.length = 0;
-        },
-
-        /**
-         * Returns the contents that got serialized.
-         *
-         * @method getContent
-         * @return {String} HTML contents that got written down.
-         */
-        getContent: function () {
-          return html.join('').replace(/\n$/, '');
-        }
-      };
-    };
-  }
-);
-/**
- * Serializer.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-/**
- * This class is used to serialize down the DOM tree into a string using a Writer instance.
- *
- *
- * @example
- * new tinymce.html.Serializer().serialize(new tinymce.html.DomParser().parse('<p>text</p>'));
- * @class tinymce.html.Serializer
- * @version 3.4
- */
-define(
-  'tinymce.core.html.Serializer',
-  [
-    "tinymce.core.html.Writer",
-    "tinymce.core.html.Schema"
-  ],
-  function (Writer, Schema) {
-    /**
-     * Constructs a new Serializer instance.
-     *
-     * @constructor
-     * @method Serializer
-     * @param {Object} settings Name/value settings object.
-     * @param {tinymce.html.Schema} schema Schema instance to use.
-     */
-    return function (settings, schema) {
-      var self = this, writer = new Writer(settings);
-
-      settings = settings || {};
-      settings.validate = "validate" in settings ? settings.validate : true;
-
-      self.schema = schema = schema || new Schema();
-      self.writer = writer;
-
-      /**
-       * Serializes the specified node into a string.
-       *
-       * @example
-       * new tinymce.html.Serializer().serialize(new tinymce.html.DomParser().parse('<p>text</p>'));
-       * @method serialize
-       * @param {tinymce.html.Node} node Node instance to serialize.
-       * @return {String} String with HTML based on DOM tree.
-       */
-      self.serialize = function (node) {
-        var handlers, validate;
-
-        validate = settings.validate;
-
-        handlers = {
-          // #text
-          3: function (node) {
-            writer.text(node.value, node.raw);
-          },
-
-          // #comment
-          8: function (node) {
-            writer.comment(node.value);
-          },
-
-          // Processing instruction
-          7: function (node) {
-            writer.pi(node.name, node.value);
-          },
-
-          // Doctype
-          10: function (node) {
-            writer.doctype(node.value);
-          },
-
-          // CDATA
-          4: function (node) {
-            writer.cdata(node.value);
-          },
-
-          // Document fragment
-          11: function (node) {
-            if ((node = node.firstChild)) {
-              do {
-                walk(node);
-              } while ((node = node.next));
-            }
-          }
-        };
-
-        writer.reset();
-
-        function walk(node) {
-          var handler = handlers[node.type], name, isEmpty, attrs, attrName, attrValue, sortedAttrs, i, l, elementRule;
-
-          if (!handler) {
-            name = node.name;
-            isEmpty = node.shortEnded;
-            attrs = node.attributes;
-
-            // Sort attributes
-            if (validate && attrs && attrs.length > 1) {
-              sortedAttrs = [];
-              sortedAttrs.map = {};
-
-              elementRule = schema.getElementRule(node.name);
-              if (elementRule) {
-                for (i = 0, l = elementRule.attributesOrder.length; i < l; i++) {
-                  attrName = elementRule.attributesOrder[i];
-
-                  if (attrName in attrs.map) {
-                    attrValue = attrs.map[attrName];
-                    sortedAttrs.map[attrName] = attrValue;
-                    sortedAttrs.push({ name: attrName, value: attrValue });
-                  }
-                }
-
-                for (i = 0, l = attrs.length; i < l; i++) {
-                  attrName = attrs[i].name;
-
-                  if (!(attrName in sortedAttrs.map)) {
-                    attrValue = attrs.map[attrName];
-                    sortedAttrs.map[attrName] = attrValue;
-                    sortedAttrs.push({ name: attrName, value: attrValue });
-                  }
-                }
-
-                attrs = sortedAttrs;
-              }
-            }
-
-            writer.start(node.name, attrs, isEmpty);
-
-            if (!isEmpty) {
-              if ((node = node.firstChild)) {
-                do {
-                  walk(node);
-                } while ((node = node.next));
-              }
-
-              writer.end(name);
-            }
-          } else {
-            handler(node);
-          }
-        }
-
-        // Serialize element and treat all non elements as fragments
-        if (node.type == 1 && !settings.inner) {
-          walk(node);
-        } else {
-          handlers[11](node);
-        }
-
-        return writer.getContent();
-      };
-    };
-  }
-);
-
-/**
  * Serializer.js
  *
  * Released under LGPL License.
@@ -27224,18 +31645,17 @@ define(
   'tinymce.core.dom.Serializer',
   [
     'global!document',
-    'tinymce.core.dom.DOMUtils',
     'tinymce.core.Env',
+    'tinymce.core.dom.DOMUtils',
     'tinymce.core.html.DomParser',
     'tinymce.core.html.Entities',
-    'tinymce.core.html.Node',
     'tinymce.core.html.SaxParser',
     'tinymce.core.html.Schema',
     'tinymce.core.html.Serializer',
     'tinymce.core.text.Zwsp',
     'tinymce.core.util.Tools'
   ],
-  function (document, DOMUtils, Env, DomParser, Entities, Node, SaxParser, Schema, Serializer, Zwsp, Tools) {
+  function (document, Env, DOMUtils, DomParser, Entities, SaxParser, Schema, Serializer, Zwsp, Tools) {
     var each = Tools.each, trim = Tools.trim;
     var DOM = DOMUtils.DOM;
 
@@ -27248,12 +31668,12 @@ define(
      *
      * Example of what happens: <body>text</body> becomes <body>text<br><br></body>
      */
-    function trimTrailingBr(rootNode) {
+    var trimTrailingBr = function (rootNode) {
       var brNode1, brNode2;
 
-      function isBr(node) {
+      var isBr = function (node) {
         return node && node.name === 'br';
-      }
+      };
 
       brNode1 = rootNode.lastChild;
       if (isBr(brNode1)) {
@@ -27264,7 +31684,7 @@ define(
           brNode2.remove();
         }
       }
-    }
+    };
 
     /**
      * Constructs a new DOM serializer class.
@@ -27282,7 +31702,7 @@ define(
         schema = editor.schema;
       }
 
-      function trimHtml(html) {
+      var trimHtml = function (html) {
         var trimContentRegExp = new RegExp([
           '<span[^>]+data-mce-bogus[^>]+>[\u200B\uFEFF]+<\\/span>', // Trim bogus spans like caret containers
           '\\s?(' + tempAttrs.join('|') + ')="[^"]+"' // Trim temporaty data-mce prefixed attributes like data-mce-selected
@@ -27291,9 +31711,9 @@ define(
         html = Zwsp.trim(html.replace(trimContentRegExp, ''));
 
         return html;
-      }
+      };
 
-      function trimContent(html) {
+      var trimContent = function (html) {
         var content = html;
         var bogusAllRegExp = /<(\w+) [^>]*data-mce-bogus="all"[^>]*>/g;
         var endTagIndex, index, matchLength, matches, shortEndedElements, schema = editor.schema;
@@ -27317,7 +31737,7 @@ define(
         }
 
         return content;
-      }
+      };
 
       /**
        * Returns a trimmed version of the editor contents to be used for the undo level. This
@@ -27329,11 +31749,11 @@ define(
        * @private
        * @return {String} HTML contents of the editor excluding some internal bogus elements.
        */
-      function getTrimmedContent() {
+      var getTrimmedContent = function () {
         return trimContent(editor.getBody().innerHTML);
-      }
+      };
 
-      function addTempAttr(name) {
+      var addTempAttr = function (name) {
         if (Tools.inArray(tempAttrs, name) === -1) {
           htmlParser.addAttributeFilter(name, function (nodes, name) {
             var i = nodes.length;
@@ -27345,7 +31765,7 @@ define(
 
           tempAttrs.push(name);
         }
-      }
+      };
 
       // Default DOM and Schema if they are undefined
       dom = dom || DOM;
@@ -27438,14 +31858,14 @@ define(
       htmlParser.addNodeFilter('script,style', function (nodes, name) {
         var i = nodes.length, node, value, type;
 
-        function trim(value) {
+        var trim = function (value) {
           /*jshint maxlen:255 */
           /*eslint max-len:0 */
           return value.replace(/(<!--\[CDATA\[|\]\]-->)/g, '\n')
             .replace(/^[\r\n]*|[\r\n]*$/g, '')
             .replace(/^\s*((<!--)?(\s*\/\/)?\s*<!\[CDATA\[|(<!--\s*)?\/\*\s*<!\[CDATA\[\s*\*\/|(\/\/)?\s*<!--|\/\*\s*<!--\s*\*\/)\s*[\r\n]*/gi, '')
             .replace(/\s*(\/\*\s*\]\]>\s*\*\/(-->)?|\s*\/\/\s*\]\]>(-->)?|\/\/\s*(-->)?|\]\]>|\/\*\s*-->\s*\*\/|\s*-->\s*)\s*$/g, '');
-        }
+        };
 
         while (i--) {
           node = nodes[i];
@@ -27459,11 +31879,11 @@ define(
               node.attr('type', type == 'mce-no/type' ? null : type.replace(/^mce\-/, ''));
             }
 
-            if (value.length > 0) {
+            if (settings.element_format === 'xhtml' && value.length > 0) {
               node.firstChild.value = '// <![CDATA[\n' + trim(value) + '\n// ]]>';
             }
           } else {
-            if (value.length > 0) {
+            if (settings.element_format === 'xhtml' && value.length > 0) {
               node.firstChild.value = '<!--\n' + trim(value) + '\n-->';
             }
           }
@@ -27698,4469 +32118,6 @@ define(
   }
 );
 
-/**
- * InsertList.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-/**
- * Handles inserts of lists into the editor instance.
- *
- * @class tinymce.InsertList
- * @private
- */
-define(
-  'tinymce.core.InsertList',
-  [
-    "tinymce.core.util.Tools",
-    "tinymce.core.caret.CaretWalker",
-    "tinymce.core.caret.CaretPosition"
-  ],
-  function (Tools, CaretWalker, CaretPosition) {
-    var hasOnlyOneChild = function (node) {
-      return node.firstChild && node.firstChild === node.lastChild;
-    };
-
-    var isPaddingNode = function (node) {
-      return node.name === 'br' || node.value === '\u00a0';
-    };
-
-    var isPaddedEmptyBlock = function (schema, node) {
-      var blockElements = schema.getBlockElements();
-      return blockElements[node.name] && hasOnlyOneChild(node) && isPaddingNode(node.firstChild);
-    };
-
-    var isEmptyFragmentElement = function (schema, node) {
-      var nonEmptyElements = schema.getNonEmptyElements();
-      return node && (node.isEmpty(nonEmptyElements) || isPaddedEmptyBlock(schema, node));
-    };
-
-    var isListFragment = function (schema, fragment) {
-      var firstChild = fragment.firstChild;
-      var lastChild = fragment.lastChild;
-
-      // Skip meta since it's likely <meta><ul>..</ul>
-      if (firstChild && firstChild.name === 'meta') {
-        firstChild = firstChild.next;
-      }
-
-      // Skip mce_marker since it's likely <ul>..</ul><span id="mce_marker"></span>
-      if (lastChild && lastChild.attr('id') === 'mce_marker') {
-        lastChild = lastChild.prev;
-      }
-
-      // Skip last child if it's an empty block
-      if (isEmptyFragmentElement(schema, lastChild)) {
-        lastChild = lastChild.prev;
-      }
-
-      if (!firstChild || firstChild !== lastChild) {
-        return false;
-      }
-
-      return firstChild.name === 'ul' || firstChild.name === 'ol';
-    };
-
-    var cleanupDomFragment = function (domFragment) {
-      var firstChild = domFragment.firstChild;
-      var lastChild = domFragment.lastChild;
-
-      // TODO: remove the meta tag from paste logic
-      if (firstChild && firstChild.nodeName === 'META') {
-        firstChild.parentNode.removeChild(firstChild);
-      }
-
-      if (lastChild && lastChild.id === 'mce_marker') {
-        lastChild.parentNode.removeChild(lastChild);
-      }
-
-      return domFragment;
-    };
-
-    var toDomFragment = function (dom, serializer, fragment) {
-      var html = serializer.serialize(fragment);
-      var domFragment = dom.createFragment(html);
-
-      return cleanupDomFragment(domFragment);
-    };
-
-    var listItems = function (elm) {
-      return Tools.grep(elm.childNodes, function (child) {
-        return child.nodeName === 'LI';
-      });
-    };
-
-    var isEmpty = function (elm) {
-      return !elm.firstChild;
-    };
-
-    var trimListItems = function (elms) {
-      return elms.length > 0 && isEmpty(elms[elms.length - 1]) ? elms.slice(0, -1) : elms;
-    };
-
-    var getParentLi = function (dom, node) {
-      var parentBlock = dom.getParent(node, dom.isBlock);
-      return parentBlock && parentBlock.nodeName === 'LI' ? parentBlock : null;
-    };
-
-    var isParentBlockLi = function (dom, node) {
-      return !!getParentLi(dom, node);
-    };
-
-    var getSplit = function (parentNode, rng) {
-      var beforeRng = rng.cloneRange();
-      var afterRng = rng.cloneRange();
-
-      beforeRng.setStartBefore(parentNode);
-      afterRng.setEndAfter(parentNode);
-
-      return [
-        beforeRng.cloneContents(),
-        afterRng.cloneContents()
-      ];
-    };
-
-    var findFirstIn = function (node, rootNode) {
-      var caretPos = CaretPosition.before(node);
-      var caretWalker = new CaretWalker(rootNode);
-      var newCaretPos = caretWalker.next(caretPos);
-
-      return newCaretPos ? newCaretPos.toRange() : null;
-    };
-
-    var findLastOf = function (node, rootNode) {
-      var caretPos = CaretPosition.after(node);
-      var caretWalker = new CaretWalker(rootNode);
-      var newCaretPos = caretWalker.prev(caretPos);
-
-      return newCaretPos ? newCaretPos.toRange() : null;
-    };
-
-    var insertMiddle = function (target, elms, rootNode, rng) {
-      var parts = getSplit(target, rng);
-      var parentElm = target.parentNode;
-
-      parentElm.insertBefore(parts[0], target);
-      Tools.each(elms, function (li) {
-        parentElm.insertBefore(li, target);
-      });
-      parentElm.insertBefore(parts[1], target);
-      parentElm.removeChild(target);
-
-      return findLastOf(elms[elms.length - 1], rootNode);
-    };
-
-    var insertBefore = function (target, elms, rootNode) {
-      var parentElm = target.parentNode;
-
-      Tools.each(elms, function (elm) {
-        parentElm.insertBefore(elm, target);
-      });
-
-      return findFirstIn(target, rootNode);
-    };
-
-    var insertAfter = function (target, elms, rootNode, dom) {
-      dom.insertAfter(elms.reverse(), target);
-      return findLastOf(elms[0], rootNode);
-    };
-
-    var insertAtCaret = function (serializer, dom, rng, fragment) {
-      var domFragment = toDomFragment(dom, serializer, fragment);
-      var liTarget = getParentLi(dom, rng.startContainer);
-      var liElms = trimListItems(listItems(domFragment.firstChild));
-      var BEGINNING = 1, END = 2;
-      var rootNode = dom.getRoot();
-
-      var isAt = function (location) {
-        var caretPos = CaretPosition.fromRangeStart(rng);
-        var caretWalker = new CaretWalker(dom.getRoot());
-        var newPos = location === BEGINNING ? caretWalker.prev(caretPos) : caretWalker.next(caretPos);
-
-        return newPos ? getParentLi(dom, newPos.getNode()) !== liTarget : true;
-      };
-
-      if (isAt(BEGINNING)) {
-        return insertBefore(liTarget, liElms, rootNode);
-      } else if (isAt(END)) {
-        return insertAfter(liTarget, liElms, rootNode, dom);
-      }
-
-      return insertMiddle(liTarget, liElms, rootNode, rng);
-    };
-
-    return {
-      isListFragment: isListFragment,
-      insertAtCaret: insertAtCaret,
-      isParentBlockLi: isParentBlockLi,
-      trimListItems: trimListItems,
-      listItems: listItems
-    };
-  }
-);
-/**
- * InsertContent.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-/**
- * Handles inserts of contents into the editor instance.
- *
- * @class tinymce.InsertContent
- * @private
- */
-define(
-  'tinymce.core.InsertContent',
-  [
-    'ephox.katamari.api.Option',
-    'ephox.sugar.api.node.Element',
-    'tinymce.core.caret.CaretPosition',
-    'tinymce.core.caret.CaretWalker',
-    'tinymce.core.dom.ElementUtils',
-    'tinymce.core.dom.NodeType',
-    'tinymce.core.dom.PaddingBr',
-    'tinymce.core.dom.RangeNormalizer',
-    'tinymce.core.Env',
-    'tinymce.core.html.Serializer',
-    'tinymce.core.InsertList',
-    'tinymce.core.util.Tools'
-  ],
-  function (Option, Element, CaretPosition, CaretWalker, ElementUtils, NodeType, PaddingBr, RangeNormalizer, Env, Serializer, InsertList, Tools) {
-    var isTableCell = NodeType.matchNodeNames('td th');
-
-    var validInsertion = function (editor, value, parentNode) {
-      // Should never insert content into bogus elements, since these can
-      // be resize handles or similar
-      if (parentNode.getAttribute('data-mce-bogus') === 'all') {
-        parentNode.parentNode.insertBefore(editor.dom.createFragment(value), parentNode);
-      } else {
-        // Check if parent is empty or only has one BR element then set the innerHTML of that parent
-        var node = parentNode.firstChild;
-        var node2 = parentNode.lastChild;
-        if (!node || (node === node2 && node.nodeName === 'BR')) {///
-          editor.dom.setHTML(parentNode, value);
-        } else {
-          editor.selection.setContent(value);
-        }
-      }
-    };
-
-    var trimBrsFromTableCell = function (dom, elm) {
-      Option.from(dom.getParent(elm, 'td,th')).map(Element.fromDom).each(PaddingBr.trimBlockTrailingBr);
-    };
-
-    var insertHtmlAtCaret = function (editor, value, details) {
-      var parser, serializer, parentNode, rootNode, fragment, args;
-      var marker, rng, node, node2, bookmarkHtml, merge;
-      var textInlineElements = editor.schema.getTextInlineElements();
-      var selection = editor.selection, dom = editor.dom;
-
-      function trimOrPaddLeftRight(html) {
-        var rng, container, offset;
-
-        rng = selection.getRng(true);
-        container = rng.startContainer;
-        offset = rng.startOffset;
-
-        function hasSiblingText(siblingName) {
-          return container[siblingName] && container[siblingName].nodeType == 3;
-        }
-
-        if (container.nodeType == 3) {
-          if (offset > 0) {
-            html = html.replace(/^&nbsp;/, ' ');
-          } else if (!hasSiblingText('previousSibling')) {
-            html = html.replace(/^ /, '&nbsp;');
-          }
-
-          if (offset < container.length) {
-            html = html.replace(/&nbsp;(<br>|)$/, ' ');
-          } else if (!hasSiblingText('nextSibling')) {
-            html = html.replace(/(&nbsp;| )(<br>|)$/, '&nbsp;');
-          }
-        }
-
-        return html;
-      }
-
-      // Removes &nbsp; from a [b] c -> a &nbsp;c -> a c
-      function trimNbspAfterDeleteAndPaddValue() {
-        var rng, container, offset;
-
-        rng = selection.getRng(true);
-        container = rng.startContainer;
-        offset = rng.startOffset;
-
-        if (container.nodeType == 3 && rng.collapsed) {
-          if (container.data[offset] === '\u00a0') {
-            container.deleteData(offset, 1);
-
-            if (!/[\u00a0| ]$/.test(value)) {
-              value += ' ';
-            }
-          } else if (container.data[offset - 1] === '\u00a0') {
-            container.deleteData(offset - 1, 1);
-
-            if (!/[\u00a0| ]$/.test(value)) {
-              value = ' ' + value;
-            }
-          }
-        }
-      }
-
-      function reduceInlineTextElements() {
-        if (merge) {
-          var root = editor.getBody(), elementUtils = new ElementUtils(dom);
-
-          Tools.each(dom.select('*[data-mce-fragment]'), function (node) {
-            for (var testNode = node.parentNode; testNode && testNode != root; testNode = testNode.parentNode) {
-              if (textInlineElements[node.nodeName.toLowerCase()] && elementUtils.compare(testNode, node)) {
-                dom.remove(node, true);
-              }
-            }
-          });
-        }
-      }
-
-      function markFragmentElements(fragment) {
-        var node = fragment;
-
-        while ((node = node.walk())) {
-          if (node.type === 1) {
-            node.attr('data-mce-fragment', '1');
-          }
-        }
-      }
-
-      function umarkFragmentElements(elm) {
-        Tools.each(elm.getElementsByTagName('*'), function (elm) {
-          elm.removeAttribute('data-mce-fragment');
-        });
-      }
-
-      function isPartOfFragment(node) {
-        return !!node.getAttribute('data-mce-fragment');
-      }
-
-      function canHaveChildren(node) {
-        return node && !editor.schema.getShortEndedElements()[node.nodeName];
-      }
-
-      function moveSelectionToMarker(marker) {
-        var parentEditableFalseElm, parentBlock, nextRng;
-
-        function getContentEditableFalseParent(node) {
-          var root = editor.getBody();
-
-          for (; node && node !== root; node = node.parentNode) {
-            if (editor.dom.getContentEditable(node) === 'false') {
-              return node;
-            }
-          }
-
-          return null;
-        }
-
-        if (!marker) {
-          return;
-        }
-
-        selection.scrollIntoView(marker);
-
-        // If marker is in cE=false then move selection to that element instead
-        parentEditableFalseElm = getContentEditableFalseParent(marker);
-        if (parentEditableFalseElm) {
-          dom.remove(marker);
-          selection.select(parentEditableFalseElm);
-          return;
-        }
-
-        // Move selection before marker and remove it
-        rng = dom.createRng();
-
-        // If previous sibling is a text node set the selection to the end of that node
-        node = marker.previousSibling;
-        if (node && node.nodeType == 3) {
-          rng.setStart(node, node.nodeValue.length);
-
-          // TODO: Why can't we normalize on IE
-          if (!Env.ie) {
-            node2 = marker.nextSibling;
-            if (node2 && node2.nodeType == 3) {
-              node.appendData(node2.data);
-              node2.parentNode.removeChild(node2);
-            }
-          }
-        } else {
-          // If the previous sibling isn't a text node or doesn't exist set the selection before the marker node
-          rng.setStartBefore(marker);
-          rng.setEndBefore(marker);
-        }
-
-        function findNextCaretRng(rng) {
-          var caretPos = CaretPosition.fromRangeStart(rng);
-          var caretWalker = new CaretWalker(editor.getBody());
-
-          caretPos = caretWalker.next(caretPos);
-          if (caretPos) {
-            return caretPos.toRange();
-          }
-        }
-
-        // Remove the marker node and set the new range
-        parentBlock = dom.getParent(marker, dom.isBlock);
-        dom.remove(marker);
-
-        if (parentBlock && dom.isEmpty(parentBlock)) {
-          editor.$(parentBlock).empty();
-
-          rng.setStart(parentBlock, 0);
-          rng.setEnd(parentBlock, 0);
-
-          if (!isTableCell(parentBlock) && !isPartOfFragment(parentBlock) && (nextRng = findNextCaretRng(rng))) {
-            rng = nextRng;
-            dom.remove(parentBlock);
-          } else {
-            dom.add(parentBlock, dom.create('br', { 'data-mce-bogus': '1' }));
-          }
-        }
-
-        selection.setRng(rng);
-      }
-
-      // Check for whitespace before/after value
-      if (/^ | $/.test(value)) {
-        value = trimOrPaddLeftRight(value);
-      }
-
-      // Setup parser and serializer
-      parser = editor.parser;
-      merge = details.merge;
-
-      serializer = new Serializer({
-        validate: editor.settings.validate
-      }, editor.schema);
-      bookmarkHtml = '<span id="mce_marker" data-mce-type="bookmark">&#xFEFF;&#x200B;</span>';
-
-      // Run beforeSetContent handlers on the HTML to be inserted
-      args = { content: value, format: 'html', selection: true, paste: details.paste };
-      args = editor.fire('BeforeSetContent', args);
-      if (args.isDefaultPrevented()) {
-        editor.fire('SetContent', { content: args.content, format: 'html', selection: true, paste: details.paste });
-        return;
-      }
-
-      value = args.content;
-
-      // Add caret at end of contents if it's missing
-      if (value.indexOf('{$caret}') == -1) {
-        value += '{$caret}';
-      }
-
-      // Replace the caret marker with a span bookmark element
-      value = value.replace(/\{\$caret\}/, bookmarkHtml);
-
-      // If selection is at <body>|<p></p> then move it into <body><p>|</p>
-      rng = selection.getRng();
-      var caretElement = rng.startContainer || (rng.parentElement ? rng.parentElement() : null);
-      var body = editor.getBody();
-      if (caretElement === body && selection.isCollapsed()) {
-        if (dom.isBlock(body.firstChild) && canHaveChildren(body.firstChild) && dom.isEmpty(body.firstChild)) {
-          rng = dom.createRng();
-          rng.setStart(body.firstChild, 0);
-          rng.setEnd(body.firstChild, 0);
-          selection.setRng(rng);
-        }
-      }
-
-      // Insert node maker where we will insert the new HTML and get it's parent
-      if (!selection.isCollapsed()) {
-        // Fix for #2595 seems that delete removes one extra character on
-        // WebKit for some odd reason if you double click select a word
-        editor.selection.setRng(RangeNormalizer.normalize(editor.selection.getRng()));
-        editor.getDoc().execCommand('Delete', false, null);
-        trimNbspAfterDeleteAndPaddValue();
-      }
-
-      parentNode = selection.getNode();
-
-      // Parse the fragment within the context of the parent node
-      var parserArgs = { context: parentNode.nodeName.toLowerCase(), data: details.data };
-      fragment = parser.parse(value, parserArgs);
-
-      // Custom handling of lists
-      if (details.paste === true && InsertList.isListFragment(editor.schema, fragment) && InsertList.isParentBlockLi(dom, parentNode)) {
-        rng = InsertList.insertAtCaret(serializer, dom, editor.selection.getRng(true), fragment);
-        editor.selection.setRng(rng);
-        editor.fire('SetContent', args);
-        return;
-      }
-
-      markFragmentElements(fragment);
-
-      // Move the caret to a more suitable location
-      node = fragment.lastChild;
-      if (node.attr('id') == 'mce_marker') {
-        marker = node;
-
-        for (node = node.prev; node; node = node.walk(true)) {
-          if (node.type == 3 || !dom.isBlock(node.name)) {
-            if (editor.schema.isValidChild(node.parent.name, 'span')) {
-              node.parent.insert(marker, node, node.name === 'br');
-            }
-            break;
-          }
-        }
-      }
-
-      editor._selectionOverrides.showBlockCaretContainer(parentNode);
-
-      // If parser says valid we can insert the contents into that parent
-      if (!parserArgs.invalid) {
-        value = serializer.serialize(fragment);
-        validInsertion(editor, value, parentNode);
-      } else {
-        // If the fragment was invalid within that context then we need
-        // to parse and process the parent it's inserted into
-
-        // Insert bookmark node and get the parent
-        selection.setContent(bookmarkHtml);
-        parentNode = selection.getNode();
-        rootNode = editor.getBody();
-
-        // Opera will return the document node when selection is in root
-        if (parentNode.nodeType == 9) {
-          parentNode = node = rootNode;
-        } else {
-          node = parentNode;
-        }
-
-        // Find the ancestor just before the root element
-        while (node !== rootNode) {
-          parentNode = node;
-          node = node.parentNode;
-        }
-
-        // Get the outer/inner HTML depending on if we are in the root and parser and serialize that
-        value = parentNode == rootNode ? rootNode.innerHTML : dom.getOuterHTML(parentNode);
-        value = serializer.serialize(
-          parser.parse(
-            // Need to replace by using a function since $ in the contents would otherwise be a problem
-            value.replace(/<span (id="mce_marker"|id=mce_marker).+?<\/span>/i, function () {
-              return serializer.serialize(fragment);
-            })
-          )
-        );
-
-        // Set the inner/outer HTML depending on if we are in the root or not
-        if (parentNode == rootNode) {
-          dom.setHTML(rootNode, value);
-        } else {
-          dom.setOuterHTML(parentNode, value);
-        }
-      }
-
-      reduceInlineTextElements();
-      moveSelectionToMarker(dom.get('mce_marker'));
-      umarkFragmentElements(editor.getBody());
-      trimBrsFromTableCell(editor.dom, editor.selection.getStart());
-
-      editor.fire('SetContent', args);
-      editor.addVisual();
-    };
-
-    var processValue = function (value) {
-      var details;
-
-      if (typeof value !== 'string') {
-        details = Tools.extend({
-          paste: value.paste,
-          data: {
-            paste: value.paste
-          }
-        }, value);
-
-        return {
-          content: value.content,
-          details: details
-        };
-      }
-
-      return {
-        content: value,
-        details: {}
-      };
-    };
-
-    var insertAtCaret = function (editor, value) {
-      var result = processValue(value);
-      insertHtmlAtCaret(editor, result.content, result.details);
-    };
-
-    return {
-      insertAtCaret: insertAtCaret
-    };
-  }
-);
-/**
- * DeleteUtils.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.delete.DeleteUtils',
-  [
-    'ephox.katamari.api.Option',
-    'ephox.sugar.api.dom.Compare',
-    'ephox.sugar.api.node.Element',
-    'ephox.sugar.api.search.PredicateFind',
-    'tinymce.core.dom.ElementType'
-  ],
-  function (Option, Compare, Element, PredicateFind, ElementType) {
-    var isBeforeRoot = function (rootNode) {
-      return function (elm) {
-        return Compare.eq(rootNode, Element.fromDom(elm.dom().parentNode));
-      };
-    };
-
-    var getParentBlock = function (rootNode, elm) {
-      return Compare.contains(rootNode, elm) ? PredicateFind.closest(elm, function (element) {
-        return ElementType.isTextBlock(element) || ElementType.isListItem(element);
-      }, isBeforeRoot(rootNode)) : Option.none();
-    };
-
-    var placeCaretInEmptyBody = function (editor) {
-      var body = editor.getBody();
-      var node = body.firstChild && editor.dom.isBlock(body.firstChild) ? body.firstChild : body;
-      editor.selection.setCursorLocation(node, 0);
-    };
-
-    var paddEmptyBody = function (editor) {
-      if (editor.dom.isEmpty(editor.getBody())) {
-        editor.setContent('');
-        placeCaretInEmptyBody(editor);
-      }
-    };
-
-    return {
-      getParentBlock: getParentBlock,
-      paddEmptyBody: paddEmptyBody
-    };
-  }
-);
-
-define(
-  'ephox.sugar.api.search.SelectorExists',
-
-  [
-    'ephox.sugar.api.search.SelectorFind'
-  ],
-
-  function (SelectorFind) {
-    var any = function (selector) {
-      return SelectorFind.first(selector).isSome();
-    };
-
-    var ancestor = function (scope, selector, isRoot) {
-      return SelectorFind.ancestor(scope, selector, isRoot).isSome();
-    };
-
-    var sibling = function (scope, selector) {
-      return SelectorFind.sibling(scope, selector).isSome();
-    };
-
-    var child = function (scope, selector) {
-      return SelectorFind.child(scope, selector).isSome();
-    };
-
-    var descendant = function (scope, selector) {
-      return SelectorFind.descendant(scope, selector).isSome();
-    };
-
-    var closest = function (scope, selector, isRoot) {
-      return SelectorFind.closest(scope, selector, isRoot).isSome();
-    };
-
-    return {
-      any: any,
-      ancestor: ancestor,
-      sibling: sibling,
-      child: child,
-      descendant: descendant,
-      closest: closest
-    };
-  }
-);
-
-/**
- * Empty.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.dom.Empty',
-  [
-    'ephox.katamari.api.Fun',
-    'ephox.sugar.api.dom.Compare',
-    'ephox.sugar.api.node.Element',
-    'ephox.sugar.api.search.SelectorExists',
-    'tinymce.core.caret.CaretCandidate',
-    'tinymce.core.dom.NodeType',
-    'tinymce.core.dom.TreeWalker'
-  ],
-  function (Fun, Compare, Element, SelectorExists, CaretCandidate, NodeType, TreeWalker) {
-    var hasWhitespacePreserveParent = function (rootNode, node) {
-      var rootElement = Element.fromDom(rootNode);
-      var startNode = Element.fromDom(node);
-      return SelectorExists.ancestor(startNode, 'pre,code', Fun.curry(Compare.eq, rootElement));
-    };
-
-    var isWhitespace = function (rootNode, node) {
-      return NodeType.isText(node) && /^[ \t\r\n]*$/.test(node.data) && hasWhitespacePreserveParent(rootNode, node) === false;
-    };
-
-    var isNamedAnchor = function (node) {
-      return NodeType.isElement(node) && node.nodeName === 'A' && node.hasAttribute('name');
-    };
-
-    var isContent = function (rootNode, node) {
-      return (CaretCandidate.isCaretCandidate(node) && isWhitespace(rootNode, node) === false) || isNamedAnchor(node) || isBookmark(node);
-    };
-
-    var isBookmark = NodeType.hasAttribute('data-mce-bookmark');
-    var isBogus = NodeType.hasAttribute('data-mce-bogus');
-    var isBogusAll = NodeType.hasAttributeValue('data-mce-bogus', 'all');
-
-    var isEmptyNode = function (targetNode) {
-      var walker, node, brCount = 0;
-
-      if (isContent(targetNode, targetNode)) {
-        return false;
-      } else {
-        node = targetNode.firstChild;
-        if (!node) {
-          return true;
-        }
-
-        walker = new TreeWalker(node, targetNode);
-        do {
-          if (isBogusAll(node)) {
-            node = walker.next(true);
-            continue;
-          }
-
-          if (isBogus(node)) {
-            node = walker.next();
-            continue;
-          }
-
-          if (NodeType.isBr(node)) {
-            brCount++;
-            node = walker.next();
-            continue;
-          }
-
-          if (isContent(targetNode, node)) {
-            return false;
-          }
-
-          node = walker.next();
-        } while (node);
-
-        return brCount <= 1;
-      }
-    };
-
-    var isEmpty = function (elm) {
-      return isEmptyNode(elm.dom());
-    };
-
-    return {
-      isEmpty: isEmpty
-    };
-  }
-);
-
-/**
- * BlockBoundary.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.delete.BlockBoundary',
-  [
-    'ephox.katamari.api.Arr',
-    'ephox.katamari.api.Fun',
-    'ephox.katamari.api.Option',
-    'ephox.katamari.api.Options',
-    'ephox.katamari.api.Struct',
-    'ephox.sugar.api.dom.Compare',
-    'ephox.sugar.api.node.Element',
-    'ephox.sugar.api.node.Node',
-    'ephox.sugar.api.search.PredicateFind',
-    'ephox.sugar.api.search.Traverse',
-    'tinymce.core.caret.CaretFinder',
-    'tinymce.core.caret.CaretPosition',
-    'tinymce.core.delete.DeleteUtils',
-    'tinymce.core.dom.Empty',
-    'tinymce.core.dom.NodeType'
-  ],
-  function (Arr, Fun, Option, Options, Struct, Compare, Element, Node, PredicateFind, Traverse, CaretFinder, CaretPosition, DeleteUtils, Empty, NodeType) {
-    var BlockPosition = Struct.immutable('block', 'position');
-    var BlockBoundary = Struct.immutable('from', 'to');
-
-    var getBlockPosition = function (rootNode, pos) {
-      var rootElm = Element.fromDom(rootNode);
-      var containerElm = Element.fromDom(pos.container());
-      return DeleteUtils.getParentBlock(rootElm, containerElm).map(function (block) {
-        return BlockPosition(block, pos);
-      });
-    };
-
-    var isDifferentBlocks = function (blockBoundary) {
-      return Compare.eq(blockBoundary.from().block(), blockBoundary.to().block()) === false;
-    };
-
-    var hasSameParent = function (blockBoundary) {
-      return Traverse.parent(blockBoundary.from().block()).bind(function (parent1) {
-        return Traverse.parent(blockBoundary.to().block()).filter(function (parent2) {
-          return Compare.eq(parent1, parent2);
-        });
-      }).isSome();
-    };
-
-    var isEditable = function (blockBoundary) {
-      return NodeType.isContentEditableFalse(blockBoundary.from().block()) === false && NodeType.isContentEditableFalse(blockBoundary.to().block()) === false;
-    };
-
-    var skipLastBr = function (rootNode, forward, blockPosition) {
-      if (NodeType.isBr(blockPosition.position().getNode()) && Empty.isEmpty(blockPosition.block()) === false) {
-        return CaretFinder.positionIn(false, blockPosition.block().dom()).bind(function (lastPositionInBlock) {
-          if (lastPositionInBlock.isEqual(blockPosition.position())) {
-            return CaretFinder.fromPosition(forward, rootNode, lastPositionInBlock).bind(function (to) {
-              return getBlockPosition(rootNode, to);
-            });
-          } else {
-            return Option.some(blockPosition);
-          }
-        }).getOr(blockPosition);
-      } else {
-        return blockPosition;
-      }
-    };
-
-    var readFromRange = function (rootNode, forward, rng) {
-      var fromBlockPos = getBlockPosition(rootNode, CaretPosition.fromRangeStart(rng));
-      var toBlockPos = fromBlockPos.bind(function (blockPos) {
-        return CaretFinder.fromPosition(forward, rootNode, blockPos.position()).bind(function (to) {
-          return getBlockPosition(rootNode, to).map(function (blockPos) {
-            return skipLastBr(rootNode, forward, blockPos);
-          });
-        });
-      });
-
-      return Options.liftN([fromBlockPos, toBlockPos], BlockBoundary).filter(function (blockBoundary) {
-        return isDifferentBlocks(blockBoundary) && hasSameParent(blockBoundary) && isEditable(blockBoundary);
-      });
-    };
-
-    var read = function (rootNode, forward, rng) {
-      return rng.collapsed ? readFromRange(rootNode, forward, rng) : Option.none();
-    };
-
-    return {
-      read: read
-    };
-  }
-);
-
-/**
- * MergeBlocks.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.delete.MergeBlocks',
-  [
-    'ephox.katamari.api.Arr',
-    'ephox.katamari.api.Option',
-    'ephox.sugar.api.dom.Compare',
-    'ephox.sugar.api.dom.Insert',
-    'ephox.sugar.api.dom.Remove',
-    'ephox.sugar.api.node.Element',
-    'ephox.sugar.api.search.Traverse',
-    'tinymce.core.caret.CaretFinder',
-    'tinymce.core.caret.CaretPosition',
-    'tinymce.core.dom.ElementType',
-    'tinymce.core.dom.Empty',
-    'tinymce.core.dom.NodeType',
-    'tinymce.core.dom.Parents'
-  ],
-  function (Arr, Option, Compare, Insert, Remove, Element, Traverse, CaretFinder, CaretPosition, ElementType, Empty, NodeType, Parents) {
-    var getChildrenUntilBlockBoundary = function (block) {
-      var children = Traverse.children(block);
-      return Arr.findIndex(children, ElementType.isBlock).fold(
-        function () {
-          return children;
-        },
-        function (index) {
-          return children.slice(0, index);
-        }
-      );
-    };
-
-    var extractChildren = function (block) {
-      var children = getChildrenUntilBlockBoundary(block);
-
-      Arr.each(children, function (node) {
-        Remove.remove(node);
-      });
-
-      return children;
-    };
-
-    var trimBr = function (first, block) {
-      CaretFinder.positionIn(first, block.dom()).each(function (position) {
-        var node = position.getNode();
-        if (NodeType.isBr(node)) {
-          Remove.remove(Element.fromDom(node));
-        }
-      });
-    };
-
-    var removeEmptyRoot = function (rootNode, block) {
-      var parents = Parents.parentsAndSelf(block, rootNode);
-      return Arr.find(parents.reverse(), Empty.isEmpty).each(Remove.remove);
-    };
-
-    var findParentInsertPoint = function (toBlock, block) {
-      var parents = Traverse.parents(block, function (elm) {
-        return Compare.eq(elm, toBlock);
-      });
-
-      return Option.from(parents[parents.length - 2]);
-    };
-
-    var getInsertionPoint = function (fromBlock, toBlock) {
-      if (Compare.contains(toBlock, fromBlock)) {
-        return Traverse.parent(fromBlock).bind(function (parent) {
-          return Compare.eq(parent, toBlock) ? Option.some(fromBlock) : findParentInsertPoint(toBlock, fromBlock);
-        });
-      } else {
-        return Option.none();
-      }
-    };
-
-    var mergeBlockInto = function (rootNode, fromBlock, toBlock) {
-      if (Empty.isEmpty(toBlock)) {
-        Remove.remove(toBlock);
-        return CaretFinder.firstPositionIn(fromBlock.dom());
-      } else {
-        trimBr(true, fromBlock);
-        trimBr(false, toBlock);
-
-        var children = extractChildren(fromBlock);
-
-        return getInsertionPoint(fromBlock, toBlock).fold(
-          function () {
-            removeEmptyRoot(rootNode, fromBlock);
-
-            var position = CaretFinder.lastPositionIn(toBlock.dom());
-
-            Arr.each(children, function (node) {
-              Insert.append(toBlock, node);
-            });
-
-            return position;
-          },
-          function (target) {
-            var position = CaretFinder.prevPosition(toBlock.dom(), CaretPosition.before(target.dom()));
-
-            Arr.each(children, function (node) {
-              Insert.before(target, node);
-            });
-
-            removeEmptyRoot(rootNode, fromBlock);
-
-            return position;
-          }
-        );
-      }
-    };
-
-    var mergeBlocks = function (rootNode, forward, block1, block2) {
-      return forward ? mergeBlockInto(rootNode, block2, block1) : mergeBlockInto(rootNode, block1, block2);
-    };
-
-    return {
-      mergeBlocks: mergeBlocks
-    };
-  }
-);
-
-/**
- * BlockBoundaryDelete.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.delete.BlockBoundaryDelete',
-  [
-    'ephox.sugar.api.node.Element',
-    'tinymce.core.delete.BlockBoundary',
-    'tinymce.core.delete.MergeBlocks'
-  ],
-  function (Element, BlockBoundary, MergeBlocks) {
-    var backspaceDelete = function (editor, forward) {
-      var position, rootNode = Element.fromDom(editor.getBody());
-
-      position = BlockBoundary.read(rootNode.dom(), forward, editor.selection.getRng()).bind(function (blockBoundary) {
-        return MergeBlocks.mergeBlocks(rootNode, forward, blockBoundary.from().block(), blockBoundary.to().block());
-      });
-
-      position.each(function (pos) {
-        editor.selection.setRng(pos.toRange());
-      });
-
-      return position.isSome();
-    };
-
-    return {
-      backspaceDelete: backspaceDelete
-    };
-  }
-);
-
-/**
- * BlockRangeDelete.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.delete.BlockRangeDelete',
-  [
-    'ephox.katamari.api.Options',
-    'ephox.sugar.api.dom.Compare',
-    'ephox.sugar.api.node.Element',
-    'tinymce.core.caret.CaretFinder',
-    'tinymce.core.caret.CaretPosition',
-    'tinymce.core.delete.DeleteUtils',
-    'tinymce.core.delete.MergeBlocks'
-  ],
-  function (Options, Compare, Element, CaretFinder, CaretPosition, DeleteUtils, MergeBlocks) {
-    var deleteRangeMergeBlocks = function (rootNode, selection) {
-      var rng = selection.getRng();
-
-      return Options.liftN([
-        DeleteUtils.getParentBlock(rootNode, Element.fromDom(rng.startContainer)),
-        DeleteUtils.getParentBlock(rootNode, Element.fromDom(rng.endContainer))
-      ], function (block1, block2) {
-        if (Compare.eq(block1, block2) === false) {
-          rng.deleteContents();
-
-          MergeBlocks.mergeBlocks(rootNode, true, block1, block2).each(function (pos) {
-            selection.setRng(pos.toRange());
-          });
-
-          return true;
-        } else {
-          return false;
-        }
-      }).getOr(false);
-    };
-
-    var isEverythingSelected = function (rootNode, rng) {
-      var noPrevious = CaretFinder.prevPosition(rootNode.dom(), CaretPosition.fromRangeStart(rng)).isNone();
-      var noNext = CaretFinder.nextPosition(rootNode.dom(), CaretPosition.fromRangeEnd(rng)).isNone();
-      return noPrevious && noNext;
-    };
-
-    var emptyEditor = function (editor) {
-      editor.setContent('');
-      editor.selection.setCursorLocation();
-      return true;
-    };
-
-    var deleteRange = function (editor) {
-      var rootNode = Element.fromDom(editor.getBody());
-      var rng = editor.selection.getRng();
-      return isEverythingSelected(rootNode, rng) ? emptyEditor(editor) : deleteRangeMergeBlocks(rootNode, editor.selection);
-    };
-
-    var backspaceDelete = function (editor, forward) {
-      return editor.selection.isCollapsed() ? false : deleteRange(editor, editor.selection.getRng());
-    };
-
-    return {
-      backspaceDelete: backspaceDelete
-    };
-  }
-);
-
-/**
- * CefDeleteAction.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.delete.CefDeleteAction',
-  [
-    'ephox.katamari.api.Adt',
-    'ephox.katamari.api.Option',
-    'ephox.sugar.api.node.Element',
-    'tinymce.core.caret.CaretFinder',
-    'tinymce.core.caret.CaretPosition',
-    'tinymce.core.caret.CaretUtils',
-    'tinymce.core.delete.DeleteUtils',
-    'tinymce.core.dom.Empty',
-    'tinymce.core.dom.NodeType'
-  ],
-  function (Adt, Option, Element, CaretFinder, CaretPosition, CaretUtils, DeleteUtils, Empty, NodeType) {
-    var DeleteAction = Adt.generate([
-      { remove: [ 'element' ] },
-      { moveToElement: [ 'element' ] },
-      { moveToPosition: [ 'position' ] }
-    ]);
-
-    var isAtContentEditableBlockCaret = function (forward, from) {
-      var elm = from.getNode(forward === false);
-      var caretLocation = forward ? 'after' : 'before';
-      return NodeType.isElement(elm) && elm.getAttribute('data-mce-caret') === caretLocation;
-    };
-
-    var deleteEmptyBlockOrMoveToCef = function (rootNode, forward, from, to) {
-      var toCefElm = to.getNode(forward === false);
-      return DeleteUtils.getParentBlock(Element.fromDom(rootNode), Element.fromDom(from.getNode())).map(function (blockElm) {
-        return Empty.isEmpty(blockElm) ? DeleteAction.remove(blockElm.dom()) : DeleteAction.moveToElement(toCefElm);
-      }).orThunk(function () {
-        return Option.some(DeleteAction.moveToElement(toCefElm));
-      });
-    };
-
-    var findCefPosition = function (rootNode, forward, from) {
-      return CaretFinder.fromPosition(forward, rootNode, from).bind(function (to) {
-        if (forward && NodeType.isContentEditableFalse(to.getNode())) {
-          return deleteEmptyBlockOrMoveToCef(rootNode, forward, from, to);
-        } else if (forward === false && NodeType.isContentEditableFalse(to.getNode(true))) {
-          return deleteEmptyBlockOrMoveToCef(rootNode, forward, from, to);
-        } else if (forward && CaretUtils.isAfterContentEditableFalse(from)) {
-          return Option.some(DeleteAction.moveToPosition(to));
-        } else if (forward === false && CaretUtils.isBeforeContentEditableFalse(from)) {
-          return Option.some(DeleteAction.moveToPosition(to));
-        } else {
-          return Option.none();
-        }
-      });
-    };
-
-    var getContentEditableBlockAction = function (forward, elm) {
-      if (forward && NodeType.isContentEditableFalse(elm.nextSibling)) {
-        return Option.some(DeleteAction.moveToElement(elm.nextSibling));
-      } else if (forward === false && NodeType.isContentEditableFalse(elm.previousSibling)) {
-        return Option.some(DeleteAction.moveToElement(elm.previousSibling));
-      } else {
-        return Option.none();
-      }
-    };
-
-    var getContentEditableAction = function (rootNode, forward, from) {
-      if (isAtContentEditableBlockCaret(forward, from)) {
-        return getContentEditableBlockAction(forward, from.getNode(forward === false))
-          .fold(
-            function () {
-              return findCefPosition(rootNode, forward, from);
-            },
-            Option.some
-          );
-      } else {
-        return findCefPosition(rootNode, forward, from);
-      }
-    };
-
-    var read = function (rootNode, forward, rng) {
-      var normalizedRange = CaretUtils.normalizeRange(forward ? 1 : -1, rootNode, rng);
-      var from = CaretPosition.fromRangeStart(normalizedRange);
-
-      if (forward === false && CaretUtils.isAfterContentEditableFalse(from)) {
-        return Option.some(DeleteAction.remove(from.getNode(true)));
-      } else if (forward && CaretUtils.isBeforeContentEditableFalse(from)) {
-        return Option.some(DeleteAction.remove(from.getNode()));
-      } else {
-        return getContentEditableAction(rootNode, forward, from);
-      }
-    };
-
-    return {
-      read: read
-    };
-  }
-);
-
-/**
- * DeleteElement.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.delete.DeleteElement',
-  [
-    'ephox.katamari.api.Fun',
-    'ephox.katamari.api.Option',
-    'ephox.katamari.api.Options',
-    'ephox.sugar.api.dom.Insert',
-    'ephox.sugar.api.dom.Remove',
-    'ephox.sugar.api.node.Element',
-    'ephox.sugar.api.node.Node',
-    'ephox.sugar.api.search.PredicateFind',
-    'ephox.sugar.api.search.Traverse',
-    'tinymce.core.caret.CaretCandidate',
-    'tinymce.core.caret.CaretFinder',
-    'tinymce.core.caret.CaretPosition',
-    'tinymce.core.dom.Empty',
-    'tinymce.core.dom.NodeType'
-  ],
-  function (Fun, Option, Options, Insert, Remove, Element, Node, PredicateFind, Traverse, CaretCandidate, CaretFinder, CaretPosition, Empty, NodeType) {
-    var needsReposition = function (pos, elm) {
-      var container = pos.container();
-      var offset = pos.offset();
-      return CaretPosition.isTextPosition(pos) === false && container === elm.parentNode && offset > CaretPosition.before(elm).offset();
-    };
-
-    var reposition = function (elm, pos) {
-      return needsReposition(pos, elm) ? new CaretPosition(pos.container(), pos.offset() - 1) : pos;
-    };
-
-    var beforeOrStartOf = function (node) {
-      return NodeType.isText(node) ? new CaretPosition(node, 0) : CaretPosition.before(node);
-    };
-
-    var afterOrEndOf = function (node) {
-      return NodeType.isText(node) ? new CaretPosition(node, node.data.length) : CaretPosition.after(node);
-    };
-
-    var getPreviousSiblingCaretPosition = function (elm) {
-      if (CaretCandidate.isCaretCandidate(elm.previousSibling)) {
-        return Option.some(afterOrEndOf(elm.previousSibling));
-      } else {
-        return elm.previousSibling ? CaretFinder.lastPositionIn(elm.previousSibling) : Option.none();
-      }
-    };
-
-    var getNextSiblingCaretPosition = function (elm) {
-      if (CaretCandidate.isCaretCandidate(elm.nextSibling)) {
-        return Option.some(beforeOrStartOf(elm.nextSibling));
-      } else {
-        return elm.nextSibling ? CaretFinder.firstPositionIn(elm.nextSibling) : Option.none();
-      }
-    };
-
-    var findCaretPositionBackwardsFromElm = function (rootElement, elm) {
-      var startPosition = CaretPosition.before(elm.previousSibling ? elm.previousSibling : elm.parentNode);
-      return CaretFinder.prevPosition(rootElement, startPosition).fold(
-        function () {
-          return CaretFinder.nextPosition(rootElement, CaretPosition.after(elm));
-        },
-        Option.some
-      );
-    };
-
-    var findCaretPositionForwardsFromElm = function (rootElement, elm) {
-      return CaretFinder.nextPosition(rootElement, CaretPosition.after(elm)).fold(
-        function () {
-          return CaretFinder.prevPosition(rootElement, CaretPosition.before(elm));
-        },
-        Option.some
-      );
-    };
-
-    var findCaretPositionBackwards = function (rootElement, elm) {
-      return getPreviousSiblingCaretPosition(elm).orThunk(function () {
-        return getNextSiblingCaretPosition(elm);
-      }).orThunk(function () {
-        return findCaretPositionBackwardsFromElm(rootElement, elm);
-      });
-    };
-
-    var findCaretPositionForward = function (rootElement, elm) {
-      return getNextSiblingCaretPosition(elm).orThunk(function () {
-        return getPreviousSiblingCaretPosition(elm);
-      }).orThunk(function () {
-        return findCaretPositionForwardsFromElm(rootElement, elm);
-      });
-    };
-
-    var findCaretPosition = function (forward, rootElement, elm) {
-      return forward ? findCaretPositionForward(rootElement, elm) : findCaretPositionBackwards(rootElement, elm);
-    };
-
-    var findCaretPosOutsideElmAfterDelete = function (forward, rootElement, elm) {
-      return findCaretPosition(forward, rootElement, elm).map(Fun.curry(reposition, elm));
-    };
-
-    var setSelection = function (editor, forward, pos) {
-      pos.fold(
-        function () {
-          editor.focus();
-        },
-        function (pos) {
-          editor.selection.setRng(pos.toRange(), forward);
-        }
-      );
-    };
-
-    var eqRawNode = function (rawNode) {
-      return function (elm) {
-        return elm.dom() === rawNode;
-      };
-    };
-
-    var isBlock = function (editor, elm) {
-      return elm && editor.schema.getBlockElements().hasOwnProperty(Node.name(elm));
-    };
-
-    var paddEmptyBlock = function (elm) {
-      if (Empty.isEmpty(elm)) {
-        var br = Element.fromHtml('<br data-mce-bogus="1">');
-        Remove.empty(elm);
-        Insert.append(elm, br);
-        return Option.some(CaretPosition.before(br.dom()));
-      } else {
-        return Option.none();
-      }
-    };
-
-    // When deleting an element between two text nodes IE 11 doesn't automatically merge the adjacent text nodes
-    var deleteNormalized = function (elm, afterDeletePosOpt) {
-      return Options.liftN([Traverse.prevSibling(elm), Traverse.nextSibling(elm), afterDeletePosOpt], function (prev, next, afterDeletePos) {
-        var offset, prevNode = prev.dom(), nextNode = next.dom();
-
-        if (NodeType.isText(prevNode) && NodeType.isText(nextNode)) {
-          offset = prevNode.data.length;
-          prevNode.appendData(nextNode.data);
-          Remove.remove(next);
-          Remove.remove(elm);
-          if (afterDeletePos.container() === nextNode) {
-            return new CaretPosition(prevNode, offset);
-          } else {
-            return afterDeletePos;
-          }
-        } else {
-          Remove.remove(elm);
-          return afterDeletePos;
-        }
-      }).orThunk(function () {
-        Remove.remove(elm);
-        return afterDeletePosOpt;
-      });
-    };
-
-    var deleteElement = function (editor, forward, elm) {
-      var afterDeletePos = findCaretPosOutsideElmAfterDelete(forward, editor.getBody(), elm.dom());
-      var parentBlock = PredicateFind.ancestor(elm, Fun.curry(isBlock, editor), eqRawNode(editor.getBody()));
-      var normalizedAfterDeletePos = deleteNormalized(elm, afterDeletePos);
-
-      parentBlock.bind(paddEmptyBlock).fold(
-        function () {
-          setSelection(editor, forward, normalizedAfterDeletePos);
-        },
-        function (paddPos) {
-          setSelection(editor, forward, Option.some(paddPos));
-        }
-      );
-    };
-
-    return {
-      deleteElement: deleteElement
-    };
-  }
-);
-/**
- * CefDelete.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.delete.CefDelete',
-  [
-    'ephox.katamari.api.Arr',
-    'ephox.sugar.api.dom.Remove',
-    'ephox.sugar.api.node.Element',
-    'ephox.sugar.api.search.SelectorFilter',
-    'tinymce.core.caret.CaretPosition',
-    'tinymce.core.delete.CefDeleteAction',
-    'tinymce.core.delete.DeleteElement',
-    'tinymce.core.delete.DeleteUtils',
-    'tinymce.core.dom.NodeType'
-  ],
-  function (Arr, Remove, Element, SelectorFilter, CaretPosition, CefDeleteAction, DeleteElement, DeleteUtils, NodeType) {
-    var deleteElement = function (editor, forward) {
-      return function (element) {
-        DeleteElement.deleteElement(editor, forward, Element.fromDom(element));
-        return true;
-      };
-    };
-
-    var moveToElement = function (editor, forward) {
-      return function (element) {
-        var pos = forward ? CaretPosition.before(element) : CaretPosition.after(element);
-        editor.selection.setRng(pos.toRange());
-        return true;
-      };
-    };
-
-    var moveToPosition = function (editor) {
-      return function (pos) {
-        editor.selection.setRng(pos.toRange());
-        return true;
-      };
-    };
-
-    var backspaceDeleteCaret = function (editor, forward) {
-      var result = CefDeleteAction.read(editor.getBody(), forward, editor.selection.getRng()).map(function (deleteAction) {
-        return deleteAction.fold(
-          deleteElement(editor, forward),
-          moveToElement(editor, forward),
-          moveToPosition(editor)
-        );
-      });
-
-      return result.getOr(false);
-    };
-
-    var deleteOffscreenSelection = function (rootElement) {
-      Arr.each(SelectorFilter.descendants(rootElement, '.mce-offscreen-selection'), Remove.remove);
-    };
-
-    var backspaceDeleteRange = function (editor, forward) {
-      var selectedElement = editor.selection.getNode();
-      if (NodeType.isContentEditableFalse(selectedElement)) {
-        deleteOffscreenSelection(Element.fromDom(editor.getBody()));
-        DeleteElement.deleteElement(editor, forward, Element.fromDom(editor.selection.getNode()));
-        DeleteUtils.paddEmptyBody(editor);
-        return true;
-      } else {
-        return false;
-      }
-    };
-
-    var getContentEditableRoot = function (root, node) {
-      while (node && node !== root) {
-        if (NodeType.isContentEditableTrue(node) || NodeType.isContentEditableFalse(node)) {
-          return node;
-        }
-
-        node = node.parentNode;
-      }
-
-      return null;
-    };
-
-    var paddEmptyElement = function (editor) {
-      var br, ceRoot = getContentEditableRoot(editor.getBody(), editor.selection.getNode());
-
-      if (NodeType.isContentEditableTrue(ceRoot) && editor.dom.isBlock(ceRoot) && editor.dom.isEmpty(ceRoot)) {
-        br = editor.dom.create('br', { "data-mce-bogus": "1" });
-        editor.dom.setHTML(ceRoot, '');
-        ceRoot.appendChild(br);
-        editor.selection.setRng(CaretPosition.before(br).toRange());
-      }
-
-      return true;
-    };
-
-    var backspaceDelete = function (editor, forward) {
-      if (editor.selection.isCollapsed()) {
-        return backspaceDeleteCaret(editor, forward);
-      } else {
-        return backspaceDeleteRange(editor, forward);
-      }
-    };
-
-    return {
-      backspaceDelete: backspaceDelete,
-      paddEmptyElement: paddEmptyElement
-    };
-  }
-);
-
-/**
- * CaretContainerInline.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.caret.CaretContainerInline',
-  [
-    'ephox.katamari.api.Fun',
-    'tinymce.core.dom.NodeType',
-    'tinymce.core.text.Zwsp'
-  ],
-  function (Fun, NodeType, Zwsp) {
-    var isText = NodeType.isText;
-
-    var startsWithCaretContainer = function (node) {
-      return isText(node) && node.data[0] === Zwsp.ZWSP;
-    };
-
-    var endsWithCaretContainer = function (node) {
-      return isText(node) && node.data[node.data.length - 1] === Zwsp.ZWSP;
-    };
-
-    var createZwsp = function (node) {
-      return node.ownerDocument.createTextNode(Zwsp.ZWSP);
-    };
-
-    var insertBefore = function (node) {
-      if (isText(node.previousSibling)) {
-        if (endsWithCaretContainer(node.previousSibling)) {
-          return node.previousSibling;
-        } else {
-          node.previousSibling.appendData(Zwsp.ZWSP);
-          return node.previousSibling;
-        }
-      } else if (isText(node)) {
-        if (startsWithCaretContainer(node)) {
-          return node;
-        } else {
-          node.insertData(0, Zwsp.ZWSP);
-          return node;
-        }
-      } else {
-        var newNode = createZwsp(node);
-        node.parentNode.insertBefore(newNode, node);
-        return newNode;
-      }
-    };
-
-    var insertAfter = function (node) {
-      if (isText(node.nextSibling)) {
-        if (startsWithCaretContainer(node.nextSibling)) {
-          return node.nextSibling;
-        } else {
-          node.nextSibling.insertData(0, Zwsp.ZWSP);
-          return node.nextSibling;
-        }
-      } else if (isText(node)) {
-        if (endsWithCaretContainer(node)) {
-          return node;
-        } else {
-          node.appendData(Zwsp.ZWSP);
-          return node;
-        }
-      } else {
-        var newNode = createZwsp(node);
-        if (node.nextSibling) {
-          node.parentNode.insertBefore(newNode, node.nextSibling);
-        } else {
-          node.parentNode.appendChild(newNode);
-        }
-        return newNode;
-      }
-    };
-
-    var insertInline = function (before, node) {
-      return before ? insertBefore(node) : insertAfter(node);
-    };
-
-    return {
-      insertInline: insertInline,
-      insertInlineBefore: Fun.curry(insertInline, true),
-      insertInlineAfter: Fun.curry(insertInline, false)
-    };
-  }
-);
-/**
- * CaretContainerRemove.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.caret.CaretContainerRemove',
-  [
-    'ephox.katamari.api.Arr',
-    'tinymce.core.caret.CaretContainer',
-    'tinymce.core.caret.CaretPosition',
-    'tinymce.core.dom.NodeType',
-    'tinymce.core.text.Zwsp'
-  ],
-  function (Arr, CaretContainer, CaretPosition, NodeType, Zwsp) {
-    var isElement = NodeType.isElement;
-    var isText = NodeType.isText;
-
-    var removeNode = function (node) {
-      var parentNode = node.parentNode;
-      if (parentNode) {
-        parentNode.removeChild(node);
-      }
-    };
-
-    var getNodeValue = function (node) {
-      try {
-        return node.nodeValue;
-      } catch (ex) {
-        // IE sometimes produces "Invalid argument" on nodes
-        return "";
-      }
-    };
-
-    var setNodeValue = function (node, text) {
-      if (text.length === 0) {
-        removeNode(node);
-      } else {
-        node.nodeValue = text;
-      }
-    };
-
-    var trimCount = function (text) {
-      var trimmedText = Zwsp.trim(text);
-      return { count: text.length - trimmedText.length, text: trimmedText };
-    };
-
-    var removeUnchanged = function (caretContainer, pos) {
-      remove(caretContainer);
-      return pos;
-    };
-
-    var removeTextAndReposition = function (caretContainer, pos) {
-      var before = trimCount(caretContainer.data.substr(0, pos.offset()));
-      var after = trimCount(caretContainer.data.substr(pos.offset()));
-      var text = before.text + after.text;
-
-      if (text.length > 0) {
-        setNodeValue(caretContainer, text);
-        return new CaretPosition(caretContainer, pos.offset() - before.count);
-      } else {
-        return pos;
-      }
-    };
-
-    var removeElementAndReposition = function (caretContainer, pos) {
-      var parentNode = pos.container();
-      var newPosition = Arr.indexOf(parentNode.childNodes, caretContainer).map(function (index) {
-        return index < pos.offset() ? new CaretPosition(parentNode, pos.offset() - 1) : pos;
-      }).getOr(pos);
-      remove(caretContainer);
-      return newPosition;
-    };
-
-    var removeTextCaretContainer = function (caretContainer, pos) {
-      return pos.container() === caretContainer ? removeTextAndReposition(caretContainer, pos) : removeUnchanged(caretContainer, pos);
-    };
-
-    var removeElementCaretContainer = function (caretContainer, pos) {
-      return pos.container() === caretContainer.parentNode ? removeElementAndReposition(caretContainer, pos) : removeUnchanged(caretContainer, pos);
-    };
-
-    var removeAndReposition = function (container, pos) {
-      return CaretPosition.isTextPosition(pos) ? removeTextCaretContainer(container, pos) : removeElementCaretContainer(container, pos);
-    };
-
-    var remove = function (caretContainerNode) {
-      if (isElement(caretContainerNode) && CaretContainer.isCaretContainer(caretContainerNode)) {
-        if (CaretContainer.hasContent(caretContainerNode)) {
-          caretContainerNode.removeAttribute('data-mce-caret');
-        } else {
-          removeNode(caretContainerNode);
-        }
-      }
-
-      if (isText(caretContainerNode)) {
-        var text = Zwsp.trim(getNodeValue(caretContainerNode));
-        setNodeValue(caretContainerNode, text);
-      }
-    };
-
-    return {
-      removeAndReposition: removeAndReposition,
-      remove: remove
-    };
-  }
-);
-/**
- * DefaultSettings.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.EditorSettings',
-  [
-    'ephox.katamari.api.Arr',
-    'ephox.katamari.api.Fun',
-    'ephox.katamari.api.Obj',
-    'ephox.katamari.api.Option',
-    'ephox.katamari.api.Strings',
-    'ephox.katamari.api.Struct',
-    'ephox.katamari.api.Type',
-    'ephox.sand.api.PlatformDetection',
-    'tinymce.core.util.Tools'
-  ],
-  function (Arr, Fun, Obj, Option, Strings, Struct, Type, PlatformDetection, Tools) {
-    var sectionResult = Struct.immutable('sections', 'settings');
-    var detection = PlatformDetection.detect();
-    var isTouch = detection.deviceType.isTouch();
-    var mobilePlugins = [ 'lists', 'autolink', 'autosave' ];
-    var defaultMobileSettings = { theme: 'mobile' };
-
-    var normalizePlugins = function (plugins) {
-      var pluginNames = Type.isArray(plugins) ? plugins.join(' ') : plugins;
-      var trimmedPlugins = Arr.map(Type.isString(pluginNames) ? pluginNames.split(' ') : [ ], Strings.trim);
-      return Arr.filter(trimmedPlugins, function (item) {
-        return item.length > 0;
-      });
-    };
-
-    var filterMobilePlugins = function (plugins) {
-      return Arr.filter(plugins, Fun.curry(Arr.contains, mobilePlugins));
-    };
-
-    var extractSections = function (keys, settings) {
-      var result = Obj.bifilter(settings, function (value, key) {
-        return Arr.contains(keys, key);
-      });
-
-      return sectionResult(result.t, result.f);
-    };
-
-    var getSection = function (sectionResult, name, defaults) {
-      var sections = sectionResult.sections();
-      var sectionSettings = sections.hasOwnProperty(name) ? sections[name] : { };
-      return Tools.extend({}, defaults, sectionSettings);
-    };
-
-    var hasSection = function (sectionResult, name) {
-      return sectionResult.sections().hasOwnProperty(name);
-    };
-
-    var getDefaultSettings = function (id, documentBaseUrl, editor) {
-      return {
-        id: id,
-        theme: 'modern',
-        delta_width: 0,
-        delta_height: 0,
-        popup_css: '',
-        plugins: '',
-        document_base_url: documentBaseUrl,
-        add_form_submit_trigger: true,
-        submit_patch: true,
-        add_unload_trigger: true,
-        convert_urls: true,
-        relative_urls: true,
-        remove_script_host: true,
-        object_resizing: true,
-        doctype: '<!DOCTYPE html>',
-        visual: true,
-        font_size_style_values: 'xx-small,x-small,small,medium,large,x-large,xx-large',
-
-        // See: http://www.w3.org/TR/CSS2/fonts.html#propdef-font-size
-        font_size_legacy_values: 'xx-small,small,medium,large,x-large,xx-large,300%',
-        forced_root_block: 'p',
-        hidden_input: true,
-        padd_empty_editor: true,
-        render_ui: true,
-        indentation: '30px',
-        inline_styles: true,
-        convert_fonts_to_spans: true,
-        indent: 'simple',
-        indent_before: 'p,h1,h2,h3,h4,h5,h6,blockquote,div,title,style,pre,script,td,th,ul,ol,li,dl,dt,dd,area,table,thead,' +
-        'tfoot,tbody,tr,section,article,hgroup,aside,figure,figcaption,option,optgroup,datalist',
-        indent_after: 'p,h1,h2,h3,h4,h5,h6,blockquote,div,title,style,pre,script,td,th,ul,ol,li,dl,dt,dd,area,table,thead,' +
-        'tfoot,tbody,tr,section,article,hgroup,aside,figure,figcaption,option,optgroup,datalist',
-        entity_encoding: 'named',
-        url_converter: editor.convertURL,
-        url_converter_scope: editor,
-        ie7_compat: true
-      };
-    };
-
-    var getExternalPlugins = function (overrideSettings, settings) {
-      var userDefinedExternalPlugins = settings.external_plugins ? settings.external_plugins : { };
-
-      if (overrideSettings && overrideSettings.external_plugins) {
-        return Tools.extend({}, overrideSettings.external_plugins, userDefinedExternalPlugins);
-      } else {
-        return userDefinedExternalPlugins;
-      }
-    };
-
-    var combinePlugins = function (forcedPlugins, plugins) {
-      return [].concat(normalizePlugins(forcedPlugins)).concat(normalizePlugins(plugins));
-    };
-
-    var processPlugins = function (isTouchDevice, sectionResult, defaultOverrideSettings, settings) {
-      var forcedPlugins = normalizePlugins(defaultOverrideSettings.forced_plugins);
-      var plugins = normalizePlugins(settings.plugins);
-      var platformPlugins = isTouchDevice && hasSection(sectionResult, 'mobile') ? filterMobilePlugins(plugins) : plugins;
-      var combinedPlugins = combinePlugins(forcedPlugins, platformPlugins);
-
-      return Tools.extend(settings, {
-        plugins: combinedPlugins.join(' ')
-      });
-    };
-
-    var isOnMobile = function (isTouchDevice, sectionResult) {
-      var isInline = sectionResult.settings().inline; // We don't support mobile inline yet
-      return isTouchDevice && hasSection(sectionResult, 'mobile') && !isInline;
-    };
-
-    var combineSettings = function (isTouchDevice, defaultSettings, defaultOverrideSettings, settings) {
-      var sectionResult = extractSections(['mobile'], settings);
-      var extendedSettings = Tools.extend(
-        // Default settings
-        defaultSettings,
-
-        // tinymce.overrideDefaults settings
-        defaultOverrideSettings,
-
-        // User settings
-        sectionResult.settings(),
-
-        // Sections
-        isOnMobile(isTouchDevice, sectionResult) ? getSection(sectionResult, 'mobile', defaultMobileSettings) : { },
-
-        // Forced settings
-        {
-          validate: true,
-          content_editable: sectionResult.settings().inline,
-          external_plugins: getExternalPlugins(defaultOverrideSettings, sectionResult.settings())
-        }
-      );
-
-      return processPlugins(isTouchDevice, sectionResult, defaultOverrideSettings, extendedSettings);
-    };
-
-    var getEditorSettings = function (editor, id, documentBaseUrl, defaultOverrideSettings, settings) {
-      var defaultSettings = getDefaultSettings(id, documentBaseUrl, editor);
-      return combineSettings(isTouch, defaultSettings, defaultOverrideSettings, settings);
-    };
-
-    var get = function (editor, name) {
-      return Option.from(editor.settings[name]);
-    };
-
-    var getFiltered = function (predicate, editor, name) {
-      return Option.from(editor.settings[name]).filter(predicate);
-    };
-
-    return {
-      getEditorSettings: getEditorSettings,
-      get: get,
-      getString: Fun.curry(getFiltered, Type.isString),
-      combineSettings: combineSettings
-    };
-  }
-);
-
-/**
- * Bidi.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.text.Bidi',
-  [
-  ],
-  function () {
-    var strongRtl = /[\u0591-\u07FF\uFB1D-\uFDFF\uFE70-\uFEFC]/;
-
-    var hasStrongRtl = function (text) {
-      return strongRtl.test(text);
-    };
-
-    return {
-      hasStrongRtl: hasStrongRtl
-    };
-  }
-);
-/**
- * InlineUtils.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.keyboard.InlineUtils',
-  [
-    'ephox.katamari.api.Arr',
-    'ephox.katamari.api.Fun',
-    'ephox.katamari.api.Option',
-    'ephox.katamari.api.Options',
-    'ephox.katamari.api.Type',
-    'ephox.sugar.api.node.Element',
-    'ephox.sugar.api.search.Selectors',
-    'tinymce.core.caret.CaretContainer',
-    'tinymce.core.caret.CaretFinder',
-    'tinymce.core.caret.CaretPosition',
-    'tinymce.core.caret.CaretUtils',
-    'tinymce.core.caret.CaretWalker',
-    'tinymce.core.dom.DOMUtils',
-    'tinymce.core.dom.NodeType',
-    'tinymce.core.EditorSettings',
-    'tinymce.core.text.Bidi'
-  ],
-  function (
-    Arr, Fun, Option, Options, Type, Element, Selectors, CaretContainer, CaretFinder, CaretPosition, CaretUtils, CaretWalker, DOMUtils, NodeType, EditorSettings,
-    Bidi
-  ) {
-    var isInlineTarget = function (editor, elm) {
-      var selector = EditorSettings.getString(editor, 'inline_boundaries_selector').getOr('a[href],code');
-      return Selectors.is(Element.fromDom(elm), selector);
-    };
-
-    var isRtl = function (element) {
-      return DOMUtils.DOM.getStyle(element, 'direction', true) === 'rtl' || Bidi.hasStrongRtl(element.textContent);
-    };
-
-    var findInlineParents = function (isInlineTarget, rootNode, pos) {
-      return Arr.filter(DOMUtils.DOM.getParents(pos.container(), '*', rootNode), isInlineTarget);
-    };
-
-    var findRootInline = function (isInlineTarget, rootNode, pos) {
-      var parents = findInlineParents(isInlineTarget, rootNode, pos);
-      return Option.from(parents[parents.length - 1]);
-    };
-
-    var hasSameParentBlock = function (rootNode, node1, node2) {
-      var block1 = CaretUtils.getParentBlock(node1, rootNode);
-      var block2 = CaretUtils.getParentBlock(node2, rootNode);
-      return block1 && block1 === block2;
-    };
-
-    var isAtZwsp = function (pos) {
-      return CaretContainer.isBeforeInline(pos) || CaretContainer.isAfterInline(pos);
-    };
-
-    var normalizePosition = function (forward, pos) {
-      var container = pos.container(), offset = pos.offset();
-
-      if (forward) {
-        if (CaretContainer.isCaretContainerInline(container)) {
-          if (NodeType.isText(container.nextSibling)) {
-            return new CaretPosition(container.nextSibling, 0);
-          } else {
-            return CaretPosition.after(container);
-          }
-        } else {
-          return CaretContainer.isBeforeInline(pos) ? new CaretPosition(container, offset + 1) : pos;
-        }
-      } else {
-        if (CaretContainer.isCaretContainerInline(container)) {
-          if (NodeType.isText(container.previousSibling)) {
-            return new CaretPosition(container.previousSibling, container.previousSibling.data.length);
-          } else {
-            return CaretPosition.before(container);
-          }
-        } else {
-          return CaretContainer.isAfterInline(pos) ? new CaretPosition(container, offset - 1) : pos;
-        }
-      }
-    };
-
-    var normalizeForwards = Fun.curry(normalizePosition, true);
-    var normalizeBackwards = Fun.curry(normalizePosition, false);
-
-    return {
-      isInlineTarget: isInlineTarget,
-      findRootInline: findRootInline,
-      isRtl: isRtl,
-      isAtZwsp: isAtZwsp,
-      normalizePosition: normalizePosition,
-      normalizeForwards: normalizeForwards,
-      normalizeBackwards: normalizeBackwards,
-      hasSameParentBlock: hasSameParentBlock
-    };
-  }
-);
-/**
- * BoundaryCaret.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.keyboard.BoundaryCaret',
-  [
-    'ephox.katamari.api.Option',
-    'tinymce.core.caret.CaretContainer',
-    'tinymce.core.caret.CaretContainerInline',
-    'tinymce.core.caret.CaretContainerRemove',
-    'tinymce.core.caret.CaretFinder',
-    'tinymce.core.caret.CaretPosition',
-    'tinymce.core.dom.NodeType',
-    'tinymce.core.keyboard.InlineUtils'
-  ],
-  function (Option, CaretContainer, CaretContainerInline, CaretContainerRemove, CaretFinder, CaretPosition, NodeType, InlineUtils) {
-    var insertInlinePos = function (pos, before) {
-      if (NodeType.isText(pos.container())) {
-        return CaretContainerInline.insertInline(before, pos.container());
-      } else {
-        return CaretContainerInline.insertInline(before, pos.getNode());
-      }
-    };
-
-    var isPosCaretContainer = function (pos, caret) {
-      var caretNode = caret.get();
-      return caretNode && pos.container() === caretNode && CaretContainer.isCaretContainerInline(caretNode);
-    };
-
-    var renderCaret = function (caret, location) {
-      return location.fold(
-        function (element) { // Before
-          CaretContainerRemove.remove(caret.get());
-          var text = CaretContainerInline.insertInlineBefore(element);
-          caret.set(text);
-          return Option.some(new CaretPosition(text, text.length - 1));
-        },
-        function (element) { // Start
-          return CaretFinder.firstPositionIn(element).map(function (pos) {
-            if (!isPosCaretContainer(pos, caret)) {
-              CaretContainerRemove.remove(caret.get());
-              var text = insertInlinePos(pos, true);
-              caret.set(text);
-              return new CaretPosition(text, 1);
-            } else {
-              return new CaretPosition(caret.get(), 1);
-            }
-          });
-        },
-        function (element) { // End
-          return CaretFinder.lastPositionIn(element).map(function (pos) {
-            if (!isPosCaretContainer(pos, caret)) {
-              CaretContainerRemove.remove(caret.get());
-              var text = insertInlinePos(pos, false);
-              caret.set(text);
-              return new CaretPosition(text, text.length - 1);
-            } else {
-              return new CaretPosition(caret.get(), caret.get().length - 1);
-            }
-          });
-        },
-        function (element) { // After
-          CaretContainerRemove.remove(caret.get());
-          var text = CaretContainerInline.insertInlineAfter(element);
-          caret.set(text);
-          return Option.some(new CaretPosition(text, 1));
-        }
-      );
-    };
-
-    return {
-      renderCaret: renderCaret
-    };
-  }
-);
-/**
- * LazyEvaluator.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.util.LazyEvaluator',
-  [
-    'ephox.katamari.api.Option'
-  ],
-  function (Option) {
-    var evaluateUntil = function (fns, args) {
-      for (var i = 0; i < fns.length; i++) {
-        var result = fns[i].apply(null, args);
-        if (result.isSome()) {
-          return result;
-        }
-      }
-
-      return Option.none();
-    };
-
-    return {
-      evaluateUntil: evaluateUntil
-    };
-  }
-);
-/**
- * BoundaryLocation.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.keyboard.BoundaryLocation',
-  [
-    'ephox.katamari.api.Adt',
-    'ephox.katamari.api.Fun',
-    'ephox.katamari.api.Option',
-    'ephox.katamari.api.Options',
-    'tinymce.core.caret.CaretContainer',
-    'tinymce.core.caret.CaretFinder',
-    'tinymce.core.caret.CaretPosition',
-    'tinymce.core.caret.CaretUtils',
-    'tinymce.core.dom.NodeType',
-    'tinymce.core.keyboard.InlineUtils',
-    'tinymce.core.util.LazyEvaluator'
-  ],
-  function (Adt, Fun, Option, Options, CaretContainer, CaretFinder, CaretPosition, CaretUtils, NodeType, InlineUtils, LazyEvaluator) {
-    var Location = Adt.generate([
-      { before: [ 'element' ] },
-      { start: [ 'element' ] },
-      { end: [ 'element' ] },
-      { after: [ 'element' ] }
-    ]);
-
-    var rescope = function (rootNode, node) {
-      var parentBlock = CaretUtils.getParentBlock(node, rootNode);
-      return parentBlock ? parentBlock : rootNode;
-    };
-
-    var before = function (isInlineTarget, rootNode, pos) {
-      var nPos = InlineUtils.normalizeForwards(pos);
-      var scope = rescope(rootNode, nPos.container());
-      return InlineUtils.findRootInline(isInlineTarget, scope, nPos).fold(
-        function () {
-          return CaretFinder.nextPosition(scope, nPos)
-            .bind(Fun.curry(InlineUtils.findRootInline, isInlineTarget, scope))
-            .map(function (inline) {
-              return Location.before(inline);
-            });
-        },
-        Option.none
-      );
-    };
-
-    var start = function (isInlineTarget, rootNode, pos) {
-      var nPos = InlineUtils.normalizeBackwards(pos);
-      return InlineUtils.findRootInline(isInlineTarget, rootNode, nPos).bind(function (inline) {
-        var prevPos = CaretFinder.prevPosition(inline, nPos);
-        return prevPos.isNone() ? Option.some(Location.start(inline)) : Option.none();
-      });
-    };
-
-    var end = function (isInlineTarget, rootNode, pos) {
-      var nPos = InlineUtils.normalizeForwards(pos);
-      return InlineUtils.findRootInline(isInlineTarget, rootNode, nPos).bind(function (inline) {
-        var nextPos = CaretFinder.nextPosition(inline, nPos);
-        return nextPos.isNone() ? Option.some(Location.end(inline)) : Option.none();
-      });
-    };
-
-    var after = function (isInlineTarget, rootNode, pos) {
-      var nPos = InlineUtils.normalizeBackwards(pos);
-      var scope = rescope(rootNode, nPos.container());
-      return InlineUtils.findRootInline(isInlineTarget, scope, nPos).fold(
-        function () {
-          return CaretFinder.prevPosition(scope, nPos)
-            .bind(Fun.curry(InlineUtils.findRootInline, isInlineTarget, scope))
-            .map(function (inline) {
-              return Location.after(inline);
-            });
-        },
-        Option.none
-      );
-    };
-
-    var isValidLocation = function (location) {
-      return InlineUtils.isRtl(getElement(location)) === false;
-    };
-
-    var readLocation = function (isInlineTarget, rootNode, pos) {
-      var location = LazyEvaluator.evaluateUntil([
-        before,
-        start,
-        end,
-        after
-      ], [isInlineTarget, rootNode, pos]);
-
-      return location.filter(isValidLocation);
-    };
-
-    var getElement = function (location) {
-      return location.fold(
-        Fun.identity, // Before
-        Fun.identity, // Start
-        Fun.identity, // End
-        Fun.identity  // After
-      );
-    };
-
-    var getName = function (location) {
-      return location.fold(
-        Fun.constant('before'), // Before
-        Fun.constant('start'),  // Start
-        Fun.constant('end'),    // End
-        Fun.constant('after')   // After
-      );
-    };
-
-    var outside = function (location) {
-      return location.fold(
-        Location.before, // Before
-        Location.before, // Start
-        Location.after,  // End
-        Location.after   // After
-      );
-    };
-
-    var inside = function (location) {
-      return location.fold(
-        Location.start, // Before
-        Location.start, // Start
-        Location.end,   // End
-        Location.end    // After
-      );
-    };
-
-    var isEq = function (location1, location2) {
-      return getName(location1) === getName(location2) && getElement(location1) === getElement(location2);
-    };
-
-    var betweenInlines = function (forward, isInlineTarget, rootNode, from, to, location) {
-      return Options.liftN([
-        InlineUtils.findRootInline(isInlineTarget, rootNode, from),
-        InlineUtils.findRootInline(isInlineTarget, rootNode, to)
-      ], function (fromInline, toInline) {
-        if (fromInline !== toInline && InlineUtils.hasSameParentBlock(rootNode, fromInline, toInline)) {
-          // Force after since some browsers normalize and lean left into the closest inline
-          return Location.after(forward ? fromInline : toInline);
-        } else {
-          return location;
-        }
-      }).getOr(location);
-    };
-
-    var skipNoMovement = function (fromLocation, toLocation) {
-      return fromLocation.fold(
-        Fun.constant(true),
-        function (fromLocation) {
-          return !isEq(fromLocation, toLocation);
-        }
-      );
-    };
-
-    var findLocationTraverse = function (forward, isInlineTarget, rootNode, fromLocation, pos) {
-      var from = InlineUtils.normalizePosition(forward, pos);
-      var to = CaretFinder.fromPosition(forward, rootNode, from).map(Fun.curry(InlineUtils.normalizePosition, forward));
-
-      var location = to.fold(
-        function () {
-          return fromLocation.map(outside);
-        },
-        function (to) {
-          return readLocation(isInlineTarget, rootNode, to)
-            .map(Fun.curry(betweenInlines, forward, isInlineTarget, rootNode, from, to))
-            .filter(Fun.curry(skipNoMovement, fromLocation));
-        }
-      );
-
-      return location.filter(isValidLocation);
-    };
-
-    var findLocationSimple = function (forward, location) {
-      if (forward) {
-        return location.fold(
-          Fun.compose(Option.some, Location.start), // Before -> Start
-          Option.none,
-          Fun.compose(Option.some, Location.after), // End -> After
-          Option.none
-        );
-      } else {
-        return location.fold(
-          Option.none,
-          Fun.compose(Option.some, Location.before), // Before <- Start
-          Option.none,
-          Fun.compose(Option.some, Location.end) // End <- After
-        );
-      }
-    };
-
-    var findLocation = function (forward, isInlineTarget, rootNode, pos) {
-      var from = InlineUtils.normalizePosition(forward, pos);
-      var fromLocation = readLocation(isInlineTarget, rootNode, from);
-
-      return readLocation(isInlineTarget, rootNode, from).bind(Fun.curry(findLocationSimple, forward)).orThunk(function () {
-        return findLocationTraverse(forward, isInlineTarget, rootNode, fromLocation, pos);
-      });
-    };
-
-    return {
-      readLocation: readLocation,
-      findLocation: findLocation,
-      prevLocation: Fun.curry(findLocation, false),
-      nextLocation: Fun.curry(findLocation, true),
-      getElement: getElement,
-      outside: outside,
-      inside: inside
-    };
-  }
-);
-/**
- * BoundarySelection.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.keyboard.BoundarySelection',
-  [
-    'ephox.katamari.api.Arr',
-    'ephox.katamari.api.Cell',
-    'ephox.katamari.api.Fun',
-    'tinymce.core.caret.CaretContainerRemove',
-    'tinymce.core.caret.CaretPosition',
-    'tinymce.core.keyboard.BoundaryCaret',
-    'tinymce.core.keyboard.BoundaryLocation',
-    'tinymce.core.keyboard.InlineUtils'
-  ],
-  function (Arr, Cell, Fun, CaretContainerRemove, CaretPosition, BoundaryCaret, BoundaryLocation, InlineUtils) {
-    var setCaretPosition = function (editor, pos) {
-      var rng = editor.dom.createRng();
-      rng.setStart(pos.container(), pos.offset());
-      rng.setEnd(pos.container(), pos.offset());
-      editor.selection.setRng(rng);
-    };
-
-    var isFeatureEnabled = function (editor) {
-      return editor.settings.inline_boundaries !== false;
-    };
-
-    var setSelected = function (state, elm) {
-      if (state) {
-        elm.setAttribute('data-mce-selected', '1');
-      } else {
-        elm.removeAttribute('data-mce-selected', '1');
-      }
-    };
-
-    var renderCaretLocation = function (editor, caret, location) {
-      return BoundaryCaret.renderCaret(caret, location).map(function (pos) {
-        setCaretPosition(editor, pos);
-        return location;
-      });
-    };
-
-    var findLocation = function (editor, caret, forward) {
-      var rootNode = editor.getBody();
-      var from = CaretPosition.fromRangeStart(editor.selection.getRng());
-      var isInlineTarget = Fun.curry(InlineUtils.isInlineTarget, editor);
-      var location = BoundaryLocation.findLocation(forward, isInlineTarget, rootNode, from);
-      return location.bind(function (location) {
-        return renderCaretLocation(editor, caret, location);
-      });
-    };
-
-    var toggleInlines = function (isInlineTarget, dom, elms) {
-      var selectedInlines = Arr.filter(dom.select('*[data-mce-selected]'), isInlineTarget);
-      var targetInlines = Arr.filter(elms, isInlineTarget);
-      Arr.each(Arr.difference(selectedInlines, targetInlines), Fun.curry(setSelected, false));
-      Arr.each(Arr.difference(targetInlines, selectedInlines), Fun.curry(setSelected, true));
-    };
-
-    var safeRemoveCaretContainer = function (editor, caret) {
-      if (editor.selection.isCollapsed() && editor.composing !== true && caret.get()) {
-        var pos = CaretPosition.fromRangeStart(editor.selection.getRng());
-        if (CaretPosition.isTextPosition(pos) && InlineUtils.isAtZwsp(pos) === false) {
-          setCaretPosition(editor, CaretContainerRemove.removeAndReposition(caret.get(), pos));
-          caret.set(null);
-        }
-      }
-    };
-
-    var renderInsideInlineCaret = function (isInlineTarget, editor, caret, elms) {
-      if (editor.selection.isCollapsed()) {
-        var inlines = Arr.filter(elms, isInlineTarget);
-        Arr.each(inlines, function (inline) {
-          var pos = CaretPosition.fromRangeStart(editor.selection.getRng());
-          BoundaryLocation.readLocation(isInlineTarget, editor.getBody(), pos).bind(function (location) {
-            return renderCaretLocation(editor, caret, location);
-          });
-        });
-      }
-    };
-
-    var move = function (editor, caret, forward) {
-      return function () {
-        return isFeatureEnabled(editor) ? findLocation(editor, caret, forward).isSome() : false;
-      };
-    };
-
-    var setupSelectedState = function (editor) {
-      var caret = new Cell(null);
-      var isInlineTarget = Fun.curry(InlineUtils.isInlineTarget, editor);
-
-      editor.on('NodeChange', function (e) {
-        if (isFeatureEnabled(editor)) {
-          toggleInlines(isInlineTarget, editor.dom, e.parents);
-          safeRemoveCaretContainer(editor, caret);
-          renderInsideInlineCaret(isInlineTarget, editor, caret, e.parents);
-        }
-      });
-
-      return caret;
-    };
-
-    return {
-      move: move,
-      setupSelectedState: setupSelectedState,
-      setCaretPosition: setCaretPosition
-    };
-  }
-);
-/**
- * InlineBoundaryDelete.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.delete.InlineBoundaryDelete',
-  [
-    'ephox.katamari.api.Fun',
-    'ephox.katamari.api.Option',
-    'ephox.katamari.api.Options',
-    'ephox.sugar.api.node.Element',
-    'global!document',
-    'tinymce.core.caret.CaretContainer',
-    'tinymce.core.caret.CaretFinder',
-    'tinymce.core.caret.CaretPosition',
-    'tinymce.core.caret.CaretUtils',
-    'tinymce.core.delete.DeleteElement',
-    'tinymce.core.keyboard.BoundaryCaret',
-    'tinymce.core.keyboard.BoundaryLocation',
-    'tinymce.core.keyboard.BoundarySelection',
-    'tinymce.core.keyboard.InlineUtils'
-  ],
-  function (
-    Fun, Option, Options, Element, document, CaretContainer, CaretFinder, CaretPosition, CaretUtils, DeleteElement, BoundaryCaret, BoundaryLocation, BoundarySelection,
-    InlineUtils
-  ) {
-    var isFeatureEnabled = function (editor) {
-      return editor.settings.inline_boundaries !== false;
-    };
-
-    var rangeFromPositions = function (from, to) {
-      var range = document.createRange();
-
-      range.setStart(from.container(), from.offset());
-      range.setEnd(to.container(), to.offset());
-
-      return range;
-    };
-
-    // Checks for delete at <code>|a</code> when there is only one item left except the zwsp caret container nodes
-    var hasOnlyTwoOrLessPositionsLeft = function (elm) {
-      return Options.liftN([
-        CaretFinder.firstPositionIn(elm),
-        CaretFinder.lastPositionIn(elm)
-      ], function (firstPos, lastPos) {
-        var normalizedFirstPos = InlineUtils.normalizePosition(true, firstPos);
-        var normalizedLastPos = InlineUtils.normalizePosition(false, lastPos);
-
-        return CaretFinder.nextPosition(elm, normalizedFirstPos).map(function (pos) {
-          return pos.isEqual(normalizedLastPos);
-        }).getOr(true);
-      }).getOr(true);
-    };
-
-    var setCaretLocation = function (editor, caret) {
-      return function (location) {
-        return BoundaryCaret.renderCaret(caret, location).map(function (pos) {
-          BoundarySelection.setCaretPosition(editor, pos);
-          return true;
-        }).getOr(false);
-      };
-    };
-
-    var deleteFromTo = function (editor, caret, from, to) {
-      var rootNode = editor.getBody();
-      var isInlineTarget = Fun.curry(InlineUtils.isInlineTarget, editor);
-
-      editor.undoManager.ignore(function () {
-        editor.selection.setRng(rangeFromPositions(from, to));
-        editor.execCommand('Delete');
-
-        BoundaryLocation.readLocation(isInlineTarget, rootNode, CaretPosition.fromRangeStart(editor.selection.getRng()))
-          .map(BoundaryLocation.inside)
-          .map(setCaretLocation(editor, caret));
-      });
-
-      editor.nodeChanged();
-    };
-
-    var rescope = function (rootNode, node) {
-      var parentBlock = CaretUtils.getParentBlock(node, rootNode);
-      return parentBlock ? parentBlock : rootNode;
-    };
-
-    var backspaceDeleteCollapsed = function (editor, caret, forward, from) {
-      var rootNode = rescope(editor.getBody(), from.container());
-      var isInlineTarget = Fun.curry(InlineUtils.isInlineTarget, editor);
-      var fromLocation = BoundaryLocation.readLocation(isInlineTarget, rootNode, from);
-
-      return fromLocation.bind(function (location) {
-        if (forward) {
-          return location.fold(
-            Fun.constant(Option.some(BoundaryLocation.inside(location))), // Before
-            Option.none, // Start
-            Fun.constant(Option.some(BoundaryLocation.outside(location))), // End
-            Option.none  // After
-          );
-        } else {
-          return location.fold(
-            Option.none, // Before
-            Fun.constant(Option.some(BoundaryLocation.outside(location))), // Start
-            Option.none, // End
-            Fun.constant(Option.some(BoundaryLocation.inside(location)))  // After
-          );
-        }
-      })
-      .map(setCaretLocation(editor, caret))
-      .getOrThunk(function () {
-        var toPosition = CaretFinder.navigate(forward, rootNode, from);
-        var toLocation = toPosition.bind(function (pos) {
-          return BoundaryLocation.readLocation(isInlineTarget, rootNode, pos);
-        });
-
-        if (fromLocation.isSome() && toLocation.isSome()) {
-          return InlineUtils.findRootInline(isInlineTarget, rootNode, from).map(function (elm) {
-            if (hasOnlyTwoOrLessPositionsLeft(elm)) {
-              DeleteElement.deleteElement(editor, forward, Element.fromDom(elm));
-              return true;
-            } else {
-              return false;
-            }
-          }).getOr(false);
-        } else {
-          return toLocation.bind(function (_) {
-            return toPosition.map(function (to) {
-              if (forward) {
-                deleteFromTo(editor, caret, from, to);
-              } else {
-                deleteFromTo(editor, caret, to, from);
-              }
-
-              return true;
-            });
-          }).getOr(false);
-        }
-      });
-    };
-
-    var backspaceDelete = function (editor, caret, forward) {
-      if (editor.selection.isCollapsed() && isFeatureEnabled(editor)) {
-        var from = CaretPosition.fromRangeStart(editor.selection.getRng());
-        return backspaceDeleteCollapsed(editor, caret, forward, from);
-      }
-
-      return false;
-    };
-
-    return {
-      backspaceDelete: backspaceDelete
-    };
-  }
-);
-define(
-  'tinymce.core.delete.TableDeleteAction',
-
-  [
-    'ephox.katamari.api.Adt',
-    'ephox.katamari.api.Arr',
-    'ephox.katamari.api.Fun',
-    'ephox.katamari.api.Option',
-    'ephox.katamari.api.Options',
-    'ephox.katamari.api.Struct',
-    'ephox.sugar.api.dom.Compare',
-    'ephox.sugar.api.node.Element',
-    'ephox.sugar.api.search.SelectorFilter',
-    'ephox.sugar.api.search.SelectorFind'
-  ],
-
-  function (Adt, Arr, Fun, Option, Options, Struct, Compare, Element, SelectorFilter, SelectorFind) {
-    var tableCellRng = Struct.immutable('start', 'end');
-    var tableSelection = Struct.immutable('rng', 'table', 'cells');
-    var deleteAction = Adt.generate([
-      { removeTable: [ 'element' ] },
-      { emptyCells: [ 'cells' ] }
-    ]);
-
-    var getClosestCell = function (container, isRoot) {
-      return SelectorFind.closest(Element.fromDom(container), 'td,th', isRoot);
-    };
-
-    var getClosestTable = function (cell, isRoot) {
-      return SelectorFind.ancestor(cell, 'table', isRoot);
-    };
-
-    var isExpandedCellRng = function (cellRng) {
-      return Compare.eq(cellRng.start(), cellRng.end()) === false;
-    };
-
-    var getTableFromCellRng = function (cellRng, isRoot) {
-      return getClosestTable(cellRng.start(), isRoot)
-        .bind(function (startParentTable) {
-          return getClosestTable(cellRng.end(), isRoot)
-            .bind(function (endParentTable) {
-              return Compare.eq(startParentTable, endParentTable) ? Option.some(startParentTable) : Option.none();
-            });
-        });
-    };
-
-    var getCellRng = function (rng, isRoot) {
-      return Options.liftN([ // get start and end cell
-        getClosestCell(rng.startContainer, isRoot),
-        getClosestCell(rng.endContainer, isRoot)
-      ], tableCellRng)
-        .filter(isExpandedCellRng);
-    };
-
-    var getTableSelectionFromCellRng = function (cellRng, isRoot) {
-      return getTableFromCellRng(cellRng, isRoot)
-        .bind(function (table) {
-          var cells = SelectorFilter.descendants(table, 'td,th');
-
-          return tableSelection(cellRng, table, cells);
-        });
-    };
-
-    var getTableSelectionFromRng = function (rootNode, rng) {
-      var isRoot = Fun.curry(Compare.eq, rootNode);
-
-      return getCellRng(rng, isRoot)
-        .map(function (cellRng) {
-          return getTableSelectionFromCellRng(cellRng, isRoot);
-        });
-    };
-
-    var getCellIndex = function (cellArray, cell) {
-      return Arr.findIndex(cellArray, function (x) {
-        return Compare.eq(x, cell);
-      });
-    };
-
-    var getSelectedCells = function (tableSelection) {
-      return Options.liftN([
-        getCellIndex(tableSelection.cells(), tableSelection.rng().start()),
-        getCellIndex(tableSelection.cells(), tableSelection.rng().end())
-      ], function (startIndex, endIndex) {
-        return tableSelection.cells().slice(startIndex, endIndex + 1);
-      });
-    };
-
-    var getAction = function (tableSelection) {
-      return getSelectedCells(tableSelection)
-        .bind(function (selected) {
-          var cells = tableSelection.cells();
-
-          return selected.length === cells.length ? deleteAction.removeTable(tableSelection.table()) : deleteAction.emptyCells(selected);
-        });
-    };
-
-    var getActionFromCells = function (cells) {
-      return deleteAction.emptyCells(cells);
-    };
-
-    var getActionFromRange = function (rootNode, rng) {
-      return getTableSelectionFromRng(rootNode, rng)
-        .map(getAction);
-    };
-
-    return {
-      getActionFromRange: getActionFromRange,
-      getActionFromCells: getActionFromCells
-    };
-  }
-);
-
-/**
- * TableDelete.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.delete.TableDelete',
-  [
-    'ephox.katamari.api.Arr',
-    'ephox.katamari.api.Fun',
-    'ephox.sugar.api.dom.Compare',
-    'ephox.sugar.api.node.Element',
-    'tinymce.core.caret.CaretFinder',
-    'tinymce.core.caret.CaretPosition',
-    'tinymce.core.delete.DeleteElement',
-    'tinymce.core.delete.TableDeleteAction',
-    'tinymce.core.dom.ElementType',
-    'tinymce.core.dom.PaddingBr',
-    'tinymce.core.dom.Parents',
-    'tinymce.core.selection.TableCellSelection'
-  ],
-  function (Arr, Fun, Compare, Element, CaretFinder, CaretPosition, DeleteElement, TableDeleteAction, ElementType, PaddingBr, Parents, TableCellSelection) {
-    var emptyCells = function (editor, cells) {
-      Arr.each(cells, PaddingBr.fillWithPaddingBr);
-      editor.selection.setCursorLocation(cells[0].dom(), 0);
-
-      return true;
-    };
-
-    var deleteTableElement = function (editor, table) {
-      DeleteElement.deleteElement(editor, false, table);
-
-      return true;
-    };
-
-    var handleCellRange = function (editor, rootNode, rng) {
-      return TableDeleteAction.getActionFromRange(rootNode, rng)
-        .map(function (action) {
-          return action.fold(
-            Fun.curry(deleteTableElement, editor),
-            Fun.curry(emptyCells, editor)
-          );
-        }).getOr(false);
-    };
-
-    var deleteRange = function (editor) {
-      var rootNode = Element.fromDom(editor.getBody());
-      var rng = editor.selection.getRng();
-      var selectedCells = TableCellSelection.getCellsFromEditor(editor);
-
-      return selectedCells.length !== 0 ? emptyCells(editor, selectedCells) : handleCellRange(editor, rootNode, rng);
-    };
-
-    var getParentCell = function (rootElm, elm) {
-      return Arr.find(Parents.parentsAndSelf(elm, rootElm), ElementType.isTableCell);
-    };
-
-    var deleteCaret = function (editor, forward) {
-      var rootElm = Element.fromDom(editor.getBody());
-      var from = CaretPosition.fromRangeStart(editor.selection.getRng());
-      return getParentCell(rootElm, Element.fromDom(editor.selection.getStart(true))).bind(function (fromCell) {
-        return CaretFinder.navigate(forward, editor.getBody(), from).bind(function (to) {
-          return getParentCell(rootElm, Element.fromDom(to.getNode())).map(function (toCell) {
-            return Compare.eq(toCell, fromCell) === false;
-          });
-        });
-      }).getOr(false);
-    };
-
-    var backspaceDelete = function (editor, forward) {
-      return editor.selection.isCollapsed() ? deleteCaret(editor, forward) : deleteRange(editor);
-    };
-
-    return {
-      backspaceDelete: backspaceDelete
-    };
-  }
-);
-
-/**
- * Commands.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-define(
-  'tinymce.core.delete.DeleteCommands',
-  [
-    'tinymce.core.delete.BlockBoundaryDelete',
-    'tinymce.core.delete.BlockRangeDelete',
-    'tinymce.core.delete.CefDelete',
-    'tinymce.core.delete.DeleteUtils',
-    'tinymce.core.delete.InlineBoundaryDelete',
-    'tinymce.core.delete.TableDelete'
-  ],
-  function (BlockBoundaryDelete, BlockRangeDelete, CefDelete, DeleteUtils, BoundaryDelete, TableDelete) {
-    var nativeCommand = function (editor, command) {
-      editor.getDoc().execCommand(command, false, null);
-    };
-
-    var deleteCommand = function (editor) {
-      if (CefDelete.backspaceDelete(editor, false)) {
-        return;
-      } else if (BoundaryDelete.backspaceDelete(editor, false)) {
-        return;
-      } else if (BlockBoundaryDelete.backspaceDelete(editor, false)) {
-        return;
-      } else if (TableDelete.backspaceDelete(editor)) {
-        return;
-      } else if (BlockRangeDelete.backspaceDelete(editor, false)) {
-        return;
-      } else {
-        nativeCommand(editor, 'Delete');
-        DeleteUtils.paddEmptyBody(editor);
-      }
-    };
-
-    var forwardDeleteCommand = function (editor) {
-      if (CefDelete.backspaceDelete(editor, true)) {
-        return;
-      } else if (BoundaryDelete.backspaceDelete(editor, true)) {
-        return;
-      } else if (BlockBoundaryDelete.backspaceDelete(editor, true)) {
-        return;
-      } else if (TableDelete.backspaceDelete(editor)) {
-        return;
-      } else if (BlockRangeDelete.backspaceDelete(editor, true)) {
-        return;
-      } else {
-        nativeCommand(editor, 'ForwardDelete');
-      }
-    };
-
-    return {
-      deleteCommand: deleteCommand,
-      forwardDeleteCommand: forwardDeleteCommand
-    };
-  }
-);
-/**
- * EditorCommands.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-/**
- * This class enables you to add custom editor commands and it contains
- * overrides for native browser commands to address various bugs and issues.
- *
- * @class tinymce.EditorCommands
- */
-define(
-  'tinymce.core.EditorCommands',
-  [
-    'tinymce.core.Env',
-    'tinymce.core.InsertContent',
-    'tinymce.core.delete.DeleteCommands',
-    'tinymce.core.dom.NodeType',
-    'tinymce.core.dom.RangeUtils',
-    'tinymce.core.dom.TreeWalker',
-    'tinymce.core.selection.SelectionBookmark',
-    'tinymce.core.util.Tools'
-  ],
-  function (Env, InsertContent, DeleteCommands, NodeType, RangeUtils, TreeWalker, SelectionBookmark, Tools) {
-    // Added for compression purposes
-    var each = Tools.each, extend = Tools.extend;
-    var map = Tools.map, inArray = Tools.inArray, explode = Tools.explode;
-    var isOldIE = Env.ie && Env.ie < 11;
-    var TRUE = true, FALSE = false;
-
-    return function (editor) {
-      var dom, selection, formatter,
-        commands = { state: {}, exec: {}, value: {} },
-        settings = editor.settings,
-        bookmark;
-
-      editor.on('PreInit', function () {
-        dom = editor.dom;
-        selection = editor.selection;
-        settings = editor.settings;
-        formatter = editor.formatter;
-      });
-
-      /**
-       * Executes the specified command.
-       *
-       * @method execCommand
-       * @param {String} command Command to execute.
-       * @param {Boolean} ui Optional user interface state.
-       * @param {Object} value Optional value for command.
-       * @param {Object} args Optional extra arguments to the execCommand.
-       * @return {Boolean} true/false if the command was found or not.
-       */
-      function execCommand(command, ui, value, args) {
-        var func, customCommand, state = 0;
-
-        if (editor.removed) {
-          return;
-        }
-
-        if (!/^(mceAddUndoLevel|mceEndUndoLevel|mceBeginUndoLevel|mceRepaint)$/.test(command) && (!args || !args.skip_focus)) {
-          editor.focus();
-        } else {
-          SelectionBookmark.restore(editor);
-        }
-
-        args = editor.fire('BeforeExecCommand', { command: command, ui: ui, value: value });
-        if (args.isDefaultPrevented()) {
-          return false;
-        }
-
-        customCommand = command.toLowerCase();
-        if ((func = commands.exec[customCommand])) {
-          func(customCommand, ui, value);
-          editor.fire('ExecCommand', { command: command, ui: ui, value: value });
-          return true;
-        }
-
-        // Plugin commands
-        each(editor.plugins, function (p) {
-          if (p.execCommand && p.execCommand(command, ui, value)) {
-            editor.fire('ExecCommand', { command: command, ui: ui, value: value });
-            state = true;
-            return false;
-          }
-        });
-
-        if (state) {
-          return state;
-        }
-
-        // Theme commands
-        if (editor.theme && editor.theme.execCommand && editor.theme.execCommand(command, ui, value)) {
-          editor.fire('ExecCommand', { command: command, ui: ui, value: value });
-          return true;
-        }
-
-        // Browser commands
-        try {
-          state = editor.getDoc().execCommand(command, ui, value);
-        } catch (ex) {
-          // Ignore old IE errors
-        }
-
-        if (state) {
-          editor.fire('ExecCommand', { command: command, ui: ui, value: value });
-          return true;
-        }
-
-        return false;
-      }
-
-      /**
-       * Queries the current state for a command for example if the current selection is "bold".
-       *
-       * @method queryCommandState
-       * @param {String} command Command to check the state of.
-       * @return {Boolean/Number} true/false if the selected contents is bold or not, -1 if it's not found.
-       */
-      function queryCommandState(command) {
-        var func;
-
-        if (editor.quirks.isHidden() || editor.removed) {
-          return;
-        }
-
-        command = command.toLowerCase();
-        if ((func = commands.state[command])) {
-          return func(command);
-        }
-
-        // Browser commands
-        try {
-          return editor.getDoc().queryCommandState(command);
-        } catch (ex) {
-          // Fails sometimes see bug: 1896577
-        }
-
-        return false;
-      }
-
-      /**
-       * Queries the command value for example the current fontsize.
-       *
-       * @method queryCommandValue
-       * @param {String} command Command to check the value of.
-       * @return {Object} Command value of false if it's not found.
-       */
-      function queryCommandValue(command) {
-        var func;
-
-        if (editor.quirks.isHidden() || editor.removed) {
-          return;
-        }
-
-        command = command.toLowerCase();
-        if ((func = commands.value[command])) {
-          return func(command);
-        }
-
-        // Browser commands
-        try {
-          return editor.getDoc().queryCommandValue(command);
-        } catch (ex) {
-          // Fails sometimes see bug: 1896577
-        }
-      }
-
-      /**
-       * Adds commands to the command collection.
-       *
-       * @method addCommands
-       * @param {Object} commandList Name/value collection with commands to add, the names can also be comma separated.
-       * @param {String} type Optional type to add, defaults to exec. Can be value or state as well.
-       */
-      function addCommands(commandList, type) {
-        type = type || 'exec';
-
-        each(commandList, function (callback, command) {
-          each(command.toLowerCase().split(','), function (command) {
-            commands[type][command] = callback;
-          });
-        });
-      }
-
-      function addCommand(command, callback, scope) {
-        command = command.toLowerCase();
-        commands.exec[command] = function (command, ui, value, args) {
-          return callback.call(scope || editor, ui, value, args);
-        };
-      }
-
-      /**
-       * Returns true/false if the command is supported or not.
-       *
-       * @method queryCommandSupported
-       * @param {String} command Command that we check support for.
-       * @return {Boolean} true/false if the command is supported or not.
-       */
-      function queryCommandSupported(command) {
-        command = command.toLowerCase();
-
-        if (commands.exec[command]) {
-          return true;
-        }
-
-        // Browser commands
-        try {
-          return editor.getDoc().queryCommandSupported(command);
-        } catch (ex) {
-          // Fails sometimes see bug: 1896577
-        }
-
-        return false;
-      }
-
-      function addQueryStateHandler(command, callback, scope) {
-        command = command.toLowerCase();
-        commands.state[command] = function () {
-          return callback.call(scope || editor);
-        };
-      }
-
-      function addQueryValueHandler(command, callback, scope) {
-        command = command.toLowerCase();
-        commands.value[command] = function () {
-          return callback.call(scope || editor);
-        };
-      }
-
-      function hasCustomCommand(command) {
-        command = command.toLowerCase();
-        return !!commands.exec[command];
-      }
-
-      // Expose public methods
-      extend(this, {
-        execCommand: execCommand,
-        queryCommandState: queryCommandState,
-        queryCommandValue: queryCommandValue,
-        queryCommandSupported: queryCommandSupported,
-        addCommands: addCommands,
-        addCommand: addCommand,
-        addQueryStateHandler: addQueryStateHandler,
-        addQueryValueHandler: addQueryValueHandler,
-        hasCustomCommand: hasCustomCommand
-      });
-
-      // Private methods
-
-      function execNativeCommand(command, ui, value) {
-        if (ui === undefined) {
-          ui = FALSE;
-        }
-
-        if (value === undefined) {
-          value = null;
-        }
-
-        return editor.getDoc().execCommand(command, ui, value);
-      }
-
-      function isFormatMatch(name) {
-        return formatter.match(name);
-      }
-
-      function toggleFormat(name, value) {
-        formatter.toggle(name, value ? { value: value } : undefined);
-        editor.nodeChanged();
-      }
-
-      function storeSelection(type) {
-        bookmark = selection.getBookmark(type);
-      }
-
-      function restoreSelection() {
-        selection.moveToBookmark(bookmark);
-      }
-
-      // Add execCommand overrides
-      addCommands({
-        // Ignore these, added for compatibility
-        'mceResetDesignMode,mceBeginUndoLevel': function () { },
-
-        // Add undo manager logic
-        'mceEndUndoLevel,mceAddUndoLevel': function () {
-          editor.undoManager.add();
-        },
-
-        'Cut,Copy,Paste': function (command) {
-          var doc = editor.getDoc(), failed;
-
-          // Try executing the native command
-          try {
-            execNativeCommand(command);
-          } catch (ex) {
-            // Command failed
-            failed = TRUE;
-          }
-
-          // Chrome reports the paste command as supported however older IE:s will return false for cut/paste
-          if (command === 'paste' && !doc.queryCommandEnabled(command)) {
-            failed = true;
-          }
-
-          // Present alert message about clipboard access not being available
-          if (failed || !doc.queryCommandSupported(command)) {
-            var msg = editor.translate(
-              "Your browser doesn't support direct access to the clipboard. " +
-              "Please use the Ctrl+X/C/V keyboard shortcuts instead."
-            );
-
-            if (Env.mac) {
-              msg = msg.replace(/Ctrl\+/g, '\u2318+');
-            }
-
-            editor.notificationManager.open({ text: msg, type: 'error' });
-          }
-        },
-
-        // Override unlink command
-        unlink: function () {
-          if (selection.isCollapsed()) {
-            var elm = editor.dom.getParent(editor.selection.getStart(), 'a');
-            if (elm) {
-              editor.dom.remove(elm, true);
-            }
-
-            return;
-          }
-
-          formatter.remove("link");
-        },
-
-        // Override justify commands to use the text formatter engine
-        'JustifyLeft,JustifyCenter,JustifyRight,JustifyFull,JustifyNone': function (command) {
-          var align = command.substring(7);
-
-          if (align == 'full') {
-            align = 'justify';
-          }
-
-          // Remove all other alignments first
-          each('left,center,right,justify'.split(','), function (name) {
-            if (align != name) {
-              formatter.remove('align' + name);
-            }
-          });
-
-          if (align != 'none') {
-            toggleFormat('align' + align);
-          }
-        },
-
-        // Override list commands to fix WebKit bug
-        'InsertUnorderedList,InsertOrderedList': function (command) {
-          var listElm, listParent;
-
-          execNativeCommand(command);
-
-          // WebKit produces lists within block elements so we need to split them
-          // we will replace the native list creation logic to custom logic later on
-          // TODO: Remove this when the list creation logic is removed
-          listElm = dom.getParent(selection.getNode(), 'ol,ul');
-          if (listElm) {
-            listParent = listElm.parentNode;
-
-            // If list is within a text block then split that block
-            if (/^(H[1-6]|P|ADDRESS|PRE)$/.test(listParent.nodeName)) {
-              storeSelection();
-              dom.split(listParent, listElm);
-              restoreSelection();
-            }
-          }
-        },
-
-        // Override commands to use the text formatter engine
-        'Bold,Italic,Underline,Strikethrough,Superscript,Subscript': function (command) {
-          toggleFormat(command);
-        },
-
-        // Override commands to use the text formatter engine
-        'ForeColor,HiliteColor,FontName': function (command, ui, value) {
-          toggleFormat(command, value);
-        },
-
-        FontSize: function (command, ui, value) {
-          var fontClasses, fontSizes;
-
-          // Convert font size 1-7 to styles
-          if (value >= 1 && value <= 7) {
-            fontSizes = explode(settings.font_size_style_values);
-            fontClasses = explode(settings.font_size_classes);
-
-            if (fontClasses) {
-              value = fontClasses[value - 1] || value;
-            } else {
-              value = fontSizes[value - 1] || value;
-            }
-          }
-
-          toggleFormat(command, value);
-        },
-
-        RemoveFormat: function (command) {
-          formatter.remove(command);
-        },
-
-        mceBlockQuote: function () {
-          toggleFormat('blockquote');
-        },
-
-        FormatBlock: function (command, ui, value) {
-          return toggleFormat(value || 'p');
-        },
-
-        mceCleanup: function () {
-          var bookmark = selection.getBookmark();
-
-          editor.setContent(editor.getContent({ cleanup: TRUE }), { cleanup: TRUE });
-
-          selection.moveToBookmark(bookmark);
-        },
-
-        mceRemoveNode: function (command, ui, value) {
-          var node = value || selection.getNode();
-
-          // Make sure that the body node isn't removed
-          if (node != editor.getBody()) {
-            storeSelection();
-            editor.dom.remove(node, TRUE);
-            restoreSelection();
-          }
-        },
-
-        mceSelectNodeDepth: function (command, ui, value) {
-          var counter = 0;
-
-          dom.getParent(selection.getNode(), function (node) {
-            if (node.nodeType == 1 && counter++ == value) {
-              selection.select(node);
-              return FALSE;
-            }
-          }, editor.getBody());
-        },
-
-        mceSelectNode: function (command, ui, value) {
-          selection.select(value);
-        },
-
-        mceInsertContent: function (command, ui, value) {
-          InsertContent.insertAtCaret(editor, value);
-        },
-
-        mceInsertRawHTML: function (command, ui, value) {
-          selection.setContent('tiny_mce_marker');
-          editor.setContent(
-            editor.getContent().replace(/tiny_mce_marker/g, function () {
-              return value;
-            })
-          );
-        },
-
-        mceToggleFormat: function (command, ui, value) {
-          toggleFormat(value);
-        },
-
-        mceSetContent: function (command, ui, value) {
-          editor.setContent(value);
-        },
-
-        'Indent,Outdent': function (command) {
-          var intentValue, indentUnit, value;
-
-          // Setup indent level
-          intentValue = settings.indentation;
-          indentUnit = /[a-z%]+$/i.exec(intentValue);
-          intentValue = parseInt(intentValue, 10);
-
-          if (!queryCommandState('InsertUnorderedList') && !queryCommandState('InsertOrderedList')) {
-            // If forced_root_blocks is set to false we don't have a block to indent so lets create a div
-            if (!settings.forced_root_block && !dom.getParent(selection.getNode(), dom.isBlock)) {
-              formatter.apply('div');
-            }
-
-            each(selection.getSelectedBlocks(), function (element) {
-              if (dom.getContentEditable(element) === "false") {
-                return;
-              }
-
-              if (element.nodeName !== "LI") {
-                var indentStyleName = editor.getParam('indent_use_margin', false) ? 'margin' : 'padding';
-                indentStyleName = element.nodeName === 'TABLE' ? 'margin' : indentStyleName;
-                indentStyleName += dom.getStyle(element, 'direction', true) == 'rtl' ? 'Right' : 'Left';
-
-                if (command == 'outdent') {
-                  value = Math.max(0, parseInt(element.style[indentStyleName] || 0, 10) - intentValue);
-                  dom.setStyle(element, indentStyleName, value ? value + indentUnit : '');
-                } else {
-                  value = (parseInt(element.style[indentStyleName] || 0, 10) + intentValue) + indentUnit;
-                  dom.setStyle(element, indentStyleName, value);
-                }
-              }
-            });
-          } else {
-            execNativeCommand(command);
-          }
-        },
-
-        mceRepaint: function () {
-        },
-
-        InsertHorizontalRule: function () {
-          editor.execCommand('mceInsertContent', false, '<hr />');
-        },
-
-        mceToggleVisualAid: function () {
-          editor.hasVisual = !editor.hasVisual;
-          editor.addVisual();
-        },
-
-        mceReplaceContent: function (command, ui, value) {
-          editor.execCommand('mceInsertContent', false, value.replace(/\{\$selection\}/g, selection.getContent({ format: 'text' })));
-        },
-
-        mceInsertLink: function (command, ui, value) {
-          var anchor;
-
-          if (typeof value == 'string') {
-            value = { href: value };
-          }
-
-          anchor = dom.getParent(selection.getNode(), 'a');
-
-          // Spaces are never valid in URLs and it's a very common mistake for people to make so we fix it here.
-          value.href = value.href.replace(' ', '%20');
-
-          // Remove existing links if there could be child links or that the href isn't specified
-          if (!anchor || !value.href) {
-            formatter.remove('link');
-          }
-
-          // Apply new link to selection
-          if (value.href) {
-            formatter.apply('link', value, anchor);
-          }
-        },
-
-        selectAll: function () {
-          var editingHost = dom.getParent(selection.getStart(), NodeType.isContentEditableTrue);
-          if (editingHost) {
-            var rng = dom.createRng();
-            rng.selectNodeContents(editingHost);
-            selection.setRng(rng);
-          }
-        },
-
-        "delete": function () {
-          DeleteCommands.deleteCommand(editor);
-        },
-
-        "forwardDelete": function () {
-          DeleteCommands.forwardDeleteCommand(editor);
-        },
-
-        mceNewDocument: function () {
-          editor.setContent('');
-        },
-
-        InsertLineBreak: function (command, ui, value) {
-          // We load the current event in from EnterKey.js when appropriate to heed
-          // certain event-specific variations such as ctrl-enter in a list
-          var evt = value;
-          var brElm, extraBr, marker;
-          var rng = selection.getRng(true);
-          new RangeUtils(dom).normalize(rng);
-
-          var offset = rng.startOffset;
-          var container = rng.startContainer;
-
-          // Resolve node index
-          if (container.nodeType == 1 && container.hasChildNodes()) {
-            var isAfterLastNodeInContainer = offset > container.childNodes.length - 1;
-
-            container = container.childNodes[Math.min(offset, container.childNodes.length - 1)] || container;
-            if (isAfterLastNodeInContainer && container.nodeType == 3) {
-              offset = container.nodeValue.length;
-            } else {
-              offset = 0;
-            }
-          }
-
-          var parentBlock = dom.getParent(container, dom.isBlock);
-          var parentBlockName = parentBlock ? parentBlock.nodeName.toUpperCase() : ''; // IE < 9 & HTML5
-          var containerBlock = parentBlock ? dom.getParent(parentBlock.parentNode, dom.isBlock) : null;
-          var containerBlockName = containerBlock ? containerBlock.nodeName.toUpperCase() : ''; // IE < 9 & HTML5
-
-          // Enter inside block contained within a LI then split or insert before/after LI
-          var isControlKey = evt && evt.ctrlKey;
-          if (containerBlockName == 'LI' && !isControlKey) {
-            parentBlock = containerBlock;
-            parentBlockName = containerBlockName;
-          }
-
-          // Walks the parent block to the right and look for BR elements
-          function hasRightSideContent() {
-            var walker = new TreeWalker(container, parentBlock), node;
-            var nonEmptyElementsMap = editor.schema.getNonEmptyElements();
-
-            while ((node = walker.next())) {
-              if (nonEmptyElementsMap[node.nodeName.toLowerCase()] || node.length > 0) {
-                return true;
-              }
-            }
-          }
-
-          if (container && container.nodeType == 3 && offset >= container.nodeValue.length) {
-            // Insert extra BR element at the end block elements
-            if (!isOldIE && !hasRightSideContent()) {
-              brElm = dom.create('br');
-              rng.insertNode(brElm);
-              rng.setStartAfter(brElm);
-              rng.setEndAfter(brElm);
-              extraBr = true;
-            }
-          }
-
-          brElm = dom.create('br');
-          rng.insertNode(brElm);
-
-          // Rendering modes below IE8 doesn't display BR elements in PRE unless we have a \n before it
-          var documentMode = dom.doc.documentMode;
-          if (isOldIE && parentBlockName == 'PRE' && (!documentMode || documentMode < 8)) {
-            brElm.parentNode.insertBefore(dom.doc.createTextNode('\r'), brElm);
-          }
-
-          // Insert temp marker and scroll to that
-          marker = dom.create('span', {}, '&nbsp;');
-          brElm.parentNode.insertBefore(marker, brElm);
-          selection.scrollIntoView(marker);
-          dom.remove(marker);
-
-          if (!extraBr) {
-            rng.setStartAfter(brElm);
-            rng.setEndAfter(brElm);
-          } else {
-            rng.setStartBefore(brElm);
-            rng.setEndBefore(brElm);
-          }
-
-          selection.setRng(rng);
-          editor.undoManager.add();
-
-          return TRUE;
-        }
-      });
-
-      // Add queryCommandState overrides
-      addCommands({
-        // Override justify commands
-        'JustifyLeft,JustifyCenter,JustifyRight,JustifyFull': function (command) {
-          var name = 'align' + command.substring(7);
-          var nodes = selection.isCollapsed() ? [dom.getParent(selection.getNode(), dom.isBlock)] : selection.getSelectedBlocks();
-          var matches = map(nodes, function (node) {
-            return !!formatter.matchNode(node, name);
-          });
-          return inArray(matches, TRUE) !== -1;
-        },
-
-        'Bold,Italic,Underline,Strikethrough,Superscript,Subscript': function (command) {
-          return isFormatMatch(command);
-        },
-
-        mceBlockQuote: function () {
-          return isFormatMatch('blockquote');
-        },
-
-        Outdent: function () {
-          var node;
-
-          if (settings.inline_styles) {
-            if ((node = dom.getParent(selection.getStart(), dom.isBlock)) && parseInt(node.style.paddingLeft, 10) > 0) {
-              return TRUE;
-            }
-
-            if ((node = dom.getParent(selection.getEnd(), dom.isBlock)) && parseInt(node.style.paddingLeft, 10) > 0) {
-              return TRUE;
-            }
-          }
-
-          return (
-            queryCommandState('InsertUnorderedList') ||
-            queryCommandState('InsertOrderedList') ||
-            (!settings.inline_styles && !!dom.getParent(selection.getNode(), 'BLOCKQUOTE'))
-          );
-        },
-
-        'InsertUnorderedList,InsertOrderedList': function (command) {
-          var list = dom.getParent(selection.getNode(), 'ul,ol');
-
-          return list &&
-            (
-              command === 'insertunorderedlist' && list.tagName === 'UL' ||
-              command === 'insertorderedlist' && list.tagName === 'OL'
-            );
-        }
-      }, 'state');
-
-      // Add queryCommandValue overrides
-      addCommands({
-        'FontSize,FontName': function (command) {
-          var value = 0, parent;
-
-          if ((parent = dom.getParent(selection.getNode(), 'span'))) {
-            if (command == 'fontsize') {
-              value = parent.style.fontSize;
-            } else {
-              value = parent.style.fontFamily.replace(/, /g, ',').replace(/[\'\"]/g, '').toLowerCase();
-            }
-          }
-
-          return value;
-        }
-      }, 'value');
-
-      // Add undo manager logic
-      addCommands({
-        Undo: function () {
-          editor.undoManager.undo();
-        },
-
-        Redo: function () {
-          editor.undoManager.redo();
-        }
-      });
-    };
-  }
-);
-
-/**
- * EventDispatcher.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-/**
- * This class lets you add/remove and fire events by name on the specified scope. This makes
- * it easy to add event listener logic to any class.
- *
- * @class tinymce.util.EventDispatcher
- * @example
- *  var eventDispatcher = new EventDispatcher();
- *
- *  eventDispatcher.on('click', function() {console.log('data');});
- *  eventDispatcher.fire('click', {data: 123});
- */
-define(
-  'tinymce.core.util.EventDispatcher',
-  [
-    "tinymce.core.util.Tools"
-  ],
-  function (Tools) {
-    var nativeEvents = Tools.makeMap(
-      "focus blur focusin focusout click dblclick mousedown mouseup mousemove mouseover beforepaste paste cut copy selectionchange " +
-      "mouseout mouseenter mouseleave wheel keydown keypress keyup input contextmenu dragstart dragend dragover " +
-      "draggesture dragdrop drop drag submit " +
-      "compositionstart compositionend compositionupdate touchstart touchmove touchend",
-      ' '
-    );
-
-    function Dispatcher(settings) {
-      var self = this, scope, bindings = {}, toggleEvent;
-
-      function returnFalse() {
-        return false;
-      }
-
-      function returnTrue() {
-        return true;
-      }
-
-      settings = settings || {};
-      scope = settings.scope || self;
-      toggleEvent = settings.toggleEvent || returnFalse;
-
-      /**
-       * Fires the specified event by name.
-       *
-       * @method fire
-       * @param {String} name Name of the event to fire.
-       * @param {Object?} args Event arguments.
-       * @return {Object} Event args instance passed in.
-       * @example
-       * instance.fire('event', {...});
-       */
-      function fire(name, args) {
-        var handlers, i, l, callback;
-
-        name = name.toLowerCase();
-        args = args || {};
-        args.type = name;
-
-        // Setup target is there isn't one
-        if (!args.target) {
-          args.target = scope;
-        }
-
-        // Add event delegation methods if they are missing
-        if (!args.preventDefault) {
-          // Add preventDefault method
-          args.preventDefault = function () {
-            args.isDefaultPrevented = returnTrue;
-          };
-
-          // Add stopPropagation
-          args.stopPropagation = function () {
-            args.isPropagationStopped = returnTrue;
-          };
-
-          // Add stopImmediatePropagation
-          args.stopImmediatePropagation = function () {
-            args.isImmediatePropagationStopped = returnTrue;
-          };
-
-          // Add event delegation states
-          args.isDefaultPrevented = returnFalse;
-          args.isPropagationStopped = returnFalse;
-          args.isImmediatePropagationStopped = returnFalse;
-        }
-
-        if (settings.beforeFire) {
-          settings.beforeFire(args);
-        }
-
-        handlers = bindings[name];
-        if (handlers) {
-          for (i = 0, l = handlers.length; i < l; i++) {
-            callback = handlers[i];
-
-            // Unbind handlers marked with "once"
-            if (callback.once) {
-              off(name, callback.func);
-            }
-
-            // Stop immediate propagation if needed
-            if (args.isImmediatePropagationStopped()) {
-              args.stopPropagation();
-              return args;
-            }
-
-            // If callback returns false then prevent default and stop all propagation
-            if (callback.func.call(scope, args) === false) {
-              args.preventDefault();
-              return args;
-            }
-          }
-        }
-
-        return args;
-      }
-
-      /**
-       * Binds an event listener to a specific event by name.
-       *
-       * @method on
-       * @param {String} name Event name or space separated list of events to bind.
-       * @param {callback} callback Callback to be executed when the event occurs.
-       * @param {Boolean} first Optional flag if the event should be prepended. Use this with care.
-       * @return {Object} Current class instance.
-       * @example
-       * instance.on('event', function(e) {
-       *     // Callback logic
-       * });
-       */
-      function on(name, callback, prepend, extra) {
-        var handlers, names, i;
-
-        if (callback === false) {
-          callback = returnFalse;
-        }
-
-        if (callback) {
-          callback = {
-            func: callback
-          };
-
-          if (extra) {
-            Tools.extend(callback, extra);
-          }
-
-          names = name.toLowerCase().split(' ');
-          i = names.length;
-          while (i--) {
-            name = names[i];
-            handlers = bindings[name];
-            if (!handlers) {
-              handlers = bindings[name] = [];
-              toggleEvent(name, true);
-            }
-
-            if (prepend) {
-              handlers.unshift(callback);
-            } else {
-              handlers.push(callback);
-            }
-          }
-        }
-
-        return self;
-      }
-
-      /**
-       * Unbinds an event listener to a specific event by name.
-       *
-       * @method off
-       * @param {String?} name Name of the event to unbind.
-       * @param {callback?} callback Callback to unbind.
-       * @return {Object} Current class instance.
-       * @example
-       * // Unbind specific callback
-       * instance.off('event', handler);
-       *
-       * // Unbind all listeners by name
-       * instance.off('event');
-       *
-       * // Unbind all events
-       * instance.off();
-       */
-      function off(name, callback) {
-        var i, handlers, bindingName, names, hi;
-
-        if (name) {
-          names = name.toLowerCase().split(' ');
-          i = names.length;
-          while (i--) {
-            name = names[i];
-            handlers = bindings[name];
-
-            // Unbind all handlers
-            if (!name) {
-              for (bindingName in bindings) {
-                toggleEvent(bindingName, false);
-                delete bindings[bindingName];
-              }
-
-              return self;
-            }
-
-            if (handlers) {
-              // Unbind all by name
-              if (!callback) {
-                handlers.length = 0;
-              } else {
-                // Unbind specific ones
-                hi = handlers.length;
-                while (hi--) {
-                  if (handlers[hi].func === callback) {
-                    handlers = handlers.slice(0, hi).concat(handlers.slice(hi + 1));
-                    bindings[name] = handlers;
-                  }
-                }
-              }
-
-              if (!handlers.length) {
-                toggleEvent(name, false);
-                delete bindings[name];
-              }
-            }
-          }
-        } else {
-          for (name in bindings) {
-            toggleEvent(name, false);
-          }
-
-          bindings = {};
-        }
-
-        return self;
-      }
-
-      /**
-       * Binds an event listener to a specific event by name
-       * and automatically unbind the event once the callback fires.
-       *
-       * @method once
-       * @param {String} name Event name or space separated list of events to bind.
-       * @param {callback} callback Callback to be executed when the event occurs.
-       * @param {Boolean} first Optional flag if the event should be prepended. Use this with care.
-       * @return {Object} Current class instance.
-       * @example
-       * instance.once('event', function(e) {
-       *     // Callback logic
-       * });
-       */
-      function once(name, callback, prepend) {
-        return on(name, callback, prepend, { once: true });
-      }
-
-      /**
-       * Returns true/false if the dispatcher has a event of the specified name.
-       *
-       * @method has
-       * @param {String} name Name of the event to check for.
-       * @return {Boolean} true/false if the event exists or not.
-       */
-      function has(name) {
-        name = name.toLowerCase();
-        return !(!bindings[name] || bindings[name].length === 0);
-      }
-
-      // Expose
-      self.fire = fire;
-      self.on = on;
-      self.off = off;
-      self.once = once;
-      self.has = has;
-    }
-
-    /**
-     * Returns true/false if the specified event name is a native browser event or not.
-     *
-     * @method isNative
-     * @param {String} name Name to check if it's native.
-     * @return {Boolean} true/false if the event is native or not.
-     * @static
-     */
-    Dispatcher.isNative = function (name) {
-      return !!nativeEvents[name.toLowerCase()];
-    };
-
-    return Dispatcher;
-  }
-);
-
-/**
- * Observable.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-/**
- * This mixin will add event binding logic to classes.
- *
- * @mixin tinymce.util.Observable
- */
-define(
-  'tinymce.core.util.Observable',
-  [
-    "tinymce.core.util.EventDispatcher"
-  ],
-  function (EventDispatcher) {
-    function getEventDispatcher(obj) {
-      if (!obj._eventDispatcher) {
-        obj._eventDispatcher = new EventDispatcher({
-          scope: obj,
-          toggleEvent: function (name, state) {
-            if (EventDispatcher.isNative(name) && obj.toggleNativeEvent) {
-              obj.toggleNativeEvent(name, state);
-            }
-          }
-        });
-      }
-
-      return obj._eventDispatcher;
-    }
-
-    return {
-      /**
-       * Fires the specified event by name. Consult the
-       * <a href="/docs/advanced/events">event reference</a> for more details on each event.
-       *
-       * @method fire
-       * @param {String} name Name of the event to fire.
-       * @param {Object?} args Event arguments.
-       * @param {Boolean?} bubble True/false if the event is to be bubbled.
-       * @return {Object} Event args instance passed in.
-       * @example
-       * instance.fire('event', {...});
-       */
-      fire: function (name, args, bubble) {
-        var self = this;
-
-        // Prevent all events except the remove event after the instance has been removed
-        if (self.removed && name !== "remove") {
-          return args;
-        }
-
-        args = getEventDispatcher(self).fire(name, args, bubble);
-
-        // Bubble event up to parents
-        if (bubble !== false && self.parent) {
-          var parent = self.parent();
-          while (parent && !args.isPropagationStopped()) {
-            parent.fire(name, args, false);
-            parent = parent.parent();
-          }
-        }
-
-        return args;
-      },
-
-      /**
-       * Binds an event listener to a specific event by name. Consult the
-       * <a href="/docs/advanced/events">event reference</a> for more details on each event.
-       *
-       * @method on
-       * @param {String} name Event name or space separated list of events to bind.
-       * @param {callback} callback Callback to be executed when the event occurs.
-       * @param {Boolean} first Optional flag if the event should be prepended. Use this with care.
-       * @return {Object} Current class instance.
-       * @example
-       * instance.on('event', function(e) {
-       *     // Callback logic
-       * });
-       */
-      on: function (name, callback, prepend) {
-        return getEventDispatcher(this).on(name, callback, prepend);
-      },
-
-      /**
-       * Unbinds an event listener to a specific event by name. Consult the
-       * <a href="/docs/advanced/events">event reference</a> for more details on each event.
-       *
-       * @method off
-       * @param {String?} name Name of the event to unbind.
-       * @param {callback?} callback Callback to unbind.
-       * @return {Object} Current class instance.
-       * @example
-       * // Unbind specific callback
-       * instance.off('event', handler);
-       *
-       * // Unbind all listeners by name
-       * instance.off('event');
-       *
-       * // Unbind all events
-       * instance.off();
-       */
-      off: function (name, callback) {
-        return getEventDispatcher(this).off(name, callback);
-      },
-
-      /**
-       * Bind the event callback and once it fires the callback is removed. Consult the
-       * <a href="/docs/advanced/events">event reference</a> for more details on each event.
-       *
-       * @method once
-       * @param {String} name Name of the event to bind.
-       * @param {callback} callback Callback to bind only once.
-       * @return {Object} Current class instance.
-       */
-      once: function (name, callback) {
-        return getEventDispatcher(this).once(name, callback);
-      },
-
-      /**
-       * Returns true/false if the object has a event of the specified name.
-       *
-       * @method hasEventListeners
-       * @param {String} name Name of the event to check for.
-       * @return {Boolean} true/false if the event exists or not.
-       */
-      hasEventListeners: function (name) {
-        return getEventDispatcher(this).has(name);
-      }
-    };
-  }
-);
-/**
- * EditorObservable.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-/**
- * This mixin contains the event logic for the tinymce.Editor class.
- *
- * @mixin tinymce.EditorObservable
- * @extends tinymce.util.Observable
- */
-define(
-  'tinymce.core.EditorObservable',
-  [
-    "tinymce.core.util.Observable",
-    "tinymce.core.dom.DOMUtils",
-    "tinymce.core.util.Tools"
-  ],
-  function (Observable, DOMUtils, Tools) {
-    var DOM = DOMUtils.DOM, customEventRootDelegates;
-
-    /**
-     * Returns the event target so for the specified event. Some events fire
-     * only on document, some fire on documentElement etc. This also handles the
-     * custom event root setting where it returns that element instead of the body.
-     *
-     * @private
-     * @param {tinymce.Editor} editor Editor instance to get event target from.
-     * @param {String} eventName Name of the event for example "click".
-     * @return {Element/Document} HTML Element or document target to bind on.
-     */
-    function getEventTarget(editor, eventName) {
-      if (eventName == 'selectionchange') {
-        return editor.getDoc();
-      }
-
-      // Need to bind mousedown/mouseup etc to document not body in iframe mode
-      // Since the user might click on the HTML element not the BODY
-      if (!editor.inline && /^mouse|touch|click|contextmenu|drop|dragover|dragend/.test(eventName)) {
-        return editor.getDoc().documentElement;
-      }
-
-      // Bind to event root instead of body if it's defined
-      if (editor.settings.event_root) {
-        if (!editor.eventRoot) {
-          editor.eventRoot = DOM.select(editor.settings.event_root)[0];
-        }
-
-        return editor.eventRoot;
-      }
-
-      return editor.getBody();
-    }
-
-    /**
-     * Binds a event delegate for the specified name this delegate will fire
-     * the event to the editor dispatcher.
-     *
-     * @private
-     * @param {tinymce.Editor} editor Editor instance to get event target from.
-     * @param {String} eventName Name of the event for example "click".
-     */
-    function bindEventDelegate(editor, eventName) {
-      var eventRootElm, delegate;
-
-      function isListening(editor) {
-        return !editor.hidden && !editor.readonly;
-      }
-
-      if (!editor.delegates) {
-        editor.delegates = {};
-      }
-
-      if (editor.delegates[eventName] || editor.removed) {
-        return;
-      }
-
-      eventRootElm = getEventTarget(editor, eventName);
-
-      if (editor.settings.event_root) {
-        if (!customEventRootDelegates) {
-          customEventRootDelegates = {};
-          editor.editorManager.on('removeEditor', function () {
-            var name;
-
-            if (!editor.editorManager.activeEditor) {
-              if (customEventRootDelegates) {
-                for (name in customEventRootDelegates) {
-                  editor.dom.unbind(getEventTarget(editor, name));
-                }
-
-                customEventRootDelegates = null;
-              }
-            }
-          });
-        }
-
-        if (customEventRootDelegates[eventName]) {
-          return;
-        }
-
-        delegate = function (e) {
-          var target = e.target, editors = editor.editorManager.get(), i = editors.length;
-
-          while (i--) {
-            var body = editors[i].getBody();
-
-            if (body === target || DOM.isChildOf(target, body)) {
-              if (isListening(editors[i])) {
-                editors[i].fire(eventName, e);
-              }
-            }
-          }
-        };
-
-        customEventRootDelegates[eventName] = delegate;
-        DOM.bind(eventRootElm, eventName, delegate);
-      } else {
-        delegate = function (e) {
-          if (isListening(editor)) {
-            editor.fire(eventName, e);
-          }
-        };
-
-        DOM.bind(eventRootElm, eventName, delegate);
-        editor.delegates[eventName] = delegate;
-      }
-    }
-
-    var EditorObservable = {
-      /**
-       * Bind any pending event delegates. This gets executed after the target body/document is created.
-       *
-       * @private
-       */
-      bindPendingEventDelegates: function () {
-        var self = this;
-
-        Tools.each(self._pendingNativeEvents, function (name) {
-          bindEventDelegate(self, name);
-        });
-      },
-
-      /**
-       * Toggles a native event on/off this is called by the EventDispatcher when
-       * the first native event handler is added and when the last native event handler is removed.
-       *
-       * @private
-       */
-      toggleNativeEvent: function (name, state) {
-        var self = this;
-
-        // Never bind focus/blur since the FocusManager fakes those
-        if (name == "focus" || name == "blur") {
-          return;
-        }
-
-        if (state) {
-          if (self.initialized) {
-            bindEventDelegate(self, name);
-          } else {
-            if (!self._pendingNativeEvents) {
-              self._pendingNativeEvents = [name];
-            } else {
-              self._pendingNativeEvents.push(name);
-            }
-          }
-        } else if (self.initialized) {
-          self.dom.unbind(getEventTarget(self, name), name, self.delegates[name]);
-          delete self.delegates[name];
-        }
-      },
-
-      /**
-       * Unbinds all native event handlers that means delegates, custom events bound using the Events API etc.
-       *
-       * @private
-       */
-      unbindAllNativeEvents: function () {
-        var self = this, name;
-
-        if (self.delegates) {
-          for (name in self.delegates) {
-            self.dom.unbind(getEventTarget(self, name), name, self.delegates[name]);
-          }
-
-          delete self.delegates;
-        }
-
-        if (!self.inline) {
-          self.getBody().onload = null;
-          self.dom.unbind(self.getWin());
-          self.dom.unbind(self.getDoc());
-        }
-
-        self.dom.unbind(self.getBody());
-        self.dom.unbind(self.getContainer());
-      }
-    };
-
-    EditorObservable = Tools.extend({}, Observable, EditorObservable);
-
-    return EditorObservable;
-  }
-);
-
-/**
- * ErrorReporter.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-/**
- * Various error reporting helper functions.
- *
- * @class tinymce.ErrorReporter
- * @private
- */
-define(
-  'tinymce.core.ErrorReporter',
-  [
-    'global!window',
-    'tinymce.core.AddOnManager'
-  ],
-  function (window, AddOnManager) {
-    var PluginManager = AddOnManager.PluginManager;
-
-    var resolvePluginName = function (targetUrl, suffix) {
-      for (var name in PluginManager.urls) {
-        var matchUrl = PluginManager.urls[name] + '/plugin' + suffix + '.js';
-        if (matchUrl === targetUrl) {
-          return name;
-        }
-      }
-
-      return null;
-    };
-
-    var pluginUrlToMessage = function (editor, url) {
-      var plugin = resolvePluginName(url, editor.suffix);
-      return plugin ?
-        'Failed to load plugin: ' + plugin + ' from url ' + url :
-        'Failed to load plugin url: ' + url;
-    };
-
-    var displayNotification = function (editor, message) {
-      editor.notificationManager.open({
-        type: 'error',
-        text: message
-      });
-    };
-
-    var displayError = function (editor, message) {
-      if (editor._skinLoaded) {
-        displayNotification(editor, message);
-      } else {
-        editor.on('SkinLoaded', function () {
-          displayNotification(editor, message);
-        });
-      }
-    };
-
-    var uploadError = function (editor, message) {
-      displayError(editor, 'Failed to upload image: ' + message);
-    };
-
-    var pluginLoadError = function (editor, url) {
-      displayError(editor, pluginUrlToMessage(editor, url));
-    };
-
-    var initError = function (message) {
-      var console = window.console;
-      if (console && !window.test) { // Skip test env
-        if (console.error) {
-          console.error.apply(console, arguments);
-        } else {
-          console.log.apply(console, arguments);
-        }
-      }
-    };
-
-    return {
-      pluginLoadError: pluginLoadError,
-      uploadError: uploadError,
-      displayError: displayError,
-      initError: initError
-    };
-  }
-);
-/**
- * CaretContainerInput.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-/**
- * This module shows the invisble block that the caret is currently in when contents is added to that block.
- */
-define(
-  'tinymce.core.caret.CaretContainerInput',
-  [
-    'ephox.katamari.api.Fun',
-    'ephox.sugar.api.node.Element',
-    'ephox.sugar.api.search.SelectorFind',
-    'tinymce.core.caret.CaretContainer'
-  ],
-  function (Fun, Element, SelectorFind, CaretContainer) {
-    var findBlockCaretContainer = function (editor) {
-      return SelectorFind.descendant(Element.fromDom(editor.getBody()), '*[data-mce-caret]').fold(Fun.constant(null), function (elm) {
-        return elm.dom();
-      });
-    };
-
-    var removeIeControlRect = function (editor) {
-      editor.selection.setRng(editor.selection.getRng());
-    };
-
-    var showBlockCaretContainer = function (editor, blockCaretContainer) {
-      if (blockCaretContainer.hasAttribute('data-mce-caret')) {
-        CaretContainer.showCaretContainerBlock(blockCaretContainer);
-        removeIeControlRect(editor);
-        editor.selection.scrollIntoView(blockCaretContainer);
-      }
-    };
-
-    var handleBlockContainer = function (editor, e) {
-      var blockCaretContainer = findBlockCaretContainer(editor);
-
-      if (!blockCaretContainer) {
-        return;
-      }
-
-      if (e.type === 'compositionstart') {
-        e.preventDefault();
-        e.stopPropagation();
-        showBlockCaretContainer(blockCaretContainer);
-        return;
-      }
-
-      if (CaretContainer.hasContent(blockCaretContainer)) {
-        showBlockCaretContainer(editor, blockCaretContainer);
-      }
-    };
-
-    var setup = function (editor) {
-      editor.on('keyup compositionstart', Fun.curry(handleBlockContainer, editor));
-    };
-
-    return {
-      setup: setup
-    };
-  }
-);
 define(
   'ephox.sand.api.XMLHttpRequest',
 
@@ -32221,15 +32178,15 @@ define(
     return function (uploadStatus, settings) {
       var pendingPromises = {};
 
-      function pathJoin(path1, path2) {
+      var pathJoin = function (path1, path2) {
         if (path1) {
           return path1.replace(/\/$/, '') + '/' + path2.replace(/^\//, '');
         }
 
         return path2;
-      }
+      };
 
-      function defaultHandler(blobInfo, success, failure, progress) {
+      var defaultHandler = function (blobInfo, success, failure, progress) {
         var xhr, formData;
 
         xhr = new XMLHttpRequest();
@@ -32266,40 +32223,40 @@ define(
         formData.append('file', blobInfo.blob(), blobInfo.filename());
 
         xhr.send(formData);
-      }
+      };
 
-      function noUpload() {
+      var noUpload = function () {
         return new Promise(function (resolve) {
           resolve([]);
         });
-      }
+      };
 
-      function handlerSuccess(blobInfo, url) {
+      var handlerSuccess = function (blobInfo, url) {
         return {
           url: url,
           blobInfo: blobInfo,
           status: true
         };
-      }
+      };
 
-      function handlerFailure(blobInfo, error) {
+      var handlerFailure = function (blobInfo, error) {
         return {
           url: '',
           blobInfo: blobInfo,
           status: false,
           error: error
         };
-      }
+      };
 
-      function resolvePending(blobUri, result) {
+      var resolvePending = function (blobUri, result) {
         Tools.each(pendingPromises[blobUri], function (resolve) {
           resolve(result);
         });
 
         delete pendingPromises[blobUri];
-      }
+      };
 
-      function uploadBlobInfo(blobInfo, handler, openNotification) {
+      var uploadBlobInfo = function (blobInfo, handler, openNotification) {
         uploadStatus.markPending(blobInfo.blobUri());
 
         return new Promise(function (resolve) {
@@ -32347,22 +32304,22 @@ define(
             resolve(handlerFailure(blobInfo, ex.message));
           }
         });
-      }
+      };
 
-      function isDefaultHandler(handler) {
+      var isDefaultHandler = function (handler) {
         return handler === defaultHandler;
-      }
+      };
 
-      function pendingUploadBlobInfo(blobInfo) {
+      var pendingUploadBlobInfo = function (blobInfo) {
         var blobUri = blobInfo.blobUri();
 
         return new Promise(function (resolve) {
           pendingPromises[blobUri] = pendingPromises[blobUri] || [];
           pendingPromises[blobUri].push(resolve);
         });
-      }
+      };
 
-      function uploadBlobs(blobInfos, openNotification) {
+      var uploadBlobs = function (blobInfos, openNotification) {
         blobInfos = Tools.grep(blobInfos, function (blobInfo) {
           return !uploadStatus.isUploaded(blobInfo.blobUri());
         });
@@ -32371,11 +32328,11 @@ define(
           return uploadStatus.isPending(blobInfo.blobUri()) ?
             pendingUploadBlobInfo(blobInfo) : uploadBlobInfo(blobInfo, settings.handler, openNotification);
         }));
-      }
+      };
 
-      function upload(blobInfos, openNotification) {
+      var upload = function (blobInfos, openNotification) {
         return (!settings.url && isDefaultHandler(settings.handler)) ? noUpload() : uploadBlobs(blobInfos, openNotification);
-      }
+      };
 
       settings = Tools.extend({
         credentials: false,
@@ -32511,7 +32468,7 @@ define(
     'tinymce.core.util.Promise'
   ],
   function (Blob, FileReader, Uint8Array, Window, XMLHttpRequest, Promise) {
-    function blobUriToBlob(url) {
+    var blobUriToBlob = function (url) {
       return new Promise(function (resolve, reject) {
 
         var rejectWithError = function () {
@@ -32542,9 +32499,9 @@ define(
           rejectWithError();
         }
       });
-    }
+    };
 
-    function parseDataUri(uri) {
+    var parseDataUri = function (uri) {
       var type, matches;
 
       uri = decodeURIComponent(uri).split(',');
@@ -32558,9 +32515,9 @@ define(
         type: type,
         data: uri[1]
       };
-    }
+    };
 
-    function dataUriToBlob(uri) {
+    var dataUriToBlob = function (uri) {
       return new Promise(function (resolve) {
         var str, arr, i;
 
@@ -32582,9 +32539,9 @@ define(
 
         resolve(new Blob([arr], { type: uri.type }));
       });
-    }
+    };
 
-    function uriToBlob(url) {
+    var uriToBlob = function (url) {
       if (url.indexOf('blob:') === 0) {
         return blobUriToBlob(url);
       }
@@ -32594,9 +32551,9 @@ define(
       }
 
       return null;
-    }
+    };
 
-    function blobToDataUri(blob) {
+    var blobToDataUri = function (blob) {
       return new Promise(function (resolve) {
         var reader = new FileReader();
 
@@ -32606,7 +32563,7 @@ define(
 
         reader.readAsDataURL(blob);
       });
-    }
+    };
 
     return {
       uriToBlob: uriToBlob,
@@ -32710,7 +32667,7 @@ define(
     return function (uploadStatus, blobCache) {
       var cachedPromises = {};
 
-      function findAll(elm, predicate) {
+      var findAll = function (elm, predicate) {
         var images, promises;
 
         if (!predicate) {
@@ -32782,7 +32739,7 @@ define(
         });
 
         return Promise.all(promises);
-      }
+      };
 
       return {
         findAll: findAll
@@ -32860,7 +32817,7 @@ define(
     return function () {
       var cache = [], constant = Fun.constant;
 
-      function mimeToExt(mime) {
+      var mimeToExt = function (mime) {
         var mimes = {
           'image/jpeg': 'jpg',
           'image/jpg': 'jpg',
@@ -32869,18 +32826,18 @@ define(
         };
 
         return mimes[mime.toLowerCase()] || 'dat';
-      }
+      };
 
-      function create(o, blob, base64, filename) {
+      var create = function (o, blob, base64, filename) {
         return typeof o === 'object' ? toBlobInfo(o) : toBlobInfo({
           id: o,
           name: filename,
           blob: blob,
           base64: base64
         });
-      }
+      };
 
-      function toBlobInfo(o) {
+      var toBlobInfo = function (o) {
         var id, name;
 
         if (!o.blob || !o.base64) {
@@ -32899,31 +32856,31 @@ define(
           blobUri: constant(o.blobUri || URL.createObjectURL(o.blob)),
           uri: constant(o.uri)
         };
-      }
+      };
 
-      function add(blobInfo) {
+      var add = function (blobInfo) {
         if (!get(blobInfo.id())) {
           cache.push(blobInfo);
         }
-      }
+      };
 
-      function get(id) {
+      var get = function (id) {
         return findFirst(function (cachedBlobInfo) {
           return cachedBlobInfo.id() === id;
         });
-      }
+      };
 
-      function findFirst(predicate) {
+      var findFirst = function (predicate) {
         return Arr.filter(cache, predicate)[0];
-      }
+      };
 
-      function getByUri(blobUri) {
+      var getByUri = function (blobUri) {
         return findFirst(function (blobInfo) {
           return blobInfo.blobUri() == blobUri;
         });
-      }
+      };
 
-      function removeByUri(blobUri) {
+      var removeByUri = function (blobUri) {
         cache = Arr.filter(cache, function (blobInfo) {
           if (blobInfo.blobUri() === blobUri) {
             URL.revokeObjectURL(blobInfo.blobUri());
@@ -32932,15 +32889,15 @@ define(
 
           return true;
         });
-      }
+      };
 
-      function destroy() {
+      var destroy = function () {
         Arr.each(cache, function (cachedBlobInfo) {
           URL.revokeObjectURL(cachedBlobInfo.blobUri());
         });
 
         cache = [];
-      }
+      };
 
       return {
         create: create,
@@ -32979,46 +32936,46 @@ define(
       var PENDING = 1, UPLOADED = 2;
       var blobUriStatuses = {};
 
-      function createStatus(status, resultUri) {
+      var createStatus = function (status, resultUri) {
         return {
           status: status,
           resultUri: resultUri
         };
-      }
+      };
 
-      function hasBlobUri(blobUri) {
+      var hasBlobUri = function (blobUri) {
         return blobUri in blobUriStatuses;
-      }
+      };
 
-      function getResultUri(blobUri) {
+      var getResultUri = function (blobUri) {
         var result = blobUriStatuses[blobUri];
 
         return result ? result.resultUri : null;
-      }
+      };
 
-      function isPending(blobUri) {
+      var isPending = function (blobUri) {
         return hasBlobUri(blobUri) ? blobUriStatuses[blobUri].status === PENDING : false;
-      }
+      };
 
-      function isUploaded(blobUri) {
+      var isUploaded = function (blobUri) {
         return hasBlobUri(blobUri) ? blobUriStatuses[blobUri].status === UPLOADED : false;
-      }
+      };
 
-      function markPending(blobUri) {
+      var markPending = function (blobUri) {
         blobUriStatuses[blobUri] = createStatus(PENDING, null);
-      }
+      };
 
-      function markUploaded(blobUri, resultUri) {
+      var markUploaded = function (blobUri, resultUri) {
         blobUriStatuses[blobUri] = createStatus(UPLOADED, resultUri);
-      }
+      };
 
-      function removeFailed(blobUri) {
+      var removeFailed = function (blobUri) {
         delete blobUriStatuses[blobUri];
-      }
+      };
 
-      function destroy() {
+      var destroy = function () {
         blobUriStatuses = {};
-      }
+      };
 
       return {
         hasBlobUri: hasBlobUri,
@@ -33064,7 +33021,7 @@ define(
       var blobCache = new BlobCache(), uploader, imageScanner, settings = editor.settings;
       var uploadStatus = new UploadStatus();
 
-      function aliveGuard(callback) {
+      var aliveGuard = function (callback) {
         return function (result) {
           if (editor.selection) {
             return callback(result);
@@ -33072,14 +33029,14 @@ define(
 
           return [];
         };
-      }
+      };
 
-      function cacheInvalidator() {
+      var cacheInvalidator = function () {
         return '?' + (new Date()).getTime();
-      }
+      };
 
       // Replaces strings without regexps to avoid FF regexp to big issue
-      function replaceString(content, search, replace) {
+      var replaceString = function (content, search, replace) {
         var index = 0;
 
         do {
@@ -33092,16 +33049,16 @@ define(
         } while (index !== -1);
 
         return content;
-      }
+      };
 
-      function replaceImageUrl(content, targetUrl, replacementUrl) {
+      var replaceImageUrl = function (content, targetUrl, replacementUrl) {
         content = replaceString(content, 'src="' + targetUrl + '"', 'src="' + replacementUrl + '"');
         content = replaceString(content, 'data-mce-src="' + targetUrl + '"', 'data-mce-src="' + replacementUrl + '"');
 
         return content;
-      }
+      };
 
-      function replaceUrlInUndoStack(targetUrl, replacementUrl) {
+      var replaceUrlInUndoStack = function (targetUrl, replacementUrl) {
         Arr.each(editor.undoManager.data, function (level) {
           if (level.type === 'fragmented') {
             level.fragments = Arr.map(level.fragments, function (fragment) {
@@ -33111,18 +33068,18 @@ define(
             level.content = replaceImageUrl(level.content, targetUrl, replacementUrl);
           }
         });
-      }
+      };
 
-      function openNotification() {
+      var openNotification = function () {
         return editor.notificationManager.open({
           text: editor.translate('Image uploading...'),
           type: 'info',
           timeout: -1,
           progressBar: true
         });
-      }
+      };
 
-      function replaceImageUri(image, resultUri) {
+      var replaceImageUri = function (image, resultUri) {
         blobCache.removeByUri(image.src);
         replaceUrlInUndoStack(image.src, resultUri);
 
@@ -33130,9 +33087,9 @@ define(
           src: settings.images_reuse_filename ? resultUri + cacheInvalidator() : resultUri,
           'data-mce-src': editor.convertURL(resultUri, 'src')
         });
-      }
+      };
 
-      function uploadImages(callback) {
+      var uploadImages = function (callback) {
         if (!uploader) {
           uploader = new Uploader(uploadStatus, {
             url: settings.images_upload_url,
@@ -33172,19 +33129,19 @@ define(
             return filteredResult;
           }));
         }));
-      }
+      };
 
-      function uploadImagesAuto(callback) {
+      var uploadImagesAuto = function (callback) {
         if (settings.automatic_uploads !== false) {
           return uploadImages(callback);
         }
-      }
+      };
 
-      function isValidDataUriImage(imgElm) {
+      var isValidDataUriImage = function (imgElm) {
         return settings.images_dataimg_filter ? settings.images_dataimg_filter(imgElm) : true;
-      }
+      };
 
-      function scanForImages() {
+      var scanForImages = function () {
         if (!imageScanner) {
           imageScanner = new ImageScanner(uploadStatus, blobCache);
         }
@@ -33208,15 +33165,15 @@ define(
 
           return result;
         }));
-      }
+      };
 
-      function destroy() {
+      var destroy = function () {
         blobCache.destroy();
         uploadStatus.destroy();
         imageScanner = uploader = null;
-      }
+      };
 
-      function replaceBlobUris(content) {
+      var replaceBlobUris = function (content) {
         return content.replace(/src="(blob:[^"]+)"/g, function (match, blobUri) {
           var resultUri = uploadStatus.getResultUri(blobUri);
 
@@ -33238,7 +33195,7 @@ define(
 
           return match;
         });
-      }
+      };
 
       editor.on('setContent', function () {
         if (editor.settings.automatic_uploads !== false) {
@@ -33306,9 +33263,35 @@ define(
 define(
   'tinymce.core.ForceBlocks',
   [
-    'ephox.katamari.api.Fun'
+    'ephox.katamari.api.Arr',
+    'ephox.katamari.api.Fun',
+    'ephox.sugar.api.node.Element',
+    'tinymce.core.dom.BookmarkManager',
+    'tinymce.core.dom.NodeType',
+    'tinymce.core.dom.Parents',
+    'tinymce.core.focus.EditorFocus'
   ],
-  function (Fun) {
+  function (Arr, Fun, Element, BookmarkManager, NodeType, Parents, EditorFocus) {
+    var isBlockElement = function (blockElements, node) {
+      return blockElements.hasOwnProperty(node.nodeName);
+    };
+
+    var isValidTarget = function (blockElements, node) {
+      if (NodeType.isText(node)) {
+        return true;
+      } else if (NodeType.isElement(node)) {
+        return !isBlockElement(blockElements, node) && !BookmarkManager.isBookmarkNode(node);
+      } else {
+        return false;
+      }
+    };
+
+    var hasBlockParent = function (blockElements, root, node) {
+      return Arr.exists(Parents.parents(Element.fromDom(node), Element.fromDom(root)), function (elm) {
+        return isBlockElement(blockElements, elm.dom());
+      });
+    };
+
     var addRootBlocks = function (editor) {
       var settings = editor.settings, dom = editor.dom, selection = editor.selection;
       var schema = editor.schema, blockElements = schema.getBlockElements();
@@ -33319,17 +33302,13 @@ define(
 
       forcedRootBlock = settings.forced_root_block;
 
-      if (!node || node.nodeType !== 1 || !forcedRootBlock) {
+      if (!node || !NodeType.isElement(node) || !forcedRootBlock) {
         return;
       }
 
-      // Check if node is wrapped in block
-      while (node && node !== rootNode) {
-        if (blockElements[node.nodeName]) {
-          return;
-        }
-
-        node = node.parentNode;
+      rootNodeName = rootNode.nodeName.toLowerCase();
+      if (!schema.isValidChild(rootNodeName, forcedRootBlock.toLowerCase()) || hasBlockParent(blockElements, rootNode, node)) {
+        return;
       }
 
       // Get current selection
@@ -33338,22 +33317,14 @@ define(
       startOffset = rng.startOffset;
       endContainer = rng.endContainer;
       endOffset = rng.endOffset;
-
-      try {
-        restoreSelection = editor.getDoc().activeElement === rootNode;
-      } catch (ex) {
-        // IE throws unspecified error here sometimes
-      }
+      restoreSelection = EditorFocus.hasFocus(editor);
 
       // Wrap non block elements and text nodes
       node = rootNode.firstChild;
-      rootNodeName = rootNode.nodeName.toLowerCase();
       while (node) {
-        // TODO: Break this up, too complex
-        if (((node.nodeType === 3 || (node.nodeType == 1 && !blockElements[node.nodeName]))) &&
-          schema.isValidChild(rootNodeName, forcedRootBlock.toLowerCase())) {
+        if (isValidTarget(blockElements, node)) {
           // Remove empty text nodes
-          if (node.nodeType === 3 && node.nodeValue.length === 0) {
+          if (NodeType.isText(node) && node.nodeValue.length === 0) {
             tempNode = node;
             node = node.nextSibling;
             dom.remove(tempNode);
@@ -33419,16 +33390,15 @@ define(
     "tinymce.core.geom.ClientRect"
   ],
   function (Arr, NodeType, ClientRect) {
-
-    function getClientRects(node) {
-      function toArrayWithNode(clientRects) {
+    var getClientRects = function (node) {
+      var toArrayWithNode = function (clientRects) {
         return Arr.map(clientRects, function (clientRect) {
           clientRect = ClientRect.clone(clientRect);
           clientRect.node = node;
 
           return clientRect;
         });
-      }
+      };
 
       if (Arr.isArray(node)) {
         return Arr.reduce(node, function (result, node) {
@@ -33448,7 +33418,7 @@ define(
 
         return toArrayWithNode(rng.getClientRects());
       }
-    }
+    };
 
     return {
       /**
@@ -33494,18 +33464,18 @@ define(
       findNode = CaretUtils.findNode,
       curry = Fun.curry;
 
-    function distanceToRectLeft(clientRect, clientX) {
+    var distanceToRectLeft = function (clientRect, clientX) {
       return Math.abs(clientRect.left - clientX);
-    }
+    };
 
-    function distanceToRectRight(clientRect, clientX) {
+    var distanceToRectRight = function (clientRect, clientX) {
       return Math.abs(clientRect.right - clientX);
-    }
+    };
 
-    function findClosestClientRect(clientRects, clientX) {
-      function isInside(clientX, clientRect) {
+    var findClosestClientRect = function (clientRects, clientX) {
+      var isInside = function (clientX, clientRect) {
         return clientX >= clientRect.left && clientX <= clientRect.right;
-      }
+      };
 
       return Arr.reduce(clientRects, function (oldClientRect, clientRect) {
         var oldDistance, newDistance;
@@ -33532,20 +33502,20 @@ define(
 
         return oldClientRect;
       });
-    }
+    };
 
-    function walkUntil(direction, rootNode, predicateFn, node) {
+    var walkUntil = function (direction, rootNode, predicateFn, node) {
       while ((node = findNode(node, direction, CaretCandidate.isEditableCaretCandidate, rootNode))) {
         if (predicateFn(node)) {
           return;
         }
       }
-    }
+    };
 
-    function findLineNodeRects(rootNode, targetNodeRect) {
+    var findLineNodeRects = function (rootNode, targetNodeRect) {
       var clientRects = [];
 
-      function collect(checkPosFn, node) {
+      var collect = function (checkPosFn, node) {
         var lineRects;
 
         lineRects = Arr.filter(Dimensions.getClientRects(node), function (clientRect) {
@@ -33555,27 +33525,27 @@ define(
         clientRects = clientRects.concat(lineRects);
 
         return lineRects.length === 0;
-      }
+      };
 
       clientRects.push(targetNodeRect);
       walkUntil(-1, rootNode, curry(collect, ClientRect.isAbove), targetNodeRect.node);
       walkUntil(1, rootNode, curry(collect, ClientRect.isBelow), targetNodeRect.node);
 
       return clientRects;
-    }
+    };
 
-    function getContentEditableFalseChildren(rootNode) {
+    var getContentEditableFalseChildren = function (rootNode) {
       return Arr.filter(Arr.toArray(rootNode.getElementsByTagName('*')), isContentEditableFalse);
-    }
+    };
 
-    function caretInfo(clientRect, clientX) {
+    var caretInfo = function (clientRect, clientX) {
       return {
         node: clientRect.node,
         before: distanceToRectLeft(clientRect, clientX) < distanceToRectRight(clientRect, clientX)
       };
-    }
+    };
 
-    function closestCaret(rootNode, clientX, clientY) {
+    var closestCaret = function (rootNode, clientX, clientY) {
       var contentEditableFalseNodeRects, closestNodeRect;
 
       contentEditableFalseNodeRects = Dimensions.getClientRects(getContentEditableFalseChildren(rootNode));
@@ -33592,7 +33562,7 @@ define(
       }
 
       return null;
-    }
+    };
 
     return {
       findClosestClientRect: findClosestClientRect,
@@ -33633,18 +33603,18 @@ define(
   function (Fun, Arr, Dimensions, CaretCandidate, CaretUtils, CaretWalker, CaretPosition, ClientRect) {
     var curry = Fun.curry;
 
-    function findUntil(direction, rootNode, predicateFn, node) {
+    var findUntil = function (direction, rootNode, predicateFn, node) {
       while ((node = CaretUtils.findNode(node, direction, CaretCandidate.isEditableCaretCandidate, rootNode))) {
         if (predicateFn(node)) {
           return;
         }
       }
-    }
+    };
 
-    function walkUntil(direction, isAboveFn, isBeflowFn, rootNode, predicateFn, caretPosition) {
+    var walkUntil = function (direction, isAboveFn, isBeflowFn, rootNode, predicateFn, caretPosition) {
       var line = 0, node, result = [], targetClientRect;
 
-      function add(node) {
+      var add = function (node) {
         var i, clientRect, clientRects;
 
         clientRects = Dimensions.getClientRects(node);
@@ -33670,7 +33640,7 @@ define(
 
           result.push(clientRect);
         }
-      }
+      };
 
       targetClientRect = Arr.last(caretPosition.getClientRects());
       if (!targetClientRect) {
@@ -33682,30 +33652,30 @@ define(
       findUntil(direction, rootNode, add, node);
 
       return result;
-    }
+    };
 
-    function aboveLineNumber(lineNumber, clientRect) {
+    var aboveLineNumber = function (lineNumber, clientRect) {
       return clientRect.line > lineNumber;
-    }
+    };
 
-    function isLine(lineNumber, clientRect) {
+    var isLine = function (lineNumber, clientRect) {
       return clientRect.line === lineNumber;
-    }
+    };
 
     var upUntil = curry(walkUntil, -1, ClientRect.isAbove, ClientRect.isBelow);
     var downUntil = curry(walkUntil, 1, ClientRect.isBelow, ClientRect.isAbove);
 
-    function positionsUntil(direction, rootNode, predicateFn, node) {
+    var positionsUntil = function (direction, rootNode, predicateFn, node) {
       var caretWalker = new CaretWalker(rootNode), walkFn, isBelowFn, isAboveFn,
         caretPosition, result = [], line = 0, clientRect, targetClientRect;
 
-      function getClientRect(caretPosition) {
+      var getClientRect = function (caretPosition) {
         if (direction == 1) {
           return Arr.last(caretPosition.getClientRects());
         }
 
         return Arr.last(caretPosition.getClientRects());
-      }
+      };
 
       if (direction == 1) {
         walkFn = caretWalker.next;
@@ -33748,7 +33718,7 @@ define(
       } while ((caretPosition = walkFn(caretPosition)));
 
       return result;
-    }
+    };
 
     return {
       upUntil: upUntil,
@@ -33875,6 +33845,7 @@ define(
 define(
   'tinymce.core.keyboard.CefNavigation',
   [
+    'tinymce.core.Env',
     'tinymce.core.caret.CaretContainer',
     'tinymce.core.caret.CaretPosition',
     'tinymce.core.caret.CaretUtils',
@@ -33882,15 +33853,14 @@ define(
     'tinymce.core.caret.LineUtils',
     'tinymce.core.caret.LineWalker',
     'tinymce.core.dom.NodeType',
-    'tinymce.core.dom.RangeUtils',
-    'tinymce.core.Env',
     'tinymce.core.keyboard.CefUtils',
+    'tinymce.core.selection.RangeNodes',
     'tinymce.core.util.Arr',
     'tinymce.core.util.Fun'
   ],
-  function (CaretContainer, CaretPosition, CaretUtils, CaretWalker, LineUtils, LineWalker, NodeType, RangeUtils, Env, CefUtils, Arr, Fun) {
+  function (Env, CaretContainer, CaretPosition, CaretUtils, CaretWalker, LineUtils, LineWalker, NodeType, CefUtils, RangeNodes, Arr, Fun) {
     var isContentEditableFalse = NodeType.isContentEditableFalse;
-    var getSelectedNode = RangeUtils.getSelectedNode;
+    var getSelectedNode = RangeNodes.getSelectedNode;
     var isAfterContentEditableFalse = CaretUtils.isAfterContentEditableFalse;
     var isBeforeContentEditableFalse = CaretUtils.isBeforeContentEditableFalse;
 
@@ -34268,20 +34238,25 @@ define(
 define(
   'tinymce.core.keyboard.ArrowKeys',
   [
+    'ephox.sand.api.PlatformDetection',
     'tinymce.core.keyboard.BoundarySelection',
     'tinymce.core.keyboard.CefNavigation',
     'tinymce.core.keyboard.MatchKeys',
     'tinymce.core.util.VK'
   ],
-  function (BoundarySelection, CefNavigation, MatchKeys, VK) {
+  function (PlatformDetection, BoundarySelection, CefNavigation, MatchKeys, VK) {
     var executeKeydownOverride = function (editor, caret, evt) {
+      var os = PlatformDetection.detect().os;
+
       MatchKeys.execute([
         { keyCode: VK.RIGHT, action: CefNavigation.moveH(editor, true) },
         { keyCode: VK.LEFT, action: CefNavigation.moveH(editor, false) },
         { keyCode: VK.UP, action: CefNavigation.moveV(editor, false) },
         { keyCode: VK.DOWN, action: CefNavigation.moveV(editor, true) },
         { keyCode: VK.RIGHT, action: BoundarySelection.move(editor, caret, true) },
-        { keyCode: VK.LEFT, action: BoundarySelection.move(editor, caret, false) }
+        { keyCode: VK.LEFT, action: BoundarySelection.move(editor, caret, false) },
+        { keyCode: VK.RIGHT, ctrlKey: !os.isOSX(), altKey: os.isOSX(), action: BoundarySelection.moveNextWord(editor, caret) },
+        { keyCode: VK.LEFT, ctrlKey: !os.isOSX(), altKey: os.isOSX(), action: BoundarySelection.movePrevWord(editor, caret) }
       ], evt).each(function (_) {
         evt.preventDefault();
       });
@@ -34297,6 +34272,85 @@ define(
 
     return {
       setup: setup
+    };
+  }
+);
+
+/**
+ * InlineFormatDelete.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.delete.InlineFormatDelete',
+  [
+    'ephox.katamari.api.Arr',
+    'ephox.katamari.api.Fun',
+    'ephox.sugar.api.node.Element',
+    'ephox.sugar.api.search.Traverse',
+    'tinymce.core.caret.CaretPosition',
+    'tinymce.core.delete.DeleteElement',
+    'tinymce.core.delete.DeleteUtils',
+    'tinymce.core.dom.ElementType',
+    'tinymce.core.dom.Parents',
+    'tinymce.core.fmt.CaretFormat'
+  ],
+  function (Arr, Fun, Element, Traverse, CaretPosition, DeleteElement, DeleteUtils, ElementType, Parents, CaretFormat) {
+    var getParentInlines = function (rootElm, startElm) {
+      var parents = Parents.parentsAndSelf(startElm, rootElm);
+      return Arr.findIndex(parents, ElementType.isBlock).fold(
+        Fun.constant(parents),
+        function (index) {
+          return parents.slice(0, index);
+        }
+      );
+    };
+
+    var hasOnlyOneChild = function (elm) {
+      return Traverse.children(elm).length === 1;
+    };
+
+    var deleteLastPosition = function (forward, editor, target, parentInlines) {
+      var isFormatElement = Fun.curry(CaretFormat.isFormatElement, editor);
+      var formatNodes = Arr.map(Arr.filter(parentInlines, isFormatElement), function (elm) {
+        return elm.dom();
+      });
+
+      if (formatNodes.length === 0) {
+        DeleteElement.deleteElement(editor, forward, target);
+      } else {
+        var pos = CaretFormat.replaceWithCaretFormat(target.dom(), formatNodes);
+        editor.selection.setRng(pos.toRange());
+      }
+    };
+
+    var deleteCaret = function (editor, forward) {
+      var rootElm = Element.fromDom(editor.getBody());
+      var startElm = Element.fromDom(editor.selection.getStart());
+      var parentInlines = Arr.filter(getParentInlines(rootElm, startElm), hasOnlyOneChild);
+
+      return Arr.last(parentInlines).map(function (target) {
+        var fromPos = CaretPosition.fromRangeStart(editor.selection.getRng());
+        if (DeleteUtils.willDeleteLastPositionInElement(forward, fromPos, target.dom())) {
+          deleteLastPosition(forward, editor, target, parentInlines);
+          return true;
+        } else {
+          return false;
+        }
+      }).getOr(false);
+    };
+
+    var backspaceDelete = function (editor, forward) {
+      return editor.selection.isCollapsed() ? deleteCaret(editor, forward) : false;
+    };
+
+    return {
+      backspaceDelete: backspaceDelete
     };
   }
 );
@@ -34318,11 +34372,12 @@ define(
     'tinymce.core.delete.BlockRangeDelete',
     'tinymce.core.delete.CefDelete',
     'tinymce.core.delete.InlineBoundaryDelete',
+    'tinymce.core.delete.InlineFormatDelete',
     'tinymce.core.delete.TableDelete',
     'tinymce.core.keyboard.MatchKeys',
     'tinymce.core.util.VK'
   ],
-  function (BlockBoundaryDelete, BlockRangeDelete, CefDelete, InlineBoundaryDelete, TableDelete, MatchKeys, VK) {
+  function (BlockBoundaryDelete, BlockRangeDelete, CefDelete, InlineBoundaryDelete, InlineFormatDelete, TableDelete, MatchKeys, VK) {
     var executeKeydownOverride = function (editor, caret, evt) {
       MatchKeys.execute([
         { keyCode: VK.BACKSPACE, action: MatchKeys.action(CefDelete.backspaceDelete, editor, false) },
@@ -34334,7 +34389,9 @@ define(
         { keyCode: VK.BACKSPACE, action: MatchKeys.action(BlockBoundaryDelete.backspaceDelete, editor, false) },
         { keyCode: VK.DELETE, action: MatchKeys.action(BlockBoundaryDelete.backspaceDelete, editor, true) },
         { keyCode: VK.BACKSPACE, action: MatchKeys.action(TableDelete.backspaceDelete, editor, false) },
-        { keyCode: VK.DELETE, action: MatchKeys.action(TableDelete.backspaceDelete, editor, true) }
+        { keyCode: VK.DELETE, action: MatchKeys.action(TableDelete.backspaceDelete, editor, true) },
+        { keyCode: VK.BACKSPACE, action: MatchKeys.action(InlineFormatDelete.backspaceDelete, editor, false) },
+        { keyCode: VK.DELETE, action: MatchKeys.action(InlineFormatDelete.backspaceDelete, editor, true) }
       ], evt).each(function (_) {
         evt.preventDefault();
       });
@@ -34382,12 +34439,13 @@ define(
   [
     'tinymce.core.caret.CaretContainer',
     'tinymce.core.dom.NodeType',
-    'tinymce.core.dom.RangeUtils',
     'tinymce.core.dom.TreeWalker',
+    'tinymce.core.fmt.CaretFormat',
+    'tinymce.core.selection.NormalizeRange',
     'tinymce.core.text.Zwsp',
     'tinymce.core.util.Tools'
   ],
-  function (CaretContainer, NodeType, RangeUtils, TreeWalker, Zwsp, Tools) {
+  function (CaretContainer, NodeType, TreeWalker, CaretFormat, NormalizeRange, Zwsp, Tools) {
     var isEmptyAnchor = function (elm) {
       return elm && elm.nodeName === "A" && Tools.trim(Zwsp.trim(elm.innerText || elm.textContent)).length === 0;
     };
@@ -34636,7 +34694,7 @@ define(
 
       // Moves the caret to a suitable position within the root for example in the first non
       // pure whitespace text node or before an image
-      function moveToCaretPosition(root) {
+      var moveToCaretPosition = function (root) {
         var walker, node, rng, lastNode = root, tempElm;
         var moveCaretBeforeOnEnterElementsMap = schema.getMoveCaretBeforeOnEnterElements();
 
@@ -34699,11 +34757,11 @@ define(
         // Remove tempElm created for old IE:s
         dom.remove(tempElm);
         selection.scrollIntoView(root);
-      }
+      };
 
       // Creates a new block element by cloning the current one or creating a new one if the name is specified
       // This function will also copy any text formatting from the parent block and add it to the new one
-      function createNewBlock(name) {
+      var createNewBlock = function (name) {
         var node = container, block, clonedNode, caretNode, textInlineElements = schema.getTextInlineElements();
 
         if (name || parentBlockName == "TABLE" || parentBlockName == "HR") {
@@ -34722,8 +34780,7 @@ define(
           // Clone any parent styles
           do {
             if (textInlineElements[node.nodeName]) {
-              // Never clone a caret containers
-              if (node.id == '_mce_caret') {
+              if (CaretFormat.isCaretNode(node)) {
                 continue;
               }
 
@@ -34744,10 +34801,10 @@ define(
         emptyBlock(caretNode);
 
         return block;
-      }
+      };
 
       // Returns true/false if the caret is at the start/end of the parent block element
-      function isCaretAtStartOrEndOfBlock(start) {
+      var isCaretAtStartOrEndOfBlock = function (start) {
         var walker, node, name, normalizedOffset;
 
         normalizedOffset = normalizeZwspOffset(start, container, offset);
@@ -34806,10 +34863,10 @@ define(
         }
 
         return true;
-      }
+      };
 
       // Inserts a block or br before/after or in the middle of a split list of the LI is empty
-      function handleEmptyListItem() {
+      var handleEmptyListItem = function () {
         if (containerBlock == editor.getBody()) {
           return;
         }
@@ -34861,9 +34918,9 @@ define(
 
         dom.remove(parentBlock);
         moveToCaretPosition(newBlock);
-      }
+      };
 
-      function insertNewBlockAfter() {
+      var insertNewBlockAfter = function () {
         // If the caret is at the end of a header we produce a P tag after it similar to Word unless we are in a hgroup
         if (/^(H[1-6]|PRE|FIGURE)$/.test(parentBlockName) && containerBlockName != 'HGROUP') {
           newBlock = createNewBlock(newBlockName);
@@ -34880,10 +34937,14 @@ define(
         }
 
         moveToCaretPosition(newBlock);
-      }
+      };
 
       // Setup range items and newBlockName
-      new RangeUtils(dom).normalize(rng);
+      NormalizeRange.normalize(dom, rng).each(function (normRng) {
+        rng.setStart(normRng.startContainer, normRng.startOffset);
+        rng.setEnd(normRng.endContainer, normRng.endOffset);
+      });
+
       container = rng.startContainer;
       offset = rng.startOffset;
       newBlockName = (settings.force_p_newlines ? 'p' : '') || settings.forced_root_block;
@@ -35245,11 +35306,11 @@ define(
 define(
   'tinymce.core.NodeChange',
   [
-    "tinymce.core.dom.RangeUtils",
-    "tinymce.core.Env",
-    "tinymce.core.util.Delay"
+    'tinymce.core.Env',
+    'tinymce.core.selection.RangeCompare',
+    'tinymce.core.util.Delay'
   ],
-  function (RangeUtils, Env, Delay) {
+  function (Env, RangeCompare, Delay) {
     return function (editor) {
       var lastRng, lastPath = [];
 
@@ -35259,7 +35320,7 @@ define(
        * @private
        * @return {Boolean} True if the element path is the same false if it's not.
        */
-      function isSameElementPath(startElm) {
+      var isSameElementPath = function (startElm) {
         var i, currentPath;
 
         currentPath = editor.$(startElm).parentsUntil(editor.getBody()).add(startElm);
@@ -35279,7 +35340,7 @@ define(
         lastPath = currentPath;
 
         return false;
-      }
+      };
 
       // Gecko doesn't support the "selectionchange" event
       if (!('onselectionchange' in editor.getDoc())) {
@@ -35298,7 +35359,7 @@ define(
 
           // Always treat nodechange as a selectionchange since applying
           // formatting to the current range wouldn't update the range but it's parent
-          if (e.type == 'nodechange' || !RangeUtils.compareRanges(fakeRng, lastRng)) {
+          if (e.type == 'nodechange' || !RangeCompare.isEq(fakeRng, lastRng)) {
             editor.fire('SelectionChange');
           }
 
@@ -35791,7 +35852,7 @@ define(
     return function (rootNode, isBlock) {
       var cursorInterval, $lastVisualCaret = null, caretContainerNode;
 
-      function getAbsoluteClientRect(node, before) {
+      var getAbsoluteClientRect = function (node, before) {
         var clientRect = ClientRect.collapse(node.getBoundingClientRect(), before),
           docElm, scrollX, scrollY, margin, rootRect;
 
@@ -35823,9 +35884,9 @@ define(
         }
 
         return clientRect;
-      }
+      };
 
-      function trimInlineCaretContainers() {
+      var trimInlineCaretContainers = function () {
         var contentEditableFalseNodes, node, sibling, i, data;
 
         contentEditableFalseNodes = DomQuery('*[contentEditable=false]', rootNode);
@@ -35856,9 +35917,9 @@ define(
         }
 
         return null;
-      }
+      };
 
-      function show(before, node) {
+      var show = function (before, node) {
         var clientRect, rng;
 
         hide();
@@ -35899,9 +35960,9 @@ define(
         }
 
         return rng;
-      }
+      };
 
-      function hide() {
+      var hide = function () {
         trimInlineCaretContainers();
 
         if (caretContainerNode) {
@@ -35915,13 +35976,13 @@ define(
         }
 
         clearInterval(cursorInterval);
-      }
+      };
 
       var hasFocus = function () {
         return rootNode.ownerDocument.activeElement === rootNode;
       };
 
-      function startBlink() {
+      var startBlink = function () {
         cursorInterval = Delay.setInterval(function () {
           if (hasFocus()) {
             DomQuery('div.mce-visual-caret', rootNode).toggleClass('mce-visual-caret-hidden');
@@ -35929,13 +35990,13 @@ define(
             DomQuery('div.mce-visual-caret', rootNode).addClass('mce-visual-caret-hidden');
           }
         }, 500);
-      }
+      };
 
-      function destroy() {
+      var destroy = function () {
         Delay.clearInterval(cursorInterval);
-      }
+      };
 
-      function getCss() {
+      var getCss = function () {
         return (
           '.mce-visual-caret {' +
           'position: absolute;' +
@@ -35954,7 +36015,7 @@ define(
           'padding: 0;' +
           '}'
         );
-      }
+      };
 
       return {
         show: show,
@@ -35965,6 +36026,146 @@ define(
     };
   }
 );
+define(
+  'ephox.katamari.api.Throttler',
+
+  [
+    'global!clearTimeout',
+    'global!setTimeout'
+  ],
+
+  function (clearTimeout, setTimeout) {
+    // Run a function fn afer rate ms. If another invocation occurs
+    // during the time it is waiting, update the arguments f will run
+    // with (but keep the current schedule)
+    var adaptable = function (fn, rate) {
+      var timer = null;
+      var args = null;
+      var cancel = function () {
+        if (timer !== null) {
+          clearTimeout(timer);
+          timer = null;
+          args = null;
+        }
+      };
+      var throttle = function () {
+        args = arguments;
+        if (timer === null) {
+          timer = setTimeout(function () {
+            fn.apply(null, args);
+            timer = null;
+            args = null;
+          }, rate);
+        }
+      };
+
+      return {
+        cancel: cancel,
+        throttle: throttle
+      };
+    };
+
+    // Run a function fn after rate ms. If another invocation occurs
+    // during the time it is waiting, ignore it completely.
+    var first = function (fn, rate) {
+      var timer = null;
+      var cancel = function () {
+        if (timer !== null) {
+          clearTimeout(timer);
+          timer = null;
+        }
+      };
+      var throttle = function () {
+        var args = arguments;
+        if (timer === null) {
+          timer = setTimeout(function () {
+            fn.apply(null, args);
+            timer = null;
+            args = null;
+          }, rate);
+        }
+      };
+
+      return {
+        cancel: cancel,
+        throttle: throttle
+      };
+    };
+
+    // Run a function fn after rate ms. If another invocation occurs
+    // during the time it is waiting, reschedule the function again
+    // with the new arguments.
+    var last = function (fn, rate) {
+      var timer = null;
+      var cancel = function () {
+        if (timer !== null) {
+          clearTimeout(timer);
+          timer = null;
+        }
+      };
+      var throttle = function () {
+        var args = arguments;
+        if (timer !== null) clearTimeout(timer);
+        timer = setTimeout(function () {
+          fn.apply(null, args);
+          timer = null;
+          args = null;
+        }, rate);
+      };
+
+      return {
+        cancel: cancel,
+        throttle: throttle
+      };
+    };
+
+    return {
+      adaptable: adaptable,
+      first: first,
+      last: last
+    };
+  }
+);
+/**
+ * CefFocus.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.focus.CefFocus',
+  [
+    'ephox.katamari.api.Throttler',
+    'tinymce.core.keyboard.CefUtils'
+  ],
+  function (Throttler, CefUtils) {
+    var setup = function (editor) {
+      var renderFocusCaret = Throttler.first(function () {
+        if (!editor.removed) {
+          var caretRange = CefUtils.renderRangeCaret(editor, editor.selection.getRng());
+          editor.selection.setRng(caretRange);
+        }
+      }, 0);
+
+      editor.on('focus', function () {
+        renderFocusCaret.throttle();
+      });
+
+      editor.on('blur', function () {
+        renderFocusCaret.cancel();
+      });
+    };
+
+    return {
+      setup: setup
+    };
+  }
+);
+
 /**
  * SelectionOverrides.js
  *
@@ -35996,54 +36197,54 @@ define(
     'tinymce.core.dom.ElementType',
     'tinymce.core.dom.NodeType',
     'tinymce.core.dom.RangePoint',
+    'tinymce.core.focus.CefFocus',
     'tinymce.core.keyboard.CefUtils',
-    'tinymce.core.util.Delay',
     'tinymce.core.util.VK'
   ],
   function (
     Arr, Remove, Element, Attr, SelectorFilter, SelectorFind, DragDropOverrides, EditorView, Env, CaretContainer, CaretPosition, CaretUtils, CaretWalker, FakeCaret,
-    LineUtils, ElementType, NodeType, RangePoint, CefUtils, Delay, VK
+    LineUtils, ElementType, NodeType, RangePoint, CefFocus, CefUtils, VK
   ) {
     var isContentEditableTrue = NodeType.isContentEditableTrue,
       isContentEditableFalse = NodeType.isContentEditableFalse,
       isAfterContentEditableFalse = CaretUtils.isAfterContentEditableFalse,
       isBeforeContentEditableFalse = CaretUtils.isBeforeContentEditableFalse;
 
-    function SelectionOverrides(editor) {
+    var SelectionOverrides = function (editor) {
+      var isBlock = function (node) {
+        return editor.dom.isBlock(node);
+      };
+
       var rootNode = editor.getBody();
       var fakeCaret = new FakeCaret(editor.getBody(), isBlock),
         realSelectionId = 'sel-' + editor.dom.uniqueId(),
         selectedContentEditableNode;
 
-      function isFakeSelectionElement(elm) {
+      var isFakeSelectionElement = function (elm) {
         return editor.dom.hasClass(elm, 'mce-offscreen-selection');
-      }
+      };
 
-      function getRealSelectionElement() {
+      var getRealSelectionElement = function () {
         var container = editor.dom.get(realSelectionId);
         return container ? container.getElementsByTagName('*')[0] : container;
-      }
+      };
 
-      function isBlock(node) {
-        return editor.dom.isBlock(node);
-      }
-
-      function setRange(range) {
+      var setRange = function (range) {
         //console.log('setRange', range);
         if (range) {
           editor.selection.setRng(range);
         }
-      }
+      };
 
-      function getRange() {
+      var getRange = function () {
         return editor.selection.getRng();
-      }
+      };
 
-      function scrollIntoView(node, alignToTop) {
+      var scrollIntoView = function (node, alignToTop) {
         editor.selection.scrollIntoView(node, alignToTop);
-      }
+      };
 
-      function showCaret(direction, node, before) {
+      var showCaret = function (direction, node, before) {
         var e;
 
         e = editor.fire('ShowCaret', {
@@ -36059,9 +36260,9 @@ define(
         scrollIntoView(node, direction === -1);
 
         return fakeCaret.show(before, node);
-      }
+      };
 
-      function getNormalizedRangeEndPoint(direction, range) {
+      var getNormalizedRangeEndPoint = function (direction, range) {
         range = CaretUtils.normalizeRange(direction, rootNode, range);
 
         if (direction == -1) {
@@ -36069,18 +36270,18 @@ define(
         }
 
         return CaretPosition.fromRangeEnd(range);
-      }
+      };
 
-      function showBlockCaretContainer(blockCaretContainer) {
+      var showBlockCaretContainer = function (blockCaretContainer) {
         if (blockCaretContainer.hasAttribute('data-mce-caret')) {
           CaretContainer.showCaretContainerBlock(blockCaretContainer);
           setRange(getRange()); // Removes control rect on IE
           scrollIntoView(blockCaretContainer[0]);
         }
-      }
+      };
 
-      function registerEvents() {
-        function getContentEditableRoot(node) {
+      var registerEvents = function () {
+        var getContentEditableRoot = function (node) {
           var root = editor.getBody();
 
           while (node && node != root) {
@@ -36092,7 +36293,7 @@ define(
           }
 
           return null;
-        }
+        };
 
         // Some browsers (Chrome) lets you place the caret after a cE=false
         // Make sure we render the caret container in this case
@@ -36128,7 +36329,7 @@ define(
           removeContentEditableSelection();
         });
 
-        function handleTouchSelect(editor) {
+        var handleTouchSelect = function (editor) {
           var moved = false;
 
           editor.on('touchstart', function () {
@@ -36149,7 +36350,7 @@ define(
               }
             }
           });
-        }
+        };
 
         var hasNormalCaretPosition = function (elm) {
           var caretWalker = new CaretWalker(elm);
@@ -36269,13 +36470,6 @@ define(
           }
         });
 
-        editor.on('focus', function () {
-          // Make sure we have a proper fake caret on focus
-          Delay.setEditorTimeout(editor, function () {
-            editor.selection.setRng(CefUtils.renderRangeCaret(editor, editor.selection.getRng()));
-          }, 0);
-        });
-
         editor.on('copy', function (e) {
           var clipboardData = e.clipboardData;
 
@@ -36293,9 +36487,10 @@ define(
         });
 
         DragDropOverrides.init(editor);
-      }
+        CefFocus.setup(editor);
+      };
 
-      function addCss() {
+      var addCss = function () {
         var styles = editor.contentStyles, rootClass = '.mce-content-body';
 
         styles.push(fakeCaret.getCss());
@@ -36312,21 +36507,21 @@ define(
           'cursor: text;' +
           '}'
         );
-      }
+      };
 
-      function isWithinCaretContainer(node) {
+      var isWithinCaretContainer = function (node) {
         return (
           CaretContainer.isCaretContainer(node) ||
           CaretContainer.startsWithCaretContainer(node) ||
           CaretContainer.endsWithCaretContainer(node)
         );
-      }
+      };
 
-      function isRangeInCaretContainer(rng) {
+      var isRangeInCaretContainer = function (rng) {
         return isWithinCaretContainer(rng.startContainer) || isWithinCaretContainer(rng.endContainer);
-      }
+      };
 
-      function setContentEditableSelection(range, forward) {
+      var setContentEditableSelection = function (range, forward) {
         var node, $ = editor.$, dom = editor.dom, $realSelectionContainer, sel,
           startContainer, startOffset, endOffset, e, caretPosition, targetClone, origTargetClone;
 
@@ -36442,24 +36637,24 @@ define(
         hideFakeCaret();
 
         return range;
-      }
+      };
 
-      function removeContentEditableSelection() {
+      var removeContentEditableSelection = function () {
         if (selectedContentEditableNode) {
           selectedContentEditableNode.removeAttribute('data-mce-selected');
           SelectorFind.descendant(Element.fromDom(editor.getBody()), '#' + realSelectionId).each(Remove.remove);
           selectedContentEditableNode = null;
         }
-      }
+      };
 
-      function destroy() {
+      var destroy = function () {
         fakeCaret.destroy();
         selectedContentEditableNode = null;
-      }
+      };
 
-      function hideFakeCaret() {
+      var hideFakeCaret = function () {
         fakeCaret.hide();
-      }
+      };
 
       if (Env.ceFalse) {
         registerEvents();
@@ -36472,7 +36667,7 @@ define(
         hideFakeCaret: hideFakeCaret,
         destroy: destroy
       };
-    }
+    };
 
     return SelectionOverrides;
   }
@@ -36756,8 +36951,8 @@ define(
 define(
   'tinymce.core.undo.Levels',
   [
-    "tinymce.core.util.Arr",
-    "tinymce.core.undo.Fragments"
+    'ephox.katamari.api.Arr',
+    'tinymce.core.undo.Fragments'
   ],
   function (Arr, Fragments) {
     var hasIframes = function (html) {
@@ -36788,8 +36983,9 @@ define(
       var fragments, content, trimmedFragments;
 
       fragments = Fragments.read(editor.getBody());
-      trimmedFragments = Arr.map(fragments, function (html) {
-        return editor.serializer.trimContent(html);
+      trimmedFragments = Arr.bind(fragments, function (html) {
+        var trimmed = editor.serializer.trimContent(html);
+        return trimmed.length > 0 ? [trimmed] : [];
       });
       content = trimmedFragments.join('');
 
@@ -36859,21 +37055,21 @@ define(
         }
       };
 
-      function setDirty(state) {
+      var setDirty = function (state) {
         editor.setDirty(state);
-      }
+      };
 
-      function addNonTypingUndoLevel(e) {
+      var addNonTypingUndoLevel = function (e) {
         setTyping(false);
         self.add({}, e);
-      }
+      };
 
-      function endTyping() {
+      var endTyping = function () {
         if (self.typing) {
           setTyping(false);
           self.add();
         }
-      }
+      };
 
       // Add initial undo level when the editor is initialized
       editor.on('init', function () {
@@ -37218,60 +37414,6 @@ define(
 );
 
 /**
- * NodePath.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-/**
- * Handles paths of nodes within an element.
- *
- * @private
- * @class tinymce.dom.NodePath
- */
-define(
-  'tinymce.core.dom.NodePath',
-  [
-    "tinymce.core.dom.DOMUtils"
-  ],
-  function (DOMUtils) {
-    function create(rootNode, targetNode, normalized) {
-      var path = [];
-
-      for (; targetNode && targetNode != rootNode; targetNode = targetNode.parentNode) {
-        path.push(DOMUtils.nodeIndex(targetNode, normalized));
-      }
-
-      return path;
-    }
-
-    function resolve(rootNode, path) {
-      var i, node, children;
-
-      for (node = rootNode, i = path.length - 1; i >= 0; i--) {
-        children = node.childNodes;
-
-        if (path[i] > children.length - 1) {
-          return null;
-        }
-
-        node = children[path[i]];
-      }
-
-      return node;
-    }
-
-    return {
-      create: create,
-      resolve: resolve
-    };
-  }
-);
-/**
  * Quirks.js
  *
  * Released under LGPL License.
@@ -37294,20 +37436,14 @@ define(
   [
     'global!document',
     'global!window',
-    'tinymce.core.caret.CaretContainer',
-    'tinymce.core.caret.CaretPosition',
-    'tinymce.core.caret.CaretWalker',
-    'tinymce.core.dom.NodePath',
-    'tinymce.core.dom.RangeUtils',
-    'tinymce.core.dom.TreeWalker',
     'tinymce.core.Env',
-    'tinymce.core.html.Entities',
-    'tinymce.core.html.Node',
+    'tinymce.core.caret.CaretContainer',
+    'tinymce.core.selection.CaretRangeFromPoint',
     'tinymce.core.util.Delay',
     'tinymce.core.util.Tools',
     'tinymce.core.util.VK'
   ],
-  function (document, window, CaretContainer, CaretPosition, CaretWalker, NodePath, RangeUtils, TreeWalker, Env, Entities, Node, Delay, Tools, VK) {
+  function (document, window, Env, CaretContainer, CaretRangeFromPoint, Delay, Tools, VK) {
     return function (editor) {
       var each = Tools.each;
       var BACKSPACE = VK.BACKSPACE, DELETE = VK.DELETE, dom = editor.dom, selection = editor.selection,
@@ -37319,13 +37455,13 @@ define(
       /**
        * Executes a command with a specific state this can be to enable/disable browser editing features.
        */
-      function setEditorCommandState(cmd, state) {
+      var setEditorCommandState = function (cmd, state) {
         try {
           editor.getDoc().execCommand(cmd, false, state);
         } catch (ex) {
           // Ignore
         }
-      }
+      };
 
       /**
        * Returns true/false if the event is prevented or not.
@@ -37334,9 +37470,9 @@ define(
        * @param {Event} e Event object.
        * @return {Boolean} true/false if the event is prevented or not.
        */
-      function isDefaultPrevented(e) {
+      var isDefaultPrevented = function (e) {
         return e.isDefaultPrevented();
-      }
+      };
 
       /**
        * Sets Text/URL data on the event's dataTransfer object to a special data:text/mce-internal url.
@@ -37346,7 +37482,7 @@ define(
        * @private
        * @param {DragEvent} e Event object
        */
-      function setMceInternalContent(e) {
+      var setMceInternalContent = function (e) {
         var selectionHtml, internalContent;
 
         if (e.dataTransfer) {
@@ -37362,7 +37498,7 @@ define(
             e.dataTransfer.setData(mceInternalDataType, internalContent);
           }
         }
-      }
+      };
 
       /**
        * Gets content of special data:text/mce-internal url on the event's dataTransfer object.
@@ -37373,7 +37509,7 @@ define(
        * @param {DragEvent} e Event object
        * @returns {String} mce-internal content
        */
-      function getMceInternalContent(e) {
+      var getMceInternalContent = function (e) {
         var internalContent;
 
         if (e.dataTransfer) {
@@ -37390,7 +37526,7 @@ define(
         }
 
         return null;
-      }
+      };
 
       /**
        * Inserts contents using the paste clipboard command if it's available if it isn't it will fallback
@@ -37400,13 +37536,13 @@ define(
        * @param {String} content Content to insert at selection.
        * @param {Boolean} internal State if the paste is to be considered internal or external.
        */
-      function insertClipboardContents(content, internal) {
+      var insertClipboardContents = function (content, internal) {
         if (editor.queryCommandSupported('mceInsertClipboardContent')) {
           editor.execCommand('mceInsertClipboardContent', false, { content: content, internal: internal });
         } else {
           editor.execCommand('mceInsertContent', false, content);
         }
-      }
+      };
 
       /**
        * Makes sure that the editor body becomes empty when backspace or delete is pressed in empty editors.
@@ -37420,15 +37556,15 @@ define(
        * Or:
        * [<h1></h1>]
        */
-      function emptyEditorWhenDeleting() {
-        function serializeRng(rng) {
+      var emptyEditorWhenDeleting = function () {
+        var serializeRng = function (rng) {
           var body = dom.create("body");
           var contents = rng.cloneContents();
           body.appendChild(contents);
           return selection.serializer.serialize(body, { format: 'html' });
-        }
+        };
 
-        function allContentsSelected(rng) {
+        var allContentsSelected = function (rng) {
           var selection = serializeRng(rng);
 
           var allRng = dom.createRng();
@@ -37436,7 +37572,7 @@ define(
 
           var allSelection = serializeRng(allRng);
           return selection === allSelection;
-        }
+        };
 
         editor.on('keydown', function (e) {
           var keyCode = e.keyCode, isCollapsed, body;
@@ -37469,16 +37605,16 @@ define(
             editor.nodeChanged();
           }
         });
-      }
+      };
 
       /**
        * WebKit doesn't select all the nodes in the body when you press Ctrl+A.
        * IE selects more than the contents <body>[<p>a</p>]</body> instead of <body><p>[a]</p]</body> see bug #6438
        * This selects the whole body so that backspace/delete logic will delete everything
        */
-      function selectAll() {
+      var selectAll = function () {
         editor.shortcuts.add('meta+a', null, 'SelectAll');
-      }
+      };
 
       /**
        * WebKit has a weird issue where it some times fails to properly convert keypresses to input method keystrokes.
@@ -37491,7 +37627,7 @@ define(
        *
        * See: https://bugs.webkit.org/show_bug.cgi?id=83566
        */
-      function inputMethodFocus() {
+      var inputMethodFocus = function () {
         if (!editor.settings.content_editable) {
           // Case 1 IME doesn't initialize if you focus the document
           // Disabled since it was interferring with the cE=false logic
@@ -37522,7 +37658,7 @@ define(
             }
           });
         }
-      }
+      };
 
       /**
        * Backspacing in FireFox/IE from a paragraph into a horizontal rule results in a floating text node because the
@@ -37533,7 +37669,7 @@ define(
        *
        * It also fixes a bug on Firefox where it's impossible to delete HR elements.
        */
-      function removeHrOnBackspace() {
+      var removeHrOnBackspace = function () {
         editor.on('keydown', function (e) {
           if (!isDefaultPrevented(e) && e.keyCode === BACKSPACE) {
             // Check if there is any HR elements this is faster since getRng on IE 7 & 8 is slow
@@ -37558,13 +37694,13 @@ define(
             }
           }
         });
-      }
+      };
 
       /**
        * Firefox 3.x has an issue where the body element won't get proper focus if you click out
        * side it's rectangle.
        */
-      function focusBody() {
+      var focusBody = function () {
         // Fix for a focus bug in FF 3.x where the body element
         // wouldn't get proper focus if the user clicked on the HTML element
         if (!window.Range.prototype.getClientRects) { // Detect getClientRects got introduced in FF 4
@@ -37582,13 +37718,13 @@ define(
             }
           });
         }
-      }
+      };
 
       /**
        * WebKit has a bug where it isn't possible to select image, hr or anchor elements
        * by clicking on them so we need to fake that.
        */
-      function selectControlElements() {
+      var selectControlElements = function () {
         editor.on('click', function (e) {
           var target = e.target;
 
@@ -37606,7 +37742,7 @@ define(
             selection.select(target);
           }
         });
-      }
+      };
 
       /**
        * Fixes a Gecko bug where the style attribute gets added to the wrong element when deleting between two block elements.
@@ -37620,8 +37756,8 @@ define(
        * Instead of:
        * <p style="color:red">bla|ed</p>
        */
-      function removeStylesWhenDeletingAcrossBlockElements() {
-        function getAttributeApplyFunction() {
+      var removeStylesWhenDeletingAcrossBlockElements = function () {
+        var getAttributeApplyFunction = function () {
           var template = dom.getAttribs(selection.getStart().cloneNode(false));
 
           return function () {
@@ -37635,12 +37771,12 @@ define(
               });
             }
           };
-        }
+        };
 
-        function isSelectionAcrossElements() {
+        var isSelectionAcrossElements = function () {
           return !selection.isCollapsed() &&
             dom.getParent(selection.getStart(), dom.isBlock) != dom.getParent(selection.getEnd(), dom.isBlock);
-        }
+        };
 
         editor.on('keypress', function (e) {
           var applyAttributes;
@@ -37665,13 +37801,13 @@ define(
             });
           }
         });
-      }
+      };
 
       /**
        * Backspacing into a table behaves differently depending upon browser type.
        * Therefore, disable Backspace when cursor immediately follows a table.
        */
-      function disableBackspaceIntoATable() {
+      var disableBackspaceIntoATable = function () {
         editor.on('keydown', function (e) {
           if (!isDefaultPrevented(e) && e.keyCode === BACKSPACE) {
             if (selection.isCollapsed() && selection.getRng(true).startOffset === 0) {
@@ -37683,7 +37819,7 @@ define(
             }
           }
         });
-      }
+      };
 
       /**
        * Removes a blockquote when backspace is pressed at the beginning of it.
@@ -37694,7 +37830,7 @@ define(
        * Becomes:
        * <p>|x</p>
        */
-      function removeBlockQuoteOnBackSpace() {
+      var removeBlockQuoteOnBackSpace = function () {
         // Add block quote deletion handler
         editor.on('keydown', function (e) {
           var rng, container, offset, root, parent;
@@ -37729,13 +37865,13 @@ define(
             selection.setRng(rng);
           }
         });
-      }
+      };
 
       /**
        * Sets various Gecko editing options on mouse down and before a execCommand to disable inline table editing that is broken etc.
        */
-      function setGeckoEditingOptions() {
-        function setOpts() {
+      var setGeckoEditingOptions = function () {
+        var setOpts = function () {
           refreshContentEditable();
 
           setEditorCommandState("StyleWithCSS", false);
@@ -37744,12 +37880,12 @@ define(
           if (!settings.object_resizing) {
             setEditorCommandState("enableObjectResizing", false);
           }
-        }
+        };
 
         if (!settings.readonly) {
           editor.on('BeforeExecCommand MouseDown', setOpts);
         }
-      }
+      };
 
       /**
        * Fixes a gecko link bug, when a link is placed at the end of block elements there is
@@ -37761,8 +37897,8 @@ define(
        * Becomes this:
        * <p><b><a href="#">x</a></b><br></p>
        */
-      function addBrAfterLastLinks() {
-        function fixLinks() {
+      var addBrAfterLastLinks = function () {
+        var fixLinks = function () {
           each(dom.select('a'), function (node) {
             var parentNode = node.parentNode, root = dom.getRoot();
 
@@ -37778,48 +37914,47 @@ define(
               dom.add(parentNode, 'br', { 'data-mce-bogus': 1 });
             }
           });
-        }
+        };
 
         editor.on('SetContent ExecCommand', function (e) {
           if (e.type == "setcontent" || e.command === 'mceInsertLink') {
             fixLinks();
           }
         });
-      }
+      };
 
       /**
        * WebKit will produce DIV elements here and there by default. But since TinyMCE uses paragraphs by
        * default we want to change that behavior.
        */
-      function setDefaultBlockType() {
+      var setDefaultBlockType = function () {
         if (settings.forced_root_block) {
           editor.on('init', function () {
             setEditorCommandState('DefaultParagraphSeparator', settings.forced_root_block);
           });
         }
-      }
+      };
 
       /**
        * Fixes selection issues where the caret can be placed between two inline elements like <b>a</b>|<b>b</b>
        * this fix will lean the caret right into the closest inline element.
        */
-      function normalizeSelection() {
-        // Normalize selection for example <b>a</b><i>|a</i> becomes <b>a|</b><i>a</i> except for Ctrl+A since it selects everything
+      var normalizeSelection = function () {
+        // Normalize selection for example <b>a</b><i>|a</i> becomes <b>a|</b><i>a</i>
         editor.on('keyup focusin mouseup', function (e) {
-          if (e.keyCode != 65 || !VK.metaKeyPressed(e)) {
-            // We can't normalize on non collapsed ranges on keyboard events since that would cause
-            // issues with moving the selection over empty paragraphs. See #TINY-1130
-            if (e.type !== 'keyup' || editor.selection.isCollapsed()) {
-              selection.normalize();
-            }
+          // no point to exclude Ctrl+A, since normalization will still run after Ctrl will be unpressed
+          // better exclude any key combinations with the modifiers to avoid double normalization
+          // (also addresses TINY-1130)
+          if (!VK.modifierPressed(e)) {
+            selection.normalize();
           }
         }, true);
-      }
+      };
 
       /**
        * Forces Gecko to render a broken image icon if it fails to load an image.
        */
-      function showBrokenImageIcon() {
+      var showBrokenImageIcon = function () {
         editor.contentStyles.push(
           'img:-moz-broken {' +
           '-moz-force-broken-image-icon:1;' +
@@ -37827,7 +37962,7 @@ define(
           'min-height:24px' +
           '}'
         );
-      }
+      };
 
       /**
        * iOS has a bug where it's impossible to type if the document has a touchstart event
@@ -37836,7 +37971,7 @@ define(
        * The touch event moves the focus to the parent document while having the caret inside the iframe
        * this fix moves the focus back into the iframe document.
        */
-      function restoreFocusOnKeyDown() {
+      var restoreFocusOnKeyDown = function () {
         if (!editor.inline) {
           editor.on('keydown', function () {
             if (document.activeElement == document.body) {
@@ -37844,18 +37979,18 @@ define(
             }
           });
         }
-      }
+      };
 
       /**
        * IE 11 has an annoying issue where you can't move focus into the editor
-       * by clicking on the white area HTML element. We used to be able to to fix this with
+       * by clicking on the white area HTML element. We used to be able to fix this with
        * the fixCaretSelectionOfDocumentElementOnIe fix. But since M$ removed the selection
        * object it's not possible anymore. So we need to hack in a ungly CSS to force the
        * body to be at least 150px. If the user clicks the HTML element out side this 150px region
        * we simply move the focus into the first paragraph. Not ideal since you loose the
        * positioning of the caret but goot enough for most cases.
        */
-      function bodyHeight() {
+      var bodyHeight = function () {
         if (!editor.inline) {
           editor.contentStyles.push('body {min-height: 150px}');
           editor.on('click', function (e) {
@@ -37878,13 +38013,13 @@ define(
             }
           });
         }
-      }
+      };
 
       /**
        * Firefox on Mac OS will move the browser back to the previous page if you press CMD+Left arrow.
        * You might then loose all your work so we need to block that behavior and replace it with our own.
        */
-      function blockCmdArrowNavigation() {
+      var blockCmdArrowNavigation = function () {
         if (Env.mac) {
           editor.on('keydown', function (e) {
             if (VK.metaKeyPressed(e) && !e.shiftKey && (e.keyCode == 37 || e.keyCode == 39)) {
@@ -37893,21 +38028,21 @@ define(
             }
           });
         }
-      }
+      };
 
       /**
        * Disables the autolinking in IE 9+ this is then re-enabled by the autolink plugin.
        */
-      function disableAutoUrlDetect() {
+      var disableAutoUrlDetect = function () {
         setEditorCommandState("AutoUrlDetect", false);
-      }
+      };
 
       /**
        * iOS 7.1 introduced two new bugs:
        * 1) It's possible to open links within a contentEditable area by clicking on them.
        * 2) If you hold down the finger it will display the link/image touch callout menu.
        */
-      function tapLinksAndImages() {
+      var tapLinksAndImages = function () {
         editor.on('click', function (e) {
           var elm = e.target;
 
@@ -37920,7 +38055,7 @@ define(
         });
 
         editor.contentStyles.push('.mce-content-body {-webkit-touch-callout: none}');
-      }
+      };
 
       /**
        * iOS Safari and possible other browsers have a bug where it won't fire
@@ -37983,13 +38118,13 @@ define(
        * WebKit has a bug where it will allow forms to be submitted if they are inside a contentEditable element.
        * For example this: <form><button></form>
        */
-      function blockFormSubmitInsideEditor() {
+      var blockFormSubmitInsideEditor = function () {
         editor.on('init', function () {
           editor.dom.bind(editor.getBody(), 'submit', function (e) {
             e.preventDefault();
           });
         });
-      }
+      };
 
       /**
        * Sometimes WebKit/Blink generates BR elements with the Apple-interchange-newline class.
@@ -37999,7 +38134,7 @@ define(
        *  2) Select and copy cells A2-B2.
        *  3) Paste and it will add BR element to table cell.
        */
-      function removeAppleInterchangeBrs() {
+      var removeAppleInterchangeBrs = function () {
         parser.addNodeFilter('br', function (nodes) {
           var i = nodes.length;
 
@@ -38009,13 +38144,13 @@ define(
             }
           }
         });
-      }
+      };
 
       /**
        * IE cannot set custom contentType's on drag events, and also does not properly drag/drop between
        * editors. This uses a special data:text/mce-internal URL to pass data when drag/drop between editors.
        */
-      function ieInternalDragAndDrop() {
+      var ieInternalDragAndDrop = function () {
         editor.on('dragstart', function (e) {
           setMceInternalContent(e);
         });
@@ -38027,19 +38162,19 @@ define(
             if (internalContent && internalContent.id != editor.id) {
               e.preventDefault();
 
-              var rng = RangeUtils.getCaretRangeFromPoint(e.x, e.y, editor.getDoc());
+              var rng = CaretRangeFromPoint.fromPoint(e.x, e.y, editor.getDoc());
               selection.setRng(rng);
               insertClipboardContents(internalContent.html, true);
             }
           }
         });
-      }
+      };
 
-      function refreshContentEditable() {
+      var refreshContentEditable = function () {
         // No-op since Mozilla seems to have fixed the caret repaint issues
-      }
+      };
 
-      function isHidden() {
+      var isHidden = function () {
         var sel;
 
         if (!isGecko || editor.removed) {
@@ -38049,7 +38184,7 @@ define(
         // Weird, wheres that cursor selection?
         sel = editor.selection.getSel();
         return (!sel || !sel.rangeCount || sel.rangeCount === 0);
-      }
+      };
 
       // All browsers
       removeBlockQuoteOnBackSpace();
@@ -38433,27 +38568,68 @@ define(
 );
 
 /**
- * PluginManager.js
+ * Settings.js
  *
  * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ * Copyright (c) 1999-2016 Ephox Corp. All rights reserved
  *
  * License: http://www.tinymce.com/license
  * Contributing: http://www.tinymce.com/contributing
  */
 
 define(
-  'tinymce.core.PluginManager',
+  'tinymce.core.api.Settings',
   [
-    'tinymce.core.AddOnManager'
   ],
-  function (AddOnManager) {
-    return AddOnManager.PluginManager;
+  function () {
+    var getBodySetting = function (editor, name, defaultValue) {
+      var value = editor.getParam(name, defaultValue);
+
+      if (value.indexOf('=') !== -1) {
+        var bodyObj = editor.getParam(name, '', 'hash');
+        return bodyObj.hasOwnProperty(editor.id) ? bodyObj[editor.id] : defaultValue;
+      } else {
+        return value;
+      }
+    };
+
+    var getIframeAttrs = function (editor) {
+      return editor.getParam('iframe_attrs', {});
+    };
+
+    var getDocType = function (editor) {
+      return editor.getParam('doctype', '<!DOCTYPE html>');
+    };
+
+    var getDocumentBaseUrl = function (editor) {
+      return editor.getParam('document_base_url', '');
+    };
+
+    var getBodyId = function (editor) {
+      return getBodySetting(editor, 'body_id', 'tinymce');
+    };
+
+    var getBodyClass = function (editor) {
+      return getBodySetting(editor, 'body_class', '');
+    };
+
+    var getContentSecurityPolicy = function (editor) {
+      return editor.getParam('content_security_policy', '');
+    };
+
+    return {
+      getIframeAttrs: getIframeAttrs,
+      getDocType: getDocType,
+      getDocumentBaseUrl: getDocumentBaseUrl,
+      getBodyId: getBodyId,
+      getBodyClass: getBodyClass,
+      getContentSecurityPolicy: getContentSecurityPolicy
+    };
   }
 );
 
 /**
- * ThemeManager.js
+ * InitIframe.js
  *
  * Released under LGPL License.
  * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
@@ -38463,12 +38639,141 @@ define(
  */
 
 define(
-  'tinymce.core.ThemeManager',
+  'tinymce.core.init.InitIframe',
   [
-    'tinymce.core.AddOnManager'
+    'ephox.sugar.api.node.Element',
+    'ephox.sugar.api.properties.Attr',
+    'ephox.sugar.api.properties.Css',
+    'global!document',
+    'global!window',
+    'tinymce.core.Env',
+    'tinymce.core.api.Settings',
+    'tinymce.core.dom.DOMUtils',
+    'tinymce.core.init.InitContentBody',
+    'tinymce.core.util.Uuid'
   ],
-  function (AddOnManager) {
-    return AddOnManager.ThemeManager;
+  function (Element, Attr, Css, document, window, Env, Settings, DOMUtils, InitContentBody, Uuid) {
+    var DOM = DOMUtils.DOM;
+
+    var relaxDomain = function (editor, ifr) {
+      // Domain relaxing is required since the user has messed around with document.domain
+      // This only applies to IE 11 other browsers including Edge seems to handle document.domain
+      if (document.domain !== window.location.hostname && Env.ie && Env.ie < 12) {
+        var bodyUuid = Uuid.uuid('mce');
+
+        editor[bodyUuid] = function () {
+          InitContentBody.initContentBody(editor);
+        };
+
+        /*eslint no-script-url:0 */
+        var domainRelaxUrl = 'javascript:(function(){' +
+          'document.open();document.domain="' + document.domain + '";' +
+          'var ed = window.parent.tinymce.get("' + editor.id + '");document.write(ed.iframeHTML);' +
+          'document.close();ed.' + bodyUuid + '(true);})()';
+
+        DOM.setAttrib(ifr, 'src', domainRelaxUrl);
+        return true;
+      }
+
+      return false;
+    };
+
+    var normalizeHeight = function (height) {
+      var normalizedHeight = typeof height === 'number' ? height + 'px' : height;
+      return normalizedHeight ? normalizedHeight : '';
+    };
+
+    var createIframeElement = function (id, title, height, customAttrs) {
+      var iframe = Element.fromTag('iframe');
+
+      Attr.setAll(iframe, customAttrs);
+
+      Attr.setAll(iframe, {
+        id: id + '_ifr',
+        frameBorder: '0',
+        allowTransparency: 'true',
+        title: title
+      });
+
+      Css.setAll(iframe, {
+        width: '100%',
+        height: normalizeHeight(height),
+        display: 'block' // Important for Gecko to render the iframe correctly
+      });
+
+      return iframe;
+    };
+
+    var getIframeHtml = function (editor) {
+      var bodyId, bodyClass, iframeHTML;
+
+      iframeHTML = Settings.getDocType(editor) + '<html><head>';
+
+      // We only need to override paths if we have to
+      // IE has a bug where it remove site absolute urls to relative ones if this is specified
+      if (Settings.getDocumentBaseUrl(editor) !== editor.documentBaseUrl) {
+        iframeHTML += '<base href="' + editor.documentBaseURI.getURI() + '" />';
+      }
+
+      iframeHTML += '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />';
+
+      bodyId = Settings.getBodyId(editor);
+      bodyClass = Settings.getBodyClass(editor);
+
+      if (Settings.getContentSecurityPolicy(editor)) {
+        iframeHTML += '<meta http-equiv="Content-Security-Policy" content="' + Settings.getContentSecurityPolicy(editor) + '" />';
+      }
+
+      iframeHTML += '</head><body id="' + bodyId +
+        '" class="mce-content-body ' + bodyClass +
+        '" data-id="' + editor.id + '"><br></body></html>';
+
+      return iframeHTML;
+    };
+
+    var createIframe = function (editor, o) {
+      var title = editor.editorManager.translate(
+        "Rich Text Area. Press ALT-F9 for menu. " +
+        "Press ALT-F10 for toolbar. Press ALT-0 for help"
+      );
+
+      var ifr = createIframeElement(editor.id, title, o.height, Settings.getIframeAttrs(editor)).dom();
+
+      ifr.onload = function () {
+        ifr.onload = null;
+        editor.fire("load");
+      };
+
+      var isDomainRelaxed = relaxDomain(editor, ifr);
+
+      editor.contentAreaContainer = o.iframeContainer;
+      editor.iframeElement = ifr;
+      editor.iframeHTML = getIframeHtml(editor);
+
+      DOM.add(o.iframeContainer, ifr);
+
+      return isDomainRelaxed;
+    };
+
+    var init = function (editor, boxInfo) {
+      var isDomainRelaxed = createIframe(editor, boxInfo);
+
+      if (boxInfo.editorContainer) {
+        DOM.get(boxInfo.editorContainer).style.display = editor.orgDisplay;
+        editor.hidden = DOM.isHidden(boxInfo.editorContainer);
+      }
+
+      editor.getElement().style.display = 'none';
+      DOM.setAttrib(editor.id, 'aria-hidden', true);
+
+      if (!isDomainRelaxed) {
+        InitContentBody.initContentBody(editor);
+      }
+    };
+
+    return {
+      init: init
+    };
   }
 );
 
@@ -38488,15 +38793,14 @@ define(
     'ephox.katamari.api.Type',
     'global!document',
     'global!window',
-    'tinymce.core.dom.DOMUtils',
-    'tinymce.core.Env',
-    'tinymce.core.init.InitContentBody',
     'tinymce.core.PluginManager',
     'tinymce.core.ThemeManager',
-    'tinymce.core.util.Tools',
-    'tinymce.core.util.Uuid'
+    'tinymce.core.dom.DOMUtils',
+    'tinymce.core.init.InitContentBody',
+    'tinymce.core.init.InitIframe',
+    'tinymce.core.util.Tools'
   ],
-  function (Type, document, window, DOMUtils, Env, InitContentBody, PluginManager, ThemeManager, Tools, Uuid) {
+  function (Type, document, window, PluginManager, ThemeManager, DOMUtils, InitContentBody, InitIframe, Tools) {
     var DOM = DOMUtils.DOM;
 
     var initPlugin = function (editor, initializedPlugins, plugin) {
@@ -38588,7 +38892,6 @@ define(
         }
       }
 
-      editor.editorContainer = info.editorContainer;
       info.height = h;
 
       return info;
@@ -38603,27 +38906,33 @@ define(
         info.editorContainer.id = info.editorContainer.id || editor.id + "_parent";
       }
 
-      if (info.iframeContainer.nodeType) {
+      if (info.iframeContainer && info.iframeContainer.nodeType) {
         info.iframeContainer.id = info.iframeContainer.id || editor.id + "_iframecontainer";
       }
 
       info.height = info.iframeHeight ? info.iframeHeight : elm.offsetHeight;
-      editor.editorContainer = info.editorContainer;
 
       return info;
     };
 
-    var renderThemeFalse = function (editor) {
+    var createThemeFalseResult = function (element) {
+      return {
+        editorContainer: element,
+        iframeContainer: element
+      };
+    };
+
+    var renderThemeFalseIframe = function (targetElement) {
       var iframeContainer = DOM.create('div');
 
-      DOM.insertAfter(iframeContainer, editor.getElement());
+      DOM.insertAfter(iframeContainer, targetElement);
 
-      editor.editorContainer = iframeContainer;
+      return createThemeFalseResult(iframeContainer);
+    };
 
-      return {
-        editorContainer: iframeContainer,
-        iframeContainer: iframeContainer
-      };
+    var renderThemeFalse = function (editor) {
+      var targetElement = editor.getElement();
+      return editor.inline ? createThemeFalseResult(null) : renderThemeFalseIframe(targetElement);
     };
 
     var renderThemeUi = function (editor) {
@@ -38640,99 +38949,6 @@ define(
       }
     };
 
-    var relaxDomain = function (editor, ifr) {
-      // Domain relaxing is required since the user has messed around with document.domain
-      // This only applies to IE 11 other browsers including Edge seems to handle document.domain
-      if (document.domain !== window.location.hostname && Env.ie && Env.ie < 12) {
-        var bodyUuid = Uuid.uuid('mce');
-
-        editor[bodyUuid] = function () {
-          InitContentBody.initContentBody(editor);
-        };
-
-        /*eslint no-script-url:0 */
-        var domainRelaxUrl = 'javascript:(function(){' +
-          'document.open();document.domain="' + document.domain + '";' +
-          'var ed = window.parent.tinymce.get("' + editor.id + '");document.write(ed.iframeHTML);' +
-          'document.close();ed.' + bodyUuid + '(true);})()';
-
-        DOM.setAttrib(ifr, 'src', domainRelaxUrl);
-        return true;
-      }
-
-      return false;
-    };
-
-    var createIframe = function (editor, o) {
-      var settings = editor.settings, bodyId, bodyClass;
-
-      editor.iframeHTML = settings.doctype + '<html><head>';
-
-      // We only need to override paths if we have to
-      // IE has a bug where it remove site absolute urls to relative ones if this is specified
-      if (settings.document_base_url != editor.documentBaseUrl) {
-        editor.iframeHTML += '<base href="' + editor.documentBaseURI.getURI() + '" />';
-      }
-
-      // IE8 doesn't support carets behind images setting ie7_compat would force IE8+ to run in IE7 compat mode.
-      if (!Env.caretAfter && settings.ie7_compat) {
-        editor.iframeHTML += '<meta http-equiv="X-UA-Compatible" content="IE=7" />';
-      }
-
-      editor.iframeHTML += '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />';
-
-      bodyId = settings.body_id || 'tinymce';
-      if (bodyId.indexOf('=') != -1) {
-        bodyId = editor.getParam('body_id', '', 'hash');
-        bodyId = bodyId[editor.id] || bodyId;
-      }
-
-      bodyClass = settings.body_class || '';
-      if (bodyClass.indexOf('=') != -1) {
-        bodyClass = editor.getParam('body_class', '', 'hash');
-        bodyClass = bodyClass[editor.id] || '';
-      }
-
-      if (settings.content_security_policy) {
-        editor.iframeHTML += '<meta http-equiv="Content-Security-Policy" content="' + settings.content_security_policy + '" />';
-      }
-
-      editor.iframeHTML += '</head><body id="' + bodyId +
-        '" class="mce-content-body ' + bodyClass +
-        '" data-id="' + editor.id + '"><br></body></html>';
-
-      // Create iframe
-      // TODO: ACC add the appropriate description on this.
-      var ifr = DOM.create('iframe', {
-        id: editor.id + "_ifr",
-        frameBorder: '0',
-        allowTransparency: "true",
-        title: editor.editorManager.translate(
-          "Rich Text Area. Press ALT-F9 for menu. " +
-          "Press ALT-F10 for toolbar. Press ALT-0 for help"
-        ),
-        style: {
-          width: '100%',
-          height: o.height,
-          display: 'block' // Important for Gecko to render the iframe correctly
-        }
-      });
-
-      ifr.onload = function () {
-        ifr.onload = null;
-        editor.fire("load");
-      };
-
-      var isDomainRelaxed = relaxDomain(editor, ifr);
-
-      editor.contentAreaContainer = o.iframeContainer;
-      editor.iframeElement = ifr;
-
-      DOM.add(o.iframeContainer, ifr);
-
-      return isDomainRelaxed;
-    };
-
     var init = function (editor) {
       var settings = editor.settings, elm = editor.getElement(), boxInfo;
 
@@ -38745,6 +38961,7 @@ define(
       initTheme(editor);
       initPlugins(editor);
       boxInfo = renderThemeUi(editor);
+      editor.editorContainer = boxInfo.editorContainer ? boxInfo.editorContainer : null;
 
       // Load specified content CSS last
       if (settings.content_css) {
@@ -38756,20 +38973,8 @@ define(
       // Content editable mode ends here
       if (settings.content_editable) {
         return InitContentBody.initContentBody(editor);
-      }
-
-      var isDomainRelaxed = createIframe(editor, boxInfo);
-
-      if (boxInfo.editorContainer) {
-        DOM.get(boxInfo.editorContainer).style.display = editor.orgDisplay;
-        editor.hidden = DOM.isHidden(boxInfo.editorContainer);
-      }
-
-      editor.getElement().style.display = 'none';
-      DOM.setAttrib(editor.id, 'aria-hidden', true);
-
-      if (!isDomainRelaxed) {
-        InitContentBody.initContentBody(editor);
+      } else {
+        return InitIframe.init(editor, boxInfo);
       }
     };
 
@@ -38820,7 +39025,7 @@ define(
         settings.language_url = editor.editorManager.baseURL + '/langs/' + settings.language + '.js';
       }
 
-      if (settings.language_url) {
+      if (settings.language_url && !editor.editorManager.i18n.data[settings.language]) {
         scriptLoader.add(settings.language_url);
       }
     };
@@ -38911,10 +39116,10 @@ define(
     var render = function (editor) {
       var settings = editor.settings, id = editor.id;
 
-      function readyHandler() {
+      var readyHandler = function () {
         DOM.unbind(window, 'ready', readyHandler);
         editor.render();
-      }
+      };
 
       // Page is not loaded yet, wait for it
       if (!EventUtils.Event.domLoaded) {
@@ -39014,322 +39219,6 @@ define(
 );
 
 /**
- * Mode.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-/**
- * Mode switcher logic.
- *
- * @private
- * @class tinymce.Mode
- */
-define(
-  'tinymce.core.Mode',
-  [
-  ],
-  function () {
-    function setEditorCommandState(editor, cmd, state) {
-      try {
-        editor.getDoc().execCommand(cmd, false, state);
-      } catch (ex) {
-        // Ignore
-      }
-    }
-
-    function clickBlocker(editor) {
-      var target, handler;
-
-      target = editor.getBody();
-
-      handler = function (e) {
-        if (editor.dom.getParents(e.target, 'a').length > 0) {
-          e.preventDefault();
-        }
-      };
-
-      editor.dom.bind(target, 'click', handler);
-
-      return {
-        unbind: function () {
-          editor.dom.unbind(target, 'click', handler);
-        }
-      };
-    }
-
-    function toggleReadOnly(editor, state) {
-      if (editor._clickBlocker) {
-        editor._clickBlocker.unbind();
-        editor._clickBlocker = null;
-      }
-
-      if (state) {
-        editor._clickBlocker = clickBlocker(editor);
-        editor.selection.controlSelection.hideResizeRect();
-        editor.readonly = true;
-        editor.getBody().contentEditable = false;
-      } else {
-        editor.readonly = false;
-        editor.getBody().contentEditable = true;
-        setEditorCommandState(editor, "StyleWithCSS", false);
-        setEditorCommandState(editor, "enableInlineTableEditing", false);
-        setEditorCommandState(editor, "enableObjectResizing", false);
-        editor.focus();
-        editor.nodeChanged();
-      }
-    }
-
-    function setMode(editor, mode) {
-      var currentMode = editor.readonly ? 'readonly' : 'design';
-
-      if (mode == currentMode) {
-        return;
-      }
-
-      if (editor.initialized) {
-        toggleReadOnly(editor, mode == 'readonly');
-      } else {
-        editor.on('init', function () {
-          toggleReadOnly(editor, mode == 'readonly');
-        });
-      }
-
-      // Event is NOT preventable
-      editor.fire('SwitchMode', { mode: mode });
-    }
-
-    return {
-      setMode: setMode
-    };
-  }
-);
-/**
- * Shortcuts.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-/**
- * Contains logic for handling keyboard shortcuts.
- *
- * @class tinymce.Shortcuts
- * @example
- * editor.shortcuts.add('ctrl+a', "description of the shortcut", function() {});
- * editor.shortcuts.add('meta+a', "description of the shortcut", function() {}); // "meta" maps to Command on Mac and Ctrl on PC
- * editor.shortcuts.add('ctrl+alt+a', "description of the shortcut", function() {});
- * editor.shortcuts.add('access+a', "description of the shortcut", function() {}); // "access" maps to ctrl+alt on Mac and shift+alt on PC
- */
-define(
-  'tinymce.core.Shortcuts',
-  [
-    'tinymce.core.util.Tools',
-    'tinymce.core.Env'
-  ],
-  function (Tools, Env) {
-    var each = Tools.each, explode = Tools.explode;
-
-    var keyCodeLookup = {
-      "f9": 120,
-      "f10": 121,
-      "f11": 122
-    };
-
-    var modifierNames = Tools.makeMap('alt,ctrl,shift,meta,access');
-
-    return function (editor) {
-      var self = this, shortcuts = {}, pendingPatterns = [];
-
-      function parseShortcut(pattern) {
-        var id, key, shortcut = {};
-
-        // Parse modifiers and keys ctrl+alt+b for example
-        each(explode(pattern, '+'), function (value) {
-          if (value in modifierNames) {
-            shortcut[value] = true;
-          } else {
-            // Allow numeric keycodes like ctrl+219 for ctrl+[
-            if (/^[0-9]{2,}$/.test(value)) {
-              shortcut.keyCode = parseInt(value, 10);
-            } else {
-              shortcut.charCode = value.charCodeAt(0);
-              shortcut.keyCode = keyCodeLookup[value] || value.toUpperCase().charCodeAt(0);
-            }
-          }
-        });
-
-        // Generate unique id for modifier combination and set default state for unused modifiers
-        id = [shortcut.keyCode];
-        for (key in modifierNames) {
-          if (shortcut[key]) {
-            id.push(key);
-          } else {
-            shortcut[key] = false;
-          }
-        }
-        shortcut.id = id.join(',');
-
-        // Handle special access modifier differently depending on Mac/Win
-        if (shortcut.access) {
-          shortcut.alt = true;
-
-          if (Env.mac) {
-            shortcut.ctrl = true;
-          } else {
-            shortcut.shift = true;
-          }
-        }
-
-        // Handle special meta modifier differently depending on Mac/Win
-        if (shortcut.meta) {
-          if (Env.mac) {
-            shortcut.meta = true;
-          } else {
-            shortcut.ctrl = true;
-            shortcut.meta = false;
-          }
-        }
-
-        return shortcut;
-      }
-
-      function createShortcut(pattern, desc, cmdFunc, scope) {
-        var shortcuts;
-
-        shortcuts = Tools.map(explode(pattern, '>'), parseShortcut);
-        shortcuts[shortcuts.length - 1] = Tools.extend(shortcuts[shortcuts.length - 1], {
-          func: cmdFunc,
-          scope: scope || editor
-        });
-
-        return Tools.extend(shortcuts[0], {
-          desc: editor.translate(desc),
-          subpatterns: shortcuts.slice(1)
-        });
-      }
-
-      function hasModifier(e) {
-        return e.altKey || e.ctrlKey || e.metaKey;
-      }
-
-      function isFunctionKey(e) {
-        return e.type === "keydown" && e.keyCode >= 112 && e.keyCode <= 123;
-      }
-
-      function matchShortcut(e, shortcut) {
-        if (!shortcut) {
-          return false;
-        }
-
-        if (shortcut.ctrl != e.ctrlKey || shortcut.meta != e.metaKey) {
-          return false;
-        }
-
-        if (shortcut.alt != e.altKey || shortcut.shift != e.shiftKey) {
-          return false;
-        }
-
-        if (e.keyCode == shortcut.keyCode || (e.charCode && e.charCode == shortcut.charCode)) {
-          e.preventDefault();
-          return true;
-        }
-
-        return false;
-      }
-
-      function executeShortcutAction(shortcut) {
-        return shortcut.func ? shortcut.func.call(shortcut.scope) : null;
-      }
-
-      editor.on('keyup keypress keydown', function (e) {
-        if ((hasModifier(e) || isFunctionKey(e)) && !e.isDefaultPrevented()) {
-          each(shortcuts, function (shortcut) {
-            if (matchShortcut(e, shortcut)) {
-              pendingPatterns = shortcut.subpatterns.slice(0);
-
-              if (e.type == "keydown") {
-                executeShortcutAction(shortcut);
-              }
-
-              return true;
-            }
-          });
-
-          if (matchShortcut(e, pendingPatterns[0])) {
-            if (pendingPatterns.length === 1) {
-              if (e.type == "keydown") {
-                executeShortcutAction(pendingPatterns[0]);
-              }
-            }
-
-            pendingPatterns.shift();
-          }
-        }
-      });
-
-      /**
-       * Adds a keyboard shortcut for some command or function.
-       *
-       * @method add
-       * @param {String} pattern Shortcut pattern. Like for example: ctrl+alt+o.
-       * @param {String} desc Text description for the command.
-       * @param {String/Function} cmdFunc Command name string or function to execute when the key is pressed.
-       * @param {Object} scope Optional scope to execute the function in.
-       * @return {Boolean} true/false state if the shortcut was added or not.
-       */
-      self.add = function (pattern, desc, cmdFunc, scope) {
-        var cmd;
-
-        cmd = cmdFunc;
-
-        if (typeof cmdFunc === 'string') {
-          cmdFunc = function () {
-            editor.execCommand(cmd, false, null);
-          };
-        } else if (Tools.isArray(cmd)) {
-          cmdFunc = function () {
-            editor.execCommand(cmd[0], cmd[1], cmd[2]);
-          };
-        }
-
-        each(explode(Tools.trim(pattern.toLowerCase())), function (pattern) {
-          var shortcut = createShortcut(pattern, desc, cmdFunc, scope);
-          shortcuts[shortcut.id] = shortcut;
-        });
-
-        return true;
-      };
-
-      /**
-       * Remove a keyboard shortcut by pattern.
-       *
-       * @method remove
-       * @param {String} pattern Shortcut pattern. Like for example: ctrl+alt+o.
-       * @return {Boolean} true/false state if the shortcut was removed or not.
-       */
-      self.remove = function (pattern) {
-        var shortcut = createShortcut(pattern);
-
-        if (shortcuts[shortcut.id]) {
-          delete shortcuts[shortcut.id];
-          return true;
-        }
-
-        return false;
-      };
-    };
-  }
-);
-
-/**
  * Sidebar.js
  *
  * Released under LGPL License.
@@ -39401,7 +39290,7 @@ define(
      * @param {String} url URI string to parse.
      * @param {Object} settings Optional settings object.
      */
-    function URI(url, settings) {
+    var URI = function (url, settings) {
       var self = this, baseUri, baseUrl;
 
       url = trim(url);
@@ -39476,7 +39365,7 @@ define(
       }
 
       //t.path = t.path || '/';
-    }
+    };
 
     URI.prototype = {
       /**
@@ -39842,24 +39731,24 @@ define(
   'tinymce.core.Editor',
   [
     'tinymce.core.AddOnManager',
-    'tinymce.core.dom.DomQuery',
-    'tinymce.core.dom.DOMUtils',
     'tinymce.core.EditorCommands',
-    'tinymce.core.EditorFocus',
     'tinymce.core.EditorObservable',
     'tinymce.core.EditorSettings',
     'tinymce.core.Env',
-    'tinymce.core.html.Serializer',
-    'tinymce.core.init.Render',
     'tinymce.core.Mode',
     'tinymce.core.Shortcuts',
+    'tinymce.core.dom.DOMUtils',
+    'tinymce.core.dom.DomQuery',
+    'tinymce.core.focus.EditorFocus',
+    'tinymce.core.html.Serializer',
+    'tinymce.core.init.Render',
     'tinymce.core.ui.Sidebar',
     'tinymce.core.util.Tools',
     'tinymce.core.util.URI',
     'tinymce.core.util.Uuid'
   ],
   function (
-    AddOnManager, DomQuery, DOMUtils, EditorCommands, EditorFocus, EditorObservable, EditorSettings, Env, Serializer, Render, Mode, Shortcuts, Sidebar, Tools,
+    AddOnManager, EditorCommands, EditorObservable, EditorSettings, Env, Mode, Shortcuts, DOMUtils, DomQuery, EditorFocus, Serializer, Render, Sidebar, Tools,
     URI, Uuid
   ) {
     // Shorten these names
@@ -39883,7 +39772,7 @@ define(
      * @param {Object} settings Settings for the editor.
      * @param {tinymce.EditorManager} editorManager EditorManager instance.
      */
-    function Editor(id, settings, editorManager) {
+    var Editor = function (id, settings, editorManager) {
       var self = this, documentBaseUrl, baseUri;
 
       documentBaseUrl = self.documentBaseUrl = editorManager.documentBaseURL;
@@ -40015,7 +39904,7 @@ define(
           element: self.getBody()
         };
       });
-    }
+    };
 
     Editor.prototype = {
       /**
@@ -40676,8 +40565,8 @@ define(
             content = new Serializer({
               validate: self.validate
             }, self.schema).serialize(
-              self.parser.parse(content, { isRootContent: true })
-              );
+              self.parser.parse(content, { isRootContent: true, insert: true })
+            );
           }
 
           // Set the new cleaned contents to the editor
@@ -41126,160 +41015,6 @@ define(
 );
 
 /**
- * FocusManager.js
- *
- * Released under LGPL License.
- * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
- *
- * License: http://www.tinymce.com/license
- * Contributing: http://www.tinymce.com/contributing
- */
-
-/**
- * This class manages the focus/blur state of the editor. This class is needed since some
- * browsers fire false focus/blur states when the selection is moved to a UI dialog or similar.
- *
- * This class will fire two events focus and blur on the editor instances that got affected.
- * It will also handle the restore of selection when the focus is lost and returned.
- *
- * @class tinymce.FocusManager
- */
-define(
-  'tinymce.core.FocusManager',
-  [
-    'ephox.sugar.api.node.Element',
-    'global!document',
-    'tinymce.core.dom.DOMUtils',
-    'tinymce.core.selection.SelectionBookmark',
-    'tinymce.core.util.Delay'
-  ],
-  function (Element, document, DOMUtils, SelectionBookmark, Delay) {
-    var selectionChangeHandler, documentFocusInHandler, documentMouseUpHandler, DOM = DOMUtils.DOM;
-
-    var isUIElement = function (editor, elm) {
-      var customSelector = editor ? editor.settings.custom_ui_selector : '';
-      var parent = DOM.getParent(elm, function (elm) {
-        return (
-          FocusManager.isEditorUIElement(elm) ||
-          (customSelector ? editor.dom.is(elm, customSelector) : false)
-        );
-      });
-      return parent !== null;
-    };
-
-    /**
-     * Constructs a new focus manager instance.
-     *
-     * @constructor FocusManager
-     * @param {tinymce.EditorManager} editorManager Editor manager instance to handle focus for.
-     */
-    function FocusManager(editorManager) {
-      function getActiveElement() {
-        try {
-          return document.activeElement;
-        } catch (ex) {
-          // IE sometimes fails to get the activeElement when resizing table
-          // TODO: Investigate this
-          return document.body;
-        }
-      }
-
-      function registerEvents(e) {
-        var editor = e.editor;
-
-        editor.on('init', function () {
-          editor.on('keyup mouseup nodechange', function (e) {
-            if (e.type === 'nodechange' && e.selectionChange) {
-              return;
-            }
-            SelectionBookmark.store(editor);
-          });
-        });
-
-        editor.on('focusin', function () {
-          var focusedEditor = editorManager.focusedEditor;
-
-          if (focusedEditor != editor) {
-            if (focusedEditor) {
-              focusedEditor.fire('blur', { focusedEditor: editor });
-            }
-
-            editorManager.setActive(editor);
-            editorManager.focusedEditor = editor;
-            editor.fire('focus', { blurredEditor: focusedEditor });
-            editor.focus(true);
-          }
-        });
-
-        editor.on('focusout', function () {
-          Delay.setEditorTimeout(editor, function () {
-            var focusedEditor = editorManager.focusedEditor;
-
-            // Still the same editor the blur was outside any editor UI
-            if (!isUIElement(editor, getActiveElement()) && focusedEditor == editor) {
-              editor.fire('blur', { focusedEditor: null });
-              editorManager.focusedEditor = null;
-            }
-          });
-        });
-
-        // Check if focus is moved to an element outside the active editor by checking if the target node
-        // isn't within the body of the activeEditor nor a UI element such as a dialog child control
-        if (!documentFocusInHandler) {
-          documentFocusInHandler = function (e) {
-            var activeEditor = editorManager.activeEditor, target;
-
-            target = e.target;
-
-            if (activeEditor && target.ownerDocument === document) {
-              // Fire a blur event if the element isn't a UI element
-              if (target !== document.body && !isUIElement(activeEditor, target) && editorManager.focusedEditor === activeEditor) {
-                activeEditor.fire('blur', { focusedEditor: null });
-                editorManager.focusedEditor = null;
-              }
-            }
-          };
-
-          DOM.bind(document, 'focusin', documentFocusInHandler);
-        }
-      }
-
-      function unregisterDocumentEvents(e) {
-        if (editorManager.focusedEditor == e.editor) {
-          editorManager.focusedEditor = null;
-        }
-
-        if (!editorManager.activeEditor) {
-          DOM.unbind(document, 'selectionchange', selectionChangeHandler);
-          DOM.unbind(document, 'focusin', documentFocusInHandler);
-          DOM.unbind(document, 'mouseup', documentMouseUpHandler);
-          selectionChangeHandler = documentFocusInHandler = documentMouseUpHandler = null;
-        }
-      }
-
-      editorManager.on('AddEditor', registerEvents);
-      editorManager.on('RemoveEditor', unregisterDocumentEvents);
-    }
-
-    /**
-     * Returns true if the specified element is part of the UI for example an button or text input.
-     *
-     * @method isEditorUIElement
-     * @param  {Element} elm Element to check if it's part of the UI or not.
-     * @return {Boolean} True/false state if the element is part of the UI or not.
-     */
-    FocusManager.isEditorUIElement = function (elm) {
-      // Needs to be converted to string since svg can have focus: #6776
-      return elm.className.toString().indexOf('mce-') !== -1;
-    };
-
-    FocusManager._isUIElement = isUIElement;
-
-    return FocusManager;
-  }
-);
-
-/**
  * LegacyInput.js
  *
  * Released under LGPL License.
@@ -41310,7 +41045,7 @@ define(
         editor.on('preInit', function () {
           var filters, fontSizes, dom, settings = editor.settings;
 
-          function replaceWithSpan(node, styles) {
+          var replaceWithSpan = function (node, styles) {
             each(styles, function (value, name) {
               if (value) {
                 dom.setStyle(node, name, value);
@@ -41318,9 +41053,9 @@ define(
             });
 
             dom.rename(node, 'span');
-          }
+          };
 
-          function convert(e) {
+          var convert = function (e) {
             dom = editor.dom;
 
             if (settings.convert_fonts_to_spans) {
@@ -41328,7 +41063,7 @@ define(
                 filters[node.nodeName.toLowerCase()](dom, node);
               });
             }
-          }
+          };
 
           if (settings.inline_styles) {
             fontSizes = explode(settings.font_size_legacy_values);
@@ -41370,6 +41105,264 @@ define(
     };
   }
 );
+/**
+ * FocusManager.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+/**
+ * This class manages the focus/blur state of the editor. This class is needed since some
+ * browsers fire false focus/blur states when the selection is moved to a UI dialog or similar.
+ *
+ * This class will fire two events focus and blur on the editor instances that got affected.
+ * It will also handle the restore of selection when the focus is lost and returned.
+ *
+ * @class tinymce.FocusManager
+ */
+define(
+  'tinymce.core.api.FocusManager',
+  [
+    'global!document'
+  ],
+  function (document) {
+    /**
+     * Returns true if the specified element is part of the UI for example an button or text input.
+     *
+     * @static
+     * @method isEditorUIElement
+     * @param  {Element} elm Element to check if it's part of the UI or not.
+     * @return {Boolean} True/false state if the element is part of the UI or not.
+     */
+    var isEditorUIElement = function (elm) {
+      // Needs to be converted to string since svg can have focus: #6776
+      return elm.className.toString().indexOf('mce-') !== -1;
+    };
+
+    return {
+      isEditorUIElement: isEditorUIElement
+    };
+  }
+);
+
+/**
+ * SelectionRestore.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.selection.SelectionRestore',
+  [
+    'ephox.katamari.api.Throttler',
+    'ephox.sand.api.PlatformDetection',
+    'global!document',
+    'tinymce.core.dom.DOMUtils',
+    'tinymce.core.selection.SelectionBookmark'
+  ],
+  function (Throttler, PlatformDetection, document, DOMUtils, SelectionBookmark) {
+    var isManualNodeChange = function (e) {
+      return e.type === 'nodechange' && e.selectionChange;
+    };
+
+    var registerPageMouseUp = function (editor, throttledStore) {
+      var mouseUpPage = function () {
+        throttledStore.throttle();
+      };
+
+      DOMUtils.DOM.bind(document, 'mouseup', mouseUpPage);
+
+      editor.on('remove', function () {
+        DOMUtils.DOM.unbind(document, 'mouseup', mouseUpPage);
+      });
+    };
+
+    var registerFocusOut = function (editor) {
+      editor.on('focusout', function () {
+        SelectionBookmark.store(editor);
+      });
+    };
+
+    var registerMouseUp = function (editor, throttledStore) {
+      editor.on('mouseup touchend', function (e) {
+        throttledStore.throttle();
+      });
+    };
+
+    var registerEditorEvents = function (editor, throttledStore) {
+      var browser = PlatformDetection.detect().browser;
+
+      if (browser.isIE() || browser.isEdge()) {
+        registerFocusOut(editor);
+      } else {
+        registerMouseUp(editor, throttledStore);
+      }
+
+      editor.on('keyup nodechange', function (e) {
+        if (!isManualNodeChange(e)) {
+          SelectionBookmark.store(editor);
+        }
+      });
+    };
+
+    var register = function (editor) {
+      var throttledStore = Throttler.first(function () {
+        SelectionBookmark.store(editor);
+      }, 0);
+
+      if (editor.inline) {
+        registerPageMouseUp(editor, throttledStore);
+      }
+
+      editor.on('init', function () {
+        registerEditorEvents(editor, throttledStore);
+      });
+
+      editor.on('remove', function () {
+        throttledStore.cancel();
+      });
+    };
+
+    return {
+      register: register
+    };
+  }
+);
+
+/**
+ * FocusController.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+define(
+  'tinymce.core.focus.FocusController',
+  [
+    'ephox.katamari.api.Fun',
+    'global!document',
+    'tinymce.core.api.FocusManager',
+    'tinymce.core.dom.DOMUtils',
+    'tinymce.core.selection.SelectionRestore',
+    'tinymce.core.util.Delay'
+  ],
+  function (Fun, document, FocusManager, DOMUtils, SelectionRestore, Delay) {
+    var documentFocusInHandler, DOM = DOMUtils.DOM;
+
+    var isEditorUIElement = function (elm) {
+      // Since this can be overridden by third party we need to use the API reference here
+      return FocusManager.isEditorUIElement(elm);
+    };
+
+    var isUIElement = function (editor, elm) {
+      var customSelector = editor ? editor.settings.custom_ui_selector : '';
+      var parent = DOM.getParent(elm, function (elm) {
+        return (
+          isEditorUIElement(elm) ||
+          (customSelector ? editor.dom.is(elm, customSelector) : false)
+        );
+      });
+      return parent !== null;
+    };
+
+    var getActiveElement = function () {
+      try {
+        return document.activeElement;
+      } catch (ex) {
+        // IE sometimes fails to get the activeElement when resizing table
+        // TODO: Investigate this
+        return document.body;
+      }
+    };
+
+    var registerEvents = function (editorManager, e) {
+      var editor = e.editor;
+
+      SelectionRestore.register(editor);
+
+      editor.on('focusin', function () {
+        var focusedEditor = editorManager.focusedEditor;
+
+        if (focusedEditor != editor) {
+          if (focusedEditor) {
+            focusedEditor.fire('blur', { focusedEditor: editor });
+          }
+
+          editorManager.setActive(editor);
+          editorManager.focusedEditor = editor;
+          editor.fire('focus', { blurredEditor: focusedEditor });
+          editor.focus(true);
+        }
+      });
+
+      editor.on('focusout', function () {
+        Delay.setEditorTimeout(editor, function () {
+          var focusedEditor = editorManager.focusedEditor;
+
+          // Still the same editor the blur was outside any editor UI
+          if (!isUIElement(editor, getActiveElement()) && focusedEditor == editor) {
+            editor.fire('blur', { focusedEditor: null });
+            editorManager.focusedEditor = null;
+          }
+        });
+      });
+
+      // Check if focus is moved to an element outside the active editor by checking if the target node
+      // isn't within the body of the activeEditor nor a UI element such as a dialog child control
+      if (!documentFocusInHandler) {
+        documentFocusInHandler = function (e) {
+          var activeEditor = editorManager.activeEditor, target;
+
+          target = e.target;
+
+          if (activeEditor && target.ownerDocument === document) {
+            // Fire a blur event if the element isn't a UI element
+            if (target !== document.body && !isUIElement(activeEditor, target) && editorManager.focusedEditor === activeEditor) {
+              activeEditor.fire('blur', { focusedEditor: null });
+              editorManager.focusedEditor = null;
+            }
+          }
+        };
+
+        DOM.bind(document, 'focusin', documentFocusInHandler);
+      }
+    };
+
+    var unregisterDocumentEvents = function (editorManager, e) {
+      if (editorManager.focusedEditor == e.editor) {
+        editorManager.focusedEditor = null;
+      }
+
+      if (!editorManager.activeEditor) {
+        DOM.unbind(document, 'focusin', documentFocusInHandler);
+        documentFocusInHandler = null;
+      }
+    };
+
+    var setup = function (editorManager) {
+      editorManager.on('AddEditor', Fun.curry(registerEvents, editorManager));
+      editorManager.on('RemoveEditor', Fun.curry(unregisterDocumentEvents, editorManager));
+    };
+
+    return {
+      setup: setup,
+      isEditorUIElement: isEditorUIElement,
+      isUIElement: isUIElement
+    };
+  }
+);
+
 /**
  * I18n.js
  *
@@ -41474,22 +41467,22 @@ define(
          * @param obj
          * @returns {string}
          */
-        function toString(obj) {
+        var toString = function (obj) {
           if (Tools.is(obj, 'function')) {
             return Object.prototype.toString.call(obj);
           }
           return !isEmpty(obj) ? '' + obj : '';
-        }
+        };
 
-        function isEmpty(text) {
+        var isEmpty = function (text) {
           return text === '' || text === null || Tools.is(text, 'undefined');
-        }
+        };
 
-        function getLangData(text) {
+        var getLangData = function (text) {
           // make sure we work on a string and return a string
           text = toString(text);
           return Tools.hasOwn(langData, text) ? toString(langData[text]) : text;
-        }
+        };
 
 
         if (isEmpty(text)) {
@@ -41542,20 +41535,23 @@ define(
     'global!document',
     'global!window',
     'tinymce.core.AddOnManager',
-    'tinymce.core.dom.DomQuery',
-    'tinymce.core.dom.DOMUtils',
     'tinymce.core.Editor',
     'tinymce.core.Env',
     'tinymce.core.ErrorReporter',
-    'tinymce.core.FocusManager',
     'tinymce.core.LegacyInput',
+    'tinymce.core.dom.DOMUtils',
+    'tinymce.core.dom.DomQuery',
+    'tinymce.core.focus.FocusController',
     'tinymce.core.util.I18n',
     'tinymce.core.util.Observable',
     'tinymce.core.util.Promise',
     'tinymce.core.util.Tools',
     'tinymce.core.util.URI'
   ],
-  function (Arr, Type, document, window, AddOnManager, DomQuery, DOMUtils, Editor, Env, ErrorReporter, FocusManager, LegacyInput, I18n, Observable, Promise, Tools, URI) {
+  function (
+    Arr, Type, document, window, AddOnManager, Editor, Env, ErrorReporter, LegacyInput, DOMUtils, DomQuery, FocusController, I18n, Observable, Promise, Tools,
+    URI
+  ) {
     var DOM = DOMUtils.DOM;
     var explode = Tools.explode, each = Tools.each, extend = Tools.extend;
     var instanceCounter = 0, beforeUnloadDelegate, EditorManager, boundGlobalEvents = false;
@@ -41567,7 +41563,7 @@ define(
       return id !== 'length';
     };
 
-    function globalEventDelegate(e) {
+    var globalEventDelegate = function (e) {
       each(EditorManager.get(), function (editor) {
         if (e.type === 'scroll') {
           editor.fire('ScrollWindow', e);
@@ -41575,9 +41571,9 @@ define(
           editor.fire('ResizeWindow', e);
         }
       });
-    }
+    };
 
-    function toggleGlobalEvents(state) {
+    var toggleGlobalEvents = function (state) {
       if (state !== boundGlobalEvents) {
         if (state) {
           DomQuery(window).on('resize scroll', globalEventDelegate);
@@ -41587,9 +41583,9 @@ define(
 
         boundGlobalEvents = state;
       }
-    }
+    };
 
-    function removeEditorFromList(targetEditor) {
+    var removeEditorFromList = function (targetEditor) {
       var oldEditors = editors;
 
       delete legacyEditors[targetEditor.id];
@@ -41615,9 +41611,9 @@ define(
       }
 
       return oldEditors.length !== editors.length;
-    }
+    };
 
-    function purgeDestroyedEditor(editor) {
+    var purgeDestroyedEditor = function (editor) {
       // User has manually destroyed the editor lets clean up the mess
       if (editor && editor.initialized && !(editor.getContainer() || editor.getBody()).parentNode) {
         removeEditorFromList(editor);
@@ -41628,7 +41624,7 @@ define(
       }
 
       return editor;
-    }
+    };
 
     EditorManager = {
       defaultSettings: {},
@@ -41655,7 +41651,7 @@ define(
        * @property minorVersion
        * @type String
        */
-      minorVersion: '7.0',
+      minorVersion: '7.2',
 
       /**
        * Release date of TinyMCE build.
@@ -41663,7 +41659,7 @@ define(
        * @property releaseDate
        * @type String
        */
-      releaseDate: '2017-10-03',
+      releaseDate: '2017-11-07',
 
       /**
        * Collection of editor instances. Deprecated use tinymce.get() instead.
@@ -41781,7 +41777,7 @@ define(
          */
         self.suffix = suffix;
 
-        self.focusManager = new FocusManager(self);
+        FocusController.setup(self);
       },
 
       /**
@@ -41840,11 +41836,11 @@ define(
           ' '
         );
 
-        function isInvalidInlineTarget(settings, elm) {
+        var isInvalidInlineTarget = function (settings, elm) {
           return settings.inline && elm.tagName.toLowerCase() in invalidInlineTargets;
-        }
+        };
 
-        function createId(elm) {
+        var createId = function (elm) {
           var id = elm.id;
 
           // Use element id, or unique name or generate a unique id
@@ -41862,9 +41858,9 @@ define(
           }
 
           return id;
-        }
+        };
 
-        function execCallback(name) {
+        var execCallback = function (name) {
           var callback = settings[name];
 
           if (!callback) {
@@ -41872,13 +41868,13 @@ define(
           }
 
           return callback.apply(self, Array.prototype.slice.call(arguments, 2));
-        }
+        };
 
-        function hasClass(elm, className) {
+        var hasClass = function (elm, className) {
           return className.constructor === RegExp ? className.test(elm.className) : DOM.hasClass(elm, className);
-        }
+        };
 
-        function findTargets(settings) {
+        var findTargets = function (settings) {
           var l, targets = [];
 
           if (Env.ie && Env.ie < 11) {
@@ -41942,16 +41938,16 @@ define(
           }
 
           return targets;
-        }
+        };
 
         var provideResults = function (editors) {
           result = editors;
         };
 
-        function initEditors() {
+        var initEditors = function () {
           var initCount = 0, editors = [], targets;
 
-          function createEditor(id, settings, targetElm) {
+          var createEditor = function (id, settings, targetElm) {
             var editor = new Editor(id, settings, self);
 
             editors.push(editor);
@@ -41964,7 +41960,7 @@ define(
 
             editor.targetElm = editor.targetElm || targetElm;
             editor.render();
-          }
+          };
 
           DOM.unbind(window, 'ready', initEditors);
           execCallback('onpageload');
@@ -42006,7 +42002,7 @@ define(
               }
             });
           }
-        }
+        };
 
         self.settings = settings;
         DOM.bind(window, 'ready', initEditors);
@@ -42306,6 +42302,110 @@ define(
 );
 
 /**
+ * RangeUtils.js
+ *
+ * Released under LGPL License.
+ * Copyright (c) 1999-2017 Ephox Corp. All rights reserved
+ *
+ * License: http://www.tinymce.com/license
+ * Contributing: http://www.tinymce.com/contributing
+ */
+
+/**
+ * This class contains a few utility methods for ranges.
+ *
+ * @class tinymce.dom.RangeUtils
+ */
+define(
+  'tinymce.core.api.dom.RangeUtils',
+  [
+    'ephox.katamari.api.Fun',
+    'tinymce.core.selection.CaretRangeFromPoint',
+    'tinymce.core.selection.NormalizeRange',
+    'tinymce.core.selection.RangeCompare',
+    'tinymce.core.selection.RangeNodes',
+    'tinymce.core.selection.RangeWalk',
+    'tinymce.core.selection.SplitRange'
+  ],
+  function (Fun, CaretRangeFromPoint, NormalizeRange, RangeCompare, RangeNodes, RangeWalk, SplitRange) {
+    var RangeUtils = function (dom) {
+      /**
+       * Walks the specified range like object and executes the callback for each sibling collection it finds.
+       *
+       * @private
+       * @method walk
+       * @param {Object} rng Range like object.
+       * @param {function} callback Callback function to execute for each sibling collection.
+       */
+      var walk = function (rng, callback) {
+        return RangeWalk.walk(dom, rng, callback);
+      };
+
+      /**
+       * Splits the specified range at it's start/end points.
+       *
+       * @private
+       * @param {Range/RangeObject} rng Range to split.
+       * @return {Object} Range position object.
+       */
+      var split = SplitRange.split;
+
+      /**
+       * Normalizes the specified range by finding the closest best suitable caret location.
+       *
+       * @private
+       * @param {Range} rng Range to normalize.
+       * @return {Boolean} True/false if the specified range was normalized or not.
+       */
+      var normalize = function (rng) {
+        return NormalizeRange.normalize(dom, rng).fold(
+          Fun.constant(false),
+          function (normalizedRng) {
+            rng.setStart(normalizedRng.startContainer, normalizedRng.startOffset);
+            rng.setEnd(normalizedRng.endContainer, normalizedRng.endOffset);
+            return true;
+          }
+        );
+      };
+
+      return {
+        walk: walk,
+        split: split,
+        normalize: normalize
+      };
+    };
+
+    /**
+     * Compares two ranges and checks if they are equal.
+     *
+     * @static
+     * @method compareRanges
+     * @param {DOMRange} rng1 First range to compare.
+     * @param {DOMRange} rng2 First range to compare.
+     * @return {Boolean} true/false if the ranges are equal.
+     */
+    RangeUtils.compareRanges = RangeCompare.isEq;
+
+    /**
+     * Gets the caret range for the given x/y location.
+     *
+     * @static
+     * @method getCaretRangeFromPoint
+     * @param {Number} clientX X coordinate for range
+     * @param {Number} clientY Y coordinate for range
+     * @param {Document} doc Document that x/y are relative to
+     * @returns {Range} caret range
+     */
+    RangeUtils.getCaretRangeFromPoint = CaretRangeFromPoint.fromPoint;
+
+    RangeUtils.getSelectedNode = RangeNodes.getSelectedNode;
+    RangeUtils.getNode = RangeNodes.getNode;
+
+    return RangeUtils;
+  }
+);
+
+/**
  * Rect.js
  *
  * Released under LGPL License.
@@ -42338,7 +42438,7 @@ define(
      * @param {Rect} targetRect Rect to move relative to based on the rel option.
      * @param {String} rel Relative position. For example: tr-bl.
      */
-    function relativePosition(rect, targetRect, rel) {
+    var relativePosition = function (rect, targetRect, rel) {
       var x, y, w, h, targetW, targetH;
 
       x = targetRect.x;
@@ -42383,7 +42483,7 @@ define(
       }
 
       return create(x, y, w, h);
-    }
+    };
 
     /**
      * Tests various positions to get the most suitable one.
@@ -42394,7 +42494,7 @@ define(
      * @param {Rect} constrainRect Rect to constrain within.
      * @param {Array} rels Array of relative positions to test against.
      */
-    function findBestRelativePosition(rect, targetRect, constrainRect, rels) {
+    var findBestRelativePosition = function (rect, targetRect, constrainRect, rels) {
       var pos, i;
 
       for (i = 0; i < rels.length; i++) {
@@ -42407,7 +42507,7 @@ define(
       }
 
       return null;
-    }
+    };
 
     /**
      * Inflates the rect in all directions.
@@ -42418,9 +42518,9 @@ define(
      * @param {Number} h Relative height to expand by.
      * @return {Rect} New expanded rect.
      */
-    function inflate(rect, w, h) {
+    var inflate = function (rect, w, h) {
       return create(rect.x - w, rect.y - h, rect.w + w * 2, rect.h + h * 2);
-    }
+    };
 
     /**
      * Returns the intersection of the specified rectangles.
@@ -42430,7 +42530,7 @@ define(
      * @param {Rect} cropRect The second rectangle to compare.
      * @return {Rect} The intersection of the two rectangles or null if they don't intersect.
      */
-    function intersect(rect, cropRect) {
+    var intersect = function (rect, cropRect) {
       var x1, y1, x2, y2;
 
       x1 = max(rect.x, cropRect.x);
@@ -42443,7 +42543,7 @@ define(
       }
 
       return create(x1, y1, x2 - x1, y2 - y1);
-    }
+    };
 
     /**
      * Returns a rect clamped within the specified clamp rect. This forces the
@@ -42455,7 +42555,7 @@ define(
      * @param {Boolean} fixedSize True/false if size should be fixed.
      * @return {Rect} Clamped rect.
      */
-    function clamp(rect, clampRect, fixedSize) {
+    var clamp = function (rect, clampRect, fixedSize) {
       var underflowX1, underflowY1, overflowX2, overflowY2,
         x1, y1, x2, y2, cx2, cy2;
 
@@ -42485,7 +42585,7 @@ define(
       y2 -= overflowY2;
 
       return create(x1, y1, x2 - x1, y2 - y1);
-    }
+    };
 
     /**
      * Creates a new rectangle object.
@@ -42497,9 +42597,9 @@ define(
      * @param {Number} h Rectangle height.
      * @return {Rect} New rectangle object.
      */
-    function create(x, y, w, h) {
+    var create = function (x, y, w, h) {
       return { x: x, y: y, w: w, h: h };
-    }
+    };
 
     /**
      * Creates a new rectangle object form a clientRects object.
@@ -42508,9 +42608,9 @@ define(
      * @param {ClientRect} clientRect DOM ClientRect object.
      * @return {Rect} New rectangle object.
      */
-    function fromClientRect(clientRect) {
+    var fromClientRect = function (clientRect) {
       return create(clientRect.left, clientRect.top, clientRect.width, clientRect.height);
-    }
+    };
 
     return {
       inflate: inflate,
@@ -42669,15 +42769,15 @@ define(
 
     var extendClass, initializing;
 
-    function Class() {
-    }
+    var Class = function () {
+    };
 
     // Provides classical inheritance, based on code made by John Resig
     Class.extend = extendClass = function (prop) {
       var self = this, _super = self.prototype, prototype, name, member;
 
       // The dummy class constructor
-      function Class() {
+      var Class = function () {
         var i, mixins, mixin, self = this;
 
         // All construction is actually done in the init method
@@ -42699,16 +42799,16 @@ define(
             }
           }
         }
-      }
+      };
 
       // Dummy function, needs to be extended in order to provide functionality
-      function dummy() {
+      var dummy = function () {
         return this;
-      }
+      };
 
       // Creates a overloaded method for the class
       // this enables you to use this._super(); to call the super function
-      function createMethod(name, fn) {
+      var createMethod = function (name, fn) {
         return function () {
           var self = this, tmp = self._super, ret;
 
@@ -42718,7 +42818,7 @@ define(
 
           return ret;
         };
-      }
+      };
 
       // Instantiate a base class (but only create the instance,
       // don't run the init constructor)
@@ -42843,10 +42943,10 @@ define(
      * @method Color
      * @param {String} value Optional initial value to parse.
      */
-    function Color(value) {
+    var Color = function (value) {
       var self = this, r = 0, g = 0, b = 0;
 
-      function rgb2hsv(r, g, b) {
+      var rgb2hsv = function (r, g, b) {
         var h, s, v, d, minRGB, maxRGB;
 
         h = 0;
@@ -42881,9 +42981,9 @@ define(
           s: round(s * 100),
           v: round(v * 100)
         };
-      }
+      };
 
-      function hsvToRgb(hue, saturation, brightness) {
+      var hsvToRgb = function (hue, saturation, brightness) {
         var side, chroma, x, match;
 
         hue = (parseInt(hue, 10) || 0) % 360;
@@ -42946,7 +43046,7 @@ define(
         r = round(255 * (r + match));
         g = round(255 * (g + match));
         b = round(255 * (b + match));
-      }
+      };
 
       /**
        * Returns the hex string of the current color. For example: #ff00ff
@@ -42954,15 +43054,15 @@ define(
        * @method toHex
        * @return {String} Hex string of current color.
        */
-      function toHex() {
-        function hex(val) {
+      var toHex = function () {
+        var hex = function (val) {
           val = parseInt(val, 10).toString(16);
 
           return val.length > 1 ? val : '0' + val;
-        }
+        };
 
         return '#' + hex(r) + hex(g) + hex(b);
-      }
+      };
 
       /**
        * Returns the r, g, b values of the color. Each channel has a range from 0-255.
@@ -42970,13 +43070,13 @@ define(
        * @method toRgb
        * @return {Object} Object with r, g, b fields.
        */
-      function toRgb() {
+      var toRgb = function () {
         return {
           r: r,
           g: g,
           b: b
         };
-      }
+      };
 
       /**
        * Returns the h, s, v values of the color. Ranges: h=0-360, s=0-100, v=0-100.
@@ -42984,9 +43084,9 @@ define(
        * @method toHsv
        * @return {Object} Object with h, s, v fields.
        */
-      function toHsv() {
+      var toHsv = function () {
         return rgb2hsv(r, g, b);
-      }
+      };
 
       /**
        * Parses the specified value and populates the color instance.
@@ -43002,7 +43102,7 @@ define(
        * @param {Object/String} value Color value to parse.
        * @return {tinymce.util.Color} Current color instance.
        */
-      function parse(value) {
+      var parse = function (value) {
         var matches;
 
         if (typeof value == 'object') {
@@ -43034,7 +43134,7 @@ define(
         b = b < 0 ? 0 : (b > 255 ? 255 : b);
 
         return self;
-      }
+      };
 
       if (value) {
         parse(value);
@@ -43044,7 +43144,7 @@ define(
       self.toHsv = toHsv;
       self.toHex = toHex;
       self.parse = parse;
-    }
+    };
 
     return Color;
   }
@@ -43078,7 +43178,7 @@ define(
     'global!window'
   ],
   function (window) {
-    function serialize(o, quote) {
+    var serialize = function (o, quote) {
       var i, v, t, name;
 
       quote = quote || '"';
@@ -43133,7 +43233,7 @@ define(
       }
 
       return '' + o;
-    }
+    };
 
     return {
       /**
@@ -43258,7 +43358,7 @@ define(
       send: function (settings) {
         var xhr, count = 0;
 
-        function ready() {
+        var ready = function () {
           if (!settings.async || xhr.readyState == 4 || count++ > 10000) {
             if (settings.success && count < 10000 && xhr.status == 200) {
               settings.success.call(settings.success_scope, '' + xhr.responseText, xhr, settings);
@@ -43270,7 +43370,7 @@ define(
           } else {
             setTimeout(ready, 10);
           }
-        }
+        };
 
         // Default settings
         settings.scope = settings.scope || this;
@@ -43373,10 +43473,10 @@ define(
   function (JSON, XHR, Tools) {
     var extend = Tools.extend;
 
-    function JSONRequest(settings) {
+    var JSONRequest = function (settings) {
       this.settings = extend({}, settings);
       this.count = 0;
-    }
+    };
 
     /**
      * Simple helper function to send a JSON-RPC request without the need to initialize an object.
@@ -43498,7 +43598,7 @@ define(
     /**
      * Gets the keys names and updates LocalStorage.length property. Since IE7 doesn't have any getters/setters.
      */
-    function updateKeys() {
+    var updateKeys = function () {
       keys = [];
 
       for (var key in items) {
@@ -43506,12 +43606,12 @@ define(
       }
 
       LocalStorage.length = keys.length;
-    }
+    };
 
     /**
      * Loads the userData string and parses it into the items structure.
      */
-    function load() {
+    var load = function () {
       var key, data, value, pos = 0;
 
       items = {};
@@ -43521,7 +43621,7 @@ define(
         return;
       }
 
-      function next(end) {
+      var next = function (end) {
         var value, nextPos;
 
         nextPos = end !== undefined ? pos + end : data.indexOf(',', pos);
@@ -43533,7 +43633,7 @@ define(
         pos = nextPos + 1;
 
         return value;
-      }
+      };
 
       storageElm.load(userDataKey);
       data = storageElm.getAttribute(userDataKey) || '';
@@ -43560,12 +43660,12 @@ define(
       } while (key !== null);
 
       updateKeys();
-    }
+    };
 
     /**
      * Saves the items structure into a the userData format.
      */
-    function save() {
+    var save = function () {
       var value, data = '';
 
       // localStorage can be disabled on WebKit/Gecko so make a dummy storage
@@ -43587,7 +43687,7 @@ define(
       }
 
       updateKeys();
-    }
+    };
 
     LocalStorage = {
       /**
@@ -43675,26 +43775,28 @@ define(
   'tinymce.core.api.Tinymce',
   [
     'tinymce.core.AddOnManager',
-    'tinymce.core.api.Formatter',
-    'tinymce.core.api.NotificationManager',
-    'tinymce.core.api.WindowManager',
-    'tinymce.core.dom.BookmarkManager',
-    'tinymce.core.dom.ControlSelection',
-    'tinymce.core.dom.DomQuery',
-    'tinymce.core.dom.DOMUtils',
-    'tinymce.core.dom.EventUtils',
-    'tinymce.core.dom.RangeUtils',
-    'tinymce.core.dom.ScriptLoader',
-    'tinymce.core.dom.Selection',
-    'tinymce.core.dom.Serializer',
-    'tinymce.core.dom.Sizzle',
-    'tinymce.core.dom.TreeWalker',
     'tinymce.core.Editor',
     'tinymce.core.EditorCommands',
     'tinymce.core.EditorManager',
     'tinymce.core.EditorObservable',
     'tinymce.core.Env',
-    'tinymce.core.FocusManager',
+    'tinymce.core.Shortcuts',
+    'tinymce.core.UndoManager',
+    'tinymce.core.api.FocusManager',
+    'tinymce.core.api.Formatter',
+    'tinymce.core.api.NotificationManager',
+    'tinymce.core.api.WindowManager',
+    'tinymce.core.api.dom.RangeUtils',
+    'tinymce.core.dom.BookmarkManager',
+    'tinymce.core.dom.ControlSelection',
+    'tinymce.core.dom.DOMUtils',
+    'tinymce.core.dom.DomQuery',
+    'tinymce.core.dom.EventUtils',
+    'tinymce.core.dom.ScriptLoader',
+    'tinymce.core.dom.Selection',
+    'tinymce.core.dom.Serializer',
+    'tinymce.core.dom.Sizzle',
+    'tinymce.core.dom.TreeWalker',
     'tinymce.core.geom.Rect',
     'tinymce.core.html.DomParser',
     'tinymce.core.html.Entities',
@@ -43704,9 +43806,7 @@ define(
     'tinymce.core.html.Serializer',
     'tinymce.core.html.Styles',
     'tinymce.core.html.Writer',
-    'tinymce.core.Shortcuts',
     'tinymce.core.ui.Factory',
-    'tinymce.core.UndoManager',
     'tinymce.core.util.Class',
     'tinymce.core.util.Color',
     'tinymce.core.util.Delay',
@@ -43724,10 +43824,10 @@ define(
     'tinymce.core.util.XHR'
   ],
   function (
-    AddOnManager, Formatter, NotificationManager, WindowManager, BookmarkManager, ControlSelection, DomQuery, DOMUtils, EventUtils, RangeUtils, ScriptLoader,
-    Selection, DomSerializer, Sizzle, TreeWalker, Editor, EditorCommands, EditorManager, EditorObservable, Env, FocusManager, Rect, DomParser, Entities, Node,
-    SaxParser, Schema, HtmlSerializer, Styles, Writer, Shortcuts, Factory, UndoManager, Class, Color, Delay, EventDispatcher, I18n, JSON, JSONP, JSONRequest,
-    LocalStorage, Observable, Promise, Tools, URI, VK, XHR
+    AddOnManager, Editor, EditorCommands, EditorManager, EditorObservable, Env, Shortcuts, UndoManager, FocusManager, Formatter, NotificationManager, WindowManager,
+    RangeUtils, BookmarkManager, ControlSelection, DOMUtils, DomQuery, EventUtils, ScriptLoader, Selection, DomSerializer, Sizzle, TreeWalker, Rect, DomParser,
+    Entities, Node, SaxParser, Schema, HtmlSerializer, Styles, Writer, Factory, Class, Color, Delay, EventDispatcher, I18n, JSON, JSONP, JSONRequest, LocalStorage,
+    Observable, Promise, Tools, URI, VK, XHR
   ) {
     var tinymce = EditorManager;
 
