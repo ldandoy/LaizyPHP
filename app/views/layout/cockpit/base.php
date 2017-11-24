@@ -29,7 +29,7 @@
                             </form>
                         <?php } ?>
                         <li class="nav-item">
-                          <a class="preview-site nav-link" href="<?php echo $this->site->home_page; ?>" target="_blank" title="Preview"><i class="fa fa-eye"></i> Voir mon site</a>
+                            {% button url="<?php echo $this->site->home_page != '' ? $this->site->home_page : '/'; ?>" type="link" icon="eye" content="Voir mon site" newWindow="1" class="preview-site nav-link" %}
                         </li>
                     </ul>
 
