@@ -9,7 +9,7 @@
     </head>
     <body id="cockpit">
         <?php if ($this->current_user !== null) { ?>
-            <nav class="navbar navbar-toggleable-md fixed-top navbar-light bg-faded">
+            <nav class="navbar navbar-expand-md fixed-top navbar-light bg-faded">
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -21,15 +21,15 @@
                             <form action="/cockpit/sites/changehost" method="post" class="form-inline form-site my-lg-0">
                                 <input type="hidden" name="redirect" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
                                 <select name="site_id" id="changeHost" class="form-control hosts">
-                                    <?php foreach (Core\models\Site::findAll('active = 1') as $key => $value) { ?>
-                                        <?php if ($this->session->get('site_id') == $value->id) { $site_url = $value->host; } ?>
-                                        <option <?php if ($this->session->get('site_id') == $value->id) { ?>selected="selected"<?php } ?> value="<?php echo $value->id; ?>"><?php echo $value->label; ?>: <?php echo $value->host; ?></option>
+                                    <?php foreach (Core\models\Site::findAll("active = 1") as $key => $value) { ?>
+                                        <?php if ($this->site->id == $value->id) { $site_url = $value->host; } ?>
+                                        <option <?php if ($this->site->id == $value->id) { ?>selected="selected"<?php } ?> value="<?php echo $value->id; ?>"><?php echo $value->label; ?>: <?php echo $value->host; ?></option>
                                     <?php } ?>
                                 </select>
                             </form>
                         <?php } ?>
                         <li class="nav-item">
-                          <a class="preview-site nav-link" href="http://<?php echo $this->site->host; ?>" target="_blank" title="Preview"><i class="fa fa-eye"></i> Voir mon site</a>
+                          <a class="preview-site nav-link" href="<?php echo $this->site->home_page; ?>" target="_blank" title="Preview"><i class="fa fa-eye"></i> Voir mon site</a>
                         </li>
                     </ul>
 
@@ -42,9 +42,9 @@
                                 <?php } else { ?>
                                     {% link url="cockpit_core_sites_show_<?php echo $this->current_user->site_id; ?>" content="Site" class="dropdown-item" icon="snowflake-o" %}
                                 <?php } ?>
-                                <?php if ($this->current_user !== null && $this->current_user->site_id === null) { ?>
+<!--                                <?php if ($this->current_user !== null && $this->current_user->site_id === null) { ?>
                                     {% link url="cockpit_auth_administrators" content="Administrateurs" class="dropdown-item" icon="user-secret" %}
-                                <?php } ?>
+                                <?php } ?> -->
                                 {% link url="cockpit_auth_users" content="Utilisateurs" class="dropdown-item" icon="user" %}
                                 <?php if ($this->current_user !== null && $this->current_user->group->code == 'administrators'): ?>
                                     {% link url="cockpit_auth_groups" content="Groupes" class="dropdown-item" icon="users" %}
@@ -53,7 +53,7 @@
                                 <?php if ($this->current_user !== null && $this->current_user->site_id === null) { ?>
                                     {% link url="cockpit_system_config_index" content="Configuration" class="dropdown-item" icon="cogs" %}
                                 <?php } ?>
-                                {% link url="cockpit_administratorsauth_logout" content="Se déconnecter" class="dropdown-item" icon="power-off fa-orange" %}
+                                {% link url="usersauth_logout" content="Se déconnecter" icon="power-off fa-orange" class="dropdown-item" %}
                             </div>
                         </li>
                     </ul>
@@ -72,7 +72,7 @@
                         </div>
                         <?php if ($this->current_user !== null) { ?>
                             <div class="pull-left info">
-                                {% link url="cockpit_auth_administrators_show_"<?php echo $this->current_user->id; ?> content="<?php echo $this->current_user->firstname.' '.$this->current_user->lastname; ?>" %}
+                                {% link url="cockpit_auth_administrators_show_<?php echo $this->current_user->id; ?>" content="<?php echo $this->current_user->getFullName(); ?>" %}
                                 <br />
                                 <?php echo $this->current_user->email ?>
                             </div>
@@ -99,6 +99,7 @@
                             <div class="nav-ss-menu">
                                 {% linl url="cockpit_widget_galleries" content=" Galleries" icon="object-group text-ciel" %}
                                 {% link url="cockpit_widget_sliders" content=" Sliders" icon="object-group text-ciel" %}
+                                {% link url="cockpit_widget_polls" content=" Sondages <span class='pull-right'><?php echo Widget\models\Poll::count('site_id = '.$this->site->id); ?></span>" icon="bar-chart" %}
                             </div>
                         </div>
                         <div>

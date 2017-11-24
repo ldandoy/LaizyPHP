@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\controllers\ApplicationController;
 use Helper\Datetime;
 use Media\models\Media;
+use Auth\models\Group;
 
 class TestController extends ApplicationController
 {
@@ -132,7 +133,7 @@ class TestController extends ApplicationController
 
         $params = array_merge($params, $this->request->post);
 
-        $medias = Media::findAll();
+        $medias = Media::findAll('id=1');
         if (!empty($medias)) {
             $media = $medias[count($medias)-1];
             $params['media'] = $media;
