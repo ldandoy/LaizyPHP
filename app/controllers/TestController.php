@@ -7,7 +7,7 @@ use Helper\Datetime;
 use Media\models\Media;
 use Auth\models\Group;
 
-class TestController extends ApplicationController
+class TestController extends FrontController
 {
     public function indexAction()
     {

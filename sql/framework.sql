@@ -16,40 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `administrators`
---
-
-DROP TABLE IF EXISTS `administrators`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `administrators` (
-  `id` int(11) NOT NULL,
-  `site_id` int(11) DEFAULT NULL,
-  `group_id` int(11) DEFAULT NULL,
-  `lastname` varchar(255) NOT NULL,
-  `firstname` varchar(255) DEFAULT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `email_verification_code` varchar(255) DEFAULT NULL,
-  `email_verification_date` varchar(255) DEFAULT NULL,
-  `active` int(11) NOT NULL DEFAULT '1',
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `administrators`
---
-
-LOCK TABLES `administrators` WRITE;
-/*!40000 ALTER TABLE `administrators` DISABLE KEYS */;
-INSERT INTO `administrators` VALUES (2,NULL,1,'ADMIN','Admin','admin@test.com','$6$199337193b7024b3$TRIFwsRF9laQy/hxaZip20EzS2IAUwHyH66aiDq7k5QCE4j6BAdo7jK0gIzC17suC508WVLgvNRssDX9Ci2VF1','VUFMUE8OW386EPX979C4LPS709RL0E','2017-04-01 17:45:35',1,'2017-04-01 17:45:35','2017-07-12 12:30:11');
-/*!40000 ALTER TABLE `administrators` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `articlecategories`
 --
 
@@ -57,14 +23,15 @@ DROP TABLE IF EXISTS `articlecategories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `articlecategories` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `site_id` int(11) DEFAULT NULL,
   `code` varchar(255) NOT NULL,
   `label` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`id`),
+  KEY `site_id` (`site_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,7 +40,6 @@ CREATE TABLE `articlecategories` (
 
 LOCK TABLES `articlecategories` WRITE;
 /*!40000 ALTER TABLE `articlecategories` DISABLE KEYS */;
-INSERT INTO `articlecategories` VALUES (2,2,'cat_a','Categorie A','2017-08-01 16:43:48','2017-08-02 15:21:02'),(3,2,'cat_b','Categorie B','2017-08-02 15:21:14','2017-08-02 15:21:14');
 /*!40000 ALTER TABLE `articlecategories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,18 +51,20 @@ DROP TABLE IF EXISTS `articles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `articles` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `site_id` int(11) DEFAULT NULL,
   `articlecategory_id` int(11) DEFAULT NULL,
   `title` varchar(255) NOT NULL,
   `content` text,
   `user_id` int(11) DEFAULT NULL,
   `media_id` int(11) DEFAULT NULL,
-  `active` int(11) NOT NULL,
+  `active` int(11) NOT NULL DEFAULT '0',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `site_id` (`site_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -116,7 +84,7 @@ DROP TABLE IF EXISTS `categories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `categories` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `parent` int(11) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
   `description` text,
@@ -125,7 +93,7 @@ CREATE TABLE `categories` (
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -145,13 +113,14 @@ DROP TABLE IF EXISTS `galleries`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `galleries` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `site_id` int(11) DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
   `description` text,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -171,7 +140,7 @@ DROP TABLE IF EXISTS `galleries_medias`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `galleries_medias` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `gallery_id` int(11) NOT NULL,
   `media_id` int(11) NOT NULL,
   `description` varchar(255) DEFAULT NULL,
@@ -181,8 +150,10 @@ CREATE TABLE `galleries_medias` (
   `url` varchar(255) DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`id`),
+  KEY `fk_galleries_medias_gallery_idx` (`gallery_id`),
+  KEY `fk_galleries_medias_media_idx` (`media_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -191,7 +162,6 @@ CREATE TABLE `galleries_medias` (
 
 LOCK TABLES `galleries_medias` WRITE;
 /*!40000 ALTER TABLE `galleries_medias` DISABLE KEYS */;
-INSERT INTO `galleries_medias` VALUES (2,3,21,'Cà marche ?','Test',0,1,'http://google.fr','2017-05-10 10:51:31','2017-05-10 11:03:54'),(3,3,22,'','Stine',1,1,'','2017-05-10 11:39:28','2017-05-10 11:39:39');
 /*!40000 ALTER TABLE `galleries_medias` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -203,13 +173,14 @@ DROP TABLE IF EXISTS `groups`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `groups` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `code` varchar(255) NOT NULL,
   `label` varchar(255) NOT NULL,
+  `cockpit` int(11) NOT NULL DEFAULT '0',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -218,7 +189,7 @@ CREATE TABLE `groups` (
 
 LOCK TABLES `groups` WRITE;
 /*!40000 ALTER TABLE `groups` DISABLE KEYS */;
-INSERT INTO `groups` VALUES (1,'administrators','Administrateurs','2017-07-05 14:46:15','2017-07-05 14:46:15');
+INSERT INTO `groups` VALUES (1,'administrators','Administrateurs',1,'2017-07-05 14:46:15','2017-07-05 14:46:15'),(2,'user','Utilisateurs',0,'2017-07-05 14:46:15','2017-07-05 14:46:15');
 /*!40000 ALTER TABLE `groups` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -230,13 +201,14 @@ DROP TABLE IF EXISTS `mediacategories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mediacategories` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `site_id` int(11) DEFAULT NULL,
   `code` varchar(255) NOT NULL,
   `label` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `site_id` (`site_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -246,7 +218,6 @@ CREATE TABLE `mediacategories` (
 
 LOCK TABLES `mediacategories` WRITE;
 /*!40000 ALTER TABLE `mediacategories` DISABLE KEYS */;
-INSERT INTO `mediacategories` VALUES (1,2,'product','Product','2017-04-22 14:42:50','2017-04-22 14:42:50'),(2,2,'user','User','2017-04-22 14:43:00','2017-04-22 14:43:00'),(3,2,'article','Article','2017-04-22 15:45:17','2017-04-22 16:06:55'),(4,2,'menuitem','Menu Item','2017-05-03 10:28:30','2017-05-03 10:28:30'),(5,2,'partner','Partenaire','2017-05-21 13:41:31','2017-05-21 13:41:31'),(6,2,'event','Evenement','2017-07-21 10:19:16','2017-07-21 10:19:16'),(7,2,'page','Page','2017-07-25 13:22:58','2017-07-25 13:22:58'),(8,2,'newsletter','Newsletters','2017-08-01 14:40:49','2017-08-01 14:40:49');
 /*!40000 ALTER TABLE `mediacategories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -258,7 +229,7 @@ DROP TABLE IF EXISTS `mediaformats`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mediaformats` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `code` varchar(255) NOT NULL,
   `label` varchar(255) NOT NULL,
   `width` int(11) NOT NULL,
@@ -266,7 +237,7 @@ CREATE TABLE `mediaformats` (
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -286,7 +257,9 @@ DROP TABLE IF EXISTS `medias`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `medias` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `site_id` int(11) DEFAULT NULL,
+  `mediacategory_id` int(11) DEFAULT NULL,
   `type` enum('image','video','audio') NOT NULL DEFAULT 'image',
   `name` varchar(255) NOT NULL,
   `description` text,
@@ -294,12 +267,12 @@ CREATE TABLE `medias` (
   `video` varchar(255) DEFAULT NULL,
   `audio` varchar(255) DEFAULT NULL,
   `url` varchar(255) DEFAULT NULL,
-  `mediacategory_id` int(11) NOT NULL,
-  `site_id` int(11) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`id`),
+  KEY `mediacategory_id` (`mediacategory_id`),
+  KEY `site_id` (`site_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -308,6 +281,7 @@ CREATE TABLE `medias` (
 
 LOCK TABLES `medias` WRITE;
 /*!40000 ALTER TABLE `medias` DISABLE KEYS */;
+INSERT INTO `medias` VALUES (1,1,NULL,'image','20171123161644',NULL,'/uploads/media/1/1_image.jpg','','',NULL,'2017-11-23 16:16:44','2017-11-23 16:16:44');
 /*!40000 ALTER TABLE `medias` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -319,18 +293,24 @@ DROP TABLE IF EXISTS `menuitems`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `menuitems` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `menu_id` int(11) NOT NULL,
   `parent` int(11) DEFAULT NULL,
   `label` varchar(255) NOT NULL,
-  `position` int(11) NOT NULL,
-  `active` int(11) NOT NULL,
+  `position` int(11) NOT NULL DEFAULT '0',
+  `active` int(11) NOT NULL DEFAULT '1',
   `link` varchar(255) DEFAULT NULL,
-  `menu_id` int(11) NOT NULL,
   `media_id` int(11) DEFAULT NULL,
+  `new_window` int(11) NOT NULL DEFAULT '0',
+  `show_icon` int(11) NOT NULL DEFAULT '1',
+  `show_label` int(11) NOT NULL DEFAULT '1',
+  `groups` text,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`id`),
+  KEY `menu_id` (`menu_id`),
+  KEY `media_id` (`media_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -339,6 +319,7 @@ CREATE TABLE `menuitems` (
 
 LOCK TABLES `menuitems` WRITE;
 /*!40000 ALTER TABLE `menuitems` DISABLE KEYS */;
+INSERT INTO `menuitems` VALUES (1,1,NULL,'Test',0,1,'/test/index',1,1,1,1,NULL,'2017-11-23 06:57:27','2017-11-23 16:49:51'),(2,1,NULL,'AAAA',0,1,'',1,0,1,1,NULL,'2017-11-23 07:06:26','2017-11-23 16:50:05'),(3,1,2,'XXXX',0,1,'',1,0,1,1,'','2017-11-23 07:06:38','2017-11-23 07:06:38'),(4,1,2,'YYYY',0,1,'',NULL,0,1,1,NULL,'2017-11-23 07:06:49','2017-11-23 17:11:13'),(5,1,NULL,'OOOOUUUU',0,1,'/cockpit',NULL,0,1,1,'1','2017-11-23 15:37:02','2017-11-23 15:37:02'),(6,1,NULL,'wwww',0,1,'',NULL,0,1,1,'1','2017-11-23 17:16:51','2017-11-23 17:21:59');
 /*!40000 ALTER TABLE `menuitems` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -350,15 +331,16 @@ DROP TABLE IF EXISTS `menus`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `menus` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `site_id` int(11) DEFAULT NULL,
   `label` varchar(255) NOT NULL,
   `active` int(11) NOT NULL,
   `position` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`id`),
+  KEY `site_id` (`site_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -367,7 +349,30 @@ CREATE TABLE `menus` (
 
 LOCK TABLES `menus` WRITE;
 /*!40000 ALTER TABLE `menus` DISABLE KEYS */;
+INSERT INTO `menus` VALUES (1,1,'Principal',1,'main','2017-11-23 06:56:53','2017-11-23 06:56:53');
 /*!40000 ALTER TABLE `menus` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `migrations`
+--
+
+DROP TABLE IF EXISTS `migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `migrations` (
+  `id` varchar(64) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `migrations`
+--
+
+LOCK TABLES `migrations` WRITE;
+/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
+/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -378,17 +383,18 @@ DROP TABLE IF EXISTS `pages`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pages` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `site_id` int(11) DEFAULT NULL,
   `title` varchar(255) NOT NULL,
   `content` text NOT NULL,
-  `site_id` int(11) NOT NULL,
   `layout` varchar(255) DEFAULT NULL,
-  `active` tinyint(1) NOT NULL,
   `show_page_title` int(11) NOT NULL DEFAULT '1',
+  `active` tinyint(1) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`id`),
+  KEY `site_id` (`site_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -401,6 +407,119 @@ LOCK TABLES `pages` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `pollanswers`
+--
+
+DROP TABLE IF EXISTS `pollanswers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pollanswers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `question_id` int(11) NOT NULL,
+  `answer` int(11) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pollanswers`
+--
+
+LOCK TABLES `pollanswers` WRITE;
+/*!40000 ALTER TABLE `pollanswers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pollanswers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pollquestions`
+--
+
+DROP TABLE IF EXISTS `pollquestions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pollquestions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `poll_id` int(11) NOT NULL,
+  `question` varchar(255) NOT NULL,
+  `multiple_answer` int(11) NOT NULL DEFAULT '0',
+  `answers` text NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pollquestions`
+--
+
+LOCK TABLES `pollquestions` WRITE;
+/*!40000 ALTER TABLE `pollquestions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pollquestions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pollresults`
+--
+
+DROP TABLE IF EXISTS `pollresults`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pollresults` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `poll_id` int(11) NOT NULL,
+  `question_id` int(11) NOT NULL,
+  `answer` text NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pollresults`
+--
+
+LOCK TABLES `pollresults` WRITE;
+/*!40000 ALTER TABLE `pollresults` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pollresults` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `polls`
+--
+
+DROP TABLE IF EXISTS `polls`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `polls` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `site_id` int(11) DEFAULT NULL,
+  `label` varchar(255) NOT NULL,
+  `date_start` datetime NOT NULL,
+  `date_end` datetime NOT NULL,
+  `active` int(11) NOT NULL DEFAULT '1',
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `polls`
+--
+
+LOCK TABLES `polls` WRITE;
+/*!40000 ALTER TABLE `polls` DISABLE KEYS */;
+INSERT INTO `polls` VALUES (4,2,'Sondage 4','2017-08-20 12:00:00','2017-09-15 12:00:00',1,'2017-09-13 10:18:03','2017-09-15 11:09:17');
+/*!40000 ALTER TABLE `polls` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `products`
 --
 
@@ -408,7 +527,7 @@ DROP TABLE IF EXISTS `products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `products` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `category_id` int(11) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
   `description` text,
@@ -418,7 +537,8 @@ CREATE TABLE `products` (
   `media_id` int(11) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `media_id` (`media_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -439,15 +559,14 @@ DROP TABLE IF EXISTS `roleassignments`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `roleassignments` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `role_id` int(11) NOT NULL,
   `group_id` int(11) DEFAULT NULL,
-  `administrator_id` int(11) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -456,7 +575,7 @@ CREATE TABLE `roleassignments` (
 
 LOCK TABLES `roleassignments` WRITE;
 /*!40000 ALTER TABLE `roleassignments` DISABLE KEYS */;
-INSERT INTO `roleassignments` VALUES (4,1,1,NULL,NULL,'2017-07-24 14:59:00','2017-07-24 14:59:00');
+INSERT INTO `roleassignments` VALUES (1,1,1,NULL,'2017-07-24 14:59:00','2017-07-24 14:59:00');
 /*!40000 ALTER TABLE `roleassignments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -468,13 +587,13 @@ DROP TABLE IF EXISTS `roles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `roles` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `code` varchar(255) NOT NULL,
   `label` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -495,24 +614,24 @@ DROP TABLE IF EXISTS `sites`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sites` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `label` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `host` varchar(255) NOT NULL,
   `brand_logo` text,
-  `active` tinyint(1) NOT NULL,
-  `logo_access_user` varchar(255) DEFAULT NULL,
-  `logo_access_admin` varchar(255) DEFAULT NULL,
-  `root_path` varchar(255) NOT NULL,
-  `facebook` varchar(255) NOT NULL,
-  `twitter` varchar(255) NOT NULL,
-  `googleplus` varchar(255) NOT NULL,
-  `pinterest` varchar(255) NOT NULL,
-  `theme` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
+  `active` int(11) NOT NULL DEFAULT '1',
+  `logo_access_user` varchar(255) DEFAULT NULL,
+  `logo_access_admin` varchar(255) DEFAULT NULL,
+  `home_page` varchar(255) NOT NULL,
+  `facebook` varchar(255) DEFAULT NULL,
+  `twitter` varchar(255) DEFAULT NULL,
+  `googleplus` varchar(255) DEFAULT NULL,
+  `pinterest` varchar(255) DEFAULT NULL,
+  `theme` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -521,7 +640,7 @@ CREATE TABLE `sites` (
 
 LOCK TABLES `sites` WRITE;
 /*!40000 ALTER TABLE `sites` DISABLE KEYS */;
-INSERT INTO `sites` VALUES (1,'LazyPHP','LazyPHP','lazyphp.fixe','/assets/images/default_image_brand.png',1,NULL,NULL,'','','','','','','2017-04-16 12:27:46','2017-04-21 13:15:47');
+INSERT INTO `sites` VALUES (1,'LazyPHP','LazyPHP','lazyphp.fixe','','2017-04-16 12:27:46','2017-04-21 15:15:47',1,'',NULL,'','','','','','');
 /*!40000 ALTER TABLE `sites` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -533,7 +652,7 @@ DROP TABLE IF EXISTS `sliders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sliders` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` int(11) NOT NULL,
   `description` text NOT NULL,
   `delay` int(11) NOT NULL,
@@ -554,6 +673,38 @@ LOCK TABLES `sliders` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `sliders_medias`
+--
+
+DROP TABLE IF EXISTS `sliders_medias`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sliders_medias` (
+  `id` int(11) NOT NULL,
+  `slider_id` int(11) NOT NULL,
+  `media_id` int(11) NOT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `description` text,
+  `position` int(11) NOT NULL DEFAULT '0',
+  `active` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`),
+  KEY `fk_sliders_medias_slider_idx` (`slider_id`),
+  KEY `fk_sliders_medias_media_idx` (`media_id`),
+  CONSTRAINT `fk_sliders_medias_media` FOREIGN KEY (`media_id`) REFERENCES `medias` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_sliders_medias_slider` FOREIGN KEY (`slider_id`) REFERENCES `sliders` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sliders_medias`
+--
+
+LOCK TABLES `sliders_medias` WRITE;
+/*!40000 ALTER TABLE `sliders_medias` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sliders_medias` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `users`
 --
 
@@ -561,7 +712,7 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `site_id` int(11) DEFAULT NULL,
   `lastname` varchar(255) NOT NULL,
   `firstname` varchar(255) DEFAULT NULL,
@@ -569,14 +720,14 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `email_verification_code` varchar(255) DEFAULT NULL,
   `email_verification_date` varchar(255) DEFAULT NULL,
-  `address` text,
   `group_id` int(11) DEFAULT NULL,
-  `active` int(11) NOT NULL DEFAULT '1',
   `media_id` int(11) DEFAULT NULL,
+  `active` int(11) NOT NULL DEFAULT '1',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`id`),
+  KEY `media_id` (`media_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -585,6 +736,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,NULL,'ADMIN','Admin','admin@test.com','$6$199337193b7024b3$TRIFwsRF9laQy/hxaZip20EzS2IAUwHyH66aiDq7k5QCE4j6BAdo7jK0gIzC17suC508WVLgvNRssDX9Ci2VF1','VUFMUE8OW386EPX979C4LPS709RL0E','2017-04-01 17:45:35',1,NULL,1,'2017-04-01 17:45:35','2017-07-12 12:30:11');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -596,7 +748,7 @@ DROP TABLE IF EXISTS `widgets`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `widgets` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `label` varchar(255) NOT NULL,
   `type` varchar(255) NOT NULL,
   `app_widget` int(11) NOT NULL DEFAULT '0',
@@ -604,7 +756,7 @@ CREATE TABLE `widgets` (
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -613,7 +765,7 @@ CREATE TABLE `widgets` (
 
 LOCK TABLES `widgets` WRITE;
 /*!40000 ALTER TABLE `widgets` DISABLE KEYS */;
-INSERT INTO `widgets` VALUES (1,'Gallerie','gallery',0,'id','2017-05-10 12:00:25','2017-05-10 12:00:25'),(2,'Carrousel','slider',0,'id','2017-05-10 12:01:11','2017-05-10 12:01:11');
+INSERT INTO `widgets` VALUES (1,'Gallerie','gallery',0,'id','2017-05-10 12:00:25','2017-05-10 12:00:25'),(2,'Carrousel','slider',0,'id','2017-05-10 12:01:11','2017-05-10 12:01:11'),(3,'Sondage','poll',0,'id','2017-09-13 12:00:00','2017-09-13 12:00:00');
 /*!40000 ALTER TABLE `widgets` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -626,4 +778,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-08-11 14:36:57
+-- Dump completed on 2017-11-23 17:27:11
