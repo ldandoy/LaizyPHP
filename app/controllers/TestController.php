@@ -5,10 +5,9 @@ namespace app\controllers;
 use app\controllers\ApplicationController;
 use Helper\Datetime;
 use Media\models\Media;
+use Auth\models\Group;
 
-//require SYSTEM_DIR.'/helpers/Datetime.php';
-
-class TestController extends ApplicationController
+class TestController extends FrontController
 {
     public function indexAction()
     {
@@ -49,13 +48,61 @@ class TestController extends ApplicationController
                         'col1' => 2,
                         'col2' => 'bbb',
                         'col3' => 'yyy',
-                        'col4' => '2017-01-02 11:30:00'
+                        'col4' => '2017-02-01 11:30:00'
                     ),
                     array(
                         'col1' => 3,
                         'col2' => 'ccc',
                         'col3' => 'xxx',
-                        'col4' => '2017-01-03 10:15:30'
+                        'col4' => '2017-03-02 10:15:30'
+                    ),
+                    array(
+                        'col1' => 4,
+                        'col2' => 'ddd',
+                        'col3' => 'www',
+                        'col4' => '2017-01-04 09:59:59'
+                    ),
+                    array(
+                        'col1' => 1,
+                        'col2' => 'aaa',
+                        'col3' => 'zzz',
+                        'col4' => '2017-01-01 12:00:00'
+                    ),
+                    array(
+                        'col1' => 2,
+                        'col2' => 'bbb',
+                        'col3' => 'yyy',
+                        'col4' => '2017-02-01 11:30:00'
+                    ),
+                    array(
+                        'col1' => 3,
+                        'col2' => 'ccc',
+                        'col3' => 'xxx',
+                        'col4' => '2017-03-02 10:15:30'
+                    ),
+                    array(
+                        'col1' => 4,
+                        'col2' => 'ddd',
+                        'col3' => 'www',
+                        'col4' => '2017-01-04 09:59:59'
+                    ),
+                    array(
+                        'col1' => 1,
+                        'col2' => 'aaa',
+                        'col3' => 'zzz',
+                        'col4' => '2017-01-01 12:00:00'
+                    ),
+                    array(
+                        'col1' => 2,
+                        'col2' => 'bbb',
+                        'col3' => 'yyy',
+                        'col4' => '2017-02-01 11:30:00'
+                    ),
+                    array(
+                        'col1' => 3,
+                        'col2' => 'ccc',
+                        'col3' => 'xxx',
+                        'col4' => '2017-03-02 10:15:30'
                     ),
                     array(
                         'col1' => 4,
@@ -86,9 +133,11 @@ class TestController extends ApplicationController
 
         $params = array_merge($params, $this->request->post);
 
-        $medias = Media::findAll();
-        $media = $medias[count($medias)-1];
-        $params['media'] = $media;
+        $medias = Media::findAll('id=1');
+        if (!empty($medias)) {
+            $media = $medias[count($medias)-1];
+            $params['media'] = $media;
+        }
 
         $this->render(
             'test::index',

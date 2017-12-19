@@ -1,0 +1,449 @@
+body#front {
+	background: url('/assets/images/home.jpg') #332824 no-repeat;
+}
+
+#front h1, #front h2, #front td, #front tr, #front p, #front h3{
+	color:#010101;
+}
+
+/*
+ Partie NavBar
+*/
+#front .navbar {
+    background: #fff;
+    border: none;
+}
+
+#front navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+	background: none;
+	box-shadow: none;
+}
+
+#front .navbar-nav .item a {
+	font-size: 25px;
+	color: #010101;
+}
+
+#front .navbar .navbar-link a.parc {
+	color: #fa3803;
+	font-weight: bold;
+}
+
+#front.newsletters .table a, #front.newsletters .table a:focus, #front.newsletters .table a:active, #front.newsletters .table a:hover {
+	color: #000;
+	text-decoration: none;
+}
+
+/*#front .navbar .navbar-link a.parc:hover {
+	border-bottom: 4px solid #fa3803;
+}
+
+#front .navbar .navbar-link a.cine {
+	color: #d1014f;
+	font-weight: bold;
+}
+
+#front .navbar .navbar-link a.cine:hover {
+	border-bottom: 4px solid #d1014f;
+}
+
+#front .navbar .navbar-link a.voyage {
+	color: #ff7f04;
+	font-weight: bold;
+}
+
+#front .navbar .navbar-link a.voyage:hover {
+	border-bottom: 4px solid #ff7f04;
+}
+
+#front .navbar .navbar-link a.culture {
+	color: #a8016a;
+	font-weight: bold;
+}
+
+#front .navbar .navbar-link a.culture:hover {
+	border-bottom: 4px solid #a8016a;
+}
+
+#front .navbar .navbar-link a.sport {
+	color: #fdac05;
+	font-weight: bold;
+}
+
+#front .navbar .navbar-link a.sport:hover {
+	border-bottom: 4px solid #fdac05;
+}
+
+#front .navbar .navbar-link a.produit {
+	color: #d908ac;
+	font-weight: bold;
+}
+
+#front .navbar .navbar-link a.produit:hover {
+	border-bottom: 4px solid #d908ac;
+}*/
+
+#front .connexion {
+	background: url('/assets/images/bg-compte.png') center top no-repeat;
+}
+
+#front .connexion a, #front .connexion a:hover, #front .connexion a:active, #front .connexion a:focus {
+	color: #FFF !important;
+	font-size: 16px !important;
+}
+
+#front a.link, #front a.link:hover {
+	color: #333333;
+	font-weight: bold;
+}
+
+/*#front a.mon_ce:hover {
+	border-bottom: 3px solid #43b5d0;
+}
+
+#front a.actualites:hover {
+	border-bottom: 3px solid #ffa827;
+}
+
+#front a.mes_avantages:hover {
+	border-bottom: 3px solid #4ebad4;
+}
+
+#front a.contact:hover {
+	border-bottom: 3px solid #ffa827;
+}*/
+
+#front .fa.fa-red {
+    color: #8A0000;
+}
+
+#front .fa.fa-blue {
+    color: #3c8dbc;
+}
+
+#front .fa.fa-orange {
+	color: #ffae38;
+}
+
+/*
+Général
+*/
+#front .btn-transparent {
+	background: none;
+	border-color: #FFF;
+	color: #fff;
+}
+
+#front .principal {
+	background: #fff;
+	-moz-box-shadow: 5px -5px 10px 0px #656565;
+	-webkit-box-shadow: 5px -5px 10px 0px #656565;
+	-o-box-shadow: 5px -5px 10px 0px #656565;
+	box-shadow: 5px -5px 10px 0px #656565;
+}
+
+#front .contactus-widget {
+	color: #FFF;
+}
+
+#front .btn-outline-white {
+    background-color: transparent;
+    background-image: none;
+    border-color: #fff;
+    color: #fff;
+}
+
+#front .btn-outline-white:hover {
+    background-color: #fff;
+    background-image: none;
+    border-color: #fff;
+    color: #ffa928;
+}
+
+/* alert */
+#front #bloc_texte_accueil .text {
+	color: #FFF;
+	font-size: 30px;
+	font-weight: bold;
+	text-shadow: 2px 2px #000;
+}
+
+#front #bloc_texte_accueil .text .small {
+	font-size: 20px;
+}
+
+#front #avantages hr {
+	background: #aa0a76;
+}
+
+#front .partner-show-button {
+	background: #fc3903;
+}
+
+#front #ccm .slogan {
+	color: #FFF;
+	font-size: 30px;
+}
+
+#front #event h2 {
+	color: #FFF;
+	text-transform: uppercase;
+}
+
+#front #event hr.title {
+	background: #aa0a76;
+}
+
+#front #event .small {
+	color: #FFF;
+	font-size: 15px;
+}
+
+#front #event #partners_gallery_widget .partner {
+	background: #FFF;
+}
+
+#front #event #partners_gallery_widget .partner-name {
+	font-size: 20px;
+	font-weight: bold;
+	border-top: 1px solid #dedede;
+}
+
+#front #event #partners_gallery_widget .small {
+	font-size: 15px;
+	color: #333;
+	font-weight: normal;
+}
+
+
+#front #event #partners_gallery_widget .partner-show-button {
+	color: #FFF;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#front .page-title {
+	font-weight: bold;
+}
+
+#front .page-title hr {
+	background: #ffae38;
+}
+
+
+#front .table-noborder.table, #front .table-noborder.table tr, #front .table-noborder.table td{
+	border: none;
+}
+
+#front .table td {
+	border-bottom: 1px solid #eceeef;
+}
+
+#footer1 {
+	background: #0c151e;
+}
+
+#footer1 .icons a, #footer1 .icons a:hover, #footer1 .icons a:focus, #footer1 .icons a:active {
+	color: #fff;
+	font-size: 13px;
+}
+
+#footer2 h3 {
+	color: #dd840e;
+	font-size: 15px;
+}
+
+#footer2 a, #footer2 a:hover, #footer2 a:focus, #footer2 a:active {
+	color: #FFF;
+	font-size: 12px;
+}
+
+#footer2 a:hover {
+	color: #dd840e;
+}
+
+#footer2 {
+	background: #333333;
+}
+
+#footer2 .copyright a, #footer2 .copyright a:hover, #footer2 .copyright a:focus, #footer2 .copyright a:active {
+	color: #666666;
+	font-size: 13px;
+}
+
+#footer2 .social a, #footer2 .social a:focus, #footer2 .social a:active {
+	color: #666666;
+	font-size: 25px;
+}
+
+#footer2 .social a:hover {
+	color: #dd840e;
+}
+
+/*
+ Partie profil
+*/
+/* Général */
+
+	#front .underline-page-title {
+		border-bottom: 3px solid #ffa827;
+	}
+	/* header */
+	/* Corps */
+
+	#front .information-title hr {
+		border-bottom: 2px solid #41b5ce;
+	}
+
+	#front .button-edit {
+		font-size: 1.5em;
+		background-color: #fff;
+		border:2px solid#41b5ce;
+		color:#41b5ce;
+		border-radius: 10px;
+	}
+
+	#front .button-edit:hover {
+		background-color: #41b5ce;
+		border:2px solid #fff;
+		color:#fff;
+	}
+
+	/* Boutton déconnexion*/
+
+	.buttonDeconnect  {
+		background-color: #ffa521;
+		border-color:#fff;
+		color:#fff;
+	}
+
+	.buttonDeconnect:hover {
+		background-color: #fff;
+		border:2px solid #ffa521;
+		color:#ffa521;
+	}
+
+/* FAQ */
+
+#front .underline-faq{
+	background-color: #ffa521;
+}
+
+/* Events */
+.event {
+	-moz-box-shadow: 10px 10px 5px #656565;
+	-webkit-box-shadow: 10px 10px 5px #656565;
+	-o-box-shadow: 10px 10px 5px #656565;
+	box-shadow: 10px 10px 5px #656565;
+	border: 1px solid #c0c0c0;
+}
+
+/* Articles */
+#front .articles .article {
+	-moz-box-shadow: 10px 10px 5px #656565;
+	-webkit-box-shadow: 10px 10px 5px #656565;
+	-o-box-shadow: 10px 10px 5px #656565;
+	box-shadow: 10px 10px 5px #656565;
+	border: 1px solid #c0c0c0;
+}
+
+.card_title {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+
+/* Sous menu */
+
+ #front .sub-menu {
+	background-color: #41b5ce;
+	box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+#front .menu-item:hover .dropdown-menu{
+	background-color: #41b5ce;
+}
+
+#front .dropdown-menu>a:hover{
+	color: #41b5ce;
+	background-color: #fff;
+}
+
+#front .sub-menu> a {
+	color: #fff;
+}
+
+#front .sub-menu li a:hover, #front .sub-menu li a:focus{
+	color: #333333;
+	font-weight: bold;
+}
+
+#front .arrow-menu {
+	color: #41b5ce;
+}
+
+/* Menu connexion/déconnexion */
+
+#front .hidden-menu{
+	background-color: #41b5ce;
+}
+
+
+#front .hidden-menu-link {
+	color: #fff;
+}
+
+
+/* Messages */
+
+#front .conversation-header {
+    color: #000;
+    border-bottom: solid 1px #41b5ce;
+}
+
+#front  .conversation-header:hover {
+    background: #ececec;
+}
+
+#front .conversation-icon, #front .message-icon {
+	color: #41b5ce;
+}
+
+#front  .conversation-unread-count {
+    color: #000;
+    font-size: 1.2em;
+}
+
+
+#front .message.me {
+	background: #5bc0de;
+	color: #fff;
+}
+
+#front  .message.other {
+	background: #ffae38;
+	color: #000;
+}
+
+#front .message-remove {
+    font-size: 0.7rem;
+}
+
+#front  .message-sender {
+	font-size: 0.8rem;
+	font-weight: bold;
+}
+
+#front  .message.unread .message-sender {
+    font-weight: bold;
+}
+
+#front  .conversation-sender {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#front  .conversation-subject {
+    font-size: 1.2em;
+    font-weight: bold;
+}

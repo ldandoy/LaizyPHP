@@ -1,61 +1,40 @@
 <h1 class="page-title"><i class="fa fa-home fa-blue"></i> Cockpit de votre site</h1>
 
 <div class="row">
-	<div class="col-lg-3">
-		<div class="info-box">
-	        <span class="info-box-icon bg-aqua"><i class="fa fa-users"></i></span>
-	        <div class="info-box-content">
-	          <span class="info-box-text">Utilisateurs</span>
-	          <span class="info-box-number">10<small> membres</small></span>
-	        </div>
-	        <!-- /.info-box-content -->
-	    </div>
-	    <!-- /.info-box -->
-	</div>
+    <div class="col-lg-3">
+        <div class="info-box">
+            <span class="info-box-icon bg-aqua"><i class="fa fa-users"></i></span>
+            <div class="info-box-content">
+               <span class="info-box-text">Utilisateurs</span>
+               <span class="info-box-number">{{ userCount }}<small> membres</small></span>
+            </div>
+        </div>
+    </div>
 
-	<div class="col-lg-3">
-		<div class="info-box">
-	        <span class="info-box-icon bg-red"><i class="fa fa-product-hunt"></i></span>
-	        <div class="info-box-content">
-	          <span class="info-box-text">Produits</span>
-	          <span class="info-box-number">12<small> en ligne</small></span>
-	        </div>
-	        <!-- /.info-box-content -->
-	    </div>
-	    <!-- /.info-box -->
-	</div>
+    <div class="col-lg-3">
+        <div class="info-box">
+            <span class="info-box-icon bg-purple"><i class="fa fa-file-text"></i></span>
+            <div class="info-box-content">
+               <span class="info-box-text">Pages</span>
+               <span class="info-box-number">{{ pageCount }}<small> en ligne</small></span>
+            </div>
+        </div>
+    </div>
 
-	<div class="col-lg-3">
-		<div class="info-box">
-	        <span class="info-box-icon bg-green"><i class="fa fa-columns"></i></span>
-	        <div class="info-box-content">
-	          <span class="info-box-text">Articles</span>
-	          <span class="info-box-number">103<small> publiés</small></span>
-	        </div>
-	        <!-- /.info-box-content -->
-	    </div>
-	    <!-- /.info-box -->
-	</div>
-
-	<div class="col-lg-3">
-		<div class="info-box">
-	        <span class="info-box-icon bg-yellow"><i class="fa fa-picture-o"></i></span>
-	        <div class="info-box-content">
-	          <span class="info-box-text">Médias</span>
-	          <span class="info-box-number">10<small> uploadés</small></span>
-	        </div>
-	        <!-- /.info-box-content -->
-	    </div>
-	    <!-- /.info-box -->
-	</div>
+    <div class="col-lg-3">
+        <div class="info-box">
+            <span class="info-box-icon bg-brown"><i class="fa fa-picture-o"></i></span>
+            <div class="info-box-content">
+               <span class="info-box-text">Medias</span>
+               <span class="info-box-number">10<small> uploadés</small></span>
+            </div>
+        </div>
+    </div>
 </div>
 
-
-
-
 <div class="row">
-	<div class="col-lg-8">
-		<!-- TABLE: LATEST ORDERS -->
+    <div class="col-lg-8">
+        <!-- TABLE: LATEST ORDERS -->
           <div class="box box-info">
             <div class="box-header with-border">
               <h3 class="box-title">Latest Orders</h3>
@@ -152,7 +131,7 @@
      </div>
 
      <div class="col-lg-4">
-     	 <!-- PRODUCT LIST -->
+         <!-- PRODUCT LIST -->
           <div class="box box-danger">
             <div class="box-header with-border">
               <h3 class="box-title">Recently Added Products</h3>

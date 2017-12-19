@@ -1,7 +1,9 @@
 <?php
 
 define('DS', DIRECTORY_SEPARATOR);
-define('ROOT', dirname(dirname(__FILE__)));
+define('ROOT_DIR', dirname(dirname(__File__)));
+
+require_once ROOT_DIR.DS.'config'.DS.'config.php';
 
 $action = isset($argv[1]) ? strtolower($argv[1]) : '';
 $object = isset($argv[2]) ? strtolower($argv[2]) : '';
@@ -96,7 +98,7 @@ _log();
 
 function _log($str = '')
 {
-    echo $str."\n";
+    echo $str.LF;
 }
 
 function parseParams($params)
@@ -166,7 +168,7 @@ function generateController($name, $params)
 
         _log('=> Generate controller : '.$controllerName);
 
-        $content = file_get_contents(ROOT.'/bin/tpl/controller.tpl');
+        $content = file_get_contents(ROOT_DIR.'/bin/tpl/controller.tpl');
         $content = str_replace(
             array(
                 '{{namespace}}',
@@ -183,7 +185,7 @@ function generateController($name, $params)
             $content
         );
 
-        $file = ROOT.'/app/controllers'.$cockpitDir.'/'.$controllerName.'Controller.php';
+        $file = ROOT_DIR.'/app/controllers'.$cockpitDir.'/'.$controllerName.'Controller.php';
         writeFile($file, $content);
         _log('    -> /app/controllers'.$cockpitDir.'/'.$controllerName.'Controller.php');
     }
@@ -204,19 +206,19 @@ function generateModel($name, $params)
                 $c[1] = 'string';
             }
 
-            $permittedColumns .= str_repeat('    ', 2).'\''.$c[0].'\','."\n";
+            $permittedColumns .= str_repeat('    ', 2).'\''.$c[0].'\','.LF;
 
             $validations .=
-                str_repeat('    ', 4).'\''.$c[0].'\' => array('."\n".
-                    str_repeat('    ', 5).'\'type\' => \'required\','."\n".
-                    str_repeat('    ', 5).'\'error\' => \''.$c[0].' obligatoire\''."\n".
-                str_repeat('    ', 4).'),'."\n";
+                str_repeat('    ', 4).'\''.$c[0].'\' => array('.LF.
+                    str_repeat('    ', 5).'\'type\' => \'required\','.LF.
+                    str_repeat('    ', 5).'\'error\' => \''.$c[0].' obligatoire\''.LF.
+                str_repeat('    ', 4).'),'.LF;
         }
 
         $permittedColumns = trim($permittedColumns);
         $validations = trim($validations);
 
-        $content = file_get_contents(ROOT.'/bin/tpl/model.tpl');
+        $content = file_get_contents(ROOT_DIR.'/bin/tpl/model.tpl');
         $content = str_replace(
             array(
                 '{{modelName}}',
@@ -231,14 +233,14 @@ function generateModel($name, $params)
             $content
         );
 
-        $file = ROOT.'/app/models/'.$modelName.'.php';
+        $file = ROOT_DIR.'/app/models/'.$modelName.'.php';
         writeFile($file, $content);
         _log('    -> /app/models/'.$modelName.'.php');
 
         $table = plural($name);
         $sql = generateCreateTable($table, $params['columns']);
         $migrationId = date('YmdHis');
-        $file = ROOT.'/sql/migrations/'.$migrationId.'_create_'.$table.'.sql';
+        $file = ROOT_DIR.'/sql/migrations/'.$migrationId.'_create_'.$table.'.sql';
         writeFile($file, $sql);
         _log('    -> migration, create table "'.$table.'" : /sql/migrations/'.$migrationId.'_create_'.$table.'.sql');
     }
@@ -257,7 +259,7 @@ function generateView($name, $params)
 
         _log('=> Generate view : '.$viewName);
 
-        $content = file_get_contents(ROOT.'/bin/tpl/view_index.tpl');
+        $content = file_get_contents(ROOT_DIR.'/bin/tpl/view_index.tpl');
         $content = str_replace(
             array(
             ),
@@ -266,11 +268,11 @@ function generateView($name, $params)
             $content
         );
 
-        $file = ROOT.'/app/views'.$cockpitDir.'/'.$viewName.'/index.php';
+        $file = ROOT_DIR.'/app/views'.$cockpitDir.'/'.$viewName.'/index.php';
         writeFile($file, $content);
         _log('    -> /app/views'.$cockpitDir.'/'.$viewName.'/index.php');
 
-        $content = file_get_contents(ROOT.'/bin/tpl/view_edit.tpl');
+        $content = file_get_contents(ROOT_DIR.'/bin/tpl/view_edit.tpl');
         $content = str_replace(
             array(
             ),
@@ -279,7 +281,7 @@ function generateView($name, $params)
             $content
         );
 
-        $file = ROOT.'/app/views'.$cockpitDir.'/'.$viewName.'/edit.php';
+        $file = ROOT_DIR.'/app/views'.$cockpitDir.'/'.$viewName.'/edit.php';
         writeFile($file, $content);
         _log('    -> /app/views'.$cockpitDir.'/'.$viewName.'/edit.php');
     }
@@ -288,8 +290,8 @@ function generateView($name, $params)
 function generateCreateTable($table, $columns)
 {
     $sql =
-        'CREATE TABLE `'.$table.'` ('."\n".
-        '    `id` int(11) NOT NULL AUTO_INCREMENT,'."\n";
+        'CREATE TABLE `'.$table.'` ('.LF.
+        '    `id` int(11) NOT NULL AUTO_INCREMENT,'.LF;
 
     foreach ($columns as $column) {
         $c = explode(':', $column);
@@ -350,14 +352,14 @@ function generateCreateTable($table, $columns)
         }
 
         $sql .=
-            '    `'.$name.'` '.$dateType.$notNull.$default.','."\n";
+            '    `'.$name.'` '.$dateType.$notNull.$default.','.LF;
     }
 
     $sql .=
-        '    `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,'."\n".
-        '    `updated_at` datetime,'."\n".
-        '    PRIMARY KEY (`id`)'."\n".
-        ') ENGINE=InnoDB;'."\n";
+        '    `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,'.LF.
+        '    `updated_at` datetime,'.LF.
+        '    PRIMARY KEY (`id`)'.LF.
+        ') ENGINE=InnoDB;'.LF;
 
     return $sql;
 }
@@ -366,20 +368,14 @@ function dbMigrate()
 {
     _log('=> Execute migrations');
 
-    $config = parse_ini_file(ROOT.'/config/config.ini', true);
-    $host = $config['DB']['URL'];
-    $user = $config['DB']['USER'];
-    $password = $config['DB']['PASSWORD'];
-    $dbName = $config['DB']['DB'];
-
     try {
-        $db = new PDO('mysql:dbname='.$dbName.';host='.$host, $user, $password);
+        $db = new PDO('mysql:dbname='.DB_NAME.';host='.DB_HOST, DB_USER, DB_PASSWORD);
         $res = $db->query('select max(id) lastMigration from migrations');
         if ($res !== false) {
             $res = $res->fetchAll(PDO::FETCH_OBJ);
             $lastMigration = $res[0]->lastMigration;
 
-            $dir = ROOT.'/sql/migrations';
+            $dir = ROOT_DIR.'/sql/migrations';
 
             $files = array();
             if ($dh = opendir($dir)) {

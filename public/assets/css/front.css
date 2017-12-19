@@ -1,12 +1,21 @@
 body#front {
-	background: #FEFEFE;
-	margin-top: 60px;
+	margin-top: 135px;
 }
 
-#front .navbar-brand {
+#front .navbar {
+	height: 135px;
+	margin: 0;
 	padding: 0;
 }
 
-#front .navbar-brand > img {
-	height: 50px;
+.menu-item > .nav-link {
+	height: 4rem;
+}
+
+.menu-item.dropdown {
+}
+
+.menu-item-icon {
+	width: 3rem;
+	height: 3rem;
 }

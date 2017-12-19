@@ -8,7 +8,6 @@
         "overconsulting/lazyphp-catalog": "dev-master",
         "overconsulting/lazyphp-media": "dev-master",
         "overconsulting/LazyPHP-cms": "dev-master",
-        "overconsulting/lazyphp-widget": "dev-master",
-	"overconsulting/lazyphp-multi-site": "dev-master"
+        "overconsulting/lazyphp-widget": "dev-master"
     }
 }
