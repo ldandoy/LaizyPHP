@@ -27,12 +27,7 @@ class UsersauthController extends AuthController
     public function loginAction()
     {
         $this->afterLoginPage = $this->site->home_page;
-
-        $this->loginPage = 'usersauth_login';
-
         parent::loginAction();
-
-        $this->params['imageLogin'] = $this->site->logo_access_user;
 
         $this->render('auth::login', $this->params);
     }

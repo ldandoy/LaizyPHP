@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset=utf-8>
-		<link rel="icon" href="" type="image/png" />
+		<link rel="icon" href="/assets/images/logo-lazyphp-32px.png" type="image/png" />
 		<title><?php echo isset($params['title']) ? $params['title'] : core\Config::$config['GENERAL']['title'] ?></title>
 		<?php $this->loadCss(); ?>
 		<?php $this->loadJs(); ?>

@@ -1,146 +1,105 @@
--- MySQL dump 10.13  Distrib 5.6.30, for Linux (x86_64)
+-- phpMyAdmin SQL Dump
+-- version 4.8.0.1
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost    Database: framework
--- ------------------------------------------------------
--- Server version	5.6.30
+-- Hôte : localhost
+-- Généré le :  sam. 19 jan. 2019 à 14:31
+-- Version du serveur :  10.1.32-MariaDB
+-- Version de PHP :  5.6.36
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Table structure for table `articlecategories`
+-- Base de données :  `framework`
 --
 
-DROP TABLE IF EXISTS `articlecategories`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `articlecategories`
+--
+
 CREATE TABLE `articlecategories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `site_id` int(11) DEFAULT NULL,
   `code` varchar(255) NOT NULL,
   `label` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `site_id` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `articlecategories`
+-- Déchargement des données de la table `articlecategories`
 --
 
-LOCK TABLES `articlecategories` WRITE;
-/*!40000 ALTER TABLE `articlecategories` DISABLE KEYS */;
-/*!40000 ALTER TABLE `articlecategories` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `articlecategories` (`id`, `site_id`, `code`, `label`, `created_at`, `updated_at`) VALUES
+(2, 2, 'cat_a', 'Actualité', '2017-08-01 16:43:48', '2018-02-06 11:43:53'),
+(4, 7, 'news', 'News', '2017-12-07 16:03:23', '2017-12-07 16:03:23');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `articles`
+-- Structure de la table `articles`
 --
 
-DROP TABLE IF EXISTS `articles`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `articles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `site_id` int(11) DEFAULT NULL,
-  `articlecategory_id` int(11) DEFAULT NULL,
+  `article_id` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
   `title` varchar(255) NOT NULL,
   `content` text,
-  `user_id` int(11) DEFAULT NULL,
   `media_id` int(11) DEFAULT NULL,
+  `articlecategory_id` int(11) DEFAULT NULL,
+  `status` enum('draft','pending','published','tomodify','deleted') DEFAULT NULL,
   `active` int(11) NOT NULL DEFAULT '0',
+  `hooked` text,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`),
-  KEY `site_id` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `articles`
+-- Structure de la table `galleries`
 --
 
-LOCK TABLES `articles` WRITE;
-/*!40000 ALTER TABLE `articles` DISABLE KEYS */;
-/*!40000 ALTER TABLE `articles` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `categories`
---
-
-DROP TABLE IF EXISTS `categories`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `categories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `parent` int(11) DEFAULT NULL,
-  `name` varchar(255) NOT NULL,
-  `description` text,
-  `active` int(11) NOT NULL DEFAULT '1',
-  `position` int(11) NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `categories`
---
-
-LOCK TABLES `categories` WRITE;
-/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-/*!40000 ALTER TABLE `categories` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `galleries`
---
-
-DROP TABLE IF EXISTS `galleries`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `galleries` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `site_id` int(11) DEFAULT NULL,
   `title` varchar(255) NOT NULL,
   `description` text,
+  `in_phototheque` int(11) NOT NULL DEFAULT '0',
+  `une` int(11) NOT NULL DEFAULT '0',
+  `media_id` int(11) DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `galleries`
+-- Déchargement des données de la table `galleries`
 --
 
-LOCK TABLES `galleries` WRITE;
-/*!40000 ALTER TABLE `galleries` DISABLE KEYS */;
-/*!40000 ALTER TABLE `galleries` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `galleries` (`id`, `site_id`, `title`, `description`, `in_phototheque`, `une`, `media_id`, `created_at`, `updated_at`) VALUES
+(1, NULL, 'Test de gallerie', '', 0, 0, NULL, '2017-12-11 14:59:06', '2017-12-11 14:59:26');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `galleries_medias`
+-- Structure de la table `galleries_medias`
 --
 
-DROP TABLE IF EXISTS `galleries_medias`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `galleries_medias` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `gallery_id` int(11) NOT NULL,
   `media_id` int(11) NOT NULL,
   `description` varchar(255) DEFAULT NULL,
@@ -149,115 +108,91 @@ CREATE TABLE `galleries_medias` (
   `active` int(11) NOT NULL DEFAULT '1',
   `url` varchar(255) DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_galleries_medias_gallery_idx` (`gallery_id`),
-  KEY `fk_galleries_medias_media_idx` (`media_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `galleries_medias`
+-- Structure de la table `groups`
 --
 
-LOCK TABLES `galleries_medias` WRITE;
-/*!40000 ALTER TABLE `galleries_medias` DISABLE KEYS */;
-/*!40000 ALTER TABLE `galleries_medias` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `groups`
---
-
-DROP TABLE IF EXISTS `groups`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `groups` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `code` varchar(255) NOT NULL,
   `label` varchar(255) NOT NULL,
   `cockpit` int(11) NOT NULL DEFAULT '0',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `groups`
+-- Déchargement des données de la table `groups`
 --
 
-LOCK TABLES `groups` WRITE;
-/*!40000 ALTER TABLE `groups` DISABLE KEYS */;
-INSERT INTO `groups` VALUES (1,'administrators','Administrateurs',1,'2017-07-05 14:46:15','2017-07-05 14:46:15'),(2,'user','Utilisateurs',0,'2017-07-05 14:46:15','2017-07-05 14:46:15');
-/*!40000 ALTER TABLE `groups` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `groups` (`id`, `code`, `label`, `cockpit`, `created_at`, `updated_at`) VALUES
+(1, 'administrators', 'Administrateurs', 1, '2017-07-05 14:46:15', '2017-07-05 14:46:15'),
+(3, 'users', 'Utilisateurs', 0, '2017-07-05 14:46:15', '2017-07-05 14:46:15'),
+(4, 'writers_ce', 'Rédacteurs', 1, '2017-12-07 11:31:12', '2017-12-07 11:33:01');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `mediacategories`
+-- Structure de la table `mediacategories`
 --
 
-DROP TABLE IF EXISTS `mediacategories`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mediacategories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `site_id` int(11) DEFAULT NULL,
   `code` varchar(255) NOT NULL,
   `label` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `site_id` (`site_id`)
+  `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `mediacategories`
+-- Déchargement des données de la table `mediacategories`
 --
 
-LOCK TABLES `mediacategories` WRITE;
-/*!40000 ALTER TABLE `mediacategories` DISABLE KEYS */;
-/*!40000 ALTER TABLE `mediacategories` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `mediacategories` (`id`, `site_id`, `code`, `label`, `created_at`, `updated_at`) VALUES
+(1, 1, 'product', 'Produit', '2017-04-22 14:42:50', '2017-04-22 14:42:50'),
+(2, 1, 'user', 'Utilisateur', '2017-04-22 14:43:00', '2017-04-22 14:43:00'),
+(3, 1, 'article', 'Article', '2017-04-22 15:45:17', '2017-04-22 16:06:55'),
+(4, 1, 'menuitem', 'Menu Item', '2017-05-03 10:28:30', '2017-05-03 10:28:30'),
+(5, 1, 'page', 'Page', '2017-07-25 13:22:58', '2017-07-25 13:22:58');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `mediaformats`
+-- Structure de la table `mediaformats`
 --
 
-DROP TABLE IF EXISTS `mediaformats`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mediaformats` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `code` varchar(255) NOT NULL,
   `label` varchar(255) NOT NULL,
   `width` int(11) NOT NULL,
   `height` int(11) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `mediaformats`
+-- Déchargement des données de la table `mediaformats`
 --
 
-LOCK TABLES `mediaformats` WRITE;
-/*!40000 ALTER TABLE `mediaformats` DISABLE KEYS */;
-/*!40000 ALTER TABLE `mediaformats` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `mediaformats` (`id`, `code`, `label`, `width`, `height`, `created_at`, `updated_at`) VALUES
+(1, 'icon_menu', 'Icones Menu', 64, 64, '2017-07-25 12:36:42', '2017-07-25 12:37:42'),
+(2, 'media_thumbnail', 'Vignette media', 50, 50, '2017-07-25 12:36:42', '2017-07-25 12:37:42');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `medias`
+-- Structure de la table `medias`
 --
 
-DROP TABLE IF EXISTS `medias`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `medias` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `site_id` int(11) DEFAULT NULL,
   `mediacategory_id` int(11) DEFAULT NULL,
   `type` enum('image','video','audio') NOT NULL DEFAULT 'image',
@@ -268,353 +203,203 @@ CREATE TABLE `medias` (
   `audio` varchar(255) DEFAULT NULL,
   `url` varchar(255) DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `mediacategory_id` (`mediacategory_id`),
-  KEY `site_id` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `medias`
+-- Structure de la table `menuitems`
 --
 
-LOCK TABLES `medias` WRITE;
-/*!40000 ALTER TABLE `medias` DISABLE KEYS */;
-INSERT INTO `medias` VALUES (1,1,NULL,'image','20171123161644',NULL,'/uploads/media/1/1_image.jpg','','',NULL,'2017-11-23 16:16:44','2017-11-23 16:16:44');
-/*!40000 ALTER TABLE `medias` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `menuitems`
---
-
-DROP TABLE IF EXISTS `menuitems`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `menuitems` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `menu_id` int(11) NOT NULL,
   `parent` int(11) DEFAULT NULL,
   `label` varchar(255) NOT NULL,
   `position` int(11) NOT NULL DEFAULT '0',
-  `active` int(11) NOT NULL DEFAULT '1',
   `link` varchar(255) DEFAULT NULL,
   `media_id` int(11) DEFAULT NULL,
   `new_window` int(11) NOT NULL DEFAULT '0',
-  `show_icon` int(11) NOT NULL DEFAULT '1',
   `show_label` int(11) NOT NULL DEFAULT '1',
+  `show_icon` int(11) NOT NULL DEFAULT '1',
   `groups` text,
+  `active` int(11) NOT NULL DEFAULT '1',
+  `connected` tinyint(1) NOT NULL DEFAULT '1',
+  `notconnected` tinyint(1) NOT NULL DEFAULT '0',
+  `important` tinyint(1) NOT NULL DEFAULT '0',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `menu_id` (`menu_id`),
-  KEY `media_id` (`media_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `menuitems`
+-- Structure de la table `menus`
 --
 
-LOCK TABLES `menuitems` WRITE;
-/*!40000 ALTER TABLE `menuitems` DISABLE KEYS */;
-INSERT INTO `menuitems` VALUES (1,1,NULL,'Test',0,1,'/test/index',1,1,1,1,NULL,'2017-11-23 06:57:27','2017-11-23 16:49:51'),(2,1,NULL,'AAAA',0,1,'',1,0,1,1,NULL,'2017-11-23 07:06:26','2017-11-23 16:50:05'),(3,1,2,'XXXX',0,1,'',1,0,1,1,'','2017-11-23 07:06:38','2017-11-23 07:06:38'),(4,1,2,'YYYY',0,1,'',NULL,0,1,1,NULL,'2017-11-23 07:06:49','2017-11-23 17:11:13'),(5,1,NULL,'OOOOUUUU',0,1,'/cockpit',NULL,0,1,1,'1','2017-11-23 15:37:02','2017-11-23 15:37:02'),(6,1,NULL,'wwww',0,1,'',NULL,0,1,1,'1','2017-11-23 17:16:51','2017-11-23 17:21:59');
-/*!40000 ALTER TABLE `menuitems` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `menus`
---
-
-DROP TABLE IF EXISTS `menus`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `menus` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `site_id` int(11) DEFAULT NULL,
   `label` varchar(255) NOT NULL,
   `active` int(11) NOT NULL,
   `position` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `site_id` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `menus`
---
-
-LOCK TABLES `menus` WRITE;
-/*!40000 ALTER TABLE `menus` DISABLE KEYS */;
-INSERT INTO `menus` VALUES (1,1,'Principal',1,'main','2017-11-23 06:56:53','2017-11-23 06:56:53');
-/*!40000 ALTER TABLE `menus` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `migrations`
---
-
-DROP TABLE IF EXISTS `migrations`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `migrations` (
-  `id` varchar(64) NOT NULL,
-  PRIMARY KEY (`id`)
+  `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `migrations`
+-- Déchargement des données de la table `menus`
 --
 
-LOCK TABLES `migrations` WRITE;
-/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `menus` (`id`, `site_id`, `label`, `active`, `position`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Menu Principal', 1, 'main', '2017-04-03 16:59:51', '2017-07-24 16:12:42'),
+(2, 1, 'Menu Footer 2', 1, 'footer2', '2017-07-24 16:31:28', '2017-07-24 16:31:28'),
+(3, 1, 'Menu Footer 1', 1, 'footer1', '2017-07-24 16:23:00', '2017-07-24 16:23:00');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `pages`
+-- Structure de la table `pages`
 --
 
-DROP TABLE IF EXISTS `pages`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pages` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `site_id` int(11) DEFAULT NULL,
+  `page_id` int(11) DEFAULT NULL,
+  `user_id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
-  `content` text NOT NULL,
+  `content` longtext NOT NULL,
   `layout` varchar(255) DEFAULT NULL,
   `show_page_title` int(11) NOT NULL DEFAULT '1',
   `active` tinyint(1) NOT NULL,
+  `status` enum('draft','pending','published','tomodify','deleted') NOT NULL,
+  `meta_description` text,
+  `meta_keywords` varchar(255) DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `site_id` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `pages`
---
-
-LOCK TABLES `pages` WRITE;
-/*!40000 ALTER TABLE `pages` DISABLE KEYS */;
-/*!40000 ALTER TABLE `pages` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `pollanswers`
---
-
-DROP TABLE IF EXISTS `pollanswers`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `pollanswers` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `question_id` int(11) NOT NULL,
-  `answer` int(11) NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `pollanswers`
+-- Déchargement des données de la table `pages`
 --
 
-LOCK TABLES `pollanswers` WRITE;
-/*!40000 ALTER TABLE `pollanswers` DISABLE KEYS */;
-/*!40000 ALTER TABLE `pollanswers` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `pages` (`id`, `site_id`, `page_id`, `user_id`, `title`, `content`, `layout`, `show_page_title`, `active`, `status`, `meta_description`, `meta_keywords`, `created_at`, `updated_at`) VALUES
+(1, 1, NULL, 1, 'Accueil', '{\"title\":\"Accueil\",\"active\":\"1\",\"sections\":[{\"blockType\":\"section\",\"fullwidth\":true,\"attributes\":{},\"styles\":{},\"rows\":[{\"blockType\":\"row\",\"attributes\":{},\"styles\":{},\"cols\":[{\"blockType\":\"row\",\"attributes\":{},\"styles\":{},\"content\":\"%3Ch1%20style%3D%22text-align%3A%20center%3B%22%3EBienvenue%20sur%20le%20Bureau%20virtuel%3C%2Fh1%3E\",\"widget\":null}]}]}],\"dialog\":null}', '', 1, 1, 'published', NULL, NULL, '2017-04-06 15:50:15', '2017-12-07 11:28:13');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `pollquestions`
+-- Structure de la table `productcategories`
 --
 
-DROP TABLE IF EXISTS `pollquestions`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `pollquestions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `poll_id` int(11) NOT NULL,
-  `question` varchar(255) NOT NULL,
-  `multiple_answer` int(11) NOT NULL DEFAULT '0',
-  `answers` text NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `pollquestions`
---
-
-LOCK TABLES `pollquestions` WRITE;
-/*!40000 ALTER TABLE `pollquestions` DISABLE KEYS */;
-/*!40000 ALTER TABLE `pollquestions` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `pollresults`
---
-
-DROP TABLE IF EXISTS `pollresults`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `pollresults` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `poll_id` int(11) NOT NULL,
-  `question_id` int(11) NOT NULL,
-  `answer` text NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `pollresults`
---
-
-LOCK TABLES `pollresults` WRITE;
-/*!40000 ALTER TABLE `pollresults` DISABLE KEYS */;
-/*!40000 ALTER TABLE `pollresults` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `polls`
---
-
-DROP TABLE IF EXISTS `polls`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `polls` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `productcategories` (
+  `id` int(11) NOT NULL,
   `site_id` int(11) DEFAULT NULL,
   `label` varchar(255) NOT NULL,
-  `date_start` datetime NOT NULL,
-  `date_end` datetime NOT NULL,
-  `active` int(11) NOT NULL DEFAULT '1',
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `polls`
---
-
-LOCK TABLES `polls` WRITE;
-/*!40000 ALTER TABLE `polls` DISABLE KEYS */;
-INSERT INTO `polls` VALUES (4,2,'Sondage 4','2017-08-20 12:00:00','2017-09-15 12:00:00',1,'2017-09-13 10:18:03','2017-09-15 11:09:17');
-/*!40000 ALTER TABLE `polls` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `products`
---
-
-DROP TABLE IF EXISTS `products`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `products` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `category_id` int(11) DEFAULT NULL,
-  `name` varchar(255) NOT NULL,
   `description` text,
-  `price` decimal(19,4) NOT NULL DEFAULT '0.0000',
-  `quantity` int(11) NOT NULL,
+  `parent` int(11) DEFAULT NULL,
+  `position` int(11) NOT NULL DEFAULT '0',
   `active` int(11) NOT NULL DEFAULT '1',
-  `media_id` int(11) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `media_id` (`media_id`)
+  `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `products`
+-- Structure de la table `products`
 --
 
-LOCK TABLES `products` WRITE;
-/*!40000 ALTER TABLE `products` DISABLE KEYS */;
-/*!40000 ALTER TABLE `products` ENABLE KEYS */;
-UNLOCK TABLES;
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL,
+  `site_id` int(11) DEFAULT NULL,
+  `productcategory_id` int(11) DEFAULT NULL,
+  `label` varchar(255) NOT NULL,
+  `description` text,
+  `price` decimal(19,4) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `media_id` int(11) DEFAULT NULL,
+  `active` int(11) NOT NULL DEFAULT '1',
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `roleassignments`
+-- Structure de la table `roleassignments`
 --
 
-DROP TABLE IF EXISTS `roleassignments`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `roleassignments` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `role_id` int(11) NOT NULL,
   `group_id` int(11) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `roleassignments`
+-- Déchargement des données de la table `roleassignments`
 --
 
-LOCK TABLES `roleassignments` WRITE;
-/*!40000 ALTER TABLE `roleassignments` DISABLE KEYS */;
-INSERT INTO `roleassignments` VALUES (1,1,1,NULL,'2017-07-24 14:59:00','2017-07-24 14:59:00');
-/*!40000 ALTER TABLE `roleassignments` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `roleassignments` (`id`, `role_id`, `group_id`, `user_id`, `created_at`, `updated_at`) VALUES
+(12, 1, 1, NULL, '2017-12-07 11:31:42', '2017-12-07 11:31:42'),
+(13, 2, 1, NULL, '2017-12-07 11:31:42', '2017-12-07 11:31:42'),
+(14, 3, 1, NULL, '2017-12-07 11:31:42', '2017-12-07 11:31:42'),
+(15, 4, 1, NULL, '2017-12-07 11:31:42', '2017-12-07 11:31:42'),
+(16, 1, 2, NULL, '2017-12-07 11:31:42', '2017-12-07 11:31:42'),
+(17, 2, 2, NULL, '2017-12-07 11:31:42', '2017-12-07 11:31:42'),
+(18, 3, 2, NULL, '2017-12-07 11:31:42', '2017-12-07 11:31:42'),
+(19, 4, 2, NULL, '2017-12-07 11:31:42', '2017-12-07 11:31:42'),
+(20, 1, 4, NULL, '2017-12-07 11:31:42', '2017-12-07 11:31:42'),
+(21, 3, 4, NULL, '2017-12-07 11:31:42', '2017-12-07 11:31:42'),
+(22, 1, NULL, 8, '2017-12-07 11:31:42', '2017-12-07 11:31:42'),
+(23, 2, NULL, 8, '2017-12-07 11:31:42', '2017-12-07 11:31:42'),
+(24, 3, NULL, 8, '2017-12-07 11:31:42', '2017-12-07 11:31:42'),
+(25, 4, NULL, 8, '2017-12-07 11:31:42', '2017-12-07 11:31:42'),
+(26, 1, NULL, 9, '2017-12-07 11:31:42', '2017-12-07 11:31:42'),
+(27, 2, NULL, 9, '2017-12-07 11:31:42', '2017-12-07 11:31:42'),
+(28, 3, NULL, 9, '2017-12-07 11:31:42', '2017-12-07 11:31:42'),
+(29, 4, NULL, 9, '2017-12-07 11:31:42', '2017-12-07 11:31:42'),
+(30, 1, NULL, 10, '2017-12-07 11:31:42', '2017-12-07 11:31:42'),
+(31, 2, NULL, 10, '2017-12-07 11:31:42', '2017-12-07 11:31:42'),
+(32, 3, NULL, 10, '2017-12-07 11:31:42', '2017-12-07 11:31:42'),
+(33, 4, NULL, 10, '2017-12-07 11:31:42', '2017-12-07 11:31:42');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `roles`
+-- Structure de la table `roles`
 --
 
-DROP TABLE IF EXISTS `roles`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `roles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `code` varchar(255) NOT NULL,
   `label` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `roles`
+-- Déchargement des données de la table `roles`
 --
 
-LOCK TABLES `roles` WRITE;
-/*!40000 ALTER TABLE `roles` DISABLE KEYS */;
-INSERT INTO `roles` VALUES (1,'cms','CMS','2017-07-05 12:46:56','2017-07-05 12:46:56');
-/*!40000 ALTER TABLE `roles` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `roles` (`id`, `code`, `label`, `created_at`, `updated_at`) VALUES
+(1, 'cms_page_write', 'Créer / Modifier pages', '2016-12-31 23:00:00', '2016-12-31 23:00:00'),
+(2, 'cms_page_publish', 'Publier page', '2016-12-31 23:00:00', '2016-12-31 23:00:00'),
+(3, 'cms_article_write', 'Créer / Modifier articles page', '2016-12-31 23:00:00', '2016-12-31 23:00:00'),
+(4, 'cms_article_publish', 'Publier article', '2016-12-31 23:00:00', '2016-12-31 23:00:00');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `sites`
+-- Structure de la table `sites`
 --
 
-DROP TABLE IF EXISTS `sites`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sites` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `label` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `host` varchar(255) NOT NULL,
@@ -622,97 +407,31 @@ CREATE TABLE `sites` (
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
   `active` int(11) NOT NULL DEFAULT '1',
-  `logo_access_user` varchar(255) DEFAULT NULL,
-  `logo_access_admin` varchar(255) DEFAULT NULL,
   `home_page` varchar(255) NOT NULL,
   `facebook` varchar(255) DEFAULT NULL,
   `twitter` varchar(255) DEFAULT NULL,
   `googleplus` varchar(255) DEFAULT NULL,
   `pinterest` varchar(255) DEFAULT NULL,
-  `theme` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `sites`
---
-
-LOCK TABLES `sites` WRITE;
-/*!40000 ALTER TABLE `sites` DISABLE KEYS */;
-INSERT INTO `sites` VALUES (1,'LazyPHP','LazyPHP','lazyphp.fixe','','2017-04-16 12:27:46','2017-04-21 15:15:47',1,'',NULL,'','','','','','');
-/*!40000 ALTER TABLE `sites` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `sliders`
---
-
-DROP TABLE IF EXISTS `sliders`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `sliders` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` int(11) NOT NULL,
-  `description` text NOT NULL,
-  `delay` int(11) NOT NULL,
-  `duration` int(11) NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `theme` varchar(255) DEFAULT NULL,
+  `signup_opt` int(11) NOT NULL DEFAULT '0',
+  `maintenance` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `sliders`
+-- Déchargement des données de la table `sites`
 --
 
-LOCK TABLES `sliders` WRITE;
-/*!40000 ALTER TABLE `sliders` DISABLE KEYS */;
-/*!40000 ALTER TABLE `sliders` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `sites` (`id`, `label`, `description`, `host`, `brand_logo`, `created_at`, `updated_at`, `active`, `home_page`, `facebook`, `twitter`, `googleplus`, `pinterest`, `theme`, `signup_opt`, `maintenance`) VALUES
+(1, 'LazyPHP', 'LazyPHP', 'lazyphp.fixe', '/assets/images/logo-lazyphp-150px.png', '2018-04-20 10:44:52', NULL, 1, '/pages/1', NULL, NULL, NULL, NULL, '', 1, 0);
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `sliders_medias`
+-- Structure de la table `users`
 --
 
-DROP TABLE IF EXISTS `sliders_medias`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `sliders_medias` (
-  `id` int(11) NOT NULL,
-  `slider_id` int(11) NOT NULL,
-  `media_id` int(11) NOT NULL,
-  `title` varchar(255) DEFAULT NULL,
-  `description` text,
-  `position` int(11) NOT NULL DEFAULT '0',
-  `active` int(11) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`id`),
-  KEY `fk_sliders_medias_slider_idx` (`slider_id`),
-  KEY `fk_sliders_medias_media_idx` (`media_id`),
-  CONSTRAINT `fk_sliders_medias_media` FOREIGN KEY (`media_id`) REFERENCES `medias` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_sliders_medias_slider` FOREIGN KEY (`slider_id`) REFERENCES `sliders` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `sliders_medias`
---
-
-LOCK TABLES `sliders_medias` WRITE;
-/*!40000 ALTER TABLE `sliders_medias` DISABLE KEYS */;
-/*!40000 ALTER TABLE `sliders_medias` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `users`
---
-
-DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `site_id` int(11) DEFAULT NULL,
   `lastname` varchar(255) NOT NULL,
   `firstname` varchar(255) DEFAULT NULL,
@@ -724,58 +443,243 @@ CREATE TABLE `users` (
   `media_id` int(11) DEFAULT NULL,
   `active` int(11) NOT NULL DEFAULT '1',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `media_id` (`media_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
+-- Déchargement des données de la table `users`
 --
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,NULL,'ADMIN','Admin','admin@test.com','$6$199337193b7024b3$TRIFwsRF9laQy/hxaZip20EzS2IAUwHyH66aiDq7k5QCE4j6BAdo7jK0gIzC17suC508WVLgvNRssDX9Ci2VF1','VUFMUE8OW386EPX979C4LPS709RL0E','2017-04-01 17:45:35',1,NULL,1,'2017-04-01 17:45:35','2017-07-12 12:30:11');
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `users` (`id`, `site_id`, `lastname`, `firstname`, `email`, `password`, `email_verification_code`, `email_verification_date`, `group_id`, `media_id`, `active`, `created_at`, `updated_at`) VALUES
+(1, NULL, 'Admin', 'ADMIN', 'admin@test.com', '$6$199337193b7024b3$TRIFwsRF9laQy/hxaZip20EzS2IAUwHyH66aiDq7k5QCE4j6BAdo7jK0gIzC17suC508WVLgvNRssDX9Ci2VF1', NULL, NULL, 1, NULL, 1, '2018-05-28 13:38:58', NULL),
+(2, 1, 'LOLO', 'lolo', 'ldandoy@gmail.com', '$6$199337193b7024b3$TRIFwsRF9laQy/hxaZip20EzS2IAUwHyH66aiDq7k5QCE4j6BAdo7jK0gIzC17suC508WVLgvNRssDX9Ci2VF1', 'SYXUX3YQZEU02JRLODQSN21EBCCJ34', '2018-04-06 10:32:27', 3, NULL, 1, '2018-04-06 10:32:27', '2018-04-06 10:32:27');
 
 --
--- Table structure for table `widgets`
+-- Index pour les tables déchargées
 --
 
-DROP TABLE IF EXISTS `widgets`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `widgets` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `label` varchar(255) NOT NULL,
-  `type` varchar(255) NOT NULL,
-  `app_widget` int(11) NOT NULL DEFAULT '0',
-  `params` text,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+--
+-- Index pour la table `articlecategories`
+--
+ALTER TABLE `articlecategories`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `site_id` (`site_id`);
 
 --
--- Dumping data for table `widgets`
+-- Index pour la table `articles`
+--
+ALTER TABLE `articles`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `site_id` (`site_id`);
+
+--
+-- Index pour la table `galleries`
+--
+ALTER TABLE `galleries`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `galleries_medias`
+--
+ALTER TABLE `galleries_medias`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_galleries_medias_gallery_idx` (`gallery_id`),
+  ADD KEY `fk_galleries_medias_media_idx` (`media_id`);
+
+--
+-- Index pour la table `groups`
+--
+ALTER TABLE `groups`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `mediacategories`
+--
+ALTER TABLE `mediacategories`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `site_id` (`site_id`);
+
+--
+-- Index pour la table `mediaformats`
+--
+ALTER TABLE `mediaformats`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `medias`
+--
+ALTER TABLE `medias`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `mediacategory_id` (`mediacategory_id`),
+  ADD KEY `site_id` (`site_id`);
+
+--
+-- Index pour la table `menuitems`
+--
+ALTER TABLE `menuitems`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `menu_id` (`menu_id`),
+  ADD KEY `media_id` (`media_id`);
+
+--
+-- Index pour la table `menus`
+--
+ALTER TABLE `menus`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `site_id` (`site_id`);
+
+--
+-- Index pour la table `pages`
+--
+ALTER TABLE `pages`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `site_id` (`site_id`);
+
+--
+-- Index pour la table `productcategories`
+--
+ALTER TABLE `productcategories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `roleassignments`
+--
+ALTER TABLE `roleassignments`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `sites`
+--
+ALTER TABLE `sites`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `media_id` (`media_id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
-LOCK TABLES `widgets` WRITE;
-/*!40000 ALTER TABLE `widgets` DISABLE KEYS */;
-INSERT INTO `widgets` VALUES (1,'Gallerie','gallery',0,'id','2017-05-10 12:00:25','2017-05-10 12:00:25'),(2,'Carrousel','slider',0,'id','2017-05-10 12:01:11','2017-05-10 12:01:11'),(3,'Sondage','poll',0,'id','2017-09-13 12:00:00','2017-09-13 12:00:00');
-/*!40000 ALTER TABLE `widgets` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+--
+-- AUTO_INCREMENT pour la table `articlecategories`
+--
+ALTER TABLE `articlecategories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+--
+-- AUTO_INCREMENT pour la table `articles`
+--
+ALTER TABLE `articles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `galleries`
+--
+ALTER TABLE `galleries`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pour la table `galleries_medias`
+--
+ALTER TABLE `galleries_medias`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `groups`
+--
+ALTER TABLE `groups`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT pour la table `mediacategories`
+--
+ALTER TABLE `mediacategories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT pour la table `mediaformats`
+--
+ALTER TABLE `mediaformats`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT pour la table `medias`
+--
+ALTER TABLE `medias`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `menuitems`
+--
+ALTER TABLE `menuitems`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `menus`
+--
+ALTER TABLE `menus`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT pour la table `pages`
+--
+ALTER TABLE `pages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pour la table `productcategories`
+--
+ALTER TABLE `productcategories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `roleassignments`
+--
+ALTER TABLE `roleassignments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT pour la table `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT pour la table `sites`
+--
+ALTER TABLE `sites`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pour la table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2017-11-23 17:27:11

@@ -89,8 +89,8 @@
                         <div>
                             {% link url="cockpit_media_medias" content=" Medias <span class='pull-right'><span class="caret"></span></span>" icon="picture-o text-brown" class="ss-menu" %}
                             <div class="nav-ss-menu">
-                                {% link url="cockpit_media_mediacategories" content=" Catégories de media <span class='pull-right'><?php echo Media\models\MediaCategory::count(); ?></span>" icon="object-group text-brown" %}
-                                {% link url="cockpit_media_mediaformats" content=" Formats de media <span class='pull-right'><?php echo Media\models\MediaFormat::count(); ?></span>" icon="object-group text-brown" %}
+                                {% link url="cockpit_media_mediacategories" content=" Catégories <span class='pull-right'><?php echo Media\models\MediaCategory::count(); ?></span>" icon="object-group text-brown" %}
+                                {% link url="cockpit_media_mediaformats" content=" Formats <span class='pull-right'><?php echo Media\models\MediaFormat::count(); ?></span>" icon="object-group text-brown" %}
                                 {% link url="cockpit_media_medias" content=" Medias <span class='pull-right'><?php echo Media\models\Media::count(); ?></span>" icon="picture-o text-brown" %}
                             </div>
                         </div>
@@ -98,14 +98,12 @@
                             {% link url="cockpit_widget_galleries" content="Widgets <span class='pull-right'><span class='caret'></span></span>" icon="table text-ciel" class="ss-menu" %}
                             <div class="nav-ss-menu">
                                 {% linl url="cockpit_widget_galleries" content=" Galleries" icon="object-group text-ciel" %}
-                                {% link url="cockpit_widget_sliders" content=" Sliders" icon="object-group text-ciel" %}
-                                {% link url="cockpit_widget_polls" content=" Sondages <span class='pull-right'><?php echo Widget\models\Poll::count('site_id = '.$this->site->id); ?></span>" icon="bar-chart" %}
                             </div>
                         </div>
                         <div>
                             {% link url="cockpit_catalog_products" content=" Catalogue <span class='pull-right'><span class='caret'></span></span>" icon="table text-orange" class="ss-menu" %}
                             <div class="nav-ss-menu">
-                                {% link url="cockpit_catalog_categories" content=" Catégories de produit <span class='pull-right'><?php echo Catalog\models\Category::count(); ?></span>" icon="object-group text-orange" %}
+                                {% link url="cockpit_catalog_categories" content=" Catégories <span class='pull-right'><?php echo Catalog\models\ProductCategory::count(); ?></span>" icon="object-group text-orange" %}
                                 {% link url="cockpit_catalog_products" content=" Produits <span class='pull-right'><?php echo Catalog\models\Product::count(); ?></span>" icon="product-hunt text-orange" %}
                             </div>
                         </div>

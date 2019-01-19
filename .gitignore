@@ -3,3 +3,4 @@ composer.phar
 composer.lock
 /app/models/*
 /app/widgets/*
+/app/logs/*
