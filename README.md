@@ -6,6 +6,7 @@ To install the framework, you juste have to use
 $ composer create-project overconsulting/lazyphp-skeleton lazyphp
 </code>
 
+
 If you don't have composoer, you can find it at: https://getcomposer.org
 
 <code>
