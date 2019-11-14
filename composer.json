@@ -15,7 +15,7 @@
         "overconsulting/lazyphp-auth": "dev-master",
         "overconsulting/lazyphp-catalog": "dev-master",
         "overconsulting/lazyphp-media": "dev-master",
-        "overconsulting/Lazyphp-cms": "dev-master",
+        "overconsulting/lazyphp-cms": "dev-master",
         "overconsulting/lazyphp-widget": "dev-master"
     }
 }
