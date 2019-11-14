@@ -2,23 +2,19 @@ LazyPHP is a new PHP framework
 
 To install the framework, you juste have to use
 
-<pre>
-    <code>
-    $ composer create-project overconsulting/lazyphp-skeleton lazyphp
-    </code>
-</pre>
+<pre><code>
+$ composer create-project overconsulting/lazyphp-skeleton lazyphp
+</code></pre>
 
 
 If you don't have composoer, you can find it at: https://getcomposer.org
 
-<pre>
-<code>
+<pre><code>
 $ php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 $ php composer-setup.php
 $ php -r "unlink('composer-setup.php');"
 $ php composer.phar install
-</code>
-</pre>
+</code></pre>
 
 If you want to start the project:
 <pre><code>
