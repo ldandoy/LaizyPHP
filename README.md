@@ -12,7 +12,7 @@ $ php composer-setup.php
 $ php -r "unlink('composer-setup.php');"
 $ php composer.phar install
 </code></pre>
-<br />>
+<br />
 If you want to start the project:
 <pre><code>$ php -S localhost:2001
 </code></pre>
