@@ -1,5 +1,13 @@
 {
-    "name": "LazyPHP",
+    "name": "overconsulting/lazyphp-webskeleton",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ldandoy",
+            "email": "ldandoy@overconsulting.net"
+        }
+    ],
     "require": {
         "monolog/monolog": "1.0.*",
         "overconsulting/lazyphp-core": "dev-master",
